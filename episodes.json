@@ -1,0 +1,262 @@
+[
+    {
+      "id": 1,
+      "titel": "Strookrijk",
+      "tijd": 77,
+      "datum": "2017-12-30",
+      "categorie": "onderwerp"
+    },{
+      "id": 2,
+      "titel": "Nieuwe rotsdeur in steengoede darkride",
+      "tijd": 31,
+      "datum": "2018-01-02",
+      "categorie": "nieuws"
+    },{
+      "id": 3,
+      "titel": "Interview met Efteling-icoon Mari van Heumen",
+      "tijd": 81,
+      "datum": "2018-01-08",
+      "categorie": "interview"
+    },{
+        "id": 4,
+        "titel": "Dat souvenir interesseert me geen moer",
+        "tijd": 65,
+        "datum": "2018-01-15",
+        "categorie": "nieuws"
+    },
+    {
+        "id": 5,
+        "titel": "Een storm in een glas Hertog Jan",
+        "tijd": 55,
+        "datum": "2018-01-22",
+        "categorie": "nieuws"
+    },{
+        "id": 6,
+        "titel": "Onze 10 favoriete plekken in het Efteling park",
+        "tijd": 56,
+        "datum": "2018-01-29",
+        "categorie": "favorieten"
+    },{
+        "id": 7,
+        "titel": "Tips voor een dagje Efteling met kleine kinderen",
+        "tijd": 73,
+        "datum": "2018-02-05",
+        "categorie": "tips"
+    },{
+        "id": 8,
+        "titel": "Ons Fons",
+        "tijd": 94,
+        "datum": "2018-02-12",
+        "categorie": "nieuws"
+    },{
+        "id": 9,
+        "titel": "Fotograferen in de Efteling met Kris van de Sande",
+        "tijd": 56,
+        "datum": "2018-02-19",
+        "categorie": "interview"
+    },{
+        "id": 10,
+        "titel": "Koffiedik kijken",
+        "tijd": 63,
+        "datum": "2018-02-26",
+        "categorie": "nieuws"
+    },{
+        "id": 11,
+        "titel": "Symbolica 8 maanden na opening",
+        "tijd": 63,
+        "datum": "2018-03-05",
+        "categorie": "attractie"
+    },{
+        "id": 12,
+        "titel": "Ontwerpbestemmingsplan Wereld van de Efteling 2030 (deel 1)",
+        "tijd": 74,
+        "datum": "2018-03-12",
+        "categorie": "special"
+    },{
+        "id": 13,
+        "titel": "Ontwerpbestemmingsplan Wereld van de Efteling 2030 (deel 2)",
+        "tijd": 47,
+        "datum": "2018-03-19",
+        "categorie": "special"
+    },{
+        "id": 14,
+        "titel": "Het Vrolijkste nieuws in decennia",
+        "tijd": 63,
+        "datum": "2018-03-26",
+        "categorie": "nieuws"
+    },{
+        "id": 15,
+        "titel": "Heropening python",
+        "tijd": 59,
+        "datum": "2018-03-31",
+        "categorie": "rapportage"
+    },{
+        "id": 16,
+        "titel": "Er mist daar iets",
+        "tijd": 70,
+        "datum": "2018-04-02",
+        "categorie": "nieuws"
+    },{
+        "id": 17,
+        "titel": "Een kapbeitel overstemmen",
+        "tijd": 75,
+        "datum": "2018-04-09",
+        "categorie": "nieuws"
+    },{
+        "id": 18,
+        "titel": "Dromen over 2030",
+        "tijd": 61,
+        "datum": "2018-04-16",
+        "categorie": "onderwerp"
+    },{
+        "id": 19,
+        "titel": "Advocaat Wolf",
+        "tijd": 62,
+        "datum": "2018-04-23",
+        "categorie": "nieuws"
+    },{
+        "id": 20,
+        "titel": "Roversnest",
+        "tijd": 60,
+        "datum": "2018-04-30",
+        "categorie": "onderwerp"
+    },{
+        "id": 21,
+        "titel": "'t Verdiende Loon",
+        "tijd": 15,
+        "datum": "2018-05-02",
+        "categorie": "special"
+    },{
+        "id": 22,
+        "titel": "Liefde voor de Efteling",
+        "tijd": 60,
+        "datum": "2018-05-07",
+        "categorie": "onderwerp"
+    },{
+        "id": 23,
+        "titel": "Reacties van luisteraars",
+        "tijd": 36,
+        "datum": "2018-05-10",
+        "categorie": "luisteraars"
+    },{
+        "id": 24,
+        "titel": "De Bezorgde Vegaburgers",
+        "tijd": 98,
+        "datum": "2018-05-14",
+        "categorie": "nieuws"
+    },{
+        "id": 25,
+        "titel": "Tips voor een regenachtige dag in de Efteling",
+        "tijd": 42,
+        "datum": "2018-05-21",
+        "categorie": "tips"
+    },{
+        "id": 26,
+        "titel": "Fotografievragen voor Kris van de Sande",
+        "tijd": 54,
+        "datum": "2018-05-28",
+        "categorie": "interview"
+    },{
+        "id": 27,
+        "titel": "Onze favoriete Eftelingmuziek",
+        "tijd": 96,
+        "datum": "2018-06-04",
+        "categorie": "favorieten"
+    },{
+        "id": 28,
+        "titel": "Storytelling met Philip Corsius",
+        "tijd": 53,
+        "datum": "2018-06-11",
+        "categorie": "interview"
+    },{
+        "id": 29,
+        "titel": "Genoveva? Witte gij da?",
+        "tijd": 121,
+        "datum": "2018-06-18",
+        "categorie": "nieuws"
+    },{
+        "id": 30,
+        "titel": "Dode beelden stinken zo",
+        "tijd": 73,
+        "datum": "2018-06-25",
+        "categorie": "nieuws"
+    },{
+        "id": 31,
+        "titel": "Onderhoud in de Efteling",
+        "tijd": 62,
+        "datum": "2018-07-02",
+        "categorie": "onderwerp"
+    },{
+        "id": 32,
+        "titel": "Een roze hazmat suit",
+        "tijd": 67,
+        "datum": "2018-07-09",
+        "categorie": "nieuws"
+    },{
+        "id": 33,
+        "titel": "Onze wensen voor de Efteling",
+        "tijd": 67,
+        "datum": "2018-07-16",
+        "categorie": "onderwerp"
+    },{
+        "id": 34,
+        "titel": "GuestHouse Hotel",
+        "tijd": 71,
+        "datum": "2018-07-19",
+        "categorie": "rondleiding"
+    },{
+        "id": 35,
+        "titel": "Die is het achtbaanspoor bijster",
+        "tijd": 82,
+        "datum": "2018-07-23",
+        "categorie": "nieuws"
+    },{
+        "id": 36,
+        "titel": "Opening van de Vrolijke Noot",
+        "tijd": 47,
+        "datum": "2018-07-26",
+        "categorie": "rapportage"
+    },{
+        "id": 37,
+        "titel": "Tips voor een warme dag in de Efteling",
+        "tijd": 55,
+        "datum": "2018-07-30",
+        "categorie": "tips"
+    },{
+        "id": 38,
+        "titel": "Die mot je nie",
+        "tijd": 69,
+        "datum": "2018-08-06",
+        "categorie": "nieuws"
+    },{
+        "id": 39,
+        "titel": "Komt het nieuwe Reizenrijk er zo uit te zien...?",
+        "tijd": 47,
+        "datum": "2018-08-07",
+        "categorie": "nieuws"
+    },{
+        "id": 40,
+        "titel": "Eten en drinken in de Efteling",
+        "tijd": 86,
+        "datum": "2018-08-13",
+        "categorie": "tips"
+    },{
+        "id": 41,
+        "titel": "Avondboodschap",
+        "tijd": 63,
+        "datum": "2018-08-16",
+        "categorie": "luisteraars"
+    },{
+        "id": 42,
+        "titel": "Allez Tom Tom",
+        "tijd": 86,
+        "datum": "2018-08-20",
+        "categorie": "nieuws"
+    },{
+        "id": 43,
+        "titel": "Reacties van luisteraars",
+        "tijd": 41,
+        "datum": "2018-08-22",
+        "categorie": "luisteraars"
+    }
+]

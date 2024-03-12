@@ -1,0 +1,41 @@
+:root {
+  --color-theme-primary: #154666;
+  --color-theme-secondary: #492929;
+  --color-white: #ffffff;
+  --color-text: ;
+}
+
+@font-face {
+  font-family: "ErnestineWebW03";
+  src: url("../fonts/ErnestineWebW03-Bold.woff2") format("woff2"), url("../fonts/ErnestineWebW03-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-theme-secondary);
+  font-family: "ErnestineWebW03";
+  font-weight: bold;
+  font-style: normal;
+}
+
+.navbar-brand {
+  font-family: "ErnestineWebW03";
+  font-weight: bold;
+  font-style: normal;
+}
+
+.bg-theme {
+  background-color: var(--color-theme-primary);
+}
+
+header.bg-theme a {
+  color: var(--color-white);
+}
+header.bg-theme a:hover, header.bg-theme a :focus {
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */
