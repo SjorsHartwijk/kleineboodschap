@@ -39,6 +39,12 @@ h1, h2, h3, h4, h5, h6 {
 .card h2 {
   color: var(--color-theme-primary);
 }
+.card ul li {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  background-color: unset;
+}
 
 header.bg-theme a {
   color: var(--color-white);

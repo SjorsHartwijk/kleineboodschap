@@ -34,6 +34,14 @@ h1,h2,h3,h4,h5,h6 {
     h2 {
         color: var(--color-theme-primary);
     }
+    ul {
+        li {
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            background-color: unset;
+        }
+    }
 }
 header {
     &.bg-theme {
