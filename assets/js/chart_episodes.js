@@ -11,6 +11,7 @@ fetch('episodes.json')
     // Extract de benodigde gegevens uit het JSON-object
     const titel = data.map(episode => `${episode.id}: ${episode.titel}`);
     const tijd = data.map(episode => episode.tijd);
+    const category = data.map(episode => episode.categorie);
     
     // Creeër een canvas voor de Bar Chart
     const episodes = document.getElementById('episodes');
@@ -26,11 +27,6 @@ fetch('episodes.json')
             }]
         },
         options: {
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
             scales: {
                 y: {
                     beginAtZero: true

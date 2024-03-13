@@ -49,26 +49,48 @@
             </header>
             <!-- Features section-->
             <section class="py-5" id="features">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Snelle statistieken</h2></div>
-                        <div class="col-lg-8">
-                            <div class="row gx-5 row-cols-1 row-cols-md-2">
-                                <div class="col mb-5 h-100">
-                                    <h2 class="h5">Afleveringen</h2>
-                                    <p class="mb-0">Op dit moment zijn er <strong><span id="afleveringenCount"></span></strong> afleveringen van Kleine Boodschap geindexeerd op deze pagina</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mb-3"><h2 class="fw-bolder mb-0">Statistieken</h2></div>
+                    </div>
+                    <div class="row d-flex flex-row justify-content-around flex-wrap">
+                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                            <div class="card shadow h-100">
+                                <div class="card-body">
+                                    <h2 class="h5 card-title">Afleveringen</h2>
+                                    <p class="card-text">Op dit moment zijn er <strong><span id="afleveringenCount"></span></strong> afleveringen van Kleine Boodschap geindexeerd op deze pagina.</p>
                                 </div>
-                                <div class="col mb-5 h-100">
-                                    <h2 class="h5">Minuten</h2>
-                                    <p class="mb-0">Gemiddeld duurt een aflevering van kleine boodschap <strong><span id="averageMinutes"></span></strong> minuten</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                            <div class="card shadow h-100">
+                                <div class="card-body">
+                                    <h2 class="h5 card-title">Langste aflevering</h2>
+                                    <p class="card-text">Aflevering <span id="longestEpisode"></span></p>
                                 </div>
-                                <div class="col mb-5 mb-md-0 h-100">
-                                    <h2 class="h5">Interviews</h2>
-                                    <p class="mb-0">De heren van Kleine boodschap hebben <strong><span id="countInterview"></span></strong> interviews met (oud) Eftelingers en Efteling liefhebbers opgenomen.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                            <div class="card shadow h-100">
+                                <div class="card-body">
+                                    <h2 class="h5 card-title">Gemiddelde</h2>
+                                    <p class="card-text">Gemiddeld duurt een aflevering van kleine boodschap <strong><span id="averageMinutes"></span></strong> minuten.</p>
                                 </div>
-                                <div class="col h-100">
-                                    <h2 class="h5">Nieuwsafleveringen</h2>
-                                    <p class="mb-0">50% van de afleveringen is een nieuwsaflevering</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                            <div class="card shadow h-100">
+                                <div class="card-body">
+                                    <h2 class="h5 card-title">Interviews</h2>
+                                    <p class="card-text">De heren van Kleine boodschap hebben <strong><span id="countInterview"></span></strong> interviews met (oud) Eftelingers en Efteling liefhebbers opgenomen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                            <div class="card shadow h-100">
+                                <div class="card-body">
+                                    <h2 class="h5 card-title">Nieuws</h2>
+                                    <p class="card-text"><strong><span id="percentageNieuws"></span></strong> van de afleveringen is een nieuwsaflevering.</p>
                                 </div>
                             </div>
                         </div>
@@ -80,16 +102,9 @@
                 <div class="container">
                     <div class="row justify-content-center pb-5">
                         <div class="col-12">
-                            <h3>Afleveringen</h3>
-                            <p>bekijk hier in een staafdiagram alle afleveringen van Kleine Boodschap terug waarbij de tijd in minuten wordt aangeven.</p>
+                            <h3>Data van alle Afleveringen</h3>
+                            <p>bekijk hier alle afleveringen van Kleine Boodschap terug waarbij de tijd in minuten wordt aangeven.</p>
                             <canvas id="episodes"></canvas>
-                        </div>
-                    </div>
-                    <div class="row pb-5">
-                        <div class="col-12 col-lg-6">
-                            <h3>Categorieen</h3>
-                            <p>Een aflevering van Kleine boodschap valt altijd in een categorie, bekijk hier de verdeling van categorieen in deze circeldiagram.</p>
-                            <canvas id="categories_pie"></canvas>
                         </div>
                     </div>
                 </div>

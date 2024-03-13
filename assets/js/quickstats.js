@@ -1,3 +1,5 @@
+// Dit bestand berekend de snelle statistieken
+
 // Functie om het gemiddelde aantal minuten te berekenen van het 'tijd' attribuut in het 'episodes.json' bestand
 function calculateAverageMinutes() {
     // Fetch het JSON-bestand
@@ -83,7 +85,67 @@ function countInterview() {
         countInterviewElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
     });
 }
+// Functie om het percentage van afleveringen met de categorie 'nieuws' te berekenen
+function calculatePercentageNieuws() {
+    // Fetch het JSON-bestand
+    fetch('episodes.json')
+    .then(response => {
+        // Controleer of het laden van het bestand succesvol is
+        if (!response.ok) {
+            throw new Error('Failed to load JSON data');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Tel het aantal items waarbij de 'categorie' gelijk is aan 'nieuws'
+        const nieuwsCount = data.reduce((accumulator, episode) => {
+            return accumulator + (episode.categorie === 'nieuws' ? 1 : 0);
+        }, 0);
+
+        // Bereken het totale aantal afleveringen
+        const totalEpisodes = data.length;
+
+        // Bereken het percentage van nieuwsafleveringen
+        const percentageNieuws = (nieuwsCount / totalEpisodes) * 100;
+
+        // Toon het percentage op de HTML-pagina
+        const percentageNieuwsElement = document.getElementById('percentageNieuws');
+        percentageNieuwsElement.textContent = `${percentageNieuws.toFixed(0)}%`;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        const percentageNieuwsElement = document.getElementById('percentageNieuws');
+        percentageNieuwsElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
+    });
+}
+// Functie om de langste aflevering op te halen en weer te geven
+function getLongestEpisode() {
+    // Fetch het JSON-bestand
+    fetch('episodes.json')
+    .then(response => {
+        // Controleer of het laden van het bestand succesvol is
+        if (!response.ok) {
+            throw new Error('Failed to load JSON data');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Zoek de aflevering met het hoogste aantal minuten
+        let longestEpisode = data.reduce((max, episode) => max.tijd > episode.tijd ? max : episode);
+
+        // Toon het ID, de titel en het aantal minuten van de langste aflevering
+        const longestEpisodeElement = document.getElementById('longestEpisode');
+        longestEpisodeElement.textContent = `${longestEpisode.id}: ${longestEpisode.titel} is een ${longestEpisode.categorie}-aflevering en is recordhouder van langste aflevering en duurt ${longestEpisode.tijd} minuten.`;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        const longestEpisodeElement = document.getElementById('longestEpisode');
+        longestEpisodeElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
+    });
+}
 // Roep de functies aan wanneer de pagina geladen is
+window.onload = getLongestEpisode();
+window.onload = calculatePercentageNieuws();
 window.onload = countInterview();
 window.onload = calculateAverageMinutes();
 window.onload = countJSONObjects();
