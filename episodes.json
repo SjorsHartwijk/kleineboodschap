@@ -900,5 +900,35 @@
         "tijd": 130,
         "datum": "2020-04-20",
         "categorie": "nieuws"
+    },{
+        "id": 151,
+        "titel": "Werken bij de Efteling",
+        "tijd": 82,
+        "datum": "2020-04-27",
+        "categorie": "nieuws"
+    },{
+        "id": 152,
+        "titel": "Corny Island",
+        "tijd": 79,
+        "datum": "2020-05-04",
+        "categorie": "nieuws"
+    },{
+        "id": 153,
+        "titel": "Reacties van luisteraars",
+        "tijd": 57,
+        "datum": "2020-05-11",
+        "categorie": "achtergrond"
+    },{
+        "id": 154,
+        "titel": "TjoepTjoep",
+        "tijd": 141,
+        "datum": "2020-05-18",
+        "categorie": "nieuws"
+    },{
+        "id": 155,
+        "titel": "Efteling boeken",
+        "tijd": 153,
+        "datum": "2020-05-25",
+        "categorie": "achtergrond"
     }
 ]
