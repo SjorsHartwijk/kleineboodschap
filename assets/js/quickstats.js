@@ -138,7 +138,7 @@ function getLongestAndShortestEpisodes() {
 
         // Toon het ID, de titel en het aantal minuten van de langste aflevering
         const longestEpisodeElement = document.getElementById('longestEpisode');
-        longestEpisodeElement.textContent = `${longestEpisode.id}: ${longestEpisode.titel} is een ${longestEpisode.categorie}-aflevering en is recordhouder van langste aflevering en duurt ${longestEpisode.tijd} minuten`;
+        longestEpisodeElement.textContent = `${longestEpisode.id}: ${longestEpisode.titel} is een ${longestEpisode.categorie}-aflevering en is recordhouder van langste aflevering, de aflevering duurt ${longestEpisode.tijd} minuten`;
 
         // Toon het ID, de titel en het aantal minuten van de kortste aflevering
         const shortestEpisodeElement = document.getElementById('shortestEpisode');

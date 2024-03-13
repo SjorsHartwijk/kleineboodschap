@@ -46,6 +46,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: unset;
 }
 
+.btn {
+  border-radius: calc(infinity * 1px);
+}
+
 header.bg-theme a {
   color: var(--color-white);
 }

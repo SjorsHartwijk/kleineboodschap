@@ -600,5 +600,155 @@
         "tijd": 117,
         "datum": "2019-07-08",
         "categorie": "interview"
+    },{
+        "id": 101,
+        "titel": "Nieuwe wisseltentoonstelling in het Efteling Museum",
+        "tijd": 22,
+        "datum": "2019-07-10",
+        "categorie": "reportage"
+    },{
+        "id": 102,
+        "titel": "Wolf tegen Lam",
+        "tijd": 98,
+        "datum": "2019-07-15",
+        "categorie": "nieuws"
+    },{
+        "id": 103,
+        "titel": "Reacties van luisteraars",
+        "tijd": 42,
+        "datum": "2019-07-18",
+        "categorie": "achtergrond"
+    },{
+        "id": 104,
+        "titel": "Meer fotografie in de Efteling met Kris Van de Sande",
+        "tijd": 47,
+        "datum": "2019-07-22",
+        "categorie": "interview"
+    },{
+        "id": 105,
+        "titel": "Jullie favoriete sprookjes (en reacties)",
+        "tijd": 28,
+        "datum": "2019-07-25",
+        "categorie": "achtergrond"
+    },{
+        "id": 106,
+        "titel": "Een rondje door de Wereld van de Efteling",
+        "tijd": 142,
+        "datum": "2019-07-29",
+        "categorie": "achtergrond"
+    },{
+        "id": 107,
+        "titel": "Efteling-bieren",
+        "tijd": 86,
+        "datum": "2019-08-05",
+        "categorie": "achtergrond"
+    },{
+        "id": 108,
+        "titel": "Twinkel, twinkel, yeah, yeah, yeah!",
+        "tijd": 158,
+        "datum": "2019-08-12",
+        "categorie": "nieuws"
+    },{
+        "id": 109,
+        "titel": "Hele kleine puntjes",
+        "tijd": 52,
+        "datum": "2019-08-19",
+        "categorie": "nieuws"
+    },{
+        "id": 110,
+        "titel": "Jullie favoriete details",
+        "tijd": 34,
+        "datum": "2019-08-21",
+        "categorie": "achtergrond"
+    },{
+        "id": 111,
+        "titel": "De mooiste gebouwen in de Efteling",
+        "tijd": 67,
+        "datum": "2019-08-26",
+        "categorie": "achtergrond"
+    },{
+        "id": 111,
+        "titel": "Watergate",
+        "tijd": 86,
+        "datum": "2019-09-02",
+        "categorie": "nieuws"
+    },{
+        "id": 113,
+        "titel": "Afscheid van de Bob",
+        "tijd": 68,
+        "datum": "2019-09-04",
+        "categorie": "reportage"
+    },{
+        "id": 114,
+        "titel": "De magie van Verticaal gaan",
+        "tijd": 74,
+        "datum": "2019-09-09",
+        "categorie": "achtergrond"
+    },{
+        "id": 115,
+        "titel": "Anton Koekblik",
+        "tijd": 98,
+        "datum": "2019-09-16",
+        "categorie": "nieuws"
+    },{
+        "id": 116,
+        "titel": "Niet-gerealiseerde Efteling-projecten (deel 1)",
+        "tijd": 86,
+        "datum": "2019-09-23",
+        "categorie": "achtergrond"
+    },{
+        "id": 117,
+        "titel": "De opening van De zes Zwanen",
+        "tijd": 74,
+        "datum": "2019-09-30",
+        "categorie": "reportage"
+    },{
+        "id": 118,
+        "titel": "Tussen de bielzen en de zitkuil",
+        "tijd": 121,
+        "datum": "2019-10-07",
+        "categorie": "nieuws"
+    },{
+        "id": 119,
+        "titel": "Animatronics in de Efteling",
+        "tijd": 78,
+        "datum": "2019-10-14",
+        "categorie": "achtergrond"
+    },{
+        "id": 120,
+        "titel": "Winterballen",
+        "tijd": 96,
+        "datum": "2019-10-21",
+        "categorie": "nieuws"
+    },{
+        "id": 121,
+        "titel": "Niet-gerealiseerde Efteling-projecten (deel 2)",
+        "tijd": 68,
+        "datum": "2019-10-28",
+        "categorie": "achtergrond"
+    },{
+        "id": 122,
+        "titel": "Max + Music",
+        "tijd": 114,
+        "datum": "2019-11-04",
+        "categorie": "nieuws"
+    },{
+        "id": 123,
+        "titel": "Efteling en duurzaamheid met Wyke Smit",
+        "tijd": 65,
+        "datum": "2019-11-11",
+        "categorie": "interview"
+    },{
+        "id": 124,
+        "titel": "Polles Worsten Imperium",
+        "tijd": 110,
+        "datum": "2019-11-18",
+        "categorie": "nieuws"
+    },{
+        "id": 125,
+        "titel": "Niet-gerealiseerde Efteling-projecten (deel 3)",
+        "tijd": 67,
+        "datum": "2019-11-25",
+        "categorie": "achtergrond"
     }
 ]
