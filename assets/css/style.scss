@@ -2,7 +2,10 @@
     --color-theme-primary: #154666;
     --color-theme-secondary: #492929;
     --color-white: #ffffff;
-    --color-text:  
+    --color-nieuws: #F6CA83;
+    --color-reportage: #4685AE;
+    --color-interview: #C46868;
+    --color-achtergrond: #7B9F93; 
 }
 @font-face {
     font-family: 'ErnestineWebW03';
@@ -45,6 +48,25 @@ h1,h2,h3,h4,h5,h6 {
 }
 .btn {
     border-radius: calc(infinity * 1px);
+}
+.legenda {
+    font-size: .9em;
+    .nieuws {
+        border-left: 8px solid var(--color-nieuws);
+        padding: 0 1em 0 .25em;
+    }
+    .interview {
+        border-left: 8px solid var(--color-interview);
+        padding: 0 1em 0 .25em;
+    }
+    .reportage {
+        border-left: 8px solid var(--color-reportage);
+        padding: 0 1em 0 .25em;
+    }
+    .achtergrond {
+        border-left: 8px solid var(--color-achtergrond);
+        padding: 0 1em 0 .25em;
+    }
 }
 header {
     &.bg-theme {
