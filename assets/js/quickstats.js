@@ -118,8 +118,8 @@ function calculatePercentageNieuws() {
         percentageNieuwsElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
     });
 }
-// Functie om de langste aflevering op te halen en weer te geven
-function getLongestEpisode() {
+// Functie om de langste en kortste aflevering op te halen en weer te geven
+function getLongestAndShortestEpisodes() {
     // Fetch het JSON-bestand
     fetch('episodes.json')
     .then(response => {
@@ -133,18 +133,55 @@ function getLongestEpisode() {
         // Zoek de aflevering met het hoogste aantal minuten
         let longestEpisode = data.reduce((max, episode) => max.tijd > episode.tijd ? max : episode);
 
+        // Zoek de aflevering met het laagste aantal minuten
+        let shortestEpisode = data.reduce((min, episode) => min.tijd < episode.tijd ? min : episode);
+
         // Toon het ID, de titel en het aantal minuten van de langste aflevering
         const longestEpisodeElement = document.getElementById('longestEpisode');
-        longestEpisodeElement.textContent = `${longestEpisode.id}: ${longestEpisode.titel} is een ${longestEpisode.categorie}-aflevering en is recordhouder van langste aflevering en duurt ${longestEpisode.tijd} minuten.`;
+        longestEpisodeElement.textContent = `${longestEpisode.id}: ${longestEpisode.titel} is een ${longestEpisode.categorie}-aflevering en is recordhouder van langste aflevering en duurt ${longestEpisode.tijd} minuten`;
+
+        // Toon het ID, de titel en het aantal minuten van de kortste aflevering
+        const shortestEpisodeElement = document.getElementById('shortestEpisode');
+        shortestEpisodeElement.textContent = `${shortestEpisode.id}: ${shortestEpisode.titel} is een ${shortestEpisode.categorie}-aflevering en duurt slechts ${shortestEpisode.tijd} minuten`;
     })
     .catch(error => {
         console.error('Error:', error);
         const longestEpisodeElement = document.getElementById('longestEpisode');
         longestEpisodeElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
+        const shortestEpisodeElement = document.getElementById('shortestEpisode');
+        shortestEpisodeElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
+    });
+}
+function calculateEpisodeHours() {
+    // Fetch het JSON-bestand
+    fetch('episodes.json')
+    .then(response => {
+        // Controleer of het laden van het bestand succesvol is
+        if (!response.ok) {
+            throw new Error('Failed to load JSON data');
+        }
+        return response.json();
+    })
+    .then(data => {
+
+        // Bereken de som van het aantal minuten uit alle afleveringen
+        const totalMinutes = data.reduce((total, episode) => total + parseInt(episode.tijd), 0);
+
+        // Rond de som van minuten af naar hele uren
+        const totalHours = Math.round(totalMinutes / 60);
+
+        // Toon de som van het aantal minuten afgerond naar hele uren op de pagina
+        const totalMinutesElement = document.getElementById('totalMinutes');
+        totalMinutesElement.textContent = `Alle afleveringen van Kleine Boodschap duren in totaal ${totalMinutes} minuten, dat is ${totalHours} uur aan Kleine Boodschap!`;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Er is een fout opgetreden bij het laden van de gegevens.');
     });
 }
 // Roep de functies aan wanneer de pagina geladen is
-window.onload = getLongestEpisode();
+window.onload = calculateEpisodeHours();
+window.onload = getLongestAndShortestEpisodes();
 window.onload = calculatePercentageNieuws();
 window.onload = countInterview();
 window.onload = calculateAverageMinutes();

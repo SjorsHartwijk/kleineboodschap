@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preload" href="assets/fonts/ErnestineWebW03-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <title>Kleine boodschap data gevisualiseerd</title>
+    <title>Kleine Boodschap Data</title>
 </head>
 <body>
     <body class="d-flex flex-column h-100">
@@ -53,16 +53,32 @@
                     <div class="row">
                         <div class="col-12 mb-3"><h2 class="fw-bolder mb-0">Statistieken</h2></div>
                     </div>
-                    <div class="row d-flex flex-row justify-content-around flex-wrap">
-                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                    <div class="row">
+                        <div class="col-12 col-lg-4 mb-3">
                             <div class="card shadow h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Afleveringen</h2>
-                                    <p class="card-text">Op dit moment zijn er <strong><span id="afleveringenCount"></span></strong> afleveringen van Kleine Boodschap geindexeerd op deze pagina.</p>
+                                    <p class="card-text">Op dit moment zijn er <strong><span id="afleveringenCount"></span></strong> afleveringen van Kleine Boodschap geindexeerd op deze pagina</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                        <div class="col-12 col-lg-4 mb-3">
+                            <div class="card shadow h-100">
+                                <div class="card-body">
+                                    <h2 class="h5 card-title">Gemiddeld</h2>
+                                    <p class="card-text">Gemiddeld duurt een aflevering van kleine boodschap <strong><span id="averageMinutes"></span></strong> minuten</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 mb-3">
+                            <div class="card shadow h-100">
+                                <div class="card-body">
+                                    <h2 class="h5 card-title">Totaal</h2>
+                                    <p class="card-text"><span id="totalMinutes"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 mb-3">
                             <div class="card shadow h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Langste aflevering</h2>
@@ -70,27 +86,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                        <div class="col-12 col-lg-3 mb-3">
                             <div class="card shadow h-100">
                                 <div class="card-body">
-                                    <h2 class="h5 card-title">Gemiddelde</h2>
-                                    <p class="card-text">Gemiddeld duurt een aflevering van kleine boodschap <strong><span id="averageMinutes"></span></strong> minuten.</p>
+                                    <h2 class="h5 card-title">Kortste aflevering</h2>
+                                    <p class="card-text">Aflevering <span id="shortestEpisode"></span></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                        <div class="col-12 col-lg-3 mb-3">
                             <div class="card shadow h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Interviews</h2>
-                                    <p class="card-text">De heren van Kleine boodschap hebben <strong><span id="countInterview"></span></strong> interviews met (oud) Eftelingers en Efteling liefhebbers opgenomen.</p>
+                                    <p class="card-text">De heren van Kleine boodschap hebben <strong><span id="countInterview"></span></strong> interviews met (oud) Eftelingers en Efteling liefhebbers opgenomen</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg mb-3 mb-lg-0">
+                        <div class="col-12 col-lg-3 mb-3">
                             <div class="card shadow h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Nieuws</h2>
-                                    <p class="card-text"><strong><span id="percentageNieuws"></span></strong> van de afleveringen is een nieuwsaflevering.</p>
+                                    <p class="card-text"><strong><span id="percentageNieuws"></span></strong> van de afleveringen is een nieuwsaflevering</p>
                                 </div>
                             </div>
                         </div>

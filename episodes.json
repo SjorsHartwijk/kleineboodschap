@@ -366,5 +366,239 @@
         "tijd": 106,
         "datum": "2018-12-10",
         "categorie": "nieuws"
+    },{
+        "id": 62,
+        "titel": "Mario Dieltjes over het groen in de Efteling",
+        "tijd": 59,
+        "datum": "2018-12-17",
+        "categorie": "interview"
+    },{
+        "id": 63,
+        "titel": "Eftemal Kingdom",
+        "tijd": 99,
+        "datum": "2018-12-24",
+        "categorie": "nieuws"
+    },{
+        "id": 64,
+        "titel": "Tips voor een winters dagje Efteling",
+        "tijd": 50,
+        "datum": "2018-12-31",
+        "categorie": "achtergrond"
+    },{
+        "id": 65,
+        "titel": "Kabouterziektes",
+        "tijd": 69,
+        "datum": "2019-01-07",
+        "categorie": "nieuws"
+    },{
+        "id": 66,
+        "titel": "Reacties van luisteraars",
+        "tijd": 42,
+        "datum": "2019-01-10",
+        "categorie": "achtergrond"
+    },{
+        "id": 67,
+        "titel": "Marwin van de Hoeve over De Vijf Zintuigen",
+        "tijd": 86,
+        "datum": "2019-01-14",
+        "categorie": "interview"
+    },{
+        "id": 68,
+        "titel": "Sprookjesboom is door een Heras hekwerk heen gerend",
+        "tijd": 93,
+        "datum": "2019-01-21",
+        "categorie": "nieuws"
+    },{
+        "id": 69,
+        "titel": "Evenementideeën voor de Efteling",
+        "tijd": 57,
+        "datum": "2019-01-28",
+        "categorie": "achtergrond"
+    },{
+        "id": 70,
+        "titel": "Carnaval Restyle",
+        "tijd": 55,
+        "datum": "2019-01-29",
+        "categorie": "nieuws"
+    },{
+        "id": 71,
+        "titel": "Fantasievliegers",
+        "tijd": 73,
+        "datum": "2019-02-04",
+        "categorie": "nieuws"
+    },{
+        "id": 72,
+        "titel": "Een Efteling-plattegrond uit 1991",
+        "tijd": 73,
+        "datum": "2019-02-11",
+        "categorie": "achtergrond"
+    },{
+        "id": 73,
+        "titel": "Sprookjesboombroccoli",
+        "tijd": 99,
+        "datum": "2019-02-14",
+        "categorie": "nieuws"
+    },{
+        "id": 74,
+        "titel": "Studiotour bij René Merkelbach",
+        "tijd": 57,
+        "datum": "2019-02-18",
+        "categorie": "achtergrond"
+    },{
+        "id": 75,
+        "titel": "Grote Pardoes-sloffen",
+        "tijd": 102,
+        "datum": "2019-02-25",
+        "categorie": "nieuws"
+    },{
+        "id": 76,
+        "titel": "De Vijf Zintuigen Efteling Pubquiz 2019",
+        "tijd": 38,
+        "datum": "2019-02-27",
+        "categorie": "reportage"
+    },{
+        "id": 77,
+        "titel": "Uitspraak Raad van State voorlopige voorziening",
+        "tijd": 21,
+        "datum": "2019-03-01",
+        "categorie": "nieuws"
+    },{
+        "id": 78,
+        "titel": "Wat kunnen de Efteling en andere parken van elkaar leren",
+        "tijd": 84,
+        "datum": "2019-03-04",
+        "categorie": "achtergrond"
+    },{
+        "id": 79,
+        "titel": "Reacties van luisteraars",
+        "tijd": 26,
+        "datum": "2019-03-07",
+        "categorie": "achtergrond"
+    },{
+        "id": 80,
+        "titel": "Ik wil wel met jou in De Zweef",
+        "tijd": 86,
+        "datum": "2019-03-11",
+        "categorie": "nieuws"
+    },{
+        "id": 81,
+        "titel": "Onze top-7 sprookjes in het Sprookjesbos",
+        "tijd": 59,
+        "datum": "2019-03-18",
+        "categorie": "achtergrond"
+    },{
+        "id": 82,
+        "titel": "Een Doorn in het oog",
+        "tijd": 105,
+        "datum": "2019-03-25",
+        "categorie": "nieuws"
+    },{
+        "id": 83,
+        "titel": "Een ode aan Pandadroom en de schilderijen in het Carrouselpaleis",
+        "tijd": 63,
+        "datum": "2019-04-01",
+        "categorie": "achtergrond"
+    },{
+        "id": 84,
+        "titel": "Baron 1898",
+        "tijd": 70,
+        "datum": "2019-04-08",
+        "categorie": "achtergrond"
+    },{
+        "id": 85,
+        "titel": "Het wordt wel warm onder dat dekje",
+        "tijd": 103,
+        "datum": "2019-04-15",
+        "categorie": "nieuws"
+    },{
+        "id": 86,
+        "titel": "Een rondleiding over Parck Kaatsheuvel",
+        "tijd": 17,
+        "datum": "2019-04-17",
+        "categorie": "achtergrond"
+    },{
+        "id": 87,
+        "titel": "Efteling bordspellen",
+        "tijd": 102,
+        "datum": "2019-04-22",
+        "categorie": "achtergrond"
+    },{
+        "id": 88,
+        "titel": "De Efteling voor 1952 - Deel 1",
+        "tijd": 103,
+        "datum": "2019-04-29",
+        "categorie": "achtergrond"
+    },{
+        "id": 89,
+        "titel": "Die uitwerpselen zijn niet op schaal",
+        "tijd": 116,
+        "datum": "2019-05-06",
+        "categorie": "nieuws"
+    },{
+        "id": 90,
+        "titel": "De Efteling voor 1952 - Deel 2",
+        "tijd": 85,
+        "datum": "2019-05-13",
+        "categorie": "achtergrond"
+    },{
+        "id": 91,
+        "titel": "Goeie pijpenbuigers",
+        "tijd": 100,
+        "datum": "2019-05-20",
+        "categorie": "nieuws"
+    },{
+        "id": 92,
+        "titel": "Carnaval Festival heropening",
+        "tijd": 43,
+        "datum": "2019-05-23",
+        "categorie": "achtergrond"
+    },{
+        "id": 93,
+        "titel": "Reacties van luisteraars",
+        "tijd": 58,
+        "datum": "2019-05-27",
+        "categorie": "achtergrond"
+    },{
+        "id": 94,
+        "titel": "Ruud Bos documentaire making-of",
+        "tijd": 66,
+        "datum": "2019-05-31",
+        "categorie": "interview"
+    },{
+        "id": 95,
+        "titel": "Niet Efteling-Monkey Town",
+        "tijd": 115,
+        "datum": "2019-06-03",
+        "categorie": "nieuws"
+    },{
+        "id": 96,
+        "titel": "Tips voor een drukke dag in de Efteling",
+        "tijd": 86,
+        "datum": "2019-06-10",
+        "categorie": "achtergrond"
+    },{
+        "id": 97,
+        "titel": "Team Fata vs. Team Joris",
+        "tijd": 86,
+        "datum": "2019-06-17",
+        "categorie": "nieuws"
+    },{
+        "id": 98,
+        "titel": "Onze favoriete details in de Efteling",
+        "tijd": 56,
+        "datum": "2019-06-24",
+        "categorie": "achtergrond"
+    },{
+        "id": 99,
+        "titel": "Alsof ze curling aan het spelen waren",
+        "tijd": 116,
+        "datum": "2019-07-01",
+        "categorie": "nieuws"
+    },{
+        "id": 100,
+        "titel": "Kleine Boodschap 100",
+        "tijd": 117,
+        "datum": "2019-07-08",
+        "categorie": "interview"
     }
 ]
