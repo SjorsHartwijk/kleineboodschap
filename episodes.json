@@ -990,5 +990,215 @@
         "tijd": 77,
         "datum": "2020-08-03",
         "categorie": "achtergrond"
+    },{
+        "id": 166,
+        "titel": "Wat is écht Eftelings?",
+        "tijd": 81,
+        "datum": "2020-08-10",
+        "categorie": "achtergrond"
+    },{
+        "id": 167,
+        "titel": "Een ode aan het Diorama",
+        "tijd": 70,
+        "datum": "2020-08-17",
+        "categorie": "achtergrond"
+    },{
+        "id": 168,
+        "titel": "De geschiedenis van de Stoomcarrousel",
+        "tijd": 75,
+        "datum": "2020-08-24",
+        "categorie": "achtergrond"
+    },{
+        "id": 169,
+        "titel": "De raad der Dumbasses",
+        "tijd": 139,
+        "datum": "2020-08-31",
+        "categorie": "nieuws"
+    },{
+        "id": 170,
+        "titel": "Afscheid van Bart de Boer",
+        "tijd": 44,
+        "datum": "2020-09-03",
+        "categorie": "achtergrond"
+    },{
+        "id": 171,
+        "titel": "Efteling-tatoeages met Bram Elstak",
+        "tijd": 50,
+        "datum": "2020-09-07",
+        "categorie": "interview"
+    },{
+        "id": 172,
+        "titel": "Meesters van klefheid",
+        "tijd": 88,
+        "datum": "2020-09-14",
+        "categorie": "nieuws"
+    },{
+        "id": 173,
+        "titel": "Anton Pieck en het Anton Pieck museum",
+        "tijd": 135,
+        "datum": "2020-09-21",
+        "categorie": "interview"
+    },{
+        "id": 174,
+        "titel": "Paar kuub Piecks groen",
+        "tijd": 129,
+        "datum": "2020-09-28",
+        "categorie": "nieuws"
+    },{
+        "id": 175,
+        "titel": "De Glazen Bol",
+        "tijd": 71,
+        "datum": "2020-10-05",
+        "categorie": "achtergrond"
+    },{
+        "id": 176,
+        "titel": "Aquanura met een zachte G",
+        "tijd": 72,
+        "datum": "2020-10-09",
+        "categorie": "reportage"
+    },{
+        "id": 177,
+        "titel": "IJspegels in je bakkes",
+        "tijd": 103,
+        "datum": "2020-10-12",
+        "categorie": "nieuws"
+    },{
+        "id": 178,
+        "titel": "Nieuwsflitsbonusaflevering",
+        "tijd": 35,
+        "datum": "2020-10-16",
+        "categorie": "nieuws"
+    },{
+        "id": 179,
+        "titel": "Het Keienspoor met Ivo Südmeier",
+        "tijd": 101,
+        "datum": "2020-10-19",
+        "categorie": "achtergrond"
+    },{
+        "id": 180,
+        "titel": "Het Efteling Hotel",
+        "tijd": 100,
+        "datum": "2020-10-26",
+        "categorie": "achtergrond"
+    },{
+        "id": 181,
+        "titel": "Heb je last van stemproblemen?",
+        "tijd": 163,
+        "datum": "2020-11-02",
+        "categorie": "nieuws"
+    },{
+        "id": 182,
+        "titel": "De financiën van de Efteling (deel 1)",
+        "tijd": 146,
+        "datum": "2020-11-09",
+        "categorie": "achtergrond"
+    },{
+        "id": 183,
+        "titel": "Kernsplijting in de fontein",
+        "tijd": 101,
+        "datum": "2020-11-16",
+        "categorie": "nieuws"
+    },{
+        "id": 184,
+        "titel": "Theme Park Science achter de schermen bij de Pagode",
+        "tijd": 51,
+        "datum": "2020-11-18",
+        "categorie": "achtergrond"
+    },{
+        "id": 185,
+        "titel": "In gesprek met Ronald van der Zijl",
+        "tijd": 109,
+        "datum": "2020-11-23",
+        "categorie": "interview"
+    },{
+        "id": 186,
+        "titel": "Genoeg lichtpuntjes om naar uit te kijken",
+        "tijd": 125,
+        "datum": "2020-11-30",
+        "categorie": "nieuws"
+    },{
+        "id": 187,
+        "titel": "Polka Marina",
+        "tijd": 29,
+        "datum": "2020-12-01",
+        "categorie": "achtergrond"
+    },{
+        "id": 188,
+        "titel": "De financiën van de Efteling (deel 2)",
+        "tijd": 163,
+        "datum": "2020-12-07",
+        "categorie": "achtergrond"
+    },{
+        "id": 189,
+        "titel": "Ze lijken familie van Spider-Man",
+        "tijd": 128,
+        "datum": "2020-12-14",
+        "categorie": "nieuws"
+    },{
+        "id": 190,
+        "titel": "Villa Pardoes",
+        "tijd": 122,
+        "datum": "2020-12-21",
+        "categorie": "interview"
+    },{
+        "id": 191,
+        "titel": "Als warme muizen over de toonbank",
+        "tijd": 96,
+        "datum": "2020-12-28",
+        "categorie": "nieuws"
+    },{
+        "id": 192,
+        "titel": "Een plattegrond uit 1978",
+        "tijd": 62,
+        "datum": "2021-01-04",
+        "categorie": "achtergrond"
+    },{
+        "id": 193,
+        "titel": "En een aspirientje",
+        "tijd": 90,
+        "datum": "2021-01-11",
+        "categorie": "nieuws"
+    },{
+        "id": 194,
+        "titel": "De toiletten van de Efteling",
+        "tijd": 98,
+        "datum": "2021-01-18",
+        "categorie": "achtergrond"
+    },{
+        "id": 195,
+        "titel": "De wolkenkrabber van Vrouw Holle",
+        "tijd": 108,
+        "datum": "2021-01-25",
+        "categorie": "nieuws"
+    },{
+        "id": 196,
+        "titel": "Efteling en media (deel 1)",
+        "tijd": 137,
+        "datum": "2021-02-01",
+        "categorie": "achtergrond"
+    },{
+        "id": 197,
+        "titel": "Jij bent de nuchtere",
+        "tijd": 113,
+        "datum": "2021-02-08",
+        "categorie": "nieuws"
+    },{
+        "id": 198,
+        "titel": "In gesprek met Reinoud van Assendelft de Coningh",
+        "tijd": 156,
+        "datum": "2021-02-15",
+        "categorie": "interview"
+    },{
+        "id": 199,
+        "titel": "Achter de schermen bij Kleine Boodschap",
+        "tijd": 153,
+        "datum": "2021-02-17",
+        "categorie": "achtergrond"
+    },{
+        "id": 200,
+        "titel": "Om tafel met Efteling-ontwerpers Sander, Jeroen en Ronald",
+        "tijd": 106,
+        "datum": "2021-02-22",
+        "categorie": "interview"
     }
 ]
