@@ -930,5 +930,65 @@
         "tijd": 153,
         "datum": "2020-05-25",
         "categorie": "achtergrond"
+    },{
+        "id": 156,
+        "titel": "De Grote Heropeningsshow",
+        "tijd": 166,
+        "datum": "2020-06-01",
+        "categorie": "nieuws"
+    },{
+        "id": 157,
+        "titel": "Ouder en wijzer?",
+        "tijd": 60,
+        "datum": "2020-06-08",
+        "categorie": "achtergrond"
+    },{
+        "id": 158,
+        "titel": "Verstopte bestemmingen",
+        "tijd": 138,
+        "datum": "2020-06-15",
+        "categorie": "nieuws"
+    },{
+        "id": 159,
+        "titel": "Max & Moritz",
+        "tijd": 113,
+        "datum": "2020-06-22",
+        "categorie": "reportage"
+    },{
+        "id": 160,
+        "titel": "De vlieg is nog aan het winnen",
+        "tijd": 117,
+        "datum": "2020-06-29",
+        "categorie": "nieuws"
+    },{
+        "id": 161,
+        "titel": "Reacties van luisteraars",
+        "tijd": 70,
+        "datum": "2020-07-06",
+        "categorie": "achtergrond"
+    },{
+        "id": 162,
+        "titel": "IJskoffie klinkt spannender dan Drenthe",
+        "tijd": 105,
+        "datum": "2020-07-13",
+        "categorie": "nieuws"
+    },{
+        "id": 163,
+        "titel": "Onze masterplannen voor de Efteling",
+        "tijd": 108,
+        "datum": "2020-07-20",
+        "categorie": "achtergrond"
+    },{
+        "id": 164,
+        "titel": "Volgens mij was de LSD in de aanbieding",
+        "tijd": 103,
+        "datum": "2020-07-27",
+        "categorie": "nieuws"
+    },{
+        "id": 165,
+        "titel": "Jullie Pieckblauwe luchten",
+        "tijd": 77,
+        "datum": "2020-08-03",
+        "categorie": "achtergrond"
     }
 ]
