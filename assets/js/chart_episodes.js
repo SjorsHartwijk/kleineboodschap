@@ -56,11 +56,20 @@ function loadEpisodes() {
                     }
                   },
                 scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
+                    x: {
+                      title: {
+                        display: false,
+                      }
+                    },
+                    y: {
+                      title: {
+                        display: true,
+                        text: 'Minuten'
+                      },
+                      ticks: {
+                        stepSize: 30
+                      }
+                    }
                 }
             }
         });
