@@ -1,2283 +1,2661 @@
 [
     {
-      "id": 1,
-      "titel": "Strookrijk",
-      "tijd": 77,
-      "datum": "2017-12-30",
-      "categorie": "achtergrond"
-    },{
-      "id": 2,
-      "titel": "Nieuwe rotsdeur in steengoede darkride",
-      "tijd": 31,
-      "datum": "2018-01-02",
-      "categorie": "nieuws"
-    },{
-      "id": 3,
-      "titel": "Interview met Efteling-icoon Mari van Heumen",
-      "tijd": 81,
-      "datum": "2018-01-08",
-      "categorie": "interview"
-    },{
-        "id": 4,
+        "id": "1",
+        "titel": "Strookrijk",
+        "tijd": "77",
+        "datum": "2017-12-30",
+        "categorie": "achtergrond"
+    },
+    {
+        "id": "2",
+        "titel": "Nieuwe rotsdeur in steengoede darkride",
+        "tijd": "31",
+        "datum": "2018-01-02",
+        "categorie": "nieuws"
+    },
+    {
+        "id": "3",
+        "titel": "Interview met Efteling-icoon Mari van Heumen",
+        "tijd": "81",
+        "datum": "2018-01-08",
+        "categorie": "interview"
+    },
+    {
+        "id": "4",
         "titel": "Dat souvenir interesseert me geen moer",
-        "tijd": 65,
+        "tijd": "65",
         "datum": "2018-01-15",
         "categorie": "nieuws"
     },
     {
-        "id": 5,
+        "id": "5",
         "titel": "Een storm in een glas Hertog Jan",
-        "tijd": 55,
+        "tijd": "55",
         "datum": "2018-01-22",
         "categorie": "nieuws"
-    },{
-        "id": 6,
+    },
+    {
+        "id": "6",
         "titel": "Onze 10 favoriete plekken in het Efteling park",
-        "tijd": 56,
+        "tijd": "56",
         "datum": "2018-01-29",
         "categorie": "achtergrond"
-    },{
-        "id": 7,
+    },
+    {
+        "id": "7",
         "titel": "Tips voor een dagje Efteling met kleine kinderen",
-        "tijd": 73,
+        "tijd": "73",
         "datum": "2018-02-05",
         "categorie": "achtergrond"
-    },{
-        "id": 8,
+    },
+    {
+        "id": "8",
         "titel": "Ons Fons",
-        "tijd": 94,
+        "tijd": "94",
         "datum": "2018-02-12",
         "categorie": "nieuws"
-    },{
-        "id": 9,
+    },
+    {
+        "id": "9",
         "titel": "Fotograferen in de Efteling met Kris van de Sande",
-        "tijd": 56,
+        "tijd": "56",
         "datum": "2018-02-19",
         "categorie": "interview"
-    },{
-        "id": 10,
+    },
+    {
+        "id": "10",
         "titel": "Koffiedik kijken",
-        "tijd": 63,
+        "tijd": "63",
         "datum": "2018-02-26",
         "categorie": "nieuws"
-    },{
-        "id": 11,
+    },
+    {
+        "id": "11",
         "titel": "Symbolica 8 maanden na opening",
-        "tijd": 63,
+        "tijd": "63",
         "datum": "2018-03-05",
         "categorie": "achtergrond"
-    },{
-        "id": 12,
+    },
+    {
+        "id": "12",
         "titel": "Ontwerpbestemmingsplan Wereld van de Efteling 2030 (deel 1)",
-        "tijd": 74,
+        "tijd": "74",
         "datum": "2018-03-12",
         "categorie": "achtergrond"
-    },{
-        "id": 13,
+    },
+    {
+        "id": "13",
         "titel": "Ontwerpbestemmingsplan Wereld van de Efteling 2030 (deel 2)",
-        "tijd": 47,
+        "tijd": "47",
         "datum": "2018-03-19",
         "categorie": "achtergrond"
-    },{
-        "id": 14,
+    },
+    {
+        "id": "14",
         "titel": "Het Vrolijkste nieuws in decennia",
-        "tijd": 63,
+        "tijd": "63",
         "datum": "2018-03-26",
         "categorie": "nieuws"
-    },{
-        "id": 15,
+    },
+    {
+        "id": "15",
         "titel": "Heropening python",
-        "tijd": 59,
+        "tijd": "59",
         "datum": "2018-03-31",
         "categorie": "reportage"
-    },{
-        "id": 16,
+    },
+    {
+        "id": "16",
         "titel": "Er mist daar iets",
-        "tijd": 70,
+        "tijd": "70",
         "datum": "2018-04-02",
         "categorie": "nieuws"
-    },{
-        "id": 17,
+    },
+    {
+        "id": "17",
         "titel": "Een kapbeitel overstemmen",
-        "tijd": 75,
+        "tijd": "75",
         "datum": "2018-04-09",
         "categorie": "nieuws"
-    },{
-        "id": 18,
+    },
+    {
+        "id": "18",
         "titel": "Dromen over 2030",
-        "tijd": 61,
+        "tijd": "61",
         "datum": "2018-04-16",
         "categorie": "achtergrond"
-    },{
-        "id": 19,
+    },
+    {
+        "id": "19",
         "titel": "Advocaat Wolf",
-        "tijd": 62,
+        "tijd": "62",
         "datum": "2018-04-23",
         "categorie": "nieuws"
-    },{
-        "id": 20,
+    },
+    {
+        "id": "20",
         "titel": "Roversnest",
-        "tijd": 60,
+        "tijd": "60",
         "datum": "2018-04-30",
         "categorie": "nieuws"
-    },{
-        "id": 21,
+    },
+    {
+        "id": "21",
         "titel": "'t Verdiende Loon",
-        "tijd": 15,
+        "tijd": "15",
         "datum": "2018-05-02",
         "categorie": "achtergrond"
-    },{
-        "id": 22,
+    },
+    {
+        "id": "22",
         "titel": "Liefde voor de Efteling",
-        "tijd": 60,
+        "tijd": "60",
         "datum": "2018-05-07",
         "categorie": "achtergrond"
-    },{
-        "id": 23,
+    },
+    {
+        "id": "23",
         "titel": "Reacties van luisteraars",
-        "tijd": 36,
+        "tijd": "36",
         "datum": "2018-05-10",
         "categorie": "nieuws"
-    },{
-        "id": 24,
+    },
+    {
+        "id": "24",
         "titel": "De Bezorgde Vegaburgers",
-        "tijd": 98,
+        "tijd": "98",
         "datum": "2018-05-14",
         "categorie": "nieuws"
-    },{
-        "id": 25,
+    },
+    {
+        "id": "25",
         "titel": "Tips voor een regenachtige dag in de Efteling",
-        "tijd": 42,
+        "tijd": "42",
         "datum": "2018-05-21",
         "categorie": "achtergrond"
-    },{
-        "id": 26,
+    },
+    {
+        "id": "26",
         "titel": "Fotografievragen voor Kris van de Sande",
-        "tijd": 54,
+        "tijd": "54",
         "datum": "2018-05-28",
         "categorie": "interview"
-    },{
-        "id": 27,
+    },
+    {
+        "id": "27",
         "titel": "Onze favoriete Eftelingmuziek",
-        "tijd": 96,
+        "tijd": "96",
         "datum": "2018-06-04",
         "categorie": "achtergrond"
-    },{
-        "id": 28,
+    },
+    {
+        "id": "28",
         "titel": "Storytelling met Philip Corsius",
-        "tijd": 53,
+        "tijd": "53",
         "datum": "2018-06-11",
         "categorie": "achtergrond"
-    },{
-        "id": 29,
+    },
+    {
+        "id": "29",
         "titel": "Genoveva? Witte gij da?",
-        "tijd": 121,
+        "tijd": "121",
         "datum": "2018-06-18",
         "categorie": "nieuws"
-    },{
-        "id": 30,
+    },
+    {
+        "id": "30",
         "titel": "Dode beelden stinken zo",
-        "tijd": 73,
+        "tijd": "73",
         "datum": "2018-06-25",
         "categorie": "nieuws"
-    },{
-        "id": 31,
+    },
+    {
+        "id": "31",
         "titel": "Onderhoud in de Efteling",
-        "tijd": 62,
+        "tijd": "62",
         "datum": "2018-07-02",
         "categorie": "achtergrond"
-    },{
-        "id": 32,
+    },
+    {
+        "id": "32",
         "titel": "Een roze hazmat suit",
-        "tijd": 67,
+        "tijd": "67",
         "datum": "2018-07-09",
         "categorie": "nieuws"
-    },{
-        "id": 33,
+    },
+    {
+        "id": "33",
         "titel": "Onze wensen voor de Efteling",
-        "tijd": 67,
+        "tijd": "67",
         "datum": "2018-07-16",
         "categorie": "achtergrond"
-    },{
-        "id": 34,
+    },
+    {
+        "id": "34",
         "titel": "GuestHouse Hotel",
-        "tijd": 71,
+        "tijd": "71",
         "datum": "2018-07-19",
         "categorie": "reportage"
-    },{
-        "id": 35,
+    },
+    {
+        "id": "35",
         "titel": "Die is het achtbaanspoor bijster",
-        "tijd": 82,
+        "tijd": "82",
         "datum": "2018-07-23",
         "categorie": "nieuws"
-    },{
-        "id": 36,
+    },
+    {
+        "id": "36",
         "titel": "Opening van de Vrolijke Noot",
-        "tijd": 47,
+        "tijd": "47",
         "datum": "2018-07-26",
         "categorie": "reportage"
-    },{
-        "id": 37,
+    },
+    {
+        "id": "37",
         "titel": "Tips voor een warme dag in de Efteling",
-        "tijd": 55,
+        "tijd": "55",
         "datum": "2018-07-30",
         "categorie": "achtergrond"
-    },{
-        "id": 38,
+    },
+    {
+        "id": "38",
         "titel": "Die mot je nie",
-        "tijd": 69,
+        "tijd": "69",
         "datum": "2018-08-06",
         "categorie": "nieuws"
-    },{
-        "id": 39,
+    },
+    {
+        "id": "39",
         "titel": "Komt het nieuwe Reizenrijk er zo uit te zien...?",
-        "tijd": 47,
+        "tijd": "47",
         "datum": "2018-08-07",
         "categorie": "achtergrond"
-    },{
-        "id": 40,
+    },
+    {
+        "id": "40",
         "titel": "Eten en drinken in de Efteling",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2018-08-13",
         "categorie": "achtergrond"
-    },{
-        "id": 41,
+    },
+    {
+        "id": "41",
         "titel": "Avondboodschap",
-        "tijd": 63,
+        "tijd": "63",
         "datum": "2018-08-16",
         "categorie": "reportage"
-    },{
-        "id": 42,
+    },
+    {
+        "id": "42",
         "titel": "Allez Tom Tom",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2018-08-20",
         "categorie": "nieuws"
-    },{
-        "id": 43,
+    },
+    {
+        "id": "43",
         "titel": "Reacties van luisteraars",
-        "tijd": 41,
+        "tijd": "41",
         "datum": "2018-08-22",
         "categorie": "achtergrond"
-    },{
-        "id": 44,
+    },
+    {
+        "id": "44",
         "titel": "Gerestaureerde Jezus-afbeelding in een kerk",
-        "tijd": 85,
+        "tijd": "85",
         "datum": "2018-08-27",
         "categorie": "nieuws"
-    },{
-        "id": 45,
+    },
+    {
+        "id": "45",
         "titel": "Ons favoriete entertainment in de Efteling",
-        "tijd": 76,
+        "tijd": "76",
         "datum": "2018-09-03",
         "categorie": "achtergrond"
-    },{
-        "id": 46,
+    },
+    {
+        "id": "46",
         "titel": "Seizoenen in de Efteling",
-        "tijd": 75,
+        "tijd": "75",
         "datum": "2018-09-10",
         "categorie": "achtergrond"
-    },{
-        "id": 47,
+    },
+    {
+        "id": "47",
         "titel": "Het bestemmingsplandemonium",
-        "tijd": 155,
+        "tijd": "155",
         "datum": "2018-09-17",
         "categorie": "nieuws"
-    },{
-        "id": 48,
+    },
+    {
+        "id": "48",
         "titel": "Première CARO",
-        "tijd": 57,
+        "tijd": "57",
         "datum": "2018-09-19",
         "categorie": "reportage"
-    },{
-        "id": 49,
+    },
+    {
+        "id": "49",
         "titel": "Onze favoriete parken buiten de Efteling",
-        "tijd": 81,
+        "tijd": "81",
         "datum": "2018-09-24",
         "categorie": "achtergrond"
-    },{
-        "id": 50,
+    },
+    {
+        "id": "50",
         "titel": "Een flesje kinderchampagne",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2018-10-01",
         "categorie": "nieuws"
-    },{
-        "id": 51,
+    },
+    {
+        "id": "51",
         "titel": "Fata Morgana tijdens onderhoud",
-        "tijd": 30,
+        "tijd": "30",
         "datum": "2018-10-04",
         "categorie": "reportage"
-    },{
-        "id": 52,
+    },
+    {
+        "id": "52",
         "titel": "Storytelling hoofdstuk 2 met Philip Corsius",
-        "tijd": 60,
+        "tijd": "60",
         "datum": "2018-10-08",
         "categorie": "achtergrond"
-    },{
-        "id": 53,
+    },
+    {
+        "id": "53",
         "titel": "Ik wil niet dat m’n bossen een lunapark worden",
-        "tijd": 101,
+        "tijd": "101",
         "datum": "2018-10-15",
         "categorie": "nieuws"
-    },{
-        "id": 54,
+    },
+    {
+        "id": "54",
         "titel": "Reacties van luisteraars",
-        "tijd": 66,
+        "tijd": "66",
         "datum": "2018-10-22",
         "categorie": "achtergrond"
-    },{
-        "id": 55,
+    },
+    {
+        "id": "55",
         "titel": "Gegarandeerd bingo",
-        "tijd": 60,
+        "tijd": "60",
         "datum": "2018-10-29",
         "categorie": "nieuws"
-    },{
-        "id": 56,
+    },
+    {
+        "id": "56",
         "titel": "Achtbanen top 6",
-        "tijd": 81,
+        "tijd": "81",
         "datum": "2018-11-05",
         "categorie": "achtergrond"
-    },{
-        "id": 57,
+    },
+    {
+        "id": "57",
         "titel": "Die van Pardoes is groter",
-        "tijd": 80,
+        "tijd": "80",
         "datum": "2018-11-12",
         "categorie": "nieuws"
-    },{
-        "id": 58,
+    },
+    {
+        "id": "58",
         "titel": "De toekomst van het Sprookjesbos",
-        "tijd": 63,
+        "tijd": "63",
         "datum": "2018-11-19",
         "categorie": "achtergrond"
-    },{
-        "id": 59,
+    },
+    {
+        "id": "59",
         "titel": "Die benen hebben onderhoud nodig",
-        "tijd": 108,
+        "tijd": "108",
         "datum": "2018-11-26",
         "categorie": "nieuws"
-    },{
-        "id": 60,
+    },
+    {
+        "id": "60",
         "titel": "Wessel Wit over Looopings, Efteling en (fan)media",
-        "tijd": 83,
+        "tijd": "83",
         "datum": "2018-12-03",
         "categorie": "interview"
-    },{
-        "id": 61,
+    },
+    {
+        "id": "61",
         "titel": "Animaltronics",
-        "tijd": 106,
+        "tijd": "106",
         "datum": "2018-12-10",
         "categorie": "nieuws"
-    },{
-        "id": 62,
+    },
+    {
+        "id": "62",
         "titel": "Mario Dieltjes over het groen in de Efteling",
-        "tijd": 59,
+        "tijd": "59",
         "datum": "2018-12-17",
         "categorie": "interview"
-    },{
-        "id": 63,
+    },
+    {
+        "id": "63",
         "titel": "Eftemal Kingdom",
-        "tijd": 99,
+        "tijd": "99",
         "datum": "2018-12-24",
         "categorie": "nieuws"
-    },{
-        "id": 64,
+    },
+    {
+        "id": "64",
         "titel": "Tips voor een winters dagje Efteling",
-        "tijd": 50,
+        "tijd": "50",
         "datum": "2018-12-31",
         "categorie": "achtergrond"
-    },{
-        "id": 65,
+    },
+    {
+        "id": "65",
         "titel": "Kabouterziektes",
-        "tijd": 69,
+        "tijd": "69",
         "datum": "2019-01-07",
         "categorie": "nieuws"
-    },{
-        "id": 66,
+    },
+    {
+        "id": "66",
         "titel": "Reacties van luisteraars",
-        "tijd": 42,
+        "tijd": "42",
         "datum": "2019-01-10",
         "categorie": "achtergrond"
-    },{
-        "id": 67,
+    },
+    {
+        "id": "67",
         "titel": "Marwin van de Hoeve over De Vijf Zintuigen",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2019-01-14",
         "categorie": "interview"
-    },{
-        "id": 68,
+    },
+    {
+        "id": "68",
         "titel": "Sprookjesboom is door een Heras hekwerk heen gerend",
-        "tijd": 93,
+        "tijd": "93",
         "datum": "2019-01-21",
         "categorie": "nieuws"
-    },{
-        "id": 69,
+    },
+    {
+        "id": "69",
         "titel": "Evenementideeën voor de Efteling",
-        "tijd": 57,
+        "tijd": "57",
         "datum": "2019-01-28",
         "categorie": "achtergrond"
-    },{
-        "id": 70,
+    },
+    {
+        "id": "70",
         "titel": "Carnaval Restyle",
-        "tijd": 55,
+        "tijd": "55",
         "datum": "2019-01-29",
         "categorie": "nieuws"
-    },{
-        "id": 71,
+    },
+    {
+        "id": "71",
         "titel": "Fantasievliegers",
-        "tijd": 73,
+        "tijd": "73",
         "datum": "2019-02-04",
         "categorie": "nieuws"
-    },{
-        "id": 72,
+    },
+    {
+        "id": "72",
         "titel": "Een Efteling-plattegrond uit 1991",
-        "tijd": 73,
+        "tijd": "73",
         "datum": "2019-02-11",
         "categorie": "achtergrond"
-    },{
-        "id": 73,
+    },
+    {
+        "id": "73",
         "titel": "Sprookjesboombroccoli",
-        "tijd": 99,
+        "tijd": "99",
         "datum": "2019-02-14",
         "categorie": "nieuws"
-    },{
-        "id": 74,
+    },
+    {
+        "id": "74",
         "titel": "Studiotour bij René Merkelbach",
-        "tijd": 57,
+        "tijd": "57",
         "datum": "2019-02-18",
         "categorie": "achtergrond"
-    },{
-        "id": 75,
+    },
+    {
+        "id": "75",
         "titel": "Grote Pardoes-sloffen",
-        "tijd": 102,
+        "tijd": "102",
         "datum": "2019-02-25",
         "categorie": "nieuws"
-    },{
-        "id": 76,
+    },
+    {
+        "id": "76",
         "titel": "De Vijf Zintuigen Efteling Pubquiz 2019",
-        "tijd": 38,
+        "tijd": "38",
         "datum": "2019-02-27",
         "categorie": "reportage"
-    },{
-        "id": 77,
+    },
+    {
+        "id": "77",
         "titel": "Uitspraak Raad van State voorlopige voorziening",
-        "tijd": 21,
+        "tijd": "21",
         "datum": "2019-03-01",
         "categorie": "nieuws"
-    },{
-        "id": 78,
+    },
+    {
+        "id": "78",
         "titel": "Wat kunnen de Efteling en andere parken van elkaar leren",
-        "tijd": 84,
+        "tijd": "84",
         "datum": "2019-03-04",
         "categorie": "achtergrond"
-    },{
-        "id": 79,
+    },
+    {
+        "id": "79",
         "titel": "Reacties van luisteraars",
-        "tijd": 26,
+        "tijd": "26",
         "datum": "2019-03-07",
         "categorie": "achtergrond"
-    },{
-        "id": 80,
+    },
+    {
+        "id": "80",
         "titel": "Ik wil wel met jou in De Zweef",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2019-03-11",
         "categorie": "nieuws"
-    },{
-        "id": 81,
+    },
+    {
+        "id": "81",
         "titel": "Onze top-7 sprookjes in het Sprookjesbos",
-        "tijd": 59,
+        "tijd": "59",
         "datum": "2019-03-18",
         "categorie": "achtergrond"
-    },{
-        "id": 82,
+    },
+    {
+        "id": "82",
         "titel": "Een Doorn in het oog",
-        "tijd": 105,
+        "tijd": "105",
         "datum": "2019-03-25",
         "categorie": "nieuws"
-    },{
-        "id": 83,
+    },
+    {
+        "id": "83",
         "titel": "Een ode aan Pandadroom en de schilderijen in het Carrouselpaleis",
-        "tijd": 63,
+        "tijd": "63",
         "datum": "2019-04-01",
         "categorie": "achtergrond"
-    },{
-        "id": 84,
+    },
+    {
+        "id": "84",
         "titel": "Baron 1898",
-        "tijd": 70,
+        "tijd": "70",
         "datum": "2019-04-08",
         "categorie": "achtergrond"
-    },{
-        "id": 85,
+    },
+    {
+        "id": "85",
         "titel": "Het wordt wel warm onder dat dekje",
-        "tijd": 103,
+        "tijd": "103",
         "datum": "2019-04-15",
         "categorie": "nieuws"
-    },{
-        "id": 86,
+    },
+    {
+        "id": "86",
         "titel": "Een rondleiding over Parck Kaatsheuvel",
-        "tijd": 17,
+        "tijd": "17",
         "datum": "2019-04-17",
         "categorie": "achtergrond"
-    },{
-        "id": 87,
+    },
+    {
+        "id": "87",
         "titel": "Efteling bordspellen",
-        "tijd": 102,
+        "tijd": "102",
         "datum": "2019-04-22",
         "categorie": "achtergrond"
-    },{
-        "id": 88,
+    },
+    {
+        "id": "88",
         "titel": "De Efteling voor 1952 - Deel 1",
-        "tijd": 103,
+        "tijd": "103",
         "datum": "2019-04-29",
         "categorie": "achtergrond"
-    },{
-        "id": 89,
+    },
+    {
+        "id": "89",
         "titel": "Die uitwerpselen zijn niet op schaal",
-        "tijd": 116,
+        "tijd": "116",
         "datum": "2019-05-06",
         "categorie": "nieuws"
-    },{
-        "id": 90,
+    },
+    {
+        "id": "90",
         "titel": "De Efteling voor 1952 - Deel 2",
-        "tijd": 85,
+        "tijd": "85",
         "datum": "2019-05-13",
         "categorie": "achtergrond"
-    },{
-        "id": 91,
+    },
+    {
+        "id": "91",
         "titel": "Goeie pijpenbuigers",
-        "tijd": 100,
+        "tijd": "100",
         "datum": "2019-05-20",
         "categorie": "nieuws"
-    },{
-        "id": 92,
+    },
+    {
+        "id": "92",
         "titel": "Carnaval Festival heropening",
-        "tijd": 43,
+        "tijd": "43",
         "datum": "2019-05-23",
         "categorie": "achtergrond"
-    },{
-        "id": 93,
+    },
+    {
+        "id": "93",
         "titel": "Reacties van luisteraars",
-        "tijd": 58,
+        "tijd": "58",
         "datum": "2019-05-27",
         "categorie": "achtergrond"
-    },{
-        "id": 94,
+    },
+    {
+        "id": "94",
         "titel": "Ruud Bos documentaire making-of",
-        "tijd": 66,
+        "tijd": "66",
         "datum": "2019-05-31",
         "categorie": "interview"
-    },{
-        "id": 95,
+    },
+    {
+        "id": "95",
         "titel": "Niet Efteling-Monkey Town",
-        "tijd": 115,
+        "tijd": "115",
         "datum": "2019-06-03",
         "categorie": "nieuws"
-    },{
-        "id": 96,
+    },
+    {
+        "id": "96",
         "titel": "Tips voor een drukke dag in de Efteling",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2019-06-10",
         "categorie": "achtergrond"
-    },{
-        "id": 97,
+    },
+    {
+        "id": "97",
         "titel": "Team Fata vs. Team Joris",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2019-06-17",
         "categorie": "nieuws"
-    },{
-        "id": 98,
+    },
+    {
+        "id": "98",
         "titel": "Onze favoriete details in de Efteling",
-        "tijd": 56,
+        "tijd": "56",
         "datum": "2019-06-24",
         "categorie": "achtergrond"
-    },{
-        "id": 99,
+    },
+    {
+        "id": "99",
         "titel": "Alsof ze curling aan het spelen waren",
-        "tijd": 116,
+        "tijd": "116",
         "datum": "2019-07-01",
         "categorie": "nieuws"
-    },{
-        "id": 100,
+    },
+    {
+        "id": "100",
         "titel": "Kleine Boodschap 100",
-        "tijd": 117,
+        "tijd": "117",
         "datum": "2019-07-08",
         "categorie": "interview"
-    },{
-        "id": 101,
+    },
+    {
+        "id": "101",
         "titel": "Nieuwe wisseltentoonstelling in het Efteling Museum",
-        "tijd": 22,
+        "tijd": "22",
         "datum": "2019-07-10",
         "categorie": "reportage"
-    },{
-        "id": 102,
+    },
+    {
+        "id": "102",
         "titel": "Wolf tegen Lam",
-        "tijd": 98,
+        "tijd": "98",
         "datum": "2019-07-15",
         "categorie": "nieuws"
-    },{
-        "id": 103,
+    },
+    {
+        "id": "103",
         "titel": "Reacties van luisteraars",
-        "tijd": 42,
+        "tijd": "42",
         "datum": "2019-07-18",
         "categorie": "achtergrond"
-    },{
-        "id": 104,
+    },
+    {
+        "id": "104",
         "titel": "Meer fotografie in de Efteling met Kris Van de Sande",
-        "tijd": 47,
+        "tijd": "47",
         "datum": "2019-07-22",
         "categorie": "interview"
-    },{
-        "id": 105,
+    },
+    {
+        "id": "105",
         "titel": "Jullie favoriete sprookjes (en reacties)",
-        "tijd": 28,
+        "tijd": "28",
         "datum": "2019-07-25",
         "categorie": "achtergrond"
-    },{
-        "id": 106,
+    },
+    {
+        "id": "106",
         "titel": "Een rondje door de Wereld van de Efteling",
-        "tijd": 142,
+        "tijd": "142",
         "datum": "2019-07-29",
         "categorie": "achtergrond"
-    },{
-        "id": 107,
+    },
+    {
+        "id": "107",
         "titel": "Efteling-bieren",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2019-08-05",
         "categorie": "achtergrond"
-    },{
-        "id": 108,
+    },
+    {
+        "id": "108",
         "titel": "Twinkel, twinkel, yeah, yeah, yeah!",
-        "tijd": 158,
+        "tijd": "158",
         "datum": "2019-08-12",
         "categorie": "nieuws"
-    },{
-        "id": 109,
+    },
+    {
+        "id": "109",
         "titel": "Hele kleine puntjes",
-        "tijd": 52,
+        "tijd": "52",
         "datum": "2019-08-19",
         "categorie": "nieuws"
-    },{
-        "id": 110,
+    },
+    {
+        "id": "110",
         "titel": "Jullie favoriete details",
-        "tijd": 34,
+        "tijd": "34",
         "datum": "2019-08-21",
         "categorie": "achtergrond"
-    },{
-        "id": 111,
+    },
+    {
+        "id": "111",
         "titel": "De mooiste gebouwen in de Efteling",
-        "tijd": 67,
+        "tijd": "67",
         "datum": "2019-08-26",
         "categorie": "achtergrond"
-    },{
-        "id": 111,
+    },
+    {
+        "id": "111",
         "titel": "Watergate",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2019-09-02",
         "categorie": "nieuws"
-    },{
-        "id": 113,
+    },
+    {
+        "id": "113",
         "titel": "Afscheid van de Bob",
-        "tijd": 68,
+        "tijd": "68",
         "datum": "2019-09-04",
         "categorie": "reportage"
-    },{
-        "id": 114,
+    },
+    {
+        "id": "114",
         "titel": "De magie van Verticaal gaan",
-        "tijd": 74,
+        "tijd": "74",
         "datum": "2019-09-09",
         "categorie": "achtergrond"
-    },{
-        "id": 115,
+    },
+    {
+        "id": "115",
         "titel": "Anton Koekblik",
-        "tijd": 98,
+        "tijd": "98",
         "datum": "2019-09-16",
         "categorie": "nieuws"
-    },{
-        "id": 116,
+    },
+    {
+        "id": "116",
         "titel": "Niet-gerealiseerde Efteling-projecten (deel 1)",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2019-09-23",
         "categorie": "achtergrond"
-    },{
-        "id": 117,
+    },
+    {
+        "id": "117",
         "titel": "De opening van De zes Zwanen",
-        "tijd": 74,
+        "tijd": "74",
         "datum": "2019-09-30",
         "categorie": "reportage"
-    },{
-        "id": 118,
+    },
+    {
+        "id": "118",
         "titel": "Tussen de bielzen en de zitkuil",
-        "tijd": 121,
+        "tijd": "121",
         "datum": "2019-10-07",
         "categorie": "nieuws"
-    },{
-        "id": 119,
+    },
+    {
+        "id": "119",
         "titel": "Animatronics in de Efteling",
-        "tijd": 78,
+        "tijd": "78",
         "datum": "2019-10-14",
         "categorie": "achtergrond"
-    },{
-        "id": 120,
+    },
+    {
+        "id": "120",
         "titel": "Winterballen",
-        "tijd": 96,
+        "tijd": "96",
         "datum": "2019-10-21",
         "categorie": "nieuws"
-    },{
-        "id": 121,
+    },
+    {
+        "id": "121",
         "titel": "Niet-gerealiseerde Efteling-projecten (deel 2)",
-        "tijd": 68,
+        "tijd": "68",
         "datum": "2019-10-28",
         "categorie": "achtergrond"
-    },{
-        "id": 122,
+    },
+    {
+        "id": "122",
         "titel": "Max + Music",
-        "tijd": 114,
+        "tijd": "114",
         "datum": "2019-11-04",
         "categorie": "nieuws"
-    },{
-        "id": 123,
+    },
+    {
+        "id": "123",
         "titel": "Efteling en duurzaamheid met Wyke Smit",
-        "tijd": 65,
+        "tijd": "65",
         "datum": "2019-11-11",
         "categorie": "interview"
-    },{
-        "id": 124,
+    },
+    {
+        "id": "124",
         "titel": "Polles Worsten Imperium",
-        "tijd": 110,
+        "tijd": "110",
         "datum": "2019-11-18",
         "categorie": "nieuws"
-    },{
-        "id": 125,
+    },
+    {
+        "id": "125",
         "titel": "Niet-gerealiseerde Efteling-projecten (deel 3)",
-        "tijd": 67,
+        "tijd": "67",
         "datum": "2019-11-25",
         "categorie": "achtergrond"
-    },{
-        "id": 126,
+    },
+    {
+        "id": "126",
         "titel": "De Uithongerige Machinist",
-        "tijd": 105,
+        "tijd": "105",
         "datum": "2019-12-02",
         "categorie": "nieuws"
-    },{
-        "id": 127,
+    },
+    {
+        "id": "127",
         "titel": "De opening van Fabula",
-        "tijd": 124,
+        "tijd": "124",
         "datum": "2019-12-09",
         "categorie": "reportage"
-    },{
-        "id": 128,
+    },
+    {
+        "id": "128",
         "titel": "Herauten Horror",
-        "tijd": 101,
+        "tijd": "101",
         "datum": "2019-12-16",
         "categorie": "nieuws"
-    },{
-        "id": 129,
+    },
+    {
+        "id": "129",
         "titel": "Onze favoriete karakters in de Efteling",
-        "tijd": 58,
+        "tijd": "58",
         "datum": "2019-12-23",
         "categorie": "achtergrond"
-    },{
-        "id": 130,
+    },
+    {
+        "id": "130",
         "titel": "Reacties van luisteraars",
-        "tijd": 60,
+        "tijd": "60",
         "datum": "2019-12-25",
         "categorie": "achtergrond"
-    },{
-        "id": 131,
+    },
+    {
+        "id": "131",
         "titel": "Een ode aan het Waterorgel",
-        "tijd": 87,
+        "tijd": "87",
         "datum": "2019-12-30",
         "categorie": "achtergrond"
-    },{
-        "id": 132,
+    },
+    {
+        "id": "132",
         "titel": "Hotel de Bottle",
-        "tijd": 45,
+        "tijd": "45",
         "datum": "2020-01-01",
         "categorie": "achtergrond"
-    },{
-        "id": 133,
+    },
+    {
+        "id": "133",
         "titel": "Aldimatronics",
-        "tijd": 127,
+        "tijd": "127",
         "datum": "2020-01-06",
         "categorie": "nieuws"
-    },{
-        "id": 134,
+    },
+    {
+        "id": "134",
         "titel": "De magie van het verzamelen",
-        "tijd": 89,
+        "tijd": "89",
         "datum": "2020-01-13",
         "categorie": "achtergrond"
-    },{
-        "id": 135,
+    },
+    {
+        "id": "135",
         "titel": "Weet je wat er ook viral gaat?",
-        "tijd": 77,
+        "tijd": "77",
         "datum": "2020-01-20",
         "categorie": "nieuws"
-    },{
-        "id": 136,
+    },
+    {
+        "id": "136",
         "titel": "Bosrijk audio-tour",
-        "tijd": 59,
+        "tijd": "59",
         "datum": "2020-01-27",
         "categorie": "achtergrond"
-    },{
-        "id": 137,
+    },
+    {
+        "id": "137",
         "titel": "In gesprek met Erik van den Brand",
-        "tijd": 59,
+        "tijd": "59",
         "datum": "2020-02-03",
         "categorie": "interview"
-    },{
-        "id": 138,
+    },
+    {
+        "id": "138",
         "titel": "Teer-aan-m’n-schoen",
-        "tijd": 123,
+        "tijd": "123",
         "datum": "2020-02-10",
         "categorie": "nieuws"
-    },{
-        "id": 139,
+    },
+    {
+        "id": "139",
         "titel": "’t Loonsche Land audio-tour",
-        "tijd": 49,
+        "tijd": "49",
         "datum": "2020-02-17",
         "categorie": "achtergrond"
-    },{
-        "id": 140,
+    },
+    {
+        "id": "140",
         "titel": "Een Halve Maen weg zitten peuzelen",
-        "tijd": 102,
+        "tijd": "102",
         "datum": "2020-02-24",
         "categorie": "nieuws"
-    },{
-        "id": 141,
+    },
+    {
+        "id": "141",
         "titel": "In gesprek met Cees Kikstra",
-        "tijd": 100,
+        "tijd": "100",
         "datum": "2020-03-02",
         "categorie": "interview"
-    },{
-        "id": 142,
+    },
+    {
+        "id": "142",
         "titel": "Hoeveelste was je nu geworden?",
-        "tijd": 123,
+        "tijd": "123",
         "datum": "2020-03-09",
         "categorie": "nieuws"
-    },{
-        "id": 143,
+    },
+    {
+        "id": "143",
         "titel": "Max + Moritz bouwplaats-tour",
-        "tijd": 56,
+        "tijd": "56",
         "datum": "2020-03-10",
         "categorie": "reportage"
-    },{
-        "id": 144,
+    },
+    {
+        "id": "144",
         "titel": "Klassieke muziek in de Efteling",
-        "tijd": 69,
+        "tijd": "69",
         "datum": "2020-03-16",
         "categorie": "achtergrond"
-    },{
-        "id": 145,
+    },
+    {
+        "id": "145",
         "titel": "Coronaval Festival",
-        "tijd": 101,
+        "tijd": "101",
         "datum": "2020-03-23",
         "categorie": "nieuws"
-    },{
-        "id": 146,
+    },
+    {
+        "id": "146",
         "titel": "Het Efteling Golfpark",
-        "tijd": 72,
+        "tijd": "72",
         "datum": "2020-03-30",
         "categorie": "achtergrond"
-    },{
-        "id": 147,
+    },
+    {
+        "id": "147",
         "titel": "Jullie favoriete karakters in de Efteling",
-        "tijd": 31,
+        "tijd": "31",
         "datum": "2020-04-01",
         "categorie": "achtergrond"
-    },{
-        "id": 148,
+    },
+    {
+        "id": "148",
         "titel": "Storm in plaswater",
-        "tijd": 123,
+        "tijd": "123",
         "datum": "2020-04-06",
         "categorie": "nieuws"
-    },{
-        "id": 149,
+    },
+    {
+        "id": "149",
         "titel": "Pieckblauwe luchten",
-        "tijd": 100,
+        "tijd": "100",
         "datum": "2020-04-13",
         "categorie": "achtergrond"
-    },{
-        "id": 150,
+    },
+    {
+        "id": "150",
         "titel": "Anderhalve meter ijs",
-        "tijd": 130,
+        "tijd": "130",
         "datum": "2020-04-20",
         "categorie": "nieuws"
-    },{
-        "id": 151,
+    },
+    {
+        "id": "151",
         "titel": "Werken bij de Efteling",
-        "tijd": 82,
+        "tijd": "82",
         "datum": "2020-04-27",
         "categorie": "nieuws"
-    },{
-        "id": 152,
+    },
+    {
+        "id": "152",
         "titel": "Corny Island",
-        "tijd": 79,
+        "tijd": "79",
         "datum": "2020-05-04",
         "categorie": "nieuws"
-    },{
-        "id": 153,
+    },
+    {
+        "id": "153",
         "titel": "Reacties van luisteraars",
-        "tijd": 57,
+        "tijd": "57",
         "datum": "2020-05-11",
         "categorie": "achtergrond"
-    },{
-        "id": 154,
+    },
+    {
+        "id": "154",
         "titel": "TjoepTjoep",
-        "tijd": 141,
+        "tijd": "141",
         "datum": "2020-05-18",
         "categorie": "nieuws"
-    },{
-        "id": 155,
+    },
+    {
+        "id": "155",
         "titel": "Efteling boeken",
-        "tijd": 153,
+        "tijd": "153",
         "datum": "2020-05-25",
         "categorie": "achtergrond"
-    },{
-        "id": 156,
+    },
+    {
+        "id": "156",
         "titel": "De Grote Heropeningsshow",
-        "tijd": 166,
+        "tijd": "166",
         "datum": "2020-06-01",
         "categorie": "nieuws"
-    },{
-        "id": 157,
+    },
+    {
+        "id": "157",
         "titel": "Ouder en wijzer?",
-        "tijd": 60,
+        "tijd": "60",
         "datum": "2020-06-08",
         "categorie": "achtergrond"
-    },{
-        "id": 158,
+    },
+    {
+        "id": "158",
         "titel": "Verstopte bestemmingen",
-        "tijd": 138,
+        "tijd": "138",
         "datum": "2020-06-15",
         "categorie": "nieuws"
-    },{
-        "id": 159,
+    },
+    {
+        "id": "159",
         "titel": "Max & Moritz",
-        "tijd": 113,
+        "tijd": "113",
         "datum": "2020-06-22",
         "categorie": "reportage"
-    },{
-        "id": 160,
+    },
+    {
+        "id": "160",
         "titel": "De vlieg is nog aan het winnen",
-        "tijd": 117,
+        "tijd": "117",
         "datum": "2020-06-29",
         "categorie": "nieuws"
-    },{
-        "id": 161,
+    },
+    {
+        "id": "161",
         "titel": "Reacties van luisteraars",
-        "tijd": 70,
+        "tijd": "70",
         "datum": "2020-07-06",
         "categorie": "achtergrond"
-    },{
-        "id": 162,
+    },
+    {
+        "id": "162",
         "titel": "IJskoffie klinkt spannender dan Drenthe",
-        "tijd": 105,
+        "tijd": "105",
         "datum": "2020-07-13",
         "categorie": "nieuws"
-    },{
-        "id": 163,
+    },
+    {
+        "id": "163",
         "titel": "Onze masterplannen voor de Efteling",
-        "tijd": 108,
+        "tijd": "108",
         "datum": "2020-07-20",
         "categorie": "achtergrond"
-    },{
-        "id": 164,
+    },
+    {
+        "id": "164",
         "titel": "Volgens mij was de LSD in de aanbieding",
-        "tijd": 103,
+        "tijd": "103",
         "datum": "2020-07-27",
         "categorie": "nieuws"
-    },{
-        "id": 165,
+    },
+    {
+        "id": "165",
         "titel": "Jullie Pieckblauwe luchten",
-        "tijd": 77,
+        "tijd": "77",
         "datum": "2020-08-03",
         "categorie": "achtergrond"
-    },{
-        "id": 166,
+    },
+    {
+        "id": "166",
         "titel": "Wat is écht Eftelings?",
-        "tijd": 81,
+        "tijd": "81",
         "datum": "2020-08-10",
         "categorie": "achtergrond"
-    },{
-        "id": 167,
+    },
+    {
+        "id": "167",
         "titel": "Een ode aan het Diorama",
-        "tijd": 70,
+        "tijd": "70",
         "datum": "2020-08-17",
         "categorie": "achtergrond"
-    },{
-        "id": 168,
+    },
+    {
+        "id": "168",
         "titel": "De geschiedenis van de Stoomcarrousel",
-        "tijd": 75,
+        "tijd": "75",
         "datum": "2020-08-24",
         "categorie": "achtergrond"
-    },{
-        "id": 169,
+    },
+    {
+        "id": "169",
         "titel": "De raad der Dumbasses",
-        "tijd": 139,
+        "tijd": "139",
         "datum": "2020-08-31",
         "categorie": "nieuws"
-    },{
-        "id": 170,
+    },
+    {
+        "id": "170",
         "titel": "Afscheid van Bart de Boer",
-        "tijd": 44,
+        "tijd": "44",
         "datum": "2020-09-03",
         "categorie": "achtergrond"
-    },{
-        "id": 171,
+    },
+    {
+        "id": "171",
         "titel": "Efteling-tatoeages met Bram Elstak",
-        "tijd": 50,
+        "tijd": "50",
         "datum": "2020-09-07",
         "categorie": "interview"
-    },{
-        "id": 172,
+    },
+    {
+        "id": "172",
         "titel": "Meesters van klefheid",
-        "tijd": 88,
+        "tijd": "88",
         "datum": "2020-09-14",
         "categorie": "nieuws"
-    },{
-        "id": 173,
+    },
+    {
+        "id": "173",
         "titel": "Anton Pieck en het Anton Pieck museum",
-        "tijd": 135,
+        "tijd": "135",
         "datum": "2020-09-21",
         "categorie": "interview"
-    },{
-        "id": 174,
+    },
+    {
+        "id": "174",
         "titel": "Paar kuub Piecks groen",
-        "tijd": 129,
+        "tijd": "129",
         "datum": "2020-09-28",
         "categorie": "nieuws"
-    },{
-        "id": 175,
+    },
+    {
+        "id": "175",
         "titel": "De Glazen Bol",
-        "tijd": 71,
+        "tijd": "71",
         "datum": "2020-10-05",
         "categorie": "achtergrond"
-    },{
-        "id": 176,
+    },
+    {
+        "id": "176",
         "titel": "Aquanura met een zachte G",
-        "tijd": 72,
+        "tijd": "72",
         "datum": "2020-10-09",
         "categorie": "reportage"
-    },{
-        "id": 177,
+    },
+    {
+        "id": "177",
         "titel": "IJspegels in je bakkes",
-        "tijd": 103,
+        "tijd": "103",
         "datum": "2020-10-12",
         "categorie": "nieuws"
-    },{
-        "id": 178,
+    },
+    {
+        "id": "178",
         "titel": "Nieuwsflitsbonusaflevering",
-        "tijd": 35,
+        "tijd": "35",
         "datum": "2020-10-16",
         "categorie": "nieuws"
-    },{
-        "id": 179,
+    },
+    {
+        "id": "179",
         "titel": "Het Keienspoor met Ivo Südmeier",
-        "tijd": 101,
+        "tijd": "101",
         "datum": "2020-10-19",
         "categorie": "achtergrond"
-    },{
-        "id": 180,
+    },
+    {
+        "id": "180",
         "titel": "Het Efteling Hotel",
-        "tijd": 100,
+        "tijd": "100",
         "datum": "2020-10-26",
         "categorie": "achtergrond"
-    },{
-        "id": 181,
+    },
+    {
+        "id": "181",
         "titel": "Heb je last van stemproblemen?",
-        "tijd": 163,
+        "tijd": "163",
         "datum": "2020-11-02",
         "categorie": "nieuws"
-    },{
-        "id": 182,
+    },
+    {
+        "id": "182",
         "titel": "De financiën van de Efteling (deel 1)",
-        "tijd": 146,
+        "tijd": "146",
         "datum": "2020-11-09",
         "categorie": "achtergrond"
-    },{
-        "id": 183,
+    },
+    {
+        "id": "183",
         "titel": "Kernsplijting in de fontein",
-        "tijd": 101,
+        "tijd": "101",
         "datum": "2020-11-16",
         "categorie": "nieuws"
-    },{
-        "id": 184,
+    },
+    {
+        "id": "184",
         "titel": "Theme Park Science achter de schermen bij de Pagode",
-        "tijd": 51,
+        "tijd": "51",
         "datum": "2020-11-18",
         "categorie": "achtergrond"
-    },{
-        "id": 185,
+    },
+    {
+        "id": "185",
         "titel": "In gesprek met Ronald van der Zijl",
-        "tijd": 109,
+        "tijd": "109",
         "datum": "2020-11-23",
         "categorie": "interview"
-    },{
-        "id": 186,
+    },
+    {
+        "id": "186",
         "titel": "Genoeg lichtpuntjes om naar uit te kijken",
-        "tijd": 125,
+        "tijd": "125",
         "datum": "2020-11-30",
         "categorie": "nieuws"
-    },{
-        "id": 187,
+    },
+    {
+        "id": "187",
         "titel": "Polka Marina",
-        "tijd": 29,
+        "tijd": "29",
         "datum": "2020-12-01",
         "categorie": "achtergrond"
-    },{
-        "id": 188,
+    },
+    {
+        "id": "188",
         "titel": "De financiën van de Efteling (deel 2)",
-        "tijd": 163,
+        "tijd": "163",
         "datum": "2020-12-07",
         "categorie": "achtergrond"
-    },{
-        "id": 189,
+    },
+    {
+        "id": "189",
         "titel": "Ze lijken familie van Spider-Man",
-        "tijd": 128,
+        "tijd": "128",
         "datum": "2020-12-14",
         "categorie": "nieuws"
-    },{
-        "id": 190,
+    },
+    {
+        "id": "190",
         "titel": "Villa Pardoes",
-        "tijd": 122,
+        "tijd": "122",
         "datum": "2020-12-21",
         "categorie": "interview"
-    },{
-        "id": 191,
+    },
+    {
+        "id": "191",
         "titel": "Als warme muizen over de toonbank",
-        "tijd": 96,
+        "tijd": "96",
         "datum": "2020-12-28",
         "categorie": "nieuws"
-    },{
-        "id": 192,
+    },
+    {
+        "id": "192",
         "titel": "Een plattegrond uit 1978",
-        "tijd": 62,
+        "tijd": "62",
         "datum": "2021-01-04",
         "categorie": "achtergrond"
-    },{
-        "id": 193,
+    },
+    {
+        "id": "193",
         "titel": "En een aspirientje",
-        "tijd": 90,
+        "tijd": "90",
         "datum": "2021-01-11",
         "categorie": "nieuws"
-    },{
-        "id": 194,
+    },
+    {
+        "id": "194",
         "titel": "De toiletten van de Efteling",
-        "tijd": 98,
+        "tijd": "98",
         "datum": "2021-01-18",
         "categorie": "achtergrond"
-    },{
-        "id": 195,
+    },
+    {
+        "id": "195",
         "titel": "De wolkenkrabber van Vrouw Holle",
-        "tijd": 108,
+        "tijd": "108",
         "datum": "2021-01-25",
         "categorie": "nieuws"
-    },{
-        "id": 196,
+    },
+    {
+        "id": "196",
         "titel": "Efteling en media (deel 1)",
-        "tijd": 137,
+        "tijd": "137",
         "datum": "2021-02-01",
         "categorie": "achtergrond"
-    },{
-        "id": 197,
+    },
+    {
+        "id": "197",
         "titel": "Jij bent de nuchtere",
-        "tijd": 113,
+        "tijd": "113",
         "datum": "2021-02-08",
         "categorie": "nieuws"
-    },{
-        "id": 198,
+    },
+    {
+        "id": "198",
         "titel": "In gesprek met Reinoud van Assendelft de Coningh",
-        "tijd": 156,
+        "tijd": "156",
         "datum": "2021-02-15",
         "categorie": "interview"
-    },{
-        "id": 199,
+    },
+    {
+        "id": "199",
         "titel": "Achter de schermen bij Kleine Boodschap",
-        "tijd": 153,
+        "tijd": "153",
         "datum": "2021-02-17",
         "categorie": "achtergrond"
-    },{
-        "id": 200,
+    },
+    {
+        "id": "200",
         "titel": "Om tafel met Efteling-ontwerpers Sander, Jeroen en Ronald",
-        "tijd": 106,
+        "tijd": "106",
         "datum": "2021-02-22",
         "categorie": "interview"
-    },{
-        "id": 201,
+    },
+    {
+        "id": "201",
         "titel": "Bij een bruggetje heb je ook hout onder je",
-        "tijd": 104,
+        "tijd": "104",
         "datum": "2021-03-01",
         "categorie": "nieuws"
-    },{
-        "id": 202,
+    },
+    {
+        "id": "202",
         "titel": "Wie is de Mol in de Efteling",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2021-03-04",
         "categorie": "achtergrond"
-    },{
-        "id": 203,
+    },
+    {
+        "id": "203",
         "titel": "In gesprek met Pieter Cornelis",
-        "tijd": 161,
+        "tijd": "161",
         "datum": "2021-03-08",
         "categorie": "interview"
-    },{
-        "id": 204,
+    },
+    {
+        "id": "204",
         "titel": "Opa Tim",
-        "tijd": 91,
+        "tijd": "91",
         "datum": "2021-03-15",
         "categorie": "nieuws"
-    },{
-        "id": 205,
+    },
+    {
+        "id": "205",
         "titel": "Golfpark de Loonsche Duynen",
-        "tijd": 60,
+        "tijd": "60",
         "datum": "2021-03-18",
         "categorie": "interview"
-    },{
-        "id": 206,
+    },
+    {
+        "id": "206",
         "titel": "Efteling en de fanmedia",
-        "tijd": 94,
+        "tijd": "94",
         "datum": "2021-03-22",
         "categorie": "interview"
-    },{
-        "id": 207,
+    },
+    {
+        "id": "207",
         "titel": "Vertel dat maar aan de grootmoeder van Roodkapje",
-        "tijd": 102,
+        "tijd": "102",
         "datum": "2021-03-29",
         "categorie": "nieuws"
-    },{
-        "id": 208,
+    },
+    {
+        "id": "208",
         "titel": "Licht in de Efteling met Jaap, Stan en Eric",
-        "tijd": 136,
+        "tijd": "136",
         "datum": "2021-04-05",
         "categorie": "interview"
-    },{
-        "id": 209,
+    },
+    {
+        "id": "209",
         "titel": "Een Sprookjesboom gaan slaan",
-        "tijd": 124,
+        "tijd": "124",
         "datum": "2021-04-12",
         "categorie": "nieuws"
-    },{
-        "id": 210,
+    },
+    {
+        "id": "210",
         "titel": "Efteling en media (deel 2)",
-        "tijd": 137,
+        "tijd": "137",
         "datum": "2021-04-19",
         "categorie": "achtergrond"
-    },{
-        "id": 211,
+    },
+    {
+        "id": "211",
         "titel": "In gesprek met Jack Rijnen",
-        "tijd": 114,
+        "tijd": "114",
         "datum": "2021-04-26",
         "categorie": "interview"
-    },{
-        "id": 212,
+    },
+    {
+        "id": "212",
         "titel": "Het centrum van m’n hele leven",
-        "tijd": 130,
+        "tijd": "130",
         "datum": "2021-05-03",
         "categorie": "nieuws"
-    },{
-        "id": 213,
+    },
+    {
+        "id": "213",
         "titel": "Reacties van luisteraars",
-        "tijd": 70,
+        "tijd": "70",
         "datum": "2021-05-10",
         "categorie": "achtergrond"
-    },{
-        "id": 214,
+    },
+    {
+        "id": "214",
         "titel": "Achter de schermen bij het Efteling Theater",
-        "tijd": 110,
+        "tijd": "110",
         "datum": "2021-05-17",
         "categorie": "reportage"
-    },{
-        "id": 215,
+    },
+    {
+        "id": "215",
         "titel": "De Nog Grotere Heropeningsshow",
-        "tijd": 172,
+        "tijd": "172",
         "datum": "2021-05-24",
         "categorie": "nieuws"
-    },{
-        "id": 216,
+    },
+    {
+        "id": "216",
         "titel": "Het Efteling Hotel na de renovatie",
-        "tijd": 49,
+        "tijd": "49",
         "datum": "2021-05-27",
         "categorie": "achtergrond"
-    },{
-        "id": 217,
+    },
+    {
+        "id": "217",
         "titel": "Onze favoriete darkrides",
-        "tijd": 114,
+        "tijd": "114",
         "datum": "2021-05-31",
         "categorie": "achtergrond"
-    },{
-        "id": 218,
+    },
+    {
+        "id": "218",
         "titel": "Speelbos Nest!",
-        "tijd": 91,
+        "tijd": "91",
         "datum": "2021-06-03",
         "categorie": "reportage"
-    },{
-        "id": 219,
+    },
+    {
+        "id": "219",
         "titel": "We gaan naar Strookrijk toe!",
-        "tijd": 142,
+        "tijd": "142",
         "datum": "2021-06-07",
         "categorie": "nieuws"
-    },{
-        "id": 220,
+    },
+    {
+        "id": "220",
         "titel": "In gesprek met Lex Lemmens (deel 1)",
-        "tijd": 131,
+        "tijd": "131",
         "datum": "2021-06-14",
         "categorie": "interview"
-    },{
-        "id": 221,
+    },
+    {
+        "id": "221",
         "titel": "Bedrijvige gezelligheid",
-        "tijd": 129,
+        "tijd": "129",
         "datum": "2021-06-21",
         "categorie": "nieuws"
-    },{
-        "id": 222,
+    },
+    {
+        "id": "222",
         "titel": "Efteling Kids Radio met Arnoud en Mayoni",
-        "tijd": 142,
+        "tijd": "142",
         "datum": "2021-06-28",
         "categorie": "interview"
-    },{
-        "id": 223,
+    },
+    {
+        "id": "223",
         "titel": "Een miezer van mayonaise",
-        "tijd": 165,
+        "tijd": "165",
         "datum": "2021-07-05",
         "categorie": "nieuws"
-    },{
-        "id": 224,
+    },
+    {
+        "id": "224",
         "titel": "In gesprek met Lex Lemmens (deel 2)",
-        "tijd": 133,
+        "tijd": "133",
         "datum": "2021-07-12",
         "categorie": "interview"
-    },{
-        "id": 225,
+    },
+    {
+        "id": "225",
         "titel": "Botox kuurtje gone wrong",
-        "tijd": 120,
+        "tijd": "120",
         "datum": "2021-07-19",
         "categorie": "nieuws"
-    },{
-        "id": 226,
+    },
+    {
+        "id": "226",
         "titel": "In gesprek met burgemeester Hanne van Aart",
-        "tijd": 67,
+        "tijd": "67",
         "datum": "2021-07-26",
         "categorie": "interview"
-    },{
-        "id": 227,
+    },
+    {
+        "id": "227",
         "titel": "Sander de Bruijn over De Wereld van Sindbad",
-        "tijd": 67,
+        "tijd": "67",
         "datum": "2021-07-29",
         "categorie": "interview"
-    },{
-        "id": 228,
+    },
+    {
+        "id": "228",
         "titel": "Staafjesparadijs",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2021-08-02",
         "categorie": "nieuws"
-    },{
-        "id": 229,
+    },
+    {
+        "id": "229",
         "titel": "Mijmeren over de Efteling met Rob Janssen",
-        "tijd": 97,
+        "tijd": "97",
         "datum": "2021-08-09",
         "categorie": "interview"
-    },{
-        "id": 230,
+    },
+    {
+        "id": "230",
         "titel": "De financiën van de Efteling in 2020",
-        "tijd": 158,
+        "tijd": "158",
         "datum": "2021-08-16",
         "categorie": "achtergrond"
-    },{
-        "id": 231,
+    },
+    {
+        "id": "231",
         "titel": "Het bestemmingsplan met Wyke Smit en Ivo Südmeier",
-        "tijd": 107,
+        "tijd": "107",
         "datum": "2021-08-23",
         "categorie": "interview"
-    },{
-        "id": 232,
+    },
+    {
+        "id": "232",
         "titel": "In gesprek met Pieter Cornelis (deel 2)",
-        "tijd": 145,
+        "tijd": "145",
         "datum": "2021-08-30",
         "categorie": "interview"
-    },{
-        "id": 233,
+    },
+    {
+        "id": "233",
         "titel": "In gesprek met Michel den Dulk",
-        "tijd": 204,
+        "tijd": "204",
         "datum": "2021-09-06",
         "categorie": "interview"
-    },{
-        "id": 234,
+    },
+    {
+        "id": "234",
         "titel": "Draconiconnieomhoogkomen",
-        "tijd": 163,
+        "tijd": "163",
         "datum": "2021-09-13",
         "categorie": "nieuws"
-    },{
-        "id": 235,
+    },
+    {
+        "id": "235",
         "titel": "De muziek van Caro",
-        "tijd": 67,
+        "tijd": "67",
         "datum": "2021-09-20",
         "categorie": "interview"
-    },{
-        "id": 236,
+    },
+    {
+        "id": "236",
         "titel": "In levende lijven zien dat het je niks interesseert",
-        "tijd": 109,
+        "tijd": "109",
         "datum": "2021-09-27",
         "categorie": "nieuws"
-    },{
-        "id": 237,
+    },
+    {
+        "id": "237",
         "titel": "De Glazen bol 2021",
-        "tijd": 82,
+        "tijd": "82",
         "datum": "2021-10-04",
         "categorie": "achtergrond"
-    },{
-        "id": 238,
+    },
+    {
+        "id": "238",
         "titel": "Bij Walibi zouden ze zeggen “Festivalisation”",
-        "tijd": 125,
+        "tijd": "125",
         "datum": "2021-10-11",
         "categorie": "nieuws"
-    },{
-        "id": 239,
+    },
+    {
+        "id": "239",
         "titel": "Dat ik een pretzel in m’n bek steken mag",
-        "tijd": 98,
+        "tijd": "98",
         "datum": "2021-10-18",
         "categorie": "nieuws"
-    },{
-        "id": 240,
+    },
+    {
+        "id": "240",
         "titel": "In gesprek met Dennis Bots",
-        "tijd": 146,
+        "tijd": "146",
         "datum": "2021-10-25",
         "categorie": "interview"
-    },{
-        "id": 241,
+    },
+    {
+        "id": "241",
         "titel": "Halloween in de Efteling",
-        "tijd": 98,
+        "tijd": "98",
         "datum": "2021-11-01",
         "categorie": "achtergrond"
-    },{
-        "id": 242,
+    },
+    {
+        "id": "242",
         "titel": "Coronatest met de Kango",
-        "tijd": 133,
+        "tijd": "133",
         "datum": "2021-11-08",
         "categorie": "nieuws"
-    },{
-        "id": 243,
+    },
+    {
+        "id": "243",
         "titel": "Lavenlaar audio-tour",
-        "tijd": 140,
+        "tijd": "140",
         "datum": "2021-11-15",
         "categorie": "achtergrond"
-    },{
-        "id": 244,
+    },
+    {
+        "id": "244",
         "titel": "Mijn hart van steen",
-        "tijd": 143,
+        "tijd": "143",
         "datum": "2021-11-22",
         "categorie": "nieuws"
-    },{
-        "id": 245,
+    },
+    {
+        "id": "245",
         "titel": "Onze favoriete beeldjes in de Efteling",
-        "tijd": 62,
+        "tijd": "62",
         "datum": "2021-11-29",
         "categorie": "achtergrond"
-    },{
-        "id": 246,
+    },
+    {
+        "id": "246",
         "titel": "Het heelal mét tuinslang",
-        "tijd": 142,
+        "tijd": "142",
         "datum": "2021-12-06",
         "categorie": "nieuws"
-    },{
-        "id": 247,
+    },
+    {
+        "id": "247",
         "titel": "Bäckerei Krümel",
-        "tijd": 73,
+        "tijd": "73",
         "datum": "2021-12-08",
         "categorie": "reportage"
-    },{
-        "id": 248,
+    },
+    {
+        "id": "248",
         "titel": "In gesprek met Frans Goenee",
-        "tijd": 105,
+        "tijd": "105",
         "datum": "2021-12-13",
         "categorie": "interview"
-    },{
-        "id": 249,
+    },
+    {
+        "id": "249",
         "titel": "Broodmager",
-        "tijd": 131,
+        "tijd": "131",
         "datum": "2021-12-20",
         "categorie": "nieuws"
-    },{
-        "id": 250,
+    },
+    {
+        "id": "250",
         "titel": "Het Gildehuis",
-        "tijd": 131,
+        "tijd": "131",
         "datum": "2021-12-27",
         "categorie": "reportage"
-    },{
-        "id": 251,
+    },
+    {
+        "id": "251",
         "titel": "The making of The Making of Fata Morgana",
-        "tijd": 120,
+        "tijd": "120",
         "datum": "2021-12-29",
         "categorie": "interview"
-    },{
-        "id": 252,
+    },
+    {
+        "id": "252",
         "titel": "Aquanura met een Zachte G verbieden",
-        "tijd": 123,
+        "tijd": "123",
         "datum": "2022-01-03",
         "categorie": "nieuws"
-    },{
-        "id": 253,
+    },
+    {
+        "id": "253",
         "titel": "Onze favoriete infill attracties",
-        "tijd": 75,
+        "tijd": "75",
         "datum": "2022-01-10",
         "categorie": "achtergrond"
-    },{
-        "id": 254,
+    },
+    {
+        "id": "254",
         "titel": "Eclecticisme",
-        "tijd": 101,
+        "tijd": "101",
         "datum": "2022-01-17",
         "categorie": "nieuws"
-    },{
-        "id": 255,
+    },
+    {
+        "id": "255",
         "titel": "Alles over Eftepedia",
-        "tijd": 100,
+        "tijd": "100",
         "datum": "2022-01-24",
         "categorie": "interview"
-    },{
-        "id": 256,
+    },
+    {
+        "id": "256",
         "titel": "Een kuub haarspeldjes",
-        "tijd": 163,
+        "tijd": "163",
         "datum": "2022-01-31",
         "categorie": "nieuws"
-    },{
-        "id": 257,
+    },
+    {
+        "id": "257",
         "titel": "De Wereld van Sindbad",
-        "tijd": 49,
+        "tijd": "49",
         "datum": "2022-02-03",
         "categorie": "reportage"
-    },{
-        "id": 258,
+    },
+    {
+        "id": "258",
         "titel": "Aan tafel met Ton Merkx (deel 1)",
-        "tijd": 114,
+        "tijd": "114",
         "datum": "2022-02-07",
         "categorie": "interview"
-    },{
-        "id": 259,
+    },
+    {
+        "id": "259",
         "titel": "Alsof je bier in een vet glas schenkt",
-        "tijd": 165,
+        "tijd": "165",
         "datum": "2022-02-14",
         "categorie": "nieuws"
-    },{
-        "id": 260,
+    },
+    {
+        "id": "260",
         "titel": "De verweven historie van Kaatsheuvel en de Efteling",
-        "tijd": 193,
+        "tijd": "193",
         "datum": "2022-02-21",
         "categorie": "achtergrond"
-    },{
-        "id": 261,
+    },
+    {
+        "id": "261",
         "titel": "Bermpje",
-        "tijd": 123,
+        "tijd": "123",
         "datum": "2022-02-28",
         "categorie": "nieuws"
-    },{
-        "id": 262,
+    },
+    {
+        "id": "262",
         "titel": "Taste of Europe",
-        "tijd": 109,
+        "tijd": "109",
         "datum": "2022-03-02",
         "categorie": "interview"
-    },{
-        "id": 263,
+    },
+    {
+        "id": "263",
         "titel": "In gesprek met Frans Goenee (deel 2)",
-        "tijd": 131,
+        "tijd": "131",
         "datum": "2022-03-07",
         "categorie": "interview"
-    },{
-        "id": 264,
+    },
+    {
+        "id": "264",
         "titel": "VHS band op een brakke LCD-televisie",
-        "tijd": 122,
+        "tijd": "122",
         "datum": "2022-03-14",
         "categorie": "nieuws"
-    },{
-        "id": 265,
+    },
+    {
+        "id": "265",
         "titel": "Mijmeren met Jerik van Nuenen",
-        "tijd": 81,
+        "tijd": "81",
         "datum": "2022-03-21",
         "categorie": "interview"
-    },{
-        "id": 266,
+    },
+    {
+        "id": "266",
         "titel": "Bond voor de Vliegende Hollander",
-        "tijd": 120,
+        "tijd": "120",
         "datum": "2022-03-28",
         "categorie": "nieuws"
-    },{
-        "id": 267,
+    },
+    {
+        "id": "267",
         "titel": "Efteling Wonderland",
-        "tijd": 54,
+        "tijd": "54",
         "datum": "2022-03-30",
         "categorie": "reportage"
-    },{
-        "id": 268,
+    },
+    {
+        "id": "268",
         "titel": "Aan tafel met Ton Merkx (deel 2)",
-        "tijd": 110,
+        "tijd": "110",
         "datum": "2022-04-01",
         "categorie": "interview"
-    },{
-        "id": 269,
+    },
+    {
+        "id": "269",
         "titel": "Groot onderhoud bij de Pagode",
-        "tijd": 59,
+        "tijd": "59",
         "datum": "2022-04-06",
         "categorie": "reportage"
-    },{
-        "id": 270,
+    },
+    {
+        "id": "270",
         "titel": "BN’er-kenner",
-        "tijd": 126,
+        "tijd": "126",
         "datum": "2022-04-11",
         "categorie": "nieuws"
-    },{
-        "id": 271,
+    },
+    {
+        "id": "271",
         "titel": "Ik gun jou mijn eitjes",
-        "tijd": 118,
+        "tijd": "118",
         "datum": "2022-04-18",
         "categorie": "nieuws"
-    },{
-        "id": 272,
+    },
+    {
+        "id": "272",
         "titel": "Een kijkje in de kas van de Efteling",
-        "tijd": 79,
+        "tijd": "79",
         "datum": "2022-04-25",
         "categorie": "achtergrond"
-    },{
-        "id": 273,
+    },
+    {
+        "id": "273",
         "titel": "Wat missen we het meest uit de Efteling?",
-        "tijd": 76,
+        "tijd": "76",
         "datum": "2022-05-02",
         "categorie": "achtergrond"
-    },{
-        "id": 274,
+    },
+    {
+        "id": "274",
         "titel": "Wat te doen buiten de Efteling",
-        "tijd": 95,
+        "tijd": "95",
         "datum": "2022-05-09",
         "categorie": "achtergrond"
-    },{
-        "id": 275,
+    },
+    {
+        "id": "275",
         "titel": "There’s a rat in my ketting",
-        "tijd": 173,
+        "tijd": "173",
         "datum": "2022-05-16",
         "categorie": "nieuws"
-    },{
-        "id": 276,
+    },
+    {
+        "id": "276",
         "titel": "We hebben ze voor het toiletblok gezet",
-        "tijd": 132,
+        "tijd": "132",
         "datum": "2022-05-23",
         "categorie": "nieuws"
-    },{
-        "id": 277,
+    },
+    {
+        "id": "277",
         "titel": "In gesprek met Cees Sprangers",
-        "tijd": 131,
+        "tijd": "131",
         "datum": "2022-05-30",
         "categorie": "interview"
-    },{
-        "id": 278,
+    },
+    {
+        "id": "278",
         "titel": "Lichtmasten met een identiteitscrisis",
-        "tijd": 124,
+        "tijd": "124",
         "datum": "2022-06-06",
         "categorie": "nieuws"
-    },{
-        "id": 279,
+    },
+    {
+        "id": "279",
         "titel": "Onze favoriete plekken in de Efteling in het donker",
-        "tijd": 57,
+        "tijd": "57",
         "datum": "2022-06-13",
         "categorie": "achtergrond"
-    },{
-        "id": 280,
+    },
+    {
+        "id": "280",
         "titel": "Nog hypedter",
-        "tijd": 151,
+        "tijd": "151",
         "datum": "2022-06-20",
         "categorie": "nieuws"
-    },{
-        "id": 281,
+    },
+    {
+        "id": "281",
         "titel": "Onze favoriete Efteling-attracties",
-        "tijd": 96,
+        "tijd": "96",
         "datum": "2022-06-27",
         "categorie": "achtergrond"
-    },{
-        "id": 282,
+    },
+    {
+        "id": "282",
         "titel": "Kleine Boodschap in het theater",
-        "tijd": 129,
+        "tijd": "129",
         "datum": "2022-07-04",
         "categorie": "interview"
-    },{
-        "id": 283,
+    },
+    {
+        "id": "283",
         "titel": "Lekker zwemmen in de sprinklerkelder",
-        "tijd": 149,
+        "tijd": "149",
         "datum": "2022-07-11",
         "categorie": "nieuws"
-    },{
-        "id": 284,
+    },
+    {
+        "id": "284",
         "titel": "De financiën van de Efteling in 2021",
-        "tijd": 192,
+        "tijd": "192",
         "datum": "2022-07-18",
         "categorie": "achtergrond"
-    },{
-        "id": 285,
+    },
+    {
+        "id": "285",
         "titel": "De accomodaties in Bosrijk en ’t Loonsche Land",
-        "tijd": 100,
+        "tijd": "100",
         "datum": "2022-07-25",
         "categorie": "achtergrond"
-    },{
-        "id": 286,
+    },
+    {
+        "id": "286",
         "titel": "Plassen op het kerkhof",
-        "tijd": 139,
+        "tijd": "139",
         "datum": "2022-08-01",
         "categorie": "nieuws"
-    },{
-        "id": 287,
+    },
+    {
+        "id": "287",
         "titel": "In gesprek met Anja Klis",
-        "tijd": 84,
+        "tijd": "84",
         "datum": "2022-08-08",
         "categorie": "interview"
-    },{
-        "id": 288,
+    },
+    {
+        "id": "288",
         "titel": "Onze favoriete bordjes in de Efteling",
-        "tijd": 82,
+        "tijd": "82",
         "datum": "2022-08-15",
         "categorie": "achtergrond"
-    },{
-        "id": 289,
+    },
+    {
+        "id": "289",
         "titel": "De speeltuinen in de Efteling",
-        "tijd": 111,
+        "tijd": "111",
         "datum": "2022-08-22",
         "categorie": "achtergrond"
-    },{
-        "id": 290,
+    },
+    {
+        "id": "290",
         "titel": "In gesprek met Koos de Graaf",
-        "tijd": 132,
+        "tijd": "132",
         "datum": "2022-08-29",
         "categorie": "interview"
-    },{
-        "id": 291,
+    },
+    {
+        "id": "291",
         "titel": "Entrees en parkeerterreinen van de Efteling",
-        "tijd": 103,
+        "tijd": "103",
         "datum": "2022-09-05",
         "categorie": "achtergrond"
-    },{
-        "id": 292,
+    },
+    {
+        "id": "292",
         "titel": "De sluiting van het Spookslot",
-        "tijd": 78,
+        "tijd": "78",
         "datum": "2022-09-07",
         "categorie": "reportage"
-    },{
-        "id": 293,
+    },
+    {
+        "id": "293",
         "titel": "Een soort van Scooby-Doo aflevering",
-        "tijd": 176,
+        "tijd": "176",
         "datum": "2022-09-12",
         "categorie": "nieuws"
-    },{
-        "id": 294,
+    },
+    {
+        "id": "294",
         "titel": "Thematisering in de Efteling met Martin en Patrick",
-        "tijd": 121,
+        "tijd": "121",
         "datum": "2022-09-19",
         "categorie": "interview"
-    },{
-        "id": 295,
+    },
+    {
+        "id": "295",
         "titel": "Blausibel",
-        "tijd": 128,
+        "tijd": "128",
         "datum": "2022-09-26",
         "categorie": "nieuws"
-    },{
-        "id": 296,
+    },
+    {
+        "id": "296",
         "titel": "De Glazen Bol 2022",
-        "tijd": 70,
+        "tijd": "70",
         "datum": "2022-10-03",
         "categorie": "achtergrond"
-    },{
-        "id": 297,
+    },
+    {
+        "id": "297",
         "titel": "Peter Reijnders",
-        "tijd": 92,
+        "tijd": "92",
         "datum": "2022-10-10",
         "categorie": "achtergrond"
-    },{
-        "id": 298,
+    },
+    {
+        "id": "298",
         "titel": "Gewoon de CO2-blusser erop",
-        "tijd": 149,
+        "tijd": "149",
         "datum": "2022-10-17",
         "categorie": "nieuws"
-    },{
-        "id": 299,
+    },
+    {
+        "id": "299",
         "titel": "De oudste gebouwen in de Efteling",
-        "tijd": 58,
+        "tijd": "58",
         "datum": "2022-10-24",
         "categorie": "achtergrond"
-    },{
-        "id": 300,
+    },
+    {
+        "id": "300",
         "titel": "Feestelijke reacties van luisteraars",
-        "tijd": 114,
+        "tijd": "114",
         "datum": "2022-10-31",
         "categorie": "achtergrond"
-    },{
-        "id": 301,
+    },
+    {
+        "id": "301",
         "titel": "Het Textielmuseum en het Efteling tafellinnen",
-        "tijd": 33,
+        "tijd": "33",
         "datum": "2022-11-02",
         "categorie": "achtergrond"
-    },{
-        "id": 302,
+    },
+    {
+        "id": "302",
         "titel": "Verticale verassing",
-        "tijd": 172,
+        "tijd": "172",
         "datum": "2022-11-07",
         "categorie": "nieuws"
-    },{
-        "id": 303,
+    },
+    {
+        "id": "303",
         "titel": "Mijmeren met Sander Kesseler",
-        "tijd": 93,
+        "tijd": "93",
         "datum": "2022-11-14",
         "categorie": "interview"
-    },{
-        "id": 304,
+    },
+    {
+        "id": "304",
         "titel": "Een rondje proefroken",
-        "tijd": 137,
+        "tijd": "137",
         "datum": "2022-11-21",
         "categorie": "nieuws"
-    },{
-        "id": 305,
+    },
+    {
+        "id": "305",
         "titel": "De Efteling als verteller van sprookjes met Moniek Hover",
-        "tijd": 162,
+        "tijd": "162",
         "datum": "2022-11-28",
         "categorie": "interview"
-    },{
-        "id": 306,
+    },
+    {
+        "id": "306",
         "titel": "Een kwakje spuitbeton",
-        "tijd": 122,
+        "tijd": "122",
         "datum": "2022-12-05",
         "categorie": "nieuws"
-    },{
-        "id": 307,
+    },
+    {
+        "id": "307",
         "titel": "De boerderij aan de Horst",
-        "tijd": 59,
+        "tijd": "59",
         "datum": "2022-12-12",
         "categorie": "interview"
-    },{
-        "id": 308,
+    },
+    {
+        "id": "308",
         "titel": "CARO en Sky Radio",
-        "tijd": 112,
+        "tijd": "112",
         "datum": "2022-12-19",
         "categorie": "nieuws"
-    },{
-        "id": 309,
+    },
+    {
+        "id": "309",
         "titel": "In gesprek met Tim Nusselein",
-        "tijd": 109,
+        "tijd": "109",
         "datum": "2022-12-26",
         "categorie": "interview"
-    },{
-        "id": 310,
+    },
+    {
+        "id": "310",
         "titel": "Hoodie Woodie",
-        "tijd": 141,
+        "tijd": "141",
         "datum": "2023-01-02",
         "categorie": "nieuws"
-    },{
-        "id": 311,
+    },
+    {
+        "id": "311",
         "titel": "In gesprek met Sebastiaan Smits",
-        "tijd": 97,
+        "tijd": "97",
         "datum": "2023-01-09",
         "categorie": "interview"
-    },{
-        "id": 312,
+    },
+    {
+        "id": "312",
         "titel": "Beunmeester Big",
-        "tijd": 126,
+        "tijd": "126",
         "datum": "2023-01-16",
         "categorie": "nieuws"
-    },{
-        "id": 313,
+    },
+    {
+        "id": "313",
         "titel": "In gesprek met Bertus Kemmeren",
-        "tijd": 66,
+        "tijd": "66",
         "datum": "2023-01-23",
         "categorie": "interview"
-    },{
-        "id": 314,
+    },
+    {
+        "id": "314",
         "titel": "In gesprek met Jordan Middleton (Cupcakes & Coasters)",
-        "tijd": 61,
+        "tijd": "61",
         "datum": "2023-01-26",
         "categorie": "interview"
-    },{
-        "id": 315,
+    },
+    {
+        "id": "315",
         "titel": "Direct na de dummies",
-        "tijd": 116,
+        "tijd": "116",
         "datum": "2023-01-30",
         "categorie": "nieuws"
-    },{
-        "id": 316,
+    },
+    {
+        "id": "316",
         "titel": "De Efteling Stoomtrein Maatschappij",
-        "tijd": 126,
+        "tijd": "126",
         "datum": "2023-02-06",
         "categorie": "interview"
-    },{
-        "id": 317,
+    },
+    {
+        "id": "317",
         "titel": "Team Erfgoedbeheer",
-        "tijd": 86,
+        "tijd": "86",
         "datum": "2023-02-13",
         "categorie": "interview"
-    },{
-        "id": 318,
+    },
+    {
+        "id": "318",
         "titel": "Anarchie op de Europalaan",
-        "tijd": 131,
+        "tijd": "131",
         "datum": "2023-02-20",
         "categorie": "nieuws"
-    },{
-        "id": 319,
+    },
+    {
+        "id": "319",
         "titel": "De muziek van de Wereld van Sindbad",
-        "tijd": 75,
+        "tijd": "75",
         "datum": "2023-02-27",
         "categorie": "achtergrond"
-    },{
-        "id": 320,
+    },
+    {
+        "id": "320",
         "titel": "Efteling - De Tentoonstelling",
-        "tijd": 76,
+        "tijd": "76",
         "datum": "2023-03-06",
         "categorie": "achtergrond"
-    },{
-        "id": 321,
+    },
+    {
+        "id": "321",
         "titel": "Mijn eerste hoop zal niet de laatste zijn",
-        "tijd": 147,
+        "tijd": "147",
         "datum": "2023-03-13",
         "categorie": "nieuws"
-    },{
-        "id": 322,
+    },
+    {
+        "id": "322",
         "titel": "Efteling in Concert",
-        "tijd": 81,
+        "tijd": "81",
         "datum": "2023-03-20",
         "categorie": "interview"
-    },{
-        "id": 323,
+    },
+    {
+        "id": "323",
         "titel": "We hebben goeie hoop",
-        "tijd": 130,
+        "tijd": "130",
         "datum": "2023-03-27",
         "categorie": "nieuws"
-    },{
-        "id": 324,
+    },
+    {
+        "id": "324",
         "titel": "Efteling-personeelskleding met Loet Smits",
-        "tijd": 113,
+        "tijd": "113",
         "datum": "2023-04-03",
         "categorie": "achtergrond"
-    },{
-        "id": 325,
+    },
+    {
+        "id": "325",
         "titel": "De Efteling achter de schermen",
-        "tijd": 101,
+        "tijd": "101",
         "datum": "2023-04-10",
         "categorie": "achtergrond"
-    },{
-        "id": 326,
+    },
+    {
+        "id": "326",
         "titel": "Wishful sinking",
-        "tijd": 138,
+        "tijd": "138",
         "datum": "2023-04-17",
         "categorie": "nieuws"
-    },{
-        "id": 327,
+    },
+    {
+        "id": "327",
         "titel": "Het vernieuwde Anton Pieckplein",
-        "tijd": 79,
+        "tijd": "79",
         "datum": "2023-04-20",
         "categorie": "reportage"
-    },{
-        "id": 328,
+    },
+    {
+        "id": "328",
         "titel": "De Efteling als verteller van sprookjes met Moniek Hover (deel 2)",
-        "tijd": 166,
+        "tijd": "166",
         "datum": "2023-04-24",
         "categorie": "interview"
-    },{
-        "id": 329,
+    },
+    {
+        "id": "329",
         "titel": "In gesprek met Paul Beck",
-        "tijd": 109,
+        "tijd": "109",
         "datum": "2023-05-01",
         "categorie": "interview"
-    },{
-        "id": 330,
+    },
+    {
+        "id": "330",
         "titel": "Ode aan het Spookslot",
-        "tijd": 101,
+        "tijd": "101",
         "datum": "2023-05-08",
         "categorie": "achtergrond"
-    },{
-        "id": 331,
+    },
+    {
+        "id": "331",
         "titel": "Tot zover het toiletblok",
-        "tijd": 149,
+        "tijd": "149",
         "datum": "2023-05-15",
         "categorie": "nieuws"
-    },{
-        "id": 332,
+    },
+    {
+        "id": "332",
         "titel": "Het Efteling Kostuumatelier",
-        "tijd": 98,
+        "tijd": "98",
         "datum": "2023-05-22",
         "categorie": "interview"
-    },{
-        "id": 333,
+    },
+    {
+        "id": "333",
         "titel": "Koffie-abonnement",
-        "tijd": 141,
+        "tijd": "141",
         "datum": "2023-05-29",
         "categorie": "nieuws"
-    },{
-        "id": 334,
+    },
+    {
+        "id": "334",
         "titel": "In gesprek met Goof Lukken",
-        "tijd": 170,
+        "tijd": "170",
         "datum": "2023-06-05",
         "categorie": "interview"
-    },{
-        "id": 335,
+    },
+    {
+        "id": "335",
         "titel": "On fire op de Laetste Hoop",
-        "tijd": 88,
+        "tijd": "88",
         "datum": "2023-06-12",
         "categorie": "nieuws"
-    },{
-        "id": 336,
+    },
+    {
+        "id": "336",
         "titel": "De financiën van de Efteling in 2022",
-        "tijd": 155,
+        "tijd": "155",
         "datum": "2023-06-19",
         "categorie": "achtergrond"
-    },{
-        "id": 337,
+    },
+    {
+        "id": "337",
         "titel": "Extra zompige pannenkoeken",
-        "tijd": 97,
+        "tijd": "97",
         "datum": "2023-06-26",
         "categorie": "nieuws"
-    },{
-        "id": 338,
+    },
+    {
+        "id": "338",
         "titel": "Bram van Binnendijk over Theo Hochwald",
-        "tijd": 140,
+        "tijd": "140",
         "datum": "2023-07-03",
         "categorie": "interview"
-    },{
-        "id": 339,
+    },
+    {
+        "id": "339",
         "titel": "Onderhoud aan de Stoomcarrousel",
-        "tijd": 27,
+        "tijd": "27",
         "datum": "2023-07-05",
         "categorie": "reportage"
-    },{
-        "id": 340,
+    },
+    {
+        "id": "340",
         "titel": "Friethoest",
-        "tijd": 151,
+        "tijd": "151",
         "datum": "2023-07-10",
         "categorie": "nieuws"
-    },{
-        "id": 341,
+    },
+    {
+        "id": "341",
         "titel": "Frietje Blitzkrieg",
-        "tijd": 106,
+        "tijd": "106",
         "datum": "2023-07-17",
         "categorie": "nieuws"
-    },{
-        "id": 342,
+    },
+    {
+        "id": "342",
         "titel": "Mijmeren met Domien Verschuuren",
-        "tijd": 71,
+        "tijd": "71",
         "datum": "2023-07-24",
         "categorie": "interview"
-    },{
-        "id": 343,
+    },
+    {
+        "id": "343",
         "titel": "Onze favoriete ritsystemen",
-        "tijd": 147,
+        "tijd": "147",
         "datum": "2023-07-31",
         "categorie": "achtergrond"
-    },{
-        "id": 344,
+    },
+    {
+        "id": "344",
         "titel": "Mijmeren met Job van Tol",
-        "tijd": 148,
+        "tijd": "148",
         "datum": "2023-08-07",
         "categorie": "interview"
-    },{
-        "id": 345,
+    },
+    {
+        "id": "345",
         "titel": "Onze favoriete special effects in de Efteling",
-        "tijd": 129,
+        "tijd": "129",
         "datum": "2023-08-14",
         "categorie": "achtergrond"
-    },{
-        "id": 346,
+    },
+    {
+        "id": "346",
         "titel": "Adieu Grand Circus Balancé",
-        "tijd": 115,
+        "tijd": "115",
         "datum": "2023-08-21",
         "categorie": "achtergrond"
-    },{
-        "id": 347,
+    },
+    {
+        "id": "347",
         "titel": "Sneeuw in Droomvlucht",
-        "tijd": 161,
+        "tijd": "161",
         "datum": "2023-08-28",
         "categorie": "nieuws"
-    },{
-        "id": 348,
+    },
+    {
+        "id": "348",
         "titel": "Mark Jansen over technisch ontwerp en duurzaamheid",
-        "tijd": 90,
+        "tijd": "90",
         "datum": "2023-09-04",
         "categorie": "interview"
-    },{
-        "id": 349,
+    },
+    {
+        "id": "349",
         "titel": "Strijden tegen draken van vliegjes",
-        "tijd": 110,
+        "tijd": "110",
         "datum": "2023-09-10",
         "categorie": "nieuws"
-    },{
-        "id": 350,
+    },
+    {
+        "id": "350",
         "titel": "In gesprek met Arijan van Bavel",
-        "tijd": 134,
+        "tijd": "134",
         "datum": "2023-09-17",
         "categorie": "interview"
-    },{
-        "id": 351,
+    },
+    {
+        "id": "351",
         "titel": "Pieckwashing",
-        "tijd": 104,
+        "tijd": "104",
         "datum": "2023-09-25",
         "categorie": "nieuws"
-    },{
-        "id": 352,
+    },
+    {
+        "id": "352",
         "titel": "Boekpresentatie Raveleijn - Het bloed van de laatste draak",
-        "tijd": 104,
+        "tijd": "104",
         "datum": "2023-09-29",
         "categorie": "reportage"
-    },{
-        "id": 353,
+    },
+    {
+        "id": "353",
         "titel": "De Glazen Bol 2023",
-        "tijd": 91,
+        "tijd": "91",
         "datum": "2023-10-02",
         "categorie": "achtergrond"
-    },{
-        "id": 354,
+    },
+    {
+        "id": "354",
         "titel": "Nek aan nek met een klittenbandje",
-        "tijd": 88,
+        "tijd": "88",
         "datum": "2023-10-09",
         "categorie": "nieuws"
-    },{
-        "id": 355,
+    },
+    {
+        "id": "355",
         "titel": "Mijmeren met Xander de Rycke",
-        "tijd": 101,
+        "tijd": "101",
         "datum": "2023-10-16",
         "categorie": "interview"
-    },{
-        "id": 356,
+    },
+    {
+        "id": "356",
         "titel": "Popcornverkooppunttekort",
-        "tijd": 125,
+        "tijd": "125",
         "datum": "2023-10-23",
         "categorie": "nieuws"
-    },{
-        "id": 357,
+    },
+    {
+        "id": "357",
         "titel": "Efteling pins",
-        "tijd": 177,
+        "tijd": "177",
         "datum": "2023-10-30",
         "categorie": "achtergrond"
-    },{
-        "id": 358,
+    },
+    {
+        "id": "358",
         "titel": "Een strobaal afdoen met een doekje",
-        "tijd": 114,
+        "tijd": "114",
         "datum": "2023-11-06",
         "categorie": "nieuws"
-    },{
-        "id": 359,
+    },
+    {
+        "id": "359",
         "titel": "Mijmeren met Willem Sikkers",
-        "tijd": 99,
+        "tijd": "99",
         "datum": "2023-11-13",
         "categorie": "interview"
-    },{
-        "id": 360,
+    },
+    {
+        "id": "360",
         "titel": "Champignons buiten knikkeren",
-        "tijd": 116,
+        "tijd": "116",
         "datum": "2023-11-20",
         "categorie": "nieuws"
-    },{
-        "id": 361,
+    },
+    {
+        "id": "361",
         "titel": "Achter de schermen bij de Spookslot-documentaire van De Vijf Zintuigen",
-        "tijd": 210,
+        "tijd": "210",
         "datum": "2023-11-26",
         "categorie": "interview"
-    },{
-        "id": 362,
+    },
+    {
+        "id": "362",
         "titel": "Gas(t)beleving",
-        "tijd": 104,
+        "tijd": "104",
         "datum": "2023-12-04",
         "categorie": "nieuws"
-    },{
-        "id": 363,
+    },
+    {
+        "id": "363",
         "titel": "De restauratie van het kasteel van Doornroosje",
-        "tijd": 51,
+        "tijd": "51",
         "datum": "2023-12-11",
         "categorie": "reportage"
-    },{
-        "id": 364,
+    },
+    {
+        "id": "364",
         "titel": "Als Shrek thuiskomen",
-        "tijd": 111,
+        "tijd": "111",
         "datum": "2023-12-18",
         "categorie": "nieuws"
-    },{
-        "id": 365,
+    },
+    {
+        "id": "365",
         "titel": "De internationalisering van de Efteling",
-        "tijd": 119,
+        "tijd": "119",
         "datum": "2023-12-22",
         "categorie": "achtergrond"
-    },{
-        "id": 366,
+    },
+    {
+        "id": "366",
         "titel": "Struikelblokken",
-        "tijd": 112,
+        "tijd": "112",
         "datum": "2024-01-01",
         "categorie": "nieuws"
-    },{
-        "id": 367,
+    },
+    {
+        "id": "367",
         "titel": "In gesprek met Marjolein Mens",
-        "tijd": 149,
+        "tijd": "149",
         "datum": "2024-01-08",
         "categorie": "interview"
-    },{
-        "id": 368,
+    },
+    {
+        "id": "368",
         "titel": "De Koningssuite en Droomvlucht Suite in het Efteling Hotel",
-        "tijd": 17,
+        "tijd": "17",
         "datum": "2024-01-11",
         "categorie": "reportage"
-    },{
-        "id": 369,
+    },
+    {
+        "id": "369",
         "titel": "Suske & Wiske en de Varende Vissen",
-        "tijd": 117,
+        "tijd": "117",
         "datum": "2024-01-14",
         "categorie": "nieuws"
-    },{
-        "id": 370,
+    },
+    {
+        "id": "370",
         "titel": "De muziek van Baron 1898",
-        "tijd": 83,
+        "tijd": "83",
         "datum": "2024-01-22",
         "categorie": "achtergrond"
-    },{
-        "id": 371,
+    },
+    {
+        "id": "371",
         "titel": "Pieckvermogen",
-        "tijd": 119,
+        "tijd": "119",
         "datum": "2024-01-29",
         "categorie": "nieuws"
-    },{
-        "id": 372,
+    },
+    {
+        "id": "372",
         "titel": "Het hoogste punt van Danse Macabre",
-        "tijd": 35,
+        "tijd": "35",
         "datum": "2024-02-02",
         "categorie": "reportage"
-    },{
-        "id": 373,
+    },
+    {
+        "id": "373",
         "titel": "Mijmeren met Bart Baan en Niels Kooyman",
-        "tijd": 168,
+        "tijd": "168",
         "datum": "2024-02-05",
         "categorie": "interview"
-    },{
-        "id": 374,
+    },
+    {
+        "id": "374",
         "titel": "De Legende van Familie Vos",
-        "tijd": 106,
+        "tijd": "106",
         "datum": "2024-02-07",
         "categorie": "achtergrond"
-    },{
-        "id": 375,
+    },
+    {
+        "id": "375",
         "titel": "Witheet",
-        "tijd": 128,
+        "tijd": "128",
         "datum": "2024-02-12",
         "categorie": "nieuws"
-    },{
-        "id": 376,
+    },
+    {
+        "id": "376",
         "titel": "In gesprek met Steven Grant",
-        "tijd": 56,
+        "tijd": "56",
         "datum": "2024-02-19",
         "categorie": "interview"
-    },{
-        "id": 377,
+    },
+    {
+        "id": "377",
         "titel": "Meej glans van de schaans",
-        "tijd": 124,
+        "tijd": "124",
         "datum": "2024-02-25",
         "categorie": "nieuws"
-    },{
-        "id": 378,
+    },
+    {
+        "id": "378",
         "titel": "Escapisme in de Efteling",
-        "tijd": 121,
+        "tijd": "121",
         "datum": "2024-03-03",
         "categorie": "achtergrond"
-    },{
-        "id": 379,
+    },
+    {
+        "id": "379",
         "titel": "Smaakexplosie",
-        "tijd": 109,
+        "tijd": "109",
         "datum": "2024-03-11",
         "categorie": "nieuws"
-    },{
-        "id": 380,
+    },
+    {
+        "id": "380",
         "titel": "Wat met de Winter Efteling?",
-        "tijd": 138,
+        "tijd": "138",
         "datum": "2024-03-18",
         "categorie": "achtergrond"
     }
