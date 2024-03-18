@@ -119,37 +119,31 @@ function calculatePercentageNieuws() {
     });
 }
 // Functie om de langste en kortste aflevering op te halen en weer te geven
-function getLongestAndShortestEpisodes() {
-    // Fetch het JSON-bestand
+function findShortestAndLongestEpisodes() {
     fetch('episodes.json')
     .then(response => {
-        // Controleer of het laden van het bestand succesvol is
         if (!response.ok) {
             throw new Error('Failed to load JSON data');
         }
         return response.json();
     })
     .then(data => {
-        // Zoek de aflevering met het hoogste aantal minuten
-        let longestEpisode = data.reduce((max, episode) => max.tijd > episode.tijd ? max : episode);
+        // Sorteer de afleveringen op basis van de tijd
+        const sortedEpisodes = data.sort((a, b) => a.tijd - b.tijd);
 
-        // Zoek de aflevering met het laagste aantal minuten
-        let shortestEpisode = data.reduce((min, episode) => min.tijd < episode.tijd ? min : episode);
+        // De eerste aflevering is de kortste
+        const shortestEpisode = sortedEpisodes[0];
+        // De laatste aflevering is de langste
+        const longestEpisode = sortedEpisodes[sortedEpisodes.length - 1];
 
-        // Toon het ID, de titel en het aantal minuten van de langste aflevering
-        const longestEpisodeElement = document.getElementById('longestEpisode');
-        longestEpisodeElement.textContent = `${longestEpisode.id}: ${longestEpisode.titel} is een ${longestEpisode.categorie}-aflevering en is recordhouder van langste aflevering, de aflevering duurt ${longestEpisode.tijd} minuten`;
+        // Vul de kortste aflevering in het span-element met id "shortestEpisodeInfo"
+        document.getElementById('shortestEpisodeInfo').innerHTML = `${shortestEpisode.id}: ${shortestEpisode.titel} is een ${shortestEpisode.categorie}-aflevering en duurt slechts <strong>${shortestEpisode.tijd} minuten</strong>`;
 
-        // Toon het ID, de titel en het aantal minuten van de kortste aflevering
-        const shortestEpisodeElement = document.getElementById('shortestEpisode');
-        shortestEpisodeElement.textContent = `${shortestEpisode.id}: ${shortestEpisode.titel} is een ${shortestEpisode.categorie}-aflevering en duurt slechts ${shortestEpisode.tijd} minuten`;
+        // Vul de langste aflevering in het span-element met id "longestEpisodeInfo"
+        document.getElementById('longestEpisodeInfo').innerHTML = `${longestEpisode.id}: ${longestEpisode.titel} is een ${longestEpisode.categorie}-aflevering en is recordhouder van de langste aflevering, de aflevering duurt <strong>${longestEpisode.tijd} minuten</strong>`;
     })
     .catch(error => {
         console.error('Error:', error);
-        const longestEpisodeElement = document.getElementById('longestEpisode');
-        longestEpisodeElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
-        const shortestEpisodeElement = document.getElementById('shortestEpisode');
-        shortestEpisodeElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
     });
 }
 function calculateEpisodeHours() {
@@ -181,7 +175,7 @@ function calculateEpisodeHours() {
 }
 // Roep de functies aan wanneer de pagina geladen is
 window.onload = calculateEpisodeHours();
-window.onload = getLongestAndShortestEpisodes();
+window.onload = findShortestAndLongestEpisodes();
 window.onload = calculatePercentageNieuws();
 window.onload = countInterview();
 window.onload = calculateAverageMinutes();
