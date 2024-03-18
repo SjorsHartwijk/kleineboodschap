@@ -2100,5 +2100,185 @@
         "tijd": 134,
         "datum": "2023-09-17",
         "categorie": "interview"
+    },{
+        "id": 351,
+        "titel": "Pieckwashing",
+        "tijd": 104,
+        "datum": "2023-09-25",
+        "categorie": "nieuws"
+    },{
+        "id": 352,
+        "titel": "Boekpresentatie Raveleijn - Het bloed van de laatste draak",
+        "tijd": 104,
+        "datum": "2023-09-29",
+        "categorie": "reportage"
+    },{
+        "id": 353,
+        "titel": "De Glazen Bol 2023",
+        "tijd": 91,
+        "datum": "2023-10-02",
+        "categorie": "achtergrond"
+    },{
+        "id": 354,
+        "titel": "Nek aan nek met een klittenbandje",
+        "tijd": 88,
+        "datum": "2023-10-09",
+        "categorie": "nieuws"
+    },{
+        "id": 355,
+        "titel": "Mijmeren met Xander de Rycke",
+        "tijd": 101,
+        "datum": "2023-10-16",
+        "categorie": "interview"
+    },{
+        "id": 356,
+        "titel": "Popcornverkooppunttekort",
+        "tijd": 125,
+        "datum": "2023-10-23",
+        "categorie": "nieuws"
+    },{
+        "id": 357,
+        "titel": "Efteling pins",
+        "tijd": 177,
+        "datum": "2023-10-30",
+        "categorie": "achtergrond"
+    },{
+        "id": 358,
+        "titel": "Een strobaal afdoen met een doekje",
+        "tijd": 114,
+        "datum": "2023-11-06",
+        "categorie": "nieuws"
+    },{
+        "id": 359,
+        "titel": "Mijmeren met Willem Sikkers",
+        "tijd": 99,
+        "datum": "2023-11-13",
+        "categorie": "interview"
+    },{
+        "id": 360,
+        "titel": "Champignons buiten knikkeren",
+        "tijd": 116,
+        "datum": "2023-11-20",
+        "categorie": "nieuws"
+    },{
+        "id": 361,
+        "titel": "Achter de schermen bij de Spookslot-documentaire van De Vijf Zintuigen",
+        "tijd": 210,
+        "datum": "2023-11-26",
+        "categorie": "interview"
+    },{
+        "id": 362,
+        "titel": "Gas(t)beleving",
+        "tijd": 104,
+        "datum": "2023-12-04",
+        "categorie": "nieuws"
+    },{
+        "id": 363,
+        "titel": "De restauratie van het kasteel van Doornroosje",
+        "tijd": 51,
+        "datum": "2023-12-11",
+        "categorie": "reportage"
+    },{
+        "id": 364,
+        "titel": "Als Shrek thuiskomen",
+        "tijd": 111,
+        "datum": "2023-12-18",
+        "categorie": "nieuws"
+    },{
+        "id": 365,
+        "titel": "De internationalisering van de Efteling",
+        "tijd": 119,
+        "datum": "2023-12-22",
+        "categorie": "achtergrond"
+    },{
+        "id": 366,
+        "titel": "Struikelblokken",
+        "tijd": 112,
+        "datum": "2024-01-01",
+        "categorie": "nieuws"
+    },{
+        "id": 367,
+        "titel": "In gesprek met Marjolein Mens",
+        "tijd": 149,
+        "datum": "2024-01-08",
+        "categorie": "interview"
+    },{
+        "id": 368,
+        "titel": "De Koningssuite en Droomvlucht Suite in het Efteling Hotel",
+        "tijd": 17,
+        "datum": "2024-01-11",
+        "categorie": "reportage"
+    },{
+        "id": 369,
+        "titel": "Suske & Wiske en de Varende Vissen",
+        "tijd": 117,
+        "datum": "2024-01-14",
+        "categorie": "nieuws"
+    },{
+        "id": 370,
+        "titel": "De muziek van Baron 1898",
+        "tijd": 83,
+        "datum": "2024-01-22",
+        "categorie": "achtergrond"
+    },{
+        "id": 371,
+        "titel": "Pieckvermogen",
+        "tijd": 119,
+        "datum": "2024-01-29",
+        "categorie": "nieuws"
+    },{
+        "id": 372,
+        "titel": "Het hoogste punt van Danse Macabre",
+        "tijd": 35,
+        "datum": "2024-02-02",
+        "categorie": "reportage"
+    },{
+        "id": 373,
+        "titel": "Mijmeren met Bart Baan en Niels Kooyman",
+        "tijd": 168,
+        "datum": "2024-02-05",
+        "categorie": "interview"
+    },{
+        "id": 374,
+        "titel": "De Legende van Familie Vos",
+        "tijd": 106,
+        "datum": "2024-02-07",
+        "categorie": "achtergrond"
+    },{
+        "id": 375,
+        "titel": "Witheet",
+        "tijd": 128,
+        "datum": "2024-02-12",
+        "categorie": "nieuws"
+    },{
+        "id": 376,
+        "titel": "In gesprek met Steven Grant",
+        "tijd": 56,
+        "datum": "2024-02-19",
+        "categorie": "interview"
+    },{
+        "id": 377,
+        "titel": "Meej glans van de schaans",
+        "tijd": 124,
+        "datum": "2024-02-25",
+        "categorie": "nieuws"
+    },{
+        "id": 378,
+        "titel": "Escapisme in de Efteling",
+        "tijd": 121,
+        "datum": "2024-03-03",
+        "categorie": "achtergrond"
+    },{
+        "id": 379,
+        "titel": "Smaakexplosie",
+        "tijd": 109,
+        "datum": "2024-03-11",
+        "categorie": "nieuws"
+    },{
+        "id": 380,
+        "titel": "Wat met de Winter Efteling?",
+        "tijd": 138,
+        "datum": "2024-03-18",
+        "categorie": "achtergrond"
     }
 ]
