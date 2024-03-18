@@ -27,7 +27,7 @@
                 </div>
             </nav>
             <!-- Header-->
-            <header class="bg-theme py-5">
+            <header id="top" class="bg-theme py-5">
                 <div class="container px-5">
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
@@ -170,7 +170,7 @@
                             <small class="fst-italic">Tip: klik op de categorieën naast de cirkel om deze aan of uit te zetten.</small>
                         </div>
                         <div class="col-12 col-lg-7 text-center">
-                            <canvas id="pieChart"></canvas>
+                            <canvas id="donutChart"></canvas>
                         </div>
                     </div>
                     <div class="row mb-5 d-flex align-items-center">
@@ -185,39 +185,16 @@
                     </div>
                 </div>
             </section>
-            <!-- Testimonial section-->
-            <!--<div class="py-5 bg-light">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-10 col-xl-7">
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"Working with Start Bootstrap templates has saved me tons of development time when building new projects! Starting with a Bootstrap template just makes things easier!"</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                    <div class="fw-bold">
-                                        Tom Ato
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        CEO, Pomodoro
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
             <section id="about">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 mb-5">
-                            <h3 class="h4">Over dit project</h3>
-                            <p>Het project Kleine Boodschap Data is een hobbyproject dat is ontstaan uit mijn interesse voor de Efteling en de vele uren luisterplezier die de Afleveringen van Kleine Boodschap mij hebben bezorgd.</p>
-                            <p>Ik werk indien mogelijk wekelijks alle data over de afleveringen bij en publiceer de statistieken op deze pagina en op <a href="https://github.com/SjorsHartwijk/kleineboodschap" target="_blank">GitHub</a>. Iedereen is vrij om naar de broncode te kijken.</p>
-                            <p>Dit project heeft geen commerciële doeleinden en ik heb geen enkele affiliatie met de podcast Kleine Boodschap noch de Efteling. Wat betreft de data haal ik alleen de titel, publicatiedatum en categorie van een aflevering van de website van Kleine Boodschap. De afleveringen zelf zijn hier niet te luisteren maar kunnen worden beluisterd via de website van Kleine Boodschap.</p>
-                            <h4>Over de ontwikkelaar</h4>
-                            <p>Mijn naam is Sjors Hartwijk, <span id="age"></span> jaar en woon op dit moment in Tilburg, op een kwartier rijden van de Efteling. Dagelijks ben ik werkzaam als front-end webdeveloper bij een grote Brabantse retailer op het gebied van keukens, meubels, sanitair en badkamers waar ik het beheer voer over alle  websites van onze merken.</p>
-                            <p>In mijn jeugdjaren hebben mijn ouders vrijwel elk jaar een Efteling abbonement afgesloten voor ons gezin waarmee ik met mijn ouders en zusje regelmatig naar de Efteling ging.</p>
-                            <p>Toen ik 18 was, net mijn rijbewijs had en op zoek was naar een andere bijbaan kwam ik weer bij de Efteling terecht, van 2012 t/m 2017 was ik Junior Gastheer op de afdeling evenementen waarbij ik in de bediening werkte op allerlei besloten bedrijfsevenementen of grote evenementen in het park. Ook werd ik regelmatig ingezet in alle bediende restaurants in de wereld van de Efteling van Theater, Hotel, Raveleijn tot Bosrijk en het voormalige Efteling Golfpark.</p>
-                            <p>Door de bijbaan is de facinatie voor de Efteling altijd gebleven en heb nog steeds een abbonement met mijn partner en haar zoontje waarmee we geregeld de Efteling bezoeken. Met de analyses en achtergronden van Tim en Paul van Kleine Boodschap ben ik elke maandag weer benieuwd waar ze het over gaan hebben en luister met veel plezier.</p>
+                            <div class="bg-light rounded-3 py-3 px-1 py-lg-5 px-lg-5">
+                                <h3 class="h4">Over dit project</h3>
+                                <p>Het project Kleine Boodschap Data is een hobbyproject dat is ontstaan uit mijn interesse voor de Efteling en de vele uren luisterplezier die de Afleveringen van Kleine Boodschap mij hebben bezorgd.</p>
+                                <p>Ik werk indien mogelijk wekelijks alle data over de afleveringen bij en publiceer de statistieken op deze pagina en op <a href="https://github.com/SjorsHartwijk/kleineboodschap" target="_blank">GitHub</a>. Iedereen is vrij om naar de broncode te kijken.</p>
+                                <p>Dit project heeft geen commerciële doeleinden en heeft geen enkele affiliatie met de podcast Kleine Boodschap noch de Efteling. Wat betreft de data haal ik alleen de openbare gegevens zoals titel, publicatiedatum en categorie van een aflevering van de website van Kleine Boodschap. De afleveringen zelf zijn hier niet te beluisteren en wordt er ook niet naar verwezen.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -229,9 +206,9 @@
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Sjors Hartwijk <script>document.write(new Date().getFullYear())</script></div></div>
                 <div class="col-auto">
-                    <a class="link-light small" href="#!">Home</a>
+                    <a class="link-light small" href="#top">Home</a>
                     <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="#!">Over</a>
+                    <a class="link-light small" href="#about">Over</a>
                     <span class="text-white mx-1">&middot;</span>
                     <a class="link-light small" href="https://github.com/SjorsHartwijk/kleineboodschap" target="_blank">Github</a>
                     <span class="text-white mx-1">&middot;</span>
