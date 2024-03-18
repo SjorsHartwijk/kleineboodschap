@@ -1800,5 +1800,125 @@
         "tijd": 114,
         "datum": "2022-10-31",
         "categorie": "achtergrond"
+    },{
+        "id": 301,
+        "titel": "Het Textielmuseum en het Efteling tafellinnen",
+        "tijd": 33,
+        "datum": "2022-11-02",
+        "categorie": "achtergrond"
+    },{
+        "id": 302,
+        "titel": "Verticale verassing",
+        "tijd": 172,
+        "datum": "2022-11-07",
+        "categorie": "nieuws"
+    },{
+        "id": 303,
+        "titel": "Mijmeren met Sander Kesseler",
+        "tijd": 93,
+        "datum": "2022-11-14",
+        "categorie": "interview"
+    },{
+        "id": 304,
+        "titel": "Een rondje proefroken",
+        "tijd": 137,
+        "datum": "2022-11-21",
+        "categorie": "nieuws"
+    },{
+        "id": 305,
+        "titel": "De Efteling als verteller van sprookjes met Moniek Hover",
+        "tijd": 162,
+        "datum": "2022-11-28",
+        "categorie": "interview"
+    },{
+        "id": 306,
+        "titel": "Een kwakje spuitbeton",
+        "tijd": 122,
+        "datum": "2022-12-05",
+        "categorie": "nieuws"
+    },{
+        "id": 307,
+        "titel": "De boerderij aan de Horst",
+        "tijd": 59,
+        "datum": "2022-12-12",
+        "categorie": "interview"
+    },{
+        "id": 308,
+        "titel": "CARO en Sky Radio",
+        "tijd": 112,
+        "datum": "2022-12-19",
+        "categorie": "nieuws"
+    },{
+        "id": 309,
+        "titel": "In gesprek met Tim Nusselein",
+        "tijd": 109,
+        "datum": "2022-12-26",
+        "categorie": "interview"
+    },{
+        "id": 310,
+        "titel": "Hoodie Woodie",
+        "tijd": 141,
+        "datum": "2023-01-02",
+        "categorie": "nieuws"
+    },{
+        "id": 311,
+        "titel": "In gesprek met Sebastiaan Smits",
+        "tijd": 97,
+        "datum": "2023-01-09",
+        "categorie": "interview"
+    },{
+        "id": 312,
+        "titel": "Beunmeester Big",
+        "tijd": 126,
+        "datum": "2023-01-16",
+        "categorie": "nieuws"
+    },{
+        "id": 313,
+        "titel": "In gesprek met Bertus Kemmeren",
+        "tijd": 66,
+        "datum": "2023-01-23",
+        "categorie": "interview"
+    },{
+        "id": 314,
+        "titel": "In gesprek met Jordan Middleton (Cupcakes & Coasters)",
+        "tijd": 61,
+        "datum": "2023-01-26",
+        "categorie": "interview"
+    },{
+        "id": 315,
+        "titel": "Direct na de dummies",
+        "tijd": 116,
+        "datum": "2023-01-30",
+        "categorie": "nieuws"
+    },{
+        "id": 316,
+        "titel": "De Efteling Stoomtrein Maatschappij",
+        "tijd": 126,
+        "datum": "2023-02-06",
+        "categorie": "interview"
+    },{
+        "id": 317,
+        "titel": "Team Erfgoedbeheer",
+        "tijd": 86,
+        "datum": "2023-02-13",
+        "categorie": "interview"
+    },{
+        "id": 318,
+        "titel": "Anarchie op de Europalaan",
+        "tijd": 131,
+        "datum": "2023-02-20",
+        "categorie": "nieuws"
+    },{
+        "id": 319,
+        "titel": "De muziek van de Wereld van Sindbad",
+        "tijd": 75,
+        "datum": "2023-02-27",
+        "categorie": "achtergrond"
+    },{
+        "id": 320,
+        "titel": "Efteling - De Tentoonstelling",
+        "tijd": 76,
+        "datum": "2023-03-06",
+        "categorie": "achtergrond"
     }
 ]
