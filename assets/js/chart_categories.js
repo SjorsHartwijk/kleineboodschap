@@ -45,9 +45,11 @@ function loadCategories() {
                     }]
                 },
                 options: {
+                    response: true,
                     plugins: {
                         legend: {
-                          display: false,
+                            position: 'left',
+                            display: true
                         }
                       }
                 }

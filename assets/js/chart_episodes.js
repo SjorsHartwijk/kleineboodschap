@@ -55,7 +55,8 @@ function loadEpisodes() {
                       display: false,
                     }
                   },
-                scales: {
+                  responsive: true,
+                  scales: {
                     x: {
                       title: {
                         display: false,

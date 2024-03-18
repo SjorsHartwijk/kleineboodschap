@@ -58,7 +58,7 @@
                             <div class="card shadow h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Afleveringen</h2>
-                                    <p class="card-text">Op dit moment zijn er <strong><span id="afleveringenCount"></span></strong> afleveringen van Kleine Boodschap geindexeerd op deze pagina</p>
+                                    <p class="card-text">Op dit moment zijn er <strong><span id="afleveringenCount"></span></strong> afleveringen van Kleine Boodschap geïndexeerd op deze pagina</p>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                             <div class="card shadow h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Vandaag de dag</h2>
-                                    <p class="card-text">Indien er op deze dag in het verleden een aflevering is verschenen wordt/worden deze aflevering(en) hier geplaatst</p>
+                                    <p class="card-text">Indien er op deze dag in het verleden een aflevering is verschenen wordt/worden deze aflevering(en) hier geplaatst.</p>
                                 </div> 
                                 <ul class="list-group list-group-flush">
                                     <span id="todayEpisodes"></span>
@@ -143,26 +143,22 @@
                         </div>
                     </div>
                     <div class="row mb-5 d-flex align-items-center bg-light rounded-3 py-3 px-1 py-lg-5 px-lg-5">
-                        <div class="col-12 col-lg-7">
+                        <div class="col-12 col-lg-5">
                             <h3>Categorieën</h3>
                             <p>In deze donut diagram bekijk je alle afleveringen van Kleine Boodschap per categorie.</p>
-                            <div class="legenda d-flex flex-row flex-wrap pb-2">
-                                <div class="achtergrond">Achtergrond</div>
-                                <div class="nieuws">Nieuws</div>
-                                <div class="reportage">Reportage</div>
-                                <div class="interview">Interview</div>
-                            </div>
+                            <small class="fst-italic">Tip: klik op de categorieën naast de cirkel om deze aan of uit te zetten.</small>
                         </div>
-                        <div class="col-12 col-lg-5 text-center">
+                        <div class="col-12 col-lg-7 text-center">
                             <canvas id="pieChart"></canvas>
                         </div>
                     </div>
                     <div class="row mb-5 d-flex align-items-center">
-                        <div class="col-12 col-lg-5">
+                        <div class="col-12 col-lg-4">
                             <h3>Door de jaren heen</h3>
-                            <p>In deze staaf diagram zie je alle gepubliceerde afleveringen van Kleine Boodschap per jaar.</p>
+                            <p>In deze staafdiagram zie je alle gepubliceerde afleveringen van Kleine Boodschap per jaar.</p>
+                            <small class="fst-italic">Tip: klik op de categorieën onder het diagram om deze aan of uit te zetten.</small>
                         </div>
-                        <div class="col-12 col-lg-7">
+                        <div class="col-12 col-lg-8">
                             <canvas id="yearBarChart"></canvas>
                         </div>
                     </div>

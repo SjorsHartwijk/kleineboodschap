@@ -43,8 +43,10 @@ h1,h2,h3,h4,h5,h6 {
         li {
             border-left: none;
             border-right: none;
-            border-bottom: none;
             background-color: unset;
+            &:last-child {
+                border-bottom: none;
+            }
         }
     }
 }

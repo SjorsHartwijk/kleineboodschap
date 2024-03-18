@@ -46,8 +46,10 @@ h1, h2, h3, h4, h5, h6 {
 .card ul li {
   border-left: none;
   border-right: none;
-  border-bottom: none;
   background-color: unset;
+}
+.card ul li:last-child {
+  border-bottom: none;
 }
 
 .btn {
