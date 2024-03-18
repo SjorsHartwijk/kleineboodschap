@@ -141,18 +141,25 @@
                             <div class="d-flex justify-content-between">
                                 <div>
                                     <h3 class="h4">Afleveringen</h3>
-                                    <div class="legenda d-flex flex-row flex-wrap pb-2">
+                                    <div class="legenda d-none d-md-flex flex-row flex-wrap pb-2 ">
                                         <div class="achtergrond">Achtergrond</div>
                                         <div class="nieuws">Nieuws</div>
                                         <div class="reportage">Reportage</div>
                                         <div class="interview">Interview</div>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="d-none d-md-block">
                                     <button id="toggleButton" onclick="toggleContainer()" class="btn btn-resize btn-outline-dark"><i class="bi bi-arrows-fullscreen"></i></button>
                                 </div>
                             </div>
-                            <canvas id="barChart"></canvas>
+                            <div class="d-block d-md-none text-center">
+                                <div class="py-4 px-2 bg-light rounded-3 quote"><small class="fst-italic">Op 't kleine scherm, daar is 't een twist,
+                                    Een grafiek zo klein, 't is een gemis.
+                                    Draai 't scherm, maak 't groot, dan zie je pas,
+                                    De data danst op 't scherm in z'n sas.</small></div>
+                                
+                            </div>
+                            <canvas id="barChart" class="d-none d-md-block"></canvas>
                         </div>
                     </div>
                 </div>

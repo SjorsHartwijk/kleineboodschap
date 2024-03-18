@@ -34,6 +34,9 @@ h1,h2,h3,h4,h5,h6 {
 .bg-theme {
     background-color: var(--color-theme-primary);
 }
+.quote {
+    color: var(--color-theme-primary);
+}
 .card {
     border: unset;
     h2 {
@@ -48,6 +51,11 @@ h1,h2,h3,h4,h5,h6 {
                 border-bottom: none;
             }
         }
+    }
+}
+@media(min-width: 767px) {
+    .mobile-hide {
+        display: none;
     }
 }
 .btn {

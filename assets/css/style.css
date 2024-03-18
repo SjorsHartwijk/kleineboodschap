@@ -37,6 +37,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-theme-primary);
 }
 
+.quote {
+  color: var(--color-theme-primary);
+}
+
 .card {
   border: unset;
 }
@@ -52,6 +56,11 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: none;
 }
 
+@media (min-width: 767px) {
+  .mobile-hide {
+    display: none;
+  }
+}
 .btn {
   border-radius: calc(infinity * 1px);
 }
