@@ -128,23 +128,38 @@
             <!-- Data section-->
             <section id="data">
                 <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Data</h2>
+                            <p class="pb-2">Bekijk hier de data van alle afleveringen van Kleine Boodschap.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" id="toggleView">
                     <div class="row mb-5">
                         <div class="col-12">
-                            <h3>Data</h3>
-                            <p class="pb-2">Bekijk hier de data van alle afleveringen van Kleine Boodschap.</p>
-                            <h5>Afleveringen</h5>
-                            <div class="legenda d-flex flex-row flex-wrap pb-2">
-                                <div class="achtergrond">Achtergrond</div>
-                                <div class="nieuws">Nieuws</div>
-                                <div class="reportage">Reportage</div>
-                                <div class="interview">Interview</div>
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h3 class="h4">Afleveringen</h3>
+                                    <div class="legenda d-flex flex-row flex-wrap pb-2">
+                                        <div class="achtergrond">Achtergrond</div>
+                                        <div class="nieuws">Nieuws</div>
+                                        <div class="reportage">Reportage</div>
+                                        <div class="interview">Interview</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button id="toggleButton" onclick="toggleContainer()" class="btn btn-resize btn-outline-dark"><i class="bi bi-arrows-fullscreen"></i></button>
+                                </div>
                             </div>
                             <canvas id="barChart"></canvas>
                         </div>
                     </div>
+                </div>
+                <div class="container">
                     <div class="row mb-5 d-flex align-items-center bg-light rounded-3 py-3 px-1 py-lg-5 px-lg-5">
                         <div class="col-12 col-lg-5">
-                            <h3>Categorieën</h3>
+                            <h3 class="h4">Categorieën</h3>
                             <p>In deze donut diagram bekijk je alle afleveringen van Kleine Boodschap per categorie.</p>
                             <small class="fst-italic">Tip: klik op de categorieën naast de cirkel om deze aan of uit te zetten.</small>
                         </div>
@@ -154,7 +169,7 @@
                     </div>
                     <div class="row mb-5 d-flex align-items-center">
                         <div class="col-12 col-lg-4">
-                            <h3>Door de jaren heen</h3>
+                            <h3 class="h4">Door de jaren heen</h3>
                             <p>In deze staafdiagram zie je alle gepubliceerde afleveringen van Kleine Boodschap per jaar.</p>
                             <small class="fst-italic">Tip: klik op de categorieën onder het diagram om deze aan of uit te zetten.</small>
                         </div>
@@ -188,7 +203,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 mb-5">
-                            <h3>Over dit project</h3>
+                            <h3 class="h4">Over dit project</h3>
                             <p>Het project Kleine Boodschap Data is een hobbyproject dat is ontstaan uit mijn interesse voor de Efteling en de vele uren luisterplezier die de Afleveringen van Kleine Boodschap mij hebben bezorgd.</p>
                             <p>Ik werk indien mogelijk wekelijks alle data over de afleveringen bij en publiceer de statistieken op deze pagina en op <a href="https://github.com/SjorsHartwijk/kleineboodschap" target="_blank">GitHub</a>. Iedereen is vrij om naar de broncode te kijken.</p>
                             <p>Dit project heeft geen commerciële doeleinden en ik heb geen enkele affiliatie met de podcast Kleine Boodschap noch de Efteling. Wat betreft de data haal ik alleen de titel, publicatiedatum en categorie van een aflevering van de website van Kleine Boodschap. De afleveringen zelf zijn hier niet te luisteren maar kunnen worden beluisterd via de website van Kleine Boodschap.</p>
@@ -242,6 +257,20 @@
         if (ageElement) {
             const age = calculateAge(dateOfBirth);
             ageElement.textContent = age;
+        }
+        // toggle container for the episodes data
+        function toggleContainer() {
+            var element = document.getElementById('toggleView');
+            var button = document.getElementById('toggleButton');
+            if (element.classList.contains('container')) {
+                element.classList.remove('container');
+                element.classList.add('container-fluid');
+                button.innerHTML = '<i class="bi bi-fullscreen-exit"></i>';
+            } else {
+                element.classList.remove('container-fluid');
+                element.classList.add('container');
+                button.innerHTML = '<i class="bi bi-arrows-fullscreen"></i>';
+            }
         }
     </script>
     <!-- chart.js -->

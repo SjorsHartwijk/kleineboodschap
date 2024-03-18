@@ -55,6 +55,9 @@ h1, h2, h3, h4, h5, h6 {
 .btn {
   border-radius: calc(infinity * 1px);
 }
+.btn.btn-resize {
+  border-radius: 0;
+}
 
 .legenda {
   font-size: 0.9em;
