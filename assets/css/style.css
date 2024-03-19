@@ -43,13 +43,20 @@ h1, h2, h3, h4, h5, h6 {
 .card h2 {
   color: var(--color-theme-primary);
 }
-.card ul li {
+.card .list-group-flush .list-group-item {
   border-left: none;
   border-right: none;
   background-color: unset;
 }
-.card ul li:last-child {
+.card .list-group-flush .list-group-item:last-child {
   border-bottom: none;
+}
+.card summary {
+  padding: 0.25em 0;
+  font-weight: bold;
+}
+.card summary::marker {
+  color: var(--color-theme-secondary);
 }
 
 @media (min-width: 767px) {

@@ -173,9 +173,63 @@ function calculateEpisodeHours() {
         alert('Er is een fout opgetreden bij het laden van de gegevens.');
     });
 }
+// top 5 langste en top 5 korste afleveringen
+function showTop5Episodes() {
+    fetch('episodes.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to load JSON data');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Sorteer de afleveringen op basis van de tijd
+        const sortedEpisodes = data.slice().sort((a, b) => a.tijd - b.tijd);
+
+        // Top 5 langste afleveringen
+        const top5LongestEpisodes = sortedEpisodes.slice(-5).reverse(); // Draai de volgorde om (langste eerst)
+
+        // Vul de lijst met de top 5 langste afleveringen
+        const longestEpisodesListElement = document.getElementById('longestEpisodesList');
+        top5LongestEpisodes.forEach(episode => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item');
+            listItem.classList.add('small');
+            listItem.textContent = `${episode.id}: ${episode.titel} - ${episode.tijd} minuten (${formatDate(episode.datum)})`;
+            longestEpisodesListElement.appendChild(listItem);
+        });
+
+        // Top 5 kortste afleveringen
+        const top5ShortestEpisodes = sortedEpisodes.slice(0, 5);
+
+        // Vul de lijst met de top 5 kortste afleveringen
+        const shortestEpisodesListElement = document.getElementById('shortestEpisodesList');
+        top5ShortestEpisodes.forEach(episode => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item');
+            listItem.classList.add('small');
+            listItem.textContent = `${episode.id}: ${episode.titel} - ${episode.tijd} minuten (${formatDate(episode.datum)})`;
+            shortestEpisodesListElement.appendChild(listItem);
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Er is een fout opgetreden bij het laden van de gegevens.');
+    });
+}
+
+// Functie om de datum te formatteren naar de Nederlandse datumnotatie (dd-mm-yyyy)
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+}
 // Roep de functies aan wanneer de pagina geladen is
 window.onload = calculateEpisodeHours();
 window.onload = findShortestAndLongestEpisodes();
+window.onload = showTop5Episodes();
 window.onload = calculatePercentageNieuws();
 window.onload = countInterview();
 window.onload = calculateAverageMinutes();
