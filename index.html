@@ -125,12 +125,12 @@
                             <div class="card shadow h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Jouw dag</h2>
-                                    <p class="card-text">Benieuwd welke aflevering(en) op bijv. jouw verjaardag is gepubliceerd? Vul je geboortedag in en zie direct het resultaat.</p>
+                                    <p class="card-text">Benieuwd welke aflevering(en) op bijv. jouw verjaardag is gepubliceerd? Vul je dag in en zie direct het resultaat.</p>
                                     <form id="episodeForm">
                                         <div class="row">
                                             <div class="col-8">
                                                 <label for="month" class="form-label">Maand:</label>
-                                                <select id="month" class="form-control">
+                                                <select id="month" class="form-control" required>
                                                     <option value="0" disabled selected>Selecteer maand</option>
                                                     <option value="1">Januari</option>
                                                     <option value="2">Februari</option>
@@ -148,10 +148,10 @@
                                             </div>
                                             <div class="col-4">
                                                 <label for="day" class="form-label">Dag:</label>
-                                                <input class="form-control" type="text" id="day" inputmode="numeric" pattern="[0-9]*" min="1" max="31" required>
+                                                <input class="form-control" type="text" id="day" inputmode="numeric" pattern="[1-9]|[12]\d|3[01]" title="Vul een getal tussen 1 en 31 in" required>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary my-3">Zoek</button>
+                                        <button type="submit" class="btn btn-primary my-3 px-4">Zoek</button>
                                     </form>
                                     <p class="card-text" id="episodeInfo"></p>
                                 </div>

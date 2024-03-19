@@ -106,3 +106,12 @@ header {
         }
     }
 }
+.btn-primary {
+    background-color: var(--color-theme-primary);
+    border-color: var(--color-theme-primary);
+    color: white;
+    &:hover,:focus {
+        background-color: darken(#154666, 20%);
+        border-color: darken(#154666, 20%);
+    }
+}

@@ -106,4 +106,14 @@ header.bg-theme .btn-theme {
 header.bg-theme .btn-theme:hover, header.bg-theme .btn-theme :focus {
   background-color: #efa124;
   border-color: #efa124;
+}
+
+.btn-primary {
+  background-color: var(--color-theme-primary);
+  border-color: var(--color-theme-primary);
+  color: white;
+}
+.btn-primary:hover, .btn-primary :focus {
+  background-color: #040c11;
+  border-color: #040c11;
 }/*# sourceMappingURL=style.css.map */
