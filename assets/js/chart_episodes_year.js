@@ -86,8 +86,8 @@ window.onload = loadEpisodesPerYear();
 
 // Kleuren toewijzen aan categorieën
 const categoryColors = {
-    'nieuws': '#F6CA83',
-    'achtergrond': '#7B9F93',
-    'reportage': '#4685AE',
-    'interview': '#C46868'
+    'nieuws': '#F2CB65',
+    'achtergrond': '#56766B',
+    'reportage': '#44687D',
+    'interview': '#AC1A2E'
 };

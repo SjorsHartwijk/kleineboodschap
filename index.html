@@ -108,19 +108,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 mb-3">
-                            <div class="card shadow h-100">
-                                <div class="card-body">
-                                    <h2 class="h5 card-title">Interviews</h2>
-                                    <p class="card-text">De heren van Kleine Boodschap hebben <strong><span id="countInterview"></span></strong> interviews met (oud) Eftelingers en Efteling liefhebbers opgenomen</p>
+                        <div id="statistics"></div>
+                        <div class="col-6 col-lg-3 mb-3">
+                            <div class="card shadow bg-achtergrond h-100">
+                                <div class="card-body" id="achtergrondStatistics">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 mb-3">
-                            <div class="card shadow h-100">
-                                <div class="card-body">
-                                    <h2 class="h5 card-title">Nieuws</h2>
-                                    <p class="card-text"><strong><span id="percentageNieuws"></span></strong> van de afleveringen is een nieuwsaflevering</p>
+                        <div class="col-6 col-lg-3 mb-3">
+                            <div class="card shadow bg-nieuws h-100">
+                                <div class="card-body" id="newsStatistics">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 mb-3">
+                            <div class="card shadow bg-interview h-100">
+                                <div class="card-body" id="interviewStatistics">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 mb-3">
+                            <div class="card shadow bg-reportage h-100">
+                                <div class="card-body" id="reportageStatistics">
                                 </div>
                             </div>
                         </div>
@@ -344,6 +353,7 @@
     <!-- snelle statistieken -->
     <script src="assets/js/quickstats.js"></script>
     <script src="assets/js/onthisday.js"></script>
+    <script src="assets/js/category_statistics.js"></script>
     <!-- grafieken -->
     <script src="assets/js/chart_episodes.js"></script>
     <script src="assets/js/chart_episodes_year.js"></script>

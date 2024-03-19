@@ -2,10 +2,10 @@
   --color-theme-primary: #154666;
   --color-theme-secondary: #7a2b2b;
   --color-white: #ffffff;
-  --color-nieuws: #F6CA83;
-  --color-reportage: #4685AE;
-  --color-interview: #C46868;
-  --color-achtergrond: #7B9F93;
+  --color-nieuws: #F2CB65;
+  --color-reportage: #44687D;
+  --color-interview: #AC1A2E;
+  --color-achtergrond: #56766B;
   --color-hyperlink: #3B815D;
 }
 
@@ -57,6 +57,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 .card summary::marker {
   color: var(--color-theme-secondary);
+}
+.card.bg-achtergrond {
+  color: var(--color-white);
+  background-color: var(--color-achtergrond);
+}
+.card.bg-achtergrond .card-title {
+  color: var(--color-white);
+}
+.card.bg-nieuws {
+  color: var(--color-theme-secondary);
+  background-color: var(--color-nieuws);
+}
+.card.bg-nieuws .card-title {
+  color: var(--color-theme-secondary);
+}
+.card.bg-interview {
+  color: var(--color-white);
+  background-color: var(--color-interview);
+}
+.card.bg-interview .card-title {
+  color: var(--color-white);
+}
+.card.bg-reportage {
+  color: var(--color-white);
+  background-color: var(--color-reportage);
+}
+.card.bg-reportage .card-title {
+  color: var(--color-white);
 }
 
 @media (min-width: 767px) {
