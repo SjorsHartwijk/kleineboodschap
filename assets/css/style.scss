@@ -27,6 +27,12 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
     font-style: normal;
 }
+.h1,.h2,.h3,.h4,.h5,.h6 {
+    color: var(--color-theme-secondary);
+    font-family: 'ErnestineWebW03';
+    font-weight: bold;
+    font-style: normal;
+}
 nav.navbar {
     &.navbar-dark {
         .navbar-brand {
