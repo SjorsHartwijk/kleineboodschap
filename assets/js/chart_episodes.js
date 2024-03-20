@@ -21,7 +21,7 @@ function loadEpisodes() {
         // Kleuren toewijzen aan categorieën
         const categoryColors = {
             'nieuws': '#F2CB65',
-            'achtergrond': '#56766B',
+            'achtergrond': '#619079',
             'reportage': '#44687D',
             'interview': '#AC1A2E'
         };

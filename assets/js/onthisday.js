@@ -33,6 +33,7 @@ function vandaagOpDezeDag() {
                 const formattedDate = episodeDate.getDate() + ' ' + episodeDate.toLocaleDateString('nl-NL', { month: 'long' }) + ' ' + episodeDate.getFullYear();
                 const listItem = document.createElement('li');
                 listItem.classList.add('list-group-item');
+                listItem.classList.add('small');
                 listItem.textContent = `Aflevering ${episode.id}: ${episode.titel} kwam uit op ${formattedDate}`;
                 todayEpisodesElement.appendChild(listItem);
             });
