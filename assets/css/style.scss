@@ -37,10 +37,11 @@ nav.navbar {
         }
         .navbar-nav {
             .nav-item {
+                padding: 0 .75em 0 0;
                 .nav-link {
                     color: var(--color-white);
                     &:hover,:focus {
-                        text-decoration: underline;
+                        color: var(--color-nieuws);
                     }
                     &:has(i) {
                         &:hover,:focus {
@@ -80,31 +81,27 @@ nav.navbar {
         }
     }
     &.bg-achtergrond {
-        color: var(--color-black);
-        background-color: var(--color-achtergrond);
+        border: 1px solid var(--color-achtergrond);
         .card-title {
-            color: var(--color-black);
+            color: var(--color-achtergrond);
         }
     }
     &.bg-nieuws {
-        color: var(--color-black);
-        background-color: var(--color-nieuws);
+        border: 1px solid var(--color-nieuws);
         .card-title {
-            color: var(--color-black);
+            color: var(--color-nieuws);
         }
     }
     &.bg-interview {
-        color: var(--color-white);
-        background-color: var(--color-interview);
+        border: 1px solid var(--color-interview);
         .card-title {
-            color: var(--color-white);
+            color: var(--color-interview);
         }
     }
     &.bg-reportage {
-        color: var(--color-white);
-        background-color: var(--color-reportage);
+        border: 1px solid var(--color-reportage);
         .card-title {
-            color: var(--color-white);
+            color: var(--color-reportage);
         }
     }
 }
@@ -146,7 +143,7 @@ a {
     }
 }
 header {
-    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='16.5' height='32.877' patternTransform='scale(2) rotate(10)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(204, 66%, 24%, 1)'/><path d='M-5 2l5 10L5 2zm16.5 0l5 10 5-10zM8.25 4.438l-5 10h10zm-5 14l5 10.001 5-10zM0 20.878l-5 10H5zm16.5 0l-5 10h10z'  stroke-width='1' stroke='hsla(206, 44%, 40%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,-1.508)' fill='url(%23a)'/></svg>");
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='16.5' height='32.877' patternTransform='scale(2) rotate(10)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(204, 66%, 24%, 1)'/><path d='M-5 2l5 10L5 2zm16.5 0l5 10 5-10zM8.25 4.438l-5 10h10zm-5 14l5 10.001 5-10zM0 20.878l-5 10H5zm16.5 0l-5 10h10z'  stroke-width='0.5' stroke='hsla(206, 44%, 40%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,-1.508)' fill='url(%23a)'/></svg>");
     &.bg-theme {
         a {
             color: var(--color-white);
@@ -159,8 +156,9 @@ header {
             border-color: var(--color-nieuws);
             color: var(--color-theme-secondary);
             &:hover,:focus {
-                background-color: darken(#F6CA83, 20%);
-                border-color: darken(#F6CA83, 20%);
+                background-color: darken(#F2CB65, 20%);
+                border-color: darken(#F2CB65, 20%);
+                color: var(--color-black);
             }
         }
     }
