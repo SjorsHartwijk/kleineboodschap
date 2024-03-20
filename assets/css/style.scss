@@ -49,6 +49,9 @@ nav.navbar {
                             text-decoration: none;
                         }
                     }
+                    &.active {
+                        color: var(--color-nieuws);
+                    }
                 }
             }
         }

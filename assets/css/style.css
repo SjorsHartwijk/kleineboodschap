@@ -47,6 +47,9 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link:has(i):hover, nav.navbar.
   color: var(--color-nieuws);
   text-decoration: none;
 }
+nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
+  color: var(--color-nieuws);
+}
 
 .bg-theme {
   background-color: var(--color-theme-primary);
