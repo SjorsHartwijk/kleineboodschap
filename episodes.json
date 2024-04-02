@@ -141,7 +141,7 @@
     },
     {
         "id": "21",
-        "titel": "t Verdiende Loon",
+        "titel": "'t Verdiende Loon",
         "tijd": "15",
         "datum": "2018-05-02",
         "categorie": "achtergrond"
@@ -2665,5 +2665,12 @@
         "tijd": "111",
         "datum": "2024-03-25",
         "categorie": "nieuws"
+    },
+    {
+        "id": "382",
+        "titel": "De Grote Podcastlas: de Efteling",
+        "tijd": "108",
+        "datum": "2024-04-01",
+        "categorie": "achtergrond"
     }
 ]
