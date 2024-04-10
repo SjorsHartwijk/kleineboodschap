@@ -91,25 +91,21 @@ nav.navbar {
         }
     }
     &.bg-achtergrond {
-        border: 1px solid var(--color-achtergrond);
         .card-title {
             color: var(--color-achtergrond);
         }
     }
     &.bg-nieuws {
-        border: 1px solid var(--color-nieuws);
         .card-title {
             color: var(--color-nieuws);
         }
     }
     &.bg-interview {
-        border: 1px solid var(--color-interview);
         .card-title {
             color: var(--color-interview);
         }
     }
     &.bg-reportage {
-        border: 1px solid var(--color-reportage);
         .card-title {
             color: var(--color-reportage);
         }

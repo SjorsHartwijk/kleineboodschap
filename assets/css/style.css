@@ -86,26 +86,14 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
 .card summary::marker {
   color: var(--color-theme-secondary);
 }
-.card.bg-achtergrond {
-  border: 1px solid var(--color-achtergrond);
-}
 .card.bg-achtergrond .card-title {
   color: var(--color-achtergrond);
-}
-.card.bg-nieuws {
-  border: 1px solid var(--color-nieuws);
 }
 .card.bg-nieuws .card-title {
   color: var(--color-nieuws);
 }
-.card.bg-interview {
-  border: 1px solid var(--color-interview);
-}
 .card.bg-interview .card-title {
   color: var(--color-interview);
-}
-.card.bg-reportage {
-  border: 1px solid var(--color-reportage);
 }
 .card.bg-reportage .card-title {
   color: var(--color-reportage);
