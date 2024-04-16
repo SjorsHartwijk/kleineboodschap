@@ -178,3 +178,41 @@ header {
         border-color: darken(#154666, 20%);
     }
 }
+
+/* gridview */
+.gridview {
+    .grid {
+        .episode {
+            display: flex;
+            width: 2.5em;
+            height: 2.5em;
+            justify-content: center;
+            align-items: center;
+            margin: .1em;
+            &.nieuws {
+                background-color: var(--color-nieuws);
+                .duration {
+                    color: var(--color-black);
+                }
+            }
+            &.achtergrond {
+                background-color: var(--color-achtergrond);
+                .duration {
+                    color: var(--color-white);
+                }
+            }
+            &.reportage {
+                background-color: var(--color-reportage);
+                .duration {
+                    color: var(--color-white);
+                }
+            }
+            &.interview {
+                background-color: var(--color-interview);
+                .duration {
+                    color: var(--color-white);
+                }
+            }
+        }
+    }
+}
