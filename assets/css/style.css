@@ -167,4 +167,38 @@ header.bg-theme .btn-theme:hover, header.bg-theme .btn-theme :focus {
 .btn-primary:hover, .btn-primary :focus {
   background-color: #040c11;
   border-color: #040c11;
+}
+
+/* gridview */
+.gridview .grid .episode {
+  display: flex;
+  width: 2.5em;
+  height: 2.5em;
+  justify-content: center;
+  align-items: center;
+  margin: 0.1em;
+}
+.gridview .grid .episode.nieuws {
+  background-color: var(--color-nieuws);
+}
+.gridview .grid .episode.nieuws .duration {
+  color: var(--color-black);
+}
+.gridview .grid .episode.achtergrond {
+  background-color: var(--color-achtergrond);
+}
+.gridview .grid .episode.achtergrond .duration {
+  color: var(--color-white);
+}
+.gridview .grid .episode.reportage {
+  background-color: var(--color-reportage);
+}
+.gridview .grid .episode.reportage .duration {
+  color: var(--color-white);
+}
+.gridview .grid .episode.interview {
+  background-color: var(--color-interview);
+}
+.gridview .grid .episode.interview .duration {
+  color: var(--color-white);
 }/*# sourceMappingURL=style.css.map */
