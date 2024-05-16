@@ -2714,5 +2714,19 @@
         "tijd": "93",
         "datum": "2024-05-06",
         "categorie": "interview"
+    },
+    {
+        "id": "389",
+        "titel": "Truth or dare",
+        "tijd": "110",
+        "datum": "2024-05-13",
+        "categorie": "achtergrond"
+    },
+    {
+        "id": "390",
+        "titel": "Perspresentatie van Een Nacht in de Efteling",
+        "tijd": "35",
+        "datum": "2024-05-15",
+        "categorie": "reportage"
     }
 ]
