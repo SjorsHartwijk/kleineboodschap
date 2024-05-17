@@ -64,7 +64,7 @@ function loadEpisodes() {
                     },
                     y: {
                       title: {
-                        display: true,
+                        display: false,
                         text: 'Minuten'
                       },
                       ticks: {
