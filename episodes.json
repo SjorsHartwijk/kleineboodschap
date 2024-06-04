@@ -2735,5 +2735,19 @@
         "tijd": "191",
         "datum": "2024-05-20",
         "categorie": "nieuws"
+    },
+    {
+        "id": "392",
+        "titel": "Mijmeren met dominee Otto Grevink",
+        "tijd": "103",
+        "datum": "2024-05-25",
+        "categorie": "interview"
+    },
+    {
+        "id": "393",
+        "titel": "Chique steriel",
+        "tijd": "127",
+        "datum": "2024-06-03",
+        "categorie": "nieuws"
     }
 ]
