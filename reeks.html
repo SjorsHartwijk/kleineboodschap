@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preload" href="assets/fonts/ErnestineWebW03-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <title>Kleine Boodschap Data</title>
+    <meta name="description"
+        content="Geniet je ook wekelijks van Kleine Boodschap en vraag je je wel eens af hoeveel tijd je eraan besteedt? Deze pagina biedt alle statistieken en feiten die je al dan niet nodig hebt.">
+</head>
+
+<body>
+
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-theme">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><i class="bi bi-mic"></i> <span
+                            class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
+                            class="d-inline-block d-md-none">KB Data</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="afleveringen.html">Afleveringen</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link active" href="reeks.html">Reeks</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#about">Over</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="https://github.com/SjorsHartwijk/kleineboodschap" rel="nofollow"
+                                    target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow"
+                                    target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <section class="reeks">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="my-2 my-lg-5 p-2 p-lg-5 bg-light rounded-3">
+                                <h1>Reeks</h1>
+                                <p>Gebruik deze pagina om zelf statistieken te maken op basis van een datumreeks, vul een begin- en einddatum in en genereer jouw eigen luisterstatistieken.</p>
+                                <form id="dateRangeForm" class="row">
+                                    <div class="col-12 col-md-6">
+                                        <label for="startDate" class="form-label">Van:</label>
+                                        <input class="form-control form-control-lg" type="date" id="startDate" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="endDate" class="form-label">Tot:</label>
+                                        <input class="form-control form-control-lg" type="date" id="endDate" required>
+                                    </div>
+                                    <div class="col-12 col-md-3 mt-3 d-grid">
+                                        <button class="btn btn-primary" type="submit">Zoeken</button>
+                                    </div>
+                                    <div class="col-12 col-md-3 mt-3 d-grid">
+                                        <button type="button" class="btn btn-outline-secondary" id="resetButton">Opnieuw instellen</button>
+                                    </div>
+                                </form>
+                                <p class="fst-italic text-muted small mt-2">Gebruik de knop 'Opnieuw instellen' als je een nieuwe datumreeks wilt opzoeken.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card shadow mb-3">
+                                <div class="card-body">
+                                    <h2 class="h4 card-title">Diagram</h2>
+                                    <canvas id="rangeChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="statistics" id="statistics">
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <div class="card shadow h-100">
+                                            <div class="card-body">
+                                                <h2 class="h5 card-title">Afleveringen</h2>
+                                                <p class="mt-3">Aantal afleveringen: <span id="totalEpisodes"></span></p>
+                                                <p>Totaal aantal minuten: <span id="totalMinutes"></span></p>
+                                                <p>Totaal aantal uur: <span id="totalHours"></span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 mt-3">
+                                        <div class="card shadow bg-nieuws">
+                                            <div class="card-body">
+                                                <h2 class="h5 card-title">Nieuws</h2>
+                                                <p>Aantal afleveringen: <span id="newsEpisodes"></span></p>
+                                                <p>Aantal minuten: <span id="newsMinutes"></span></p>
+                                                <p>Aantal uren: <span id="newsHours"></span></p>
+                                                <p>Percentage: <span id="newsPercentage"></span>%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 mt-3">
+                                        <div class="card shadow bg-achtergrond">
+                                            <div class="card-body">
+                                                <h2 class="h5 card-title">Achtergrond</h2>
+                                                <p>Aantal afleveringen: <span id="backgroundEpisodes"></span></p>
+                                                <p>Aantal minuten: <span id="backgroundMinutes"></span></p>
+                                                <p>Aantal uren: <span id="backgroundHours"></span></p>
+                                                <p>Percentage: <span id="backgroundPercentage"></span>%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 mt-3">
+                                        <div class="card shadow">
+                                            <div class="card-body bg-reportage">
+                                                <h2 class="h5 card-title">Reportage</h2>
+                                                <p>Aantal afleveringen: <span id="reportageEpisodes"></span></p>
+                                                <p>Aantal minuten: <span id="reportageMinutes"></span></p>
+                                                <p>Aantal uren: <span id="reportageHours"></span></p>
+                                                <p>Percentage: <span id="reportagePercentage"></span>%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 mt-3">
+                                        <div class="card shadow bg-interview">
+                                            <div class="card-body">
+                                                <h2 class=" h5 card-title">Interview</h2>
+                                                <p>Aantal afleveringen: <span id="interviewEpisodes"></span></p>
+                                                <p>Aantal minuten: <span id="interviewMinutes"></span></p>
+                                                <p>Aantal uren: <span id="interviewHours"></span></p>
+                                                <p>Percentage: <span id="interviewPercentage"></span>%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto">
+                        <div class="small m-0 text-white">Copyright &copy; Sjors Hartwijk
+                            <script>document.write(new Date().getFullYear())</script>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="index.html">Home</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="index.html#about">Over</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="https://github.com/SjorsHartwijk/kleineboodschap"
+                            target="_blank">Github</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="https://sjorshartwijk.nl/" target="_blank">Sjors
+                            Hartwijk</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="https://kleineboodschap.com" target="_blank">Kleine
+                            Boodschap</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            endDate.max = new Date().toISOString().split("T")[0];
+
+            let chart; // Variable to hold the chart instance
+        
+            document.getElementById('dateRangeForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const startDate = new Date(document.getElementById('startDate').value);
+                const endDate = new Date(document.getElementById('endDate').value);
+        
+                fetch('episodes.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to load JSON data');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const filteredEpisodes = data.filter(episode => {
+                            const episodeDate = new Date(episode.datum);
+                            return episodeDate >= startDate && episodeDate <= endDate;
+                        });
+        
+                        const totalEpisodes = filteredEpisodes.length;
+                        const categoryCount = {
+                            'nieuws': 0,
+                            'achtergrond': 0,
+                            'reportage': 0,
+                            'interview': 0
+                        };
+                        const categoryMinutes = {
+                            'nieuws': 0,
+                            'achtergrond': 0,
+                            'reportage': 0,
+                            'interview': 0
+                        };
+                        let totalMinutes = 0;
+        
+                        const monthlyData = {};
+        
+                        filteredEpisodes.forEach(episode => {
+                            const episodeDate = new Date(episode.datum);
+                            const monthYear = `${episodeDate.getFullYear()}-${episodeDate.getMonth() + 1}`;
+                            const category = episode.categorie;
+                            if (!monthlyData[monthYear]) {
+                                monthlyData[monthYear] = {
+                                    'nieuws': 0,
+                                    'achtergrond': 0,
+                                    'reportage': 0,
+                                    'interview': 0
+                                };
+                            }
+                            if (categoryCount[category] !== undefined) {
+                                categoryCount[category]++;
+                                const minutes = parseInt(episode.tijd, 10);
+                                categoryMinutes[category] += minutes;
+                                totalMinutes += minutes;
+                                monthlyData[monthYear][category]++;
+                            }
+                        });
+        
+                        const totalHours = Math.floor(totalMinutes / 60);
+        
+                        // Update total statistics
+                        document.getElementById('totalEpisodes').textContent = totalEpisodes;
+                        document.getElementById('totalMinutes').textContent = totalMinutes;
+                        document.getElementById('totalHours').textContent = totalHours;
+        
+                        // Update category statistics
+                        updateCategoryStatistics('news', categoryCount['nieuws'], categoryMinutes['nieuws'], totalEpisodes);
+                        updateCategoryStatistics('background', categoryCount['achtergrond'], categoryMinutes['achtergrond'], totalEpisodes);
+                        updateCategoryStatistics('reportage', categoryCount['reportage'], categoryMinutes['reportage'], totalEpisodes);
+                        updateCategoryStatistics('interview', categoryCount['interview'], categoryMinutes['interview'], totalEpisodes);
+        
+                        // Prepare data for chart
+                        const labels = Object.keys(monthlyData);
+                        const datasets = [
+                            {
+                                label: 'Nieuws',
+                                data: labels.map(label => monthlyData[label]['nieuws']),
+                                backgroundColor: '#F6CA83'
+                            },
+                            {
+                                label: 'Achtergrond',
+                                data: labels.map(label => monthlyData[label]['achtergrond']),
+                                backgroundColor: '#7B9F93'
+                            },
+                            {
+                                label: 'Reportage',
+                                data: labels.map(label => monthlyData[label]['reportage']),
+                                backgroundColor: '#4685AE'
+                            },
+                            {
+                                label: 'Interview',
+                                data: labels.map(label => monthlyData[label]['interview']),
+                                backgroundColor: '#C46868'
+                            }
+                        ];
+        
+                        const ctx = document.getElementById('rangeChart').getContext('2d');
+                        if (chart) {
+                            chart.destroy(); // Destroy the existing chart before creating a new one
+                        }
+                        chart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: labels,
+                                datasets: datasets
+                            },
+                            options: {
+                                responsive: true,
+                                scales: {
+                                    x: {
+                                        stacked: true
+                                    },
+                                    y: {
+                                        stacked: true,
+                                        ticks: {
+                                            stepSize: 1
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: {
+                                        position: 'bottom',
+                                        display: true
+                                }
+                        }
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Er is een fout opgetreden bij het laden van de gegevens.');
+                    });
+            });
+        
+            document.getElementById('resetButton').addEventListener('click', function() {
+                // Reset form fields
+                document.getElementById('startDate').value = '';
+                document.getElementById('endDate').value = '';
+        
+                // Clear statistics
+                document.getElementById('totalEpisodes').textContent = '';
+                document.getElementById('totalMinutes').textContent = '';
+                document.getElementById('totalHours').textContent = '';
+                clearCategoryStatistics('news');
+                clearCategoryStatistics('background');
+                clearCategoryStatistics('reportage');
+                clearCategoryStatistics('interview');
+        
+                // Destroy the chart if it exists
+                if (chart) {
+                    chart.destroy();
+                }
+            });
+        
+            function updateCategoryStatistics(category, count, minutes, totalEpisodes) {
+                const hours = Math.floor(minutes / 60);
+                const percentage = ((count / totalEpisodes) * 100).toFixed(2);
+        
+                document.getElementById(`${category}Episodes`).textContent = count;
+                document.getElementById(`${category}Minutes`).textContent = minutes;
+                document.getElementById(`${category}Hours`).textContent = hours;
+                document.getElementById(`${category}Percentage`).textContent = percentage;
+            }
+        
+            function clearCategoryStatistics(category) {
+                document.getElementById(`${category}Episodes`).textContent = '';
+                document.getElementById(`${category}Minutes`).textContent = '';
+                document.getElementById(`${category}Hours`).textContent = '';
+                document.getElementById(`${category}Percentage`).textContent = '';
+            }
+        </script>
+       
+    </body>
+
+</html>
