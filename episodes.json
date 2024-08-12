@@ -2798,5 +2798,26 @@
         "tijd": "105",
         "datum": "2024-07-22",
         "categorie": "interview"
+    },
+    {
+        "id": "401",
+        "titel": "De Mini-Efteling",
+        "tijd": "193",
+        "datum": "2024-07-29",
+        "categorie": "interview"
+    },
+    {
+        "id": "402",
+        "titel": "Mijmeren met Adri van Esch",
+        "tijd": "144",
+        "datum": "2024-08-05",
+        "categorie": "interview"
+    },
+    {
+        "id": "403",
+        "titel": "Blind genieten van de Efteling met Bart",
+        "tijd": "64",
+        "datum": "2024-08-12",
+        "categorie": "interview"
     }
 ]
