@@ -2819,5 +2819,12 @@
         "tijd": "64",
         "datum": "2024-08-12",
         "categorie": "interview"
+    },
+    {
+        "id": "404",
+        "titel": "Schriel katje",
+        "tijd": "159",
+        "datum": "2024-08-19",
+        "categorie": "nieuws"
     }
 ]
