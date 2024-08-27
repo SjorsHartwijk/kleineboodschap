@@ -163,10 +163,13 @@ function calculateEpisodeHours() {
 
         // Rond de som van minuten af naar hele uren
         const totalHours = Math.round(totalMinutes / 60);
+        const days = Math.floor(totalHours / 24);
+        const hours = totalHours % 24;
+        const remainingMinutes = totalMinutes % 60;
 
         // Toon de som van het aantal minuten afgerond naar hele uren op de pagina
         const totalMinutesElement = document.getElementById('totalMinutes');
-        totalMinutesElement.innerHTML = `Alle afleveringen van Kleine Boodschap duren in totaal <strong>${totalHours} uur!</strong>`;
+        totalMinutesElement.innerHTML = `Alle afleveringen van Kleine Boodschap hebben samen een totale duur van maar liefst <strong>${totalHours}</strong> uur, wat gelijk staat aan <strong>${days} dagen en ${hours} uur!</strong>`;
     })
     .catch(error => {
         console.error('Error:', error);
