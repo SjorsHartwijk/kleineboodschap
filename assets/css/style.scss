@@ -9,6 +9,10 @@
     --color-achtergrond: #619079;
     --color-newcategory: #674ea7;
     --color-hyperlink: #527A67;
+    --color-bg-dark: #0b192f;
+    --color-bg-card: #172a45;
+    --color-lightblue: #64D6EB;
+    --color-hyperlink-dark:#64EB91;
 }
 @font-face {
     font-family: 'ErnestineWebW03';
@@ -216,3 +220,5 @@ header {
         }
     }
 }
+/* darkmode */
+@import 'dark.scss';

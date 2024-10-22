@@ -9,6 +9,10 @@
   --color-achtergrond: #619079;
   --color-newcategory: #674ea7;
   --color-hyperlink: #527A67;
+  --color-bg-dark: #0b192f;
+  --color-bg-card: #172a45;
+  --color-lightblue: #64D6EB;
+  --color-hyperlink-dark:#64EB91;
 }
 
 @font-face {
@@ -202,4 +206,68 @@ header.bg-theme .btn-theme:hover, header.bg-theme .btn-theme :focus {
 }
 .gridview .grid .episode.interview .duration {
   color: var(--color-white);
+}
+
+/* darkmode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+  }
+  .bg-theme {
+    background-color: var(--color-bg-dark);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-lightblue);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--color-lightblue);
+  }
+  .card {
+    background-color: var(--color-bg-card);
+    color: var(--color-white);
+  }
+  .card .card-title {
+    color: var(--color-nieuws);
+  }
+  .bg-light {
+    background-color: var(--color-bg-card) !important;
+    color: var(--color-white);
+  }
+  a {
+    color: var(--color-hyperlink-dark);
+  }
+  .table {
+    color: var(--color-white);
+    background-color: unset !important;
+  }
+  .table > :not(caption) > * > * {
+    color: unset !important;
+    background-color: unset !important;
+  }
+  #toggleButton {
+    border-color: var(--color-white) !important;
+    color: var(--color-white) !important;
+  }
+  .list-group {
+    color: var(--color-white);
+    background-color: unset !important;
+  }
+  .list-group .list-group-item {
+    color: var(--color-white);
+    background-color: unset !important;
+  }
+  .btn-primary {
+    background-color: var(--color-lightblue) !important;
+    border-color: var(--color-lightblue) !important;
+    color: var(--color-black) !important;
+  }
+  .btn-primary:hover, .btn-primary :focus {
+    background-color: #1bb2ce !important;
+    border-color: #1bb2ce !important;
+  }
+  .btn-outline-secondary {
+    border-color: var(--color-white) !important;
+    color: var(--color-white) !important;
+  }
 }/*# sourceMappingURL=style.css.map */
