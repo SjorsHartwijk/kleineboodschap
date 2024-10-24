@@ -32,7 +32,7 @@ function loadCategories() {
             const ctx = document.getElementById('donutChart').getContext('2d');
             // Creeër het cirkeldiagram
             const pieChart = new Chart(ctx, {
-                type: 'polarArea',
+                type: 'doughnut',
                 data: {
                     labels: labels,
                     datasets: [{

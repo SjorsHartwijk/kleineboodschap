@@ -137,10 +137,10 @@ function findShortestAndLongestEpisodes() {
         const longestEpisode = sortedEpisodes[sortedEpisodes.length - 1];
 
         // Vul de kortste aflevering in het span-element met id "shortestEpisodeInfo"
-        document.getElementById('shortestEpisodeInfo').innerHTML = `${shortestEpisode.id}: ${shortestEpisode.titel} is een ${shortestEpisode.categorie}-aflevering en duurt slechts <strong>${shortestEpisode.tijd} minuten</strong>`;
+        document.getElementById('shortestEpisodeInfo').innerHTML = `${shortestEpisode.id}: ${shortestEpisode.titel} is een ${shortestEpisode.categorie}-aflevering en duurt slechts <strong>${shortestEpisode.tijd} minuten.</strong>`;
 
         // Vul de langste aflevering in het span-element met id "longestEpisodeInfo"
-        document.getElementById('longestEpisodeInfo').innerHTML = `${longestEpisode.id}: ${longestEpisode.titel} is een ${longestEpisode.categorie}-aflevering en is recordhouder van de langste aflevering, de aflevering duurt <strong>${longestEpisode.tijd} minuten</strong>`;
+        document.getElementById('longestEpisodeInfo').innerHTML = `${longestEpisode.id}: ${longestEpisode.titel} is een ${longestEpisode.categorie}-aflevering en is recordhouder van de langste aflevering, de aflevering duurt <strong>${longestEpisode.tijd} minuten.</strong>`;
     })
     .catch(error => {
         console.error('Error:', error);
