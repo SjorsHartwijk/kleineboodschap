@@ -2917,5 +2917,12 @@
         "tijd": "123",
         "datum": "2024-11-03",
         "categorie": "nieuws"
+    },
+    {
+        "id": "418",
+        "titel": "Paul van Loon over Danse Macabre Het Begin",
+        "tijd": "30",
+        "datum": "2024-11-06",
+        "categorie": "interview"
     }
 ]
