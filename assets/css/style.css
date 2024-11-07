@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
 :root {
   --color-theme-primary: #154666;
   --color-theme-secondary: #7a2b2b;
@@ -15,28 +16,21 @@
   --color-hyperlink-dark:#64EB91;
 }
 
-@font-face {
-  font-family: "ErnestineWebW03";
-  src: url("../fonts/ErnestineWebW03-Bold.woff2") format("woff2"), url("../fonts/ErnestineWebW03-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
 body {
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 400;
   scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-theme-secondary);
-  font-family: "ErnestineWebW03";
-  font-weight: bold;
+  font-family: "Alegreya", serif;
   font-style: normal;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: var(--color-theme-secondary);
-  font-family: "ErnestineWebW03";
-  font-weight: bold;
+  font-family: "Alegreya", serif;
   font-style: normal;
 }
 
@@ -44,9 +38,9 @@ nav.navbar {
   border-bottom: 4px solid #123b56;
 }
 nav.navbar.navbar-dark .navbar-brand {
-  font-family: "ErnestineWebW03";
+  font-family: "Alegreya", serif;
   color: var(--color-white);
-  font-weight: bold;
+  font-weight: 500;
   font-style: normal;
 }
 nav.navbar.navbar-dark .navbar-nav .nav-item {
@@ -114,6 +108,10 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
 }
 .btn.btn-resize {
   border-radius: 0;
+}
+.btn.darkmode {
+  width: 42px;
+  height: 42px;
 }
 
 .legenda {
@@ -211,6 +209,10 @@ header.bg-theme .btn-theme:hover, header.bg-theme .btn-theme :focus {
 /* darkmode */
 @media (prefers-color-scheme: dark) {
   body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+  }
+  body.dark-mode {
     background-color: var(--color-bg-dark);
     color: var(--color-white);
   }
