@@ -2959,5 +2959,19 @@
         "tijd": "77",
         "datum": "2024-12-09",
         "categorie": "interview"
+    },
+    {
+        "id": "424",
+        "titel": "Efteling Symphonica",
+        "tijd": "34",
+        "datum": "2024-12-12",
+        "categorie": "reportage"
+    },
+    {
+        "id": "425",
+        "titel": "Een zwart concept",
+        "tijd": "99",
+        "datum": "2024-12-16",
+        "categorie": "nieuws"
     }
 ]
