@@ -36,9 +36,8 @@ nav.navbar {
   border-bottom: 4px solid #123b56;
 }
 nav.navbar.navbar-dark .navbar-brand {
-  font-family: "ErnestineWebW03";
+  font-family: "Alegreya", serif;
   color: var(--color-white);
-  font-weight: bold;
   font-style: normal;
 }
 nav.navbar.navbar-dark .navbar-nav .nav-item {
