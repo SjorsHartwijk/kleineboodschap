@@ -1,0 +1,15 @@
+name: Post to Bluesky on push
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Post to Bluesky
+        uses: ./.github/scripts/post-to-bluesky.js
+        with:
+          BLUESKY_TOKEN: ${{ secrets.BLUESKY_TOKEN }}
