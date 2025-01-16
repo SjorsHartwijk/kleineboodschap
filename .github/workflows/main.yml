@@ -1,2 +1,10 @@
-- name: Send Bluesky Post
-  uses: myConsciousness/bluesky-post@v5
+name: Send Bluesky Post
+
+on: [push]
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Bluesky Post
+        uses: myConsciousness/bluesky-post@v5
