@@ -12,3 +12,5 @@ jobs:
           text: "Hello, Bluesky!"
           identifier: ${{ secrets.BLUESKY_IDENTIFIER }}
           password: ${{ secrets.BLUESKY_PASSWORD }}
+          retry-count: 5
+          
