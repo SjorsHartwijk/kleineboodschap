@@ -40,6 +40,10 @@ nav.navbar.navbar-dark .navbar-brand {
   color: var(--color-white);
   font-style: normal;
 }
+nav.navbar.navbar-dark .navbar-brand img {
+  height: 20px;
+  filter: invert(100%);
+}
 nav.navbar.navbar-dark .navbar-nav .nav-item {
   padding: 0 0.75em 0 0;
 }
@@ -157,6 +161,10 @@ header.bg-theme .btn-theme:hover, header.bg-theme .btn-theme :focus {
   background-color: #dea613;
   border-color: #dea613;
   color: var(--color-black);
+}
+header img {
+  height: 48px;
+  filter: invert(100%);
 }
 
 .btn-primary {

@@ -35,6 +35,10 @@ nav.navbar {
             font-family: "Alegreya", serif;
             color: var(--color-white);
             font-style: normal;
+            img {
+                height: 20px;
+                filter: invert(100%);
+            }
         }
         .navbar-nav {
             .nav-item {
@@ -165,6 +169,10 @@ header {
                 color: var(--color-black);
             }
         }
+    }
+    img {
+        height: 48px;
+        filter: invert(100%);
     }
 }
 .btn-primary {
