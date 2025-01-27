@@ -9,7 +9,7 @@ jobs:
       - name: Send Bluesky Post
         uses: myConsciousness/bluesky-post@v5
         with:
-            text: "${{ github.event.head_commit.message }} van @kleineboodschap.com is toegevoegd aan Kleine Boodschap Data.\nBekijk alle statistieken op https://sjorshartwijk.github.io/kleineboodschap/ \n\n#kleineboodschap"
+            text: "${{ github.event.head_commit.message }} van @kleineboodschap.com is toegevoegd aan Kleine Boodschap Data.\nBekijk alle statistieken op https://projecten.sjorshartwijk.nl/kleineboodschapdata/ \n\n#kleineboodschap"
             identifier: ${{ secrets.BLUESKY_IDENTIFIER }}
             password: ${{ secrets.BLUESKY_PASSWORD }}
             retry-count: 5
