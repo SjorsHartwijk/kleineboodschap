@@ -177,36 +177,19 @@ header img {
   border-color: #040c11;
 }
 
-/* gridview */
-.gridview .grid .episode {
-  display: flex;
-  width: 2.5em;
-  height: 2.5em;
-  justify-content: center;
-  align-items: center;
-  margin: 0.1em;
+/* wrapped */
+.wrapped {
+  background-color: var(--color-theme-primary);
 }
-.gridview .grid .episode.nieuws {
-  background-color: var(--color-nieuws);
-}
-.gridview .grid .episode.nieuws .duration {
-  color: var(--color-black);
-}
-.gridview .grid .episode.achtergrond {
-  background-color: var(--color-achtergrond);
-}
-.gridview .grid .episode.achtergrond .duration {
+.wrapped h1, .wrapped h2, .wrapped h3, .wrapped h4, .wrapped h5, .wrapped h6 {
   color: var(--color-white);
 }
-.gridview .grid .episode.reportage {
-  background-color: var(--color-reportage);
+.wrapped .card {
+  color: var(--bs-card-color);
 }
-.gridview .grid .episode.reportage .duration {
-  color: var(--color-white);
+.wrapped .card h1, .wrapped .card h2, .wrapped .card h3, .wrapped .card h4, .wrapped .card h5, .wrapped .card h6 {
+  color: var(--color-theme-primary);
 }
-.gridview .grid .episode.interview {
-  background-color: var(--color-interview);
-}
-.gridview .grid .episode.interview .duration {
+.wrapped #stats {
   color: var(--color-white);
 }/*# sourceMappingURL=style.css.map */

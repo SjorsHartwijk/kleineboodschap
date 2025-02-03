@@ -185,40 +185,19 @@ header {
     }
 }
 
-/* gridview */
-.gridview {
-    .grid {
-        .episode {
-            display: flex;
-            width: 2.5em;
-            height: 2.5em;
-            justify-content: center;
-            align-items: center;
-            margin: .1em;
-            &.nieuws {
-                background-color: var(--color-nieuws);
-                .duration {
-                    color: var(--color-black);
-                }
-            }
-            &.achtergrond {
-                background-color: var(--color-achtergrond);
-                .duration {
-                    color: var(--color-white);
-                }
-            }
-            &.reportage {
-                background-color: var(--color-reportage);
-                .duration {
-                    color: var(--color-white);
-                }
-            }
-            &.interview {
-                background-color: var(--color-interview);
-                .duration {
-                    color: var(--color-white);
-                }
-            }
+/* wrapped */
+.wrapped {
+    background-color: var(--color-theme-primary);
+    h1,h2,h3,h4,h5,h6 {
+        color: var(--color-white);
+    }
+    .card {
+        color: var(--bs-card-color);
+        h1,h2,h3,h4,h5,h6 {
+            color: var(--color-theme-primary);
         }
+    }
+    #stats {
+        color: var(--color-white);
     }
 }
