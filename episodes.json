@@ -3050,5 +3050,12 @@
         "tijd": "42",
         "datum": "2025-02-24",
         "categorie": "interview"
+    },
+    {
+        "id": "437",
+        "titel": "Het verdwaalplein",
+        "tijd": "120",
+        "datum": "2025-03-03",
+        "categorie": "nieuws"
     }
 ]
