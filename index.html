@@ -76,7 +76,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 col-lg-4 mb-3">
-                            <div class="card shadow h-100">
+                            <div class="card h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Afleveringen</h2>
                                     <p class="card-text">Op dit moment zijn er <strong><span
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="col-6 col-lg-4 mb-3">
-                            <div class="card shadow h-100">
+                            <div class="card h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Gemiddeld</h2>
                                     <p class="card-text">Gemiddeld duurt een aflevering van Kleine Boodschap
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="col-6 col-lg-4 mb-3">
-                            <div class="card shadow h-100">
+                            <div class="card h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Totaal</h2>
                                     <p class="card-text"><span id="totalMinutes"></span></p>
@@ -103,7 +103,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
-                            <div class="card shadow h-100">
+                            <div class="card h-100">
                                 <div class="card-body d-flex flex-column justify-content-start">
                                     <h2 class="h5 card-title">Langste aflevering</h2>
                                     <p class="card-text">Aflevering <span id="longestEpisodeInfo"></span></p>
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
-                            <div class="card shadow h-100">
+                            <div class="card h-100">
                                 <div class="card-body d-flex flex-column justify-content-start">
                                     <h2 class="h5 card-title">Kortste aflevering</h2>
                                     <p class="card-text">Aflevering <span id="shortestEpisodeInfo"></span></p>
@@ -132,31 +132,31 @@
                         </div>
                         <div id="statistics"></div>
                         <div class="col-12 col-md-6 col-lg-3 mb-3">
-                            <div class="card shadow bg-achtergrond h-100">
+                            <div class="card bg-achtergrond h-100">
                                 <div class="card-body" id="achtergrondStatistics">
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3 mb-3">
-                            <div class="card shadow bg-nieuws h-100">
+                            <div class="card bg-nieuws h-100">
                                 <div class="card-body" id="newsStatistics">
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3 mb-3">
-                            <div class="card shadow bg-interview h-100">
+                            <div class="card bg-interview h-100">
                                 <div class="card-body" id="interviewStatistics">
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3 mb-3">
-                            <div class="card shadow bg-reportage h-100">
+                            <div class="card bg-reportage h-100">
                                 <div class="card-body" id="reportageStatistics">
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mb-3">
-                            <div class="card shadow h-100">
+                            <div class="card h-100">
                                 <div class="card-body d-flex flex-column justify-content-start">
                                     <h2 class="h5 card-title">Vandaag de dag</h2>
                                     <p class="card-text">Indien er op deze dag in het verleden een aflevering is
@@ -167,7 +167,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mb-3">
-                            <div class="card shadow h-100">
+                            <div class="card h-100">
                                 <div class="card-body">
                                     <h2 class="h5 card-title">Jouw dag</h2>
                                     <p class="card-text">Benieuwd welke aflevering(en) op bijv. jouw verjaardag is
@@ -249,7 +249,7 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row mb-5 d-flex align-items-center bg-light rounded-3 py-3 px-1 px-lg-5">
+                    <div class="row mb-5 d-flex align-items-center bg-white rounded-3 py-3 px-1 px-lg-5">
                         <div class="col-12 col-lg-5">
                             <h3 class="h4">Categorieën</h3>
                             <p>In dit diagram bekijk je alle afleveringen van Kleine Boodschap per categorie.</p>
@@ -278,19 +278,21 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 mb-5">
-                            <div class="bg-light rounded-3 py-3 px-2 p-lg-5">
-                                <h4>Over dit project</h4>
-                                    <p>Het project Kleine Boodschap Data is een hobbyproject dat is ontstaan uit mijn
+                            <div class="card" id="about">
+                                <div class="card-body m-1 m-md-3 m-lg-5">
+                                    <h3 class="h4 card-title">Over dit project</h3>
+                                    <p class="card-text">Het project Kleine Boodschap Data is een hobbyproject dat is ontstaan uit mijn
                                         interesse voor de Efteling en de vele uren luisterplezier die de Afleveringen
                                         van Kleine Boodschap mij hebben bezorgd.</p>
-                                    <p>Ik werk indien mogelijk bij het verschijnen van elke (nieuwe) aflevering alle data over de afleveringen bij en publiceer
+                                    <p class="card-text">Ik werk indien mogelijk bij het verschijnen van elke (nieuwe) aflevering alle data over de afleveringen bij en publiceer
                                         de statistieken op deze website en via <a href="https://bsky.app/profile/kbdata.bsky.social">Bluesky</a>.
                                     </p>
-                                    <p>Dit project heeft geen commerciële doeleinden en heeft geen enkele affiliatie met
+                                    <p class="card-text">Dit project heeft geen commerciële doeleinden en heeft geen enkele affiliatie met
                                         de podcast Kleine Boodschap noch de Efteling. Wat betreft de data haal ik alleen
                                         de openbare gegevens zoals titel, publicatiedatum en categorie van een
                                         aflevering van de website van Kleine Boodschap. De afleveringen zelf zijn via deze website
                                         niet te beluisteren en wordt er ook niet naar verwezen.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
