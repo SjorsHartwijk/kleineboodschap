@@ -22,7 +22,7 @@ jobs:
         id: buildpost
         run: |
           echo "📦 Episodes uitlezen..."
-          node << 'EOF' > post.txt
+          node << 'EOF'
           import fs from 'fs';
 
           const episodes = JSON.parse(fs.readFileSync('./episodes.json', 'utf8'));
@@ -38,7 +38,7 @@ jobs:
           });
 
           if (matches.length === 0) {
-            console.log("Geen afleveringen voor vandaag.");
+            console.log("should_post=false" >> process.env.GITHUB_OUTPUT);
             process.exit(0);
           }
 
@@ -51,10 +51,12 @@ jobs:
           const fullPost = header + '\n' + lines.join('\n');
 
           fs.writeFileSync('post.txt', fullPost);
+          console.log("should_post=true" >> process.env.GITHUB_OUTPUT);
           EOF
 
       - name: Lees post uit bestand
         id: readpost
+        if: steps.buildpost.outputs.should_post == 'true'
         run: |
           echo "text<<EOF" >> $GITHUB_OUTPUT
           cat post.txt >> $GITHUB_OUTPUT
@@ -68,6 +70,7 @@ jobs:
           fi
 
       - name: Post naar Bluesky
+        if: steps.buildpost.outputs.should_post == 'true'
         uses: myConsciousness/bluesky-post@v5
         with:
           identifier: ${{ secrets.BLUESKY_IDENTIFIER }}
