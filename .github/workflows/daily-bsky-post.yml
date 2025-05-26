@@ -60,10 +60,17 @@ jobs:
           cat post.txt >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
+      - name: Validate Secrets
+        run: |
+          if [ -z "${{ secrets.BLUESKY_IDENTIFIER }}" ] || [ -z "${{ secrets.BLUESKY_PASSWORD }}" ]; then
+          echo "Missing required secrets: BSKY_IDENTIFIER or BSKY_PASSWORD"
+          exit 1
+          fi
+
       - name: Post naar Bluesky
         uses: myConsciousness/bluesky-post@v5
         with:
-          identifier: ${{ secrets.BSKY_IDENTIFIER }}
-          password: ${{ secrets.BSKY_PASSWORD }}
+          identifier: ${{ secrets.BLUESKY_IDENTIFIER }}
+          password: ${{ secrets.BLUESKY_PASSWORD }}
           text: ${{ steps.readpost.outputs.text }}
           retry-count: 5
