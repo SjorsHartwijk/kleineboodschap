@@ -63,6 +63,7 @@ jobs:
       - name: Post naar Bluesky
         uses: myConsciousness/bluesky-post@v5
         with:
-          bluesky-identifier: ${{ secrets.BSKY_IDENTIFIER }}
-          bluesky-app-password: ${{ secrets.BSKY_PASSWORD }}
-          bluesky-post-text: ${{ steps.readpost.outputs.text }}
+          identifier: ${{ secrets.BSKY_IDENTIFIER }}
+          password: ${{ secrets.BSKY_PASSWORD }}
+          text: ${{ steps.readpost.outputs.text }}
+          retry-count: 5
