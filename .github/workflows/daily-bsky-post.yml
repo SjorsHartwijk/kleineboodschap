@@ -1,0 +1,67 @@
+name: Bluesky Daily Episode Poster
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Dagelijks om 12:00 CEST (10:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  post-daily-episodes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Build Bluesky post
+        id: buildpost
+        run: |
+          echo "📦 Episodes uitlezen..."
+          node << 'EOF' > post.txt
+          import fs from 'fs';
+
+          const episodes = JSON.parse(fs.readFileSync('./episodes.json', 'utf8'));
+
+          const now = new Date();
+          const todayDay = String(now.getDate()).padStart(2, '0');
+          const todayMonth = String(now.getMonth() + 1).padStart(2, '0');
+
+          const matches = episodes.filter(ep => {
+            const [year, month, day] = ep.datum.split('-');
+            return month === todayMonth && day === todayDay;
+          });
+
+          if (matches.length === 0) {
+            console.log("Geen afleveringen voor vandaag.");
+            process.exit(0);
+          }
+
+          const header = `Vandaag op ${todayDay}-${todayMonth} verschenen in voorgaande jaren de volgende afleveringen:\n`;
+          const lines = matches.map(ep => {
+            const [year] = ep.datum.split('-');
+            return `– ${year}: Aflevering ${ep.id}: ${ep.titel} (${ep.categorie})`;
+          });
+
+          const fullPost = header + '\n' + lines.join('\n');
+
+          fs.writeFileSync('post.txt', fullPost);
+          EOF
+
+      - name: Lees post uit bestand
+        id: readpost
+        run: |
+          echo "text<<EOF" >> $GITHUB_OUTPUT
+          cat post.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Post naar Bluesky
+        uses: myConsciousness/bluesky-post@v5
+        with:
+          bluesky-identifier: ${{ secrets.BSKY_IDENTIFIER }}
+          bluesky-app-password: ${{ secrets.BSKY_PASSWORD }}
+          bluesky-post-text: ${{ steps.readpost.outputs.text }}
