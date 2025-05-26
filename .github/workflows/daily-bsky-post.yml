@@ -30,10 +30,11 @@ jobs:
           const now = new Date();
           const todayDay = String(now.getDate()).padStart(2, '0');
           const todayMonth = String(now.getMonth() + 1).padStart(2, '0');
+          const currentYear = String(now.getFullYear());
 
           const matches = episodes.filter(ep => {
             const [year, month, day] = ep.datum.split('-');
-            return month === todayMonth && day === todayDay;
+            return month === todayMonth && day === todayDay && year !== currentYear;
           });
 
           if (matches.length === 0) {
