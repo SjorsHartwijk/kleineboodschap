@@ -31,6 +31,8 @@ jobs:
           today=$(date +"%m-%d")
           this_year=$(date +"%Y")
 
+          echo "Zoek afleveringen van ${today}, exclusief jaar ${this_year}"
+
           POST_TEXT=""
           SHOULD_POST=false
 
@@ -42,17 +44,16 @@ jobs:
 
             ep_day_month=$(echo "$date" | cut -c6-10)
             ep_year=$(echo "$date" | cut -c1-4)
-            date_formatted=$(echo "$date" | awk -F- '{print $3"-"$2"-"$1}')
+            date_formatted=$(echo "$date" | awk -F- '{print $3"-"$2"-"$1}')  # dd-mm-yyyy
 
             if [[ "$ep_day_month" == "$today" && "$ep_year" != "$this_year" ]]; then
               SHOULD_POST=true
-              POST_TEXT="${POST_TEXT}Aflevering ${id}: \"${title}\" verscheen op ${date_formatted} (${ep_year}), een ${category}-aflevering.\n"
+              POST_TEXT="${POST_TEXT}${id}: \"${title}\" verscheen op ${date_formatted}, een ${category}-aflevering.\n"
             fi
           done < <(jq -c '.[]' episodes.json)
 
           if [[ "$SHOULD_POST" == true ]]; then
-            POST_TEXT="${POST_TEXT}\nBekijk alle statistieken op kleineboodschapdata.vercel.app\n\n#kleineboodschap"
-            echo -e "Vandaag, in voorgaande jaren, publiceerde @kleineboodschap deze aflevering(en):\n\n${POST_TEXT}" > post.txt
+            echo -e "Vandaag, in voorgaande jaren, publiceerde @kleineboodschap.com deze aflevering(en):\n\n${POST_TEXT}" > post.txt
             echo "should_post=true" >> $GITHUB_OUTPUT
           else
             echo "Geen afleveringen vandaag."
