@@ -18,6 +18,13 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Validate Secrets
+        run: |
+          if [ -z "${{ secrets.BLUESKY_IDENTIFIER }}" ] || [ -z "${{ secrets.BLUESKY_PASSWORD }}" ]; then
+            echo "Missing required secrets: BLUESKY_IDENTIFIER or BLUESKY_PASSWORD"
+            exit 1
+          fi
+
       - name: Generate post text
         id: buildpost
         run: |
@@ -37,15 +44,16 @@ jobs:
 
             ep_day_month=$(echo "$date" | cut -c6-10)
             ep_year=$(echo "$date" | cut -c1-4)
+            date_formatted=$(echo "$date" | awk -F- '{print $3"-"$2"-"$1}')  # dd-mm-yyyy
 
             if [[ "$ep_day_month" == "$today" && "$ep_year" != "$this_year" ]]; then
               SHOULD_POST=true
-              POST_TEXT="${POST_TEXT}Aflevering ${id}: \"${title}\" verscheen op ${date} (${ep_year}), een ${category}-aflevering.\n"
+              POST_TEXT="${POST_TEXT}Aflevering ${id}: \"${title}\" verscheen op ${date_formatted} (${ep_year}), een ${category}-aflevering.\n"
             fi
           done < <(jq -c '.[]' episodes.json)
 
           if [[ "$SHOULD_POST" == true ]]; then
-            echo -e "🎙️ Vandaag op ${today} verschenen in voorgaande jaren:\n\n${POST_TEXT}" > post.txt
+            echo -e "Vandaag, in voorgaande jaren, publiceerde @kleineboodschap.com deze aflevering(en):\n\n${POST_TEXT}" > post.txt
             echo "should_post=true" >> $GITHUB_OUTPUT
           else
             echo "Geen afleveringen vandaag."
@@ -59,13 +67,6 @@ jobs:
           echo "TEXT<<EOF" >> $GITHUB_ENV
           echo "$TEXT" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-
-      - name: Validate Secrets
-        run: |
-          if [ -z "${{ secrets.BLUESKY_IDENTIFIER }}" ] || [ -z "${{ secrets.BLUESKY_PASSWORD }}" ]; then
-          echo "Missing required secrets: BSKY_IDENTIFIER or BSKY_PASSWORD"
-          exit 1
-          fi
 
       - name: Send to Bluesky
         if: steps.buildpost.outputs.should_post == 'true'
