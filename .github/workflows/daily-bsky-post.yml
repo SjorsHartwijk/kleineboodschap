@@ -2,65 +2,63 @@ name: Bluesky Daily Episode Poster
 
 on:
   schedule:
-    - cron: '0 10 * * *'  # Dagelijks om 12:00 CEST (10:00 UTC)
+    - cron: '0 10 * * *' # 10:00 UTC = 12:00 CEST
   workflow_dispatch:
 
 jobs:
-  post-daily-episodes:
+  post-to-bluesky:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Build Bluesky post
+      - name: Generate post text
         id: buildpost
         run: |
-          echo "📦 Episodes uitlezen..."
-          node << 'EOF'
-          import fs from 'fs';
+          today=$(date +"%m-%d")
+          this_year=$(date +"%Y")
 
-          const episodes = JSON.parse(fs.readFileSync('./episodes.json', 'utf8'));
+          echo "Zoek afleveringen van ${today}, exclusief jaar ${this_year}"
 
-          const now = new Date();
-          const todayDay = String(now.getDate()).padStart(2, '0');
-          const todayMonth = String(now.getMonth() + 1).padStart(2, '0');
-          const currentYear = String(now.getFullYear());
+          POST_TEXT=""
+          SHOULD_POST=false
 
-          const matches = episodes.filter(ep => {
-            const [year, month, day] = ep.datum.split('-');
-            return month === todayMonth && day === todayDay && year !== currentYear;
-          });
+          while IFS= read -r row; do
+            id=$(echo "$row" | jq -r '.id')
+            title=$(echo "$row" | jq -r '.titel')
+            date=$(echo "$row" | jq -r '.datum')
+            category=$(echo "$row" | jq -r '.categorie')
 
-          if (matches.length === 0) {
-            console.log("should_post=false" >> process.env.GITHUB_OUTPUT);
-            process.exit(0);
-          }
+            ep_day_month=$(echo "$date" | cut -c6-10)
+            ep_year=$(echo "$date" | cut -c1-4)
 
-          const header = `Vandaag op ${todayDay}-${todayMonth} verschenen in voorgaande jaren de volgende afleveringen:\n`;
-          const lines = matches.map(ep => {
-            const [year] = ep.datum.split('-');
-            return `– ${year}: Aflevering ${ep.id}: ${ep.titel} (${ep.categorie})`;
-          });
+            if [[ "$ep_day_month" == "$today" && "$ep_year" != "$this_year" ]]; then
+              SHOULD_POST=true
+              POST_TEXT="${POST_TEXT}Aflevering ${id}: \"${title}\" verscheen op ${date} (${ep_year}), een ${category}-aflevering.\n"
+            fi
+          done < <(jq -c '.[]' episodes.json)
 
-          const fullPost = header + '\n' + lines.join('\n');
+          if [[ "$SHOULD_POST" == true ]]; then
+            echo -e "🎙️ Vandaag op ${today} verschenen in voorgaande jaren:\n\n${POST_TEXT}" > post.txt
+            echo "should_post=true" >> $GITHUB_OUTPUT
+          else
+            echo "Geen afleveringen vandaag."
+            echo "should_post=false" >> $GITHUB_OUTPUT
+          fi
 
-          fs.writeFileSync('post.txt', fullPost);
-          console.log("should_post=true" >> process.env.GITHUB_OUTPUT);
-          EOF
-
-      - name: Lees post uit bestand
-        id: readpost
+      - name: Prepare post content
         if: steps.buildpost.outputs.should_post == 'true'
         run: |
-          echo "text<<EOF" >> $GITHUB_OUTPUT
-          cat post.txt >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          TEXT=$(cat post.txt)
+          echo "TEXT<<EOF" >> $GITHUB_ENV
+          echo "$TEXT" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: Validate Secrets
         run: |
@@ -69,11 +67,11 @@ jobs:
           exit 1
           fi
 
-      - name: Post naar Bluesky
+      - name: Send to Bluesky
         if: steps.buildpost.outputs.should_post == 'true'
         uses: myConsciousness/bluesky-post@v5
         with:
+          text: ${{ env.TEXT }}
           identifier: ${{ secrets.BLUESKY_IDENTIFIER }}
           password: ${{ secrets.BLUESKY_PASSWORD }}
-          text: ${{ steps.readpost.outputs.text }}
           retry-count: 5
