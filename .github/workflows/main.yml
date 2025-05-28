@@ -1,6 +1,9 @@
 name: Send Bluesky Post
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'episodes.json'
 
 jobs:
   post:
