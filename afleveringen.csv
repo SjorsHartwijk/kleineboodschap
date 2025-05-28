@@ -1,4 +1,4 @@
-id,titel,tijd,datum,categorie
+id,titel,tijd,datum,categorie,latitude,longitude
 1,Strookrijk,77,2017-12-30,achtergrond
 2,Nieuwe rotsdeur in steengoede darkride,31,2018-01-02,nieuws
 3,Interview met Efteling-icoon Mari van Heumen,81,2018-01-08,interview
@@ -13,7 +13,7 @@ id,titel,tijd,datum,categorie
 12,Ontwerpbestemmingsplan Wereld van de Efteling 2030 (deel 1),74,2018-03-12,achtergrond
 13,Ontwerpbestemmingsplan Wereld van de Efteling 2030 (deel 2),47,2018-03-19,achtergrond
 14,Het Vrolijkste nieuws in decennia,63,2018-03-26,nieuws
-15,Heropening python,59,2018-03-31,reportage
+15,Heropening python,59,2018-03-31,reportage,51.646817,5.053528
 16,Er mist daar iets,70,2018-04-02,nieuws
 17,Een kapbeitel overstemmen,75,2018-04-09,nieuws
 18,Dromen over 2030,61,2018-04-16,achtergrond
@@ -436,8 +436,8 @@ id,titel,tijd,datum,categorie
 435,Erwtensoepspetters,121,2025-02-17,nieuws
 436,In gesprek met Bernadette van der Velden,42,2025-02-24,interview
 437,Het verdwaalplein,120,2025-03-03,nieuws
-438,Het Efteling Museum met Patrick van den Nieuwenhuizen,92,2025-03-10,achtergrond
-439,Het hoogste punt van het Efteling Grand Hotel,92,2025-03-11,reportage
+438,Het Efteling Museum met Patrick van den Nieuwenhuizen,92,2025-03-10,achtergrond,51.652078,5.049704
+439,Het hoogste punt van het Efteling Grand Hotel,92,2025-03-11,reportage,51.649253,5.045128
 440,Heks over vleermuis,104,2025-03-17,nieuws
 441,In gesprek met Robert-Jaap Jansen,125,2025-03-24,interview
 442,Reus met spillebeentjes,130,2025-03-31,nieuws
@@ -445,9 +445,9 @@ id,titel,tijd,datum,categorie
 444,De groene draad,139,2025-04-14,nieuws
 445,In gesprek met Ray Eddy,72,2025-04-21,interview
 446,Onze favoriete scènes in de Efteling,89,2025-04-28,achtergrond
-447,Polles Keuken,76,2025-05-05,achtergrond
+447,Polles Keuken,76,2025-05-05,achtergrond,51.650227,5.048660
 448,Het eerste ritje met de elektrische stoomtrein,30,2025-05-08,reportage
 449,Sprookjessprokkelaar van Temu,181,2025-05-12,nieuws
-450,De opening van De Prinses op de Erwt,37,2025-05-14,reportage
-451,Efteling Wonder Hotel,107,2025-05-19,reportage
+450,De opening van De Prinses op de Erwt,37,2025-05-14,reportage,51.649936,5.045447
+451,Efteling Wonder Hotel,107,2025-05-19,reportage,51.653306,5.054457
 452,De spookpoes in de kamer,159,2025-05-26,nieuws

@@ -102,7 +102,9 @@
         "titel": "Heropening python",
         "tijd": "59",
         "datum": "2018-03-31",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.646817",
+        "longitude": "5.053528"
     },
     {
         "id": "16",
@@ -3063,14 +3065,18 @@
         "titel": "Het Efteling Museum met Patrick van den Nieuwenhuizen",
         "tijd": "92",
         "datum": "2025-03-10",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.652078",
+        "longitude": "5.049704"
     },
     {
         "id": "439",
         "titel": "Het hoogste punt van het Efteling Grand Hotel",
         "tijd": "92",
         "datum": "2025-03-11",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.649253",
+        "longitude": "5.045128"
     },
     {
         "id": "440",
@@ -3126,7 +3132,9 @@
         "titel": "Polles Keuken",
         "tijd": "76",
         "datum": "2025-05-05",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.650227",
+        "longitude": "5.048660"
     },
     {
         "id": "448",
@@ -3147,14 +3155,18 @@
         "titel": "De opening van De Prinses op de Erwt",
         "tijd": "37",
         "datum": "2025-05-14",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.649936",
+        "longitude": "5.045447"
     },
     {
         "id": "451",
         "titel": "Efteling Wonder Hotel",
         "tijd": "107",
         "datum": "2025-05-19",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.653306",
+        "longitude": "5.054457"
     },
     {
         "id": "452",
