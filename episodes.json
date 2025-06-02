@@ -4,7 +4,9 @@
         "titel": "Strookrijk",
         "tijd": "77",
         "datum": "2017-12-30",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.649621",
+        "longitude": "5.055513"
     },
     {
         "id": "2",
@@ -74,7 +76,9 @@
         "titel": "Symbolica 8 maanden na opening",
         "tijd": "63",
         "datum": "2018-03-05",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.650076",
+        "longitude": "5.050237"
     },
     {
         "id": "12",
@@ -146,7 +150,9 @@
         "titel": "'t Verdiende Loon",
         "tijd": "15",
         "datum": "2018-05-02",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.645490",
+        "longitude": " 5.047561"
     },
     {
         "id": "22",
@@ -237,7 +243,9 @@
         "titel": "GuestHouse Hotel",
         "tijd": "71",
         "datum": "2018-07-19",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.656997",
+        "longitude": "5.040410"
     },
     {
         "id": "35",
@@ -251,7 +259,9 @@
         "titel": "Opening van de Vrolijke Noot",
         "tijd": "47",
         "datum": "2018-07-26",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.649490",
+        "longitude": "5.044586"
     },
     {
         "id": "37",
@@ -335,7 +345,9 @@
         "titel": "Première CARO",
         "tijd": "57",
         "datum": "2018-09-19",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648425",
+        "longitude": "5.043599"
     },
     {
         "id": "49",
@@ -517,7 +529,9 @@
         "titel": "Studiotour bij René Merkelbach",
         "tijd": "57",
         "datum": "2019-02-18",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.654689832722795",
+        "longitude": "5.040828605791864"
     },
     {
         "id": "75",
@@ -587,7 +601,9 @@
         "titel": "Baron 1898",
         "tijd": "70",
         "datum": "2019-04-08",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.648195",
+        "longitude": "5.050852"
     },
     {
         "id": "85",
@@ -601,7 +617,9 @@
         "titel": "Een rondleiding over Parck Kaatsheuvel",
         "tijd": "17",
         "datum": "2019-04-17",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.657755",
+        "longitude": "5.067178"
     },
     {
         "id": "87",
@@ -643,7 +661,9 @@
         "titel": "Carnaval Festival heropening",
         "tijd": "43",
         "datum": "2019-05-23",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.652337",
+        "longitude": "5.052309"
     },
     {
         "id": "93",
@@ -706,7 +726,9 @@
         "titel": "Nieuwe wisseltentoonstelling in het Efteling Museum",
         "tijd": "22",
         "datum": "2019-07-10",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.652104",
+        "longitude": "5.049709"
     },
     {
         "id": "102",
@@ -790,7 +812,9 @@
         "titel": "Afscheid van de Bob",
         "tijd": "68",
         "datum": "2019-09-04",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648073",
+        "longitude": "5.047392"
     },
     {
         "id": "114",
@@ -888,7 +912,9 @@
         "titel": "De opening van Fabula",
         "tijd": "124",
         "datum": "2019-12-09",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648688",
+        "longitude": "5.046600"
     },
     {
         "id": "128",
@@ -923,7 +949,9 @@
         "titel": "Hotel de Bottle",
         "tijd": "45",
         "datum": "2020-01-01",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.648425",
+        "longitude": "5.043599"
     },
     {
         "id": "133",
@@ -951,7 +979,9 @@
         "titel": "Bosrijk audio-tour",
         "tijd": "59",
         "datum": "2020-01-27",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.646687",
+        "longitude": "5.039970"
     },
     {
         "id": "137",
@@ -972,7 +1002,9 @@
         "titel": "’t Loonsche Land audio-tour",
         "tijd": "49",
         "datum": "2020-02-17",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.645431",
+        "longitude": "5.047134"
     },
     {
         "id": "140",
@@ -1000,7 +1032,9 @@
         "titel": "Max + Moritz bouwplaats-tour",
         "tijd": "56",
         "datum": "2020-03-10",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648073",
+        "longitude": "5.047392"
     },
     {
         "id": "144",
@@ -1021,7 +1055,9 @@
         "titel": "Het Efteling Golfpark",
         "tijd": "72",
         "datum": "2020-03-30",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.639022",
+        "longitude": "5.031781"
     },
     {
         "id": "147",
@@ -1112,7 +1148,9 @@
         "titel": "Max & Moritz",
         "tijd": "113",
         "datum": "2020-06-22",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648073",
+        "longitude": " 5.047392"
     },
     {
         "id": "160",
@@ -1231,7 +1269,9 @@
         "titel": "Aquanura met een zachte G",
         "tijd": "72",
         "datum": "2020-10-09",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648075",
+        "longitude": "5.045224"
     },
     {
         "id": "177",
@@ -1259,7 +1299,9 @@
         "titel": "Het Efteling Hotel",
         "tijd": "100",
         "datum": "2020-10-26",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.648425",
+        "longitude": "5.043599"
     },
     {
         "id": "181",
@@ -1287,7 +1329,9 @@
         "titel": "Theme Park Science achter de schermen bij de Pagode",
         "tijd": "51",
         "datum": "2020-11-18",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.650433",
+        "longitude": "5.050711"
     },
     {
         "id": "185",
@@ -1308,7 +1352,9 @@
         "titel": "Polka Marina",
         "tijd": "29",
         "datum": "2020-12-01",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.648205",
+        "longitude": "5.053512"
     },
     {
         "id": "188",
@@ -1329,7 +1375,9 @@
         "titel": "Villa Pardoes",
         "tijd": "122",
         "datum": "2020-12-21",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.645677",
+        "longitude": "5.053032"
     },
     {
         "id": "191",
@@ -1434,7 +1482,9 @@
         "titel": "Golfpark de Loonsche Duynen",
         "tijd": "60",
         "datum": "2021-03-18",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.639022",
+        "longitude": "5.031781"
     },
     {
         "id": "206",
@@ -1497,7 +1547,9 @@
         "titel": "Achter de schermen bij het Efteling Theater",
         "tijd": "110",
         "datum": "2021-05-17",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648425",
+        "longitude": "5.043599"
     },
     {
         "id": "215",
@@ -1525,7 +1577,9 @@
         "titel": "Speelbos Nest!",
         "tijd": "91",
         "datum": "2021-06-03",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.647854",
+        "longitude": "5.052708"
     },
     {
         "id": "219",
@@ -1553,7 +1607,9 @@
         "titel": "Efteling Kids Radio met Arnoud en Mayoni",
         "tijd": "142",
         "datum": "2021-06-28",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.649210",
+        "longitude": "5.043803"
     },
     {
         "id": "223",
@@ -1700,7 +1756,9 @@
         "titel": "Lavenlaar audio-tour",
         "tijd": "140",
         "datum": "2021-11-15",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.653120",
+        "longitude": "5.048905"
     },
     {
         "id": "244",
@@ -1728,7 +1786,9 @@
         "titel": "Bäckerei Krümel",
         "tijd": "73",
         "datum": "2021-12-08",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.647657",
+        "longitude": "5.046968"
     },
     {
         "id": "248",
@@ -1749,7 +1809,9 @@
         "titel": "Het Gildehuis",
         "tijd": "131",
         "datum": "2021-12-27",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.653261",
+        "longitude": "5.051418"
     },
     {
         "id": "251",
@@ -1868,7 +1930,9 @@
         "titel": "Efteling Wonderland",
         "tijd": "54",
         "datum": "2022-03-30",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.651630",
+        "longitude": "5.050506"
     },
     {
         "id": "268",
@@ -1882,7 +1946,9 @@
         "titel": "Groot onderhoud bij de Pagode",
         "tijd": "59",
         "datum": "2022-04-06",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.650433",
+        "longitude": "5.050711"
     },
     {
         "id": "270",
@@ -1903,7 +1969,9 @@
         "titel": "Een kijkje in de kas van de Efteling",
         "tijd": "79",
         "datum": "2022-04-25",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.650963",
+        "longitude": "5.039565"
     },
     {
         "id": "273",
@@ -1973,7 +2041,9 @@
         "titel": "Kleine Boodschap in het theater",
         "tijd": "129",
         "datum": "2022-07-04",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.659722",
+        "longitude": "5.032634"
     },
     {
         "id": "283",
@@ -2036,14 +2106,18 @@
         "titel": "Entrees en parkeerterreinen van de Efteling",
         "tijd": "103",
         "datum": "2022-09-05",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.650926",
+        "longitude": "5.042896"
     },
     {
         "id": "292",
         "titel": "De sluiting van het Spookslot",
         "tijd": "78",
         "datum": "2022-09-07",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648746",
+        "longitude": "5.048502"
     },
     {
         "id": "293",
@@ -2211,14 +2285,18 @@
         "titel": "De Efteling Stoomtrein Maatschappij",
         "tijd": "126",
         "datum": "2023-02-06",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.651720",
+        "longitude": "5.045275"
     },
     {
         "id": "317",
         "titel": "Team Erfgoedbeheer",
         "tijd": "86",
         "datum": "2023-02-13",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.652277",
+        "longitude": "5.053445"
     },
     {
         "id": "318",
@@ -2239,7 +2317,9 @@
         "titel": "Efteling - De Tentoonstelling",
         "tijd": "76",
         "datum": "2023-03-06",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.686574",
+        "longitude": "5.304683"
     },
     {
         "id": "321",
@@ -2288,7 +2368,9 @@
         "titel": "Het vernieuwde Anton Pieckplein",
         "tijd": "79",
         "datum": "2023-04-20",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.652399",
+        "longitude": "5.049865"
     },
     {
         "id": "328",
@@ -2323,7 +2405,9 @@
         "titel": "Het Efteling Kostuumatelier",
         "tijd": "98",
         "datum": "2023-05-22",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.652412",
+        "longitude": "5.051402"
     },
     {
         "id": "333",
@@ -2372,7 +2456,9 @@
         "titel": "Onderhoud aan de Stoomcarrousel",
         "tijd": "27",
         "datum": "2023-07-05",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.651122",
+        "longitude": "5.048912"
     },
     {
         "id": "340",
@@ -2540,7 +2626,9 @@
         "titel": "De restauratie van het kasteel van Doornroosje",
         "tijd": "51",
         "datum": "2023-12-11",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.650768",
+        "longitude": "5.047225"
     },
     {
         "id": "364",
@@ -2603,7 +2691,9 @@
         "titel": "Het hoogste punt van Danse Macabre",
         "tijd": "35",
         "datum": "2024-02-02",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648746",
+        "longitude": " 5.048502"
     },
     {
         "id": "373",
@@ -2617,7 +2707,9 @@
         "titel": "De Legende van Familie Vos",
         "tijd": "106",
         "datum": "2024-02-07",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.687166",
+        "longitude": "5.070593"
     },
     {
         "id": "375",
@@ -2687,7 +2779,9 @@
         "titel": "De start van het onderhoud aan Hans & Grietje",
         "tijd": "35",
         "datum": "2024-04-10",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.650255",
+        "longitude": "5.046480"
     },
     {
         "id": "385",
@@ -2771,7 +2865,9 @@
         "titel": "Het Badhuys",
         "tijd": "67",
         "datum": "2024-06-24",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.646629",
+        "longitude": "5.040407"
     },
     {
         "id": "397",
@@ -2806,7 +2902,9 @@
         "titel": "De Mini-Efteling",
         "tijd": "193",
         "datum": "2024-07-29",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.693441",
+        "longitude": "5.190034"
     },
     {
         "id": "402",
@@ -2911,7 +3009,9 @@
         "titel": "De opening van Danse Macabre",
         "tijd": "122",
         "datum": "2024-10-31",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648746",
+        "longitude": "5.048502"
     },
     {
         "id": "417",
@@ -3037,7 +3137,9 @@
         "titel": "De operatie en showtechniek van Danse Macabre",
         "tijd": "126",
         "datum": "2025-02-10",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.648746",
+        "longitude": "5.048502"
     },
     {
         "id": "435",
@@ -3141,7 +3243,9 @@
         "titel": "Het eerste ritje met de elektrische stoomtrein",
         "tijd": "30",
         "datum": "2025-05-08",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.652139",
+        "longitude": "5.046906"
     },
     {
         "id": "449",
@@ -3174,5 +3278,12 @@
         "tijd": "159",
         "datum": "2025-05-26",
         "categorie": "nieuws"
+    },
+    {
+        "id": "453",
+        "titel": "Sleutelmomenten in de geschiedenis van de Efteling",
+        "tijd": "118",
+        "datum": "2025-06-02",
+        "categorie": "achtergrond"
     }
 ]
