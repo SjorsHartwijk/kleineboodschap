@@ -2,7 +2,7 @@ name: Bluesky Daily Episode Poster
 
 on:
   schedule:
-    - cron: '0 10 * * *' # 10:00 UTC = 12:00 CEST
+    - cron: '50 11 * * *' # 13:50 CEST = 11:50 UTC
   workflow_dispatch:
 
 jobs:

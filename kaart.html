@@ -34,15 +34,6 @@
                 margin: 30px 30px 0 30px;
             }
         }
-        .navbar-brand {
-            font-family: "Alegreya", serif;
-            color: var(--color-white);
-            font-style: normal;
-            img {
-                height: 20px;
-                filter: invert(100%);
-            }
-        }
         #map {
             position: absolute;
             top: 0;
@@ -74,7 +65,7 @@
 
 <body class="d-flex flex-column h-100">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-theme fixed-top shadow-sm">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-theme fixed-top shadow-sm rounded-3">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png"/ alt="Logo Kleine Boodschap Data"> <span
                             class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
@@ -98,7 +89,38 @@
                     </div>
                 </div>
             </nav>
-            <div id="map"></div>
+            <div id="map">
+                <!-- Floating Help Button and Legend Card -->
+                <div id="help-btn" style="position: fixed; bottom: 90px; left: 20px; z-index: 1050;">
+                    <button type="button" class="btn bg-white rounded-circle shadow" style="width:48px; height:48px; font-size:1.5rem;">
+                        <i class="fa-solid fa-question"></i>
+                    </button>
+                </div>
+                <div id="help-card" class="card shadow" style="position: fixed; bottom: 150px; left: 20px; min-width: 240px; max-width: 90vw; display: none; z-index: 1060;">
+                    <button type="button" class="btn-close float-end mt-2 me-2" aria-label="Sluiten" id="close-help"></button>
+                    <div class="card-body p-3">
+                        <h6 class="card-title mb-2"><i class="fa-solid fa-map"></i> Legenda</h6>
+                        <p class="card-text mb-2" style="font-size: 0.95rem;">
+                            Tik op een marker om de betreffende aflevering te zien. Gebruik je muis of twee vingers om de kaart te bewegen of in- en uit te zoomen.<br/>
+                            <span class="badge nieuws">Nieuws</span>
+                            <span class="badge achtergrond">Achtergrond</span>
+                            <span class="badge reportage">Reportage</span>
+                            <span class="badge interview">Interview</span>
+                        </p>
+                    </div>
+                </div>
+                <script>
+                    const helpBtn = document.getElementById('help-btn');
+                    const helpCard = document.getElementById('help-card');
+                    const closeHelp = document.getElementById('close-help');
+                    helpBtn.addEventListener('click', () => {
+                        helpCard.style.display = helpCard.style.display === 'none' ? 'block' : 'none';
+                    });
+                    closeHelp.addEventListener('click', () => {
+                        helpCard.style.display = 'none';
+                    });
+                </script>
+            </div>
         <footer class="bg-dark py-4 mt-auto fixed-bottom">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
