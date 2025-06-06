@@ -14,18 +14,32 @@
     <meta property="og:title" content="Kleine Boodschap Data">
     <meta property="og:site_name" content="Kleine Boodschap Data">
     <meta property="og:url" content="https://kleineboodschapdata.vercel.app/">
-    <meta property="og:description" content="Deze website biedt alle statistieken en feiten van de podcast Kleine Boodschap">
+    <meta property="og:description" content="Deze website biedt alle statistieken en visuele data van de podcast Kleine Boodschap">
     <meta property="og:type" content="">
-    <meta property="og:image" content="https://kleineboodschapdata.vercel.app/assest/images/opengraph.png">
+    <meta property="og:image" content="assets/images/opengraph.png">
     <meta name="description"
         content="Geniet je ook wekelijks van Kleine Boodschap en vraag je je wel eens af hoeveel tijd je eraan besteedt? Deze pagina biedt alle statistieken en feiten die je al dan niet nodig hebt.">
     <script src="https://kit.fontawesome.com/396ea48297.js" crossorigin="anonymous"></script>
+    <style>
+        nav {
+            border-bottom: 0 !important;
+            border-radius: calc(1px * inifinity) !important;
+        }
+        .navbar{
+            margin: 8px 8px 0 8px;
+        }
+        @media (min-width: 992px) {
+            .navbar {
+                margin: 30px 30px 0 30px;
+            }
+        }
+    </style>
 </head>
 <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-theme">
-                <div class="container-fluid py-lg-3">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-theme fixed-top rounded-3 shadow-sm">
+                <div class="container-fluid">
                     <a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png"/ alt="Logo Kleine Boodschap Data"> <span
                             class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
                             class="d-inline-block d-md-none">KB Data</span></a>
@@ -37,6 +51,7 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="afleveringen.html">Afleveringen</a></li>
+                            <li class="nav-item"><a class="nav-link" href="kaart.html">Kaart</a></li>
                             <li class="nav-item"><a class="nav-link" href="reeks.html">Reeks</a></li>
                             <li class="nav-item"><a class="nav-link" href="#about">Over</a></li>
                             <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.bsky.social" rel="nofollow" target="_blank"><i class="fa-brands fa-bluesky"></i></a></li>
@@ -47,19 +62,20 @@
                 </div>
             </nav>
             <!-- Header-->
-            <header id="top" class="bg-theme py-5">
-                <div class="container px-5">
+            <header id="top" class="py-5 finisher-header">
+                <div class="container">
                     <div class="row gx-5 align-items-center justify-content-center justify-content-xl-start">
                         <div class="col-lg-8 col-xl-8 col-xxl-8">
-                            <div class="my-5 text-center text-xl-start">
+                            <div class="my-5 text-center text-xl-start pt-5">
                                 <h1 class="display-5 fw-bolder text-white mb-2"><img src="assets/images/logo2.png"/ alt="Logo Kleine Boodschap Data"> Kleine
                                     Boodschap data</h1>
                                 <p class="lead fw-normal text-white mb-4">Geniet je ook wekelijks van Kleine Boodschap
                                     en vraag je je wel eens af hoeveel tijd je eraan besteedt? Deze pagina biedt alle
                                     statistieken en feiten die je al dan niet nodig hebt.</p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-theme btn-lg px-4 me-sm-3" href="#statistieken">Statistieken</a>
-                                    <a class="btn btn-outline-light btn-lg px-4" href="#data">Data</a>
+                                    <a class="btn btn-theme px-4" href="#statistieken">Statistieken</a>
+                                    <a class="btn btn-success px-4" href="kaart.html">Kaart</a>
+                                    <a class="btn btn-outline-light px-4" href="#data">Data</a>
                                 </div>
                             </div>
                         </div>

@@ -39,14 +39,14 @@ id,titel,tijd,datum,categorie,latitude,longitude
 38,Die mot je nie,69,2018-08-06,nieuws
 39,Komt het nieuwe Reizenrijk er zo uit te zien...?,47,2018-08-07,achtergrond
 40,Eten en drinken in de Efteling,86,2018-08-13,achtergrond
-41,Avondboodschap,63,2018-08-16,reportage
+41,Avondboodschap,63,2018-08-16,reportage,51.651345,5.049205
 42,Allez Tom Tom,86,2018-08-20,nieuws
 43,Reacties van luisteraars,41,2018-08-22,achtergrond
 44,Gerestaureerde Jezus-afbeelding in een kerk,85,2018-08-27,nieuws
 45,Ons favoriete entertainment in de Efteling,76,2018-09-03,achtergrond
 46,Seizoenen in de Efteling,75,2018-09-10,achtergrond
 47,Het bestemmingsplandemonium,155,2018-09-17,nieuws
-48,Première CARO,57,2018-09-19,reportage,51.648425,5.043599
+48,Première CARO,57,2018-09-19,reportage,51.648741,5.043564
 49,Onze favoriete parken buiten de Efteling,81,2018-09-24,achtergrond
 50,Een flesje kinderchampagne,86,2018-10-01,nieuws
 51,Fata Morgana tijdens onderhoud,30,2018-10-04,reportage
@@ -130,7 +130,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 129,Onze favoriete karakters in de Efteling,58,2019-12-23,achtergrond
 130,Reacties van luisteraars,60,2019-12-25,achtergrond
 131,Een ode aan het Waterorgel,87,2019-12-30,achtergrond
-132,Hotel de Bottle,45,2020-01-01,achtergrond,51.648425,5.043599
+132,Hotel de Bottle,45,2020-01-01,achtergrond
 133,Aldimatronics,127,2020-01-06,nieuws
 134,De magie van het verzamelen,89,2020-01-13,achtergrond
 135,Weet je wat er ook viral gaat?,77,2020-01-20,nieuws
@@ -178,11 +178,11 @@ id,titel,tijd,datum,categorie,latitude,longitude
 177,IJspegels in je bakkes,103,2020-10-12,nieuws
 178,Nieuwsflitsbonusaflevering,35,2020-10-16,nieuws
 179,Het Keienspoor met Ivo Südmeier,101,2020-10-19,achtergrond
-180,Het Efteling Hotel,100,2020-10-26,achtergrond,51.648425,5.043599
+180,Het Efteling Hotel,100,2020-10-26,achtergrond,51.653372,5.054870
 181,Heb je last van stemproblemen?,163,2020-11-02,nieuws
 182,De financiën van de Efteling (deel 1),146,2020-11-09,achtergrond
 183,Kernsplijting in de fontein,101,2020-11-16,nieuws
-184,Theme Park Science achter de schermen bij de Pagode,51,2020-11-18,achtergrond,51.650433,5.050711
+184,Theme Park Science achter de schermen bij de Pagode,51,2020-11-18,achtergrond,51.650433,5.050712
 185,In gesprek met Ronald van der Zijl,109,2020-11-23,interview
 186,Genoeg lichtpuntjes om naar uit te kijken,125,2020-11-30,nieuws
 187,Polka Marina,29,2020-12-01,achtergrond,51.648205,5.053512
@@ -290,7 +290,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 289,De speeltuinen in de Efteling,111,2022-08-22,achtergrond
 290,In gesprek met Koos de Graaf,132,2022-08-29,interview
 291,Entrees en parkeerterreinen van de Efteling,103,2022-09-05,achtergrond,51.650926,5.042896
-292,De sluiting van het Spookslot,78,2022-09-07,reportage,51.648746,5.048502
+292,De sluiting van het Spookslot,78,2022-09-07,reportage,51.649019,5.048274
 293,Een soort van Scooby-Doo aflevering,176,2022-09-12,nieuws
 294,Thematisering in de Efteling met Martin en Patrick,121,2022-09-19,interview
 295,Blausibel,128,2022-09-26,nieuws
@@ -414,7 +414,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 413,Zwavelsmaak,129,2024-10-13,nieuws
 414,De wetenschap achter achtbanen,149,2024-10-21,interview
 415,Het muziekstuk Danse Macabre,78,2024-10-28,achtergrond
-416,De opening van Danse Macabre,122,2024-10-31,reportage,51.648746,5.048502
+416,De opening van Danse Macabre,122,2024-10-31,reportage,51.648498,5.048754
 417,Op een gitzwarte wolk,123,2024-11-03,nieuws
 418,Paul van Loon over Danse Macabre Het Begin,30,2024-11-06,interview
 419,Coen Janssen over The Ghost in Me,125,2024-11-11,interview
