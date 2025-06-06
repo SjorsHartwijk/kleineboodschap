@@ -155,9 +155,34 @@
     const map = new mapboxgl.Map({
       container: 'map',
     style: 'mapbox://styles/mapbox/outdoors-v12',
-      center: [5.0502, 51.6497], // Efteling als beginpunt
-      zoom: 14
+    center: [5.0502, 51.6497], // Efteling als beginpunt
+    zoom: 15,
+    pitch: 0,
+    bearing: 80,
     });
+
+let zoomTimeout;
+
+map.on('zoom', () => {
+  clearTimeout(zoomTimeout);
+
+  zoomTimeout = setTimeout(() => {
+    const zoom = map.getZoom();
+    const currentBearing = map.getBearing();
+
+    if (zoom < 15 && currentBearing !== 0) {
+      map.easeTo({
+        bearing: 0,
+        duration: 500
+      });
+    } else if (zoom >= 15 && currentBearing !== 80) {
+      map.easeTo({
+        bearing: 80,
+        duration: 500
+      });
+    }
+  }, 300); // wacht 300ms na laatste zoom-event
+});
 
     // 📥 JSON inladen
     fetch('episodes.json')
