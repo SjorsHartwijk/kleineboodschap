@@ -49,7 +49,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 48,Première CARO,57,2018-09-19,reportage,51.648741,5.043564
 49,Onze favoriete parken buiten de Efteling,81,2018-09-24,achtergrond
 50,Een flesje kinderchampagne,86,2018-10-01,nieuws
-51,Fata Morgana tijdens onderhoud,30,2018-10-04,reportage
+51,Fata Morgana tijdens onderhoud,30,2018-10-04,reportage,51.647095,5.045066
 52,Storytelling hoofdstuk 2 met Philip Corsius,60,2018-10-08,achtergrond
 53,Ik wil niet dat m’n bossen een lunapark worden,101,2018-10-15,nieuws
 54,Reacties van luisteraars,66,2018-10-22,achtergrond
@@ -81,7 +81,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 80,Ik wil wel met jou in De Zweef,86,2019-03-11,nieuws
 81,Onze top-7 sprookjes in het Sprookjesbos,59,2019-03-18,achtergrond
 82,Een Doorn in het oog,105,2019-03-25,nieuws
-83,Een ode aan Pandadroom en de schilderijen in het Carrouselpaleis,63,2019-04-01,achtergrond
+83,Een ode aan Pandadroom en de schilderijen in het Carrouselpaleis,63,2019-04-01,achtergrond,51.651171,5.049103
 84,Baron 1898,70,2019-04-08,achtergrond,51.648195,5.050852
 85,Het wordt wel warm onder dat dekje,103,2019-04-15,nieuws
 86,Een rondleiding over Parck Kaatsheuvel,17,2019-04-17,achtergrond,51.657755,5.067178
@@ -98,7 +98,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 97,Team Fata vs. Team Joris,86,2019-06-17,nieuws
 98,Onze favoriete details in de Efteling,56,2019-06-24,achtergrond
 99,Alsof ze curling aan het spelen waren,116,2019-07-01,nieuws
-100,Kleine Boodschap 100,117,2019-07-08,interview
+100,Kleine Boodschap 100,117,2019-07-08,interview,51.643455,5.041078
 101,Nieuwe wisseltentoonstelling in het Efteling Museum,22,2019-07-10,reportage,51.652104,5.049709
 102,Wolf tegen Lam,98,2019-07-15,nieuws
 103,Reacties van luisteraars,42,2019-07-18,achtergrond
@@ -111,11 +111,11 @@ id,titel,tijd,datum,categorie,latitude,longitude
 110,Jullie favoriete details,34,2019-08-21,achtergrond
 111,De mooiste gebouwen in de Efteling,67,2019-08-26,achtergrond
 111,Watergate,86,2019-09-02,nieuws
-113,Afscheid van de Bob,68,2019-09-04,reportage,51.648073,5.047392
+113,Afscheid van de Bob,68,2019-09-04,reportage,51.647987,5.047330
 114,De magie van Verticaal gaan,74,2019-09-09,achtergrond
 115,Anton Koekblik,98,2019-09-16,nieuws
 116,Niet-gerealiseerde Efteling-projecten (deel 1),86,2019-09-23,achtergrond
-117,De opening van De zes Zwanen,74,2019-09-30,reportage
+117,De opening van De zes Zwanen,74,2019-09-30,reportage,51.650856,5.045004
 118,Tussen de bielzen en de zitkuil,121,2019-10-07,nieuws
 119,Animatronics in de Efteling,78,2019-10-14,achtergrond
 120,Winterballen,96,2019-10-21,nieuws
@@ -129,7 +129,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 128,Herauten Horror,101,2019-12-16,nieuws
 129,Onze favoriete karakters in de Efteling,58,2019-12-23,achtergrond
 130,Reacties van luisteraars,60,2019-12-25,achtergrond
-131,Een ode aan het Waterorgel,87,2019-12-30,achtergrond
+131,Een ode aan het Waterorgel,87,2019-12-30,achtergrond,51.651327,5.049213
 132,Hotel de Bottle,45,2020-01-01,achtergrond
 133,Aldimatronics,127,2020-01-06,nieuws
 134,De magie van het verzamelen,89,2020-01-13,achtergrond
@@ -171,13 +171,13 @@ id,titel,tijd,datum,categorie,latitude,longitude
 170,Afscheid van Bart de Boer,44,2020-09-03,achtergrond
 171,Efteling-tatoeages met Bram Elstak,50,2020-09-07,interview
 172,Meesters van klefheid,88,2020-09-14,nieuws
-173,Anton Pieck en het Anton Pieck museum,135,2020-09-21,interview
+173,Anton Pieck en het Anton Pieck museum,135,2020-09-21,interview,52.4754540,6.0672388
 174,Paar kuub Piecks groen,129,2020-09-28,nieuws
 175,De Glazen Bol,71,2020-10-05,achtergrond
 176,Aquanura met een zachte G,72,2020-10-09,reportage,51.648075,5.045224
 177,IJspegels in je bakkes,103,2020-10-12,nieuws
 178,Nieuwsflitsbonusaflevering,35,2020-10-16,nieuws
-179,Het Keienspoor met Ivo Südmeier,101,2020-10-19,achtergrond
+179,Het Keienspoor met Ivo Südmeier,101,2020-10-19,achtergrond,51.644394,5.048800
 180,Het Efteling Hotel,100,2020-10-26,achtergrond,51.653372,5.054870
 181,Heb je last van stemproblemen?,163,2020-11-02,nieuws
 182,De financiën van de Efteling (deel 1),146,2020-11-09,achtergrond
@@ -437,7 +437,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 436,In gesprek met Bernadette van der Velden,42,2025-02-24,interview
 437,Het verdwaalplein,120,2025-03-03,nieuws
 438,Het Efteling Museum met Patrick van den Nieuwenhuizen,92,2025-03-10,achtergrond,51.652078,5.049704
-439,Het hoogste punt van het Efteling Grand Hotel,92,2025-03-11,reportage,51.649253,5.045128
+439,Het hoogste punt van het Eftelxing Grand Hotel,92,2025-03-11,reportage,51.649253,5.045128
 440,Heks over vleermuis,104,2025-03-17,nieuws
 441,In gesprek met Robert-Jaap Jansen,125,2025-03-24,interview
 442,Reus met spillebeentjes,130,2025-03-31,nieuws
@@ -452,3 +452,4 @@ id,titel,tijd,datum,categorie,latitude,longitude
 451,Efteling Wonder Hotel,107,2025-05-19,reportage,51.653306,5.054457
 452,De spookpoes in de kamer,159,2025-05-26,nieuws
 453,Sleutelmomenten in de geschiedenis van de Efteling,118,2025-06-02,achtergrond
+454,Uitgedroogde verschrompelde zombie,125,2025-06-09,nieuws
