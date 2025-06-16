@@ -3306,5 +3306,12 @@
         "tijd": "125",
         "datum": "2025-06-09",
         "categorie": "nieuws"
+    },
+    {
+        "id": "455",
+        "titel": "In gesprek met Stefan van der Putten",
+        "tijd": "119",
+        "datum": "2025-06-16",
+        "categorie": "interview"
     }
 ]
