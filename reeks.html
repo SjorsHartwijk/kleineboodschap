@@ -20,12 +20,22 @@
     <meta name="description"
         content="Maak je eigen statistieken op basis van een datumreeks. Vul een begin- en einddatum in en genereer jouw eigen luisterstatistieken.">
     <script src="https://kit.fontawesome.com/396ea48297.js" crossorigin="anonymous"></script>
+    <style>
+        .navbar{
+            margin: 8px 8px 0 8px;
+        }
+        @media (min-width: 992px) {
+            .navbar {
+                margin: 30px 30px 0 30px;
+            }
+        }
+    </style>
 </head>
 <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-theme">
-                <div class="container-fluid py-lg-3">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-theme fixed-top rounded-3 shadow-sm">
+                <div class="container-fluid">
                     <a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png"/ alt="Logo Kleine Boodschap Data"> <span
                             class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
                             class="d-inline-block d-md-none">KB Data</span></a>
@@ -39,6 +49,7 @@
                             <li class="nav-item"><a class="nav-link" href="afleveringen.html">Afleveringen</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="kaart.html">Kaart</a></li>
+                            <li class="nav-item"><a class="nav-link" href="kalender.html">Kalender</a></li>
                             <li class="nav-item"><a class="nav-link active" href="reeks.html">Reeks</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="index.html#about">Over</a></li>
