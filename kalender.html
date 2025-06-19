@@ -59,7 +59,7 @@
             </nav>
 <div class="container mt-5 pt-5">
   <h1>Kalender</h1>
-  <p>Bekijk alle gepubliceerde afleveringen van Kleine Boodschap in deze kalender weergave. Klik op een gekleurde dag om te zien welke afleveringen op deze dag zijn gepubliceerd. Hoe donkerder de dag, des te meer afleveringen er zijn gepubliceerd.</p>
+  <p>Bekijk alle geïndexeerde afleveringen van Kleine Boodschap op deze drukte-kalender. Klik op een gekleurde dag om te zien welke aflevering(en) op deze dag zijn gepubliceerd. Hoe donkerder de dag, des te meer afleveringen er zijn gepubliceerd.</p>
   <div class="container">
     <div class="row" id="calendar-grid"></div>
   </div>
@@ -170,8 +170,8 @@
 
         body.innerHTML += `
           <div class="mb-2">
-            ${new Date(ep.datum).getFullYear()}: ${ep.titel}<br>
-            <span class="badge" style="background-color: ${badgeColor};">${ep.categorie}</span>
+          Afl.${ep.id}: ${ep.titel}<br>
+            <span class="badge text-bg-secondary">${new Date(ep.datum).getFullYear()}</span>&nbsp;<span class="badge" style="background-color: ${badgeColor};">${ep.categorie}</span>
           </div>
         `;
       });
