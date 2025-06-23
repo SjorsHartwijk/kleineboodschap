@@ -53,7 +53,7 @@ jobs:
           done < <(jq -c '.[]' episodes.json)
 
           if [[ "$SHOULD_POST" == true ]]; then
-            echo -e "Vandaag, in voorgaande jaren, publiceerde @kleineboodschap.com deze aflevering(en):\n\n${POST_TEXT}" > post.txt
+            echo -e "Vandaag, in voorgaande jaren, publiceerde #kleineboodschap deze aflevering(en):\n\n${POST_TEXT}" > post.txt
             echo "should_post=true" >> $GITHUB_OUTPUT
           else
             echo "Geen afleveringen vandaag."

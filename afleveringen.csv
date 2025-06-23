@@ -165,7 +165,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 164,Volgens mij was de LSD in de aanbieding,103,2020-07-27,nieuws
 165,Jullie Pieckblauwe luchten,77,2020-08-03,achtergrond
 166,Wat is écht Eftelings?,81,2020-08-10,achtergrond
-167,Een ode aan het Diorama,70,2020-08-17,achtergrond
+167,Een ode aan het Diorama,70,2020-08-17,achtergrond,51.650909,5.048781
 168,De geschiedenis van de Stoomcarrousel,75,2020-08-24,achtergrond
 169,De raad der Dumbasses,139,2020-08-31,nieuws
 170,Afscheid van Bart de Boer,44,2020-09-03,achtergrond
@@ -182,7 +182,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 181,Heb je last van stemproblemen?,163,2020-11-02,nieuws
 182,De financiën van de Efteling (deel 1),146,2020-11-09,achtergrond
 183,Kernsplijting in de fontein,101,2020-11-16,nieuws
-184,Theme Park Science achter de schermen bij de Pagode,51,2020-11-18,achtergrond,51.650433,5.050712
+184,Theme Park Science achter de schermen bij de Pagode,51,2020-11-18,achtergrond,51.650575,5.050208
 185,In gesprek met Ronald van der Zijl,109,2020-11-23,interview
 186,Genoeg lichtpuntjes om naar uit te kijken,125,2020-11-30,nieuws
 187,Polka Marina,29,2020-12-01,achtergrond,51.648205,5.053512
@@ -437,7 +437,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 436,In gesprek met Bernadette van der Velden,42,2025-02-24,interview
 437,Het verdwaalplein,120,2025-03-03,nieuws
 438,Het Efteling Museum met Patrick van den Nieuwenhuizen,92,2025-03-10,achtergrond,51.652078,5.049704
-439,Het hoogste punt van het Eftelxing Grand Hotel,92,2025-03-11,reportage,51.649253,5.045128
+439,Het hoogste punt van het Efteling Grand Hotel,92,2025-03-11,reportage,51.649253,5.045128
 440,Heks over vleermuis,104,2025-03-17,nieuws
 441,In gesprek met Robert-Jaap Jansen,125,2025-03-24,interview
 442,Reus met spillebeentjes,130,2025-03-31,nieuws
@@ -454,3 +454,4 @@ id,titel,tijd,datum,categorie,latitude,longitude
 453,Sleutelmomenten in de geschiedenis van de Efteling,118,2025-06-02,achtergrond
 454,Uitgedroogde verschrompelde zombie,125,2025-06-09,nieuws
 455,In gesprek met Stefan van der Putten,119,2025-06-16,interview
+456,One donkey show,138,2025-06-23,nieuws
