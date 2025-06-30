@@ -1284,8 +1284,8 @@
         "tijd": "72",
         "datum": "2020-10-09",
         "categorie": "reportage",
-        "latitude": "51.648075",
-        "longitude": "5.045224"
+        "latitude": "51.648282",
+        "longitude": "5.044406"
     },
     {
         "id": "177",
@@ -1624,8 +1624,8 @@
         "tijd": "142",
         "datum": "2021-06-28",
         "categorie": "interview",
-        "latitude": "51.649210",
-        "longitude": "5.043803"
+        "latitude": "51.649358",
+        "longitude": "5.043747"
     },
     {
         "id": "223",
@@ -2196,7 +2196,9 @@
         "titel": "Het Textielmuseum en het Efteling tafellinnen",
         "tijd": "33",
         "datum": "2022-11-02",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": "51.570848",
+        "longitude": "5.079455"
     },
     {
         "id": "302",
@@ -2349,7 +2351,9 @@
         "titel": "Efteling in Concert",
         "tijd": "81",
         "datum": "2023-03-20",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "52.357230",
+        "longitude": "4.866466"
     },
     {
         "id": "323",
@@ -2400,7 +2404,9 @@
         "titel": "In gesprek met Paul Beck",
         "tijd": "109",
         "datum": "2023-05-01",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "51.656474",
+        "longitude": "5.052016"
     },
     {
         "id": "330",
@@ -2565,7 +2571,9 @@
         "titel": "Boekpresentatie Raveleijn - Het bloed van de laatste draak",
         "tijd": "104",
         "datum": "2023-09-29",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.652933",
+        "longitude": "5.046504"
     },
     {
         "id": "353",
@@ -2990,7 +2998,9 @@
         "titel": "Het onderhoud aan Hans & Grietje",
         "tijd": "41",
         "datum": "2024-10-02",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.650297",
+        "longitude": "5.046303"
     },
     {
         "id": "412",
@@ -3076,14 +3086,18 @@
         "titel": "De overeenkomsten tussen de Efteling en Madurodam met Peter Koppelmans en Yvette Nieboer",
         "tijd": "77",
         "datum": "2024-12-09",
-        "categorie": "interview"
+        "categorie": "interview",
+        "latitude": "52.099132",
+        "longitude": "4.298970"
     },
     {
         "id": "424",
         "titel": "Efteling Symphonica",
         "tijd": "34",
         "datum": "2024-12-12",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.648225",
+        "longitude": "5.045975"
     },
     {
         "id": "425",
@@ -3322,5 +3336,12 @@
         "tijd": "138",
         "datum": "2025-06-23",
         "categorie": "nieuws"
+    },
+    {
+        "id": "457",
+        "titel": "De muziek van De Vliegende Hollander",
+        "tijd": "99",
+        "datum": "2025-06-30",
+        "categorie": "achtergrond"
     }
 ]

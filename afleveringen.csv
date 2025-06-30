@@ -174,7 +174,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 173,Anton Pieck en het Anton Pieck museum,135,2020-09-21,interview,52.4754540,6.0672388
 174,Paar kuub Piecks groen,129,2020-09-28,nieuws
 175,De Glazen Bol,71,2020-10-05,achtergrond
-176,Aquanura met een zachte G,72,2020-10-09,reportage,51.648075,5.045224
+176,Aquanura met een zachte G,72,2020-10-09,reportage,51.648282,5.044406
 177,IJspegels in je bakkes,103,2020-10-12,nieuws
 178,Nieuwsflitsbonusaflevering,35,2020-10-16,nieuws
 179,Het Keienspoor met Ivo Südmeier,101,2020-10-19,achtergrond,51.644394,5.048800
@@ -220,7 +220,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 219,We gaan naar Strookrijk toe!,142,2021-06-07,nieuws
 220,In gesprek met Lex Lemmens (deel 1),131,2021-06-14,interview
 221,Bedrijvige gezelligheid,129,2021-06-21,nieuws
-222,Efteling Kids Radio met Arnoud en Mayoni,142,2021-06-28,interview,51.649210,5.043803
+222,Efteling Kids Radio met Arnoud en Mayoni,142,2021-06-28,interview,51.649358,5.043747
 223,Een miezer van mayonaise,165,2021-07-05,nieuws
 224,In gesprek met Lex Lemmens (deel 2),133,2021-07-12,interview
 225,Botox kuurtje gone wrong,120,2021-07-19,nieuws
@@ -299,7 +299,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 298,Gewoon de CO2-blusser erop,149,2022-10-17,nieuws
 299,De oudste gebouwen in de Efteling,58,2022-10-24,achtergrond
 300,Feestelijke reacties van luisteraars,114,2022-10-31,achtergrond
-301,Het Textielmuseum en het Efteling tafellinnen,33,2022-11-02,achtergrond
+301,Het Textielmuseum en het Efteling tafellinnen,33,2022-11-02,achtergrond,51.570848,5.079455
 302,Verticale verassing,172,2022-11-07,nieuws
 303,Mijmeren met Sander Kesseler,93,2022-11-14,interview
 304,Een rondje proefroken,137,2022-11-21,nieuws
@@ -320,14 +320,14 @@ id,titel,tijd,datum,categorie,latitude,longitude
 319,De muziek van de Wereld van Sindbad,75,2023-02-27,achtergrond
 320,Efteling - De Tentoonstelling,76,2023-03-06,achtergrond,51.686574,5.304683
 321,Mijn eerste hoop zal niet de laatste zijn,147,2023-03-13,nieuws
-322,Efteling in Concert,81,2023-03-20,interview
+322,Efteling in Concert,81,2023-03-20,interview,52.357230,4.866466
 323,We hebben goeie hoop,130,2023-03-27,nieuws
 324,Efteling-personeelskleding met Loet Smits,113,2023-04-03,achtergrond
 325,De Efteling achter de schermen,101,2023-04-10,achtergrond
 326,Wishful sinking,138,2023-04-17,nieuws
 327,Het vernieuwde Anton Pieckplein,79,2023-04-20,reportage,51.652399,5.049865
 328,De Efteling als verteller van sprookjes met Moniek Hover (deel 2),166,2023-04-24,interview
-329,In gesprek met Paul Beck,109,2023-05-01,interview
+329,In gesprek met Paul Beck,109,2023-05-01,interview,51.656474,5.052016
 330,Ode aan het Spookslot,101,2023-05-08,achtergrond
 331,Tot zover het toiletblok,149,2023-05-15,nieuws
 332,Het Efteling Kostuumatelier,98,2023-05-22,interview,51.652412,5.051402
@@ -350,7 +350,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 349,Strijden tegen draken van vliegjes,110,2023-09-10,nieuws
 350,In gesprek met Arijan van Bavel,134,2023-09-17,interview
 351,Pieckwashing,104,2023-09-25,nieuws
-352,Boekpresentatie Raveleijn - Het bloed van de laatste draak,104,2023-09-29,reportage
+352,Boekpresentatie Raveleijn - Het bloed van de laatste draak,104,2023-09-29,reportage,51.652933,5.046504
 353,De Glazen Bol 2023,91,2023-10-02,achtergrond
 354,Nek aan nek met een klittenbandje,88,2023-10-09,nieuws
 355,Mijmeren met Xander de Rycke,101,2023-10-16,interview
@@ -409,7 +409,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 408,In den Swarte Long,114,2024-09-16,nieuws
 409,In gesprek met Jaap den Bleker,104,2024-09-23,interview
 410,Mâitresse Mystique,132,2024-09-30,nieuws
-411,Het onderhoud aan Hans & Grietje,41,2024-10-02,reportage
+411,Het onderhoud aan Hans & Grietje,41,2024-10-02,reportage,51.650297,5.046303
 412,De Glazen Bol 2024,78,2024-10-06,achtergrond
 413,Zwavelsmaak,129,2024-10-13,nieuws
 414,De wetenschap achter achtbanen,149,2024-10-21,interview
@@ -421,8 +421,8 @@ id,titel,tijd,datum,categorie,latitude,longitude
 420,Op z’n nokkenschijfs,120,2024-11-18,nieuws
 421,In gesprek met Marc en Marjan Taminiau (deel 1),141,2024-11-25,interview
 422,Hele bijzondere Delights,114,2024-12-02,nieuws
-423,De overeenkomsten tussen de Efteling en Madurodam met Peter Koppelmans en Yvette Nieboer,77,2024-12-09,interview
-424,Efteling Symphonica,34,2024-12-12,reportage
+423,De overeenkomsten tussen de Efteling en Madurodam met Peter Koppelmans en Yvette Nieboer,77,2024-12-09,interview,52.099132,4.298970
+424,Efteling Symphonica,34,2024-12-12,reportage,51.648225,5.045975
 425,Een zwart concept,99,2024-12-16,nieuws
 426,De Villa Pardoes WinterRun 2024,30,2024-12-18,reportage
 427,De draaiorgels van de Efteling met Martin Conrads,145,2024-12-23,interview
@@ -455,3 +455,4 @@ id,titel,tijd,datum,categorie,latitude,longitude
 454,Uitgedroogde verschrompelde zombie,125,2025-06-09,nieuws
 455,In gesprek met Stefan van der Putten,119,2025-06-16,interview
 456,One donkey show,138,2025-06-23,nieuws
+457,De muziek van De Vliegende Hollander,99,2025-06-30,achtergrond
