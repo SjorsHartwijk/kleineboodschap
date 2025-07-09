@@ -24,7 +24,7 @@ function calculateNewsStatistics() {
         // Weergeef de statistieken
         const newsStatisticsElement = document.getElementById('newsStatistics');
         newsStatisticsElement.innerHTML = `
-            <h2 class="h5 card-title">Nieuws</h2>
+            <h3 class="h5 card-title">Nieuws</h3>
             <p class="card-text">Aantal afleveringen: <strong>${totalNewsEpisodes}</strong></p>
             <p class="card-text">De nieuws afleveringen duren opgeteld bij elkaar <strong>${totalNewsHours.toFixed(0)} uur</strong>.</p>
             <p class="card-text"><strong>${newsPercentage.toFixed(1)}%</strong> van alle afleveringen is een nieuws aflevering.</p>
@@ -61,7 +61,7 @@ function calculateAchtergrondStatistics() {
         // Weergeef de statistieken
         const achtergrondStatisticsElement = document.getElementById('achtergrondStatistics');
         achtergrondStatisticsElement.innerHTML = `
-        <h2 class="h5 card-title">Achtergronden</h2>
+        <h3 class="h5 card-title">Achtergronden</h3>
         <p class="card-text">Aantal afleveringen: <strong>${totalAchtergrondEpisodes}</strong></p>
         <p class="card-text">De achtergrond afleveringen duren opgeteld bij elkaar <strong>${totalAchtergrondHours.toFixed(0)} uur</strong>.</p>
         <p class="card-text"><strong>${achtergrondPercentage.toFixed(1)}%</strong> van alle afleveringen is een achtergrond aflevering.</p>
@@ -99,7 +99,7 @@ function calculateReportageStatistics() {
         // Weergeef de statistieken
         const reportageStatisticsElement = document.getElementById('reportageStatistics');
         reportageStatisticsElement.innerHTML = `
-        <h2 class="h5 card-title">Reportages</h2>
+        <h3 class="h5 card-title">Reportages</h3>
         <p class="card-text">Aantal afleveringen: <strong>${totalReportageEpisodes}</strong></p>
         <p class="card-text">De reportages duren opgeteld bij elkaar <strong>${totalReportageHours.toFixed(0)} uur</strong>.</p>
         <p class="card-text"><strong>${reportagePercentage.toFixed(1)}%</strong> van alle afleveringen is een reportage.</p>
@@ -136,7 +136,7 @@ function calculateInterviewStatistics() {
         // Weergeef de statistieken
         const interviewStatisticsElement = document.getElementById('interviewStatistics');
         interviewStatisticsElement.innerHTML = `
-        <h2 class="h5 card-title">Interviews</h2>
+        <h3 class="h5 card-title">Interviews</h3>
         <p class="card-text">Aantal afleveringen: <strong>${totalInterviewEpisodes}</strong></p>
         <p class="card-text">De interviews duren opgeteld bij elkaar <strong>${totalInterviewHours.toFixed(0)} uur</strong>.</p>
         <p class="card-text"><strong>${interviewPercentage.toFixed(1)}%</strong> van alle afleveringen is een interview.</p>
