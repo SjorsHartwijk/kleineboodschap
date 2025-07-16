@@ -19,22 +19,12 @@
     <meta property="og:image" content="assets/images/opengraph.png">
     <meta name="description"
         content="Geniet je ook wekelijks van Kleine Boodschap en vraag je je wel eens af hoeveel tijd je eraan besteedt? Deze pagina biedt alle statistieken en feiten die je al dan niet nodig hebt.">
-    <script src="https://kit.fontawesome.com/396ea48297.js" crossorigin="anonymous"></script>
-    <style>
-        .navbar{
-            margin: 8px 8px 0 8px;
-        }
-        @media (min-width: 992px) {
-            .navbar {
-                margin: 30px 30px 0 30px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-<body class="d-flex flex-column h-100">
+<body>
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-theme fixed-top rounded-3 shadow-sm">
+            <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme fixed-top rounded-3 shadow-sm">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png"/ alt="Logo Kleine Boodschap Data" title="Kleine Boodschap Data"> <span
                             class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
@@ -51,9 +41,9 @@
                             <li class="nav-item"><a class="nav-link" href="kalender.html">Kalender</a></li>
                             <li class="nav-item"><a class="nav-link" href="reeks.html">Reeks</a></li>
                             <li class="nav-item"><a class="nav-link" href="#about">Over</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.bsky.social" rel="nofollow" target="_blank"><i class="fa-brands fa-bluesky"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.bsky.social" rel="nofollow" target="_blank"><i class="bi bi-bluesky"></i></a></li>
                             <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow"
-                                target="_blank">Kleine Boodschap <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                                target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -84,7 +74,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 mb-3">
-                            <h2 class="fw-bolder mb-0">Statistieken</h2>
+                            <h2 class="mb-0">Statistieken</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -227,65 +217,66 @@
                     <div class="row">
                         <div class="col-12">
                             <h2>Data</h2>
-                            <p class="pb-2">Bekijk hier de data van alle afleveringen van Kleine Boodschap.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container" id="toggleView">
-                    <div class="row mb-5">
-                        <div class="col-12">
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <h3 class="h4">Afleveringen</h3>
-                                    <div class="legenda d-none d-md-flex flex-row flex-wrap pb-2 ">
-                                        <div class="achtergrond">Achtergrond</div>
-                                        <div class="nieuws">Nieuws</div>
-                                        <div class="reportage">Reportage</div>
-                                        <div class="interview">Interview</div>
+                            <p>Bekijk hier de data van alle afleveringen van Kleine Boodschap.</p>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h3 class="card-title h4 flex-md-grow-1">Afleveringen</h3>
+                                        <ul class="nav nav-pills rounded" id="myTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="grafiek-tab" data-bs-toggle="tab" data-bs-target="#grafiek" type="button" role="tab" aria-controls="grafiek" aria-selected="true">Grafiek</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="mozaiekpanel-tab" data-bs-toggle="tab" data-bs-target="#mozaiekpanel" type="button" role="tab" aria-controls="mozaiekpanel" aria-selected="false">Mozaïek</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="grafiek" role="tabpanel" aria-labelledby="grafiek-tab" tabindex="0">
+                                            <div class="d-block d-md-none text-center">
+                                                <div class="alert alert-info mt-2">
+                                                    <small class="fst-italic">Op 't kleine scherm, een ware twist, de grafiek zo klein — wat je mist. Wil je de data helder bekijken? Laat een mozaïek het inzicht bereiken.</small>
+                                                </div>
+                                            </div>
+                                            <canvas id="barChart" class="d-none d-md-block"></canvas>
+                                        </div>
+                                        <div class="tab-pane" id="mozaiekpanel" role="tabpanel" aria-labelledby="mozaiekpanel-tab" tabindex="0">
+                                            <div id="mozaiek" class="mozaiek mt-3"></div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="d-none d-md-block">
-                                    <button id="toggleButton" onclick="toggleContainer()"
-                                        class="btn btn-resize btn-outline-dark"
-                                        aria-label="Knop om de grafiek te vergroten of verkleinen"><i class="fa-solid fa-maximize"></i></button>
+                            </div>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class="row mb-5 d-flex align-items-center bg-white rounded-3 py-3 px-1 px-lg-5">
+                                            <div class="col-12 col-lg-5">
+                                                <h3 class="h4">Categorieën</h3>
+                                                <p>In dit diagram bekijk je alle afleveringen van Kleine Boodschap per categorie.</p>
+                                                <small class="fst-italic">Tip: klik op de categorieën naast de cirkel om deze aan of uit te
+                                                    zetten.</small>
+                                            </div>
+                                            <div class="col-12 col-lg-7 text-center">
+                                                <canvas id="donutChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="d-block d-md-none text-center">
-                                <div class="alert alert-info"><small class="fst-italic">Op 't kleine scherm, daar is 't
-                                        een twist,
-                                        een grafiek zo klein, 't is een gemis.
-                                        Verander van scherm, dan zie je 't pas.
-                                        De data komt op groter scherm beter van pas.</small></div>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h3 class="h4 card-title">Door de jaren heen</h3>
+                                    <p class="card-text">In dit staafdiagram zie je het aantal gepubliceerde afleveringen van Kleine Boodschap per
+                                                kalenderjaar, gestapeld per categorie.</p>
+                                    <small class="card-text fst-italic">Tip: klik op de categorieën onder het diagram om deze aan of uit
+                                                te zetten.</small>
+                                    <canvas id="yearBarChart"></canvas>
+                                </div>
                             </div>
-                            <canvas id="barChart" class="d-none d-md-block"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row mb-5 d-flex align-items-center bg-white rounded-3 py-3 px-1 px-lg-5">
-                        <div class="col-12 col-lg-5">
-                            <h3 class="h4">Categorieën</h3>
-                            <p>In dit diagram bekijk je alle afleveringen van Kleine Boodschap per categorie.</p>
-                            <small class="fst-italic">Tip: klik op de categorieën naast de cirkel om deze aan of uit te
-                                zetten.</small>
-                        </div>
-                        <div class="col-12 col-lg-7 text-center">
-                            <canvas id="donutChart"></canvas>
-                        </div>
-                    </div>
-                    <div class="row mb-5 d-flex align-items-center">
-                        <div class="col-12 col-lg-4">
-                            <h3 class="h4">Door de jaren heen</h3>
-                            <p>In dit staafdiagram zie je het aantal gepubliceerde afleveringen van Kleine Boodschap per
-                                kalenderjaar, gestapeld per categorie.</p>
-                            <small class="fst-italic">Tip: klik op de categorieën onder het diagram om deze aan of uit
-                                te zetten.</small>
-                        </div>
-                        <div class="col-12 col-lg-8">
-                            <canvas id="yearBarChart"></canvas>
-                        </div>
-                    </div>
-                </div>
+                
             </section>
             <section id="about">
                 <div class="container">
@@ -312,47 +303,49 @@
                 </div>
             </section>
         </main>
-        <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto">
-                        <div class="small m-0 text-white">Copyright &copy; Sjors Hartwijk
-                            <script>document.write(new Date().getFullYear())</script>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="#top">Home</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#about">Over</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://bsky.app/profile/kbdata.bsky.social"
-                            target="_blank">Bluesky</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://sjorshartwijk.nl/" target="_blank">Sjors
-                            Hartwijk</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://kleineboodschap.com" target="_blank">Kleine
-                            Boodschap</a>
-                    </div>
+        <!-- floating mobile nav -->
+        <div class="container-fluid d-md-none">
+            <nav class="navbar navbar-bottom navbar-light bg-white shadow-lg fixed-bottom">
+                <div class="container d-flex justify-content-around text-center">
+                    <a href="afleveringen.html" class="text-decoration-none">
+                        <i class="bi bi-list-ul d-block"></i>
+                        <span class="small">Afleveringen</span>
+                    </a>
+                    <a href="kaart.html" class="text-decoration-none">
+                        <i class="bi bi-geo-alt d-block"></i>
+                        <span class="small">Kaart</span>
+                    </a>
+                    <a href="kalender.html" class="text-decoration-none">
+                        <i class="bi bi-calendar3 d-block"></i>
+                        <span class="small">Kalender</span>
+                    </a>
+                    <a href="reeks.html" class="text-decoration-none">
+                        <i class="bi bi-arrows d-block"></i>
+                        <span class="small">Reeks</span>
+                    </a>
+              </div>
+            </nav>
+        </div>
+        <!-- Mozaiek Modal -->
+        <div class="modal fade" id="afleveringModal" tabindex="-1" aria-labelledby="afleveringModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title d-flex justify-content-between align-items-center w-100">
+                          <div>
+                              <span id="modalId"></span>: <span id="modalTitel"></span>
+                          </div>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
+                </div>
+                <div class="modal-body">
+                    <span id="modalEpisodeBadge" class="badge mb-4"></span>
+                    <p><strong>Tijdsduur:</strong> <span id="modalTijd"></span> minuten<br/>
+                    <strong>Publicatiedatum:</strong> <span id="modalDatum"></span></p>
                 </div>
             </div>
-        </footer>
+        </div>
         <script>
-            // toggle container for the episodes data
-            function toggleContainer() {
-                var element = document.getElementById('toggleView');
-                var button = document.getElementById('toggleButton');
-                if (element.classList.contains('container')) {
-                    element.classList.remove('container');
-                    element.classList.add('container-fluid');
-                    button.innerHTML = '<i class="fa-solid fa-minimize"></i>';
-                } else {
-                    element.classList.remove('container-fluid');
-                    element.classList.add('container');
-                    button.innerHTML = '<i class="fa-solid fa-maximize"></i>';
-                }
-            }
             // lookup episode by day form
             document.getElementById('episodeForm').addEventListener('submit', function (event) {
                 event.preventDefault(); // Voorkom standaardgedrag van formulierverzending
@@ -385,6 +378,38 @@
                         alert('Er is een fout opgetreden bij het laden van de gegevens.');
                     });
             });
+            /* mozaiek */
+            async function laadEpisodes() {
+            const res = await fetch('episodes.json');
+            const episodes = await res.json();
+
+            const container = document.getElementById('mozaiek');
+            episodes.forEach(ep => {
+                const blok = document.createElement('div');
+                blok.className = `blokje ${ep.categorie}`;
+                blok.textContent = ep.id;
+                blok.dataset.titel = ep.titel;
+                blok.dataset.tijd = ep.tijd;
+                blok.dataset.datum = ep.datum;
+                blok.dataset.id = ep.id;
+
+            blok.addEventListener('click', () => {
+              document.getElementById('modalId').textContent = ep.id;
+              document.getElementById('modalTitel').textContent = ep.titel;
+              const badge = document.getElementById('modalEpisodeBadge');
+                badge.textContent = ep.categorie;
+                badge.className = `badge ${ep.categorie}`; // Voeg categorieclass toe
+              document.getElementById('modalTijd').textContent = ep.tijd;
+              document.getElementById('modalDatum').textContent = new Date(ep.datum).toLocaleDateString('nl-NL');
+              const modal = new bootstrap.Modal(document.getElementById('afleveringModal'));
+              modal.show();
+            });
+
+            container.appendChild(blok);
+            });
+            }
+
+            laadEpisodes();
         </script>
         <!-- chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
