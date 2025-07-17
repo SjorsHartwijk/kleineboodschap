@@ -118,6 +118,7 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
   color: lightslategrey;
 }
 .card .nav-pills .nav-item button.active {
+  border: 1px solid #e6e6e6;
   color: var(--color-theme-primary);
   background-color: var(--color-white);
 }

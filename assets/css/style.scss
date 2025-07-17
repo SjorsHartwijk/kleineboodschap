@@ -114,6 +114,7 @@ nav.navbar {
                 padding: .25em 1em;
                 color: lightslategrey;
                 &.active {
+                    border: 1px solid #e6e6e6;
                     color: var(--color-theme-primary);
                     background-color: var(--color-white);
                 }
