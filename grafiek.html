@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo2.svg">
+    <link rel="icon" type="image/png" href="assets/images/logo2.png">
+    <title>Kleine Boodschap Data - Grafiek
+    </title>
+    <meta name="theme-color" content="#154666"/>
+    <meta property="og:title" content="Kleine Boodschap Data">
+    <meta property="og:site_name" content="Kleine Boodschap Data">
+    <meta property="og:url" content="https://kleineboodschapdata.vercel.app/">
+    <meta property="og:description" content="Deze website biedt alle statistieken en visuele data van de podcast Kleine Boodschap">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="assets/images/opengraph.png">
+    <meta name="description"
+        content="Geniet je ook wekelijks van Kleine Boodschap en vraag je je wel eens af hoeveel tijd je eraan besteedt? Deze pagina biedt alle statistieken en feiten die je al dan niet nodig hebt.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h1>Afleveringen</h1>
+                    </div>
+                    <div>
+                        <a href="index.html" class="btn btn-primary"><i class="bi bi-house"></i> Terug naar de website</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="m-2"><span class="badge achtergrond">&nbsp;</span>&nbsp;Achtergrond</div>
+                    <div class="m-2"><span class="badge nieuws">&nbsp;</span>&nbsp;Nieuws</div>
+                    <div class="m-2"><span class="badge interview">&nbsp;</span>&nbsp;Interview</div>
+                    <div class="m-2"><span class="badge reportage">&nbsp;</span>&nbsp;Reportage</div>
+                </div>
+                <canvas id="barChart" class="d-none d-md-block"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/chart_episodes.js"></script>
