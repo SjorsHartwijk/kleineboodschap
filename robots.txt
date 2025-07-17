@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://kleineboodschapdata.vercel.app/sitemap.xml
+Sitemap: https://kbdata.nl/sitemap.xml
