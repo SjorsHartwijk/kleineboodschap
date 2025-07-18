@@ -25,16 +25,16 @@
             background: linear-gradient(45deg, #F41D78, #FF8800);
             animation: filterAnimation 3s linear infinite;
             color: #fff;
-            text-shadow: 0px 0px 2px #000;
+            text-shadow: 0px 0px 2px var(--color-theme-primary);
             border: 0;
         }
         .btn-rainbow .small {
             color: #fff;
-            text-shadow: 0px 0px 2px #000;
+            text-shadow: 0px 0px 2px var(--color-theme-primary);
         }
         .btn-rainbow i {
             color: #fff;
-            text-shadow: 0px 0px 2px #000;
+            text-shadow: 0px 0px 2px var(--color-theme-primary);
         }
         @keyframes filterAnimation {
             0%,
@@ -147,18 +147,16 @@
                     <i class="bi bi-bar-chart d-block"></i>
                     <span class="small">Statistieken</span>
                 </a>
-                <a href="afleveringen.html" class="text-decoration-none">
-                    <i class="bi bi-list-ul d-block"></i>
-                    <span class="small">Afleveringen</span>
-                </a>
-                <a href="wrapped.html" class="btn btn-rainbow">
-                    <i class="bi bi-star-fill d-block"></i>
-                    <span class="small">Wrapped</span>
-                </a>
                 <a href="kaart.html" class="text-decoration-none">
                     <i class="bi bi-geo-alt d-block"></i>
                     <span class="small">Kaart</span>
                 </a>
+                <div class="wrappedBtn">
+                    <a href="wrapped.html" class="btn btn-rainbow">
+                        <i class="bi bi-star-fill d-block"></i>
+                        <span class="small">Wrapped</span>
+                    </a>
+                </div>
                 <a href="kalender.html" class="text-decoration-none">
                     <i class="bi bi-calendar3 d-block"></i>
                     <span class="small">Kalender</span>
@@ -197,6 +195,21 @@
         </div>
     </footer>
     <script src="wrapped.js"></script>
+    <script>
+        const knoppen = document.querySelectorAll(".wrappedBtn");
+
+        const vandaag = new Date();
+        const jaar = vandaag.getFullYear();
+
+        const beginDatum = new Date(jaar, 10, 1); // 1 november
+        const eindDatum = new Date(jaar, 11, 31); // 31 december
+
+        const zichtbaar = vandaag >= beginDatum && vandaag <= eindDatum;
+
+        knoppen.forEach(knop => {
+          knop.style.display = zichtbaar ? "block" : "none";
+        });
+    </script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
