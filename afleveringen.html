@@ -83,7 +83,7 @@
         </main>
         <!-- floating mobile nav -->
         <div class="container-fluid d-md-none">
-            <nav class="navbar navbar-bottom navbar-light bg-white shadow-lg fixed-bottom">
+            <nav class="navbar navbar-bottom shadow-lg fixed-bottom">
                 <div class="container d-flex justify-content-around text-center">
                     <a href="index.html" class="text-decoration-none">
                         <i class="bi bi-bar-chart d-block"></i>
@@ -171,13 +171,30 @@
                                 const row = document.createElement('tr');
                                 const formattedDate = formatDate(episode.datum);
                                 row.innerHTML = `
-                            <td>${episode.id}</td>
-                            <td>${episode.titel}</td>
-                            <td>${episode.categorie}</td>
-                            <td class="small">${episode.tijd} minuten</td>
-                            <td class="small">${formattedDate}</td>
-                        `;
+                                    <td>${episode.id}</td>
+                                    <td>${episode.titel}</td>
+                                    <td>${episode.categorie}</td>
+                                    <td class="small">${episode.tijd} minuten</td>
+                                    <td class="small">${formattedDate}</td>
+                                `;
                                 episodesBody.appendChild(row);
+
+                                // Voeg schema.org PodcastEpisode toe
+                                const ldJson = {
+                                    "@context": "https://schema.org",
+                                    "@type": "PodcastEpisode",
+                                    "name": episode.titel,
+                                    "datePublished": episode.datum,
+                                    "episodeNumber": episode.id,
+                                    "partOfSeries": {
+                                        "@type": "PodcastSeries",
+                                        "name": "Kleine Boodschap"
+                                    }
+                                };
+                                const script = document.createElement('script');
+                                script.type = 'application/ld+json';
+                                script.textContent = JSON.stringify(ldJson);
+                                document.body.appendChild(script);
                             });
                         }
 
