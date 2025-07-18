@@ -135,10 +135,12 @@
 
   <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2pvcnNoYXJ0d2lqayIsImEiOiJjbTZ0MjRjdWowaWEzMm1zZDVrczZmbDRhIn0.IAYNGK5dEmKBK69_zCEn2A';
-
+    
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
     const map = new mapboxgl.Map({
       container: 'map',
-    style: 'mapbox://styles/mapbox/outdoors-v12',
+    style: isDark ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/outdoors-v12',
     center: [5.0502, 51.6497], // Efteling als beginpunt
     zoom: 14,
     pitch: 0,
