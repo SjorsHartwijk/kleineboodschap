@@ -1,0 +1,78 @@
+name: Bluesky Daily Episode Poster
+
+on:
+  schedule:
+    - cron: '20 11 * * *' # 13:20 CEST = 11:20 UTC
+  workflow_dispatch:
+
+jobs:
+  post-to-bluesky:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate Secrets
+        run: |
+          if [ -z "${{ secrets.BLUESKY_IDENTIFIER }}" ] || [ -z "${{ secrets.BLUESKY_PASSWORD }}" ]; then
+            echo "Missing required secrets: BLUESKY_IDENTIFIER or BLUESKY_PASSWORD"
+            exit 1
+          fi
+
+      - name: Generate post text
+        id: buildpost
+        run: |
+          today=$(date +"%m-%d")
+          this_year=$(date +"%Y")
+
+          echo "Zoek afleveringen van ${today}, exclusief jaar ${this_year}"
+
+          POST_TEXT=""
+          SHOULD_POST=false
+
+          while IFS= read -r row; do
+            id=$(echo "$row" | jq -r '.id')
+            title=$(echo "$row" | jq -r '.titel')
+            date=$(echo "$row" | jq -r '.datum')
+            category=$(echo "$row" | jq -r '.categorie')
+
+            ep_day_month=$(echo "$date" | cut -c6-10)
+            ep_year=$(echo "$date" | cut -c1-4)
+            date_formatted=$(echo "$date" | awk -F- '{print $3"-"$2"-"$1}')  # dd-mm-yyyy
+
+            if [[ "$ep_day_month" == "$today" && "$ep_year" != "$this_year" ]]; then
+              SHOULD_POST=true
+              POST_TEXT="${POST_TEXT}${id}: ${title}, verscheen op ${date_formatted} (${category}-aflevering)\n"
+            fi
+          done < <(jq -c '.[]' episodes.json)
+
+          if [[ "$SHOULD_POST" == true ]]; then
+            echo -e "Vandaag, in voorgaande jaren, publiceerde #kleineboodschap deze aflevering(en):\n\n${POST_TEXT}" > post.txt
+            echo "should_post=true" >> $GITHUB_OUTPUT
+          else
+            echo "Geen afleveringen vandaag."
+            echo "should_post=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Prepare post content
+        if: steps.buildpost.outputs.should_post == 'true'
+        run: |
+          TEXT=$(cat post.txt)
+          echo "TEXT<<EOF" >> $GITHUB_ENV
+          echo "$TEXT" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Send to Bluesky
+        if: steps.buildpost.outputs.should_post == 'true'
+        uses: myConsciousness/bluesky-post@v5
+        with:
+          text: ${{ env.TEXT }}
+          identifier: ${{ secrets.BLUESKY_IDENTIFIER }}
+          password: ${{ secrets.BLUESKY_PASSWORD }}
+          retry-count: 5

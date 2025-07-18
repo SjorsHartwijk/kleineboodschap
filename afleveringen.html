@@ -9,24 +9,23 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/images/logo2.svg">
     <link rel="icon" type="image/png" href="assets/images/logo2.png">
-    <title>Kleine Boodschap Data</title>
+    <title>Afleveringen - Kleine Boodschap Data</title>
     <meta name="theme-color" content="#154666"/>
     <meta property="og:title" content="Kleine Boodschap Data">
     <meta property="og:site_name" content="Kleine Boodschap Data">
-    <meta property="og:url" content="https://projecten.sjorshartwijk.nl/kleineboodschapdata/">
-    <meta property="og:description" content="Deze pagina biedt alle statistieken en feiten van de podcast Kleine Boodschap">
-    <meta property="og:type" content="">
-    <meta property="og:image" content="https://projecten.sjorshartwijk.nl/kleineboodschapdata/assest/images/opengraph.png">
+    <meta property="og:url" content="https://kbdata.nl/afleveringen.html">
+    <meta property="og:description" content="Bekijk en doorzoek alle afleveringen van Kleine Boodschap. Vind snel de aflevering die je zoekt met de zoekfunctie.">
+    <meta property="og:image" content="assets/images/opengraph.png">
     <meta name="description"
         content="Geniet je ook wekelijks van Kleine Boodschap en vraag je je wel eens af hoeveel tijd je eraan besteedt? Deze pagina biedt alle statistieken en feiten die je al dan niet nodig hebt.">
-    <script src="https://kit.fontawesome.com/396ea48297.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-theme">
-                <div class="container py-lg-3">
+            <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme fixed-top rounded-3 shadow-sm">
+                <div class="container-fluid">
                     <a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png"/ alt="Logo Kleine Boodschap Data"> <span
                             class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
                             class="d-inline-block d-md-none">KB Data</span></a>
@@ -37,32 +36,34 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="afleveringen.html">Afleveringen</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link active" href="afleveringen.html">Afleveringen</a></li>
+                            <li class="nav-item"><a class="nav-link" href="kaart.html">Kaart</a></li>
+                            <li class="nav-item"><a class="nav-link" href="kalender.html">Kalender</a></li>
                             <li class="nav-item"><a class="nav-link" href="reeks.html">Reeks</a></li>
                             <li class="nav-item"><a class="nav-link" href="index.html#about">Over</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.bsky.social" rel="nofollow" target="_blank"><i class="fa-brands fa-bluesky"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="nofollow" target="_blank"><i class="bi bi-bluesky"></i></a></li>
                             <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow"
-                                target="_blank">Kleine Boodschap <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                                target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
             <section class="afleveringen">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="my-2 my-lg-5 p-2 p-lg-5 bg-white rounded-3">
+                    <div class="row pt-5">
+                        <div class="col-12 pt-5">
+                            <div class="my-2 my-lg-5">
                                 <h1>Afleveringen</h1>
                                 <p>Op deze pagina staan alle geïndexeerde afleveringen van Kleine Booschap in een tabel, gebruik de
                                     zoekfunctie om de titel of onderwerp van een aflevering op te zoeken.</p>
+                                <p>Bekijk ook de afleveringen op basis van <a href="kalender.html">kalenderweergave</a>.</p>
                                 <div class="input-group">
                                     <input type="text" class="form-control form-control-lg" id="searchInput"
                                         onkeyup="searchEpisodes()" placeholder="Zoek aflevering(en)">
-                                    <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                    <span class="input-group-text"><i class="bi bi-search"></i></span>
                                 </div>
                             </div>
-                            <table id="episodesTable" class="table table-responsive">
+                            <table id="episodesTable" class="table table-responsive rounded-3">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -80,6 +81,29 @@
                 </div>
             </section>
         </main>
+        <!-- floating mobile nav -->
+        <div class="container-fluid d-md-none">
+            <nav class="navbar navbar-bottom shadow-lg fixed-bottom">
+                <div class="container d-flex justify-content-around text-center">
+                    <a href="index.html" class="text-decoration-none">
+                        <i class="bi bi-bar-chart d-block"></i>
+                        <span class="small">Statistieken</span>
+                    </a>
+                    <a href="kaart.html" class="text-decoration-none">
+                        <i class="bi bi-geo-alt d-block"></i>
+                        <span class="small">Kaart</span>
+                    </a>
+                    <a href="kalender.html" class="text-decoration-none">
+                        <i class="bi bi-calendar3 d-block"></i>
+                        <span class="small">Kalender</span>
+                    </a>
+                    <a href="reeks.html" class="text-decoration-none">
+                        <i class="bi bi-arrows d-block"></i>
+                        <span class="small">Reeks</span>
+                    </a>
+              </div>
+            </nav>
+        </div>
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
@@ -93,7 +117,7 @@
                         <span class="text-white mx-1">&middot;</span>
                         <a class="link-light small" href="index.html#about">Over</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://bsky.app/profile/kbdata.bsky.social"
+                        <a class="link-light small" href="https://bsky.app/profile/kbdata.nl"
                             target="_blank">Bluesky</a>
                         <span class="text-white mx-1">&middot;</span>
                         <a class="link-light small" href="https://sjorshartwijk.nl/" target="_blank">Sjors
@@ -147,13 +171,30 @@
                                 const row = document.createElement('tr');
                                 const formattedDate = formatDate(episode.datum);
                                 row.innerHTML = `
-                            <td>${episode.id}</td>
-                            <td>${episode.titel}</td>
-                            <td>${episode.categorie}</td>
-                            <td class="small">${episode.tijd} minuten</td>
-                            <td class="small">${formattedDate}</td>
-                        `;
+                                    <td>${episode.id}</td>
+                                    <td>${episode.titel}</td>
+                                    <td>${episode.categorie}</td>
+                                    <td class="small">${episode.tijd} minuten</td>
+                                    <td class="small">${formattedDate}</td>
+                                `;
                                 episodesBody.appendChild(row);
+
+                                // Voeg schema.org PodcastEpisode toe
+                                const ldJson = {
+                                    "@context": "https://schema.org",
+                                    "@type": "PodcastEpisode",
+                                    "name": episode.titel,
+                                    "datePublished": episode.datum,
+                                    "episodeNumber": episode.id,
+                                    "partOfSeries": {
+                                        "@type": "PodcastSeries",
+                                        "name": "Kleine Boodschap"
+                                    }
+                                };
+                                const script = document.createElement('script');
+                                script.type = 'application/ld+json';
+                                script.textContent = JSON.stringify(ldJson);
+                                document.body.appendChild(script);
                             });
                         }
 

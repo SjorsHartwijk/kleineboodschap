@@ -1,5 +1,5 @@
-id,titel,tijd,datum,categorie
-1,Strookrijk,77,2017-12-30,achtergrond
+id,titel,tijd,datum,categorie,latitude,longitude
+1,Strookrijk,77,2017-12-30,achtergrond,51.649621,5.055513
 2,Nieuwe rotsdeur in steengoede darkride,31,2018-01-02,nieuws
 3,Interview met Efteling-icoon Mari van Heumen,81,2018-01-08,interview
 4,Dat souvenir interesseert me geen moer,65,2018-01-15,nieuws
@@ -9,17 +9,17 @@ id,titel,tijd,datum,categorie
 8,Ons Fons,94,2018-02-12,nieuws
 9,Fotograferen in de Efteling met Kris van de Sande,56,2018-02-19,interview
 10,Koffiedik kijken,63,2018-02-26,nieuws
-11,Symbolica 8 maanden na opening,63,2018-03-05,achtergrond
+11,Symbolica 8 maanden na opening,63,2018-03-05,achtergrond,51.650076,5.050237
 12,Ontwerpbestemmingsplan Wereld van de Efteling 2030 (deel 1),74,2018-03-12,achtergrond
 13,Ontwerpbestemmingsplan Wereld van de Efteling 2030 (deel 2),47,2018-03-19,achtergrond
 14,Het Vrolijkste nieuws in decennia,63,2018-03-26,nieuws
-15,Heropening python,59,2018-03-31,reportage
+15,Heropening python,59,2018-03-31,reportage,51.646817,5.053528
 16,Er mist daar iets,70,2018-04-02,nieuws
 17,Een kapbeitel overstemmen,75,2018-04-09,nieuws
 18,Dromen over 2030,61,2018-04-16,achtergrond
 19,Advocaat Wolf,62,2018-04-23,nieuws
 20,Roversnest,60,2018-04-30,nieuws
-21,'t Verdiende Loon,15,2018-05-02,achtergrond
+21,'t Verdiende Loon,15,2018-05-02,achtergrond,51.645490, 5.047561
 22,Liefde voor de Efteling,60,2018-05-07,achtergrond
 23,Reacties van luisteraars,36,2018-05-10,nieuws
 24,De Bezorgde Vegaburgers,98,2018-05-14,nieuws
@@ -32,24 +32,24 @@ id,titel,tijd,datum,categorie
 31,Onderhoud in de Efteling,62,2018-07-02,achtergrond
 32,Een roze hazmat suit,67,2018-07-09,nieuws
 33,Onze wensen voor de Efteling,67,2018-07-16,achtergrond
-34,GuestHouse Hotel,71,2018-07-19,reportage
+34,GuestHouse Hotel,71,2018-07-19,reportage,51.656997,5.040410
 35,Die is het achtbaanspoor bijster,82,2018-07-23,nieuws
-36,Opening van de Vrolijke Noot,47,2018-07-26,reportage
+36,Opening van de Vrolijke Noot,47,2018-07-26,reportage,51.649490,5.044586
 37,Tips voor een warme dag in de Efteling,55,2018-07-30,achtergrond
 38,Die mot je nie,69,2018-08-06,nieuws
 39,Komt het nieuwe Reizenrijk er zo uit te zien...?,47,2018-08-07,achtergrond
 40,Eten en drinken in de Efteling,86,2018-08-13,achtergrond
-41,Avondboodschap,63,2018-08-16,reportage
+41,Avondboodschap,63,2018-08-16,reportage,51.651345,5.049205
 42,Allez Tom Tom,86,2018-08-20,nieuws
 43,Reacties van luisteraars,41,2018-08-22,achtergrond
 44,Gerestaureerde Jezus-afbeelding in een kerk,85,2018-08-27,nieuws
 45,Ons favoriete entertainment in de Efteling,76,2018-09-03,achtergrond
 46,Seizoenen in de Efteling,75,2018-09-10,achtergrond
 47,Het bestemmingsplandemonium,155,2018-09-17,nieuws
-48,Première CARO,57,2018-09-19,reportage
+48,Première CARO,57,2018-09-19,reportage,51.648741,5.043564
 49,Onze favoriete parken buiten de Efteling,81,2018-09-24,achtergrond
 50,Een flesje kinderchampagne,86,2018-10-01,nieuws
-51,Fata Morgana tijdens onderhoud,30,2018-10-04,reportage
+51,Fata Morgana tijdens onderhoud,30,2018-10-04,reportage,51.647095,5.045066
 52,Storytelling hoofdstuk 2 met Philip Corsius,60,2018-10-08,achtergrond
 53,Ik wil niet dat m’n bossen een lunapark worden,101,2018-10-15,nieuws
 54,Reacties van luisteraars,66,2018-10-22,achtergrond
@@ -72,7 +72,7 @@ id,titel,tijd,datum,categorie
 71,Fantasievliegers,73,2019-02-04,nieuws
 72,Een Efteling-plattegrond uit 1991,73,2019-02-11,achtergrond
 73,Sprookjesboombroccoli,99,2019-02-14,nieuws
-74,Studiotour bij René Merkelbach,57,2019-02-18,achtergrond
+74,Studiotour bij René Merkelbach,57,2019-02-18,achtergrond,51.654689832722795,5.040828605791864
 75,Grote Pardoes-sloffen,102,2019-02-25,nieuws
 76,De Vijf Zintuigen Efteling Pubquiz 2019,38,2019-02-27,reportage
 77,Uitspraak Raad van State voorlopige voorziening,21,2019-03-01,nieuws
@@ -81,16 +81,16 @@ id,titel,tijd,datum,categorie
 80,Ik wil wel met jou in De Zweef,86,2019-03-11,nieuws
 81,Onze top-7 sprookjes in het Sprookjesbos,59,2019-03-18,achtergrond
 82,Een Doorn in het oog,105,2019-03-25,nieuws
-83,Een ode aan Pandadroom en de schilderijen in het Carrouselpaleis,63,2019-04-01,achtergrond
-84,Baron 1898,70,2019-04-08,achtergrond
+83,Een ode aan Pandadroom en de schilderijen in het Carrouselpaleis,63,2019-04-01,achtergrond,51.651171,5.049103
+84,Baron 1898,70,2019-04-08,achtergrond,51.648195,5.050852
 85,Het wordt wel warm onder dat dekje,103,2019-04-15,nieuws
-86,Een rondleiding over Parck Kaatsheuvel,17,2019-04-17,achtergrond
+86,Een rondleiding over Parck Kaatsheuvel,17,2019-04-17,achtergrond,51.657755,5.067178
 87,Efteling bordspellen,102,2019-04-22,achtergrond
 88,De Efteling voor 1952 - Deel 1,103,2019-04-29,achtergrond
 89,Die uitwerpselen zijn niet op schaal,116,2019-05-06,nieuws
 90,De Efteling voor 1952 - Deel 2,85,2019-05-13,achtergrond
 91,Goeie pijpenbuigers,100,2019-05-20,nieuws
-92,Carnaval Festival heropening,43,2019-05-23,achtergrond
+92,Carnaval Festival heropening,43,2019-05-23,achtergrond,51.652337,5.052309
 93,Reacties van luisteraars,58,2019-05-27,achtergrond
 94,Ruud Bos documentaire making-of,66,2019-05-31,interview
 95,Niet Efteling-Monkey Town,115,2019-06-03,nieuws
@@ -98,8 +98,8 @@ id,titel,tijd,datum,categorie
 97,Team Fata vs. Team Joris,86,2019-06-17,nieuws
 98,Onze favoriete details in de Efteling,56,2019-06-24,achtergrond
 99,Alsof ze curling aan het spelen waren,116,2019-07-01,nieuws
-100,Kleine Boodschap 100,117,2019-07-08,interview
-101,Nieuwe wisseltentoonstelling in het Efteling Museum,22,2019-07-10,reportage
+100,Kleine Boodschap 100,117,2019-07-08,interview,51.643455,5.041078
+101,Nieuwe wisseltentoonstelling in het Efteling Museum,22,2019-07-10,reportage,51.652104,5.049709
 102,Wolf tegen Lam,98,2019-07-15,nieuws
 103,Reacties van luisteraars,42,2019-07-18,achtergrond
 104,Meer fotografie in de Efteling met Kris Van de Sande,47,2019-07-22,interview
@@ -111,11 +111,11 @@ id,titel,tijd,datum,categorie
 110,Jullie favoriete details,34,2019-08-21,achtergrond
 111,De mooiste gebouwen in de Efteling,67,2019-08-26,achtergrond
 111,Watergate,86,2019-09-02,nieuws
-113,Afscheid van de Bob,68,2019-09-04,reportage
+113,Afscheid van de Bob,68,2019-09-04,reportage,51.647987,5.047330
 114,De magie van Verticaal gaan,74,2019-09-09,achtergrond
 115,Anton Koekblik,98,2019-09-16,nieuws
 116,Niet-gerealiseerde Efteling-projecten (deel 1),86,2019-09-23,achtergrond
-117,De opening van De zes Zwanen,74,2019-09-30,reportage
+117,De opening van De zes Zwanen,74,2019-09-30,reportage,51.650856,5.045004
 118,Tussen de bielzen en de zitkuil,121,2019-10-07,nieuws
 119,Animatronics in de Efteling,78,2019-10-14,achtergrond
 120,Winterballen,96,2019-10-21,nieuws
@@ -125,26 +125,26 @@ id,titel,tijd,datum,categorie
 124,Polles Worsten Imperium,110,2019-11-18,nieuws
 125,Niet-gerealiseerde Efteling-projecten (deel 3),67,2019-11-25,achtergrond
 126,De Uithongerige Machinist,105,2019-12-02,nieuws
-127,De opening van Fabula,124,2019-12-09,reportage
+127,De opening van Fabula,124,2019-12-09,reportage,51.648688,5.046600
 128,Herauten Horror,101,2019-12-16,nieuws
 129,Onze favoriete karakters in de Efteling,58,2019-12-23,achtergrond
 130,Reacties van luisteraars,60,2019-12-25,achtergrond
-131,Een ode aan het Waterorgel,87,2019-12-30,achtergrond
+131,Een ode aan het Waterorgel,87,2019-12-30,achtergrond,51.651327,5.049213
 132,Hotel de Bottle,45,2020-01-01,achtergrond
 133,Aldimatronics,127,2020-01-06,nieuws
 134,De magie van het verzamelen,89,2020-01-13,achtergrond
 135,Weet je wat er ook viral gaat?,77,2020-01-20,nieuws
-136,Bosrijk audio-tour,59,2020-01-27,achtergrond
+136,Bosrijk audio-tour,59,2020-01-27,achtergrond,51.646687,5.039970
 137,In gesprek met Erik van den Brand,59,2020-02-03,interview
 138,Teer-aan-m’n-schoen,123,2020-02-10,nieuws
-139,’t Loonsche Land audio-tour,49,2020-02-17,achtergrond
+139,’t Loonsche Land audio-tour,49,2020-02-17,achtergrond,51.645431,5.047134
 140,Een Halve Maen weg zitten peuzelen,102,2020-02-24,nieuws
 141,In gesprek met Cees Kikstra,100,2020-03-02,interview
 142,Hoeveelste was je nu geworden?,123,2020-03-09,nieuws
-143,Max + Moritz bouwplaats-tour,56,2020-03-10,reportage
+143,Max + Moritz bouwplaats-tour,56,2020-03-10,reportage,51.648073,5.047392
 144,Klassieke muziek in de Efteling,69,2020-03-16,achtergrond
 145,Coronaval Festival,101,2020-03-23,nieuws
-146,Het Efteling Golfpark,72,2020-03-30,achtergrond
+146,Het Efteling Golfpark,72,2020-03-30,achtergrond,51.639022,5.031781
 147,Jullie favoriete karakters in de Efteling,31,2020-04-01,achtergrond
 148,Storm in plaswater,123,2020-04-06,nieuws
 149,Pieckblauwe luchten,100,2020-04-13,achtergrond
@@ -157,7 +157,7 @@ id,titel,tijd,datum,categorie
 156,De Grote Heropeningsshow,166,2020-06-01,nieuws
 157,Ouder en wijzer?,60,2020-06-08,achtergrond
 158,Verstopte bestemmingen,138,2020-06-15,nieuws
-159,Max & Moritz,113,2020-06-22,reportage
+159,Max & Moritz,113,2020-06-22,reportage,51.648073, 5.047392
 160,De vlieg is nog aan het winnen,117,2020-06-29,nieuws
 161,Reacties van luisteraars,70,2020-07-06,achtergrond
 162,IJskoffie klinkt spannender dan Drenthe,105,2020-07-13,nieuws
@@ -165,30 +165,30 @@ id,titel,tijd,datum,categorie
 164,Volgens mij was de LSD in de aanbieding,103,2020-07-27,nieuws
 165,Jullie Pieckblauwe luchten,77,2020-08-03,achtergrond
 166,Wat is écht Eftelings?,81,2020-08-10,achtergrond
-167,Een ode aan het Diorama,70,2020-08-17,achtergrond
+167,Een ode aan het Diorama,70,2020-08-17,achtergrond,51.650909,5.048781
 168,De geschiedenis van de Stoomcarrousel,75,2020-08-24,achtergrond
 169,De raad der Dumbasses,139,2020-08-31,nieuws
 170,Afscheid van Bart de Boer,44,2020-09-03,achtergrond
 171,Efteling-tatoeages met Bram Elstak,50,2020-09-07,interview
 172,Meesters van klefheid,88,2020-09-14,nieuws
-173,Anton Pieck en het Anton Pieck museum,135,2020-09-21,interview
+173,Anton Pieck en het Anton Pieck museum,135,2020-09-21,interview,52.4754540,6.0672388
 174,Paar kuub Piecks groen,129,2020-09-28,nieuws
 175,De Glazen Bol,71,2020-10-05,achtergrond
-176,Aquanura met een zachte G,72,2020-10-09,reportage
+176,Aquanura met een zachte G,72,2020-10-09,reportage,51.648282,5.044406
 177,IJspegels in je bakkes,103,2020-10-12,nieuws
 178,Nieuwsflitsbonusaflevering,35,2020-10-16,nieuws
-179,Het Keienspoor met Ivo Südmeier,101,2020-10-19,achtergrond
-180,Het Efteling Hotel,100,2020-10-26,achtergrond
+179,Het Keienspoor met Ivo Südmeier,101,2020-10-19,achtergrond,51.644394,5.048800
+180,Het Efteling Hotel,100,2020-10-26,achtergrond,51.653372,5.054870
 181,Heb je last van stemproblemen?,163,2020-11-02,nieuws
 182,De financiën van de Efteling (deel 1),146,2020-11-09,achtergrond
 183,Kernsplijting in de fontein,101,2020-11-16,nieuws
-184,Theme Park Science achter de schermen bij de Pagode,51,2020-11-18,achtergrond
+184,Theme Park Science achter de schermen bij de Pagode,51,2020-11-18,achtergrond,51.650575,5.050208
 185,In gesprek met Ronald van der Zijl,109,2020-11-23,interview
 186,Genoeg lichtpuntjes om naar uit te kijken,125,2020-11-30,nieuws
-187,Polka Marina,29,2020-12-01,achtergrond
+187,Polka Marina,29,2020-12-01,achtergrond,51.648205,5.053512
 188,De financiën van de Efteling (deel 2),163,2020-12-07,achtergrond
 189,Ze lijken familie van Spider-Man,128,2020-12-14,nieuws
-190,Villa Pardoes,122,2020-12-21,interview
+190,Villa Pardoes,122,2020-12-21,interview,51.645677,5.053032
 191,Als warme muizen over de toonbank,96,2020-12-28,nieuws
 192,Een plattegrond uit 1978,62,2021-01-04,achtergrond
 193,En een aspirientje,90,2021-01-11,nieuws
@@ -203,7 +203,7 @@ id,titel,tijd,datum,categorie
 202,Wie is de Mol in de Efteling,86,2021-03-04,achtergrond
 203,In gesprek met Pieter Cornelis,161,2021-03-08,interview
 204,Opa Tim,91,2021-03-15,nieuws
-205,Golfpark de Loonsche Duynen,60,2021-03-18,interview
+205,Golfpark de Loonsche Duynen,60,2021-03-18,interview,51.639022,5.031781
 206,Efteling en de fanmedia,94,2021-03-22,interview
 207,Vertel dat maar aan de grootmoeder van Roodkapje,102,2021-03-29,nieuws
 208,"Licht in de Efteling met Jaap, Stan en Eric",136,2021-04-05,interview
@@ -212,15 +212,15 @@ id,titel,tijd,datum,categorie
 211,In gesprek met Jack Rijnen,114,2021-04-26,interview
 212,Het centrum van m’n hele leven,130,2021-05-03,nieuws
 213,Reacties van luisteraars,70,2021-05-10,achtergrond
-214,Achter de schermen bij het Efteling Theater,110,2021-05-17,reportage
+214,Achter de schermen bij het Efteling Theater,110,2021-05-17,reportage,51.648425,5.043599
 215,De Nog Grotere Heropeningsshow,172,2021-05-24,nieuws
 216,Het Efteling Hotel na de renovatie,49,2021-05-27,achtergrond
 217,Onze favoriete darkrides,114,2021-05-31,achtergrond
-218,Speelbos Nest!,91,2021-06-03,reportage
+218,Speelbos Nest!,91,2021-06-03,reportage,51.647854,5.052708
 219,We gaan naar Strookrijk toe!,142,2021-06-07,nieuws
 220,In gesprek met Lex Lemmens (deel 1),131,2021-06-14,interview
 221,Bedrijvige gezelligheid,129,2021-06-21,nieuws
-222,Efteling Kids Radio met Arnoud en Mayoni,142,2021-06-28,interview
+222,Efteling Kids Radio met Arnoud en Mayoni,142,2021-06-28,interview,51.649358,5.043747
 223,Een miezer van mayonaise,165,2021-07-05,nieuws
 224,In gesprek met Lex Lemmens (deel 2),133,2021-07-12,interview
 225,Botox kuurtje gone wrong,120,2021-07-19,nieuws
@@ -241,14 +241,14 @@ id,titel,tijd,datum,categorie
 240,In gesprek met Dennis Bots,146,2021-10-25,interview
 241,Halloween in de Efteling,98,2021-11-01,achtergrond
 242,Coronatest met de Kango,133,2021-11-08,nieuws
-243,Lavenlaar audio-tour,140,2021-11-15,achtergrond
+243,Lavenlaar audio-tour,140,2021-11-15,achtergrond,51.653120,5.048905
 244,Mijn hart van steen,143,2021-11-22,nieuws
 245,Onze favoriete beeldjes in de Efteling,62,2021-11-29,achtergrond
 246,Het heelal mét tuinslang,142,2021-12-06,nieuws
-247,Bäckerei Krümel,73,2021-12-08,reportage
+247,Bäckerei Krümel,73,2021-12-08,reportage,51.647657,5.046968
 248,In gesprek met Frans Goenee,105,2021-12-13,interview
 249,Broodmager,131,2021-12-20,nieuws
-250,Het Gildehuis,131,2021-12-27,reportage
+250,Het Gildehuis,131,2021-12-27,reportage,51.653261,5.051418
 251,The making of The Making of Fata Morgana,120,2021-12-29,interview
 252,Aquanura met een Zachte G verbieden,123,2022-01-03,nieuws
 253,Onze favoriete infill attracties,75,2022-01-10,achtergrond
@@ -265,12 +265,12 @@ id,titel,tijd,datum,categorie
 264,VHS band op een brakke LCD-televisie,122,2022-03-14,nieuws
 265,Mijmeren met Jerik van Nuenen,81,2022-03-21,interview
 266,Bond voor de Vliegende Hollander,120,2022-03-28,nieuws
-267,Efteling Wonderland,54,2022-03-30,reportage
+267,Efteling Wonderland,54,2022-03-30,reportage,51.651630,5.050506
 268,Aan tafel met Ton Merkx (deel 2),110,2022-04-01,interview
-269,Groot onderhoud bij de Pagode,59,2022-04-06,reportage
+269,Groot onderhoud bij de Pagode,59,2022-04-06,reportage,51.650433,5.050711
 270,BN’er-kenner,126,2022-04-11,nieuws
 271,Ik gun jou mijn eitjes,118,2022-04-18,nieuws
-272,Een kijkje in de kas van de Efteling,79,2022-04-25,achtergrond
+272,Een kijkje in de kas van de Efteling,79,2022-04-25,achtergrond,51.650963,5.039565
 273,Wat missen we het meest uit de Efteling?,76,2022-05-02,achtergrond
 274,Wat te doen buiten de Efteling,95,2022-05-09,achtergrond
 275,There’s a rat in my ketting,173,2022-05-16,nieuws
@@ -280,7 +280,7 @@ id,titel,tijd,datum,categorie
 279,Onze favoriete plekken in de Efteling in het donker,57,2022-06-13,achtergrond
 280,Nog hypedter,151,2022-06-20,nieuws
 281,Onze favoriete Efteling-attracties,96,2022-06-27,achtergrond
-282,Kleine Boodschap in het theater,129,2022-07-04,interview
+282,Kleine Boodschap in het theater,129,2022-07-04,interview,51.659722,5.032634
 283,Lekker zwemmen in de sprinklerkelder,149,2022-07-11,nieuws
 284,De financiën van de Efteling in 2021,192,2022-07-18,achtergrond
 285,De accomodaties in Bosrijk en ’t Loonsche Land,100,2022-07-25,achtergrond
@@ -289,8 +289,8 @@ id,titel,tijd,datum,categorie
 288,Onze favoriete bordjes in de Efteling,82,2022-08-15,achtergrond
 289,De speeltuinen in de Efteling,111,2022-08-22,achtergrond
 290,In gesprek met Koos de Graaf,132,2022-08-29,interview
-291,Entrees en parkeerterreinen van de Efteling,103,2022-09-05,achtergrond
-292,De sluiting van het Spookslot,78,2022-09-07,reportage
+291,Entrees en parkeerterreinen van de Efteling,103,2022-09-05,achtergrond,51.650926,5.042896
+292,De sluiting van het Spookslot,78,2022-09-07,reportage,51.649019,5.048274
 293,Een soort van Scooby-Doo aflevering,176,2022-09-12,nieuws
 294,Thematisering in de Efteling met Martin en Patrick,121,2022-09-19,interview
 295,Blausibel,128,2022-09-26,nieuws
@@ -299,7 +299,7 @@ id,titel,tijd,datum,categorie
 298,Gewoon de CO2-blusser erop,149,2022-10-17,nieuws
 299,De oudste gebouwen in de Efteling,58,2022-10-24,achtergrond
 300,Feestelijke reacties van luisteraars,114,2022-10-31,achtergrond
-301,Het Textielmuseum en het Efteling tafellinnen,33,2022-11-02,achtergrond
+301,Het Textielmuseum en het Efteling tafellinnen,33,2022-11-02,achtergrond,51.570848,5.079455
 302,Verticale verassing,172,2022-11-07,nieuws
 303,Mijmeren met Sander Kesseler,93,2022-11-14,interview
 304,Een rondje proefroken,137,2022-11-21,nieuws
@@ -314,30 +314,30 @@ id,titel,tijd,datum,categorie
 313,In gesprek met Bertus Kemmeren,66,2023-01-23,interview
 314,In gesprek met Jordan Middleton (Cupcakes & Coasters),61,2023-01-26,interview
 315,Direct na de dummies,116,2023-01-30,nieuws
-316,De Efteling Stoomtrein Maatschappij,126,2023-02-06,interview
-317,Team Erfgoedbeheer,86,2023-02-13,interview
+316,De Efteling Stoomtrein Maatschappij,126,2023-02-06,interview,51.651720,5.045275
+317,Team Erfgoedbeheer,86,2023-02-13,interview,51.652277,5.053445
 318,Anarchie op de Europalaan,131,2023-02-20,nieuws
 319,De muziek van de Wereld van Sindbad,75,2023-02-27,achtergrond
-320,Efteling - De Tentoonstelling,76,2023-03-06,achtergrond
+320,Efteling - De Tentoonstelling,76,2023-03-06,achtergrond,51.686574,5.304683
 321,Mijn eerste hoop zal niet de laatste zijn,147,2023-03-13,nieuws
-322,Efteling in Concert,81,2023-03-20,interview
+322,Efteling in Concert,81,2023-03-20,interview,52.357230,4.866466
 323,We hebben goeie hoop,130,2023-03-27,nieuws
 324,Efteling-personeelskleding met Loet Smits,113,2023-04-03,achtergrond
 325,De Efteling achter de schermen,101,2023-04-10,achtergrond
 326,Wishful sinking,138,2023-04-17,nieuws
-327,Het vernieuwde Anton Pieckplein,79,2023-04-20,reportage
+327,Het vernieuwde Anton Pieckplein,79,2023-04-20,reportage,51.652399,5.049865
 328,De Efteling als verteller van sprookjes met Moniek Hover (deel 2),166,2023-04-24,interview
-329,In gesprek met Paul Beck,109,2023-05-01,interview
+329,In gesprek met Paul Beck,109,2023-05-01,interview,51.656474,5.052016
 330,Ode aan het Spookslot,101,2023-05-08,achtergrond
 331,Tot zover het toiletblok,149,2023-05-15,nieuws
-332,Het Efteling Kostuumatelier,98,2023-05-22,interview
+332,Het Efteling Kostuumatelier,98,2023-05-22,interview,51.652412,5.051402
 333,Koffie-abonnement,141,2023-05-29,nieuws
 334,In gesprek met Goof Lukken,170,2023-06-05,interview
 335,On fire op de Laetste Hoop,88,2023-06-12,nieuws
 336,De financiën van de Efteling in 2022,155,2023-06-19,achtergrond
 337,Extra zompige pannenkoeken,97,2023-06-26,nieuws
 338,Bram van Binnendijk over Theo Hochwald,140,2023-07-03,interview
-339,Onderhoud aan de Stoomcarrousel,27,2023-07-05,reportage
+339,Onderhoud aan de Stoomcarrousel,27,2023-07-05,reportage,51.651122,5.048912
 340,Friethoest,151,2023-07-10,nieuws
 341,Frietje Blitzkrieg,106,2023-07-17,nieuws
 342,Mijmeren met Domien Verschuuren,71,2023-07-24,interview
@@ -350,7 +350,7 @@ id,titel,tijd,datum,categorie
 349,Strijden tegen draken van vliegjes,110,2023-09-10,nieuws
 350,In gesprek met Arijan van Bavel,134,2023-09-17,interview
 351,Pieckwashing,104,2023-09-25,nieuws
-352,Boekpresentatie Raveleijn - Het bloed van de laatste draak,104,2023-09-29,reportage
+352,Boekpresentatie Raveleijn - Het bloed van de laatste draak,104,2023-09-29,reportage,51.652933,5.046504
 353,De Glazen Bol 2023,91,2023-10-02,achtergrond
 354,Nek aan nek met een klittenbandje,88,2023-10-09,nieuws
 355,Mijmeren met Xander de Rycke,101,2023-10-16,interview
@@ -361,7 +361,7 @@ id,titel,tijd,datum,categorie
 360,Champignons buiten knikkeren,116,2023-11-20,nieuws
 361,Achter de schermen bij de Spookslot-documentaire van De Vijf Zintuigen,210,2023-11-26,interview
 362,Gas(t)beleving,104,2023-12-04,nieuws
-363,De restauratie van het kasteel van Doornroosje,51,2023-12-11,reportage
+363,De restauratie van het kasteel van Doornroosje,51,2023-12-11,reportage,51.650768,5.047225
 364,Als Shrek thuiskomen,111,2023-12-18,nieuws
 365,De internationalisering van de Efteling,119,2023-12-22,achtergrond
 366,Struikelblokken,112,2024-01-01,nieuws
@@ -370,9 +370,9 @@ id,titel,tijd,datum,categorie
 369,Suske & Wiske en de Varende Vissen,117,2024-01-14,nieuws
 370,De muziek van Baron 1898,83,2024-01-22,achtergrond
 371,Pieckvermogen,119,2024-01-29,nieuws
-372,Het hoogste punt van Danse Macabre,35,2024-02-02,reportage
+372,Het hoogste punt van Danse Macabre,35,2024-02-02,reportage,51.648746, 5.048502
 373,Mijmeren met Bart Baan en Niels Kooyman,168,2024-02-05,interview
-374,De Legende van Familie Vos,106,2024-02-07,achtergrond
+374,De Legende van Familie Vos,106,2024-02-07,achtergrond,51.687166,5.070593
 375,Witheet,128,2024-02-12,nieuws
 376,In gesprek met Steven Grant,56,2024-02-19,interview
 377,Meej glans van de schaans,124,2024-02-25,nieuws
@@ -382,7 +382,7 @@ id,titel,tijd,datum,categorie
 381,Oranje knoeperst,111,2024-03-25,nieuws
 382,De Grote Podcastlas: de Efteling,108,2024-04-01,achtergrond
 383,Hein Oomen over onderhoud in de Efteling,124,2024-04-08,interview
-384,De start van het onderhoud aan Hans & Grietje,35,2024-04-10,reportage
+384,De start van het onderhoud aan Hans & Grietje,35,2024-04-10,reportage,51.650255,5.046480
 385,Sink Nicolaasplaets,129,2024-04-15,nieuws
 386,In gesprek met Wieteke van Dort,47,2024-04-22,interview
 387,Reacties van luisteraars,85,2024-04-29,achtergrond
@@ -394,12 +394,12 @@ id,titel,tijd,datum,categorie
 393,Chique steriel,127,2024-06-03,nieuws
 394,Olaf vertel eens…,98,2024-06-10,interview
 395,Het Witwasvrouwtje,126,2024-06-17,nieuws
-396,Het Badhuys,67,2024-06-24,reportage
+396,Het Badhuys,67,2024-06-24,reportage,51.646629,5.040407
 397,Pinakelpijn,114,2024-06-30,nieuws
 398,De financiën van de Efteling in 2023,118,2024-07-08,achtergrond
 399,Persvak,152,2024-07-15,nieuws
 400,Eftelings bouwen met Henk Schellekens en Frank Poels,105,2024-07-22,interview
-401,De Mini-Efteling,193,2024-07-29,interview
+401,De Mini-Efteling,193,2024-07-29,interview,51.693441,5.190034
 402,Mijmeren met Adri van Esch,144,2024-08-05,interview
 403,Blind genieten van de Efteling met Bart,64,2024-08-12,interview
 404,Schriel katje,159,2024-08-19,nieuws
@@ -409,20 +409,20 @@ id,titel,tijd,datum,categorie
 408,In den Swarte Long,114,2024-09-16,nieuws
 409,In gesprek met Jaap den Bleker,104,2024-09-23,interview
 410,Mâitresse Mystique,132,2024-09-30,nieuws
-411,Het onderhoud aan Hans & Grietje,41,2024-10-02,reportage
+411,Het onderhoud aan Hans & Grietje,41,2024-10-02,reportage,51.650297,5.046303
 412,De Glazen Bol 2024,78,2024-10-06,achtergrond
 413,Zwavelsmaak,129,2024-10-13,nieuws
 414,De wetenschap achter achtbanen,149,2024-10-21,interview
 415,Het muziekstuk Danse Macabre,78,2024-10-28,achtergrond
-416,De opening van Danse Macabre,122,2024-10-31,reportage
+416,De opening van Danse Macabre,122,2024-10-31,reportage,51.648498,5.048754
 417,Op een gitzwarte wolk,123,2024-11-03,nieuws
 418,Paul van Loon over Danse Macabre Het Begin,30,2024-11-06,interview
 419,Coen Janssen over The Ghost in Me,125,2024-11-11,interview
 420,Op z’n nokkenschijfs,120,2024-11-18,nieuws
 421,In gesprek met Marc en Marjan Taminiau (deel 1),141,2024-11-25,interview
 422,Hele bijzondere Delights,114,2024-12-02,nieuws
-423,De overeenkomsten tussen de Efteling en Madurodam met Peter Koppelmans en Yvette Nieboer,77,2024-12-09,interview
-424,Efteling Symphonica,34,2024-12-12,reportage
+423,De overeenkomsten tussen de Efteling en Madurodam met Peter Koppelmans en Yvette Nieboer,77,2024-12-09,interview,52.099132,4.298970
+424,Efteling Symphonica,34,2024-12-12,reportage,51.648225,5.045975
 425,Een zwart concept,99,2024-12-16,nieuws
 426,De Villa Pardoes WinterRun 2024,30,2024-12-18,reportage
 427,De draaiorgels van de Efteling met Martin Conrads,145,2024-12-23,interview
@@ -432,10 +432,29 @@ id,titel,tijd,datum,categorie
 431,Pinnekes,107,2025-01-20,nieuws
 432,In gesprek met Marc en Marjan Taminiau (deel 2),110,2025-01-27,interview
 433,Familie Vermeer-gevoel,134,2025-02-03,nieuws
-434,De operatie en showtechniek van Danse Macabre,126,2025-02-10,interview
+434,De operatie en showtechniek van Danse Macabre,126,2025-02-10,interview,51.648746,5.048502
 435,Erwtensoepspetters,121,2025-02-17,nieuws
 436,In gesprek met Bernadette van der Velden,42,2025-02-24,interview
 437,Het verdwaalplein,120,2025-03-03,nieuws
-438,Het Efteling Museum met Patrick van den Nieuwenhuizen,92,2025-03-10,achtergrond
-439,Het hoogste punt van het Efteling Grand Hotel,92,2025-03-11,reportage
+438,Het Efteling Museum met Patrick van den Nieuwenhuizen,92,2025-03-10,achtergrond,51.652078,5.049704
+439,Het hoogste punt van het Efteling Grand Hotel,92,2025-03-11,reportage,51.649253,5.045128
 440,Heks over vleermuis,104,2025-03-17,nieuws
+441,In gesprek met Robert-Jaap Jansen,125,2025-03-24,interview
+442,Reus met spillebeentjes,130,2025-03-31,nieuws
+443,In gesprek met Coen Schelfhorst,149,2025-04-07,interview
+444,De groene draad,139,2025-04-14,nieuws
+445,In gesprek met Ray Eddy,72,2025-04-21,interview
+446,Onze favoriete scènes in de Efteling,89,2025-04-28,achtergrond
+447,Polles Keuken,76,2025-05-05,achtergrond,51.650227,5.048660
+448,Het eerste ritje met de elektrische stoomtrein,30,2025-05-08,reportage,51.652139,5.046906
+449,Sprookjessprokkelaar van Temu,181,2025-05-12,nieuws
+450,De opening van De Prinses op de Erwt,37,2025-05-14,reportage,51.649936,5.045447
+451,Efteling Wonder Hotel,107,2025-05-19,reportage,51.653306,5.054457
+452,De spookpoes in de kamer,159,2025-05-26,nieuws
+453,Sleutelmomenten in de geschiedenis van de Efteling,118,2025-06-02,achtergrond
+454,Uitgedroogde verschrompelde zombie,125,2025-06-09,nieuws
+455,In gesprek met Stefan van der Putten,119,2025-06-16,interview
+456,One donkey show,138,2025-06-23,nieuws
+457,De muziek van De Vliegende Hollander,99,2025-06-30,achtergrond
+458,Eftelings schilderen,116,2025-07-07,achtergrond
+459,Snuiven aan m'n pin,167,2025-07-14,nieuws
