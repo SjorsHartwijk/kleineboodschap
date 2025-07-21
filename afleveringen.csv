@@ -448,7 +448,7 @@ id,titel,tijd,datum,categorie,latitude,longitude
 447,Polles Keuken,76,2025-05-05,achtergrond,51.650227,5.048660
 448,Het eerste ritje met de elektrische stoomtrein,30,2025-05-08,reportage,51.652139,5.046906
 449,Sprookjessprokkelaar van Temu,181,2025-05-12,nieuws
-450,De opening van De Prinses op de Erwt,37,2025-05-14,reportage,51.649936,5.045447
+450,De opening van De Prinses op de Erwt,37,2025-05-14,reportage,51.649876,5.045477
 451,Efteling Wonder Hotel,107,2025-05-19,reportage,51.653306,5.054457
 452,De spookpoes in de kamer,159,2025-05-26,nieuws
 453,Sleutelmomenten in de geschiedenis van de Efteling,118,2025-06-02,achtergrond
@@ -458,3 +458,4 @@ id,titel,tijd,datum,categorie,latitude,longitude
 457,De muziek van De Vliegende Hollander,99,2025-06-30,achtergrond
 458,Eftelings schilderen,116,2025-07-07,achtergrond
 459,Snuiven aan m'n pin,167,2025-07-14,nieuws
+460,De financiën van de Efteling in 2024,187,2025-07-21,achtergrond

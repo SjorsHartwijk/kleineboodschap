@@ -3290,8 +3290,8 @@
         "tijd": "37",
         "datum": "2025-05-14",
         "categorie": "reportage",
-        "latitude": "51.649936",
-        "longitude": "5.045447"
+        "latitude": "51.649876",
+        "longitude": "5.045477"
     },
     {
         "id": "451",
@@ -3357,5 +3357,12 @@
         "tijd": "167",
         "datum": "2025-07-14",
         "categorie": "nieuws"
+    },
+    {
+        "id": "460",
+        "titel": "De financiën van de Efteling in 2024",
+        "tijd": "187",
+        "datum": "2025-07-21",
+        "categorie": "achtergrond"
     }
 ]
