@@ -109,6 +109,51 @@
               </div>
             </nav>
         </div>
+        <!-- Cookie Consent Modal-like Banner -->
+        <div id="cookieConsentBanner" class="position-fixed top-50 start-50 translate-middle bg-white shadow-lg border rounded-3 p-4 p-lg-5 fade show" style="z-index: 1080; max-width: 90%; width: 400px;">
+    <h3><i class="bi bi-cookie"></i> Cookies</h3>
+    <p class="mb-3">
+    Kleine Boodschap Data maakt gebruik van cookies voor gebruikersanalyse via Microsoft Clarity. Deze cookies helpen te begrijpen hoe bezoekers de website gebruiken, zodat de gebruikerservaring kan worden verbeterd. Hierdoor verzamelt de website geen persoonlijke gegevens en de cookies zijn niet noodzakelijk voor de werking van de website. Ga je hiermee akkoord?
+  </p>
+  <div class="d-flex justify-content-end gap-2">
+    <button id="rejectCookies" class="btn btn-outline-secondary btn-sm">Weigeren</button>
+    <button id="acceptCookies" class="btn btn-primary btn-sm">Accepteren</button>
+  </div>
+        </div>
+        
+        <script>
+  const clarityProjectId = 'sie7jlrcmp'; // <-- Vervang met je echte ID
+  const banner = document.getElementById('cookieConsentBanner');
+  const acceptBtn = document.getElementById('acceptCookies');
+  const rejectBtn = document.getElementById('rejectCookies');
+
+  function loadClarity() {
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){ (c[a].q=c[a].q||[]).push(arguments); };
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", clarityProjectId);
+  }
+
+  const cookieChoice = localStorage.getItem('cookieConsent');
+  if (cookieChoice === 'accepted') {
+    loadClarity();
+    banner.style.display = 'none';
+  } else if (cookieChoice === 'rejected') {
+    banner.style.display = 'none';
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    loadClarity();
+    banner.style.display = 'none';
+  });
+
+  rejectBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'rejected');
+    banner.style.display = 'none';
+  });
+        </script>
         <footer class="bg-dark py-4 mt-auto fixed-bottom d-none d-md-block">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">

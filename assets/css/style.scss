@@ -93,6 +93,11 @@ nav.navbar {
 .bg-theme {
     background-color: var(--color-theme-primary);
 }
+#cookieConsentBanner {
+    h3 {
+        color: var(--color-theme-primary);
+    }
+}
 .card {
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -261,19 +266,19 @@ a {
         display: none;
     }
 .badge.reportage {
-    background-color: #4685AE;
+    background-color: var(--color-reportage);
     color: #fff;
 }
 .badge.nieuws {
-    background-color: #F6CA83;
+    background-color: var(--color-nieuws);
     color: #000;
 }
 .badge.achtergrond {
-    background-color: #7B9F93;
+    background-color: var(--color-achtergrond);
     color: #fff;
 }
 .badge.interview {
-    background-color: #C46868;
+    background-color: var(--color-interview);
     color: #fff;
 }
 /* mozaiek */

@@ -97,6 +97,10 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
   background-color: var(--color-theme-primary);
 }
 
+#cookieConsentBanner h3 {
+  color: var(--color-theme-primary);
+}
+
 .card {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
@@ -181,8 +185,8 @@ header .btn-theme {
   color: var(--color-theme-secondary);
 }
 header .btn-theme:hover, header .btn-theme :focus {
-  background-color: #dea613;
-  border-color: #dea613;
+  background-color: rgb(222.2395209581, 165.9580838323, 18.7604790419);
+  border-color: rgb(222.2395209581, 165.9580838323, 18.7604790419);
   color: var(--color-black);
 }
 header img {
@@ -204,8 +208,8 @@ a:hover, a :focus {
   color: white;
 }
 .btn-primary:hover, .btn-primary :focus {
-  background-color: #040c11;
-  border-color: #040c11;
+  background-color: rgb(3.5853658537, 11.9512195122, 17.4146341463);
+  border-color: rgb(3.5853658537, 11.9512195122, 17.4146341463);
 }
 
 /* wrapped */
@@ -278,22 +282,22 @@ a:hover, a :focus {
 }
 
 .badge.reportage {
-  background-color: #4685AE;
+  background-color: var(--color-reportage);
   color: #fff;
 }
 
 .badge.nieuws {
-  background-color: #F6CA83;
+  background-color: var(--color-nieuws);
   color: #000;
 }
 
 .badge.achtergrond {
-  background-color: #7B9F93;
+  background-color: var(--color-achtergrond);
   color: #fff;
 }
 
 .badge.interview {
-  background-color: #C46868;
+  background-color: var(--color-interview);
   color: #fff;
 }
 
