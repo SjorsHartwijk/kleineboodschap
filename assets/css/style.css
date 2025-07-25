@@ -277,6 +277,15 @@ a:hover, a :focus {
   width: 100%;
 }
 
+.mapboxgl-ctrl-top-right {
+  margin-top: 70px;
+}
+@media (min-width: 992px) {
+  .mapboxgl-ctrl-top-right {
+    margin-top: 90px;
+  }
+}
+
 .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
   display: none;
 }

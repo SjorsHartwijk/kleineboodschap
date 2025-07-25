@@ -262,6 +262,12 @@ a {
     height: calc(100dvh - 64px);
     width: 100%;
 }
+.mapboxgl-ctrl-top-right {
+    margin-top: 70px;
+    @media(min-width: 992px) {
+        margin-top: 90px;
+    }
+}
 .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
         display: none;
     }
