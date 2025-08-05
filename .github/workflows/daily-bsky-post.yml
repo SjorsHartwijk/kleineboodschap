@@ -48,12 +48,12 @@ jobs:
 
             if [[ "$ep_day_month" == "$today" && "$ep_year" != "$this_year" ]]; then
               SHOULD_POST=true
-              POST_TEXT="${POST_TEXT}${id}: ${title}, verscheen op ${date_formatted} (${category}-aflevering)\n"
+              POST_TEXT="${POST_TEXT}${id}: ${title} (${category}-aflevering)\n"
             fi
           done < <(jq -c '.[]' episodes.json)
 
           if [[ "$SHOULD_POST" == true ]]; then
-            echo -e "Vandaag, in voorgaande jaren, publiceerde #kleineboodschap deze aflevering(en):\n\n${POST_TEXT}" > post.txt
+            echo -e "Vandaag, (${today}) in voorgaande jaren, publiceerde #kleineboodschap deze aflevering(en):\n\n${POST_TEXT}" > post.txt
             echo "should_post=true" >> $GITHUB_OUTPUT
           else
             echo "Geen afleveringen vandaag."
