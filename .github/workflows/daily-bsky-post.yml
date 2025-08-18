@@ -48,7 +48,7 @@ jobs:
 
             if [[ "$ep_day_month" == "$today" && "$ep_year" != "$this_year" ]]; then
               SHOULD_POST=true
-              POST_TEXT="${POST_TEXT}${id}: ${title} (${category}-aflevering)\n"
+              POST_TEXT="${POST_TEXT}${id}: ${title} (${category}-aflevering, ${ep_year}) \n"
             fi
           done < <(jq -c '.[]' episodes.json)
 

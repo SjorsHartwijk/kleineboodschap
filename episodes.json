@@ -3378,5 +3378,19 @@
         "tijd": "91",
         "datum": "2025-08-04",
         "categorie": "interview"
+    },
+    {
+        "id": "463",
+        "titel": "De plantaardige Efteling",
+        "tijd": "101",
+        "datum": "2025-08-11",
+        "categorie": "achtergrond"
+    },
+    {
+        "id": "464",
+        "titel": "Plebstoiletten",
+        "tijd": "175",
+        "datum": "2025-08-18",
+        "categorie": "nieuws"
     }
 ]
