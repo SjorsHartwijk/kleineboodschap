@@ -102,7 +102,7 @@ function calculateReportageStatistics() {
         <h3 class="h5 card-title">Reportages</h3>
         <p class="card-text">Aantal afleveringen: <strong>${totalReportageEpisodes}</strong></p>
         <p class="card-text">De reportages duren opgeteld bij elkaar <strong>${totalReportageHours.toFixed(0)} uur</strong>.</p>
-        <p class="card-text"><strong>${reportagePercentage.toFixed(1)}%</strong> van alle afleveringen reportages.</p>
+        <p class="card-text"><strong>${reportagePercentage.toFixed(1)}%</strong> van alle afleveringen zijn reportages.</p>
     `;
     })
     .catch(error => {
