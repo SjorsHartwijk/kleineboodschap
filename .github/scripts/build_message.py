@@ -26,7 +26,8 @@ target_year = last_month_last_day.year
 # Filter afleveringen
 filtered = [
     ep for ep in episodes
-    if datetime.strptime(ep["date"], "%Y-%m-%d").month == target_month
+    if "date" in ep
+    and datetime.strptime(ep["date"], "%Y-%m-%d").month == target_month
     and datetime.strptime(ep["date"], "%Y-%m-%d").year == target_year
 ]
 
