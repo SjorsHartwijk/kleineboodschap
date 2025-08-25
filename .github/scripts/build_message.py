@@ -5,10 +5,14 @@ import sys
 import json
 
 # NL maandnamen
-locale.setlocale(locale.LC_TIME, "nl_NL.utf8")
+try:
+    locale.setlocale(locale.LC_TIME, "nl_NL.utf8")
+except locale.Error:
+    # Fallback: use default locale if Dutch is not available
+    pass
 
 # Episodes ophalen
-url = "https://sjorshartwijk.github.io/kleineboodschap/episodes.json"
+url = "https://kbdata.nl/episodes.json"
 resp = requests.get(url)
 episodes = resp.json()
 
