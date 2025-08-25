@@ -3392,5 +3392,14 @@
         "tijd": "175",
         "datum": "2025-08-18",
         "categorie": "nieuws"
+    },
+    {
+        "id": "465",
+        "titel": "Efteling Grand Hotel",
+        "tijd": "118",
+        "datum": "2025-08-25",
+        "categorie": "reportage",
+        "latitude": "51.649726",
+        "longitude": "5.044862"
     }
 ]
