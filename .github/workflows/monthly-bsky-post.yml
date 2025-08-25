@@ -1,0 +1,88 @@
+name: Post Kleine Boodschap maandbericht
+
+on:
+  schedule:
+    - cron: '50 7 1 * *'   # 09:50 NL tijd (07:50 UTC)
+  workflow_dispatch:
+
+jobs:
+  post-bluesky:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Amsterdam   # alle tijden in NL
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests python-dateutil
+
+      - name: Generate monthly summary
+        id: summary
+        run: |
+          import requests, datetime, locale
+          from dateutil import parser
+          from collections import Counter
+
+          # locale naar Nederlands
+          try:
+              locale.setlocale(locale.LC_TIME, "nl_NL.utf8")
+          except:
+              locale.setlocale(locale.LC_TIME, "C")
+
+          url = "https://sjorshartwijk.github.io/kleineboodschap/episodes.json"
+          episodes = requests.get(url).json()
+
+          today = datetime.date.today()
+          first_day_this_month = today.replace(day=1)
+          last_month = first_day_this_month - datetime.timedelta(days=1)
+
+          year = last_month.year
+          month = last_month.month
+
+          # filter afleveringen vorige maand
+          monthly_eps = [
+              ep for ep in episodes
+              if parser.parse(ep["date"]).year == year and parser.parse(ep["date"]).month == month
+          ]
+
+          total_minutes = sum(ep["duration"] for ep in monthly_eps)
+          hours, minutes = divmod(total_minutes, 60)
+
+          cats = Counter(ep["category"] for ep in monthly_eps)
+
+          cat_durations = {}
+          for ep in monthly_eps:
+              cat_durations.setdefault(ep["category"], 0)
+              cat_durations[ep["category"]] += ep["duration"]
+
+          # format duur zonder seconden (HH:MM)
+          def format_duration(mins):
+              h, m = divmod(mins, 60)
+              return f"{h}:{m:02d}"
+
+          maandnaam = last_month.strftime("%B %Y").capitalize()
+          message = f"In {maandnaam} heb je {hours} uur en {minutes} minuten naar Kleine Boodschap kunnen luisteren.\n\n"
+          message += f"Er zijn {len(monthly_eps)} afleveringen gepubliceerd: " + ", ".join(
+              f"{cats[c]} {c}" for c in cats
+          ) + ".\n\n"
+
+          for c, mins in cat_durations.items():
+              message += f"{c.capitalize()}: {format_duration(mins)}\n"
+
+          message += "\n#kleineboodschap"
+
+          print("::set-output name=text::" + message.replace("\n", "%0A"))
+
+      - name: Post to Bluesky
+        uses: myConsciousness/bluesky-post@v5
+        with:
+          identifier: ${{ secrets.BLUESKY_IDENTIFIER }}
+          password: ${{ secrets.BLUESKY_PASSWORD }}
+          text: ${{ steps.summary.outputs.text }}
