@@ -248,10 +248,10 @@ a {
     }
     .calendar-day[data-count="1"] { background-color: #b6d3bb; }
     .calendar-day[data-count="2"] { background-color: #f7d797; }
-    .calendar-day[data-count="3"] { background-color: #f4ca77; }
-    .calendar-day[data-count="4"] { background-color: #f8bb99; }
-    .calendar-day[data-count="5"],.calendar-day[data-count="6"] { background-color: #cd8761; }
-    .calendar-day[data-count="7"],.calendar-day[data-count="8"] { background-color: #cc4400; color: white; }
+    .calendar-day[data-count="3"] { background-color: #f8bb99; }
+    .calendar-day[data-count="4"] { background-color: #cf7031; }
+    .calendar-day[data-count="5"],.calendar-day[data-count="6"] { background-color: #a65a27; }
+    .calendar-day[data-count="7"],.calendar-day[data-count="8"] { background-color: #972626; color: white; }
     .calendar-day:hover {
       outline: 2px solid #333;
     }

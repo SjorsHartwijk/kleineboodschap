@@ -252,19 +252,19 @@ a:hover, a :focus {
 }
 
 .calendar-day[data-count="3"] {
-  background-color: #f4ca77;
-}
-
-.calendar-day[data-count="4"] {
   background-color: #f8bb99;
 }
 
+.calendar-day[data-count="4"] {
+  background-color: #cf7031;
+}
+
 .calendar-day[data-count="5"], .calendar-day[data-count="6"] {
-  background-color: #cd8761;
+  background-color: #a65a27;
 }
 
 .calendar-day[data-count="7"], .calendar-day[data-count="8"] {
-  background-color: #cc4400;
+  background-color: #972626;
   color: white;
 }
 
