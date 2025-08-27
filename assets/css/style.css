@@ -247,25 +247,23 @@ a:hover, a :focus {
   background-color: #b6d3bb;
 }
 
-.calendar-day[data-count="2"] {
-  background-color: #d0d5ad;
-}
-
+.calendar-day[data-count="2"],
 .calendar-day[data-count="3"] {
-  background-color: #ead69e;
+  background-color: #f7d797;
 }
 
 .calendar-day[data-count="4"] {
   background-color: #f8bb99;
 }
 
-.calendar-day[data-count="5"], .calendar-day[data-count="6"] {
-  background-color: #e09f7c;
+.calendar-day[data-count="5"],
+.calendar-day[data-count="6"] {
+  background-color: #f5a374;
 }
 
-.calendar-day[data-count="7"], .calendar-day[data-count="8"] {
-  background-color: #c98462;
-  color: white;
+.calendar-day[data-count="7"],
+.calendar-day[data-count="8"] {
+  background-color: #f38a50;
 }
 
 .calendar-day:hover {
