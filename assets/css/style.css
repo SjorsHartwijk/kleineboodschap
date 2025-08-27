@@ -230,7 +230,7 @@ a:hover, a :focus {
 }
 
 /* afleveringen calender */
-.calendar-day {
+#kalender .calendar-day {
   width: 36px;
   height: 36px;
   margin: 2px;
@@ -242,32 +242,106 @@ a:hover, a :focus {
   cursor: pointer;
   background-color: #f0f0f0;
 }
-
-.calendar-day[data-count="1"] {
+#kalender .calendar-day[data-count="1"] {
   background-color: #b6d3bb;
 }
-
-.calendar-day[data-count="2"],
-.calendar-day[data-count="3"] {
+#kalender .calendar-day[data-count="2"],
+#kalender .calendar-day[data-count="3"] {
   background-color: #f7d797;
 }
-
-.calendar-day[data-count="4"] {
+#kalender .calendar-day[data-count="4"] {
   background-color: #f8bb99;
 }
-
-.calendar-day[data-count="5"],
-.calendar-day[data-count="6"] {
+#kalender .calendar-day[data-count="5"],
+#kalender .calendar-day[data-count="6"] {
   background-color: #f5a374;
 }
-
-.calendar-day[data-count="7"],
-.calendar-day[data-count="8"] {
+#kalender .calendar-day[data-count="7"],
+#kalender .calendar-day[data-count="8"] {
   background-color: #f38a50;
 }
-
-.calendar-day:hover {
+#kalender .calendar-day:hover {
   outline: 2px solid #333;
+}
+@media (prefers-color-scheme: dark) {
+  #kalender {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+  }
+  #kalender h1 {
+    color: var(--color-nieuws);
+  }
+  #kalender h2, #kalender h3, #kalender h4, #kalender h5, #kalender h6 {
+    color: var(--color-lightblue);
+  }
+  #kalender .calendar-day {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+  }
+  #kalender .calendar-day[data-count="1"] {
+    background-color: #145a32;
+  }
+  #kalender .calendar-day[data-count="2"],
+  #kalender .calendar-day[data-count="3"] {
+    background-color: #7d6608;
+  }
+  #kalender .calendar-day[data-count="4"] {
+    background-color: #b03a2e;
+  }
+  #kalender .calendar-day[data-count="5"],
+  #kalender .calendar-day[data-count="6"] {
+    background-color: #cb4335;
+  }
+  #kalender .calendar-day[data-count="7"],
+  #kalender .calendar-day[data-count="8"] {
+    background-color: #e74c3c;
+  }
+  #kalender .modal-content {
+    background-color: var(--color-bg-card);
+    color: var(--color-white);
+  }
+  #kalender footer.bg-dark {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #afleveringen {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+  }
+  #afleveringen h1 {
+    color: var(--color-nieuws);
+  }
+  #afleveringen p a {
+    color: var(--color-hyperlink-dark);
+  }
+  #afleveringen h2, #afleveringen h3, #afleveringen h4, #afleveringen h5, #afleveringen h6 {
+    color: var(--color-lightblue);
+  }
+  #afleveringen .table {
+    background-color: var(--color-bg-card) !important;
+    color: var(--color-white) !important;
+  }
+  #afleveringen .table thead tr th {
+    background-color: var(--color-bg-dark) !important;
+    color: var(--color-white) !important;
+  }
+  #afleveringen .table tbody tr td {
+    background-color: #172a45 !important;
+    color: var(--color-white) !important;
+  }
+  #afleveringen .table tbody tr:nth-child(odd) {
+    background-color: #1a2638 !important;
+  }
+  #afleveringen .table tbody tr:nth-child(even) {
+    background-color: #172a45 !important;
+  }
+  #afleveringen footer.bg-dark {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
 }
 
 /* map */

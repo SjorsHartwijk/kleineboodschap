@@ -234,7 +234,8 @@ a {
     }
 }
 /* afleveringen calender */
-.calendar-day {
+#kalender {
+    .calendar-day {
       width: 36px;
       height: 36px;
       margin: 2px;
@@ -257,6 +258,84 @@ a {
     .calendar-day:hover {
       outline: 2px solid #333;
     }
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--color-bg-dark);
+        color: var(--color-white);
+        h1 {
+            color: var(--color-nieuws);
+        }
+        h2,h3,h4,h5,h6 {
+            color: var(--color-lightblue);
+        }
+        .calendar-day {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        .calendar-day[data-count="1"] { background-color: #145a32; }
+        .calendar-day[data-count="2"],                      
+        .calendar-day[data-count="3"] { background-color: #7d6608; }
+        .calendar-day[data-count="4"] { background-color: #b03a2e; }
+        .calendar-day[data-count="5"],
+        .calendar-day[data-count="6"] { background-color: #cb4335; }
+        .calendar-day[data-count="7"], 
+        .calendar-day[data-count="8"] { background-color: #e74c3c; }
+        .modal-content {
+            background-color: var(--color-bg-card);
+            color: var(--color-white);
+        }
+        footer.bg-dark {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+    }
+}
+#afleveringen {
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--color-bg-dark);
+        color: var(--color-white);
+        h1 {
+            color: var(--color-nieuws);
+        }
+        p {
+            a {
+                color: var(--color-hyperlink-dark);
+            }
+        }
+        h2,h3,h4,h5,h6 {
+            color: var(--color-lightblue);
+        }
+        .table {
+            background-color: var(--color-bg-card) !important;
+            color: var(--color-white) !important;
+            thead {
+                tr {
+                    th {
+                        background-color: var(--color-bg-dark) !important;
+                        color: var(--color-white) !important;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        background-color: #172a45  !important;
+                        color: var(--color-white) !important;
+                    }
+                    &:nth-child(odd) {
+                        background-color: #1a2638 !important;
+                    }
+                    &:nth-child(even) {
+                        background-color: #172a45  !important;
+                    }
+                }
+            }
+        }
+        footer.bg-dark {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+    }
+}
 /* map */
 #map {
     position: absolute;
