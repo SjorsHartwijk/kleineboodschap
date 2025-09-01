@@ -3401,5 +3401,12 @@
         "categorie": "reportage",
         "latitude": "51.649726",
         "longitude": "5.044862"
+    },
+    {
+        "id": "466",
+        "titel": "Geurkaars met waterorgelgeur",
+        "tijd": "125",
+        "datum": "2025-09-01",
+        "categorie": "nieuws"
     }
 ]
