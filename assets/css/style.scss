@@ -90,6 +90,9 @@ nav.navbar {
             &:hover,:focus,:focus-visible {
                 color: var(--color-nieuws);
             }
+            &.active {
+            color: var(--color-nieuws);
+        }
         }
     }
 }

@@ -256,23 +256,119 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
                     <div class="card mb-3">
                         <div class="card-body">
+                            <h3 class="h4">Publicatiedagen</h3>
+                            <p>
+                                De meeste afleveringen van Kleine Boodschap worden op maandag gepubliceerd,
+                                op dit moment zijn dat
+                                <strong id="mondayCount"></strong> van de totaal <span id="totalCount"></span>
+                                geïndexeerde afleveringen. Bekijk in onderstaan staafdiagram de data van <strong id="otherCount"></strong> afleveringen die niet op een maandag zijn gepubliceerd.</p>
+                                <script>
+                                    // Wait for mondayCount and totalCount to be set
+                                    function updateOtherCount() {
+                                        const total = parseInt(document.getElementById('totalCount').textContent) || 0;
+                                        const monday = parseInt(document.getElementById('mondayCount').textContent) || 0;
+                                        if (total && monday) {
+                                            document.getElementById('otherCount').textContent = total - monday;
+                                        } else {
+                                            setTimeout(updateOtherCount, 100);
+                                        }
+                                    }
+                                    updateOtherCount();
+                                </script>
+                            </p>
+                            <script>
+                            fetch('episodes.json')
+                                .then(res => res.json())
+                                .then(episodes => {
+                                    const total = episodes.length;
+                                    const mondayCount = episodes.filter(ep => {
+                                        const date = new Date(ep.datum);
+                                        // getDay(): 1 = Monday
+                                        return date.getDay() === 1;
+                                    }).length;
+                                    document.getElementById('mondayCount').textContent = mondayCount;
+                                    document.getElementById('totalCount').textContent = total;
+                                });
+                            </script>
+                            <canvas id="weekdayBarChart"></canvas>
+                            <script>
+                            fetch('episodes.json')
+                                .then(res => res.json())
+                                .then(episodes => {
+                                    // Weekdays starting with Tuesday (Maandag removed)
+                                    const weekdays = ['Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'];
+                                    const counts = Array(6).fill(0);
+                                    episodes.forEach(ep => {
+                                        const date = new Date(ep.datum);
+                                        // getDay(): 0=Sunday, 1=Monday, ..., 6=Saturday
+                                        // Shift so Monday=0, ..., Sunday=6
+                                        const weekdayIndex = (date.getDay() + 6) % 7;
+                                        // Only count Tuesday-Sunday (weekdayIndex 1-6)
+                                        if (weekdayIndex >= 1 && weekdayIndex <= 6) {
+                                            counts[weekdayIndex - 1]++;
+                                        }
+                                    });
+                                    new Chart(document.getElementById('weekdayBarChart'), {
+                                        type: 'bar',
+                                        data: {
+                                            labels: weekdays,
+                                            datasets: [{
+                                                label: 'Aantal',
+                                                data: counts,
+                                                backgroundColor: '#b6d3bb'
+                                            }]
+                                        },
+                                        options: {
+                                            responsive: true,
+                                            plugins: {
+                                                legend: { display: false }
+                                            },
+                                            scales: {
+                                                x: { title: { display: false, text: 'Weekdag' } },
+                                                y: { title: { display: false, text: 'Aantal afleveringen' }, beginAtZero: true }
+                                            }
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="h4">Nog meer data?</h3>
+                            <p>Heb je een idee om deze data verder uit te breiden? Deel je suggesties, ideeën of feedback via Bluesky!</p>
+                            <a href="https://bsky.app/profile/kbdata.nl" class="btn btn-outline-primary" target="_blank" title="Stuur een bericht via Bluesky"><i class="bi bi-bluesky"></i> Stuur een bericht</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="h4">Categorieën</h3>
+                            <p>In dit diagram bekijk je alle afleveringen van Kleine Boodschap per categorie.<br/>
+                            <small class="fst-italic">Tip: klik op de categorieën onder de cirkel om deze aan of uit te zetten.</small></p>
+                            <canvas id="donutChart"></canvas>
                             <div class="container">
                                 <div class="row mb-5 d-flex align-items-center bg-white rounded-3 py-3 px-1 px-lg-5">
                                     <div class="col-12 col-lg-5">
-                                        <h3 class="h4">Categorieën</h3>
-                                        <p>In dit diagram bekijk je alle afleveringen van Kleine Boodschap per categorie.</p>
-                                        <small class="fst-italic">Tip: klik op de categorieën naast de cirkel om deze aan of uit te
-                                            zetten.</small>
+                                        
                                     </div>
                                     <div class="col-12 col-lg-7 text-center">
-                                        <canvas id="donutChart"></canvas>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+                    
                     <div class="card mb-3">
                         <div class="card-body">
                             <h3 class="h4 card-title">Door de jaren heen</h3>
