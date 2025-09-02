@@ -81,6 +81,9 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
 .navbar-bottom a:hover, .navbar-bottom a :focus, .navbar-bottom a :focus-visible {
   color: var(--color-interview);
 }
+.navbar-bottom a.active {
+  color: var(--color-interview);
+}
 
 @media (prefers-color-scheme: dark) {
   .navbar-bottom {

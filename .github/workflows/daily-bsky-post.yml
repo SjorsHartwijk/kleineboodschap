@@ -57,7 +57,7 @@ jobs:
             day=$(date +"%d")
             month_name=$(date +"%b" | tr '[:upper:]' '[:lower:]')
             today_formatted="${day} ${month_name}"
-            echo -e "Vandaag, (${today_formatted}) in voorgaande jaren, publiceerde #kleineboodschap deze aflevering(en):\n\n${POST_TEXT}" > post.txt
+            echo -e "Op ${today_formatted}, in voorgaande jaren, publiceerde #kleineboodschap deze aflevering(en):\n\n${POST_TEXT}" > post.txt
             echo "should_post=true" >> $GITHUB_OUTPUT
           else
             echo "Geen afleveringen vandaag."

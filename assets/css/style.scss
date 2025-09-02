@@ -76,7 +76,10 @@ nav.navbar {
         color: var(--color-theme-primary);
         &:hover,:focus,:focus-visible {
             color: var(--color-interview);
-    }
+        }
+        &.active {
+            color: var(--color-interview);
+        }
     }
 }
 @media(prefers-color-scheme: dark){
