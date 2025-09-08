@@ -57,6 +57,25 @@ jobs:
             day=$(date +"%d")
             month_name=$(date +"%b" | tr '[:upper:]' '[:lower:]')
             today_formatted="${day} ${month_name}"
+            # Format "9 september" instead of "09 sep"
+            day=$(date +"%d" | sed 's/^0*//')
+            month_number=$(date +"%m")
+            # Get Dutch month name
+            case $month_number in
+              "01") month_name="januari" ;;
+              "02") month_name="februari" ;;
+              "03") month_name="maart" ;;
+              "04") month_name="april" ;;
+              "05") month_name="mei" ;;
+              "06") month_name="juni" ;;
+              "07") month_name="juli" ;;
+              "08") month_name="augustus" ;;
+              "09") month_name="september" ;;
+              "10") month_name="oktober" ;;
+              "11") month_name="november" ;;
+              "12") month_name="december" ;;
+            esac
+            today_formatted="${day} ${month_name}"
             echo -e "Op ${today_formatted}, in voorgaande jaren, publiceerde #kleineboodschap deze aflevering(en):\n\n${POST_TEXT}" > post.txt
             echo "should_post=true" >> $GITHUB_OUTPUT
           else
