@@ -3,10 +3,12 @@
     --color-theme-secondary: #7a2b2b;
     --color-white: #ffffff;
     --color-black: #000000;
+    --color-text: #020d37;
     --color-nieuws: #F2CB65;
     --color-reportage: #44687D;
     --color-interview: #AC1A2E;
     --color-achtergrond: #619079;
+    --color-achtergrond-txt: #406955;
     --color-newcategory: #674ea7;
     --color-hyperlink: #527A67;
     --color-bg-dark: #0b192f;
@@ -14,15 +16,20 @@
     --color-lightblue: #64D6EB;
     --color-hyperlink-dark:#64EB91;
 }
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 body {
     scroll-behavior: smooth;
     background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: var(--color-text);
 }
 h1,h2,h3,h4,h5,h6 {
     color: var(--color-theme-secondary);
     font-family: "Alegreya", serif;
     font-style: normal;
+    font-weight: 600;
 }
 .h1,.h2,.h3,.h4,.h5,.h6 {
     color: var(--color-theme-secondary);
@@ -72,7 +79,11 @@ nav.navbar {
 .navbar-bottom {
     background-color: var(--color-white);
     border-bottom: 0px !important;
+    font-family: 'Inter', sans-serif;
     a {
+        .small {
+            font-size: .7em;
+        }
         color: var(--color-theme-primary);
         &:hover,:focus,:focus-visible {
             color: var(--color-interview);
@@ -108,8 +119,10 @@ nav.navbar {
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     border: 1px solid #f3f4f6;
+    color: var(--color-text);
     h3 {
-        color: var(--color-theme-primary);
+        color: var(--color-text);
+        font-weight: 600;
     }
     .list-group-flush {
         .list-group-item {
@@ -146,7 +159,7 @@ nav.navbar {
     }
     &.bg-achtergrond {
         .card-title {
-            color: var(--color-achtergrond);
+            color: var(--color-achtergrond-txt);
         }
     }
     &.bg-nieuws {
