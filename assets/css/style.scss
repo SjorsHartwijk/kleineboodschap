@@ -354,6 +354,18 @@ a {
             color: var(--color-white);
         }
     }
+    @media (max-width: 768px) {
+        table thead th:nth-child(4),
+        table tbody td:nth-child(4) {
+            display: none;
+        }
+        table thead th {
+            font-size: .9em;
+        }
+        table tbody td {
+            font-size: .8em;
+        }
+    }
 }
 /* map */
 #map {

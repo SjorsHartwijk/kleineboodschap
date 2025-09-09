@@ -362,6 +362,18 @@ a:hover, a :focus {
     color: var(--color-white);
   }
 }
+@media (max-width: 768px) {
+  #afleveringen table thead th:nth-child(4),
+  #afleveringen table tbody td:nth-child(4) {
+    display: none;
+  }
+  #afleveringen table thead th {
+    font-size: 0.9em;
+  }
+  #afleveringen table tbody td {
+    font-size: 0.8em;
+  }
+}
 
 /* map */
 #map {
