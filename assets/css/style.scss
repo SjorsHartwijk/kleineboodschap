@@ -124,15 +124,8 @@ nav.navbar {
         color: var(--color-text);
         font-weight: 600;
     }
-    .list-group-flush {
-        .list-group-item {
-            border-left: none;
-            border-right: none;
-            background-color: unset;
-            &:last-child {
-                border-bottom: none;
-            }
-        }
+    .list-group-item {
+        color: var(--color-text);
     }
     summary {
         padding: .25em 0;

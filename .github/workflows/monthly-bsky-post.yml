@@ -1,39 +1,33 @@
-name: Maandelijkse Samenvatting
+name: Post monthly Kleine Boodschap stats to Bluesky
 
 on:
   schedule:
-    # 1e van de maand om 09:50 NL tijd (08:50 UTC)
-    - cron: "50 8 1 * *"
-  workflow_dispatch: # ook handmatig te triggeren
+    - cron: '0 9 1 * *' # Elke 1e van de maand om 09:00 UTC (11:00 CEST)
+  workflow_dispatch:
 
 jobs:
-  post:
+  post-bluesky:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - name: Install dependencies
-        run: pip install requests python-dateutil
-
-      - name: Build message
-        id: build
+      - name: Read episodes.json and compose message
+        id: compose
         run: |
-          python .github/scripts/build_message.py > message.txt
+          month=$(date --utc +'%B %Y' -d 'now -1 month')
+          data=$(cat episodes.json)
+          luistertijd=$(echo "$data" | jq -r '.total_listening_time')
+          interview=$(echo "$data" | jq -r '.categories.interview')
+          achtergrond=$(echo "$data" | jq -r '.categories.achtergrond')
+          nieuws=$(echo "$data" | jq -r '.categories.nieuws')
+          reportage=$(echo "$data" | jq -r '.categories.reportage')
+          message="In $month heb je $luistertijd naar Kleine Boodschap kunnen luisteren:\nInterview: $interview\nAchtergrond: $achtergrond\nNieuws: $nieuws\nReportage: $reportage\n#kleineboodschap"
+          echo "message=$message" >> $GITHUB_OUTPUT
 
-      - name: Show built message (debug)
-        run: cat message.txt
-
-      - name: Post to Bluesky
+      - name: Post message to Bluesky
         uses: myConsciousness/bluesky-post@v5
         with:
+          text: ${{ steps.compose.outputs.message }}
           identifier: ${{ secrets.BLUESKY_IDENTIFIER }}
           password: ${{ secrets.BLUESKY_PASSWORD }}
-          text: |
-            ${{ steps.build.outputs.message }}
+          retry-count: 5

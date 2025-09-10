@@ -128,13 +128,8 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
   color: var(--color-text);
   font-weight: 600;
 }
-.card .list-group-flush .list-group-item {
-  border-left: none;
-  border-right: none;
-  background-color: unset;
-}
-.card .list-group-flush .list-group-item:last-child {
-  border-bottom: none;
+.card .list-group-item {
+  color: var(--color-text);
 }
 .card summary {
   padding: 0.25em 0;
