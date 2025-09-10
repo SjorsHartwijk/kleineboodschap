@@ -84,7 +84,7 @@ nav.navbar {
         .small {
             font-size: .7em;
         }
-        color: var(--color-theme-primary);
+        color: var(--color-text);
         &:hover,:focus,:focus-visible {
             color: var(--color-interview);
         }
@@ -121,7 +121,7 @@ nav.navbar {
     border: 1px solid #f3f4f6;
     color: var(--color-text);
     h3 {
-        color: var(--color-text);
+        color: var(--color-theme-secondary);
         font-weight: 600;
     }
     .list-group-item {

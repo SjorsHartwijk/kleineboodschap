@@ -84,7 +84,7 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
   font-family: "Inter", sans-serif;
 }
 .navbar-bottom a {
-  color: var(--color-theme-primary);
+  color: var(--color-text);
 }
 .navbar-bottom a .small {
   font-size: 0.7em;
@@ -125,7 +125,7 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
   color: var(--color-text);
 }
 .card h3 {
-  color: var(--color-text);
+  color: var(--color-theme-secondary);
   font-weight: 600;
 }
 .card .list-group-item {
