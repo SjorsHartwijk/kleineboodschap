@@ -1,7 +1,7 @@
 name: Post monthly Kleine Boodschap stats to Bluesky
 
 on:
-  workflow_dispatch:   # Handmatige trigger
+  workflow_dispatch:
   schedule:
     - cron: '50 8 1 * *' # Elke 1e van de maand om 08:50 UTC = 10:50 CEST
 
@@ -24,7 +24,7 @@ jobs:
         id: compose
         run: |
           maand=$(date --utc -d '1 day ago' +'%B %Y' -d '-1 month' | sed 's/January/januari/;s/February/februari/;s/March/maart/;s/April/april/;s/May/mei/;s/June/juni/;s/July/juli/;s/August/augustus/;s/September/september/;s/October/oktober/;s/November/november/;s/December/december/')
-          
+
           categories=$(jq -r --arg maand "${maand}" '
             map(select(.datum | startswith(("'"${maand:0:4}"'") + "-" + ("'"${maand:3:2}"'")))) | 
             group_by(.categorie) | 
@@ -32,32 +32,43 @@ jobs:
             from_entries
           ' episodes.json)
 
-          interview=$(echo $categories | jq -r '.interview // 0')
-          achtergrond=$(echo $categories | jq -r '.achtergrond // 0')
-          nieuws=$(echo $categories | jq -r '.nieuws // 0')
-          reportage=$(echo $categories | jq -r '.reportage // 0')
-
           to_uur_min() {
             local m=$1
             printf "%du %dm" "$((m / 60))" "$((m % 60))"
           }
 
-          interview_fmt=$(to_uur_min $interview)
-          achtergrond_fmt=$(to_uur_min $achtergrond)
-          nieuws_fmt=$(to_uur_min $nieuws)
-          reportage_fmt=$(to_uur_min $reportage)
+          bericht="In ${maand} heb je"
+          details=""
+          totaal=0
 
-          totaal=$(($interview + $achtergrond + $nieuws + $reportage))
+          for cat in interview achtergrond nieuws reportage; do
+            tijd=$(echo "$categories" | jq -r --arg c "$cat" '.[$c] // 0')
+            if [ "$tijd" -gt 0 ]; then
+              tijd_fmt=$(to_uur_min $tijd)
+              if [ -z "$details" ]; then
+                bericht="${bericht} ${tijd_fmt}"
+              else
+                bericht="${bericht} en ${tijd_fmt}"
+              fi
+              case "$cat" in
+                interview) catlabel="Interview" ;;
+                achtergrond) catlabel="Achtergrond" ;;
+                nieuws) catlabel="Nieuws" ;;
+                reportage) catlabel="Reportage" ;;
+              esac
+              details="${details}${catlabel}: ${tijd_fmt}\\n"
+              totaal=$((totaal + tijd))
+            fi
+          done
+
           totaal_fmt=$(to_uur_min $totaal)
 
-          bericht="In ${maand} heb je ${totaal_fmt} naar Kleine Boodschap kunnen luisteren:
-          Interview: ${interview_fmt}
-          Achtergrond: ${achtergrond_fmt}
-          Nieuws: ${nieuws_fmt}
-          Reportage: ${reportage_fmt}
-          #kleineboodschap"
+          bericht="${bericht} naar Kleine Boodschap kunnen luisteren:\\n${details}#kleineboodschap"
 
-          echo "message=$bericht" >> $GITHUB_OUTPUT
+          # Output als multi-line variabele in GitHub Actions
+          echo "message<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$bericht" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Post message to Bluesky
         uses: myConsciousness/bluesky-post@v5
