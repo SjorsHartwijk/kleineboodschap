@@ -69,6 +69,18 @@ nav.navbar {
                     &.active {
                         color: var(--color-nieuws);
                     }
+                    &.wrappedBtn {
+                        color: transparent;
+                        background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59,#c471ed,#12c2e9);
+                        background-size: 200% 100%;    /* big so we can pan it */
+                        background-clip: text;
+                        -webkit-background-clip: text; /* Safari */
+                        animation: gtext-pan 3s linear infinite;
+                        &:hover,:focus,:focus-visible {
+                            color: var(--color-nieuws);
+                            text-decoration: none;
+                        }
+                    }
                 }
             }
         }
@@ -89,7 +101,23 @@ nav.navbar {
         &.active {
             color: var(--color-interview);
         }
+        &.wrappedBtn {
+            color: transparent;
+            background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59,#c471ed,#12c2e9);
+            background-size: 200% 100%;    /* big so we can pan it */
+            background-clip: text;
+            -webkit-background-clip: text; /* Safari */
+            animation: gtext-pan 3s linear infinite;
+            &:hover,:focus,:focus-visible {
+                color: var(--color-interview);
+                text-decoration: none;
+            }
+        }
     }
+}
+@keyframes gtext-pan {
+    0%   { background-position:   0% 0; }
+    100% { background-position: 200% 0; }
 }
 @media(prefers-color-scheme: dark){
     .navbar-bottom {
