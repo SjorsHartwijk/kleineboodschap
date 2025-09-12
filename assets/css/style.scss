@@ -3,10 +3,12 @@
     --color-theme-secondary: #7a2b2b;
     --color-white: #ffffff;
     --color-black: #000000;
+    --color-text: #020d37;
     --color-nieuws: #F2CB65;
     --color-reportage: #44687D;
     --color-interview: #AC1A2E;
     --color-achtergrond: #619079;
+    --color-achtergrond-txt: #406955;
     --color-newcategory: #674ea7;
     --color-hyperlink: #527A67;
     --color-bg-dark: #0b192f;
@@ -14,15 +16,24 @@
     --color-lightblue: #64D6EB;
     --color-hyperlink-dark:#64EB91;
 }
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 body {
     scroll-behavior: smooth;
     background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: var(--color-text);
+}
+::selection {
+    background-color: var(--color-hyperlink-dark);
+    color: var(--color-black);
 }
 h1,h2,h3,h4,h5,h6 {
     color: var(--color-theme-secondary);
     font-family: "Alegreya", serif;
     font-style: normal;
+    font-weight: 600;
 }
 .h1,.h2,.h3,.h4,.h5,.h6 {
     color: var(--color-theme-secondary);
@@ -63,20 +74,21 @@ nav.navbar {
         }
     }
 }
-.navbar-top{
-    margin: 8px 8px 0 8px;
-    @media (min-width: 992px) {
-        margin: 30px 30px 0 30px;
-    }
-}
 .navbar-bottom {
     background-color: var(--color-white);
     border-bottom: 0px !important;
+    font-family: 'Inter', sans-serif;
     a {
-        color: var(--color-theme-primary);
+        .small {
+            font-size: .7em;
+        }
+        color: var(--color-text);
         &:hover,:focus,:focus-visible {
             color: var(--color-interview);
-    }
+        }
+        &.active {
+            color: var(--color-interview);
+        }
     }
 }
 @media(prefers-color-scheme: dark){
@@ -87,28 +99,31 @@ nav.navbar {
             &:hover,:focus,:focus-visible {
                 color: var(--color-nieuws);
             }
+            &.active {
+            color: var(--color-nieuws);
+        }
         }
     }
 }
 .bg-theme {
     background-color: var(--color-theme-primary);
 }
+#cookieConsentBanner {
+    h3 {
+        color: var(--color-theme-primary);
+    }
+}
 .card {
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     border: 1px solid #f3f4f6;
+    color: var(--color-text);
     h3 {
-        color: var(--color-theme-primary);
+        color: var(--color-theme-secondary);
+        font-weight: 600;
     }
-    .list-group-flush {
-        .list-group-item {
-            border-left: none;
-            border-right: none;
-            background-color: unset;
-            &:last-child {
-                border-bottom: none;
-            }
-        }
+    .list-group-item {
+        color: var(--color-text);
     }
     summary {
         padding: .25em 0;
@@ -135,7 +150,7 @@ nav.navbar {
     }
     &.bg-achtergrond {
         .card-title {
-            color: var(--color-achtergrond);
+            color: var(--color-achtergrond-txt);
         }
     }
     &.bg-nieuws {
@@ -229,7 +244,8 @@ a {
     }
 }
 /* afleveringen calender */
-.calendar-day {
+#kalender {
+    .calendar-day {
       width: 36px;
       height: 36px;
       margin: 2px;
@@ -241,14 +257,107 @@ a {
       cursor: pointer;
       background-color: #f0f0f0;
     }
-    .calendar-day[data-count="1"] { background-color: #ffd9b3; }
-    .calendar-day[data-count="2"] { background-color: #ffa64d; }
-    .calendar-day[data-count="3"] { background-color: #ff8000; }
-    .calendar-day[data-count="4"] { background-color: #e65c00; }
-    .calendar-day[data-count="5"], .calendar-day[data-count="6"] { background-color: #cc4400; color: white; }
+    .calendar-day[data-count="1"] { background-color: #b6d3bb; }
+    .calendar-day[data-count="2"],
+    .calendar-day[data-count="3"] { background-color: #f7d797; }
+    .calendar-day[data-count="4"] { background-color: #f8bb99; }
+    .calendar-day[data-count="5"],
+    .calendar-day[data-count="6"] { background-color: #f5a374; }
+    .calendar-day[data-count="7"],
+    .calendar-day[data-count="8"] { background-color: #f38a50; }
     .calendar-day:hover {
       outline: 2px solid #333;
     }
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--color-bg-dark);
+        color: var(--color-white);
+        h1 {
+            color: var(--color-nieuws);
+        }
+        h2,h3,h4,h5,h6 {
+            color: var(--color-lightblue);
+        }
+        .calendar-day {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        .calendar-day[data-count="1"] { background-color: #145a32; }
+        .calendar-day[data-count="2"],                      
+        .calendar-day[data-count="3"] { background-color: #7d6608; }
+        .calendar-day[data-count="4"] { background-color: #b03a2e; }
+        .calendar-day[data-count="5"],
+        .calendar-day[data-count="6"] { background-color: #cb4335; }
+        .calendar-day[data-count="7"], 
+        .calendar-day[data-count="8"] { background-color: #e74c3c; }
+        .modal-content {
+            background-color: var(--color-bg-card);
+            color: var(--color-white);
+        }
+        footer.bg-dark {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+    }
+}
+#afleveringen {
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--color-bg-dark);
+        color: var(--color-white);
+        h1 {
+            color: var(--color-nieuws);
+        }
+        p {
+            a {
+                color: var(--color-hyperlink-dark);
+            }
+        }
+        h2,h3,h4,h5,h6 {
+            color: var(--color-lightblue);
+        }
+        .table {
+            background-color: var(--color-bg-card) !important;
+            color: var(--color-white) !important;
+            thead {
+                tr {
+                    th {
+                        background-color: var(--color-bg-dark) !important;
+                        color: var(--color-white) !important;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        background-color: #172a45  !important;
+                        color: var(--color-white) !important;
+                    }
+                    &:nth-child(odd) {
+                        background-color: #1a2638 !important;
+                    }
+                    &:nth-child(even) {
+                        background-color: #172a45  !important;
+                    }
+                }
+            }
+        }
+        footer.bg-dark {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+    }
+    @media (max-width: 768px) {
+        table thead th:nth-child(4),
+        table tbody td:nth-child(4) {
+            display: none;
+        }
+        table thead th {
+            font-size: .9em;
+        }
+        table tbody td {
+            font-size: .8em;
+        }
+    }
+}
 /* map */
 #map {
     position: absolute;
@@ -257,23 +366,29 @@ a {
     height: calc(100dvh - 64px);
     width: 100%;
 }
+.mapboxgl-ctrl-top-right {
+    margin-top: 70px;
+    @media(min-width: 992px) {
+        margin-top: 90px;
+    }
+}
 .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
         display: none;
     }
 .badge.reportage {
-    background-color: #4685AE;
+    background-color: var(--color-reportage);
     color: #fff;
 }
 .badge.nieuws {
-    background-color: #F6CA83;
+    background-color: var(--color-nieuws);
     color: #000;
 }
 .badge.achtergrond {
-    background-color: #7B9F93;
+    background-color: var(--color-achtergrond);
     color: #fff;
 }
 .badge.interview {
-    background-color: #C46868;
+    background-color: var(--color-interview);
     color: #fff;
 }
 /* mozaiek */

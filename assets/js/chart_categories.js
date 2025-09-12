@@ -45,7 +45,7 @@ function loadCategories() {
                     response: true,
                     plugins: {
                         legend: {
-                            position: 'left',
+                            position: 'bottom',
                             display: true
                         }
                       }

@@ -3290,8 +3290,8 @@
         "tijd": "37",
         "datum": "2025-05-14",
         "categorie": "reportage",
-        "latitude": "51.649936",
-        "longitude": "5.045447"
+        "latitude": "51.649876",
+        "longitude": "5.045477"
     },
     {
         "id": "451",
@@ -3357,5 +3357,63 @@
         "tijd": "167",
         "datum": "2025-07-14",
         "categorie": "nieuws"
+    },
+    {
+        "id": "460",
+        "titel": "De financiën van de Efteling in 2024",
+        "tijd": "187",
+        "datum": "2025-07-21",
+        "categorie": "achtergrond"
+    },
+    {
+        "id": "461",
+        "titel": "Mijmeren met Themepark Explorers Lars en Bryan",
+        "tijd": "126",
+        "datum": "2025-07-28",
+        "categorie": "interview"
+    },
+    {
+        "id": "462",
+        "titel": "Robert Eggenkamp over Pretpark in Bedrijf",
+        "tijd": "91",
+        "datum": "2025-08-04",
+        "categorie": "interview"
+    },
+    {
+        "id": "463",
+        "titel": "De plantaardige Efteling",
+        "tijd": "101",
+        "datum": "2025-08-11",
+        "categorie": "achtergrond"
+    },
+    {
+        "id": "464",
+        "titel": "Plebstoiletten",
+        "tijd": "175",
+        "datum": "2025-08-18",
+        "categorie": "nieuws"
+    },
+    {
+        "id": "465",
+        "titel": "Efteling Grand Hotel",
+        "tijd": "118",
+        "datum": "2025-08-25",
+        "categorie": "reportage",
+        "latitude": "51.649726",
+        "longitude": "5.044862"
+    },
+    {
+        "id": "466",
+        "titel": "Geurkaars met waterorgelgeur",
+        "tijd": "125",
+        "datum": "2025-09-01",
+        "categorie": "nieuws"
+    },
+    {
+        "id": "467",
+        "titel": "In gesprek over Efteling Symphonica",
+        "tijd": "157",
+        "datum": "2025-09-08",
+        "categorie": "interview"
     }
 ]

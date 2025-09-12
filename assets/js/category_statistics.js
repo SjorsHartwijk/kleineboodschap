@@ -102,7 +102,7 @@ function calculateReportageStatistics() {
         <h3 class="h5 card-title">Reportages</h3>
         <p class="card-text">Aantal afleveringen: <strong>${totalReportageEpisodes}</strong></p>
         <p class="card-text">De reportages duren opgeteld bij elkaar <strong>${totalReportageHours.toFixed(0)} uur</strong>.</p>
-        <p class="card-text"><strong>${reportagePercentage.toFixed(1)}%</strong> van alle afleveringen is een reportage.</p>
+        <p class="card-text"><strong>${reportagePercentage.toFixed(1)}%</strong> van alle afleveringen zijn reportages.</p>
     `;
     })
     .catch(error => {
@@ -139,7 +139,7 @@ function calculateInterviewStatistics() {
         <h3 class="h5 card-title">Interviews</h3>
         <p class="card-text">Aantal afleveringen: <strong>${totalInterviewEpisodes}</strong></p>
         <p class="card-text">De interviews duren opgeteld bij elkaar <strong>${totalInterviewHours.toFixed(0)} uur</strong>.</p>
-        <p class="card-text"><strong>${interviewPercentage.toFixed(1)}%</strong> van alle afleveringen is een interview.</p>
+        <p class="card-text"><strong>${interviewPercentage.toFixed(1)}%</strong> van alle afleveringen zijn interviews.</p>
     `;
     })
     .catch(error => {
