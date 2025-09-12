@@ -78,6 +78,18 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link:has(i):hover, nav.navbar.
 nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
   color: var(--color-nieuws);
 }
+nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.wrappedBtn {
+  color: transparent;
+  background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59, #c471ed, #12c2e9);
+  background-size: 200% 100%; /* big so we can pan it */
+  background-clip: text;
+  -webkit-background-clip: text; /* Safari */
+  animation: gtext-pan 3s linear infinite;
+}
+nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.wrappedBtn:hover, nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.wrappedBtn :focus, nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.wrappedBtn :focus-visible {
+  color: var(--color-nieuws);
+  text-decoration: none;
+}
 
 .navbar-bottom {
   background-color: var(--color-white);
@@ -96,7 +108,27 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
 .navbar-bottom a.active {
   color: var(--color-interview);
 }
+.navbar-bottom a.wrappedBtn {
+  color: transparent;
+  background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59, #c471ed, #12c2e9);
+  background-size: 200% 100%; /* big so we can pan it */
+  background-clip: text;
+  -webkit-background-clip: text; /* Safari */
+  animation: gtext-pan 3s linear infinite;
+}
+.navbar-bottom a.wrappedBtn:hover, .navbar-bottom a.wrappedBtn :focus, .navbar-bottom a.wrappedBtn :focus-visible {
+  color: var(--color-interview);
+  text-decoration: none;
+}
 
+@keyframes gtext-pan {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
 @media (prefers-color-scheme: dark) {
   .navbar-bottom {
     background-color: var(--color-bg-dark);
@@ -230,6 +262,7 @@ a:hover, a :focus {
 /* wrapped */
 .wrapped {
   background-color: var(--color-theme-primary);
+  min-height: calc(100dvh - 56px);
 }
 .wrapped h1, .wrapped h2, .wrapped h3, .wrapped h4, .wrapped h5, .wrapped h6 {
   color: var(--color-white);

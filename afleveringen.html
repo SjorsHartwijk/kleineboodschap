@@ -44,6 +44,7 @@
                             <li class="nav-item"><a class="nav-link" href="kaart.html">Kaart</a></li>
                             <li class="nav-item"><a class="nav-link" href="kalender.html">Kalender</a></li>
                             <li class="nav-item"><a class="nav-link" href="reeks.html">Reeks</a></li>
+                            <li class="nav-item"><a class="nav-link wrappedBtn" href="wrapped.html">Wrapped</a></li>
                             <li class="nav-item"><a class="nav-link" href="index.html#about">Over</a></li>
                             <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="nofollow" target="_blank"><i class="bi bi-bluesky"></i></a></li>
                             <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow"
@@ -109,6 +110,10 @@
                         <i class="bi bi-arrows d-block"></i>
                         <span class="small">Reeks</span>
                     </a>
+                    <a href="wrapped.html" class="text-decoration-none wrappedBtn" title="Wrapped">
+                        <i class="bi bi-star d-block"></i>
+                        <span class="small">Wrapped</span>
+                    </a>
               </div>
             </nav>
         </div>
@@ -137,6 +142,21 @@
                 </div>
             </div>
         </footer>
+        <script>
+            const knoppen = document.querySelectorAll(".wrappedBtn");
+
+            const vandaag = new Date();
+            const jaar = vandaag.getFullYear();
+
+            const beginDatum = new Date(jaar, 10, 1); // 1 november
+            const eindDatum = new Date(jaar, 11, 31); // 31 december
+
+            const zichtbaar = vandaag >= beginDatum && vandaag <= eindDatum;
+
+            knoppen.forEach(knop => {
+            knop.style.display = zichtbaar ? "block" : "none";
+            });
+        </script>
         <script>
             // Definieer de searchEpisodes-functie
             function searchEpisodes() {
