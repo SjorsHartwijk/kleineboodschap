@@ -25,6 +25,10 @@ body {
     font-style: normal;
     color: var(--color-text);
 }
+::selection {
+    background-color: var(--color-hyperlink-dark);
+    color: var(--color-black);
+}
 h1,h2,h3,h4,h5,h6 {
     color: var(--color-theme-secondary);
     font-family: "Alegreya", serif;
