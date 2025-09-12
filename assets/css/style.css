@@ -276,6 +276,14 @@ a:hover, a :focus {
 .wrapped #stats {
   color: var(--color-white);
 }
+@media (max-width: 768px) {
+  .wrapped table thead tr th {
+    font-size: 0.8em;
+  }
+  .wrapped table tbody tr td {
+    font-size: 0.7em;
+  }
+}
 
 /* afleveringen calender */
 #kalender .calendar-day {

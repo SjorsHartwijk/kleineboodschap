@@ -271,6 +271,23 @@ a {
     #stats {
         color: var(--color-white);
     }
+    table {
+        @media (max-width: 768px) {
+            thead {
+                tr {
+                   th {
+                        font-size: .8em;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        font-size: .7em;}
+                }
+            }
+        }
+    }
 }
 /* afleveringen calender */
 #kalender {
