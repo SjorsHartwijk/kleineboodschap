@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,137 +25,133 @@
 </head>
 
 <body class="d-flex flex-column h-100" id="afleveringen">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/"><img src="assets/images/logo2.png" alt="Logo Kleine Boodschap Data"> <span
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img src="assets/images/logo2.png" alt="Logo Kleine Boodschap Data"><span
                             class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
                             class="d-inline-block d-md-none">KB Data</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation"><span
                             class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="afleveringen.html">Afleveringen</a></li>
-                            <li class="nav-item"><a class="nav-link" href="kaart.html">Kaart</a></li>
-                            <li class="nav-item"><a class="nav-link" href="kalender.html">Kalender</a></li>
-                            <li class="nav-item"><a class="nav-link" href="reeks.html">Reeks</a></li>
-                            <li class="nav-item"><a class="nav-link wrappedBtn" href="wrapped.html">Wrapped</a></li>
-                            <li class="nav-item"><a class="nav-link" href="index.html#about">Over</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="nofollow" target="_blank"><i class="bi bi-bluesky"></i></a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow"
-                                target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right"></i></a></li>
-                        </ul>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="afleveringen.html">Afleveringen</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kaart.html">Kaart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kalender.html">Kalender</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reeks.html">Reeks</a></li>
+                        <li class="nav-item"><a class="nav-link wrappedBtn" href="wrapped.html">Wrapped</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">Over</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="nofollow" target="_blank"><i class="bi bi-bluesky"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow"
+                            target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right"></i></a></li>
+                    </ul>
                 </div>
-            </nav>
-            <section class="afleveringen">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="mt-2 mt-lg-5 mb-3 mb-lg-5">
-                                <h1>Afleveringen</h1>
-                                <p>Op deze pagina staan alle geïndexeerde afleveringen van Kleine Booschap in een tabel, gebruik de
-                                    zoekfunctie om de titel of onderwerp van een aflevering op te zoeken.</p>
-                                <p>Bekijk ook de afleveringen op basis van <a href="kalender.html">kalenderweergave</a>.</p>
-                                <div class="input-group">
-                                    <input type="text" class="form-control form-control-lg" id="searchInput"
-                                        onkeyup="searchEpisodes()" placeholder="Zoek aflevering(en)">
-                                    <span class="input-group-text"><i class="bi bi-search"></i></span>
-                                </div>
+            </div>
+        </nav>
+        <section class="afleveringen">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mt-2 mt-lg-5 mb-3 mb-lg-5">
+                            <h1>Afleveringen</h1>
+                            <p>Op deze pagina staan alle geïndexeerde afleveringen van Kleine Booschap in een tabel, gebruik de
+                                zoekfunctie om de titel of onderwerp van een aflevering op te zoeken.</p>
+                            <p>Bekijk ook de afleveringen op basis van <a href="kalender.html">kalenderweergave</a>.</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-lg" id="searchInput"
+                                    onkeyup="searchEpisodes()" placeholder="Zoek aflevering(en)">
+                                <span class="input-group-text"><i class="bi bi-search"></i></span>
                             </div>
-                            <table id="episodesTable" class="table table-responsive rounded-3">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Titel</th>
-                                        <th>Categorie</th>
-                                        <th>Tijd</th>
-                                        <th>Datum</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="episodesBody">
-                                </tbody>
-                            </table>
                         </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <!-- floating mobile nav -->
-        <div class="container-fluid d-md-none">
-            <nav class="navbar navbar-bottom shadow-lg fixed-bottom">
-                <div class="container d-flex justify-content-around text-center">
-                    <a href="index.html" class="text-decoration-none">
-                        <i class="bi bi-bar-chart d-block"></i>
-                        <span class="small">Statistieken</span>
-                    </a>
-                    <a href="afleveringen.html" class="text-decoration-none active" title="Afleveringen">
-                        <i class="bi bi-list-ul d-block"></i>
-                        <span class="small">Afleveringen</span>
-                    </a>
-                    <a href="kaart.html" class="text-decoration-none">
-                        <i class="bi bi-geo-alt d-block"></i>
-                        <span class="small">Kaart</span>
-                    </a>
-                    <a href="kalender.html" class="text-decoration-none">
-                        <i class="bi bi-calendar3 d-block"></i>
-                        <span class="small">Kalender</span>
-                    </a>
-                    <a href="reeks.html" class="text-decoration-none">
-                        <i class="bi bi-arrows d-block"></i>
-                        <span class="small">Reeks</span>
-                    </a>
-                    <a href="wrapped.html" class="text-decoration-none wrappedBtn" title="Wrapped">
-                        <i class="bi bi-star d-block"></i>
-                        <span class="small">Wrapped</span>
-                    </a>
-              </div>
-            </nav>
-        </div>
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto">
-                        <div class="small m-0 text-white">Copyright &copy; Sjors Hartwijk
-                            <script>document.write(new Date().getFullYear())</script>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="/">Home</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="index.html#about">Over</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://bsky.app/profile/kbdata.nl"
-                            target="_blank">Bluesky</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://sjorshartwijk.nl/" target="_blank">Sjors
-                            Hartwijk</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://kleineboodschap.com" target="_blank">Kleine
-                            Boodschap</a>
+                        <table id="episodesTable" class="table table-responsive rounded-3">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Titel</th>
+                                    <th>Categorie</th>
+                                    <th>Tijd</th>
+                                    <th>Datum</th>
+                                </tr>
+                            </thead>
+                            <tbody id="episodesBody">
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </footer>
-        <script>
-            const knoppen = document.querySelectorAll(".wrappedBtn");
-
-            const vandaag = new Date();
-            const jaar = vandaag.getFullYear();
-
-            const beginDatum = new Date(jaar, 10, 1); // 1 november
-            const eindDatum = new Date(jaar, 11, 31); // 31 december
-
-            const zichtbaar = vandaag >= beginDatum && vandaag <= eindDatum;
-
-            knoppen.forEach(knop => {
-            knop.style.display = zichtbaar ? "block" : "none";
-            });
-        </script>
+        </section>
+    </main>
+    <!-- floating mobile nav -->
+    <div class="container-fluid d-md-none">
+        <nav class="navbar navbar-bottom shadow-lg fixed-bottom">
+            <div class="container d-flex justify-content-around text-center">
+                <a href="index.html" class="text-decoration-none">
+                    <i class="bi bi-bar-chart d-block"></i>
+                    <span class="small">Statistieken</span>
+                </a>
+                <a href="afleveringen.html" class="text-decoration-none active" title="Afleveringen">
+                    <i class="bi bi-list-ul d-block"></i>
+                    <span class="small">Afleveringen</span>
+                </a>
+                <a href="kaart.html" class="text-decoration-none">
+                    <i class="bi bi-geo-alt d-block"></i>
+                    <span class="small">Kaart</span>
+                </a>
+                <a href="kalender.html" class="text-decoration-none">
+                    <i class="bi bi-calendar3 d-block"></i>
+                    <span class="small">Kalender</span>
+                </a>
+                <a href="reeks.html" class="text-decoration-none">
+                    <i class="bi bi-arrows d-block"></i>
+                    <span class="small">Reeks</span>
+                </a>
+                <a href="wrapped.html" class="text-decoration-none wrappedBtn" title="Wrapped">
+                    <i class="bi bi-star d-block"></i>
+                    <span class="small">Wrapped</span>
+                </a>
+          </div>
+        </nav>
+    </div>
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy; Sjors Hartwijk
+                        <script>document.write(new Date().getFullYear())</script>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <a class="link-light small" href="/">Home</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="index.html#about">Over</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="https://bsky.app/profile/kbdata.nl"
+                        target="_blank">Bluesky</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="https://sjorshartwijk.nl/" target="_blank">Sjors
+                        Hartwijk</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="https://kleineboodschap.com" target="_blank">Kleine
+                        Boodschap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const knoppen = document.querySelectorAll(".wrappedBtn");
+        const vandaag = new Date();
+        const jaar = vandaag.getFullYear();
+        const beginDatum = new Date(jaar, 10, 1); // 1 november
+        const eindDatum = new Date(jaar, 11, 31); // 31 december
+        const zichtbaar = vandaag >= beginDatum && vandaag <= eindDatum;
+        knoppen.forEach(knop => {
+        knop.style.display = zichtbaar ? "block" : "none";
+        });
+    </script>
         <script>
             // Definieer de searchEpisodes-functie
             function searchEpisodes() {
@@ -246,8 +241,7 @@
 
             window.onload(getEpisodes());
         </script>
-        <!-- bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
