@@ -16,14 +16,15 @@
     --color-lightblue: #64D6EB;
     --color-hyperlink-dark:#64EB91;
 }
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Geist:wght@100..900&display=swap');
 body {
     scroll-behavior: smooth;
     background-color: #f9fafb;
-    font-family: 'Inter', sans-serif;
+    font-family: "Geist", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     color: var(--color-text);
+    text-wrap: balance;
 }
 ::selection {
     background-color: var(--color-hyperlink-dark);
@@ -41,7 +42,6 @@ h1,h2,h3,h4,h5,h6 {
     font-style: normal;
 }
 nav.navbar {
-    border-bottom: 4px solid #123b56;
     &.navbar-dark {
         .navbar-brand {
             font-family: "Alegreya", serif;
@@ -54,20 +54,24 @@ nav.navbar {
         }
         .navbar-nav {
             .nav-item {
-                padding: 0 .75em 0 0;
+                font-size: 14px;
                 .nav-link {
+                    padding: .55em 1.2em;
+                    border-radius: calc(1px * infinity);
                     color: var(--color-white);
                     &:hover,:focus {
-                        color: var(--color-nieuws);
+                        background-color: #113751;
+                        color: var(--color-white);
                     }
                     &:has(i) {
                         &:hover,:focus {
-                            color: var(--color-nieuws);
+                            color: var(--color-white);
                             text-decoration: none;
                         }
                     }
                     &.active {
-                        color: var(--color-nieuws);
+                        color: var(--color-white);
+                        background-color: #113751;
                     }
                     &.wrappedBtn {
                         color: transparent;

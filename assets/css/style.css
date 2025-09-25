@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Geist:wght@100..900&display=swap");
 :root {
   --color-theme-primary: #154666;
   --color-theme-secondary: #7a2b2b;
@@ -21,10 +21,11 @@
 body {
   scroll-behavior: smooth;
   background-color: #f9fafb;
-  font-family: "Inter", sans-serif;
+  font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   color: var(--color-text);
+  text-wrap: balance;
 }
 
 ::-moz-selection {
@@ -50,9 +51,6 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
 }
 
-nav.navbar {
-  border-bottom: 4px solid #123b56;
-}
 nav.navbar.navbar-dark .navbar-brand {
   font-family: "Alegreya", serif;
   color: var(--color-white);
@@ -63,20 +61,24 @@ nav.navbar.navbar-dark .navbar-brand img {
   filter: invert(100%);
 }
 nav.navbar.navbar-dark .navbar-nav .nav-item {
-  padding: 0 0.75em 0 0;
+  font-size: 14px;
 }
 nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+  padding: 0.55em 1.2em;
+  border-radius: calc(infinity * 1px);
   color: var(--color-white);
 }
 nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover, nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link :focus {
-  color: var(--color-nieuws);
+  background-color: #113751;
+  color: var(--color-white);
 }
 nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link:has(i):hover, nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link:has(i) :focus {
-  color: var(--color-nieuws);
+  color: var(--color-white);
   text-decoration: none;
 }
 nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
-  color: var(--color-nieuws);
+  color: var(--color-white);
+  background-color: #113751;
 }
 nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.wrappedBtn {
   color: transparent;

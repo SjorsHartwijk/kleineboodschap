@@ -31,7 +31,12 @@
 </url>
 <url>
   <loc>https://kbdata.nl/wrapped.html</loc>
-  <lastmod>2025-07-11T09:28:01+00:00</lastmod>
+  <lastmod>2025-09-11T09:28:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kbdata.nl/ai-podcast.html</loc>
+  <lastmod>2025-09-22T09:28:01+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 </urlset>
