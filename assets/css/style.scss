@@ -53,6 +53,10 @@ nav.navbar {
             }
         }
         .navbar-nav {
+            gap: .25em;
+            @media(min-width: 992px) {
+                gap: .5em;
+            }
             .nav-item {
                 font-size: 14px;
                 .nav-link {
@@ -87,6 +91,17 @@ nav.navbar {
                     }
                 }
             }
+        }
+    }
+    .navbar-toggler {
+        border: 0;
+        &:focus {
+            border: 0;
+            box-shadow: none;
+        }
+        &:focus-visible {
+            border: 0;
+            box-shadow: none;
         }
     }
 }

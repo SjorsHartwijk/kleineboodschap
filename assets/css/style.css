@@ -60,6 +60,14 @@ nav.navbar.navbar-dark .navbar-brand img {
   height: 20px;
   filter: invert(100%);
 }
+nav.navbar.navbar-dark .navbar-nav {
+  gap: 0.25em;
+}
+@media (min-width: 992px) {
+  nav.navbar.navbar-dark .navbar-nav {
+    gap: 0.5em;
+  }
+}
 nav.navbar.navbar-dark .navbar-nav .nav-item {
   font-size: 14px;
 }
@@ -91,6 +99,17 @@ nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.wrappedBtn {
 nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.wrappedBtn:hover, nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.wrappedBtn :focus, nav.navbar.navbar-dark .navbar-nav .nav-item .nav-link.wrappedBtn :focus-visible {
   color: var(--color-nieuws);
   text-decoration: none;
+}
+nav.navbar .navbar-toggler {
+  border: 0;
+}
+nav.navbar .navbar-toggler:focus {
+  border: 0;
+  box-shadow: none;
+}
+nav.navbar .navbar-toggler:focus-visible {
+  border: 0;
+  box-shadow: none;
 }
 
 .navbar-bottom {
