@@ -119,6 +119,10 @@ nav.navbar {
         }
         &.active {
             color: var(--color-interview);
+            i {
+                border-radius: calc(1px * infinity);
+                background-color: rgba(#AC1A2E,.15);
+            }
         }
         &.wrappedBtn {
             color: transparent;
