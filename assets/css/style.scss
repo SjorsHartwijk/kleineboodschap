@@ -315,6 +315,28 @@ a {
         }
     }
 }
+#about {
+    .accordion {
+        background-color: #f9fafb;
+        .accordion-item {
+            background-color: #f9fafb;
+            .accordion-header {
+                font-family: 'Geist', sans-serif;
+                .accordion-button {
+                    padding: 1rem 0;
+                    background-color: #f9fafb;
+                    &:not(.collapsed) {
+                        font-weight: 500;
+                        color: var(--color-hyperlink);
+                    }
+                }
+            }
+            .accordion-body {
+                padding: 1rem 0;
+            }
+        }
+    }
+}
 /* afleveringen calender */
 #kalender {
     .calendar-day {

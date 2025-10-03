@@ -313,6 +313,27 @@ a:hover, a :focus {
   }
 }
 
+#about .accordion {
+  background-color: #f9fafb;
+}
+#about .accordion .accordion-item {
+  background-color: #f9fafb;
+}
+#about .accordion .accordion-item .accordion-header {
+  font-family: "Geist", sans-serif;
+}
+#about .accordion .accordion-item .accordion-header .accordion-button {
+  padding: 1rem 0;
+  background-color: #f9fafb;
+}
+#about .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+  font-weight: 500;
+  color: var(--color-hyperlink);
+}
+#about .accordion .accordion-item .accordion-body {
+  padding: 1rem 0;
+}
+
 /* afleveringen calender */
 #kalender .calendar-day {
   width: 36px;
