@@ -52,6 +52,23 @@
         <div class="row">
             <div class="col-12 pt-4 pt-lg-5">
                 <h1 class="display-2">Kleine Boodschap Wrapped <span id="selectedYear"></span></h1>
+                <p class="lead">Ontdek unieke statistieken en jaaroverzichten van de Kleine Boodschap podcast in Wrapped.</p>
+                <!-- Alert: Wrapped blijft beschikbaar tot 1 maart -->
+                <div id="wrappedAlert" class="alert alert-info d-none" role="alert">
+                    <i class="bi bi-info-circle-fill me-2"></i>
+                    Wrapped blijft beschikbaar tot 1 maart
+                </div>
+                <script>
+                    (function() {
+                        const now = new Date();
+                        const jaar = now.getFullYear();
+                        const start = new Date(jaar, 1, 10); // 10 februari (maand 1 = februari)
+                        const end = new Date(jaar, 2, 1);    // 1 maart (maand 2 = maart)
+                        if (now >= start && now < end) {
+                            document.getElementById("wrappedAlert").classList.remove("d-none");
+                        }
+                    })();
+                </script>
             </div>
         </div>
         <div class="row">
@@ -145,7 +162,7 @@
         </nav>
     </div>
     <!-- Footer-->
-    <footer class="bg-dark py-4 mt-auto">
+    <footer class="d-none d-md-block bg-dark py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto">
@@ -177,19 +194,14 @@
         const vandaag = new Date();
         const jaar = vandaag.getFullYear();
 
-        // Maak begin- en einddata voor dit jaar
-        const beginOkt = new Date(jaar, 9, 1);   // 1 oktober dit jaar
-        const eindDec  = new Date(jaar, 11, 31); // 31 december dit jaar
-        const beginJan = new Date(jaar, 0, 1);   // 1 januari dit jaar
-        const eindMrt  = new Date(jaar, 0, 31);  // 31 januari dit jaar
+        // Wrapped is zichtbaar van 1 januari t/m 1 maart (exclusief 1 maart)
+        const beginJan = new Date(jaar, 0, 1);   // 1 januari
+        const eindMrt  = new Date(jaar, 2, 1);   // 1 maart
 
-        // Zichtbaar als (jan–mrt dit jaar) OF (okt–dec dit jaar)
-        const zichtbaar = 
-          (vandaag >= beginJan && vandaag <= eindMrt) ||
-          (vandaag >= beginOkt && vandaag <= eindDec);
+        const zichtbaar = vandaag >= beginJan && vandaag < eindMrt;
 
         if (!zichtbaar) {
-          container.innerHTML = "<h1 class=\"display-1 pt-5\">Kleine Boodschap Wrapped</h1><p class=\"fw-bold text-white\">Deze pagina is alleen zichtbaar van 1 november tot en met 31 januari.</p>";
+          container.innerHTML = "<h1 class=\"display-1 pt-5\">Kleine Boodschap Wrapped</h1><p class=\"fw-bold text-white\">Deze pagina is alleen zichtbaar van 1 januari tot 1 maart.</p>";
         }
 </script>
     <!-- bootstrap -->

@@ -209,17 +209,14 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
             const knoppen = document.querySelectorAll(".wrappedBtn");
-
             const vandaag = new Date();
             const jaar = vandaag.getFullYear();
-
-            const beginDatum = new Date(jaar, 10, 1); // 1 november
-            const eindDatum = new Date(jaar, 11, 31); // 31 december
-
+            // Toon van 1 januari t/m 1 maart (elk jaar)
+            let beginDatum = new Date(jaar, 0, 1); // 1 januari dit jaar
+            let eindDatum = new Date(jaar, 2, 1);  // 1 maart dit jaar
             const zichtbaar = vandaag >= beginDatum && vandaag <= eindDatum;
-
             knoppen.forEach(knop => {
-            knop.style.display = zichtbaar ? "block" : "none";
+              knop.style.display = zichtbaar ? "block" : "none";
             });
         </script>
         <script>

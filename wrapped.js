@@ -1,10 +1,10 @@
 function setDefaultYear() {
-    const allYears = episodesData.map(ep => ep.datum.split("-")[0]); // Haal alle jaartallen op
-    const uniqueYears = [...new Set(allYears)].map(Number); // Unieke jaren als nummers
-    const latestYear = Math.max(...uniqueYears); // Hoogste jaar bepalen
-
-    document.getElementById("yearSelect").value = latestYear; // Zet als geselecteerd
-    updateWrapped(); // Update de pagina direct
+    const defaultYear = 2025;
+    const yearSelect = document.getElementById("yearSelect");
+    if (yearSelect) {
+        yearSelect.value = defaultYear;
+        updateWrapped();
+    }
 }
 
 document.addEventListener("DOMContentLoaded", setDefaultYear);

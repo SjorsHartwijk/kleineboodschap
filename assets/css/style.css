@@ -292,6 +292,9 @@ a:hover, a :focus {
 .wrapped h1, .wrapped h2, .wrapped h3, .wrapped h4, .wrapped h5, .wrapped h6 {
   color: var(--color-white);
 }
+.wrapped .lead {
+  color: var(--color-white);
+}
 .wrapped .card {
   color: var(--bs-card-color);
 }

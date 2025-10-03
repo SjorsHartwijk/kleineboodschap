@@ -3436,5 +3436,14 @@
         "tijd": "130",
         "datum": "2025-09-29",
         "categorie": "nieuws"
+    },
+    {
+        "id": "471",
+        "titel": "Groot onderhoud bij Baron 1898",
+        "tijd": "57",
+        "datum": "2025-10-3",
+        "categorie": "reportage",
+        "latitude": "51.6482162",
+        "longitude": "5.0505681"
     }
 ]
