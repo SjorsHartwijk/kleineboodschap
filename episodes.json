@@ -3445,5 +3445,12 @@
         "categorie": "reportage",
         "latitude": "51.6482162",
         "longitude": "5.0505681"
+    },
+    {
+        "id": "472",
+        "titel": "De Glazen Bol 2025",
+        "tijd": "73",
+        "datum": "2025-10-06",
+        "categorie": "achtergrond"
     }
 ]
