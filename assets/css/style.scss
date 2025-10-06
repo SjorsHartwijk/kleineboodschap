@@ -268,6 +268,12 @@ a {
         text-decoration: none;
     }
 }
+.mapboxgl-map {
+    font-family: "Geist", sans-serif !important;
+    .alert {
+        font-family: "Geist", sans-serif !important;
+    }
+}
 .btn-primary {
     background-color: var(--color-theme-primary);
     border-color: var(--color-theme-primary);
@@ -459,6 +465,10 @@ a {
     bottom: 72px;
     height: calc(100dvh - 64px);
     width: 100%;
+    &.mapbox-gl-map {
+        font-size: 13px;
+        font-family: 'Geist', sans-serif !important;
+    }
 }
 .mapboxgl-ctrl-top-right {
     margin-top: 70px;

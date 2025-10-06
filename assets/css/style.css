@@ -274,6 +274,13 @@ a:hover, a :focus {
   text-decoration: none;
 }
 
+.mapboxgl-map {
+  font-family: "Geist", sans-serif !important;
+}
+.mapboxgl-map .alert {
+  font-family: "Geist", sans-serif !important;
+}
+
 .btn-primary {
   background-color: var(--color-theme-primary);
   border-color: var(--color-theme-primary);
@@ -468,6 +475,10 @@ a:hover, a :focus {
   bottom: 72px;
   height: calc(100dvh - 64px);
   width: 100%;
+}
+#map.mapbox-gl-map {
+  font-size: 13px;
+  font-family: "Geist", sans-serif !important;
 }
 
 .mapboxgl-ctrl-top-right {

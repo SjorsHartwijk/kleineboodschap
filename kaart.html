@@ -29,7 +29,7 @@
 
 <body class="d-flex flex-column h-100">
             <!-- Navigation-->
-            <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme" style="z-index: 1030;">
+            <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme" style="z-index: 1053;">
                 <div class="container-xxl">
                     <a class="navbar-brand" href="/"><img src="assets/images/logo2.png"/ alt="Logo Kleine Boodschap Data"> <span
                             class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
@@ -56,6 +56,11 @@
                 </div>
             </nav>
             <div id="map">
+                <!-- User Location Alert -->
+                <div class="alert alert-info alert-dismissible fade show" role="alert" style="position: fixed; top: 56px; margin: .8em; z-index: 1052;">
+                  <strong>Ben je in de Efteling?</strong> Met jouw toestemming centreert de kaart automatisch op je locatie en markeert deze op de kaart.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
                 <!-- Floating Help Button and Legend Card -->
                 <div id="help-btn" style="position: fixed; bottom: 90px; left: 20px; z-index: 1050;">
                     <button type="button" class="btn bg-white rounded-circle shadow" style="width:48px; height:48px; font-size:1.5rem;">
@@ -68,8 +73,6 @@
                         <h6 class="card-title mb-2"><i class="bi bi-question-circle"></i> Legenda</h6>
                         <p class="card-text mb-2">
                             Klik op een marker om de bijbehorende aflevering te bekijken. Gebruik het scrollwiel van je muis of twee vingers om de kaart te verplaatsen en in- of uit te zoomen.</p>
-                            <p class="card-text">
-                            Ben je nu in de Efteling? Met jouw toestemming centreert de kaart automatisch op je locatie en markeert deze op de kaart.</p>
                             <span class="badge nieuws">Nieuws</span>
                             <span class="badge achtergrond">Achtergrond</span>
                             <span class="badge reportage">Reportage</span>
