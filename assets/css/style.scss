@@ -24,7 +24,7 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     color: var(--color-text);
-    text-wrap: balance;
+    text-wrap: pretty;
 }
 ::selection {
     background-color: var(--color-hyperlink-dark);
@@ -35,6 +35,7 @@ h1,h2,h3,h4,h5,h6 {
     font-family: "Alegreya", serif;
     font-style: normal;
     font-weight: 600;
+    text-wrap: balance;
 }
 .h1,.h2,.h3,.h4,.h5,.h6 {
     color: var(--color-theme-secondary);
