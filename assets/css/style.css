@@ -115,6 +115,7 @@ nav.navbar .navbar-toggler:focus-visible {
 
 .navbar-bottom {
   border-bottom: 0px !important;
+  background-color: var(--color-white);
 }
 .navbar-bottom a {
   color: var(--color-text);
