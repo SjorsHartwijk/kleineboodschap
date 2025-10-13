@@ -114,9 +114,7 @@ nav.navbar .navbar-toggler:focus-visible {
 }
 
 .navbar-bottom {
-  background-color: var(--color-white);
   border-bottom: 0px !important;
-  font-family: "Inter", sans-serif;
 }
 .navbar-bottom a {
   color: var(--color-text);
