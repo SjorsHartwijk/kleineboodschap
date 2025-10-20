@@ -3459,5 +3459,12 @@
         "tijd": "100",
         "datum": "2025-10-13",
         "categorie": "nieuws"
+    },
+    {
+        "id": "474",
+        "titel": "Reacties van luisteraars",
+        "tijd": "98",
+        "datum": "2025-10-20",
+        "categorie": "achtergrond"
     }
 ]
