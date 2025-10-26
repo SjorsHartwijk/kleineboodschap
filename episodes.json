@@ -3466,5 +3466,14 @@
         "tijd": "98",
         "datum": "2025-10-20",
         "categorie": "achtergrond"
+    },
+    {
+        "id": "475",
+        "titel": "25 Jaar Villa Pardoes",
+        "tijd": "37",
+        "datum": "2025-10-26",
+        "categorie": "interview",
+        "latitude": "51.6460630",
+        "longitude": "5.0532308"
     }
 ]
