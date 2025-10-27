@@ -3475,5 +3475,12 @@
         "categorie": "interview",
         "latitude": "51.6460630",
         "longitude": "5.0532308"
+    },
+    {
+        "id": "476",
+        "titel": "Guirlandedistributiecentrum",
+        "tijd": "138",
+        "datum": "2025-10-27",
+        "categorie": "nieuws"
     }
 ]
