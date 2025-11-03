@@ -3482,5 +3482,14 @@
         "tijd": "138",
         "datum": "2025-10-27",
         "categorie": "nieuws"
+    },
+    {
+        "id": "477",
+        "titel": "In gesprek met Wessel Wit en Steven van Gils over Efteling-primeurs",
+        "tijd": "71",
+        "datum": "2025-11-03",
+        "categorie": "interview",
+        "latitude": "51.685696",
+        "longitude": "5.126605"
     }
 ]
