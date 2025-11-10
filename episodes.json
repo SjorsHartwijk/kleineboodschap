@@ -3491,5 +3491,12 @@
         "categorie": "interview",
         "latitude": "51.685696",
         "longitude": "5.126605"
+    },
+    {
+        "id": "478",
+        "titel": "Daar lekt het wel op",
+        "tijd": "122",
+        "datum": "2025-11-10",
+        "categorie": "nieuws"
     }
 ]
