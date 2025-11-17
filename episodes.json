@@ -3498,5 +3498,14 @@
         "tijd": "122",
         "datum": "2025-11-10",
         "categorie": "nieuws"
+    },
+    {
+        "id": "479",
+        "titel": "In gesprek met Sander de Bruijn en Ronald Donkers over het Efteling Grand Hotel",
+        "tijd": "80",
+        "datum": "2025-11-17",
+        "categorie": "interview",
+        "latitude": "51.685697",
+        "longitude": "5.126606"
     }
 ]
