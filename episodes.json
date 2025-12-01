@@ -3514,5 +3514,14 @@
         "tijd": "148",
         "datum": "2025-11-24",
         "categorie": "nieuws"
+    },
+    {
+        "id": "481",
+        "titel": "De opbouw van de Winter Efteling",
+        "tijd": "110",
+        "datum": "2025-12-01",
+        "categorie": "reportage",
+        "latitude": "51.6515800",
+        "longitude": "5.0509523"
     }
 ]
