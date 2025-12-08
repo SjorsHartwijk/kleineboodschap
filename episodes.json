@@ -3523,5 +3523,12 @@
         "categorie": "reportage",
         "latitude": "51.6515800",
         "longitude": "5.0509523"
+    },
+    {
+        "id": "482",
+        "titel": "Onderuit schoefelen",
+        "tijd": "182",
+        "datum": "2025-12-08",
+        "categorie": "nieuws"
     }
 ]
