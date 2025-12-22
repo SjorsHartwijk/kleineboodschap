@@ -1,3 +1,30 @@
+const totalLabelPlugin = {
+  id: 'totalLabel',
+  afterDatasetsDraw(chart) {
+    const { ctx, data } = chart;
+
+    ctx.save();
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+
+    data.labels.forEach((label, i) => {
+      let total = 0;
+      data.datasets.forEach(ds => {
+        total += ds.data[i];
+      });
+
+      const meta = chart.getDatasetMeta(data.datasets.length - 1);
+      const bar = meta.data[i];
+
+      ctx.fillText(total, bar.x, bar.y - 4);
+    });
+
+    ctx.restore();
+  }
+};
+
+
 // Functie om de afleveringen per jaar te tellen en weer te geven in een Chart.js gestapelde staafdiagram
 function loadEpisodesPerYear() {
     // Fetch het JSON-bestand
@@ -53,6 +80,7 @@ function loadEpisodesPerYear() {
                 labels: labels,
                 datasets: datasets
             },
+            plugins: [totalLabelPlugin],
             options: {
                 responsive: true,
                 scales: {
