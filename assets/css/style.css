@@ -18,6 +18,21 @@
   --color-hyperlink-dark:#64EB91;
 }
 
+/* seamless transitions */
+@view-transition {
+  navigation: auto;
+}
+header.show {
+  transform: translateY(0);
+  transition: transform 0.5s;
+}
+
+header.out {
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+}
+
+/* styling */
 body {
   scroll-behavior: smooth;
   background-color: #f9fafb;

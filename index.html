@@ -458,6 +458,35 @@
         </div>
     </div>
 </div>
+ <script>
+    const header = document.getElementById('top');
+
+    // Laat header verschijnen bij paginalaad
+    window.addEventListener('DOMContentLoaded', () => {
+      requestAnimationFrame(() => header.classList.add('show'));
+    });
+
+    // Link clicks intercepten
+    document.querySelectorAll('a.nav-link').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (href.endsWith('home.html')) return; // niets doen op huidige pagina
+
+        e.preventDefault();
+
+        if (document.startViewTransition) {
+          document.startViewTransition(() => {
+            header.classList.remove('show');
+            header.classList.add('hide');
+            setTimeout(() => window.location.href = href, 500);
+          });
+        } else {
+          header.classList.remove('show');
+          setTimeout(() => window.location.href = href, 500);
+        }
+      });
+    });
+  </script>
     <script>
         const knoppen = document.querySelectorAll(".wrappedBtn");
         const vandaag = new Date();

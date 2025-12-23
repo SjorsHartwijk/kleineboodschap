@@ -17,6 +17,19 @@
     --color-hyperlink-dark:#64EB91;
 }
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Geist:wght@100..900&display=swap');
+/* seamless transitions */
+@view-transition {
+  navigation: auto;
+}
+header.show {
+    transform: translateY(0);
+    transition: transform .5s;
+}
+header.out {
+    transform: translateY(-100%);
+    transition: transform .5s;
+}
+/* styling */
 body {
     scroll-behavior: smooth;
     background-color: #f9fafb;
