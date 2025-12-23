@@ -21,6 +21,12 @@
 @view-transition {
   navigation: auto;
 }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
 header.show {
     transform: translateY(0);
     transition: transform .5s;
