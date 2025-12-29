@@ -4028,5 +4028,13 @@
         "tijd": "124",
         "datum": "2025-12-22",
         "categorie": "nieuws"
+    },
+    {
+        "id": "485",
+        "taal": "nl",
+        "titel": "De Grote Feestdagenspecial",
+        "tijd": "107",
+        "datum": "2025-12-29",
+        "categorie": "achtergrond"
     }
 ]
