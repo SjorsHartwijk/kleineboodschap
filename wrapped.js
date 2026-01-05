@@ -1,5 +1,6 @@
 function setDefaultYear() {
-    const defaultYear = 2025;
+    const currentYear = new Date().getFullYear();
+    const defaultYear = currentYear - 1;
     const yearSelect = document.getElementById("yearSelect");
     if (yearSelect) {
         yearSelect.value = defaultYear;
@@ -21,7 +22,8 @@ let episodesData = [];
 let barChart;
 
 function populateYearSelect() {
-    const years = [...new Set(episodesData.map(ep => ep.datum.substring(0, 4)))].sort().reverse();
+    const currentYear = new Date().getFullYear();
+    const years = [...new Set(episodesData.map(ep => ep.datum.substring(0, 4)))].filter(year => parseInt(year) < currentYear).sort().reverse();
     const yearSelect = document.getElementById("yearSelect");
     yearSelect.innerHTML = years.map(year => `<option value="${year}">${year}</option>`).join("");
     yearSelect.addEventListener("change", updateWrapped);
