@@ -4043,6 +4043,17 @@
         "titel": "Is de Efteling duur?",
         "tijd": "168",
         "datum": "2026-01-05",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "latitude": ""
+    },
+    {
+        "id": "487",
+        "taal": "nl",
+        "titel": "De laatste Raveleijn show",
+        "tijd": "33",
+        "datum": "2026-01-06",
+        "categorie": "reportage",
+        "latitude": "51.6528997",
+        "longitude": "5.0462262"
     }
 ]
