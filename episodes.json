@@ -4055,5 +4055,13 @@
         "categorie": "reportage",
         "latitude": "51.6528997",
         "longitude": "5.0462262"
+    },
+    {
+        "id": "488",
+        "taal": "nl",
+        "titel": "Gevleugelde spreuk",
+        "tijd": "154",
+        "datum": "2026-01-12",
+        "categorie": "nieuws"
     }
 ]
