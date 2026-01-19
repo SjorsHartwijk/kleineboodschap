@@ -4063,5 +4063,13 @@
         "tijd": "154",
         "datum": "2026-01-12",
         "categorie": "nieuws"
+    },
+    {
+        "id": "489",
+        "taal": "nl",
+        "titel": "In gesprek met Sven Olree",
+        "tijd": "129",
+        "datum": "2026-01-19",
+        "categorie": "interview"
     }
 ]
