@@ -4127,5 +4127,15 @@
         "tijd": "160",
         "datum": "2026-03-09",
         "categorie": "achtergrond"
+    },
+    {
+        "id": "497",
+        "taal": "nl",
+        "titel": "Afscheid van De Chinese Nachtegaal",
+        "tijd": "50",
+        "datum": "2026-03-16",
+        "categorie": "reportage",
+        "latitude": "51.6516008",
+        "longitude": "5.0474346"
     }
 ]
