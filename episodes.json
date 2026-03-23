@@ -4137,5 +4137,13 @@
         "categorie": "reportage",
         "latitude": "51.6516008",
         "longitude": "5.0474346"
+    },
+    {
+        "id": "498",
+        "taal": "nl",
+        "titel": "Sedumdakcompensatie",
+        "tijd": "141",
+        "datum": "2026-03-23",
+        "categorie": "nieuws"
     }
 ]
