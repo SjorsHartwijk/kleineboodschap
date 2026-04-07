@@ -4155,5 +4155,13 @@
         "categorie": "achtergrond",
         "latitude": "51.650578",
         "longitude": "5.047376"
+    },
+    {
+        "id": "500",
+        "taal": "nl",
+        "titel": "Werken in de Efteling",
+        "tijd": "69",
+        "datum": "2026-04-06",
+        "categorie": "achtergrond"
     }
 ]
