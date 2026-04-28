@@ -4171,5 +4171,21 @@
         "tijd": "179",
         "datum": "2026-04-13",
         "categorie": "nieuws"
+    },
+    {
+        "id": "502",
+        "taal": "nl",
+        "titel": "Autisme en de Efteling",
+        "tijd": "99",
+        "datum": "2026-04-20",
+        "categorie": "achtergrond"
+    },
+    {
+        "id": "503",
+        "taal": "nl",
+        "titel": "De muziek van Raveleijn",
+        "tijd": "84",
+        "datum": "2026-04-27",
+        "categorie": "achtergrond"
     }
 ]
