@@ -4219,5 +4219,13 @@
         "tijd": "132",
         "datum": "2026-05-25",
         "categorie": "nieuws"
+    },
+    {
+        "id": "508",
+        "taal": "nl",
+        "titel": "Efteling retail met Michael en Roy",
+        "tijd": "98",
+        "datum": "2026-06-01",
+        "categorie": "interview"
     }
 ]
