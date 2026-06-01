@@ -78,7 +78,6 @@ jobs:
           # Bouw de categorielijst
           CATEGORY_LINES=""
           while IFS="=" read -r cat count; do
-            # Vertaal categorie naar Nederlands met hoofdletter
             case $cat in
               "achtergrond") cat_nl="Achtergrond" ;;
               "nieuws")      cat_nl="Nieuws" ;;
@@ -90,13 +89,7 @@ jobs:
           done < <(echo "$STATS" | jq -r '.categories | to_entries[] | "\(.key)=\(.value)"')
 
           # Stel de post samen
-          POST="📻 Kleine Boodschap in ${month_year}
-
-In ${month_year} kon je ${HOURS} uur en ${MINUTES} minuten naar Kleine Boodschap luisteren.
-
-Er verschenen ${COUNT} afleveringen:
-$(printf '%b' "$CATEGORY_LINES")
-#kleineboodschap #efteling"
+          POST="Kleine Boodschap in ${month_year}\n\nIn ${month_year} kon je ${HOURS} uur en ${MINUTES} minuten naar Kleine Boodschap luisteren.\n\nEr verschenen ${COUNT} afleveringen:\n$(printf '%b' "$CATEGORY_LINES")\n#kleineboodschap #efteling"
 
           echo "$POST" > post.txt
           echo "should_post=true" >> $GITHUB_OUTPUT
