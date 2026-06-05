@@ -28,13 +28,23 @@ function vandaagOpDezeDag() {
         // Toon de afleveringen op de pagina
         const todayEpisodesElement = document.getElementById('todayEpisodes');
         if (todayEpisodes.length > 0) {
-            todayEpisodes.forEach(episode => {
+            todayEpisodes.forEach((episode, index) => {
                 const episodeDate = new Date(episode.datum);
-                const formattedDate = episodeDate.getDate() + ' ' + episodeDate.toLocaleDateString('nl-NL', { month: 'long' }) + ' ' + episodeDate.getFullYear();
+                const jaar = episodeDate.getFullYear();
+                const formattedDate = episodeDate.getDate() + ' ' + episodeDate.toLocaleDateString('nl-NL', { month: 'long' }) + ' ' + jaar;
+                const isLast = index === todayEpisodes.length - 1;
+
                 const listItem = document.createElement('li');
-                listItem.classList.add('list-group-item');
-                listItem.classList.add('small');
-                listItem.textContent = `Aflevering ${episode.id}: ${episode.titel} kwam uit op ${formattedDate}`;
+                listItem.style.cssText = 'display:flex; align-items:flex-start; gap:14px; padding-bottom: 0; list-style:none;';
+
+                listItem.innerHTML = `
+                    <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
+                        <div style="width:14px; height:14px; border-radius:50%; background:#fff; border:3px solid #e8608a; outline:2px solid #e8608a; margin-top:2px;"></div>
+                        ${!isLast ? '<div style="width:2px; flex:1; background:#e8608a; min-height:24px; margin-top:0px;"></div>' : ''}
+                    </div>
+                    <span class="small"><strong>${jaar}</strong> — Aflevering ${episode.id}: ${episode.titel}</span>
+                `;
+
                 todayEpisodesElement.appendChild(listItem);
             });
         } else {

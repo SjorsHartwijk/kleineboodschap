@@ -163,10 +163,22 @@
                 <div class="col-12 col-lg-6 mb-3">
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column justify-content-start">
-                            <h3 class="h5 card-title">Vandaag de dag</h3>
+                            <div class="d-flex justify-content-between">
+                                <h3 class="h5 card-title">Vandaag de dag</h3>
+                                <p id="todayDate" class="text-muted mb-0 ml-2"></p>
+                            </div>
+                            <script>
+                                (function() {
+                                    const todayDateElement = document.getElementById('todayDate');
+                                    if (!todayDateElement) return;
+                                    const today = new Date();
+                                    const monthNames = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+                                    todayDateElement.textContent = `${today.getDate()} ${monthNames[today.getMonth()]}`;
+                                })();
+                            </script>
                             <p class="card-text">Indien er op deze dag in het verleden een aflevering is
                                 verschenen wordt/worden deze aflevering(en) hier geplaatst. Bekijk ook het complete overzicht op de <a href="kalender.html">kalender</a>.</p>
-                            <ul class="d-flex mt-auto list-group" id="todayEpisodes">
+                            <ul style="list-style:none; margin:0; padding:0;" id="todayEpisodes"></ul>
                             </ul>
                         </div>
                     </div>
