@@ -13,11 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Validate Secrets
         run: |
           if [ -z "${{ secrets.BLUESKY_IDENTIFIER }}" ] || [ -z "${{ secrets.BLUESKY_PASSWORD }}" ]; then
@@ -28,12 +23,10 @@ jobs:
       - name: Generate monthly summary post
         id: buildpost
         run: |
-          # Bepaal de vorige maand en het jaar
           prev_month=$(date -d "last month" +"%m")
           prev_year=$(date -d "last month" +"%Y")
           prev_month_prefix="${prev_year}-${prev_month}"
 
-          # Nederlandse maandnamen (met hoofdletter)
           case $prev_month in
             "01") month_name="Januari" ;;
             "02") month_name="Februari" ;;
@@ -53,7 +46,6 @@ jobs:
 
           echo "Zoek afleveringen van ${prev_month_prefix}"
 
-          # Filter afleveringen van de vorige maand en bereken statistieken
           STATS=$(jq -r --arg prefix "$prev_month_prefix" '
             [.[] | select(.datum | startswith($prefix))] |
             {
@@ -75,7 +67,7 @@ jobs:
           HOURS=$((TOTAL_MINUTES / 60))
           MINUTES=$((TOTAL_MINUTES % 60))
 
-          # Bouw de categorielijst
+          # Bouw categorielijst met echte newlines
           CATEGORY_LINES=""
           while IFS="=" read -r cat count; do
             case $cat in
@@ -85,22 +77,32 @@ jobs:
               "reportage")   cat_nl="Reportage" ;;
               *)             cat_nl="$cat" ;;
             esac
-            CATEGORY_LINES="${CATEGORY_LINES}▸ ${count} ${cat_nl}\n"
+            CATEGORY_LINES="${CATEGORY_LINES}▸ ${count} ${cat_nl}
+"
           done < <(echo "$STATS" | jq -r '.categories | to_entries[] | "\(.key)=\(.value)"')
 
-          # Stel de post samen
-          POST="Kleine Boodschap in ${month_year}\n\nIn ${month_year} kon je ${HOURS} uur en ${MINUTES} minuten naar Kleine Boodschap luisteren.\n\nEr verschenen ${COUNT} afleveringen:\n$(printf '%b' "$CATEGORY_LINES")\n#kleineboodschap #efteling"
+          # Schrijf post naar bestand met echte newlines (geen \n escape)
+          cat > post.txt << POSTEOF
+Kleine Boodschap in ${month_year}
 
-          echo "$POST" > post.txt
+In ${month_year} kon je ${HOURS} uur en ${MINUTES} minuten naar Kleine Boodschap luisteren.
+
+Er verschenen ${COUNT} afleveringen:
+${CATEGORY_LINES}
+#kleineboodschap #efteling
+POSTEOF
+
           echo "should_post=true" >> $GITHUB_OUTPUT
 
       - name: Prepare post content
         if: steps.buildpost.outputs.should_post == 'true'
         run: |
-          TEXT=$(cat post.txt)
-          echo "TEXT<<EOF" >> $GITHUB_ENV
-          echo "$TEXT" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          # Gebruik EOF-delimiter om newlines in env var te bewaren
+          {
+            echo 'TEXT<<BSKYEOF'
+            cat post.txt
+            echo 'BSKYEOF'
+          } >> $GITHUB_ENV
 
       - name: Send to Bluesky
         if: steps.buildpost.outputs.should_post == 'true'
