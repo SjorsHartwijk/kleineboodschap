@@ -77,20 +77,19 @@ jobs:
               "reportage")   cat_nl="Reportage" ;;
               *)             cat_nl="$cat" ;;
             esac
-            CATEGORY_LINES="${CATEGORY_LINES}▸ ${count} ${cat_nl}
-"
+            CATEGORY_LINES="${CATEGORY_LINES}$(printf '▸ %s %s\n' "$count" "$cat_nl")"
           done < <(echo "$STATS" | jq -r '.categories | to_entries[] | "\(.key)=\(.value)"')
 
           # Schrijf post naar bestand met echte newlines (geen \n escape)
-          cat > post.txt << POSTEOF
-Kleine Boodschap in ${month_year}
-
-In ${month_year} kon je ${HOURS} uur en ${MINUTES} minuten naar Kleine Boodschap luisteren.
-
-Er verschenen ${COUNT} afleveringen:
-${CATEGORY_LINES}
-#kleineboodschap #efteling
-POSTEOF
+          # Gebruik printf in plaats van a heredoc om YAML parsingproblemen te vermijden
+          printf '%s\n' \
+            "Kleine Boodschap in ${month_year}" \
+            "" \
+            "In ${month_year} kon je ${HOURS} uur en ${MINUTES} minuten naar Kleine Boodschap luisteren." \
+            "" \
+            "Er verschenen ${COUNT} afleveringen:" \
+            "${CATEGORY_LINES}" \
+            "#kleineboodschap #efteling" > post.txt
 
           echo "should_post=true" >> $GITHUB_OUTPUT
 
