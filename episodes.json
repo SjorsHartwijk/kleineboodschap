@@ -4243,5 +4243,15 @@
         "tijd": "202",
         "datum": "2026-06-15",
         "categorie": "nieuws"
+    },
+    {
+        "id": "511",
+        "taal": "nl",
+        "titel": "Hooghmoed",
+        "tijd": "60",
+        "datum": "2026-06-22",
+        "categorie": "reportage",
+        "latitude": "51.647624",
+        "longitude": "5.050374"
     }
 ]
