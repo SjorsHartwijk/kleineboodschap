@@ -4261,5 +4261,13 @@
         "tijd": "140",
         "datum": "2026-06-29",
         "categorie": "nieuws"
+    },
+    {
+        "id": "513",
+        "taal": "nl",
+        "titel": "In gesprek met Niels Wittkampf",
+        "tijd": "158",
+        "datum": "2026-07-06",
+        "categorie": "interview"
     }
 ]
