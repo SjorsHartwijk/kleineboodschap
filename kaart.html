@@ -168,7 +168,7 @@
         	});
     	</script>
   		<script>
-    		mapboxgl.accessToken = 'pk.eyJ1Ijoic2pvcnNoYXJ0d2lqayIsImEiOiJjbTZ0MjRjdWowaWEzMm1zZDVrczZmbDRhIn0.IAYNGK5dEmKBK69_zCEn2A';
+    		mapboxgl.accessToken = ${{ secrets.MAPBOX_API }};
     
     		const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
