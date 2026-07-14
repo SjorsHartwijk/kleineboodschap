@@ -256,23 +256,19 @@ function render() {
     gesorteerd.sort((a, b) => b.aantal - a.aantal);
   }
 
-  // verdeel de namen over 3 kolommen
-  const kolommen = [[], [], []];
-  gesorteerd.forEach((item, i) => kolommen[i % 3].push(item));
-
   const lijst = document.getElementById("lijst");
-  lijst.innerHTML = kolommen.map(kolom => `
-    <div class="col-md-4">
-        <div class="list-group list-group-flush">
-      ${kolom.map(item => `
-        <div class="list-group-item naam-item d-flex justify-content-between align-items-center">
-          <span>${item.naam}</span>
-          <span class="badge rounded-pill text-bg-secondary">x${item.aantal}</span>
-        </div>
-      `).join("")}
+  lijst.innerHTML = `
+    <div class="col-12">
+      <div class="list-group list-group-flush">
+        ${gesorteerd.map(item => `
+          <div class="list-group-item naam-item d-flex justify-content-between align-items-center">
+            <span>${item.naam}</span>
+            <span class="badge rounded-pill text-bg-secondary">x${item.aantal}</span>
+          </div>
+        `).join("")}
+      </div>
     </div>
-    </div>
-  `).join("");
+  `;
 }
 
 document.querySelectorAll("[data-sort]").forEach(btn => {

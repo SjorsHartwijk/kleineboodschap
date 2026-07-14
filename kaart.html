@@ -189,7 +189,7 @@
             const mapCenter = [51.6497, 5.0502]; // Efteling [lat, lng]
 
             // Initialiseer Leaflet kaart
-            const map = L.map('map').setView(mapCenter, 14);
+            const map = L.map('map').setView(mapCenter, 16);
 
             // Bepaal de kaartstijl (we gebruiken CartoDB tiles die erg clean zijn en een dark-mode variant hebben)
             const lightTiles = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
@@ -201,9 +201,6 @@
                 subdomains: 'abcd',
                 maxZoom: 20
             }).addTo(map);
-
-            // Let op: Leaflet heeft geen ingebouwde 'bearing' (kaartrotatie) zoals Mapbox dat had. 
-            // We hebben de ingewikkelde bearing-zoom-timeout-logica hier weggelaten om de performance soepel te houden.
 
             // User marker in de Efteling logic
             const centerCoords = [51.6497, 5.0502]; // [lat, lng] voor Haversine
