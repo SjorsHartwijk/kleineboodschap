@@ -168,7 +168,8 @@
         	});
     	</script>
   		<script>
-    		mapboxgl.accessToken = '${{ secrets.MAPBOX_API }}';
+            const mapBoxSecret = process.env.MAPBOX_API || secrets.MAPBOX_API;
+    		mapboxgl.accessToken = mapBoxSecret;
     
     		const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
