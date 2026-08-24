@@ -4293,5 +4293,37 @@
         "tijd": "131",
         "datum": "2026-07-27",
         "categorie": "achtergrond"
+    },
+    {
+        "id": "517",
+        "taal": "nl",
+        "titel": "Reacties van luisteraars",
+        "tijd": "73",
+        "datum": "2026-08-03",
+        "categorie": "achtergrond"
+    },
+    {
+        "id": "518",
+        "taal": "nl",
+        "titel": "Mijmeren met William van Beek (over LEGO)",
+        "tijd": "86",
+        "datum": "2026-08-10",
+        "categorie": "interview"
+    },
+    {
+        "id": "519",
+        "taal": "nl",
+        "titel": "De Efteling naar een 9+",
+        "tijd": "105",
+        "datum": "2026-08-17",
+        "categorie": "achtergrond"
+    },
+    {
+        "id": "520",
+        "taal": "nl",
+        "titel": "Zakske zooi",
+        "tijd": "190",
+        "datum": "2026-08-24",
+        "categorie": "nieuws"
     }
 ]
