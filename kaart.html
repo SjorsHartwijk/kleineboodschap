@@ -182,24 +182,16 @@
         </script>
 
         <script>
-            // Check of browser of OS in Dark Mode staat
-            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
             // Leaflet werkt met [Latitude, Longitude] (Mapbox werkte met [Longitude, Latitude]!).
             const mapCenter = [51.6497, 5.0502]; // Efteling [lat, lng]
 
             // Initialiseer Leaflet kaart
             const map = L.map('map').setView(mapCenter, 16);
 
-            // Bepaal de kaartstijl (we gebruiken CartoDB tiles die erg clean zijn en een dark-mode variant hebben)
-            const lightTiles = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-            const darkTiles = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
-            const tileUrl = isDark ? darkTiles : lightTiles;
-
-            L.tileLayer(tileUrl, {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-                subdomains: 'abcd',
-                maxZoom: 20
+            // Gebruik altijd de standaard OpenStreetMap basiskaart zonder dark/light switch
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
             }).addTo(map);
 
             // User marker in de Efteling logic
