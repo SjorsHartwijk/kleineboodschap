@@ -16,7 +16,7 @@ Zorg ervoor dat je node.js hebt geinstalleerd.
 Voeg de data van een aflevering toe aan het afleveringen.csv bestand, begin op een nieuwe regel en voeg toe als volgt:
 
 ```csv
-id,titel,tijd,datum,categorie
+id,taal,titel,tijd,datum,categorie,latitude,longitude
 ```
 Navigeer vervolgens in een terminalvenster naar het project en voer volgend commando uit
 ```terminal
