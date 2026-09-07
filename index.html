@@ -26,7 +26,7 @@
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme shadow-sm">
-        <div class="container-xxl">
+        <div class="container">
             <a class="navbar-brand" href="/"><img src="assets/images/logo2.png" alt="Logo Kleine Boodschap Data" title="Kleine Boodschap Data"> <span
                     class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
                     class="d-inline-block d-md-none">KB Data</span></a>
@@ -372,8 +372,44 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 offset-md-3 pt-3">
-                    <div class="card mb-3">
+                <div class="col-12 col-md-6 pt-3">
+                    <div class="card mb-3 h-100">
+                        <div class="card-body">
+                            <h3 class="h4">Bluesky</h3>
+                            <div id="bluesky-post">Bericht laden...</div>
+
+                            <script>
+                            async function fetchLatestBlueskyPost(handle) {
+                                try {
+                                const response = await fetch(`https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${handle}&limit=1`);
+                                const data = await response.json();
+                                
+                                if (data.feed && data.feed.length > 0) {
+                                    const post = data.feed[0].post;
+                                    const text = post.record.text;
+                                    const postUrl = `https://bsky.app/profile/${handle}/post/${post.uri.split('/').pop()}`;
+                                    
+                                    document.getElementById('bluesky-post').innerHTML = `
+                                    <p>${text}</p>
+                                    <small><a href="${postUrl}" target="_blank">Bekijk op Bluesky</a></small>
+                                    `;
+                                } else {
+                                    document.getElementById('bluesky-post').innerText = "Geen berichten gevonden.";
+                                }
+                                } catch (error) {
+                                console.error("Fout bij het ophalen van Bluesky bericht:", error);
+                                document.getElementById('bluesky-post').innerText = "Kon bericht niet laden.";
+                                }
+                            }
+
+                            // Vul hier je eigen Bluesky handle in
+                            fetchLatestBlueskyPost('kbdata.nl');
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 pt-3">
+                    <div class="card mb-3 h-100">
                         <div class="card-body">
                             <h3 class="h4">Nog meer data?</h3>
                             <p>Heb je een idee om deze data verder uit te breiden? Deel je suggesties, ideeën of feedback via Bluesky!</p>
