@@ -387,7 +387,7 @@
                                 if (data.feed && data.feed.length > 0) {
                                     const post = data.feed[0].post;
                                     const text = post.record.text;
-                                    const postUrl = `https://bsky.app/profile/${handle}/post/${post.uri.split('/').pop()}`;
+                                    const postUrl = `https://bsky.app/profile/${handle}`;
                                     
                                     document.getElementById('bluesky-post').innerHTML = `
                                     <p>${text}</p>
