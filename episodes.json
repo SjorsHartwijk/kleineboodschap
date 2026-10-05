@@ -4365,5 +4365,13 @@
         "tijd": "112",
         "datum": "2026-09-28",
         "categorie": "nieuws"
+    },
+    {
+        "id": "526",
+        "taal": "nl",
+        "titel": "Glazen Bol 2026",
+        "tijd": "83",
+        "datum": "2026-10-05",
+        "categorie": "achtergrond"
     }
 ]
