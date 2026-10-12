@@ -1,8 +1,9 @@
 // Haalt nieuwe afleveringen op uit de RSS-feed van Kleine Boodschap, voegt ze toe aan
-// afleveringen.csv, zet de csv om naar episodes.json en maakt een commit.
+// afleveringen.csv en zet de csv om naar episodes.json. Daarna is er ruimte om gasten
+// toe te voegen aan gasten.txt, en vraagt het script of de commit mag plaatsvinden.
 //
-//   node update.js            nieuwe afleveringen toevoegen en committen
-//   node update.js --no-commit   alleen bestanden bijwerken, niet committen
+//   node update.js               nieuwe afleveringen toevoegen, daarna vragen om te committen
+//   node update.js --no-commit   alleen bestanden bijwerken, niet vragen om te committen
 //   node update.js --check       bestaande data vergelijken met de feed (wijzigt niets)
 
 const fs = require('fs');
@@ -11,6 +12,7 @@ const { execSync } = require('child_process');
 
 const FEED = 'https://kleineboodschap.fireside.fm/rss';
 const CSV = 'afleveringen.csv';
+const GASTEN = 'gasten.txt';
 const CATEGORIEEN = ['nieuws', 'achtergrond', 'interview', 'reportage'];
 
 const args = process.argv.slice(2);
@@ -95,8 +97,25 @@ function raadCategorie(e) {
   return 'achtergrond';
 }
 
-function vraag(rl, tekst) {
-  return new Promise(resolve => rl.question(tekst, antwoord => resolve(antwoord.trim())));
+// Leest antwoorden via een wachtrij, zodat ook doorgegeven invoer (bv. via een pipe) niet verloren gaat
+function maakLezer() {
+  const rl = readline.createInterface({ input: process.stdin });
+  const regels = [];
+  const wachtend = [];
+  let gesloten = false;
+  rl.on('line', regel => wachtend.length ? wachtend.shift()(regel) : regels.push(regel));
+  rl.on('close', () => { gesloten = true; wachtend.splice(0).forEach(r => r(null)); });
+  return {
+    async vraag(tekst) {
+      process.stdout.write(tekst);
+      const regel = regels.length ? regels.shift()
+        : gesloten ? null
+        : await new Promise(resolve => wachtend.push(resolve));
+      if (regel === null) throw new Error('\nInvoer afgebroken.');
+      return regel.trim();
+    },
+    close: () => rl.close(),
+  };
 }
 
 function controleer(feed, lokaal) {
@@ -135,25 +154,26 @@ async function main() {
     return;
   }
 
-  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+  const rl = maakLezer();
   const regels = [];
+  const metGasten = [];
   for (const e of nieuw) {
     console.log(`\n${e.id}: ${e.titel} (${e.datum}, ${e.tijd} min)`);
     const gok = raadCategorie(e);
     let categorie = '';
     while (!CATEGORIEEN.includes(categorie)) {
-      categorie = (await vraag(rl, `  Categorie [${CATEGORIEEN.join('/')}] (Enter = ${gok}): `)) || gok;
+      categorie = (await rl.vraag(`  Categorie [${CATEGORIEEN.join('/')}] (Enter = ${gok}): `)) || gok;
     }
-    const taal = (await vraag(rl, '  Taal (Enter = nl): ')) || 'nl';
+    const taal = (await rl.vraag('  Taal (Enter = nl): ')) || 'nl';
     let locatie = '';
     if (categorie === 'reportage' || categorie === 'achtergrond') {
-      locatie = await vraag(rl, '  Locatie als "lat, long" (Enter = geen): ');
+      locatie = await rl.vraag('  Locatie als "lat, long" (Enter = geen): ');
     }
     const velden = [e.id, taal, csvVeld(e.titel), e.tijd, e.datum, categorie];
     if (locatie) velden.push(...locatie.split(',').map(s => s.trim()));
     regels.push(velden.join(','));
+    if (categorie === 'achtergrond' || categorie === 'interview') metGasten.push(e);
   }
-  rl.close();
 
   const huidig = fs.readFileSync(CSV, 'utf8');
   const nl = huidig.includes('\r\n') ? '\r\n' : '\n';
@@ -163,15 +183,37 @@ async function main() {
 
   execSync('node convert.js', { stdio: 'inherit' });
 
-  if (COMMIT) {
-    const laatste = nieuw[nieuw.length - 1];
-    const bericht = nieuw.length === 1
-      ? `Aflevering ${laatste.id}: ${laatste.titel}`
-      : `Afleveringen ${nieuw[0].id} t/m ${laatste.id}`;
-    execSync(`git add ${CSV} episodes.json`, { stdio: 'inherit' });
-    execSync('git commit -F -', { input: bericht, stdio: ['pipe', 'inherit', 'inherit'] });
-    console.log(`Commit gemaakt: ${bericht}`);
+  if (!COMMIT) {
+    rl.close();
+    console.log('\nGeen commit gemaakt (--no-commit).');
+    return;
   }
+
+  if (metGasten.length) {
+    console.log(`\nLet op: deze aflevering(en) kunnen gasten hebben:`);
+    metGasten.forEach(e => console.log(`  ${e.id}: ${e.titel}`));
+    console.log(`Voeg de gasten nu onderaan ${GASTEN} toe (één per regel, als "Naam,") en sla het bestand op.`);
+  }
+
+  const laatste = nieuw[nieuw.length - 1];
+  const bericht = nieuw.length === 1
+    ? `Aflevering ${laatste.id}: ${laatste.titel}`
+    : `Afleveringen ${nieuw[0].id} t/m ${laatste.id}`;
+
+  let antwoord = '';
+  while (!['j', 'n'].includes(antwoord)) {
+    antwoord = (await rl.vraag(`\nMag de commit "${bericht}" plaatsvinden? (j/n): `)).toLowerCase();
+  }
+  rl.close();
+
+  if (antwoord === 'n') {
+    console.log('Geen commit gemaakt. De bestanden zijn wel bijgewerkt, je kunt later zelf committen.');
+    return;
+  }
+
+  execSync(`git add ${CSV} episodes.json ${GASTEN}`, { stdio: 'inherit' });
+  execSync('git commit -F -', { input: bericht, stdio: ['pipe', 'inherit', 'inherit'] });
+  console.log(`Commit gemaakt: ${bericht}`);
 }
 
 main().catch(err => {
