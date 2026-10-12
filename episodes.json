@@ -799,7 +799,7 @@
         "id": "97",
         "taal": "nl",
         "titel": "Team Fata vs. Team Joris",
-        "tijd": "86",
+        "tijd": "102",
         "datum": "2019-06-17",
         "categorie": "nieuws"
     },
@@ -920,7 +920,7 @@
         "categorie": "achtergrond"
     },
     {
-        "id": "111",
+        "id": "112",
         "taal": "nl",
         "titel": "Watergate",
         "tijd": "86",
@@ -1133,7 +1133,7 @@
         "id": "137",
         "taal": "nl",
         "titel": "In gesprek met Erik van den Brand",
-        "tijd": "59",
+        "tijd": "141",
         "datum": "2020-02-03",
         "categorie": "interview"
     },
@@ -1440,7 +1440,7 @@
     {
         "id": "174",
         "taal": "nl",
-        "titel": "Paar kuub Piecks groen",
+        "titel": "De Fata Morgana fata morgana",
         "tijd": "129",
         "datum": "2020-09-28",
         "categorie": "nieuws"
@@ -1743,7 +1743,7 @@
         "id": "210",
         "taal": "nl",
         "titel": "Efteling en media (deel 2)",
-        "tijd": "137",
+        "tijd": "155",
         "datum": "2021-04-19",
         "categorie": "achtergrond"
     },
@@ -1949,7 +1949,7 @@
         "id": "235",
         "taal": "nl",
         "titel": "De muziek van Caro",
-        "tijd": "67",
+        "tijd": "76",
         "datum": "2021-09-20",
         "categorie": "interview"
     },
@@ -1989,7 +1989,7 @@
         "id": "240",
         "taal": "nl",
         "titel": "In gesprek met Dennis Bots",
-        "tijd": "146",
+        "tijd": "136",
         "datum": "2021-10-25",
         "categorie": "interview"
     },
@@ -2073,7 +2073,7 @@
         "id": "250",
         "taal": "nl",
         "titel": "Het Gildehuis",
-        "tijd": "131",
+        "tijd": "110",
         "datum": "2021-12-27",
         "categorie": "reportage",
         "latitude": "51.653261",
@@ -2504,7 +2504,7 @@
     {
         "id": "302",
         "taal": "nl",
-        "titel": "Verticale verassing",
+        "titel": "Verticale verrassing",
         "tijd": "172",
         "datum": "2022-11-07",
         "categorie": "nieuws"
@@ -2921,7 +2921,7 @@
         "id": "352",
         "taal": "nl",
         "titel": "Boekpresentatie Raveleijn - Het bloed van de laatste draak",
-        "tijd": "104",
+        "tijd": "25",
         "datum": "2023-09-29",
         "categorie": "reportage",
         "latitude": "51.652933",
@@ -3160,7 +3160,7 @@
     {
         "id": "381",
         "taal": "nl",
-        "titel": "Oranje knoeperst",
+        "titel": "Oranje knoeperts",
         "tijd": "111",
         "datum": "2024-03-25",
         "categorie": "nieuws"
@@ -3417,7 +3417,7 @@
         "id": "412",
         "taal": "nl",
         "titel": "De Glazen Bol 2024",
-        "tijd": "78",
+        "tijd": "72",
         "datum": "2024-10-06",
         "categorie": "achtergrond"
     },
@@ -3526,7 +3526,7 @@
     {
         "id": "425",
         "taal": "nl",
-        "titel": "Een zwart concept",
+        "titel": "Top gevels",
         "tijd": "99",
         "datum": "2024-12-16",
         "categorie": "nieuws"
@@ -3643,7 +3643,7 @@
         "id": "439",
         "taal": "nl",
         "titel": "Het hoogste punt van het Efteling Grand Hotel",
-        "tijd": "92",
+        "tijd": "73",
         "datum": "2025-03-11",
         "categorie": "reportage",
         "latitude": "51.649253",
