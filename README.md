@@ -61,6 +61,19 @@ node convert.js
 
 De afleveringen in de csv worden omgezet naar het episodes.json bestand. De grafieken en data op de index pagina gebruiken dit bestand als bron van de data, het is belangrijk dat dit bestand altijd beschikbaar is.
 
+### Navigatie en footer
+De navigatie bovenaan, de mobiele navigatie en de footer staan op één plek: `assets/js/layout.js`. Een pagina toevoegen aan het menu doe je door die toe te voegen aan de lijst `paginas` in dat bestand. In elke pagina staan alleen placeholders:
+
+```html
+<div data-layout="nav"></div>
+<script src="assets/js/layout.js"></script>
+...
+<div data-layout="mobile-nav"></div>
+<div data-layout="footer"></div>
+```
+
+De knop naar Wrapped wordt automatisch alleen getoond van 1 januari t/m eind februari (en altijd op de Wrapped-pagina zelf).
+
 ## Bijdragen
 
 Pull requests zijn welkom. Voor grote veranderingen, open alsjeblieft eerst een probleem om te bespreken wat je zou willen veranderen.

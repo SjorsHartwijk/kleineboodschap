@@ -58,66 +58,6 @@ function countJSONObjects() {
     });
 }
 
-// Functie om het aantal JSON-items te tellen waarbij de 'categorie' gelijk is aan 'interview'
-function countInterview() {
-    // Fetch het JSON-bestand
-    fetch('episodes.json')
-    .then(response => {
-        // Controleer of het laden van het bestand succesvol is
-        if (!response.ok) {
-            throw new Error('Failed to load JSON data');
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Tel het aantal items waarbij de 'categorie' gelijk is aan 'interview'
-        const interviewCount = data.reduce((accumulator, episode) => {
-            return accumulator + (episode.categorie === 'interview' ? 1 : 0);
-        }, 0);
-
-        // Toon het aantal items op de HTML-pagina
-        const countInterviewElement = document.getElementById('countInterview');
-        countInterviewElement.textContent = `${interviewCount}`;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        const countInterviewElement = document.getElementById('countInterview');
-        countInterviewElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
-    });
-}
-// Functie om het percentage van afleveringen met de categorie 'nieuws' te berekenen
-function calculatePercentageNieuws() {
-    // Fetch het JSON-bestand
-    fetch('episodes.json')
-    .then(response => {
-        // Controleer of het laden van het bestand succesvol is
-        if (!response.ok) {
-            throw new Error('Failed to load JSON data');
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Tel het aantal items waarbij de 'categorie' gelijk is aan 'nieuws'
-        const nieuwsCount = data.reduce((accumulator, episode) => {
-            return accumulator + (episode.categorie === 'nieuws' ? 1 : 0);
-        }, 0);
-
-        // Bereken het totale aantal afleveringen
-        const totalEpisodes = data.length;
-
-        // Bereken het percentage van nieuwsafleveringen
-        const percentageNieuws = (nieuwsCount / totalEpisodes) * 100;
-
-        // Toon het percentage op de HTML-pagina
-        const percentageNieuwsElement = document.getElementById('percentageNieuws');
-        percentageNieuwsElement.textContent = `${percentageNieuws.toFixed(0)}%`;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        const percentageNieuwsElement = document.getElementById('percentageNieuws');
-        percentageNieuwsElement.textContent = 'Er is een fout opgetreden bij het laden van de gegevens.';
-    });
-}
 // Functie om de langste en kortste aflevering op te halen en weer te geven
 function findShortestAndLongestEpisodes() {
     fetch('episodes.json')
@@ -229,11 +169,9 @@ function formatDate(dateString) {
     const year = date.getFullYear();
     return `${day}-${month}-${year}`;
 }
-// Roep de functies aan wanneer de pagina geladen is
-window.onload = calculateEpisodeHours();
-window.onload = findShortestAndLongestEpisodes();
-window.onload = showTop5Episodes();
-window.onload = calculatePercentageNieuws();
-window.onload = countInterview();
-window.onload = calculateAverageMinutes();
-window.onload = countJSONObjects();
+// Roep de functies aan; dit script staat onderaan de pagina, dus de elementen bestaan al
+calculateEpisodeHours();
+findShortestAndLongestEpisodes();
+showTop5Episodes();
+calculateAverageMinutes();
+countJSONObjects();

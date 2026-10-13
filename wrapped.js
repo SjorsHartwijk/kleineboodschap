@@ -14,6 +14,8 @@ fetch("episodes.json")
     .then(response => response.json())
     .then(data => {
         episodesData = data;
+        // Buiten de Wrapped-periode wordt de inhoud van de pagina vervangen door een melding
+        if (!document.getElementById("yearSelect")) return;
         populateYearSelect();
         updateWrapped();
     });

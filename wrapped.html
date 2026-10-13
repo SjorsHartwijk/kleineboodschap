@@ -22,32 +22,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme">
-        <div class="container-xxl">
-            <a class="navbar-brand" href="/"><img src="assets/images/logo2.png"/ alt="Logo Kleine Boodschap Data"> <span
-                class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
-                class="d-inline-block d-md-none">KB Data</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation"><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="afleveringen.html">Afleveringen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kaart.html">Kaart</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kalender.html">Kalender</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gasten.html" title="Gasten">Gasten</a></li>
-                    <li class="nav-item"><a class="nav-link" href="reeks.html">Reeks</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="wrapped.html">Wrapped</a></li>
-                    <li class="nav-item"><a class="nav-link" href="over.html" title="Over">Over</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="nofollow" target="_blank"><i class="bi bi-bluesky"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow"
-                        target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div data-layout="nav"></div>
+    <script src="assets/js/layout.js"></script>
     <main class="wrapped pb-3">
         <div class="container" id="wrappedContainer">
         <div class="row">
@@ -131,67 +107,9 @@
         </div>
         </div>     
     </main>
-    <!-- floating mobile nav -->
-    <div class="container-fluid d-md-none">
-        <nav class="navbar navbar-bottom shadow-lg fixed-bottom">
-            <div class="container d-flex justify-content-between text-center">
-                <a href="/" class="text-decoration-none" title="Home">
-                    <i class="bi bi-bar-chart d-block"></i>
-                    <span class="small">Statistieken</span>
-                </a>
-                <a href="afleveringen.html" class="text-decoration-none" title="Afleveringen">
-                    <i class="bi bi-list-ul d-block"></i>
-                    <span class="small">Afleveringen</span>
-                </a>
-                <a href="kaart.html" class="text-decoration-none" title="Kaart">
-                    <i class="bi bi-geo-alt d-block"></i>
-                    <span class="small">Kaart</span>
-                </a>
-                <a href="kalender.html" class="text-decoration-none" title="Kalender">
-                    <i class="bi bi-calendar3 d-block"></i>
-                    <span class="small">Kalender</span>
-                </a>
-                <a href="gasten.html" class="text-decoration-none" title="Gasten">
-                    <i class="bi bi-people d-block"></i>
-                    <span class="small">Gasten</span>
-                </a>
-                <a href="reeks.html" class="text-decoration-none" title="Reeks">
-                    <i class="bi bi-arrows d-block"></i>
-                    <span class="small">Reeks</span>
-                </a>
-                <a href="wrapped.html" class="text-decoration-none active" title="Wrapped">
-                    <i class="bi bi-star-fill d-block"></i>
-                    <span class="small">Wrapped</span>
-                </a>
-          </div>
-        </nav>
-    </div>
+    <div data-layout="mobile-nav"></div>
     <!-- Footer-->
-    <footer class="d-none d-md-block bg-dark py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <div class="small m-0 text-white">Copyright &copy; Sjors Hartwijk
-                        <script>document.write(new Date().getFullYear())</script>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <a class="link-light small" href="/index.html">Home</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="over.html">Over</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="https://bsky.app/profile/kbdata.bsky.social"
-                        target="_blank">Bluesky</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="https://sjorshartwijk.nl/" target="_blank">Sjors
-                        Hartwijk</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="https://kleineboodschap.com" target="_blank">Kleine
-                        Boodschap</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div data-layout="footer"></div>
     <script src="wrapped.js"></script>
     <script>
         const container = document.getElementById("wrappedContainer");

@@ -43,33 +43,8 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-            <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme" style="z-index: 1053;">
-                <div class="container-xxl">
-                    <a class="navbar-brand" href="/"><img src="assets/images/logo2.png" alt="Logo Kleine Boodschap Data"> <span
-                            class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
-                            class="d-inline-block d-md-none">KB Data</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"><span
-                            class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="afleveringen.html">Afleveringen</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link active" href="kaart.html">Kaart</a></li>
-                            <li class="nav-item"><a class="nav-link" href="kalender.html">Kalender</a></li>
-                            <li class="nav-item"><a class="nav-link" href="gasten.html" title="Gasten">Gasten</a></li>
-                            <li class="nav-item"><a class="nav-link" href="reeks.html">Reeks</a></li>
-                            <li class="nav-item"><a class="nav-link wrappedBtn" href="wrapped.html">Wrapped</a></li>
-                            <li class="nav-item"><a class="nav-link" href="over.html" title="Over">Over</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="nofollow" target="_blank"><i class="bi bi-bluesky"></i></a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow"
-                                target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <div data-layout="nav" style="z-index: 1053;"></div>
+            <script src="assets/js/layout.js"></script>
             <div id="map">
                 <div class="alert alert-info alert-dismissible fade show" role="alert" style="position: fixed; top: 56px; margin: .8em; z-index: 1052;">
                   <strong>Ben je in de Efteling?</strong> Met jouw toestemming centreert de kaart automatisch op je locatie en markeert deze op de kaart.
@@ -104,82 +79,11 @@
                     });
                 </script>
             </div>
-        <div class="container-fluid d-md-none">
-            <nav class="navbar navbar-bottom shadow-lg fixed-bottom">
-                <div class="container d-flex justify-content-between text-center">
-                    <a href="/" class="text-decoration-none" title="Statistieken">
-                        <i class="bi bi-bar-chart d-block"></i>
-                        <span class="small">Statistieken</span>
-                    </a>
-                    <a href="afleveringen.html" class="text-decoration-none" title="Afleveringen">
-                        <i class="bi bi-list-ul d-block"></i>
-                        <span class="small">Afleveringen</span>
-                    </a>
-                    <a href="kaart.html" class="text-decoration-none active" title="Kaart">
-                        <i class="bi bi-geo-alt-fill d-block"></i>
-                        <span class="small">Kaart</span>
-                    </a>
-                    <a href="kalender.html" class="text-decoration-none" title="Kalender">
-                        <i class="bi bi-calendar3 d-block"></i>
-                        <span class="small">Kalender</span>
-                    </a>
-                    <a href="gasten.html" class="text-decoration-none" title="Gasten">
-                        <i class="bi bi-people d-block"></i>
-                        <span class="small">Gasten</span>
-                    </a>
-                    <a href="reeks.html" class="text-decoration-none" title="Reeks">
-                        <i class="bi bi-arrows d-block"></i>
-                        <span class="small">Reeks</span>
-                    </a>
-                    <a href="wrapped.html" class="text-decoration-none wrappedBtn" title="Wrapped">
-                        <i class="bi bi-star d-block"></i>
-                        <span class="small">Wrapped</span>
-                    </a>
-              </div>
-            </nav>
-        </div>
-        <footer class="bg-dark py-4 mt-auto fixed-bottom d-none d-md-block">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto">
-                        <div class="small m-0 text-white">Copyright &copy; Sjors Hartwijk
-                            <script>document.write(new Date().getFullYear())</script>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="/index.html">Home</a>
-                            <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="over.html">Over</a>
-                            <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://bsky.app/profile/kbdata.bsky.social"
-                            target="_blank">Bluesky</a>
-                            <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://sjorshartwijk.nl/" target="_blank">Sjors Hartwijk</a>
-                            <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="https://kleineboodschap.com" target="_blank">Kleine Boodschap</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <div data-layout="mobile-nav"></div>
+        <div data-layout="footer" class="fixed-bottom"></div>
 
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-        <script>
-            // Wrapped knoppen logica (ongewijzigd)
-            const knoppen = document.querySelectorAll(".wrappedBtn");
-            const vandaag = new Date();
-            const jaar = vandaag.getFullYear();
-
-            const beginDatum = new Date(jaar, 0, 1);
-            const eindDatum = new Date(jaar, 2, 1);
-
-            const zichtbaar = vandaag >= beginDatum && vandaag < eindDatum;
-
-            knoppen.forEach(knop => {
-              knop.style.display = zichtbaar ? "block" : "none";
-            });
-        </script>
 
         <script>
             // Leaflet werkt met [Latitude, Longitude] (Mapbox werkte met [Longitude, Latitude]!).

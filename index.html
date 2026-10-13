@@ -25,31 +25,8 @@
 </head>
 <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-theme shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="/"><img src="assets/images/logo2.png" alt="Logo Kleine Boodschap Data" title="Kleine Boodschap Data"> <span
-                    class="d-none d-md-inline-block ">Kleine Boodschap Data</span><span
-                    class="d-inline-block d-md-none">KB Data</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation"><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="/" title="Home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="afleveringen.html" title="Afleveringen">Afleveringen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kaart.html" title="Kaart">Kaart</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kalender.html" title="Kalender">Kalender</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gasten.html" title="Gasten">Gasten</a></li>
-                    <li class="nav-item"><a class="nav-link" href="reeks.html" title="Reeks">Reeks</a></li>
-                    <li class="nav-item"><a class="nav-link wrappedBtn" href="wrapped.html">Wrapped</a></li>
-                    <li class="nav-item"><a class="nav-link" href="over.html" title="Over">Over</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="follow" target="_blank"><i class="bi bi-bluesky"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="follow" target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div data-layout="nav" class="shadow-sm" data-container="container"></div>
+    <script src="assets/js/layout.js"></script>
     <!-- Header-->
     <header id="top" class="finisher-header">
         <div class="container">
@@ -309,7 +286,8 @@
                             </script>
                             <canvas id="weekdayBarChart"></canvas>
                             <script>
-                            fetch('episodes.json')
+                            // Wachten tot de pagina geladen is, zodat chart.js (onderaan de pagina) beschikbaar is
+                            document.addEventListener('DOMContentLoaded', () => fetch('episodes.json')
                                 .then(res => res.json())
                                 .then(episodes => {
                                     // Weekdays starting with Tuesday (Maandag removed)
@@ -346,7 +324,7 @@
                                             }
                                         }
                                     });
-                                });
+                                }));
                             </script>
                         </div>
                     </div>
@@ -431,66 +409,8 @@
         </div>
     </section>
     </main>
-    <footer class="d-none d-md-block bg-dark py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <div class="small m-0 text-white">Copyright &copy; Sjors Hartwijk
-                        <script>document.write(new Date().getFullYear())</script>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <a class="link-light small" href="/index.html">Home</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="over.html">Over</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="https://bsky.app/profile/kbdata.nl"
-                        target="_blank">Bluesky</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="https://sjorshartwijk.nl/" target="_blank">Sjors
-                        Hartwijk</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="https://kleineboodschap.com" target="_blank">Kleine
-                        Boodschap</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-<!-- floating mobile nav -->
-<div class="container-fluid d-md-none">
-    <nav class="navbar navbar-bottom shadow-lg fixed-bottom">
-        <div class="container d-flex justify-content-between text-center">
-            <a href="index.html" class="text-decoration-none active">
-                <i class="bi bi-bar-chart-fill d-block"></i>
-                <span class="small">Statistieken</span>
-            </a>
-            <a href="afleveringen.html" class="text-decoration-none" title="Afleveringen">
-                <i class="bi bi-list-ul d-block"></i>
-                <span class="small">Afleveringen</span>
-            </a>
-            <a href="kaart.html" class="text-decoration-none" title="Kaart">
-                <i class="bi bi-geo-alt d-block"></i>
-                <span class="small">Kaart</span>
-            </a>
-            <a href="kalender.html" class="text-decoration-none" title="Kalender">
-                <i class="bi bi-calendar3 d-block"></i>
-                <span class="small">Kalender</span>
-            </a>
-            <a href="gasten.html" class="text-decoration-none" title="Gasten">
-                <i class="bi bi-people d-block"></i>
-                <span class="small">Gasten</span>
-            </a>
-            <a href="reeks.html" class="text-decoration-none" title="Reeks">
-                <i class="bi bi-arrows d-block"></i>
-                <span class="small">Reeks</span>
-            </a>
-            <a href="wrapped.html" class="text-decoration-none wrappedBtn" title="Wrapped">
-                <i class="bi bi-star d-block"></i>
-                <span class="small">Wrapped</span>
-            </a>
-      </div>
-    </nav>
-</div>
+    <div data-layout="footer"></div>
+<div data-layout="mobile-nav"></div>
 <!-- Mozaiek Modal -->
 <div class="modal fade" id="afleveringModal" tabindex="-1" aria-labelledby="afleveringModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -540,21 +460,6 @@
       });
     });
   </script>
-    <script>
-        const knoppen = document.querySelectorAll(".wrappedBtn");
-        const vandaag = new Date();
-        const jaar = vandaag.getFullYear();
-
-        // Zichtbaar vanaf 1 januari t/m 28/29 februari (niet inclusief 1 maart)
-        const beginDatum = new Date(jaar, 0, 1); // 1 januari
-        const eindDatum = new Date(jaar, 2, 1);  // 1 maart
-
-        const zichtbaar = vandaag >= beginDatum && vandaag < eindDatum;
-
-        knoppen.forEach(knop => {
-          knop.style.display = zichtbaar ? "block" : "none";
-        });
-    </script>
     <script>
         // lookup episode by day form
         document.getElementById('episodeForm').addEventListener('submit', function (event) {
