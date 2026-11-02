@@ -2,11 +2,41 @@ name: Bluesky Daily Episode Poster
 
 on:
   schedule:
-    - cron: '20 11 * * *' # 13:20 CEST = 11:20 UTC
+    # Cron rekent in UTC; beide tijden staan erin zodat het altijd 08:00 NL-tijd is
+    - cron: '0 6 * * *' # 08:00 CEST (zomertijd)
+    - cron: '0 7 * * *' # 08:00 CET (wintertijd)
   workflow_dispatch:
 
 jobs:
+  check-time:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - name: Check of deze cron bij de huidige NL-tijdzone hoort
+        id: check
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ -z "$SCHEDULE" ]; then
+            echo "Handmatig gestart, altijd posten"
+            echo "run=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          offset=$(TZ=Europe/Amsterdam date +%z)  # +0200 zomer, +0100 winter
+          expected_hour=$((8 - 10#${offset:1:2}))
+          cron_hour=$(echo "$SCHEDULE" | awk '{print $2}')
+          echo "Cron '${SCHEDULE}', NL-offset ${offset}, verwacht UTC-uur ${expected_hour}"
+          if [ "$cron_hour" -eq "$expected_hour" ]; then
+            echo "run=true" >> $GITHUB_OUTPUT
+          else
+            echo "Andere tijdzone dan deze cron, overslaan"
+            echo "run=false" >> $GITHUB_OUTPUT
+          fi
+
   post-to-bluesky:
+    needs: check-time
+    if: needs.check-time.outputs.run == 'true'
     runs-on: ubuntu-latest
 
     steps:

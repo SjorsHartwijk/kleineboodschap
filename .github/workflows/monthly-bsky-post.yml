@@ -2,11 +2,41 @@ name: Bluesky Monthly Summary Poster
 
 on:
   schedule:
-    - cron: '0 10 1 * *' # Elke 1e van de maand om 10:00 UTC (12:00 CEST)
+    # Elke 1e van de maand. Cron rekent in UTC; beide tijden staan erin zodat het altijd 08:00 NL-tijd is
+    - cron: '0 6 1 * *' # 08:00 CEST (zomertijd)
+    - cron: '0 7 1 * *' # 08:00 CET (wintertijd)
   workflow_dispatch:
 
 jobs:
+  check-time:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - name: Check of deze cron bij de huidige NL-tijdzone hoort
+        id: check
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ -z "$SCHEDULE" ]; then
+            echo "Handmatig gestart, altijd posten"
+            echo "run=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          offset=$(TZ=Europe/Amsterdam date +%z)  # +0200 zomer, +0100 winter
+          expected_hour=$((8 - 10#${offset:1:2}))
+          cron_hour=$(echo "$SCHEDULE" | awk '{print $2}')
+          echo "Cron '${SCHEDULE}', NL-offset ${offset}, verwacht UTC-uur ${expected_hour}"
+          if [ "$cron_hour" -eq "$expected_hour" ]; then
+            echo "run=true" >> $GITHUB_OUTPUT
+          else
+            echo "Andere tijdzone dan deze cron, overslaan"
+            echo "run=false" >> $GITHUB_OUTPUT
+          fi
+
   post-monthly-summary:
+    needs: check-time
+    if: needs.check-time.outputs.run == 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -77,14 +107,13 @@ jobs:
               "reportage")   cat_nl="Reportage" ;;
               *)             cat_nl="$cat" ;;
             esac
-            CATEGORY_LINES="${CATEGORY_LINES}$(printf '▸ %s %s\n' "$count" "$cat_nl")"
+            # Newline buiten $(...) houden, anders strippt command substitution hem
+            CATEGORY_LINES="${CATEGORY_LINES}▸ ${count} ${cat_nl}"$'\n'
           done < <(echo "$STATS" | jq -r '.categories | to_entries[] | "\(.key)=\(.value)"')
 
           # Schrijf post naar bestand met echte newlines (geen \n escape)
           # Gebruik printf in plaats van a heredoc om YAML parsingproblemen te vermijden
           printf '%s\n' \
-            "Kleine Boodschap in ${month_year}" \
-            "" \
             "In ${month_year} kon je ${HOURS} uur en ${MINUTES} minuten naar Kleine Boodschap luisteren." \
             "" \
             "Er verschenen ${COUNT} afleveringen:" \
