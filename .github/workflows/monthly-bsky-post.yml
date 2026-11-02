@@ -9,7 +9,7 @@ on:
 
 jobs:
   check-time:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       run: ${{ steps.check.outputs.run }}
     steps:
@@ -37,11 +37,11 @@ jobs:
   post-monthly-summary:
     needs: check-time
     if: needs.check-time.outputs.run == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Validate Secrets
         run: |
