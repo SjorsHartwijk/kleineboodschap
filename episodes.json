@@ -4413,6 +4413,7 @@
         "tijd": "66",
         "datum": "2026-11-04",
         "categorie": "reportage",
-        "latitude": "51.580747,4.837265"
+        "latitude": "51.580747",
+        "longitude": "4.837265"
     }
 ]
