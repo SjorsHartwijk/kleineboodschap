@@ -4405,5 +4405,14 @@
         "tijd": "166",
         "datum": "2026-11-02",
         "categorie": "nieuws"
+    },
+    {
+        "id": "531",
+        "taal": "nl",
+        "titel": "De Efteling en Anton Pieck Verzamelbeurs 2026",
+        "tijd": "66",
+        "datum": "2026-11-04",
+        "categorie": "reportage",
+        "latitude": "51.580747,4.837265"
     }
 ]
