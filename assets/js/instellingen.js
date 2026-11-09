@@ -75,6 +75,18 @@
         };
     }
 
+    // Elk element met data-kb-snelheid-notitie krijgt een korte toelichting als de
+    // snelheid niet 1,0x is (en blijft anders verborgen). Zet er zelf 'hidden' op.
+    function vulNotities() {
+        if (snelheid === STANDAARD) return;
+        document.querySelectorAll('[data-kb-snelheid-notitie]').forEach(el => {
+            el.textContent = `Alle tijden zijn omgerekend naar jouw afspeelsnelheid van ${formatteer(snelheid)}.`;
+            el.hidden = false;
+        });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', vulNotities);
+    else vulNotities();
+
     window.kbSnelheid = {
         MIN, MAX, STAP, STANDAARD,
         waarde: () => snelheid,

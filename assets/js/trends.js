@@ -14,20 +14,11 @@
                     .filter(ep => isFinite(ep.minuten) && !isNaN(ep.datum))
                     .sort((a, b) => a.datum - b.datum);
                 if (!afleveringen.length) return;
-                snelheidNotitie();
                 duurPerJaar(afleveringen);
                 verdeling(afleveringen);
                 mijlpalen();
             })
             .catch(fout => console.error('Trends konden niet geladen worden:', fout));
-    }
-
-    // Bij een andere afspeelsnelheid dan 1,0x een korte toelichting tonen
-    function snelheidNotitie() {
-        const el = document.getElementById('trendsSnelheid');
-        if (!el || !window.kbSnelheid || kbSnelheid.waarde() === kbSnelheid.STANDAARD) return;
-        el.textContent = `Alle tijden zijn omgerekend naar jouw afspeelsnelheid van ${kbSnelheid.formatteer(kbSnelheid.waarde())}.`;
-        el.hidden = false;
     }
 
     // 1. Gemiddelde duur per jaar
