@@ -66,7 +66,7 @@
         </div>
         <div class="kb-datumregel w-100">
             <div class="${container}">
-                <span>${vandaag()}</span>
+                <span class="d-none d-lg-inline">${vandaag()}</span>
                 <span id="kbStand"></span>
             </div>
         </div>
