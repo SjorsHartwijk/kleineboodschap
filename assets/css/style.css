@@ -1417,23 +1417,113 @@ footer a:hover, footer a:focus-visible {
   }
 }
 
-/* map */
-#map {
-  position: absolute;
-  top: 0;
-  height: calc(100dvh - 64px);
-  width: 100%;
+/* Kaart (kaart.html): een blok in de container, met legenda en uitleg ernaast */
+.kb-kaart {
+  height: clamp(420px, 70vh, 720px);
+  border: 1px solid var(--kb-border);
+  background-color: var(--kb-surface);
 }
 
-.leaflet-popup-content-wrapper,
-.leaflet-popup-tip {
+/* In de donkere modus worden de kaarttegels donker gemaakt; de markeringen blijven in kleur */
+[data-bs-theme=dark] .kb-kaart .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+}
+
+.kb-marker {
+  background: none;
+  border: 0;
+}
+.kb-marker svg {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+}
+
+.kb-kaartpaneel {
+  border-top: 3px solid var(--kb-text);
+  padding-top: 12px;
+}
+.kb-kaartpaneel + .kb-kaartpaneel {
+  margin-top: 2rem;
+}
+.kb-kaartpaneel h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Legenda: elke categorie is een knop om hem aan of uit te zetten */
+.kb-legenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--kb-border);
+}
+
+.kb-legendaknop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 0;
+  border: 0;
+  border-bottom: 1px solid var(--kb-border);
+  background: none;
+  color: var(--kb-text);
+  text-align: left;
+}
+.kb-legendaknop .kb-legenda-naam {
+  flex: 1;
+  font-weight: 500;
+}
+.kb-legendaknop .kb-legenda-aantal {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.kb-legendaknop:hover .kb-legenda-naam {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.kb-legendaknop[aria-pressed=false] {
+  color: var(--kb-muted);
+}
+.kb-legendaknop[aria-pressed=false] .kb-legendablokje {
+  background: transparent !important;
+  outline: 2px solid var(--kb-muted);
+  outline-offset: -2px;
+}
+.kb-legendaknop[aria-pressed=false] .kb-legenda-naam {
+  text-decoration: line-through;
+}
+
+.leaflet-container {
+  font-family: "Geist", sans-serif;
+}
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--kb-muted);
+}
+
+/* Leaflet laadt na deze stylesheet: daarom met .leaflet-container ervoor */
+.leaflet-container .leaflet-popup-content-wrapper,
+.leaflet-container .leaflet-popup-tip {
   background-color: var(--kb-surface);
   color: var(--kb-text);
   border-radius: 2px;
 }
 
-.leaflet-container {
-  font-family: "Geist", sans-serif;
+.leaflet-bar,
+.leaflet-bar a {
+  border-radius: 0 !important;
+}
+
+[data-bs-theme=dark] .leaflet-bar a {
+  background-color: var(--kb-surface);
+  color: var(--kb-text);
+  border-color: var(--kb-border);
+}
+
+[data-bs-theme=dark] .leaflet-control-attribution {
+  background-color: rgba(14, 28, 39, 0.8) !important;
+  color: var(--kb-muted);
+}
+[data-bs-theme=dark] .leaflet-control-attribution a {
+  color: var(--kb-text);
 }
 
 /* Categorie kleuren */
