@@ -16,15 +16,8 @@ function loadEpisodes() {
         // Lijsten voor labels en data
         const labels = [];
         const dataValues = [];
-        const backgroundColors = [];
+        const categorieen = [];
 
-        // Kleuren toewijzen aan categorieën
-        const categoryColors = {
-            'nieuws': '#F2CB65',
-            'achtergrond': '#619079',
-            'reportage': '#44687D',
-            'interview': '#AC1A2E'
-        };
 
         // Loop door de afleveringen om labels, data en kleuren te verzamelen
         data.forEach(episode => {
@@ -32,7 +25,7 @@ function loadEpisodes() {
             dataValues.push(parseFloat(episode.tijd)); // Gebruik tijd als data
 
             const category = episode.categorie;
-            backgroundColors.push(categoryColors[category]);
+            categorieen.push(category);
         });
 
         // Creeër een canvas voor de staafdiagram
@@ -46,7 +39,7 @@ function loadEpisodes() {
                 datasets: [{
                     label: 'minuten',
                     data: dataValues, // Gebruik tijd als data
-                    backgroundColor: backgroundColors,
+                    backgroundColor: c => kbCategorieKleur(categorieen[c.dataIndex]),
                 }]
             },
             options: {

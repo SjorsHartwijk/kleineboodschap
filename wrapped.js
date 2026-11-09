@@ -81,7 +81,8 @@ function updateChart(filteredEpisodes) {
     const barCtx = document.getElementById('barChart').getContext('2d');
     const episodeLabels = filteredEpisodes.map(ep => ep.titel);
     const episodeDurations = filteredEpisodes.map(ep => parseInt(ep.tijd, 10));
-    const episodeColors = filteredEpisodes.map(ep => categoryColors[ep.categorie]);
+    // Functie i.p.v. vaste kleuren, zodat de grafiek meekleurt met licht/donker
+    const episodeColors = c => kbCategorieKleur(filteredEpisodes[c.dataIndex]?.categorie);
 
     barChart = new Chart(barCtx, {
         type: 'bar',
@@ -132,11 +133,3 @@ function formatDate(dateStr) {
     const [year, month, day] = dateStr.split("-");
     return `${day}-${month}-${year}`;
 }
-
-// 🔹 Kleuren per categorie
-const categoryColors = {
-    'nieuws': '#F6CA83',
-    'achtergrond': '#7B9F93',
-    'reportage': '#4685AE',
-    'interview': '#C46868'
-};

@@ -10,9 +10,9 @@ const languageLabels = {
    Colors per language
 ============================ */
 const languageColors = {
-    Nederlands: '#d27d48',
-    Engels: '#5c7F8c',
-    Overig: '#cccccc'
+    Nederlands: 'cat-nieuws',
+    Engels: 'cat-achtergrond',
+    Overig: 'border'
 };
 
 /* ============================
@@ -33,7 +33,7 @@ fetch('episodes.json')
 
         const labels = Object.keys(languageCount);
         const data = Object.values(languageCount);
-        const colors = labels.map(label => languageColors[label] || languageColors.Overig);
+        const colors = c => kbKleur(languageColors[labels[c.dataIndex]] || languageColors.Overig);
 
         const languageChartContext = document
             .getElementById('languageChart')

@@ -66,7 +66,7 @@ function loadEpisodesPerYear() {
             return {
                 label: category,
                 data: years.map(year => episodesPerYear[year][category] || 0),
-                backgroundColor: categoryColors[category]
+                backgroundColor: () => kbCategorieKleur(category)
             };
         });
 
@@ -114,8 +114,9 @@ window.onload = loadEpisodesPerYear();
 
 // Kleuren toewijzen aan categorieën
 const categoryColors = {
-    'nieuws': '#F2CB65',
-    'achtergrond': '#619079',
-    'reportage': '#44687D',
-    'interview': '#AC1A2E'
+    // Kleuren komen uit de CSS (--kb-cat-*), zie kbCategorieKleur in theme.js
+    'nieuws': 'nieuws',
+    'achtergrond': 'achtergrond',
+    'reportage': 'reportage',
+    'interview': 'interview'
 };

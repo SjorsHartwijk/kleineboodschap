@@ -27,7 +27,7 @@ function loadCategories() {
         // Labels en data voor het donut chart
         const labels = Object.keys(episodesPerCategory);
         const datalabel = labels.map(label => episodesPerCategory[label]);
-        const backgroundColors = labels.map(label => categoryColors[label]);
+        const backgroundColors = c => kbCategorieKleur(labels[c.dataIndex]);
             // Creeër een canvas voor het cirkeldiagram
             const ctx = document.getElementById('donutChart').getContext('2d');
             // Creeër het cirkeldiagram

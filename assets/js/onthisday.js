@@ -39,8 +39,8 @@ function vandaagOpDezeDag() {
 
                 listItem.innerHTML = `
                     <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
-                        <div style="width:14px; height:14px; border-radius:50%; background:#fff; border:3px solid #e8608a; outline:2px solid #e8608a; margin-top:2px;"></div>
-                        ${!isLast ? '<div style="width:2px; flex:1; background:#e8608a; min-height:24px; margin-top:0px;"></div>' : ''}
+                        <div style="width:14px; height:14px; border-radius:50%; background:var(--kb-surface); border:3px solid var(--kb-primary); outline:2px solid var(--kb-primary); margin-top:2px;"></div>
+                        ${!isLast ? '<div style="width:2px; flex:1; background:var(--kb-primary); min-height:24px; margin-top:0px;"></div>' : ''}
                     </div>
                     <span class="small"><strong>${jaar}</strong> — Aflevering ${episode.id}: ${episode.titel}</span>
                 `;
