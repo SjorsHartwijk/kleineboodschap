@@ -20,7 +20,7 @@
   --kb-cat-nieuws: #C2691A;
   --kb-cat-interview: #7E4C86;
   --kb-cat-reportage: #4E7F52;
-  --kb-wrapped-bg: #154666;
+  --kb-wrapped-bg: #0D3149; /* iets donkerder dan de menubalk (#154666), zodat die zich aftekent */
   --kb-wrapped-text: #FFFFFF;
   --kb-logo-filter: none;
   --kb-shadow: 0 1px 3px rgba(27, 42, 54, .08);
@@ -742,6 +742,8 @@ a:hover, a:focus {
 .wrapped {
   background-color: var(--kb-wrapped-bg);
   min-height: calc(100dvh - 56px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  /* Statistiekkaartjes */
 }
 .wrapped h1, .wrapped h2, .wrapped h3, .wrapped h4, .wrapped h5, .wrapped h6 {
   color: var(--kb-wrapped-text);
@@ -755,8 +757,23 @@ a:hover, a:focus {
 .wrapped .card h1, .wrapped .card h2, .wrapped .card h3, .wrapped .card h4, .wrapped .card h5, .wrapped .card h6 {
   color: var(--kb-text);
 }
-.wrapped #stats {
-  color: var(--kb-wrapped-text);
+.wrapped .kb-wrapped-waarde {
+  font-family: "Alegreya", serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wrapped .kb-wrapped-blokje {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border-radius: 3px;
+  vertical-align: middle;
 }
 @media (max-width: 768px) {
   .wrapped table thead tr th {

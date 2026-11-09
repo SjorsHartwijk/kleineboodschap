@@ -37,6 +37,8 @@ function updateWrapped() {
     const selectedCategory = document.getElementById("categoryFilter").value;
     document.getElementById("selectedYear").textContent = selectedYear;
     document.getElementById("episodeYear").textContent = selectedYear;
+    // Jaartal in de paginatitel volgt het gekozen jaar (geen vast jaartal in de HTML)
+    if (selectedYear) document.title = `Kleine Boodschap Wrapped ${selectedYear} - Kleine Boodschap Data`;
 
     let filteredEpisodes = episodesData.filter(ep => ep.datum.startsWith(selectedYear));
 
@@ -44,15 +46,7 @@ function updateWrapped() {
         filteredEpisodes = filteredEpisodes.filter(ep => ep.categorie === selectedCategory);
     }
 
-    const totalEpisodes = filteredEpisodes.length;
-    const totalMinutes = filteredEpisodes.reduce((sum, ep) => sum + parseInt(ep.tijd, 10), 0);
-    const totalHours = Math.floor(totalMinutes / 60);
-    const remainingMinutes = totalMinutes % 60;
-
-    document.getElementById("stats").innerHTML = `
-        <p>Aantal afleveringen: <strong>${totalEpisodes}</strong></p>
-        <p>Totaal tijd: <strong>${totalMinutes} minuten</strong> (${totalHours} uur en ${remainingMinutes} min)</p>
-    `;
+    document.getElementById("stats").innerHTML = statistiekKaarten(filteredEpisodes, selectedCategory);
 
     // 🔹 Sorteer afleveringen voor de tabel (1 januari → 31 december)
     const sortedEpisodes = [...filteredEpisodes].sort((a, b) => new Date(a.datum) - new Date(b.datum));
@@ -75,11 +69,44 @@ function updateWrapped() {
 }
 
 
+// 🔹 Statistieken als kaartjes: aantal, luistertijd, gemiddelde, langste en (bij alle categorieën) favoriete categorie
+function statistiekKaarten(afleveringen, categorie) {
+    if (!afleveringen.length) {
+        return `<div class="col-12"><div class="card"><div class="card-body">Geen afleveringen gevonden voor deze keuze.</div></div></div>`;
+    }
+    const minuten = afleveringen.map(ep => parseInt(ep.tijd, 10));
+    const totaal = minuten.reduce((s, m) => s + m, 0);
+    const langste = afleveringen.reduce((a, b) => parseInt(b.tijd, 10) > parseInt(a.tijd, 10) ? b : a);
+    const kaart = (titel, waarde, uitleg) => `
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="small kb-muted">${titel}</div>
+                    <div class="kb-wrapped-waarde">${waarde}</div>
+                    ${uitleg ? `<div class="small kb-muted">${uitleg}</div>` : ''}
+                </div>
+            </div>
+        </div>`;
+
+    const kaarten = [
+        kaart('Afleveringen', afleveringen.length),
+        kaart('Luistertijd', `${Math.floor(totaal / 60)} uur`, `${totaal % 60} minuten erbij, ${totaal.toLocaleString('nl-NL')} minuten in totaal`),
+        kaart('Gemiddelde duur', `${Math.round(totaal / afleveringen.length)} min`),
+        kaart('Langste aflevering', `${langste.tijd} min`, `${langste.id}: ${langste.titel}`),
+    ];
+    if (categorie === 'all') {
+        const telling = {};
+        afleveringen.forEach(ep => { telling[ep.categorie] = (telling[ep.categorie] || 0) + 1; });
+        const [favoriet, aantal] = Object.entries(telling).sort((a, b) => b[1] - a[1])[0];
+        kaarten.push(kaart('Meeste afleveringen', `<span class="badge ${favoriet} kb-wrapped-blokje">&nbsp;</span> ${favoriet[0].toUpperCase() + favoriet.slice(1)}`, `${aantal} van de ${afleveringen.length} afleveringen`));
+    }
+    return kaarten.join('');
+}
+
 function updateChart(filteredEpisodes) {
     if (barChart) barChart.destroy();
 
     const barCtx = document.getElementById('barChart').getContext('2d');
-    const episodeLabels = filteredEpisodes.map(ep => ep.titel);
     const episodeDurations = filteredEpisodes.map(ep => parseInt(ep.tijd, 10));
     // Functie i.p.v. vaste kleuren, zodat de grafiek meekleurt met licht/donker
     const episodeColors = c => kbCategorieKleur(filteredEpisodes[c.dataIndex]?.categorie);
@@ -87,17 +114,33 @@ function updateChart(filteredEpisodes) {
     barChart = new Chart(barCtx, {
         type: 'bar',
         data: {
-            labels: episodeLabels,
+            // Afleveringsnummers op de as (titels passen er niet leesbaar onder), titel in de tooltip
+            labels: filteredEpisodes.map(ep => ep.id),
             datasets: [{
                 label: 'Tijdsduur (minuten)',
                 data: episodeDurations,
-                backgroundColor: episodeColors
+                backgroundColor: episodeColors,
+                borderRadius: 3
             }]
         },
         options: {
             responsive: true,
+            plugins: {
+                // De kleuren zijn per categorie; de legenda staat als HTML boven de grafiek
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        title: c => {
+                            const ep = filteredEpisodes[c[0].dataIndex];
+                            return `${ep.id}: ${ep.titel}`;
+                        },
+                        label: c => `${c.raw} minuten · ${filteredEpisodes[c.dataIndex].categorie}`
+                    }
+                }
+            },
             scales: {
-                y: { beginAtZero: true }
+                x: { title: { display: true, text: 'aflevering' }, ticks: { autoSkip: true, maxRotation: 0 } },
+                y: { beginAtZero: true, title: { display: true, text: 'minuten' } }
             }
         }
     });

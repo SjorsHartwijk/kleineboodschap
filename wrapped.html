@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/images/logo2.svg">
     <link rel="icon" type="image/png" href="assets/images/logo2.png">
-    <title>Kleine Boodschap Wrapped 2025 - Kleine Boodschap Data</title>
+    <title>Kleine Boodschap Wrapped - Kleine Boodschap Data</title>
     <meta name="theme-color" content="#154666"/>
     <meta property="og:title" content="Kleine Boodschap Data">
     <meta property="og:site_name" content="Kleine Boodschap Data">
@@ -75,15 +75,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col mt-4">
+            <div class="col-12 mt-4">
                 <h3>Statistieken</h3>
-                <div id="stats"></div>
             </div>
         </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-3 mb-4" id="stats"></div>
         <div class="row mb-4">
             <div class="card col-12">
                 <div class="card-body">
                     <h3>Afleveringen</h3>
+                    <div class="d-flex flex-wrap gap-3 small mb-2" aria-label="Legenda">
+                        <span><span class="badge achtergrond kb-wrapped-blokje">&nbsp;</span> Achtergrond</span>
+                        <span><span class="badge nieuws kb-wrapped-blokje">&nbsp;</span> Nieuws</span>
+                        <span><span class="badge interview kb-wrapped-blokje">&nbsp;</span> Interview</span>
+                        <span><span class="badge reportage kb-wrapped-blokje">&nbsp;</span> Reportage</span>
+                    </div>
                     <canvas id="barChart"></canvas>
                 </div>
             </div>
