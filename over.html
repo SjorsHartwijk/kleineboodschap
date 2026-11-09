@@ -37,6 +37,33 @@
                             <p>Dit project heeft geen commerciële doeleinden en heeft geen enkele affiliatie met de podcast Kleine Boodschap noch de Efteling. Wat betreft de data haal ik alleen de openbare gegevens zoals titel, publicatiedatum en categorie van een aflevering van de website van Kleine Boodschap. De afleveringen zelf zijn via deze website niet te beluisteren en wordt er ook niet naar verwezen.</p>
                         </div>
                     </div>
+                    <div class="row pb-5" id="data-downloaden">
+                        <div class="col-12 col-xxl-9">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="h4 card-title"><i class="bi bi-download" aria-hidden="true"></i> Data downloaden</h2>
+                                    <p>Wil je zelf aan de slag met de cijfers? Alle gegevens die deze website gebruikt, kun je downloaden als CSV-bestand. Het bestand wordt bij elke nieuwe aflevering bijgewerkt<span id="downloadStand"></span>.</p>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <a href="afleveringen.csv" download="kleine-boodschap-afleveringen.csv" class="btn btn-primary"><i class="bi bi-filetype-csv" aria-hidden="true"></i> Download CSV</a>
+                                        <a href="episodes.json" download="kleine-boodschap-afleveringen.json" class="btn btn-outline-secondary"><i class="bi bi-filetype-json" aria-hidden="true"></i> Liever JSON</a>
+                                    </div>
+                                    <details class="small">
+                                        <summary>Welke kolommen staan erin?</summary>
+                                        <ul class="mt-2 mb-2">
+                                            <li><code>id</code>: het nummer van de aflevering</li>
+                                            <li><code>taal</code>: <code>nl</code> of <code>en</code></li>
+                                            <li><code>titel</code>: de titel van de aflevering</li>
+                                            <li><code>tijd</code>: de duur in minuten, op normale snelheid (1,0×)</li>
+                                            <li><code>datum</code>: de publicatiedatum als <code>JJJJ-MM-DD</code></li>
+                                            <li><code>categorie</code>: <code>nieuws</code>, <code>achtergrond</code>, <code>reportage</code> of <code>interview</code></li>
+                                            <li><code>latitude</code> en <code>longitude</code>: de locatie, alleen bij afleveringen over een plek in het park</li>
+                                        </ul>
+                                        <p class="mb-0 kb-muted">Het bestand is kommagescheiden en UTF-8. Titels met een komma staan tussen aanhalingstekens. Openen in Excel? Gebruik dan <em>Gegevens &gt; Van tekst/CSV</em>, zodat letters als ë en é goed worden weergegeven.</p>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row pb-5">
                         <div class="col-12">
                             <h2>Veelgestelde vragen</h2>
@@ -234,6 +261,14 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
 <script src="assets/js/cookies.js"></script>
+    <script>
+        // Stand van de download: aantal afleveringen en de nieuwste datum
+        fetch('episodes.json').then(r => r.json()).then(data => {
+            const nieuwste = data.map(ep => ep.datum).sort().pop();
+            const datum = new Date(nieuwste + 'T00:00:00').toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+            document.getElementById('downloadStand').textContent = ` en bevat nu ${data.length} afleveringen, tot en met ${datum}`;
+        }).catch(() => {});
+    </script>
     </body>
 
 </html>

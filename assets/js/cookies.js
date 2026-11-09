@@ -14,6 +14,7 @@
     const NOODZAKELIJK = [
         { naam: 'cookieConsent', soort: 'Lokale opslag', duur: 'Tot je hem wist', doel: 'Onthoudt je keuze in deze melding.' },
         { naam: 'kb-thema', soort: 'Lokale opslag', duur: 'Tot je hem wist', doel: 'Onthoudt of je de site licht, donker of volgens je systeem wilt zien.' },
+        { naam: 'kb-reeks', soort: 'Lokale opslag', duur: 'Tot je hem wist', doel: 'Onthoudt op de pagina Reeks tot welke aflevering of datum je hebt geluisterd en hoeveel je per dag luistert.' },
         { naam: 'kb-snelheid', soort: 'Cookie', duur: '1 jaar', doel: 'Onthoudt je afspeelsnelheid, zodat alle tijden op de site daarop worden omgerekend. Alleen als je een andere snelheid dan 1,0× kiest.' },
     ];
     const ANALYTISCH = [

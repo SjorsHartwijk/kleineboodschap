@@ -145,6 +145,9 @@ h1,h2,h3,h4,h5,h6 {
 .kb-muted {
     color: var(--kb-muted);
 }
+code {
+    color: var(--kb-primary);
+}
 
 /* Knoppen met alleen een icoon (kleurmodus, menu) */
 .kb-icoonknop {
@@ -568,6 +571,82 @@ footer {
         color: var(--kb-muted);
     }
 }
+/* Homepage: mijlpalen op desktop naast elkaar als tegels */
+@media (min-width: 992px) {
+    .kb-mijlpalen-rij {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(0, 1fr);
+        gap: 12px;
+        .kb-mijlpaal {
+            padding: 12px 14px;
+            border: 1px solid var(--kb-border);
+            border-radius: 8px;
+            background-color: var(--kb-bg);
+            & + .kb-mijlpaal {
+                border-top: 1px solid var(--kb-border);
+            }
+        }
+        .kb-mijlpaal-straks {
+            border-style: dashed;
+            & + .kb-mijlpaal-straks {
+                border-top-style: dashed;
+            }
+        }
+    }
+}
+/* Kaartjes met één grote waarde (reeks, wrapped) */
+.kb-kaartwaarde {
+    font-family: "Alegreya", serif;
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin: 4px 0;
+}
+/* Klein kleurblokje voor legenda's */
+.kb-legendablokje {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+/* Reeks: verdeling per categorie */
+.kb-categorieblok {
+    height: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--kb-border);
+    border-radius: 8px;
+    background-color: var(--kb-bg);
+}
+.kb-balk {
+    height: 6px;
+    margin-top: 8px;
+    border-radius: 3px;
+    background-color: var(--kb-border);
+    overflow: hidden;
+    span {
+        display: block;
+        height: 100%;
+        border-radius: 3px;
+    }
+}
+#reeks .nav-pills {
+    --bs-nav-pills-link-active-bg: var(--kb-primary);
+    --bs-nav-pills-link-active-color: var(--kb-on-primary);
+    --bs-nav-link-color: var(--kb-text);
+    --bs-nav-link-hover-color: var(--kb-primary);
+    padding: .25em;
+    background-color: var(--kb-bg);
+    border: 1px solid var(--kb-border);
+    border-radius: 8px;
+    .nav-link {
+        padding: .3em 1em;
+        border-radius: 6px;
+    }
+}
+
 /* Mijlpalenpagina: voorspelde mijlpalen */
 .kb-verwacht {
     display: flex;

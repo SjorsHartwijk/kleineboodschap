@@ -11,303 +11,327 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/images/logo2.svg">
     <link rel="icon" type="image/png" href="assets/images/logo2.png">
-    <title>Reeks - Kleine Boodschap Data</title>
+    <title>Reeks en luisterteller - Kleine Boodschap Data</title>
     <meta name="theme-color" content="#154666"/>
-    <meta property="og:title" content="Kleine Boodschap Data">
+    <meta property="og:title" content="Reeks en luisterteller - Kleine Boodschap Data">
     <meta property="og:site_name" content="Kleine Boodschap Data">
     <meta property="og:url" content="https://kbdata.nl/reeks.html">
-    <meta property="og:description" content="Maak je eigen statistieken op basis van een datumreeks. Vul een begin- en einddatum in en genereer jouw eigen luisterstatistieken.">
+    <meta property="og:description" content="Hoeveel Kleine Boodschap heb jij al geluisterd? Kies een reeks afleveringen of datums en zie je luistertijd, wat er nog te gaan is en wanneer je bij bent.">
     <meta property="og:image" content="https://kbdata.nl/assets/images/opengraph.png">
     <meta name="description"
-        content="Maak je eigen statistieken op basis van een datumreeks. Vul een begin- en einddatum in en genereer jouw eigen luisterstatistieken.">
+        content="Hoeveel Kleine Boodschap heb jij al geluisterd? Kies een reeks afleveringen of datums en zie je luistertijd, wat er nog te gaan is en wanneer je bij bent.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body class="d-flex flex-column h-100">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <div data-layout="nav"></div>
-            <script src="assets/js/layout.js"></script>
-            <section class="reeks">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="my-2 my-lg-5">
-                                <h1>Reeks</h1>
-                                <p>Gebruik deze pagina om zelf statistieken te maken op basis van een datumreeks, vul een begin- en einddatum in en genereer jouw eigen luisterstatistieken.</p>
-                                <form id="dateRangeForm" class="row">
-                                    <div class="col-12 col-md-6">
-                                        <label for="startDate" class="form-label">Van:</label>
-                                        <input class="form-control form-control-lg" type="date" id="startDate" required>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <label for="endDate" class="form-label">Tot:</label>
-                                        <input class="form-control form-control-lg" type="date" id="endDate" required>
-                                    </div>
-                                    <div class="col-12 col-md-3 mt-3 d-grid">
-                                        <button class="btn btn-primary" type="submit">Zoeken</button>
-                                    </div>
-                                    <div class="col-12 col-md-3 mt-3 d-grid">
-                                        <button type="button" class="btn btn-outline-secondary" id="resetButton">Opnieuw instellen</button>
-                                    </div>
-                                </form>
-                                <p class="fst-italic text-muted small mt-2">Gebruik de knop 'Opnieuw instellen' als je een nieuwe datumreeks wilt opzoeken.</p>
+    <!-- Navigation-->
+    <div data-layout="nav"></div>
+    <script src="assets/js/layout.js"></script>
+    <main class="flex-shrink-0" id="reeks">
+        <section class="py-5">
+            <div class="container">
+                <div class="row mb-3">
+                    <div class="col-12 col-xxl-9">
+                        <h1>Reeks en luisterteller</h1>
+                        <p>Hoeveel Kleine Boodschap heb jij al geluisterd? Kies tot welke aflevering je bent, of een periode, en zie meteen je luistertijd, wat er nog te gaan is en wanneer je helemaal bij bent. Je keuze wordt op dit apparaat onthouden.</p>
+                        <p class="small kb-muted" id="reeksSnelheid" hidden></p>
+                    </div>
+                </div>
+
+                <!-- Keuze van de reeks -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                            <h2 class="h5 card-title mb-0">Kies je reeks</h2>
+                            <div class="nav nav-pills" role="group" aria-label="Kies op aflevering of op datum">
+                                <button type="button" class="nav-link active" data-reeks-modus="nummer" aria-pressed="true">Op aflevering</button>
+                                <button type="button" class="nav-link" data-reeks-modus="datum" aria-pressed="false">Op datum</button>
+                            </div>
+                        </div>
+
+                        <div class="row g-3" id="reeksNummer">
+                            <div class="col-6 col-md-3">
+                                <label for="vanNummer" class="form-label">Van aflevering</label>
+                                <input class="form-control form-control-lg" type="number" id="vanNummer" min="1" inputmode="numeric">
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label for="totNummer" class="form-label">Tot en met</label>
+                                <input class="form-control form-control-lg" type="number" id="totNummer" min="1" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="row g-3" id="reeksDatum" hidden>
+                            <div class="col-12 col-md-3">
+                                <label for="vanDatum" class="form-label">Van</label>
+                                <input class="form-control form-control-lg" type="date" id="vanDatum">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <label for="totDatum" class="form-label">Tot en met</label>
+                                <input class="form-control form-control-lg" type="date" id="totDatum">
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2 mt-3" aria-label="Snelkeuzes">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-reeks-snel="alles">Alles</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-reeks-snel="ditjaar">Dit jaar</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-reeks-snel="vorigjaar">Vorig jaar</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-reeks-snel="laatste10">Laatste 10 afleveringen</button>
+                        </div>
+                        <p class="small text-danger mt-2 mb-0" id="reeksFout" hidden></p>
+                    </div>
+                </div>
+
+                <!-- Resultaat -->
+                <div class="row row-cols-2 row-cols-lg-4 g-3 mb-4" id="reeksKaarten"></div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-5 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h2 class="h5 card-title">Nog te gaan</h2>
+                                <div id="reeksTeGaan"></div>
+                                <div class="mt-3">
+                                    <label for="perDag" class="form-label small kb-muted mb-1">Ik luister gemiddeld per dag</label>
+                                    <select class="form-select" id="perDag">
+                                        <option value="15">15 minuten</option>
+                                        <option value="30">30 minuten</option>
+                                        <option value="60" selected>1 uur</option>
+                                        <option value="90">1,5 uur</option>
+                                        <option value="120">2 uur</option>
+                                        <option value="180">3 uur</option>
+                                    </select>
+                                </div>
+                                <p class="mt-3 mb-0" id="reeksInhalen"></p>
+                                <p class="small kb-muted mt-2 mb-0" id="reeksInhalenUitleg"></p>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h2 class="h4 card-title">Diagram</h2>
-                                    <canvas id="rangeChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="statistics" id="statistics">
-                                <div class="row mb-3">
-                                    <div class="col-12">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h2 class="h5 card-title">Afleveringen</h2>
-                                                <p class="mt-3">Aantal afleveringen: <span id="totalEpisodes"></span></p>
-                                                <p>Totaal aantal minuten: <span id="totalMinutes"></span></p>
-                                                <p>Totaal aantal uur: <span id="totalHours"></span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-3 mt-3">
-                                        <div class="card bg-nieuws">
-                                            <div class="card-body">
-                                                <h2 class="h5 card-title">Nieuws</h2>
-                                                <p>Aantal afleveringen: <span id="newsEpisodes"></span></p>
-                                                <p>Aantal minuten: <span id="newsMinutes"></span></p>
-                                                <p>Aantal uren: <span id="newsHours"></span></p>
-                                                <p>Percentage: <span id="newsPercentage"></span>%</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-3 mt-3">
-                                        <div class="card bg-achtergrond">
-                                            <div class="card-body">
-                                                <h2 class="h5 card-title">Achtergrond</h2>
-                                                <p>Aantal afleveringen: <span id="backgroundEpisodes"></span></p>
-                                                <p>Aantal minuten: <span id="backgroundMinutes"></span></p>
-                                                <p>Aantal uren: <span id="backgroundHours"></span></p>
-                                                <p>Percentage: <span id="backgroundPercentage"></span>%</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-3 mt-3">
-                                        <div class="card bg-reportage">
-                                            <div class="card-body bg-reportage">
-                                                <h2 class="h5 card-title">Reportage</h2>
-                                                <p>Aantal afleveringen: <span id="reportageEpisodes"></span></p>
-                                                <p>Aantal minuten: <span id="reportageMinutes"></span></p>
-                                                <p>Aantal uren: <span id="reportageHours"></span></p>
-                                                <p>Percentage: <span id="reportagePercentage"></span>%</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-3 mt-3">
-                                        <div class="card bg-interview">
-                                            <div class="card-body">
-                                                <h2 class=" h5 card-title">Interview</h2>
-                                                <p>Aantal afleveringen: <span id="interviewEpisodes"></span></p>
-                                                <p>Aantal minuten: <span id="interviewMinutes"></span></p>
-                                                <p>Aantal uren: <span id="interviewHours"></span></p>
-                                                <p>Percentage: <span id="interviewPercentage"></span>%</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-12 col-lg-7 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h2 class="h5 card-title">Per categorie</h2>
+                                <div class="row row-cols-1 row-cols-sm-2 g-3" id="reeksCategorieen"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <div data-layout="mobile-nav"></div>
-        <div data-layout="footer"></div>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            endDate.max = new Date().toISOString().split("T")[0];
 
-            let chart; // Variable to hold the chart instance
-        
-            document.getElementById('dateRangeForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                const startDate = new Date(document.getElementById('startDate').value);
-                const endDate = new Date(document.getElementById('endDate').value);
-        
-                fetch('episodes.json')
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Failed to load JSON data');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        const filteredEpisodes = data.filter(episode => {
-                            const episodeDate = new Date(episode.datum);
-                            return episodeDate >= startDate && episodeDate <= endDate;
-                        });
-        
-                        const totalEpisodes = filteredEpisodes.length;
-                        const categoryCount = {
-                            'nieuws': 0,
-                            'achtergrond': 0,
-                            'reportage': 0,
-                            'interview': 0
-                        };
-                        const categoryMinutes = {
-                            'nieuws': 0,
-                            'achtergrond': 0,
-                            'reportage': 0,
-                            'interview': 0
-                        };
-                        let totalMinutes = 0;
-        
-                        const monthlyData = {};
-        
-                        filteredEpisodes.forEach(episode => {
-                            const episodeDate = new Date(episode.datum);
-                            const monthYear = `${episodeDate.getFullYear()}-${episodeDate.getMonth() + 1}`;
-                            const category = episode.categorie;
-                            if (!monthlyData[monthYear]) {
-                                monthlyData[monthYear] = {
-                                    'nieuws': 0,
-                                    'achtergrond': 0,
-                                    'reportage': 0,
-                                    'interview': 0
-                                };
-                            }
-                            if (categoryCount[category] !== undefined) {
-                                categoryCount[category]++;
-                                const minutes = parseInt(episode.tijd, 10);
-                                categoryMinutes[category] += minutes;
-                                totalMinutes += minutes;
-                                monthlyData[monthYear][category]++;
-                            }
-                        });
-        
-                        const totalHours = Math.floor(totalMinutes / 60);
-        
-                        // Update total statistics
-                        document.getElementById('totalEpisodes').textContent = totalEpisodes;
-                        document.getElementById('totalMinutes').textContent = totalMinutes;
-                        document.getElementById('totalHours').textContent = totalHours;
-        
-                        // Update category statistics
-                        updateCategoryStatistics('news', categoryCount['nieuws'], categoryMinutes['nieuws'], totalEpisodes);
-                        updateCategoryStatistics('background', categoryCount['achtergrond'], categoryMinutes['achtergrond'], totalEpisodes);
-                        updateCategoryStatistics('reportage', categoryCount['reportage'], categoryMinutes['reportage'], totalEpisodes);
-                        updateCategoryStatistics('interview', categoryCount['interview'], categoryMinutes['interview'], totalEpisodes);
-        
-                        // Prepare data for chart
-                        const labels = Object.keys(monthlyData);
-                        const datasets = [
-                            {
-                                label: 'Nieuws',
-                                data: labels.map(label => monthlyData[label]['nieuws']),
-                                backgroundColor: () => kbCategorieKleur('nieuws')
-                            },
-                            {
-                                label: 'Achtergrond',
-                                data: labels.map(label => monthlyData[label]['achtergrond']),
-                                backgroundColor: () => kbCategorieKleur('achtergrond')
-                            },
-                            {
-                                label: 'Reportage',
-                                data: labels.map(label => monthlyData[label]['reportage']),
-                                backgroundColor: () => kbCategorieKleur('reportage')
-                            },
-                            {
-                                label: 'Interview',
-                                data: labels.map(label => monthlyData[label]['interview']),
-                                backgroundColor: () => kbCategorieKleur('interview')
-                            }
-                        ];
-        
-                        const ctx = document.getElementById('rangeChart').getContext('2d');
-                        if (chart) {
-                            chart.destroy(); // Destroy the existing chart before creating a new one
-                        }
-                        chart = new Chart(ctx, {
-                            type: 'bar',
-                            data: {
-                                labels: labels,
-                                datasets: datasets
-                            },
-                            options: {
-                                responsive: true,
-                                scales: {
-                                    x: {
-                                        stacked: true
-                                    },
-                                    y: {
-                                        stacked: true,
-                                        ticks: {
-                                            stepSize: 1
-                                        }
-                                    }
-                                },
-                                plugins: {
-                                    legend: {
-                                        position: 'bottom',
-                                        display: true
-                                }
-                        }
-                            }
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Er is een fout opgetreden bij het laden van de gegevens.');
-                    });
-            });
-        
-            document.getElementById('resetButton').addEventListener('click', function() {
-                // Reset form fields
-                document.getElementById('startDate').value = '';
-                document.getElementById('endDate').value = '';
-        
-                // Clear statistics
-                document.getElementById('totalEpisodes').textContent = '';
-                document.getElementById('totalMinutes').textContent = '';
-                document.getElementById('totalHours').textContent = '';
-                clearCategoryStatistics('news');
-                clearCategoryStatistics('background');
-                clearCategoryStatistics('reportage');
-                clearCategoryStatistics('interview');
-        
-                // Destroy the chart if it exists
-                if (chart) {
-                    chart.destroy();
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="h5 card-title" id="reeksGrafiekTitel">Afleveringen in je reeks</h2>
+                        <div class="d-flex flex-wrap gap-3 small mb-2" aria-label="Legenda">
+                            <span><span class="badge achtergrond kb-legendablokje">&nbsp;</span> Achtergrond</span>
+                            <span><span class="badge nieuws kb-legendablokje">&nbsp;</span> Nieuws</span>
+                            <span><span class="badge interview kb-legendablokje">&nbsp;</span> Interview</span>
+                            <span><span class="badge reportage kb-legendablokje">&nbsp;</span> Reportage</span>
+                        </div>
+                        <canvas id="rangeChart" aria-label="Staafdiagram van de afleveringen in je reeks per periode en categorie" role="img"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div data-layout="mobile-nav"></div>
+    <div data-layout="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/mijlpalen.js"></script>
+    <script>
+        (function () {
+            const M = window.kbMijlpalen;
+            const OPSLAG = 'kb-reeks';
+            const CATEGORIEEN = ['nieuws', 'achtergrond', 'reportage', 'interview'];
+            const DAG = 864e5;
+            const $ = id => document.getElementById(id);
+            const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+            const uurMin = min => {
+                const u = Math.floor(min / 60), m = Math.round(min % 60);
+                return u ? `${M.getal(u)} uur${m ? ` en ${m} min` : ''}` : `${m} min`;
+            };
+
+            let afl = [], tempo, grafiek;
+            let staat = { modus: 'nummer', van: '', tot: '', vanDatum: '', totDatum: '', perDag: '60' };
+
+            function lees() {
+                try { Object.assign(staat, JSON.parse(localStorage.getItem(OPSLAG)) || {}); } catch (e) { /* geen opslag */ }
+            }
+            function bewaar() {
+                try { localStorage.setItem(OPSLAG, JSON.stringify(staat)); } catch (e) { /* geen opslag */ }
+            }
+
+            if (window.kbSnelheid && kbSnelheid.waarde() !== kbSnelheid.STANDAARD) {
+                $('reeksSnelheid').textContent = `Alle tijden zijn omgerekend naar jouw afspeelsnelheid van ${kbSnelheid.formatteer(kbSnelheid.waarde())}.`;
+                $('reeksSnelheid').hidden = false;
+            }
+
+            function zetModus(modus) {
+                staat.modus = modus;
+                $('reeksNummer').hidden = modus !== 'nummer';
+                $('reeksDatum').hidden = modus !== 'datum';
+                document.querySelectorAll('[data-reeks-modus]').forEach(k => {
+                    const actief = k.dataset.reeksModus === modus;
+                    k.classList.toggle('active', actief);
+                    k.setAttribute('aria-pressed', actief);
+                });
+            }
+
+            function vulVelden() {
+                $('vanNummer').value = staat.van;
+                $('totNummer').value = staat.tot;
+                $('vanDatum').value = staat.vanDatum;
+                $('totDatum').value = staat.totDatum;
+                $('perDag').value = staat.perDag;
+                zetModus(staat.modus);
+            }
+
+            // Welke afleveringen vallen in de reeks?
+            function selectie() {
+                if (staat.modus === 'nummer') {
+                    const van = parseInt(staat.van, 10), tot = parseInt(staat.tot, 10);
+                    if (!van || !tot) return { fout: 'Vul een begin- en eindaflevering in.' };
+                    if (van > tot) return { fout: 'De eerste aflevering moet vóór de laatste liggen.' };
+                    return { lijst: afl.filter(ep => ep.id >= van && ep.id <= tot), na: ep => ep.id > tot };
                 }
+                if (!staat.vanDatum || !staat.totDatum) return { fout: 'Vul een begin- en einddatum in.' };
+                const van = new Date(staat.vanDatum + 'T00:00:00'), tot = new Date(staat.totDatum + 'T23:59:59');
+                if (van > tot) return { fout: 'De begindatum moet vóór de einddatum liggen.' };
+                return { lijst: afl.filter(ep => ep.datum >= van && ep.datum <= tot), na: ep => ep.datum > tot };
+            }
+
+            function kaart(titel, waarde, uitleg) {
+                return `<div class="col"><div class="card h-100"><div class="card-body">
+                    <div class="small kb-muted">${titel}</div>
+                    <div class="kb-kaartwaarde">${waarde}</div>
+                    ${uitleg ? `<div class="small kb-muted">${uitleg}</div>` : ''}
+                </div></div></div>`;
+            }
+
+            function toon() {
+                bewaar();
+                const { lijst, na, fout } = selectie();
+                $('reeksFout').hidden = !fout;
+                $('reeksFout').textContent = fout || '';
+                if (fout) return;
+
+                const totaal = lijst.reduce((s, ep) => s + ep.minuten, 0);
+                const eerste = lijst[0], laatste = lijst[lijst.length - 1];
+                $('reeksKaarten').innerHTML = [
+                    kaart('Afleveringen', M.getal(lijst.length), `van de ${M.getal(afl.length)} in totaal`),
+                    kaart('Luistertijd', `${M.getal(Math.floor(totaal / 60))} uur`, `${Math.round(totaal % 60)} minuten erbij, ${M.getal(Math.round(totaal))} minuten in totaal`),
+                    kaart('Gemiddelde duur', lijst.length ? `${Math.round(totaal / lijst.length)} min` : '–'),
+                    kaart('Periode', lijst.length ? `${Math.max(1, Math.round((laatste.datum - eerste.datum) / DAG / 7))} weken` : '–',
+                        lijst.length ? `${M.datum(eerste.datum)} – ${M.datum(laatste.datum)}` : 'Geen afleveringen in deze reeks'),
+                ].join('');
+
+                // Nog te gaan: alles wat na de reeks is verschenen
+                const rest = afl.filter(na);
+                const restMin = rest.reduce((s, ep) => s + ep.minuten, 0);
+                $('reeksTeGaan').innerHTML = rest.length
+                    ? `<div class="kb-kaartwaarde">${uurMin(restMin)}</div><div class="small kb-muted">${M.getal(rest.length)} afleveringen na je reeks</div>`
+                    : `<div class="kb-kaartwaarde">Je bent bij!</div><div class="small kb-muted">Er zijn geen nieuwere afleveringen.</div>`;
+
+                const perDag = parseInt(staat.perDag, 10);
+                const nieuwPerDag = tempo ? tempo.minutenPerDag : 0;
+                if (!rest.length) {
+                    $('reeksInhalen').innerHTML = `Bij ${uurMin(perDag)} per dag luister je elke nieuwe aflevering ruim op tijd.`;
+                } else if (perDag <= nieuwPerDag) {
+                    $('reeksInhalen').innerHTML = `Bij ${uurMin(perDag)} per dag haal je de achterstand niet in: er komt gemiddeld ${uurMin(nieuwPerDag)} per dag bij.`;
+                } else {
+                    const dagen = Math.ceil(restMin / (perDag - nieuwPerDag));
+                    const klaar = new Date(Date.now() + dagen * DAG);
+                    $('reeksInhalen').innerHTML = `Bij ${uurMin(perDag)} per dag ben je over <strong>${M.getal(dagen)} ${dagen === 1 ? 'dag' : 'dagen'}</strong> bij, rond <strong>${M.datum(klaar)}</strong>.`;
+                }
+                $('reeksInhalenUitleg').textContent = tempo
+                    ? `Inclusief de nieuwe afleveringen die er intussen bijkomen (gemiddeld ${uurMin(nieuwPerDag)} per dag, op basis van het afgelopen jaar).`
+                    : '';
+
+                // Per categorie
+                $('reeksCategorieen').innerHTML = CATEGORIEEN.map(c => {
+                    const eps = lijst.filter(ep => ep.categorie === c);
+                    const min = eps.reduce((s, ep) => s + ep.minuten, 0);
+                    const pct = lijst.length ? (eps.length / lijst.length * 100).toFixed(1).replace('.', ',') : '0';
+                    return `<div class="col"><div class="kb-categorieblok">
+                        <div class="d-flex align-items-center gap-2 fw-semibold"><span class="badge ${c} kb-legendablokje">&nbsp;</span> ${c[0].toUpperCase() + c.slice(1)}</div>
+                        <div class="small">${M.getal(eps.length)} afleveringen · ${pct}%</div>
+                        <div class="small kb-muted">${uurMin(min)}</div>
+                        <div class="kb-balk"><span class="${c}" style="width:${pct.replace(',', '.')}%"></span></div>
+                    </div></div>`;
+                }).join('');
+
+                tekenGrafiek(lijst);
+            }
+
+            // Per maand, of per jaar als de reeks langer is dan twee jaar
+            function tekenGrafiek(lijst) {
+                const maanden = lijst.length ? (lijst[lijst.length - 1].datum - lijst[0].datum) / DAG / 30.4 : 0;
+                const perJaar = maanden > 24;
+                const sleutel = d => perJaar ? String(d.getFullYear()) : d.toLocaleDateString('nl-NL', { month: 'short', year: 'numeric' });
+                const groepen = [];
+                const index = {};
+                lijst.forEach(ep => {
+                    const k = sleutel(ep.datum);
+                    if (!(k in index)) { index[k] = groepen.length; groepen.push({ label: k, ...Object.fromEntries(CATEGORIEEN.map(c => [c, 0])) }); }
+                    groepen[index[k]][ep.categorie]++;
+                });
+                $('reeksGrafiekTitel').textContent = `Afleveringen in je reeks, per ${perJaar ? 'jaar' : 'maand'}`;
+                if (grafiek) grafiek.destroy();
+                grafiek = new Chart($('rangeChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: groepen.map(g => g.label),
+                        datasets: CATEGORIEEN.map(c => ({
+                            label: c[0].toUpperCase() + c.slice(1),
+                            data: groepen.map(g => g[c]),
+                            backgroundColor: () => kbCategorieKleur(c),
+                            borderRadius: 2,
+                        })),
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: { legend: { display: false } },
+                        scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } } },
+                    },
+                });
+            }
+
+            function snelkeuze(soort) {
+                const hoogste = afl[afl.length - 1];
+                const jaar = new Date().getFullYear();
+                if (soort === 'alles') Object.assign(staat, { modus: 'nummer', van: afl[0].id, tot: hoogste.id });
+                if (soort === 'laatste10') Object.assign(staat, { modus: 'nummer', van: Math.max(1, hoogste.id - 9), tot: hoogste.id });
+                if (soort === 'ditjaar') Object.assign(staat, { modus: 'datum', vanDatum: `${jaar}-01-01`, totDatum: iso(new Date()) });
+                if (soort === 'vorigjaar') Object.assign(staat, { modus: 'datum', vanDatum: `${jaar - 1}-01-01`, totDatum: `${jaar - 1}-12-31` });
+                vulVelden();
+                toon();
+            }
+
+            // Gebeurtenissen
+            document.querySelectorAll('[data-reeks-modus]').forEach(k => k.addEventListener('click', () => { zetModus(k.dataset.reeksModus); toon(); }));
+            document.querySelectorAll('[data-reeks-snel]').forEach(k => k.addEventListener('click', () => snelkeuze(k.dataset.reeksSnel)));
+            [['vanNummer', 'van'], ['totNummer', 'tot'], ['vanDatum', 'vanDatum'], ['totDatum', 'totDatum'], ['perDag', 'perDag']].forEach(([id, veld]) => {
+                $(id).addEventListener('input', () => { staat[veld] = $(id).value; toon(); });
             });
-        
-            function updateCategoryStatistics(category, count, minutes, totalEpisodes) {
-                const hours = Math.floor(minutes / 60);
-                const percentage = ((count / totalEpisodes) * 100).toFixed(2);
-        
-                document.getElementById(`${category}Episodes`).textContent = count;
-                document.getElementById(`${category}Minutes`).textContent = minutes;
-                document.getElementById(`${category}Hours`).textContent = hours;
-                document.getElementById(`${category}Percentage`).textContent = percentage;
-            }
-        
-            function clearCategoryStatistics(category) {
-                document.getElementById(`${category}Episodes`).textContent = '';
-                document.getElementById(`${category}Minutes`).textContent = '';
-                document.getElementById(`${category}Hours`).textContent = '';
-                document.getElementById(`${category}Percentage`).textContent = '';
-            }
-        </script>
-       <!-- bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+            M.laad().then(data => {
+                afl = data.slice().sort((a, b) => a.id - b.id);
+                if (!afl.length) return;
+                tempo = M.bereken(data).tempo;
+                const hoogste = afl[afl.length - 1];
+                ['vanNummer', 'totNummer'].forEach(id => { $(id).max = hoogste.id; });
+                $('totDatum').max = iso(new Date());
+                // Eerste bezoek: standaard alles, tot en met de nieuwste aflevering
+                lees();
+                if (!staat.van) staat.van = afl[0].id;
+                if (!staat.tot) staat.tot = hoogste.id;
+                if (!staat.vanDatum) staat.vanDatum = iso(afl[0].datum);
+                if (!staat.totDatum) staat.totDatum = iso(hoogste.datum);
+                vulVelden();
+                toon();
+            }).catch(fout => console.error('Reeks kon niet geladen worden:', fout));
+        })();
+    </script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
     <script src="assets/js/cookies.js"></script>
-    </body>
+</body>
 
 </html>
