@@ -16,6 +16,7 @@
         { href: 'kalender.html', titel: 'Kalender', mobiel: 'Kalender', icoon: 'bi-calendar3' },
         { href: 'gasten.html', titel: 'Gasten', mobiel: 'Gasten', icoon: 'bi-people' },
         { href: 'reeks.html', titel: 'Reeks', mobiel: 'Reeks', icoon: 'bi-arrows' },
+        { href: 'mijlpalen.html', titel: 'Mijlpalen' },
         { href: 'wrapped.html', titel: 'Wrapped', mobiel: 'Wrapped', icoon: 'bi-star', wrapped: true },
         { href: 'over.html', titel: 'Over' },
     ];

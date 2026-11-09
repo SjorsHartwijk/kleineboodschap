@@ -47,9 +47,28 @@
 
     function werkGrafiekenBij() {
         if (!window.Chart) return;
-        Chart.defaults.color = kleur('muted') || Chart.defaults.color;
-        Chart.defaults.borderColor = kleur('border') || Chart.defaults.borderColor;
-        Object.values(Chart.instances || {}).forEach(grafiek => grafiek.update('none'));
+        const tekst = kleur('muted') || Chart.defaults.color;
+        const rand = kleur('border') || Chart.defaults.borderColor;
+        // Standaard voor grafieken die nog gemaakt worden
+        Chart.defaults.color = tekst;
+        Chart.defaults.borderColor = rand;
+        // Bestaande grafieken: Chart.js onthoudt as- en legendakleuren per grafiek,
+        // dus die zetten we hier expliciet en tekenen we opnieuw
+        Object.values(Chart.instances || {}).forEach(grafiek => {
+            const opties = grafiek.config.options;
+            opties.scales = opties.scales || {};
+            Object.keys(grafiek.scales || {}).forEach(id => {
+                const as = opties.scales[id] = opties.scales[id] || {};
+                as.ticks = Object.assign(as.ticks || {}, { color: tekst });
+                as.grid = Object.assign(as.grid || {}, { color: rand });
+                as.border = Object.assign(as.border || {}, { color: rand });
+                as.title = Object.assign(as.title || {}, { color: tekst });
+            });
+            opties.plugins = opties.plugins || {};
+            const legenda = opties.plugins.legend = opties.plugins.legend || {};
+            legenda.labels = Object.assign(legenda.labels || {}, { color: tekst });
+            grafiek.update('none');
+        });
     }
 
     function werkKnoppenBij() {

@@ -205,6 +205,47 @@
             </div>
         </div>
     </section>
+    <!-- Trends section (assets/js/trends.js) -->
+    <section class="pb-5" id="trends">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <h2 class="mb-0">Trends</h2>
+                    <p class="small kb-muted mb-0 mt-1" id="trendsSnelheid" hidden></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Duur door de jaren heen</h3>
+                            <p class="card-text" id="trendDuurTekst">De gemiddelde duur van een aflevering per jaar.</p>
+                            <canvas id="trendDuurChart" aria-label="Lijngrafiek van de gemiddelde duur per jaar" role="img"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Verdeling van de duur</h3>
+                            <p class="card-text" id="trendVerdelingTekst">Hoeveel afleveringen er per kwartier aan duur zijn.</p>
+                            <canvas id="trendVerdelingChart" aria-label="Staafdiagram van het aantal afleveringen per kwartier duur" role="img"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Mijlpalen</h3>
+                            <ul class="list-unstyled mb-2" id="trendMijlpalen"></ul>
+                            <p class="small kb-muted mb-3" id="trendMijlpalenTekst"></p>
+                            <a href="mijlpalen.html" class="btn btn-sm btn-outline-primary" title="Bekijk alle behaalde mijlpalen">Alle mijlpalen <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Data section-->
     <section id="data">
         <div class="container">
@@ -532,6 +573,8 @@
     <script src="assets/js/chart_episodes_year.js"></script>
     <script src="assets/js/chart_categories.js"></script>
     <script src="assets/js/chart_languages.js"></script>
+    <script src="assets/js/mijlpalen.js"></script>
+    <script src="assets/js/trends.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->

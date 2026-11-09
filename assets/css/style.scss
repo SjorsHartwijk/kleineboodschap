@@ -550,6 +550,48 @@ footer {
     }
 }
 }
+/* Trends: mijlpalen als tijdlijn */
+.kb-mijlpaal {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 6px 0;
+    i {
+        color: var(--kb-primary);
+        font-size: 1.05rem;
+        line-height: 1.4;
+    }
+    & + & {
+        border-top: 1px solid var(--kb-border);
+    }
+    &.kb-mijlpaal-straks i {
+        color: var(--kb-muted);
+    }
+}
+/* Mijlpalenpagina: voorspelde mijlpalen */
+.kb-verwacht {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--kb-border);
+    border-radius: 8px;
+    background-color: var(--kb-bg);
+    > i {
+        font-size: 1.3rem;
+        color: var(--kb-primary);
+    }
+    .badge {
+        width: 12px;
+        height: 12px;
+        padding: 0;
+        border-radius: 3px;
+    }
+}
+#mijlpalen h2 i {
+    color: var(--kb-primary);
+}
 .modal {
     --bs-modal-bg: var(--kb-surface);
     --bs-modal-color: var(--kb-text);
