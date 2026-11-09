@@ -1,23 +1,24 @@
-// Dit bestand bouwt de gedeelde navigatie (boven en mobiel) en de footer voor alle pagina's.
+// Dit bestand bouwt de gedeelde navigatie en de footer voor alle pagina's.
 // Een pagina toevoegen of wijzigen hoeft daardoor alleen nog hier te gebeuren.
 //
 // Gebruik in een pagina:
-//   <div data-layout="nav"></div>          navigatie bovenaan
-//   <div data-layout="mobile-nav"></div>   zwevende navigatie onderaan op mobiel
-//   <div data-layout="footer"></div>       footer
+//   <div data-layout="nav"></div>          menubalk bovenaan, met daaronder de datumregel
+//   <div data-layout="footer"></div>       footer (colofon)
 // Een class of style op de placeholder wordt overgenomen op het element dat ervoor in de plaats komt.
 // Met data-container="container" kies je een andere container voor de navigatie (standaard container-xxl).
+// Op mobiel en tablet blijft de menubalk bovenaan staan bij het scrollen; de datumregel
+// staat los eronder en schuift wel mee weg (zie .navbar-top in style.scss).
 
 (function () {
     const paginas = [
-        { href: 'index.html', titel: 'Home', mobiel: 'Statistieken', icoon: 'bi-bar-chart', icoonActief: 'bi-bar-chart-fill' },
-        { href: 'afleveringen.html', titel: 'Afleveringen', mobiel: 'Afleveringen', icoon: 'bi-list-ul' },
-        { href: 'kaart.html', titel: 'Kaart', mobiel: 'Kaart', icoon: 'bi-geo-alt' },
-        { href: 'kalender.html', titel: 'Kalender', mobiel: 'Kalender', icoon: 'bi-calendar3' },
-        { href: 'gasten.html', titel: 'Gasten', mobiel: 'Gasten', icoon: 'bi-people' },
-        { href: 'reeks.html', titel: 'Reeks', mobiel: 'Reeks', icoon: 'bi-arrows' },
+        { href: 'index.html', titel: 'Home' },
+        { href: 'afleveringen.html', titel: 'Afleveringen' },
+        { href: 'kaart.html', titel: 'Kaart' },
+        { href: 'kalender.html', titel: 'Kalender' },
+        { href: 'gasten.html', titel: 'Gasten' },
+        { href: 'reeks.html', titel: 'Reeks' },
         { href: 'mijlpalen.html', titel: 'Mijlpalen' },
-        { href: 'wrapped.html', titel: 'Wrapped', mobiel: 'Wrapped', icoon: 'bi-star', wrapped: true },
+        { href: 'wrapped.html', titel: 'Wrapped', wrapped: true },
         { href: 'over.html', titel: 'Over' },
     ];
 
@@ -64,13 +65,18 @@
                 </ul>
             </div>
         </div>
-        <div class="kb-datumregel w-100">
-            <div class="${container}">
-                <span class="d-none d-lg-inline">${vandaag()}</span>
-                <span id="kbStand"></span>
-            </div>
-        </div>
     </nav>`;
+    }
+
+    // Datumregel onder de balk: los element, zodat hij bij het scrollen onder de (sticky) balk verdwijnt
+    function datumregel(container) {
+        return `
+    <div class="kb-datumregel">
+        <div class="${container}">
+            <span class="d-none d-lg-inline">${vandaag()}</span>
+            <span id="kbStand"></span>
+        </div>
+    </div>`;
     }
 
     // "Bijgewerkt tot en met aflevering N" in de datumregel
@@ -145,27 +151,9 @@
         reset.addEventListener('click', () => kbSnelheid.zet(kbSnelheid.STANDAARD));
     }
 
-    function mobieleNav() {
-        const links = zichtbaar.filter(p => p.mobiel).map(p => {
-            const icoon = isActief(p) && p.icoonActief ? p.icoonActief : p.icoon;
-            return `
-            <a href="${p.href}" class="${klassen(p, 'text-decoration-none')}" title="${p.mobiel}"${isActief(p) ? ' aria-current="page"' : ''}>
-                <i class="bi ${icoon} d-block"></i>
-                <span class="small">${p.mobiel}</span>
-            </a>`;
-        }).join('');
-        return `
-<div class="container-fluid d-md-none">
-    <nav class="navbar navbar-bottom fixed-bottom">
-        <div class="container d-flex justify-content-between text-center">${links}
-        </div>
-    </nav>
-</div>`;
-    }
-
     function footer() {
         return `
-    <footer class="d-none d-md-block py-4 mt-auto">
+    <footer class="py-4 mt-auto">
         <div class="container d-flex flex-wrap justify-content-between gap-3">
             <p class="m-0" style="max-width: 40em"><strong>Kleine Boodschap Data</strong> is een onafhankelijk hobbyproject van <a href="https://sjorshartwijk.nl/" rel="noopener" target="_blank">Sjors Hartwijk</a>, zonder banden met de podcast of de Efteling. &copy; ${new Date().getFullYear()}</p>
             <div class="d-flex flex-wrap gap-1 column-gap-4">
@@ -178,23 +166,30 @@
     </footer>`;
     }
 
+    function maak(html) {
+        const sjabloon = document.createElement('template');
+        sjabloon.innerHTML = html.trim();
+        return sjabloon.content.firstElementChild;
+    }
+
     function plaats(placeholder) {
         const soort = placeholder.dataset.layout;
-        const html = soort === 'nav' ? nav(placeholder.dataset.container || 'container-xxl')
-            : soort === 'mobile-nav' ? mobieleNav()
+        const container = placeholder.dataset.container || 'container-xxl';
+        const html = soort === 'nav' ? nav(container)
             : soort === 'footer' ? footer()
             : null;
         if (!html) return;
 
-        const sjabloon = document.createElement('template');
-        sjabloon.innerHTML = html.trim();
-        const element = sjabloon.content.firstElementChild;
-        // Bij de mobiele navigatie zitten class en style op de <nav>, niet op de omhullende div
-        const doel = soort === 'mobile-nav' ? element.querySelector('nav') : element;
-        if (placeholder.className) doel.classList.add(...placeholder.classList);
-        if (placeholder.getAttribute('style')) doel.setAttribute('style', placeholder.getAttribute('style'));
+        const element = maak(html);
+        if (placeholder.className) element.classList.add(...placeholder.classList);
+        if (placeholder.getAttribute('style')) element.setAttribute('style', placeholder.getAttribute('style'));
         placeholder.replaceWith(element);
-        if (soort === 'nav') { koppelInstellingen(element); vulStand(element); }
+        if (soort === 'nav') {
+            const regel = maak(datumregel(container));
+            element.after(regel);
+            koppelInstellingen(element);
+            vulStand(regel);
+        }
     }
 
     function render() {

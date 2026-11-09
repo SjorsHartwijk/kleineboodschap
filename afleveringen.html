@@ -40,15 +40,19 @@
                     <div class="col-12">
                         <div class="mt-2 mt-lg-5 mb-3 mb-lg-5">
                             <h1 class="kb-paginakop">Afleveringen</h1>
-                            <p>Op deze pagina staan alle geïndexeerde afleveringen van Kleine Booschap in een tabel, gebruik de
-                                zoekfunctie om de titel of onderwerp van een aflevering op te zoeken.</p>
+                            <p>Op deze pagina staan alle geïndexeerde afleveringen van Kleine Boodschap, de nieuwste bovenaan en per 100 op een pagina. Zoek op titel, onderwerp, afleveringsnummer of categorie.</p>
                             <p>Bekijk ook de afleveringen op basis van <a href="kalender.html">kalenderweergave</a>.</p>
+                            <label for="searchInput" class="visually-hidden">Zoek een aflevering</label>
                             <div class="input-group">
-                                <input type="text" class="form-control form-control-lg" id="searchInput"
-                                    onkeyup="searchEpisodes()" placeholder="Zoek aflevering(en)">
+                                <input type="search" class="form-control form-control-lg" id="searchInput"
+                                    placeholder="Zoek aflevering(en)" autocomplete="off">
                                 <span class="input-group-text"><i class="bi bi-search"></i></span>
                             </div>
                         </div>
+                        <p class="small kb-muted mb-2" id="paginaStatus" aria-live="polite"></p>
+                        <nav aria-label="Pagina&#39;s met afleveringen">
+                            <ul class="kb-paginatabs" id="paginaTabs" hidden></ul>
+                        </nav>
                         <div class="table-responsive">
                         <table id="episodesTable" class="table">
                             <thead>
@@ -64,101 +68,122 @@
                             </tbody>
                         </table>
                         </div>
+                        <div class="kb-paginaknoppen d-flex justify-content-between gap-3 mb-5" hidden>
+                            <button type="button" class="btn btn-outline-secondary" id="paginaVorige"><i class="bi bi-arrow-left" aria-hidden="true"></i> Nieuwer</button>
+                            <button type="button" class="btn btn-outline-secondary ms-auto" id="paginaVolgende">Ouder <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <div data-layout="mobile-nav"></div>
     <div data-layout="footer"></div>
         <script>
-            // Definieer de searchEpisodes-functie
-            function searchEpisodes() {
-                var input, filter, table, tr, td, i, txtValue;
-                input = document.getElementById("searchInput");
-                filter = input.value.toUpperCase();
-                table = document.getElementById("episodesTable");
-                tr = table.getElementsByTagName("tr");
-                for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[1];
-                    if (td) {
-                        txtValue = td.textContent || td.innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = "";
-                        } else {
-                            tr[i].style.display = "none";
-                        }
-                    }
+            // Afleveringen: tabel met zoeken en pagina's van maximaal 100 rijen.
+            // De gekozen pagina staat in het adres (#pagina-2), zodat herladen en 'terug' werken.
+            (function () {
+                const PER_PAGINA = 100;
+                const body = document.getElementById('episodesBody');
+                const tabs = document.getElementById('paginaTabs');
+                const status = document.getElementById('paginaStatus');
+                const zoekveld = document.getElementById('searchInput');
+                const vorige = document.getElementById('paginaVorige');
+                const volgende = document.getElementById('paginaVolgende');
+                const tabel = document.getElementById('episodesTable');
+
+                let alle = [];
+                let gefilterd = [];
+                let pagina = 1;
+
+                const veilig = s => String(s).replace(/[&<>"']/g, t => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[t]));
+                const datum = d => { const [j, m, dg] = d.split('-'); return `${dg}-${m}-${j}`; };
+                const aantalPaginas = () => Math.max(1, Math.ceil(gefilterd.length / PER_PAGINA));
+                const stuk = p => gefilterd.slice((p - 1) * PER_PAGINA, p * PER_PAGINA);
+                // Label van een pagina: de afleveringsnummers die erop staan, nieuwste eerst
+                const label = p => { const s = stuk(p); if (!s.length) return String(p); const a = s[0].id, b = s[s.length - 1].id; return a === b ? String(a) : `${a}–${b}`; };
+
+                function paginaUitAdres() {
+                    const m = location.hash.match(/^#pagina-(\d+)$/);
+                    return m ? parseInt(m[1], 10) : 1;
                 }
-            }
 
-            function getEpisodes() {
+                function toon(nieuw, { scroll = false, adres = true } = {}) {
+                    pagina = Math.min(Math.max(1, nieuw), aantalPaginas());
+                    const rijen = stuk(pagina);
+
+                    body.innerHTML = rijen.length ? rijen.map(ep => `
+                        <tr>
+                            <td>${veilig(ep.id)}</td>
+                            <td>${veilig(ep.titel)}</td>
+                            <td><span class="d-inline-flex align-items-center gap-2"><span class="kb-legendablokje ${veilig(ep.categorie)}" aria-hidden="true"></span>${veilig(ep.categorie)}</span></td>
+                            <td class="small text-nowrap">${veilig(ep.tijd)} min</td>
+                            <td class="small text-nowrap">${datum(ep.datum)}</td>
+                        </tr>`).join('')
+                        : `<tr><td colspan="5" class="kb-muted py-4">Geen afleveringen gevonden voor “${veilig(zoekveld.value)}”.</td></tr>`;
+
+                    // Statusregel
+                    const zoek = zoekveld.value.trim();
+                    const van = (pagina - 1) * PER_PAGINA + 1, tot = van + rijen.length - 1;
+                    status.textContent = !gefilterd.length ? ''
+                        : `${zoek ? `${gefilterd.length} ${gefilterd.length === 1 ? 'resultaat' : 'resultaten'} voor “${zoek}”` : `${gefilterd.length} afleveringen`}`
+                          + (aantalPaginas() > 1 ? ` · ${van}–${tot} op deze pagina` : '');
+
+                    // Tabs per pagina
+                    const n = aantalPaginas();
+                    tabs.hidden = n < 2;
+                    tabs.innerHTML = Array.from({ length: n }, (_, i) => i + 1).map(p => `
+                        <li><button type="button" class="kb-paginatab${p === pagina ? ' active' : ''}" data-pagina="${p}"${p === pagina ? ' aria-current="page"' : ''} aria-label="Pagina ${p}: afleveringen ${label(p)}">${label(p)}</button></li>`).join('');
+
+                    vorige.hidden = pagina <= 1;
+                    volgende.hidden = pagina >= n;
+                    vorige.closest('.kb-paginaknoppen').hidden = n < 2;
+
+                    if (adres) history.replaceState(null, '', pagina > 1 ? `#pagina-${pagina}` : location.pathname + location.search);
+                    if (scroll) tabel.scrollIntoView({ block: 'start' });
+                }
+
+                function filter() {
+                    const zoek = zoekveld.value.trim().toLowerCase();
+                    gefilterd = zoek
+                        ? alle.filter(ep => ep.titel.toLowerCase().includes(zoek) || String(ep.id) === zoek || ep.categorie.toLowerCase() === zoek)
+                        : alle;
+                }
+
+                tabs.addEventListener('click', e => {
+                    const knop = e.target.closest('[data-pagina]');
+                    if (knop) toon(parseInt(knop.dataset.pagina, 10), { scroll: true });
+                });
+                vorige.addEventListener('click', () => toon(pagina - 1, { scroll: true }));
+                volgende.addEventListener('click', () => toon(pagina + 1, { scroll: true }));
+                zoekveld.addEventListener('input', () => { filter(); toon(1); });
+                window.addEventListener('hashchange', () => toon(paginaUitAdres(), { adres: false }));
+
                 fetch('episodes.json')
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Failed to load JSON data');
-                        }
-                        return response.json();
-                    })
+                    .then(res => { if (!res.ok) throw new Error('Failed to load JSON data'); return res.json(); })
                     .then(data => {
-                        const episodesBody = document.getElementById('episodesBody');
+                        // Nieuwste eerst
+                        alle = data.slice().sort((a, b) => new Date(b.datum) - new Date(a.datum) || b.id - a.id);
+                        filter();
+                        toon(paginaUitAdres(), { adres: false });
 
-                        // Sorteer de afleveringen op datum, nieuwste eerst
-                        const sortedEpisodes = data.sort((a, b) => new Date(b.datum) - new Date(a.datum));
-
-                        // Functie om de tabel op te bouwen
-                        function buildTable(episodes) {
-                            episodesBody.innerHTML = '';
-                            episodes.forEach(episode => {
-                                const row = document.createElement('tr');
-                                const formattedDate = formatDate(episode.datum);
-                                row.innerHTML = `
-                                    <td>${episode.id}</td>
-                                    <td>${episode.titel}</td>
-                                    <td>${episode.categorie}</td>
-                                    <td class="small">${episode.tijd} minuten</td>
-                                    <td class="small">${formattedDate}</td>
-                                `;
-                                episodesBody.appendChild(row);
-
-                                // Voeg schema.org PodcastEpisode toe
-                                const ldJson = {
-                                    "@context": "https://schema.org",
-                                    "@type": "PodcastEpisode",
-                                    "name": episode.titel,
-                                    "datePublished": episode.datum,
-                                    "episodeNumber": episode.id,
-                                    "partOfSeries": {
-                                        "@type": "PodcastSeries",
-                                        "name": "Kleine Boodschap"
-                                    }
-                                };
-                                const script = document.createElement('script');
-                                script.type = 'application/ld+json';
-                                script.textContent = JSON.stringify(ldJson);
-                                document.body.appendChild(script);
-                            });
-                        }
-
-                        // Functie om de datum in het juiste formaat weer te geven (dd-mm-yyyy)
-                        function formatDate(dateString) {
-                            const date = new Date(dateString);
-                            const day = ('0' + date.getDate()).slice(-2);
-                            const month = ('0' + (date.getMonth() + 1)).slice(-2);
-                            const year = date.getFullYear();
-                            return `${day}-${month}-${year}`;
-                        }
-
-                        // Roep de functie aan om de initiële tabel te bouwen
-                        buildTable(sortedEpisodes);
+                        // Gestructureerde gegevens (schema.org) voor alle afleveringen, één keer
+                        const ld = document.createElement('script');
+                        ld.type = 'application/ld+json';
+                        ld.textContent = JSON.stringify(alle.map(ep => ({
+                            '@context': 'https://schema.org',
+                            '@type': 'PodcastEpisode',
+                            name: ep.titel,
+                            datePublished: ep.datum,
+                            episodeNumber: ep.id,
+                            partOfSeries: { '@type': 'PodcastSeries', name: 'Kleine Boodschap' },
+                        })));
+                        document.body.appendChild(ld);
                     })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Er is een fout opgetreden bij het laden van de gegevens.');
+                    .catch(fout => {
+                        console.error('Error:', fout);
+                        status.textContent = 'De afleveringen konden niet geladen worden.';
                     });
-            }
-
-            getEpisodes();
+            })();
         </script>
     <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
     <script src="assets/js/cookies.js"></script>

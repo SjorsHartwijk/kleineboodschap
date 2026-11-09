@@ -259,11 +259,6 @@ a {
     --bs-card-spacer-y: 16px;
     border: 1px solid var(--kb-border);
 }
-@media(min-width: 767px) {
-    .mobile-hide {
-        display: none;
-    }
-}
 
 /* Grote cijfers (homepage, reeks, wrapped) */
 .kb-cijfers {
@@ -652,7 +647,7 @@ a {
 }
 
 /* ==========================================================================
-   Menubalk, instellingen, onderbalk en colofon
+   Menubalk, instellingen en colofon
    ========================================================================== */
 /* De balk heeft in elke kleurmodus dezelfde kleur (#154666) met witte tekst */
 nav.navbar.navbar-top {
@@ -747,6 +742,20 @@ nav.navbar.navbar-top {
                 text-decoration-thickness: 3px;
                 text-underline-offset: 6px;
             }
+        }
+    }
+}
+/* Mobiel en tablet: de menubalk blijft bovenaan staan, de datumregel schuift eronder weg */
+@media (max-width: 991.98px) {
+    nav.navbar.navbar-top {
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+        /* Een lang uitgeklapt menu scrolt binnen de balk */
+        .navbar-collapse {
+            max-height: calc(100dvh - 64px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
         }
     }
 }
@@ -877,37 +886,6 @@ nav.navbar.navbar-top {
             border-bottom-color: var(--kb-text);
             color: var(--kb-text);
             font-weight: 600;
-        }
-    }
-}
-
-/* Onderbalk op mobiel */
-.navbar-bottom {
-    border-bottom: 0px !important;
-    border-top: 1px solid var(--kb-border);
-    background-color: var(--kb-surface);
-    padding-top: 0;
-    a {
-        position: relative;
-        padding-top: 8px;
-        color: var(--kb-muted);
-        .small {
-            font-size: .7em;
-        }
-        &:hover,&:focus,&:focus-visible {
-            color: var(--kb-text);
-        }
-        &.active {
-            color: var(--kb-text);
-            font-weight: 600;
-            &::before {
-                content: "";
-                position: absolute;
-                left: 15%;
-                right: 15%;
-                top: 0;
-                border-top: 3px solid var(--kb-text);
-            }
         }
     }
 }
@@ -1317,6 +1295,36 @@ footer {
       z-index: 1;
     }
 }
+/* Afleveringen: tabs per pagina van 100, gelabeld met de afleveringsnummers */
+.kb-paginatabs {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    border-bottom: 1px solid var(--kb-border);
+    &[hidden] {
+        display: none;
+    }
+    .kb-paginatab {
+        padding: .5rem 0;
+        margin-bottom: -1px;
+        border: 0;
+        border-bottom: 3px solid transparent;
+        background: none;
+        color: var(--kb-muted);
+        font-variant-numeric: tabular-nums;
+        &:hover, &:focus-visible {
+            color: var(--kb-text);
+        }
+        &.active {
+            border-bottom-color: var(--kb-text);
+            color: var(--kb-text);
+            font-weight: 600;
+        }
+    }
+}
 #afleveringen {
     @media (max-width: 768px) {
         table thead th:nth-child(4),
@@ -1335,7 +1343,6 @@ footer {
 #map {
     position: absolute;
     top: 0;
-    bottom: 72px;
     height: calc(100dvh - 64px);
     width: 100%;
 }
