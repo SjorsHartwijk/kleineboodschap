@@ -903,6 +903,7 @@ a:hover, a:focus {
 /* afleveringen calender */
 #kalender {
   /* Druktemeter: groen - geel - oranje - rood (kleuren in --kb-drukte-*) */
+  /* Vandaag: dikke rand in tekstkleur, met een smalle ring in de achtergrondkleur ertussen */
 }
 #kalender .calendar-day {
   width: 36px;
@@ -946,6 +947,14 @@ a:hover, a:focus {
 }
 #kalender .calendar-day[data-count]:hover {
   outline: 2px solid var(--kb-text);
+}
+#kalender .calendar-day.vandaag,
+#kalender .calendar-day.vandaag:hover {
+  font-weight: 700;
+  outline: 3px solid var(--kb-text);
+  outline-offset: 2px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {

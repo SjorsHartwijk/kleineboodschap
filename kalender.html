@@ -35,7 +35,7 @@
   		<div class="row">
     		<div class="col-12">
       			<h1>Kalender</h1>
-      			<p>Bekijk alle geïndexeerde afleveringen van Kleine Boodschap op deze drukte-kalender. Klik op een gekleurde dag om te zien welke aflevering(en) op deze dag zijn gepubliceerd. Hoe donkerder de dag, des te meer afleveringen er zijn gepubliceerd.</p>
+      			<p>Bekijk alle geïndexeerde afleveringen van Kleine Boodschap op deze drukte-kalender. Klik op een gekleurde dag om te zien welke aflevering(en) op deze dag zijn gepubliceerd, bijvoorbeeld op jouw verjaardag. Hoe warmer de kleur (van groen naar rood), des te meer afleveringen er op die dag zijn verschenen. Vandaag heeft een dikke rand.</p>
     		</div>
   		</div>
 	</div>
@@ -69,6 +69,8 @@
       "Mei", "Juni", "Juli", "Augustus",
       "September", "Oktober", "November", "December"
     ];
+
+    const vandaag = new Date();
 
     const daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // incl. 29 feb
 
@@ -105,6 +107,12 @@
             const div = document.createElement("div");
             div.className = "calendar-day";
             div.textContent = d;
+            // Vandaag krijgt een dikke rand
+            if (mIdx === vandaag.getMonth() && d === vandaag.getDate()) {
+              div.classList.add("vandaag");
+              div.setAttribute("aria-current", "date");
+              div.title = "Vandaag";
+            }
             if (count > 0) {
               div.setAttribute("data-count", count > 6 ? 6 : count);
               div.addEventListener("click", () => showModal(episodes, d, monthName));
