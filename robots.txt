@@ -2,3 +2,9 @@ User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
 Sitemap: https://kbdata.nl/sitemap.xml
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
