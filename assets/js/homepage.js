@@ -75,6 +75,7 @@
 
     function records(afl) {
         const opDuur = afl.slice().sort((a, b) => a.minuten - b.minuten);
+        // Record met daaronder een uitklapbare ranglijst van de top 5
         const blok = (soort, ep, top) => `
             <div class="col-12 col-lg-6">
                 <div class="kb-record">
@@ -83,11 +84,19 @@
                         <div class="small kb-muted">${soort}</div>
                         <div class="fw-semibold">${veilig(ep.titel)}</div>
                         <div class="small kb-muted">Aflevering ${ep.id} · ${ep.categorie} · ${M.datum(ep.datum)}</div>
-                        <details class="mt-2">
-                            <summary class="small">Top 5</summary>
-                            <ol>${top.map(t => `<li>${veilig(t.titel)} <span class="kb-muted">(${t.id}, ${Math.round(t.minuten)} min)</span></li>`).join('')}</ol>
-                        </details>
                     </div>
+                    <details class="kb-top5">
+                        <summary>Bekijk de top 5<i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+                        <ol class="kb-top5-lijst">${top.map((t, i) => `
+                            <li>
+                                <span class="kb-top5-plek">${i + 1}</span>
+                                <span class="kb-top5-titel">${veilig(t.titel)}
+                                    <span class="kb-top5-meta"><span class="kb-legendablokje ${t.categorie}" aria-hidden="true"></span>Aflevering ${t.id} · ${t.categorie} · ${t.datum.getFullYear()}</span>
+                                </span>
+                                <span class="kb-top5-duur">${Math.round(t.minuten)} min</span>
+                            </li>`).join('')}
+                        </ol>
+                    </details>
                 </div>
             </div>`;
         const langste = opDuur.slice(-5).reverse();

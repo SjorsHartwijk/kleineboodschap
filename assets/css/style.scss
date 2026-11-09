@@ -1060,8 +1060,9 @@ footer {
 .kb-record {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    gap: 18px;
+    gap: 14px 18px;
     align-items: baseline;
+    align-content: start;
     border-top: 1px solid var(--kb-border);
     padding-top: 14px;
     height: 100%;
@@ -1076,10 +1077,75 @@ footer {
             margin-left: 4px;
         }
     }
-    ol {
-        margin: 6px 0 0;
-        padding-left: 1.2em;
-        font-size: .9rem;
+}
+/* Top 5 onder een record: uitklapbare ranglijst over de volle breedte van het record */
+.kb-top5 {
+    grid-column: 1 / -1;
+    summary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        list-style: none;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: .95rem;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 1px;
+        &::-webkit-details-marker {
+            display: none;
+        }
+        &:hover, &:focus-visible {
+            text-decoration-thickness: 3px;
+        }
+        i {
+            font-size: .8rem;
+            transition: transform 200ms;
+        }
+    }
+    &[open] summary i {
+        transform: rotate(180deg);
+    }
+}
+.kb-top5-lijst {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    border-top: 2px solid var(--kb-text);
+    li {
+        display: grid;
+        grid-template-columns: 2rem minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: baseline;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--kb-border);
+    }
+    .kb-top5-plek {
+        font-family: "Alegreya", serif;
+        font-weight: 700;
+        font-size: 1.35rem;
+        line-height: 1;
+        font-variant-numeric: lining-nums;
+        color: var(--kb-muted);
+    }
+    li:first-child .kb-top5-plek {
+        color: var(--kb-text);
+    }
+    .kb-top5-titel {
+        font-weight: 500;
+    }
+    .kb-top5-meta {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: .82rem;
+        font-weight: 400;
+        color: var(--kb-muted);
+    }
+    .kb-top5-duur {
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
     }
 }
 /* Grafieken: kop met de conclusie, getal erbij */

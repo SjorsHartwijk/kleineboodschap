@@ -38,7 +38,7 @@ function updateWrapped() {
     document.getElementById("selectedYear").textContent = selectedYear;
     document.getElementById("episodeYear").textContent = selectedYear;
     // Jaartal in de paginatitel volgt het gekozen jaar (geen vast jaartal in de HTML)
-    if (selectedYear) document.title = `Kleine Boodschap Wrapped ${selectedYear} - Kleine Boodschap Data`;
+    if (selectedYear) document.title = `Wrapped ${selectedYear}: het jaar in cijfers | Kleine Boodschap Data`;
 
     let filteredEpisodes = episodesData.filter(ep => ep.datum.startsWith(selectedYear));
 
