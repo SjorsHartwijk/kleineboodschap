@@ -4415,5 +4415,13 @@
         "categorie": "reportage",
         "latitude": "51.580747",
         "longitude": "4.837265"
+    },
+    {
+        "id": "532",
+        "taal": "nl",
+        "titel": "In gesprek met Patrick van de Sanden",
+        "tijd": "159",
+        "datum": "2026-11-09",
+        "categorie": "interview"
     }
 ]
