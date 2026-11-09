@@ -1437,6 +1437,31 @@ footer a:hover, footer a:focus-visible {
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
 }
 
+/* Onder de kaart: groot getal met de plekken buiten het park en een knop om uit te zoomen */
+.kb-uitzoomen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--kb-border);
+}
+.kb-uitzoomen[hidden] {
+  display: none;
+}
+.kb-uitzoomen p {
+  flex: 1 1 260px;
+}
+.kb-uitzoomen .kb-uitzoomen-getal {
+  font-family: "Alegreya", serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  margin-right: 4px;
+}
+
 .kb-kaartpaneel {
   border-top: 3px solid var(--kb-text);
   padding-top: 12px;
