@@ -30,7 +30,7 @@
         <div class="container" id="wrappedContainer">
         <div class="row">
             <div class="col-12 pt-4 pt-lg-5">
-                <h1 class="display-2">Kleine Boodschap Wrapped <span id="selectedYear"></span></h1>
+                <h1 class="kb-paginakop">Kleine Boodschap Wrapped <span id="selectedYear"></span></h1>
                 <p class="lead">Ontdek unieke statistieken en jaaroverzichten van de Kleine Boodschap podcast in Wrapped.</p>
                 <!-- Alert: Wrapped blijft beschikbaar tot 1 maart -->
                 <div id="wrappedAlert" class="alert alert-info d-none" role="alert">
@@ -80,8 +80,8 @@
             </div>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-3 mb-4" id="stats"></div>
-        <div class="row mb-4">
-            <div class="card col-12">
+        <div class="mb-4">
+            <div class="card">
                 <div class="card-body">
                     <h3>Afleveringen</h3>
                     <div class="d-flex flex-wrap gap-3 small mb-2" aria-label="Legenda">
@@ -94,10 +94,11 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
-            <div class="card col-12">
+        <div class="mb-4">
+            <div class="card">
                 <div class="card-body">
                     <h3>Afleveringen van <span id="episodeYear"></span></h3>
+                    <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -110,6 +111,7 @@
                         </thead>
                         <tbody id="episodeTable"></tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>

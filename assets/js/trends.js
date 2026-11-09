@@ -28,13 +28,22 @@
             const jaar = ep.datum.getFullYear();
             (perJaar[jaar] = perJaar[jaar] || []).push(ep.minuten);
         });
-        const jaren = Object.keys(perJaar).sort();
+        // Jaren met maar een paar afleveringen (zoals 2017, met één) zeggen weinig: die vallen weg
+        const jaren = Object.keys(perJaar).sort().filter(j => perJaar[j].length >= 5);
         const gemiddelden = jaren.map(j => Math.round(perJaar[j].reduce((s, m) => s + m, 0) / perJaar[j].length));
 
+        // De kop vertelt de conclusie
         const eerste = jaren[0], laatste = jaren[jaren.length - 1];
+        const van = gemiddelden[0], naar = gemiddelden[gemiddelden.length - 1];
+        const kop = document.getElementById('trendDuurKop');
+        if (kop) {
+            kop.textContent = naar > van * 1.1 ? 'Afleveringen worden langer'
+                : naar < van * 0.9 ? 'Afleveringen worden korter'
+                : 'Afleveringen blijven even lang';
+        }
         const tekst = document.getElementById('trendDuurTekst');
         if (tekst) {
-            tekst.innerHTML = `Van gemiddeld <strong>${gemiddelden[0]} minuten</strong> in ${eerste} naar <strong>${gemiddelden[gemiddelden.length - 1]} minuten</strong> in ${laatste}.`;
+            tekst.innerHTML = `Gemiddelde duur per jaar, van <strong>${van} minuten</strong> in ${eerste} naar <strong>${naar} minuten</strong> in ${laatste}.`;
         }
 
         new Chart(document.getElementById('trendDuurChart'), {
@@ -47,9 +56,10 @@
                     borderColor: () => kbKleur('primary'),
                     backgroundColor: () => kbKleur('primary'),
                     pointBackgroundColor: () => kbKleur('primary'),
-                    borderWidth: 2,
-                    pointRadius: 3,
-                    tension: .3,
+                    borderWidth: 3,
+                    pointRadius: 0,
+                    pointHoverRadius: 5,
+                    tension: .25,
                 }],
             },
             options: {
@@ -74,10 +84,13 @@
 
         const meest = aantallen.indexOf(Math.max(...aantallen));
         const binnen2uur = afleveringen.filter(ep => ep.minuten >= 60 && ep.minuten < 120).length;
+        const aandeel = Math.round(binnen2uur / afleveringen.length * 100);
+        const kop = document.getElementById('trendVerdelingKop');
+        if (kop) kop.textContent = aandeel >= 50 ? 'De meeste duren 1 tot 2 uur' : `Het vaakst ${labels[meest]} minuten`;
         const tekst = document.getElementById('trendVerdelingTekst');
         if (tekst) {
-            tekst.innerHTML = `De meeste afleveringen duren <strong>${labels[meest]} minuten</strong>. `
-                + `<strong>${Math.round(binnen2uur / afleveringen.length * 100)}%</strong> duurt tussen 1 en 2 uur.`;
+            tekst.innerHTML = `Aantal afleveringen per kwartier aan duur. <strong>${aandeel}%</strong> duurt tussen 1 en 2 uur, `
+                + `het drukste kwartier is <strong>${labels[meest]} minuten</strong>.`;
         }
 
         new Chart(document.getElementById('trendVerdelingChart'), {
@@ -87,10 +100,11 @@
                 datasets: [{
                     label: 'Afleveringen',
                     data: aantallen,
-                    backgroundColor: () => kbKleur('primary'),
-                    borderRadius: 3,
+                    // Het drukste kwartier in inktkleur, de rest in de hoofdkleur
+                    backgroundColor: c => kbKleur(c.dataIndex === meest ? 'text' : 'primary'),
+                    borderRadius: 0,
                     categoryPercentage: 1,
-                    barPercentage: .9,
+                    barPercentage: .88,
                 }],
             },
             options: {
@@ -115,21 +129,28 @@
         M.laad().then(afl => {
             if (!afl.length) return;
             const r = M.bereken(afl);
-            const behaald = M.alle(r).slice(0, 3);
+            // Een tijdlijn van links naar rechts: de drie laatst behaalde, dan de twee eerstvolgende
+            const behaald = M.alle(r).slice(0, 3).reverse();
             const straks = r.verwacht.slice(0, 2);
+            const uitlegVan = m => m.ep
+                ? (m.soort === 'aflevering' ? m.ep.titel : `Met aflevering ${m.ep.id}: ${m.ep.titel}`)
+                : (m.detail || '');
             lijst.innerHTML = behaald.map(m => `
-                <li class="kb-mijlpaal">
-                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                    <div><strong>${m.titel}</strong> op ${M.datum(m.datum)}
-                    ${m.ep ? `<div class="small kb-muted">${m.soort === 'aflevering' ? '' : `met aflevering ${m.ep.id}: `}${m.ep.titel}</div>` : m.detail ? `<div class="small kb-muted">${m.detail}</div>` : ''}</div>
+                <li class="kb-halte">
+                    <div class="kb-halte-lijn" aria-hidden="true"></div>
+                    <div class="kb-halte-datum">${M.datum(m.datum)}</div>
+                    <div class="kb-halte-titel">${m.titel}</div>
+                    <div class="kb-halte-uitleg">${uitlegVan(m)}</div>
                 </li>`).join('') + straks.map(v => `
-                <li class="kb-mijlpaal kb-mijlpaal-straks">
-                    <i class="bi bi-hourglass-split" aria-hidden="true"></i>
-                    <div><strong>${v.label}</strong> ${v.exact ? 'op' : 'verwacht rond'} ${M.datum(v.datum)}</div>
+                <li class="kb-halte is-verwacht">
+                    <div class="kb-halte-lijn" aria-hidden="true"></div>
+                    <div class="kb-halte-datum">${v.exact ? '' : 'rond '}${M.datum(v.datum)}</div>
+                    <div class="kb-halte-titel">${v.label}</div>
+                    <div class="kb-halte-uitleg">${v.exact ? 'Staat vast' : 'Verwacht bij het huidige tempo'}</div>
                 </li>`).join('');
             const uitleg = document.getElementById('trendMijlpalenTekst');
             if (uitleg) {
-                uitleg.textContent = `Voorspellingen op basis van het tempo van het afgelopen jaar: ${r.tempo.aantal} afleveringen, samen ${M.getal(Math.round(r.tempo.minutenPerDag * 365 / 60))} uur.`;
+                uitleg.textContent = `Een doorgetrokken lijn is behaald, een gestippelde lijn is verwacht. Voorspellingen op basis van het tempo van het afgelopen jaar: ${r.tempo.aantal} afleveringen, samen ${M.getal(Math.round(r.tempo.minutenPerDag * 365 / 60))} uur.`;
             }
         }).catch(fout => console.error('Mijlpalen konden niet geladen worden:', fout));
     }

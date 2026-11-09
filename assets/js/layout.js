@@ -30,32 +30,60 @@
     const zichtbaar = paginas.filter(p => !p.wrapped || toonWrapped);
 
     function klassen(pagina, basis) {
-        return [basis, isActief(pagina) && 'active', pagina.wrapped && !isActief(pagina) && 'wrappedBtn']
-            .filter(Boolean).join(' ');
+        return [basis, isActief(pagina) && 'active'].filter(Boolean).join(' ');
+    }
+
+    // Wrapped gaat over het vorige jaar: dat jaartal staat in een kadertje achter de naam
+    const wrappedJaar = new Date().getFullYear() - 1;
+    const naam = p => p.wrapped ? `${p.titel}<span class="kb-jaarlabel">${wrappedJaar}</span>` : p.titel;
+
+    // Datum van vandaag voor de datumregel, met hoofdletter: "Maandag 9 november 2026"
+    function vandaag() {
+        const tekst = new Date().toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+        return tekst.charAt(0).toUpperCase() + tekst.slice(1);
     }
 
     function nav(container) {
         const links = zichtbaar.map(p => `
-                    <li class="nav-item"><a class="${klassen(p, 'nav-link')}" href="${p.href}" title="${p.titel}"${isActief(p) ? ' aria-current="page"' : ''}>${p.titel}</a></li>`).join('');
+                    <li class="nav-item"><a class="${klassen(p, 'nav-link')}" href="${p.href}"${isActief(p) ? ' aria-current="page"' : ''}>${naam(p)}</a></li>`).join('');
         return `
     <nav class="navbar navbar-top">
         <div class="${container}">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png" alt="Logo Kleine Boodschap Data" title="Kleine Boodschap Data"> <span
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png" alt=""> <span
                     class="d-none d-md-inline-block">Kleine Boodschap Data</span><span
                     class="d-inline-block d-md-none">KB Data</span></a>
-            <div class="d-flex align-items-center gap-2 ms-auto">${instellingen()}
-                <button class="btn kb-icoonknop navbar-toggler" type="button" data-bs-toggle="collapse"
+            <div class="d-flex align-items-center ms-auto">${instellingen()}
+                <button class="kb-navknop kb-menuknop" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Menu openen" title="Menu"><i class="bi bi-list" aria-hidden="true"></i></button>
+                    aria-expanded="false">Menu <i class="bi bi-list" aria-hidden="true"></i></button>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav py-2">${links}
-                    <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="nofollow noopener" target="_blank" title="Bluesky"><i class="bi bi-bluesky"></i> Bluesky</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow noopener" target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right"></i></a></li>
+                <ul class="navbar-nav">${links}
+                    <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="nofollow noopener" target="_blank">Bluesky <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow noopener" target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
+        <div class="kb-datumregel w-100">
+            <div class="${container}">
+                <span>${vandaag()}</span>
+                <span id="kbStand"></span>
+            </div>
+        </div>
     </nav>`;
+    }
+
+    // "Bijgewerkt tot en met aflevering N" in de datumregel
+    function vulStand(element) {
+        const plek = element.querySelector('#kbStand');
+        if (!plek) return;
+        fetch('episodes.json')
+            .then(res => res.json())
+            .then(data => {
+                const hoogste = Math.max(...data.map(ep => parseInt(ep.id, 10)).filter(Number.isFinite));
+                if (Number.isFinite(hoogste)) plek.textContent = `Bijgewerkt tot en met aflevering ${hoogste}`;
+            })
+            .catch(() => {});
     }
 
     // Tandwiel met instellingen: afspeelsnelheid (instellingen.js) en kleurmodus (theme.js)
@@ -74,7 +102,7 @@
             ? `<span class="kb-snelheid-badge" aria-hidden="true">${s.formatteer(snelheid)}</span>` : '';
         return `
                 <div class="dropdown">
-                    <button class="btn kb-icoonknop position-relative" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="Instellingen" title="Instellingen"><i class="bi bi-gear" aria-hidden="true"></i>${badge}</button>
+                    <button class="kb-navknop" type="button" data-bs-toggle="dropdown" data-bs-display="dynamic" data-bs-auto-close="outside" aria-expanded="false" aria-label="Instellingen" title="Instellingen"><i class="bi bi-sliders2" aria-hidden="true"></i>${badge}</button>
                     <div class="dropdown-menu dropdown-menu-end kb-instellingen">
                         <div class="kb-instellingen-titel">Instellingen</div>
                         <div class="kb-instelling">
@@ -93,7 +121,7 @@
                             </div>
                         </div>
                         <div class="kb-instelling">
-                            <button type="button" class="btn btn-link btn-sm p-0 d-inline-flex align-items-center gap-2" data-kb-cookies><i class="bi bi-cookie" aria-hidden="true"></i> Cookie-instellingen</button>
+                            <button type="button" class="btn btn-link btn-sm p-0" data-kb-cookies>Cookie-instellingen</button>
                         </div>
                     </div>
                 </div>`;
@@ -128,7 +156,7 @@
         }).join('');
         return `
 <div class="container-fluid d-md-none">
-    <nav class="navbar navbar-bottom shadow-lg fixed-bottom">
+    <nav class="navbar navbar-bottom fixed-bottom">
         <div class="container d-flex justify-content-between text-center">${links}
         </div>
     </nav>
@@ -138,24 +166,13 @@
     function footer() {
         return `
     <footer class="d-none d-md-block py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <div class="small m-0">Copyright &copy; Sjors Hartwijk ${new Date().getFullYear()}</div>
-                </div>
-                <div class="col-auto">
-                    <a class="small" href="index.html">Home</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="over.html">Over</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="https://bsky.app/profile/kbdata.nl" rel="noopener" target="_blank">Bluesky</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="https://sjorshartwijk.nl/" rel="noopener" target="_blank">Sjors Hartwijk</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="https://kleineboodschap.com" rel="noopener" target="_blank">Kleine Boodschap</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="#" data-kb-cookies>Cookies</a>
-                </div>
+        <div class="container d-flex flex-wrap justify-content-between gap-3">
+            <p class="m-0" style="max-width: 40em"><strong>Kleine Boodschap Data</strong> is een onafhankelijk hobbyproject van <a href="https://sjorshartwijk.nl/" rel="noopener" target="_blank">Sjors Hartwijk</a>, zonder banden met de podcast of de Efteling. &copy; ${new Date().getFullYear()}</p>
+            <div class="d-flex flex-wrap gap-1 column-gap-4">
+                <a href="over.html">Over</a>
+                <a href="https://bsky.app/profile/kbdata.nl" rel="noopener" target="_blank">Bluesky</a>
+                <a href="#" data-kb-cookies>Cookies</a>
+                <a href="https://kleineboodschap.com" rel="noopener" target="_blank">Kleine Boodschap</a>
             </div>
         </div>
     </footer>`;
@@ -177,7 +194,7 @@
         if (placeholder.className) doel.classList.add(...placeholder.classList);
         if (placeholder.getAttribute('style')) doel.setAttribute('style', placeholder.getAttribute('style'));
         placeholder.replaceWith(element);
-        if (soort === 'nav') koppelInstellingen(element);
+        if (soort === 'nav') { koppelInstellingen(element); vulStand(element); }
     }
 
     function render() {

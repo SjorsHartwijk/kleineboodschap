@@ -27,196 +27,96 @@
 </head>
 <body>
     <!-- Navigation-->
-    <div data-layout="nav" class="shadow-sm" data-container="container"></div>
+    <div data-layout="nav" data-container="container"></div>
     <script src="assets/js/layout.js"></script>
-    <!-- Header-->
-    <header id="top" class="finisher-header">
-        <div class="container">
-            <div class="row align-items-center justify-content-center justify-content-xl-start">
-                <div class="col-lg-8 col-xl-8 col-xxl-8">
-                    <div class="my-5 text-center text-xl-start">
-                        <h1 class="display-5 fw-bolder mb-2"><img src="assets/images/logo2.png" alt="Logo Kleine Boodschap Data" title="Kleine Boodschap Data"> Kleine
-                            Boodschap data</h1>
-                        <p class="lead fw-normal kb-muted mb-4">Ben je een trouwe luisteraar van Kleine Boodschap
-                            en benieuwd naar de cijfers achter je favoriete podcast? Ontdek hier alle
-                            statistieken, feiten en luistertijd van Kleine Boodschap!</p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-primary px-4" href="#statistieken" title="Scroll naar de statistieken">Statistieken</a>
-                            <a class="btn btn-outline-primary px-4" href="kaart.html" title="Bekijk de kaart">Kaart</a>
-                            <a class="btn btn-outline-secondary px-4" href="#data" title="Scroll naar de data">Data</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
     <main>
-    <!-- Statistieken section-->
-    <section class="py-5" id="statistieken">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mb-3">
-                    <h2 class="mb-0">Statistieken</h2>
-                    <p class="small kb-muted mb-0 mt-1" data-kb-snelheid-notitie hidden></p>
+    <div class="container">
+        <!-- Opening: kop links, vandaag in het archief rechts (assets/js/homepage.js) -->
+        <section class="kb-opening row g-4 gx-lg-5 align-items-end">
+            <div class="col-12 col-lg-7 col-xl-8">
+                <h1>Alles wat er over Kleine Boodschap te tellen valt</h1>
+                <p class="kb-intro">Elke aflevering, elke minuut en elke categorie, sinds de eerste uitzending op 30 december 2017. Bijgehouden door een luisteraar, voor luisteraars.</p>
+                <div class="kb-acties">
+                    <a class="btn btn-primary" href="#statistieken">Naar de statistieken</a>
+                    <a class="kb-tekstlink" href="kaart.html">Open de kaart</a>
+                    <a class="kb-tekstlink" href="kalender.html">Bekijk de kalender</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-lg-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Aantal Afleveringen</h3>
-                            <p class="card-text">Op dit moment zijn er <strong><span
-                                        id="afleveringenCount"></span></strong> afleveringen van Kleine
-                                Boodschap geïndexeerd op deze website.</p>
-                        </div>
+            <aside class="col-12 col-lg-5 col-xl-4" aria-labelledby="vandaagKop">
+                <div class="kb-archiefdag">
+                    <div class="d-flex justify-content-between align-items-baseline gap-3">
+                        <h2 id="vandaagKop">Vandaag in het archief</h2>
+                        <span class="small kb-muted" id="todayDate"></span>
                     </div>
+                    <ul id="todayEpisodes"></ul>
+                    <p class="small kb-muted mt-2 mb-0" id="todayLeeg" hidden>Op deze dag verscheen nog nooit een aflevering. Op de <a href="kalender.html">kalender</a> zie je welke dagen wel raak zijn, bijvoorbeeld je verjaardag.</p>
                 </div>
-                <div class="col-6 col-lg-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Gemiddeld</h3>
-                            <p class="card-text">Gemiddeld duurt een aflevering van Kleine Boodschap
-                                <strong><span id="averageMinutes"></span></strong> minuten.</p>
-                        </div>
-                    </div>
+            </aside>
+        </section>
+
+        <!-- Statistieken (assets/js/homepage.js) -->
+        <section id="statistieken" class="pb-5" aria-labelledby="statKop">
+            <div class="kb-sectiekop">
+                <h2 id="statKop">Statistieken</h2>
+                <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
+            </div>
+            <div class="kb-cijfers mb-5" id="kbCijfers"></div>
+
+            <h3 class="kb-tussenkop">Verdeling per categorie</h3>
+            <div class="kb-verdeelbalk mb-4" id="kbVerdeelbalk" role="img" aria-label="Verdeling per categorie"></div>
+            <div class="row g-4 mb-5" id="kbCategorieen"></div>
+
+            <h3 class="kb-tussenkop">Records</h3>
+            <div class="row g-4" id="kbRecords"></div>
+        </section>
+
+        <!-- Trends (assets/js/trends.js) -->
+        <section id="trends" class="pb-5" aria-labelledby="trendKop">
+            <div class="kb-sectiekop">
+                <h2 id="trendKop">Trends</h2>
+                <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
+            </div>
+            <div class="row g-4 gx-lg-5 gy-lg-5">
+                <div class="col-12 col-md-6">
+                    <figure class="kb-figuur">
+                        <figcaption>
+                            <h3 id="trendDuurKop">Duur door de jaren heen</h3>
+                            <p id="trendDuurTekst">De gemiddelde duur van een aflevering per jaar.</p>
+                        </figcaption>
+                        <canvas id="trendDuurChart" aria-label="Lijngrafiek van de gemiddelde duur per jaar" role="img"></canvas>
+                    </figure>
                 </div>
-                <div class="col-6 col-lg-4 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Totaal</h3>
-                            <p class="card-text"><span id="totalMinutes"></span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column justify-content-start">
-                            <h3 class="h5 card-title">Langste aflevering</h3>
-                            <p class="card-text">Aflevering <span id="longestEpisodeInfo"></span></p>
-                            <div class="d-flex mt-auto">
-                                <details>
-                                    <summary>Top 5</summary>
-                                    <ul id="longestEpisodesList" class="list-group"></ul>
-                                </details>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column justify-content-start">
-                            <h3 class="h5 card-title">Kortste aflevering</h3>
-                            <p class="card-text">Aflevering <span id="shortestEpisodeInfo"></span></p>
-                            <div class="d-flex mt-auto">
-                                <details>
-                                    <summary>Top 5</summary>
-                                    <ul id="shortestEpisodesList" class="list-group"></ul>
-                                </details>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="statistics"></div>
-                <div class="col-12 col-md-6 col-lg-3 mb-3">
-                    <div class="card bg-achtergrond h-100">
-                        <div class="card-body" id="achtergrondStatistics">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-3">
-                    <div class="card bg-nieuws h-100">
-                        <div class="card-body" id="newsStatistics">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-3">
-                    <div class="card bg-interview h-100">
-                        <div class="card-body" id="interviewStatistics">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-3">
-                    <div class="card bg-reportage h-100">
-                        <div class="card-body" id="reportageStatistics">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column justify-content-start">
-                            <div class="d-flex justify-content-between">
-                                <h3 class="h5 card-title">Vandaag de dag</h3>
-                                <p id="todayDate" class="text-muted mb-0 ml-2"></p>
-                            </div>
-                            <script>
-                                (function() {
-                                    const todayDateElement = document.getElementById('todayDate');
-                                    if (!todayDateElement) return;
-                                    const today = new Date();
-                                    const monthNames = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
-                                    todayDateElement.textContent = `${today.getDate()} ${monthNames[today.getMonth()]}`;
-                                })();
-                            </script>
-                            <p class="card-text">Indien er op deze dag in het verleden een aflevering is
-                                verschenen wordt/worden deze aflevering(en) hier geplaatst. Bekijk ook het complete overzicht op de <a href="kalender.html">kalender</a>, bijvoorbeeld welke aflevering(en) op jouw verjaardag verschenen.</p>
-                            <ul style="list-style:none; margin:0; padding:0;" id="todayEpisodes"></ul>
-                        </div>
-                    </div>
+                <div class="col-12 col-md-6">
+                    <figure class="kb-figuur">
+                        <figcaption>
+                            <h3 id="trendVerdelingKop">Verdeling van de duur</h3>
+                            <p id="trendVerdelingTekst">Hoeveel afleveringen er per kwartier aan duur zijn.</p>
+                        </figcaption>
+                        <canvas id="trendVerdelingChart" aria-label="Staafdiagram van het aantal afleveringen per kwartier duur" role="img"></canvas>
+                    </figure>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Trends section (assets/js/trends.js) -->
-    <section class="pb-5" id="trends">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mb-3">
-                    <h2 class="mb-0">Trends</h2>
-                    <p class="small kb-muted mb-0 mt-1" data-kb-snelheid-notitie hidden></p>
-                </div>
+        </section>
+
+        <!-- Mijlpalen: de laatst behaalde en de eerstvolgende (assets/js/trends.js) -->
+        <section class="pb-5" aria-labelledby="mijlKop">
+            <div class="kb-sectiekop">
+                <h2 id="mijlKop">Mijlpalen</h2>
+                <a class="kb-tekstlink" href="mijlpalen.html">Alle mijlpalen</a>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-6 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Duur door de jaren heen</h3>
-                            <p class="card-text" id="trendDuurTekst">De gemiddelde duur van een aflevering per jaar.</p>
-                            <canvas id="trendDuurChart" aria-label="Lijngrafiek van de gemiddelde duur per jaar" role="img"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Verdeling van de duur</h3>
-                            <p class="card-text" id="trendVerdelingTekst">Hoeveel afleveringen er per kwartier aan duur zijn.</p>
-                            <canvas id="trendVerdelingChart" aria-label="Staafdiagram van het aantal afleveringen per kwartier duur" role="img"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Mijlpalen</h3>
-                            <ul class="list-unstyled kb-mijlpalen-rij mb-2" id="trendMijlpalen"></ul>
-                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-lg-3">
-                                <p class="small kb-muted mb-0" id="trendMijlpalenTekst"></p>
-                                <a href="mijlpalen.html" class="btn btn-sm btn-outline-primary" title="Bekijk alle behaalde mijlpalen">Alle mijlpalen <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <ol class="kb-tijdlijn" id="trendMijlpalen"></ol>
+            <p class="small kb-muted mt-4 mb-0" id="trendMijlpalenTekst"></p>
+        </section>
+    </div>
     <!-- Data section-->
-    <section id="data">
+    <section id="data" class="pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>Data</h2>
-                    <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
-                    <p>Bekijk hier de data van alle afleveringen van Kleine Boodschap.</p>
+                    <div class="kb-sectiekop">
+                        <h2>Data</h2>
+                        <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
+                    </div>
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between">
@@ -415,6 +315,22 @@
             </div>
         </div>
     </section>
+    <!-- Verwijzingen naar de rest van de site -->
+    <section class="pb-5" aria-labelledby="archiefKop">
+        <div class="container">
+            <div class="kb-sectiekop">
+                <h2 id="archiefKop">In het archief</h2>
+            </div>
+            <nav class="kb-archieflijst" aria-labelledby="archiefKop">
+                <a href="afleveringen.html"><span class="kb-archief-titel">Alle afleveringen</span><span class="kb-archief-stippel" aria-hidden="true"></span><span class="kb-archief-uitleg">tabel met zoeken</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                <a href="kaart.html"><span class="kb-archief-titel">Kaart</span><span class="kb-archief-stippel" aria-hidden="true"></span><span class="kb-archief-uitleg">alle plekken in het park</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                <a href="kalender.html"><span class="kb-archief-titel">Kalender</span><span class="kb-archief-stippel" aria-hidden="true"></span><span class="kb-archief-uitleg">op welke dag verscheen wat</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                <a href="reeks.html"><span class="kb-archief-titel">Reeks en luisterteller</span><span class="kb-archief-stippel" aria-hidden="true"></span><span class="kb-archief-uitleg">hoe ver ben jij</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                <a href="gasten.html"><span class="kb-archief-titel">Gasten</span><span class="kb-archief-stippel" aria-hidden="true"></span><span class="kb-archief-uitleg">alle gasten op een rij</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                <a href="over.html#data-downloaden"><span class="kb-archief-titel">Data downloaden</span><span class="kb-archief-stippel" aria-hidden="true"></span><span class="kb-archief-uitleg">CSV en JSON</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            </nav>
+        </div>
+    </section>
     </main>
     <div data-layout="footer"></div>
 <div data-layout="mobile-nav"></div>
@@ -500,15 +416,13 @@
     <!-- chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- snelle statistieken -->
-    <script src="assets/js/quickstats.js"></script>
-    <script src="assets/js/onthisday.js"></script>
-    <script src="assets/js/category_statistics.js"></script>
     <!-- grafieken -->
     <script src="assets/js/chart_episodes.js"></script>
     <script src="assets/js/chart_episodes_year.js"></script>
     <script src="assets/js/chart_categories.js"></script>
     <script src="assets/js/chart_languages.js"></script>
     <script src="assets/js/mijlpalen.js"></script>
+    <script src="assets/js/homepage.js"></script>
     <script src="assets/js/trends.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

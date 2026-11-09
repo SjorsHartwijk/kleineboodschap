@@ -49,9 +49,13 @@
         if (!window.Chart) return;
         const tekst = kleur('muted') || Chart.defaults.color;
         const rand = kleur('border') || Chart.defaults.borderColor;
-        // Standaard voor grafieken die nog gemaakt worden
+        // Standaard voor grafieken die nog gemaakt worden: huisstijlletter en rechte balken
         Chart.defaults.color = tekst;
         Chart.defaults.borderColor = rand;
+        Chart.defaults.font.family = 'Geist, system-ui, sans-serif';
+        Chart.defaults.elements.bar.borderRadius = 0;
+        Chart.defaults.plugins.legend.labels.boxWidth = 12;
+        Chart.defaults.plugins.legend.labels.boxHeight = 12;
         // Bestaande grafieken: Chart.js onthoudt as- en legendakleuren per grafiek,
         // dus die zetten we hier expliciet en tekenen we opnieuw
         Object.values(Chart.instances || {}).forEach(grafiek => {

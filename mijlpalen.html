@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col-12 col-xxl-9">
-                        <h1>Mijlpalen</h1>
+                        <h1 class="kb-paginakop">Mijlpalen</h1>
                         <p>Alle mijlpalen van Kleine Boodschap op een rij: uren luistertijd, jubileumafleveringen, mijlpalen per categorie en de verjaardagen van de podcast. Bij elke nieuwe aflevering wordt alles automatisch bijgewerkt, inclusief de voorspellingen voor de volgende mijlpalen.</p>
                         <p class="small kb-muted" id="mijlpalenSnelheid" hidden></p>
                     </div>
@@ -54,7 +54,7 @@
                     <div class="col-12 col-lg-6 mb-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h2 class="h4 card-title"><i class="bi bi-headphones" aria-hidden="true"></i> Luistertijd</h2>
+                                <h2 class="h4 card-title">Luistertijd</h2>
                                 <p class="small kb-muted">Na 50 uur en daarna elke 100 uur aan afleveringen.</p>
                                 <ul class="list-unstyled mb-0" id="mijlpalenLuistertijd"></ul>
                             </div>
@@ -63,7 +63,7 @@
                     <div class="col-12 col-lg-6 mb-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h2 class="h4 card-title"><i class="bi bi-collection-play" aria-hidden="true"></i> Afleveringen</h2>
+                                <h2 class="h4 card-title">Afleveringen</h2>
                                 <p class="small kb-muted">De allereerste aflevering en daarna elke 50e.</p>
                                 <ul class="list-unstyled mb-0" id="mijlpalenAfleveringen"></ul>
                             </div>
@@ -75,7 +75,7 @@
                     <div class="col-12 mb-4">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="h4 card-title"><i class="bi bi-tag" aria-hidden="true"></i> Per categorie</h2>
+                                <h2 class="h4 card-title">Per categorie</h2>
                                 <p class="small kb-muted">De eerste aflevering van elke categorie en daarna elke 50e.</p>
                                 <div class="row" id="mijlpalenCategorieen"></div>
                             </div>
@@ -87,7 +87,7 @@
                     <div class="col-12 col-lg-6 mb-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h2 class="h4 card-title"><i class="bi bi-cake2" aria-hidden="true"></i> Jubilea</h2>
+                                <h2 class="h4 card-title">Jubilea</h2>
                                 <p class="small kb-muted" id="mijlpalenStart"></p>
                                 <ul class="list-unstyled mb-0" id="mijlpalenJubilea"></ul>
                             </div>
@@ -110,7 +110,6 @@
             function item(kop, datum, detail) {
                 return `
                     <li class="kb-mijlpaal">
-                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                         <div><strong>${kop}</strong> <span class="kb-muted">· ${M.datum(datum)}</span>
                         ${detail ? `<div class="small">${detail}</div>` : ''}</div>
                     </li>`;

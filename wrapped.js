@@ -120,7 +120,7 @@ function updateChart(filteredEpisodes) {
                 label: 'Tijdsduur (minuten)',
                 data: episodeDurations,
                 backgroundColor: episodeColors,
-                borderRadius: 3
+                borderRadius: 0
             }]
         },
         options: {
