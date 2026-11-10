@@ -42,6 +42,9 @@ function updateWrapped() {
 
     let filteredEpisodes = episodesData.filter(ep => ep.datum.startsWith(selectedYear));
 
+    // Favorieten gelden voor het hele jaar, los van het categoriefilter
+    kbFavorieten.toon(selectedYear, filteredEpisodes);
+
     if (selectedCategory !== "all") {
         filteredEpisodes = filteredEpisodes.filter(ep => ep.categorie === selectedCategory);
     }
@@ -53,6 +56,7 @@ function updateWrapped() {
 
     let episodeTableHTML = sortedEpisodes.map(ep =>
         `<tr>
+            <td>${kbFavorieten.knop(ep)}</td>
             <td>${ep.id}</td>
             <td>${ep.titel}</td>
             <td>${ep.categorie}</td>
@@ -156,10 +160,12 @@ function sortTable(n) {
         let cellA = rowA.cells[n].textContent.trim();
         let cellB = rowB.cells[n].textContent.trim();
 
-        if (n === 3) { // Sorteer op tijd (minuten)
-            return isAscending ? rowA.cells[n].dataset.min - rowB.cells[n].dataset.min 
+        if (n === 1) { // Sorteer op afleveringsnummer
+            return isAscending ? cellA - cellB : cellB - cellA;
+        } else if (n === 4) { // Sorteer op tijd (minuten)
+            return isAscending ? rowA.cells[n].dataset.min - rowB.cells[n].dataset.min
                                : rowB.cells[n].dataset.min - rowA.cells[n].dataset.min;
-        } else if (n === 4) { // Sorteer op datum (dd-mm-yyyy)
+        } else if (n === 5) { // Sorteer op datum (dd-mm-yyyy)
             return isAscending ? new Date(rowA.cells[n].dataset.date) - new Date(rowB.cells[n].dataset.date)
                                : new Date(rowB.cells[n].dataset.date) - new Date(rowA.cells[n].dataset.date);
         }

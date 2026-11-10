@@ -100,16 +100,42 @@
         <div class="mb-4">
             <div class="card">
                 <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline gap-2">
+                        <h3>Mijn favorieten van <span data-favorieten-jaar></span></h3>
+                        <span class="small kb-muted" id="favorietenAantal"></span>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-12 col-lg-7">
+                            <div id="favorietenMelding" class="alert alert-warning py-2 d-none" role="status"></div>
+                            <div id="favorietenLijst"></div>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <button type="button" class="btn btn-primary" data-favorieten-actie="deel" disabled>
+                                    <i class="bi bi-share me-1" aria-hidden="true"></i> Deel als afbeelding</button>
+                                <button type="button" class="btn btn-outline-primary" data-favorieten-actie="download" disabled>
+                                    <i class="bi bi-download me-1" aria-hidden="true"></i> Download afbeelding</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 kb-favorieten-voorbeeld d-none">
+                            <img id="favorietenVoorbeeld" class="img-fluid" alt="Voorbeeld van de afbeelding met je favoriete afleveringen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="card">
+                <div class="card-body">
                     <h3>Afleveringen van <span id="episodeYear"></span></h3>
                     <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th onclick="sortTable(0)">ID <i class="bi bi-sort-down"></i></th>
+                                <th><span class="visually-hidden">Favoriet</span></th>
+                                <th onclick="sortTable(1)">ID <i class="bi bi-sort-down"></i></th>
                                 <th>Titel</th>
                                 <th>Categorie</th>
-                                <th onclick="sortTable(3)">Tijdsduur <i class="bi bi-sort-down"></i></th>
-                                <th onclick="sortTable(4)">Datum <i class="bi bi-sort-down"></i></th>
+                                <th onclick="sortTable(4)">Tijdsduur <i class="bi bi-sort-down"></i></th>
+                                <th onclick="sortTable(5)">Datum <i class="bi bi-sort-down"></i></th>
                             </tr>
                         </thead>
                         <tbody id="episodeTable"></tbody>
@@ -122,6 +148,7 @@
     </main>
     <!-- Footer-->
     <div data-layout="footer"></div>
+    <script src="assets/js/wrapped_favorieten.js"></script>
     <script src="wrapped.js"></script>
     <script>
         const container = document.getElementById("wrappedContainer");
@@ -133,7 +160,9 @@
         const beginJan = new Date(jaar, 0, 1);   // 1 januari
         const eindMrt  = new Date(jaar, 2, 1);   // 1 maart
 
-        const zichtbaar = vandaag >= beginJan && vandaag < eindMrt;
+        // Lokaal (localhost) altijd zichtbaar, om buiten de periode te kunnen testen
+        const lokaal = ['localhost', '127.0.0.1'].includes(location.hostname);
+        const zichtbaar = lokaal || (vandaag >= beginJan && vandaag < eindMrt);
 
         if (!zichtbaar) {
           container.innerHTML = "<h1 class=\"display-1 pt-5\">Kleine Boodschap Wrapped</h1><p class=\"fw-bold text-white\">Deze pagina is alleen zichtbaar van 1 januari tot 1 maart.</p>";

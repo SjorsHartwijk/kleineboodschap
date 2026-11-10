@@ -26,6 +26,7 @@
   --kb-cat-reportage: #4E7F52;
   --kb-wrapped-bg: #0D3149; /* iets donkerder dan de menubalk (#154666), zodat die zich aftekent */
   --kb-wrapped-text: #FFFFFF;
+  --kb-favoriet: #C8102E;
   --kb-logo-filter: none;
   /* Druktemeter kalender (oorspronkelijke kleuren) */
   --kb-drukte-1: #b6d3bb;
@@ -71,6 +72,7 @@
   --kb-cat-reportage: #8BC48F;
   --kb-wrapped-bg: #16293A;
   --kb-wrapped-text: #EDE6D6;
+  --kb-favoriet: #FF6B78;
   --kb-logo-filter: invert(100%);
   /* Druktemeter kalender: zelfde volgorde, gedempt voor de donkere achtergrond, lichte tekst */
   --kb-drukte-1: #2F5E3F;
@@ -1257,6 +1259,7 @@ footer a:hover, footer a:focus-visible {
   min-height: calc(100dvh - 56px);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   /* Op de blauwe achtergrond blijven blokken lichte vlakken */
+  /* Favorieten: grijs outline hartje, rood als het aangeklikt is */
 }
 .wrapped h1, .wrapped h2, .wrapped h3, .wrapped h4, .wrapped h5, .wrapped h6 {
   color: var(--kb-wrapped-text);
@@ -1303,6 +1306,43 @@ footer a:hover, footer a:focus-visible {
   .wrapped table tbody tr td {
     font-size: 0.7em;
   }
+}
+.wrapped .kb-hartje {
+  border: 0;
+  background: none;
+  padding: 0 4px;
+  line-height: 1;
+  font-size: 1.15rem;
+  color: var(--kb-muted);
+  cursor: pointer;
+}
+.wrapped .kb-hartje:hover, .wrapped .kb-hartje:focus-visible {
+  color: var(--kb-favoriet);
+}
+.wrapped .kb-hartje.is-favoriet {
+  color: var(--kb-favoriet);
+}
+.wrapped .kb-favorieten {
+  padding-left: 1.6em;
+}
+.wrapped .kb-favorieten li {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--kb-border);
+}
+.wrapped .kb-favorieten .kb-favorieten-titel {
+  margin-left: 4px;
+}
+.wrapped .kb-favorieten .kb-favorieten-weg {
+  float: right;
+  padding: 0 4px;
+  color: var(--kb-muted);
+}
+.wrapped .kb-favorieten .kb-favorieten-weg:hover {
+  color: var(--kb-favoriet);
+}
+.wrapped .kb-favorieten-voorbeeld img {
+  border: 1px solid var(--kb-border);
+  max-height: 520px;
 }
 
 #about .accordion {
