@@ -125,28 +125,29 @@
                             <div class="d-flex align-items-center justify-content-between">
                                 <h3 class="card-title h4 flex-md-grow-1">Afleveringen</h3>
                                 <ul class="nav nav-pills rounded" id="myTab" role="tablist">
+                                    <li class="nav-item d-none d-md-block" role="presentation">
+                                        <button class="nav-link active" id="grafiek-tab" data-bs-toggle="tab" data-bs-target="#grafiek" type="button" role="tab" aria-controls="grafiek" aria-selected="true">Grafiek horizontaal</button>
+                                    </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="grafiek-tab" data-bs-toggle="tab" data-bs-target="#grafiek" type="button" role="tab" aria-controls="grafiek" aria-selected="true">Grafiek</button>
+                                        <button class="nav-link" id="grafiekV-tab" data-bs-toggle="tab" data-bs-target="#grafiekV" type="button" role="tab" aria-controls="grafiekV" aria-selected="false">Grafiek<span class="d-none d-md-inline"> verticaal</span></button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="mozaiekpanel-tab" data-bs-toggle="tab" data-bs-target="#mozaiekpanel" type="button" role="tab" aria-controls="mozaiekpanel" aria-selected="false">Mozaïek</button>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="tab-content">
+                            <!-- Legenda en filter voor alle drie de weergaven (assets/js/chart_episodes.js) -->
+                            <div class="kb-filterlegenda mt-3" id="grafiekLegenda" role="group" aria-label="Filter op categorie"></div>
+                            <p class="small kb-muted mt-1 mb-2">Klik op een categorie om die te verbergen of weer te tonen.</p>
+                            <div class="tab-content kb-filtergebied">
+                                <div class="tab-pane" id="grafiekV" role="tabpanel" aria-labelledby="grafiekV-tab" tabindex="0">
+                                    <p class="small kb-muted mb-2">Duur per aflevering in minuten, van aflevering 1 bovenaan tot de nieuwste onderaan. Tik of wijs een staaf aan voor de titel.</p>
+                                    <div class="kb-grafiek-scroll">
+                                        <div class="kb-grafiek-hoogte"><canvas id="barChartV" role="img" aria-label="Staafdiagram met de duur van elke aflevering, de afleveringen onder elkaar"></canvas></div>
+                                    </div>
+                                </div>
                                 <div class="tab-pane active" id="grafiek" role="tabpanel" aria-labelledby="grafiek-tab" tabindex="0">
-                                    <div class="d-block d-md-none text-center">
-                                        <div class="alert alert-info mt-2">
-                                            <small class="fst-italic">Op 't kleine scherm, een ware twist, de grafiek zo klein — wat je mist. Wil je de data helder bekijken? Laat een mozaïek het inzicht bereiken.</small>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex flex-wrap align-items-center d-none d-md-flex">
-                                        <div class="m-2"><span class="badge achtergrond">&nbsp;</span>&nbsp;<small>Achtergrond</small></div>
-                                        <div class="m-2"><span class="badge nieuws">&nbsp;</span>&nbsp;<small>Nieuws</small></div>
-                                        <div class="m-2"><span class="badge interview">&nbsp;</span>&nbsp;<small>Interview</small></div>
-                                        <div class="m-2"><span class="badge reportage">&nbsp;</span>&nbsp;<small>Reportage</small></div>
-                                    </div>
-                                    <canvas id="barChart" class="d-none d-md-block"></canvas>
+                                    <canvas id="barChart" role="img" aria-label="Staafdiagram met de duur van elke aflevering"></canvas>
                                     <div class="text-center d-none d-md-block my-2"><a href="grafiek.html" class="btn btn-sm btn-outline-secondary" title="Bekijk de grafiek op een aparte grote pagina"><i class="bi bi-arrows-fullscreen"></i> Grote grafiek</a></div>
                                 </div>
                                 <div class="tab-pane" id="mozaiekpanel" role="tabpanel" aria-labelledby="mozaiekpanel-tab" tabindex="0">
@@ -159,7 +160,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="col-12 col-md-7 mb-3">
                     <div class="card h-100 mb-3">
                         <div class="card-body">
                             <h3 class="h4">Publicatiedagen</h3>
@@ -239,17 +240,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                    <div class="card mb-3 h-100">
-                        <div class="card-body">
-                            <h3 class="h4">Categorieën</h3>
-                            <p>In dit diagram bekijk je alle afleveringen van Kleine Boodschap per categorie.<br/>
-                            <small class="fst-italic">Tip: klik op de categorieën onder de cirkel om deze aan of uit te zetten.</small></p>
-                            <div class="p-2 p-lg-4"><canvas id="donutChart"></canvas></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="col-12 col-md-5 mb-3">
                     <div class="card mb-3 h-100">
                         <div class="card-body">
                             <h3 class="h4">Gesproken taal</h3>
@@ -341,11 +332,9 @@
     </script>
     <!-- chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- snelle statistieken -->
     <!-- grafieken -->
     <script src="assets/js/chart_episodes.js"></script>
     <script src="assets/js/chart_episodes_year.js"></script>
-    <script src="assets/js/chart_categories.js"></script>
     <script src="assets/js/chart_languages.js"></script>
     <script src="assets/js/mijlpalen.js"></script>
     <script src="assets/js/homepage.js"></script>

@@ -1315,6 +1315,60 @@ footer {
       z-index: 1;
     }
 }
+/* Legenda die ook filtert (chart_episodes.js): klik zet een categorie aan of uit */
+.kb-filterlegenda {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.25rem;
+    row-gap: .25rem;
+}
+.kb-filterknop {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 0;
+    border: 0;
+    background: none;
+    color: var(--kb-text);
+    font-size: .9rem;
+    font-weight: 500;
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+    &[aria-pressed=false] {
+        color: var(--kb-muted);
+        text-decoration: line-through;
+        .kb-legendablokje {
+            background: transparent !important;
+            outline: 2px solid var(--kb-muted);
+            outline-offset: -2px;
+        }
+    }
+}
+/* Mozaïek volgt het filter */
+.kb-filtergebied {
+    &.verberg-achtergrond .blokje.achtergrond,
+    &.verberg-nieuws .blokje.nieuws,
+    &.verberg-interview .blokje.interview,
+    &.verberg-reportage .blokje.reportage {
+        display: none;
+    }
+}
+
+/* Homepage, Data: grafiek verticaal (afleveringen onder elkaar) in een blok dat zelf scrolt */
+.kb-grafiek-scroll {
+    max-height: 70vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-top: 1px solid var(--kb-border);
+    border-bottom: 1px solid var(--kb-border);
+}
+.kb-grafiek-hoogte {
+    position: relative;
+    min-height: 300px;
+}
+
 /* Gasten: top 5 als staven (gelijke stand in één rij) */
 .kb-gastentop {
     list-style: none;
