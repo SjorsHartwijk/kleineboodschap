@@ -279,7 +279,7 @@ a:hover, a:focus {
 }
 
 .kb-cijfer {
-  flex: 1 1 200px;
+  flex: 1 1 180px;
   min-width: 0;
   border-top: 1px solid var(--kb-border);
   padding-top: 14px;

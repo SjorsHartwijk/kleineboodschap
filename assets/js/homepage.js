@@ -1,4 +1,5 @@
-// Homepage: vandaag in het archief, kerncijfers, verdeling per categorie en records.
+// Homepage: vandaag in het archief, kerncijfers, verdeling per categorie, records
+// en records per periode.
 // De afleveringen komen via kbMijlpalen.laad() (mijlpalen.js), dus de tijden zijn al
 // omgerekend naar de gekozen afspeelsnelheid (instellingen.js).
 
@@ -36,12 +37,15 @@
         const nu = new Date();
         let jaren = nu.getFullYear() - eerste.datum.getFullYear();
         if (nu < new Date(nu.getFullYear(), eerste.datum.getMonth(), eerste.datum.getDate())) jaren--;
+        // Gemiddelde tijd tussen twee afleveringen, over alle jaren
+        const tussen = (laatste.datum - eerste.datum) / 864e5 / (afl.length - 1);
 
         const cijfers = [
             { waarde: getal(afl.length), label: 'afleveringen', uitleg: `tot en met ${M.datum(laatste.datum)}` },
             { waarde: getal(uren), label: 'uur luistertijd', uitleg: `${Math.floor(uren / 24)} dagen en ${uren % 24} uur aan één stuk` },
             { waarde: getal(Math.round(totaal / afl.length)), label: 'minuten gemiddeld', uitleg: `van ${Math.round(Math.min(...minuten))} tot ${Math.round(Math.max(...minuten))} minuten` },
             { waarde: getal(jaren), label: 'jaar podcast', uitleg: `sinds ${M.datum(eerste.datum)}` },
+            { waarde: tussen.toFixed(1).replace('.', ','), label: 'dagen tussen afleveringen', uitleg: 'gemiddeld, over alle jaren' },
         ];
         $('kbCijfers').innerHTML = cijfers.map(c => `
             <div class="kb-cijfer">
@@ -104,11 +108,60 @@
         $('kbRecords').innerHTML = blok('Langste aflevering', langste[0], langste) + blok('Kortste aflevering', kortste[0], kortste);
     }
 
+    const MAANDEN = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+    const maandNaam = sleutel => `${MAANDEN[Number(sleutel.slice(5, 7)) - 1]} ${sleutel.slice(0, 4)}`;
+    const duur = min => `${Math.floor(min / 60)} uur en ${Math.round(min % 60)} minuten`;
+
+    // Record zonder top 5: groot getal met eenheid, wat het is en een toelichting
+    const periodeBlok = (getalHtml, soort, wat, uitleg) => `
+        <div class="col-12 col-lg-4">
+            <div class="kb-record">
+                <div class="kb-record-getal">${getalHtml}</div>
+                <div>
+                    <div class="small kb-muted">${soort}</div>
+                    <div class="fw-semibold">${wat}</div>
+                    <div class="small kb-muted">${uitleg}</div>
+                </div>
+            </div>
+        </div>`;
+
+    function recordsPerPeriode(afl) {
+        // Per maand: aantal afleveringen en minuten (bij gelijkspel telt de eerste maand)
+        const maanden = new Map();
+        afl.forEach(ep => {
+            const sleutel = ep.datum.toISOString().slice(0, 7);
+            const m = maanden.get(sleutel) || { aantal: 0, minuten: 0 };
+            m.aantal++;
+            m.minuten += ep.minuten;
+            maanden.set(sleutel, m);
+        });
+        const lijst = [...maanden.entries()];
+        const [drukst, d] = lijst.reduce((a, b) => b[1].aantal > a[1].aantal ? b : a);
+        const [langst, l] = lijst.reduce((a, b) => b[1].minuten > a[1].minuten ? b : a);
+
+        // Dit jaar tot en met vandaag tegenover dezelfde periode vorig jaar
+        const nu = new Date();
+        const jaar = nu.getFullYear();
+        const dagSleutel = d => d.toISOString().slice(5, 10);
+        const vandaag = `${String(nu.getMonth() + 1).padStart(2, '0')}-${String(nu.getDate()).padStart(2, '0')}`;
+        const totVandaag = j => afl.filter(ep => ep.datum.getUTCFullYear() === j && dagSleutel(ep.datum) <= vandaag).length;
+        const ditJaar = totVandaag(jaar), vorigJaar = totVandaag(jaar - 1);
+        const verschil = ditJaar - vorigJaar;
+        const vergelijking = verschil === 0 ? 'evenveel als' : `${Math.abs(verschil)} ${verschil > 0 ? 'meer' : 'minder'} dan`;
+        const datumNu = nu.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long' });
+
+        $('kbPeriodes').innerHTML =
+            periodeBlok(`${d.aantal}<small>afl.</small>`, 'Drukste maand', hoofdletter(maandNaam(drukst)), `${d.aantal} afleveringen in één maand`) +
+            periodeBlok(`${getal(Math.round(l.minuten))}<small>min</small>`, 'Meeste luistertijd in een maand', hoofdletter(maandNaam(langst)), duur(l.minuten)) +
+            periodeBlok(`${ditJaar}<small>afl.</small>`, `${jaar} tot nu toe`, `${vergelijking} vorig jaar`, `${vorigJaar} afleveringen in ${jaar - 1} tot en met ${datumNu}`);
+    }
+
     M.laad().then(afl => {
         if (!afl.length) return;
         vandaagInHetArchief(afl);
         kerncijfers(afl);
         perCategorie(afl);
         records(afl);
+        recordsPerPeriode(afl);
     }).catch(fout => console.error('Homepage kon niet geladen worden:', fout));
 })();
