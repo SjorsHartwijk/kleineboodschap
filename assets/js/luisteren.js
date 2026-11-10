@@ -139,7 +139,6 @@
                         <div class="small kb-muted">${reden(ep)}</div>
                         <div class="fw-semibold">${veilig(ep.titel)}</div>
                         <div class="small kb-muted"><span class="kb-legendablokje ${ep.categorie}" aria-hidden="true"></span> Aflevering ${ep.id} · ${ep.categorie} · ${datum(ep.datum)}</div>
-                        <button type="button" class="btn btn-link btn-sm p-0 mt-2 kb-kopieer" data-titel="${veilig(ep.titel)}"><i class="bi bi-copy" aria-hidden="true"></i> Kopieer titel</button>
                     </div>
                 </div>
             </div>`;
@@ -210,14 +209,6 @@
             wijzig();
         });
         $('kiezerOpnieuw').addEventListener('click', toon);
-        $('kiezerVoorstellen').addEventListener('click', e => {
-            const b = e.target.closest('.kb-kopieer');
-            if (!b || !navigator.clipboard) return;
-            navigator.clipboard.writeText(b.dataset.titel).then(() => {
-                b.innerHTML = '<i class="bi bi-check2" aria-hidden="true"></i> Gekopieerd';
-                setTimeout(() => { b.innerHTML = '<i class="bi bi-copy" aria-hidden="true"></i> Kopieer titel'; }, 2000);
-            }).catch(() => {});
-        });
 
         schrijfKeuze(keuze);
         toonKeuze();
