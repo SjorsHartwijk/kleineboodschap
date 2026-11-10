@@ -58,7 +58,7 @@
         return `
     <nav class="navbar navbar-top">
         <div class="${container}">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo-licht.svg" alt=""> <span
+            <a class="navbar-brand" href="index.html" title="Kleine Boodschap Data, naar de homepage"><img src="assets/images/logo-licht.svg" alt="Logo"> <span
                     class="d-none d-md-inline-block">Kleine Boodschap Data</span><span
                     class="d-inline-block d-md-none">KB Data</span></a>
             <div class="kb-navknoppen d-flex align-items-center ms-auto">${instellingen()}

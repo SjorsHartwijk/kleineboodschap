@@ -196,7 +196,7 @@
                                     document.getElementById('totalCount').textContent = total;
                                 });
                             </script>
-                            <canvas id="weekdayBarChart"></canvas>
+                            <canvas id="weekdayBarChart" role="img" aria-label="Staafdiagram van het aantal afleveringen per publicatiedag"></canvas>
                             <script>
                             // Wachten tot de pagina geladen is, zodat chart.js (onderaan de pagina) beschikbaar is
                             document.addEventListener('DOMContentLoaded', () => fetch('episodes.json')
@@ -246,7 +246,7 @@
                         <div class="card-body">
                             <h3 class="h4">Gesproken taal</h3>
                             <p>In deze meter zie je een overzicht van alle geïndexeerde afleveringen en in welke talen deze worden gesproken.</p>
-                            <canvas id="languageChart"></canvas>
+                            <canvas id="languageChart" role="img" aria-label="Ringdiagram van de gesproken talen in de afleveringen"></canvas>
                         </div>
                     </div>
                 </div>
@@ -258,7 +258,7 @@
                                 kalenderjaar, gestapeld per categorie.</p>
                     <small class="card-text fst-italic">Tip: klik op de categorieën onder het diagram om deze aan of uit
                                 te zetten.</small>
-                    <canvas id="yearBarChart"></canvas>
+                    <canvas id="yearBarChart" role="img" aria-label="Staafdiagram van het aantal gepubliceerde afleveringen per jaar"></canvas>
                 </div>
             </div>
         </div>
