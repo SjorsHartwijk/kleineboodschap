@@ -101,8 +101,8 @@
         } else {
             doel.innerHTML = `<ol class="kb-favorieten mb-0">${favorieten.map(ep => `
                 <li>
-                    <span class="badge ${escape(ep.categorie)} kb-wrapped-blokje">&nbsp;</span>
-                    <span class="kb-favorieten-titel">${escape(ep.id)}: ${escape(ep.titel)}</span>
+                    <span class="kb-favorieten-titel"><span class="badge ${escape(ep.categorie)} kb-wrapped-blokje">&nbsp;</span>
+                        ${escape(ep.id)}: ${escape(ep.titel)}</span>
                     <button type="button" class="btn btn-sm btn-link kb-favorieten-weg" data-favoriet="${escape(ep.id)}"
                         aria-label="Verwijder ${escape(ep.titel)} uit favorieten"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
                 </li>`).join('')}</ol>`;
@@ -116,21 +116,11 @@
     function laadLogo() {
         if (!logo) {
             logo = new Promise((ok, fout) => {
+                // Lichte variant van het logo (wit met gekleurde staafjes) voor de donkere achtergrond
                 const img = new Image();
-                img.onload = () => {
-                    // Het logo is zwart; maak er een witte versie van voor de donkere achtergrond
-                    const c = document.createElement('canvas');
-                    c.width = img.naturalWidth;
-                    c.height = img.naturalHeight;
-                    const ctx = c.getContext('2d');
-                    ctx.drawImage(img, 0, 0);
-                    ctx.globalCompositeOperation = 'source-in';
-                    ctx.fillStyle = BEELD.tekst;
-                    ctx.fillRect(0, 0, c.width, c.height);
-                    ok(c);
-                };
+                img.onload = () => ok(img);
                 img.onerror = fout;
-                img.src = 'assets/images/logo2.png';
+                img.src = 'assets/images/logo-licht.svg';
             });
         }
         return logo;
@@ -239,12 +229,14 @@
         ctx.fillRect(marge, boven + n * rij, B - 2 * marge, 2);
 
         // Voet: logo en kbdata.nl
-        const logoMaat = 96;
-        const voetY = H - 80 - logoMaat;
-        ctx.drawImage(beeldLogo, marge, voetY, logoMaat, logoMaat);
+        // Het logo is smal binnen een vierkant vlak (ca. 33% tot 67%), dus links laten uitlijnen op de marge
+        const logoMaat = 130;
+        const voetY = H - 70 - logoMaat;
+        const logoX = marge - logoMaat * 0.33;
+        ctx.drawImage(beeldLogo, logoX, voetY, logoMaat, logoMaat);
         ctx.fillStyle = BEELD.tekst;
         ctx.font = '600 44px Geist, system-ui, sans-serif';
-        ctx.fillText('kbdata.nl', marge + logoMaat + 28, voetY + logoMaat / 2 + 16);
+        ctx.fillText('kbdata.nl', logoX + logoMaat * 0.67 + 24, voetY + logoMaat / 2 + 16);
         ctx.fillStyle = BEELD.muted;
         ctx.font = '400 30px Geist, system-ui, sans-serif';
         ctx.textAlign = 'right';
@@ -256,10 +248,14 @@
 
     let voorbeeldUrl = null;
     let tekenRonde = 0;
+    // De afbeelding van het voorbeeld wordt bewaard, zodat 'Deel' direct (binnen de klik) het deelmenu kan openen;
+    // Safari staat delen na een lange wachttijd niet meer toe
+    let klaarBestand = null;
     async function tekenVoorbeeld(favorieten) {
         const img = document.getElementById('favorietenVoorbeeld');
         if (!img) return;
         const ronde = ++tekenRonde;
+        klaarBestand = null;
         if (!favorieten.length) {
             img.closest('.kb-favorieten-voorbeeld').classList.add('d-none');
             return;
@@ -267,18 +263,24 @@
         const c = await maakAfbeelding(favorieten);
         if (ronde !== tekenRonde) return; // inmiddels alweer gewijzigd
         const blob = await new Promise(ok => c.toBlob(ok, 'image/png'));
+        if (ronde !== tekenRonde) return;
+        klaarBestand = new File([blob], bestandsnaam(), { type: 'image/png' });
         if (voorbeeldUrl) URL.revokeObjectURL(voorbeeldUrl);
         voorbeeldUrl = URL.createObjectURL(blob);
         img.src = voorbeeldUrl;
         img.closest('.kb-favorieten-voorbeeld').classList.remove('d-none');
     }
 
+    const bestandsnaam = () => `kleine-boodschap-wrapped-${jaar}-favorieten.png`;
+
     async function bestand() {
+        if (klaarBestand) return klaarBestand;
         const favorieten = lijst().map(aflevering).filter(Boolean);
         const c = await maakAfbeelding(favorieten);
         const blob = await new Promise(ok => c.toBlob(ok, 'image/png'));
-        return new File([blob], `kleine-boodschap-wrapped-${jaar}-favorieten.png`, { type: 'image/png' });
+        return new File([blob], bestandsnaam(), { type: 'image/png' });
     }
+
 
     function download(file) {
         const a = document.createElement('a');
@@ -292,13 +294,9 @@
 
     async function deel() {
         const file = await bestand();
-        const data = {
-            files: [file],
-            title: `Mijn favoriete Kleine Boodschap-afleveringen van ${jaar}`,
-            text: `Mijn favoriete afleveringen van Kleine Boodschap in ${jaar}. Maak je eigen lijstje op https://kbdata.nl/wrapped.html #kleineboodschap`
-        };
+        const data = { files: [file] };
         // Deelmenu van het apparaat (telefoon, Windows, macOS); anders gewoon downloaden
-        if (navigator.canShare && navigator.canShare({ files: data.files })) {
+        if (navigator.canShare && navigator.canShare(data)) {
             try {
                 await navigator.share(data);
             } catch (e) {
@@ -312,10 +310,7 @@
     document.addEventListener('click', e => {
         const hartje = e.target.closest('[data-favoriet]');
         if (hartje) return wissel(hartje.dataset.favoriet);
-        const actie = e.target.closest('[data-favorieten-actie]');
-        if (!actie) return;
-        if (actie.dataset.favorietenActie === 'deel') deel();
-        else bestand().then(download);
+        if (e.target.closest('[data-favorieten-actie="deel"]')) deel();
     });
 
     window.kbFavorieten = {
