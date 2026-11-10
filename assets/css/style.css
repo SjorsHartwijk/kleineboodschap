@@ -1819,3 +1819,49 @@ footer a:hover, footer a:focus-visible {
   transform: scale(1.05);
   outline: 2px solid var(--kb-text);
 }
+
+/* Afleveringkiezer (luisteren.html) */
+.kb-kiezer {
+  display: grid;
+  gap: 1.5rem;
+}
+.kb-kiezer .kb-kiezer-groep legend {
+  margin-bottom: 0.5rem;
+}
+
+.kb-tijdknoppen,
+.kb-periodeknoppen {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 0.25rem;
+}
+
+.kb-tijdknop {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.kb-tijdknop span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--kb-muted);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.kb-tijdschuif {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 32rem;
+  margin-top: 0.75rem;
+}
+.kb-tijdschuif output {
+  flex: 0 0 9.5rem;
+}
+
+.kb-tip .kb-legendablokje {
+  vertical-align: -1px;
+}

@@ -17,6 +17,7 @@
         { href: 'kalender.html', titel: 'Kalender' },
         { href: 'gasten.html', titel: 'Gasten' },
         { href: 'reeks.html', titel: 'Reeks' },
+        { href: 'luisteren.html', titel: 'Luistertip' },
         { href: 'mijlpalen.html', titel: 'Mijlpalen' },
         { href: 'wrapped.html', titel: 'Wrapped', wrapped: true },
         { href: 'over.html', titel: 'Over' },
