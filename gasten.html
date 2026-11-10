@@ -31,11 +31,11 @@
     <div data-layout="nav"></div>
     <script src="assets/js/layout.js"></script>
         <main class="flex-shrink-0">
-            <section>
+            <section class="pt-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="mt-2 mt-lg-5">
+                            <div>
                                 <h1 class="kb-paginakop">Gasten</h1>
                                 <p>Bekijk op deze pagina een overzicht van de interviews met gasten van de podcast.</p>
                             </div>
@@ -101,17 +101,47 @@ function render() {
   } else if (huidigeSortering === "alfabet") {
     gesorteerd.sort((a, b) => a.naam.localeCompare(b.naam, "nl"));
   } else if (huidigeSortering === "aantal") {
-    gesorteerd.sort((a, b) => b.aantal - a.aantal);
+    gesorteerd.sort((a, b) => b.aantal - a.aantal || a.eersteIndex - b.eersteIndex);
+  }
+
+  // Bij "Aantal": de top 5 als staven, gelijke stand in één rij; de rest daaronder als lijst
+  let top = "";
+  if (huidigeSortering === "aantal" && gesorteerd.length) {
+    const plekVan = item => 1 + gesorteerd.filter(g => g.aantal > item.aantal).length;
+    const groepen = [];
+    gesorteerd.forEach(item => {
+      const plek = plekVan(item);
+      if (plek > 5) return;
+      const groep = groepen.find(g => g.aantal === item.aantal);
+      if (groep) groep.namen.push(item.naam); else groepen.push({ plek, aantal: item.aantal, namen: [item.naam] });
+    });
+    const hoogste = groepen[0].aantal;
+    const opsomming = namen => namen.length < 2 ? namen[0] : namen.slice(0, -1).join(", ") + " en " + namen[namen.length - 1];
+    gesorteerd = gesorteerd.filter(item => plekVan(item) > 5);
+    top = `
+      <div class="col-12 mb-4">
+        <ol class="kb-gastentop" aria-label="Top 5 vaakst te gast">
+          ${groepen.map((g, i) => `
+            <li class="${i === 0 ? "is-eerste" : ""}">
+              <span class="kb-gastentop-plek">${g.plek}</span>
+              <span class="kb-gastentop-midden">
+                <span class="kb-gastentop-namen">${opsomming(g.namen)}${g.namen.length > 1 ? ` <span class="kb-muted small">(gedeeld)</span>` : ""}</span>
+                <span class="kb-gastentop-staaf" style="width: ${(g.aantal / hoogste * 100).toFixed(1)}%" aria-hidden="true"></span>
+              </span>
+              <span class="kb-gastentop-aantal">${g.aantal}×</span>
+            </li>`).join("")}
+        </ol>
+      </div>`;
   }
 
   const lijst = document.getElementById("lijst");
-  lijst.innerHTML = `
+  lijst.innerHTML = top + `
     <div class="col-12">
       <div class="list-group list-group-flush">
         ${gesorteerd.map(item => `
           <div class="list-group-item naam-item d-flex justify-content-between align-items-center">
             <span>${item.naam}</span>
-            <span class="badge rounded-pill text-bg-secondary">x${item.aantal}</span>
+            <span class="fw-semibold">${item.aantal}×</span>
           </div>
         `).join("")}
       </div>

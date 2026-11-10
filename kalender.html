@@ -34,7 +34,7 @@
 <!-- Navigation-->
     <div data-layout="nav"></div>
     <script src="assets/js/layout.js"></script>
-	<div class="container mt-2 mt-lg-5 mb-3 mb-lg-5">
+	<div class="container pt-5 mb-4">
   		<div class="row">
     		<div class="col-12">
       			<h1 class="kb-paginakop">Kalender</h1>
@@ -99,7 +99,7 @@
           col.appendChild(title);
 
           const wrapper = document.createElement("div");
-          wrapper.className = "d-flex flex-wrap";
+          wrapper.className = "kb-maand";
 
           for (let d = 1; d <= daysInMonth[mIdx]; d++) {
             const key = `${String(mIdx + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;

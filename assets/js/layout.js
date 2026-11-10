@@ -53,7 +53,7 @@
             <a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png" alt=""> <span
                     class="d-none d-md-inline-block">Kleine Boodschap Data</span><span
                     class="d-inline-block d-md-none">KB Data</span></a>
-            <div class="d-flex align-items-center ms-auto">${instellingen()}
+            <div class="kb-navknoppen d-flex align-items-center ms-auto">${instellingen()}
                 <button class="kb-navknop kb-menuknop" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false">Menu <i class="bi bi-list" aria-hidden="true"></i></button>

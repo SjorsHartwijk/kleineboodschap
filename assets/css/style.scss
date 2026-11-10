@@ -658,9 +658,17 @@ nav.navbar.navbar-top {
     color: var(--kb-nav-tekst);
     padding-top: 0;
     padding-bottom: 0;
-    > .container,
-    > .container-xxl {
+    /* De bovenste rij (logo en knoppen) is altijd 64px hoog, ook als het menu openklapt */
+    .navbar-brand,
+    .kb-navknoppen {
         min-height: 64px;
+    }
+    .navbar-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: .4em;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     .navbar-brand {
         font-family: "Alegreya", serif;
@@ -720,11 +728,18 @@ nav.navbar.navbar-top {
         border-top: 1px solid var(--kb-nav-lijn);
         margin-top: 0;
     }
+    /* Uitgeklapt menu: telefoon 1 kolom, tablet staand 3, tablet liggend en desktop 4 */
     .navbar-nav {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-template-columns: minmax(0, 1fr);
         column-gap: 40px;
         padding: 12px 0 20px;
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        @media (min-width: 992px) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
         .nav-link {
             padding: 10px 0;
             border-bottom: 1px solid var(--kb-nav-lijn);
@@ -979,7 +994,8 @@ footer {
    Homepage
    ========================================================================== */
 .kb-opening {
-    padding: 56px 0 64px;
+    /* Zelfde afstand boven de titel als op de andere pagina's (3rem, zoals py-5) */
+    padding: 3rem 0 64px;
     h1 {
         font-size: clamp(2.6rem, 6vw, 4.75rem);
         margin: 0 0 20px;
@@ -1253,13 +1269,17 @@ footer {
 }
 /* afleveringen calender */
 #kalender {
+    /* Een maand: 7 kolommen die de volle breedte van de kolom vullen */
+    .kb-maand {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 4px;
+    }
     .calendar-day {
-      width: 36px;
-      height: 36px;
-      margin: 2px;
-      display: inline-block;
-      text-align: center;
-      line-height: 34px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 12px;
       border-radius: 0;
       cursor: default;
@@ -1295,6 +1315,53 @@ footer {
       z-index: 1;
     }
 }
+/* Gasten: top 5 als staven (gelijke stand in één rij) */
+.kb-gastentop {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid var(--kb-text);
+    li {
+        display: grid;
+        grid-template-columns: 2rem minmax(0, 1fr) 3rem;
+        gap: 14px;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--kb-border);
+    }
+    .kb-gastentop-plek {
+        font-family: "Alegreya", serif;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 1;
+        font-variant-numeric: lining-nums;
+        color: var(--kb-muted);
+    }
+    .kb-gastentop-namen {
+        display: block;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 7px;
+    }
+    .kb-gastentop-staaf {
+        display: block;
+        height: 10px;
+        background-color: var(--kb-primary);
+    }
+    .kb-gastentop-aantal {
+        text-align: right;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+    }
+    /* Nummer 1 iets groter en in inktkleur */
+    .is-eerste {
+        .kb-gastentop-plek { color: var(--kb-text); font-size: 2rem; }
+        .kb-gastentop-namen { font-family: "Alegreya", serif; font-weight: 700; font-size: 1.35rem; }
+        .kb-gastentop-staaf { background-color: var(--kb-text); height: 12px; }
+        .kb-gastentop-aantal { font-size: 1.15rem; }
+    }
+}
+
 /* Afleveringen: tabs per pagina van 100, gelabeld met de afleveringsnummers */
 .kb-paginatabs {
     list-style: none;
