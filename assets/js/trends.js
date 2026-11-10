@@ -56,14 +56,18 @@
                     borderColor: () => kbKleur('primary'),
                     backgroundColor: () => kbKleur('primary'),
                     pointBackgroundColor: () => kbKleur('primary'),
+                    pointBorderColor: () => kbKleur('surface'),
+                    pointBorderWidth: 2,
                     borderWidth: 3,
-                    pointRadius: 0,
-                    pointHoverRadius: 5,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
                     tension: .25,
                 }],
             },
             options: {
                 responsive: true,
+                // Tooltip zodra je ergens boven een jaar komt (of tikt), niet alleen precies op het bolletje
+                interaction: { mode: 'index', intersect: false },
                 plugins: {
                     legend: { display: false },
                     tooltip: { callbacks: { label: c => `${c.raw} minuten gemiddeld (${perJaar[c.label].length} afleveringen)` } },
