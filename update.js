@@ -1,5 +1,6 @@
 // Haalt nieuwe afleveringen op uit de RSS-feed van Kleine Boodschap, voegt ze toe aan
-// afleveringen.csv en zet de csv om naar episodes.json. Daarna is er ruimte om gasten
+// afleveringen.csv en zet de csv om naar episodes.json. De lastmod van de homepage in
+// sitemap.xml wordt op het huidige tijdstip gezet. Daarna is er ruimte om gasten
 // toe te voegen aan gasten.txt, en vraagt het script of de commit mag plaatsvinden.
 //
 //   node update.js               nieuwe afleveringen toevoegen, daarna vragen om te committen
@@ -13,6 +14,8 @@ const { execSync } = require('child_process');
 const FEED = 'https://kleineboodschap.fireside.fm/rss';
 const CSV = 'afleveringen.csv';
 const GASTEN = 'gasten.txt';
+const SITEMAP = 'sitemap.xml';
+const HOMEPAGE = 'https://kbdata.nl/';
 const CATEGORIEEN = ['nieuws', 'achtergrond', 'interview', 'reportage'];
 
 const args = process.argv.slice(2);
@@ -118,6 +121,20 @@ function maakLezer() {
   };
 }
 
+// Zet de lastmod van de homepage op nu, in hetzelfde formaat als de rest van de sitemap
+function werkSitemapBij() {
+  const nu = new Date().toISOString().replace(/\.\d{3}Z$/, '+00:00');
+  const xml = fs.readFileSync(SITEMAP, 'utf8');
+  const loc = HOMEPAGE.replace(/[.\/]/g, '\\$&');
+  const patroon = new RegExp(`(<loc>${loc}</loc>\\s*<lastmod>)[^<]*(</lastmod>)`);
+  if (!patroon.test(xml)) {
+    console.log(`Let op: geen lastmod voor ${HOMEPAGE} gevonden in ${SITEMAP}, niet bijgewerkt.`);
+    return;
+  }
+  fs.writeFileSync(SITEMAP, xml.replace(patroon, `$1${nu}$2`));
+  console.log(`Lastmod van ${HOMEPAGE} in ${SITEMAP} gezet op ${nu}.`);
+}
+
 function controleer(feed, lokaal) {
   const perId = new Map(feed.map(e => [e.id, e]));
   const ids = lokaal.map(e => e.id);
@@ -182,6 +199,7 @@ async function main() {
   console.log(`\n${nieuw.length} aflevering(en) toegevoegd aan ${CSV}.`);
 
   execSync('node convert.js', { stdio: 'inherit' });
+  werkSitemapBij();
 
   if (!COMMIT) {
     rl.close();
@@ -211,7 +229,7 @@ async function main() {
     return;
   }
 
-  execSync(`git add ${CSV} episodes.json ${GASTEN}`, { stdio: 'inherit' });
+  execSync(`git add ${CSV} episodes.json ${GASTEN} ${SITEMAP}`, { stdio: 'inherit' });
   execSync('git commit -F -', { input: bericht, stdio: ['pipe', 'inherit', 'inherit'] });
   console.log(`Commit gemaakt: ${bericht}`);
 }
