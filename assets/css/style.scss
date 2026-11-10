@@ -761,6 +761,52 @@ nav.navbar.navbar-top {
             }
         }
     }
+    /* Externe links: los van de pagina's, kleiner en in de broodletter */
+    .kb-menu-extern {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 28px;
+        padding: 0 0 20px;
+        margin-top: -8px;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 0;
+            font-size: .95rem;
+            font-weight: 500;
+            color: var(--kb-nav-tekst);
+            text-decoration: none;
+            &:hover, &:focus-visible {
+                text-decoration: underline;
+                text-underline-offset: 5px;
+            }
+            i {
+                font-size: 1.05rem;
+                line-height: 1;
+            }
+        }
+        .kb-menu-extern-pijl {
+            font-size: .75rem;
+            opacity: .7;
+        }
+    }
+    .kb-menu-extern-label {
+        font-size: .78rem;
+        font-weight: 600;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .7);
+    }
 }
 /* Mobiel en tablet: de menubalk blijft bovenaan staan, de datumregel schuift eronder weg */
 @media (max-width: 991.98px) {

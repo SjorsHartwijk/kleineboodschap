@@ -700,6 +700,7 @@ nav.navbar.navbar-top {
   /* De bovenste rij (logo en knoppen) is altijd 64px hoog, ook als het menu openklapt */
   /* Het uitgeklapte menu: een inhoudsopgave over de volle breedte */
   /* Uitgeklapt menu: telefoon 1 kolom, tablet staand 3, tablet liggend en desktop 4 */
+  /* Externe links: los van de pagina's, kleiner en in de broodletter */
 }
 nav.navbar.navbar-top .navbar-brand,
 nav.navbar.navbar-top .kb-navknoppen {
@@ -802,6 +803,51 @@ nav.navbar.navbar-top .navbar-nav .nav-link.active {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
+}
+nav.navbar.navbar-top .kb-menu-extern {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+  padding: 0 0 20px;
+  margin-top: -8px;
+}
+nav.navbar.navbar-top .kb-menu-extern ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav.navbar.navbar-top .kb-menu-extern a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--kb-nav-tekst);
+  text-decoration: none;
+}
+nav.navbar.navbar-top .kb-menu-extern a:hover, nav.navbar.navbar-top .kb-menu-extern a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+nav.navbar.navbar-top .kb-menu-extern a i {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+nav.navbar.navbar-top .kb-menu-extern .kb-menu-extern-pijl {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+nav.navbar.navbar-top .kb-menu-extern-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Mobiel en tablet: de menubalk blijft bovenaan staan, de datumregel schuift eronder weg */

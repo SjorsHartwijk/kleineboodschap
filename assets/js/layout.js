@@ -44,9 +44,17 @@
         return tekst.charAt(0).toUpperCase() + tekst.slice(1);
     }
 
+    // Externe links staan los van de pagina's, in een eigen rij onderaan het uitgeklapte menu
+    const externeLinks = [
+        { href: 'https://bsky.app/profile/kbdata.nl', titel: 'Bluesky', icoon: 'bi-bluesky' },
+        { href: 'https://kleineboodschap.com', titel: 'kleineboodschap.com', icoon: 'bi-mic' },
+    ];
+
     function nav(container) {
         const links = zichtbaar.map(p => `
                     <li class="nav-item"><a class="${klassen(p, 'nav-link')}" href="${p.href}"${isActief(p) ? ' aria-current="page"' : ''}>${naam(p)}</a></li>`).join('');
+        const extern = externeLinks.map(l => `
+                        <li><a href="${l.href}" rel="nofollow noopener" target="_blank"><i class="bi ${l.icoon}" aria-hidden="true"></i>${l.titel}<i class="bi bi-box-arrow-up-right kb-menu-extern-pijl" aria-hidden="true"></i><span class="visually-hidden"> (opent in nieuw venster)</span></a></li>`).join('');
         return `
     <nav class="navbar navbar-top">
         <div class="${container}">
@@ -60,9 +68,11 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">${links}
-                    <li class="nav-item"><a class="nav-link" href="https://bsky.app/profile/kbdata.nl" rel="nofollow noopener" target="_blank">Bluesky <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://kleineboodschap.com" rel="nofollow noopener" target="_blank">Kleine Boodschap <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a></li>
                 </ul>
+                <div class="kb-menu-extern">
+                    <ul aria-labelledby="kbMenuExtern">${extern}
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>`;
