@@ -863,6 +863,15 @@ nav.navbar.navbar-top {
     font-weight: 600;
     line-height: 1.5;
 }
+/* Sliders in de huisstijl: vierkante duim in de hoofdkleur op een lijn in de randkleur */
+.form-range {
+    &::-webkit-slider-thumb { background-color: var(--kb-primary); border-radius: 0; }
+    &::-moz-range-thumb { background-color: var(--kb-primary); border-radius: 0; }
+    &::-webkit-slider-runnable-track { background-color: var(--kb-border); border-radius: 0; }
+    &::-moz-range-track { background-color: var(--kb-border); border-radius: 0; }
+    &:focus::-webkit-slider-thumb { box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 .25rem var(--bs-focus-ring-color); }
+    &:focus::-moz-range-thumb { box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 .25rem var(--bs-focus-ring-color); }
+}
 .dropdown-menu.kb-instellingen {
     width: 300px;
     max-width: calc(100vw - 24px);
@@ -887,12 +896,6 @@ nav.navbar.navbar-top {
     }
     .form-range {
         margin-top: 6px;
-        &::-webkit-slider-thumb { background-color: var(--kb-primary); border-radius: 0; }
-        &::-moz-range-thumb { background-color: var(--kb-primary); border-radius: 0; }
-        &::-webkit-slider-runnable-track { background-color: var(--kb-border); border-radius: 0; }
-        &::-moz-range-track { background-color: var(--kb-border); border-radius: 0; }
-        &:focus::-webkit-slider-thumb { box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 .25rem var(--bs-focus-ring-color); }
-        &:focus::-moz-range-thumb { box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 .25rem var(--bs-focus-ring-color); }
     }
     /* Schaalwaarden op hun echte plek onder de slider (duimbreedte 1rem) */
     .kb-schaal {

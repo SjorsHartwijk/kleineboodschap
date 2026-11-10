@@ -907,6 +907,30 @@ nav.navbar.navbar-top .kb-menu-extern-label {
   line-height: 1.5;
 }
 
+/* Sliders in de huisstijl: vierkante duim in de hoofdkleur op een lijn in de randkleur */
+.form-range::-webkit-slider-thumb {
+  background-color: var(--kb-primary);
+  border-radius: 0;
+}
+.form-range::-moz-range-thumb {
+  background-color: var(--kb-primary);
+  border-radius: 0;
+}
+.form-range::-webkit-slider-runnable-track {
+  background-color: var(--kb-border);
+  border-radius: 0;
+}
+.form-range::-moz-range-track {
+  background-color: var(--kb-border);
+  border-radius: 0;
+}
+.form-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 0.25rem var(--bs-focus-ring-color);
+}
+.form-range:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 0.25rem var(--bs-focus-ring-color);
+}
+
 .dropdown-menu.kb-instellingen {
   width: 300px;
   max-width: calc(100vw - 24px);
@@ -934,28 +958,6 @@ nav.navbar.navbar-top .kb-menu-extern-label {
 }
 .dropdown-menu.kb-instellingen .form-range {
   margin-top: 6px;
-}
-.dropdown-menu.kb-instellingen .form-range::-webkit-slider-thumb {
-  background-color: var(--kb-primary);
-  border-radius: 0;
-}
-.dropdown-menu.kb-instellingen .form-range::-moz-range-thumb {
-  background-color: var(--kb-primary);
-  border-radius: 0;
-}
-.dropdown-menu.kb-instellingen .form-range::-webkit-slider-runnable-track {
-  background-color: var(--kb-border);
-  border-radius: 0;
-}
-.dropdown-menu.kb-instellingen .form-range::-moz-range-track {
-  background-color: var(--kb-border);
-  border-radius: 0;
-}
-.dropdown-menu.kb-instellingen .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 0.25rem var(--bs-focus-ring-color);
-}
-.dropdown-menu.kb-instellingen .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 0.25rem var(--bs-focus-ring-color);
 }
 .dropdown-menu.kb-instellingen .kb-schaal {
   position: relative;
