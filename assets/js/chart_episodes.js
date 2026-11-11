@@ -50,11 +50,15 @@
         const canvas = document.getElementById('barChart');
         if (!canvas) return;
         const label = ep => `${ep.id}: ${ep.titel}`;
+        const vastVlak = canvas.parentElement.classList.contains('kb-grafiekvlak');
         const grafiek = new Chart(canvas, {
             type: 'bar',
             data: { labels: zichtbaar.map(label), datasets: datasets() },
             options: {
                 responsive: true,
+                // Op grafiek.html bepaalt het vlak de hoogte (vult het scherm); daarmee hangt de hoogte
+                // niet af van de breedte en kan de scrollbalk niet blijven verschijnen en verdwijnen
+                maintainAspectRatio: !vastVlak,
                 plugins: { legend: { display: false }, tooltip },
                 scales: {
                     x: { title: { display: false } },

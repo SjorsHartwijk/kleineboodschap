@@ -1867,3 +1867,31 @@ footer a:hover, footer a:focus-visible {
 .kb-tip .kb-legendablokje {
   vertical-align: -1px;
 }
+
+/* grafiek.html: de grafiek vult het scherm onder de kop, met een vaste hoogte.
+   Zo hangt de hoogte niet af van de breedte: anders kan de scrollbalk steeds verschijnen
+   en verdwijnen (breder zonder balk -> hoger -> balk -> smaller -> lager -> geen balk). */
+.kb-grafiekpagina {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.kb-grafiekpagina-inhoud {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.kb-grafiekpagina-inhoud > .row {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.kb-grafiekvlak {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 360px;
+  padding-bottom: 12px;
+}
