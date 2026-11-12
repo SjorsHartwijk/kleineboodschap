@@ -128,6 +128,15 @@
                     </li>`;
             }
 
+            // Eerstvolgende verwachte mijlpaal onderaan een lijstje (open bolletje)
+            function straks(v) {
+                if (!v) return '';
+                return `
+                    <li class="kb-mijlpaal kb-mijlpaal-straks">
+                        <div><strong>${v.kort}</strong> <span class="kb-muted">· ${v.exact ? 'op' : 'verwacht rond'} ${M.datum(v.datum)}</span></div>
+                    </li>`;
+            }
+
             if (window.kbSnelheid && kbSnelheid.waarde() !== kbSnelheid.STANDAARD) {
                 const el = document.getElementById('mijlpalenSnelheid');
                 el.textContent = `De luistertijd is omgerekend naar jouw afspeelsnelheid van ${kbSnelheid.formatteer(kbSnelheid.waarde())}.`;
@@ -137,6 +146,7 @@
             M.laad().then(afl => {
                 if (!afl.length) return;
                 const r = M.bereken(afl);
+                const volgende = (soort, categorie) => r.verwacht.find(v => v.soort === soort && (!categorie || v.categorie === categorie));
 
                 vul('mijlpalenTempo', `Verwacht op basis van het tempo van het afgelopen jaar: ${r.tempo.aantal} afleveringen, samen ${M.getal(Math.round(r.tempo.minutenPerDag * 365 / 60))} uur. Een jubileum staat natuurlijk al vast.`);
                 vul('mijlpalenVerwacht', r.verwacht.map(v => `
@@ -152,32 +162,25 @@
                     </li>`).join(''));
 
                 vul('mijlpalenLuistertijd', r.luistertijd.map(m =>
-                    item(`${M.getal(m.uur)} uur`, m.datum, `met ${titel(m.ep)}`)).join(''));
+                    item(`${M.getal(m.uur)} uur`, m.datum, `met ${titel(m.ep)}`)).join('') + straks(volgende('luistertijd')));
 
                 vul('mijlpalenAfleveringen', r.afleveringen.map(m =>
-                    item(m.nummer === 1 ? 'De allereerste' : `Aflevering ${m.nummer}`, m.datum, titel(m.ep))).join(''));
+                    item(m.nummer === 1 ? 'De allereerste' : `Aflevering ${m.nummer}`, m.datum, titel(m.ep))).join('') + straks(volgende('aflevering')));
 
                 vul('mijlpalenCategorieen', r.CATEGORIEEN.map(c => `
                     <div class="col-12 col-md-6 col-xl-3 mb-3">
                         <h3 class="h6 d-flex align-items-center gap-2"><span class="badge ${c}">&nbsp;</span> ${c[0].toUpperCase() + c.slice(1)} <span class="kb-muted fw-normal">(${M.getal(r.tellers[c])})</span></h3>
                         <ul class="list-unstyled mb-0">${r.categorieen[c].map(m =>
-                            item(m.nummer === 1 ? "Eerste" : `${M.rangtelwoord(m.nummer)}`, m.datum, titel(m.ep))).join('')}
+                            item(m.nummer === 1 ? "Eerste" : `${M.rangtelwoord(m.nummer)}`, m.datum, titel(m.ep))).join('')}${straks(volgende('categorie', c))}
                         </ul>
                     </div>`).join(''));
 
-                // Behaalde gastenmijlpalen, plus de volgende twee als voorspelling
-                const komend = [r.volgendeGast, r.volgendeGast + r.STAP_GASTEN]
-                    .map(n => ({ n, d: r.voorspelGast(n) })).filter(v => v.d);
                 vul('mijlpalenGasten', r.gasten.map(m =>
-                    item(m.nummer === 1 ? `Eerste gast` : `${M.rangtelwoord(m.nummer)} gast`, m.datum, `${m.naam}, ${titel(m.ep)}`)).join('') +
-                    komend.map(v => `
-                    <li class="kb-mijlpaal kb-mijlpaal-straks">
-                        <div><strong>${M.rangtelwoord(v.n)} gast</strong> <span class="kb-muted">· verwacht rond ${M.datum(v.d)}</span></div>
-                    </li>`).join(''));
+                    item(m.nummer === 1 ? `Eerste gast` : `${M.rangtelwoord(m.nummer)} gast`, m.datum, `${m.naam}, ${titel(m.ep)}`)).join('') + straks(volgende('gast')));
                 vul('mijlpalenGastenUitleg', `De eerste gast en daarna elke 50e nieuwe gast; wie vaker te gast was, telt één keer. Tot nu toe ${M.getal(r.aantalGasten)} gasten. De voorspelling gaat uit van de ${r.tempo.nieuweGasten} nieuwe gasten van het afgelopen jaar.`);
                 vul('mijlpalenStart', `De eerste aflevering verscheen op ${M.datum(r.eerste.datum)}.`);
                 vul('mijlpalenJubilea', r.jubilea.map(m =>
-                    item(`${m.jaren} jaar`, m.datum, `${M.getal(m.aantal)} afleveringen tot dan toe`)).join(''));
+                    item(`${m.jaren} jaar`, m.datum, `${M.getal(m.aantal)} afleveringen tot dan toe`)).join('') + straks(volgende('jubileum')));
             }).catch(fout => console.error('Mijlpalen konden niet geladen worden:', fout));
         })();
     </script>

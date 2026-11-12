@@ -106,14 +106,15 @@
         const volgendJubileum = new Date(eerste.datum);
         volgendJubileum.setFullYear(volgendJubileum.getFullYear() + jubilea.length + 1);
 
-        // Voorspellingen voor de eerstvolgende mijlpaal van elk soort
+        // Voorspellingen voor de eerstvolgende mijlpaal van elk soort ('kort' is het label in de lijstjes op mijlpalen.html)
         const verwacht = [];
         const volgendUur = doel;
         const uurDatum = voorspelUur(volgendUur);
-        if (uurDatum) verwacht.push({ soort: 'luistertijd', label: `${getal(volgendUur)} uur luistertijd`, datum: uurDatum });
+        if (uurDatum) verwacht.push({ soort: 'luistertijd', label: `${getal(volgendUur)} uur luistertijd`, kort: `${getal(volgendUur)} uur`, datum: uurDatum });
         verwacht.push({
             soort: 'aflevering',
             label: `Aflevering ${volgendeId}`,
+            kort: `Aflevering ${volgendeId}`,
             datum: naDagen((volgendeId - hoogsteId) * tempo.dagenPerAflevering),
         });
         CATEGORIEEN.forEach(c => {
@@ -123,12 +124,13 @@
             verwacht.push({
                 soort: 'categorie', categorie: c,
                 label: `${rangtelwoord(volgende)} ${NAMEN[c]}-aflevering`,
+                kort: rangtelwoord(volgende),
                 datum: naDagen((volgende - tellers[c]) * 365 / per),
             });
         });
         const gastDatum = voorspelGast(volgendeGast);
-        if (gastDatum) verwacht.push({ soort: 'gast', label: `${rangtelwoord(volgendeGast)} gast`, datum: gastDatum });
-        verwacht.push({ soort: 'jubileum', label: `${jubilea.length + 1} jaar Kleine Boodschap`, datum: volgendJubileum, exact: true });
+        if (gastDatum) verwacht.push({ soort: 'gast', label: `${rangtelwoord(volgendeGast)} gast`, kort: `${rangtelwoord(volgendeGast)} gast`, datum: gastDatum });
+        verwacht.push({ soort: 'jubileum', label: `${jubilea.length + 1} jaar Kleine Boodschap`, kort: `${jubilea.length + 1} jaar`, datum: volgendJubileum, exact: true });
         verwacht.sort((a, b) => a.datum - b.datum);
 
         return {
