@@ -1127,6 +1127,25 @@ footer {
         }
     }
 }
+/* Voorspellingen: kans per categorie altijd in 2 kolommen (2 rijen) */
+.kb-kansen {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+}
+/* Voorspellingen: labeltje bij een verwacht record */
+.kb-voorspel-record {
+    display: inline-block;
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding: 2px 5px;
+    margin-left: 4px;
+    color: var(--kb-bg);
+    background: var(--kb-text);
+    vertical-align: 2px;
+}
 /* Top 5 onder een record: uitklapbare ranglijst over de volle breedte van het record */
 .kb-top5 {
     grid-column: 1 / -1;

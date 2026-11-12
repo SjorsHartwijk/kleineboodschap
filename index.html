@@ -111,6 +111,25 @@
             <ol class="kb-tijdlijn" id="trendMijlpalen"></ol>
             <p class="small kb-muted mt-4 mb-0" id="trendMijlpalenTekst"></p>
         </section>
+
+        <!-- Voorspellingen: de volgende aflevering en het lopende jaar (assets/js/voorspellingen.js) -->
+        <section id="voorspellingen" class="pb-5" aria-labelledby="voorspelKop">
+            <div class="kb-sectiekop">
+                <h2 id="voorspelKop">Voorspellingen</h2>
+                <p class="small kb-muted w-100" id="voorspelUitleg"></p>
+                <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
+            </div>
+            <div class="row g-4 gx-lg-5">
+                <div class="col-12 col-md-6">
+                    <h3 class="kb-tussenkop">De volgende aflevering</h3>
+                    <div id="voorspelVolgende"></div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h3 class="kb-tussenkop">Dit jaar</h3>
+                    <div id="voorspelJaar"></div>
+                </div>
+            </div>
+        </section>
     </div>
     <!-- Data section-->
     <section id="data" class="pb-5">
@@ -365,6 +384,7 @@
     <script src="assets/js/mijlpalen.js?v=20261112"></script>
     <script src="assets/js/homepage.js"></script>
     <script src="assets/js/trends.js"></script>
+    <script src="assets/js/voorspellingen.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
