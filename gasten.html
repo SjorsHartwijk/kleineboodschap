@@ -45,9 +45,9 @@
                     </div>
                     <div class="row">
                         <div class="d-flex flex-wrap column-gap-4 row-gap-1 mb-4" role="group" aria-label="Sorteren">
-                            <button type="button" class="btn btn-outline-secondary active" data-sort="volgorde">Volgorde van afleveringen</button>
+                            <button type="button" class="btn btn-outline-secondary active" data-sort="aantal">Aantal (hoog naar laag)</button>
+                            <button type="button" class="btn btn-outline-secondary" data-sort="volgorde">Volgorde van afleveringen</button>
                             <button type="button" class="btn btn-outline-secondary" data-sort="alfabet">Alfabetisch</button>
-                            <button type="button" class="btn btn-outline-secondary" data-sort="aantal">Aantal (hoog naar laag)</button>
                         </div>
                     </div>
                     <div class="row" id="lijst"></div>
@@ -67,7 +67,7 @@
     <script>
 const BESTAND = "gasten.txt"; // pas dit aan naar de naam/locatie van jouw bronbestand
 let data = []; // [{naam, aantal, eersteIndex}]
-let huidigeSortering = "volgorde";
+let huidigeSortering = "aantal";
 
 fetch(BESTAND)
   .then(res => {
