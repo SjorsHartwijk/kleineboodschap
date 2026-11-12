@@ -133,9 +133,13 @@
         M.laad().then(afl => {
             if (!afl.length) return;
             const r = M.bereken(afl);
-            // Een tijdlijn van links naar rechts: de drie laatst behaalde, dan de twee eerstvolgende
-            const behaald = M.alle(r).slice(0, 3).reverse();
-            const straks = r.verwacht.slice(0, 2);
+            // Een tijdlijn met zes haltes: de twee laatst behaalde, dan de vier eerstvolgende.
+            // De volgende gastenmijlpaal staat er altijd bij; valt die niet bij de eerste vier
+            // voorspellingen, dan neemt hij de plek van de vierde in.
+            let straks = r.verwacht.slice(0, 4);
+            const gast = r.verwacht.find(v => v.soort === 'gast');
+            if (gast && !straks.includes(gast)) straks = [...straks.slice(0, 3), gast];
+            const behaald = M.alle(r).slice(0, 2).reverse();
             const uitlegVan = m => m.ep
                 ? (m.soort === 'aflevering' ? m.ep.titel : `Met aflevering ${m.ep.id}: ${m.ep.titel}`)
                 : (m.detail || '');

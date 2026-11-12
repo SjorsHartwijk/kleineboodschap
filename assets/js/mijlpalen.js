@@ -4,7 +4,7 @@
 // Tijden zijn al omgerekend naar de gekozen afspeelsnelheid (zie instellingen.js).
 //
 //   kbMijlpalen.laad()          -> Promise met afleveringen, gesorteerd op datum
-//   kbMijlpalen.bereken(afl)    -> { luistertijd, afleveringen, categorieen, jubilea, verwacht, tempo, ... }
+//   kbMijlpalen.bereken(afl)    -> { luistertijd, afleveringen, categorieen, gasten, jubilea, verwacht, tempo, ... }
 //   kbMijlpalen.datum(d)        -> '22 april 2019'
 
 (function () {
@@ -24,6 +24,7 @@
                     id: parseInt(ep.id, 10),
                     titel: ep.titel,
                     categorie: ep.categorie,
+                    gasten: ep.gasten || [],
                     minuten: parseFloat(ep.tijd),
                     datum: new Date(ep.datum),
                 }))
@@ -78,6 +79,22 @@
             if (n === 1 || n % 50 === 0) categorieen[ep.categorie].push({ nummer: n, datum: ep.datum, ep });
         });
 
+        // Gasten: de eerste unieke gast en daarna elke 50e (wie vaker te gast was, telt één keer)
+        const STAP_GASTEN = 50;
+        const gezien = new Set();
+        const gasten = [];
+        let nieuwRecent = 0;
+        afl.forEach(ep => ep.gasten.forEach(naam => {
+            if (gezien.has(naam)) return;
+            gezien.add(naam);
+            if (ep.datum > jaarTerug) nieuwRecent++;
+            if (gezien.size === 1 || gezien.size % STAP_GASTEN === 0) gasten.push({ nummer: gezien.size, naam, datum: ep.datum, ep });
+        }));
+        tempo.nieuweGasten = nieuwRecent;
+        const aantalGasten = gezien.size;
+        const volgendeGast = Math.floor(aantalGasten / STAP_GASTEN) * STAP_GASTEN + STAP_GASTEN;
+        const voorspelGast = n => nieuwRecent > 0 ? naDagen((n - aantalGasten) * 365 / nieuwRecent) : null;
+
         // Jubilea: elk jaar sinds de eerste aflevering
         const jubilea = [];
         for (let jaar = 1; ; jaar++) {
@@ -109,12 +126,15 @@
                 datum: naDagen((volgende - tellers[c]) * 365 / per),
             });
         });
+        const gastDatum = voorspelGast(volgendeGast);
+        if (gastDatum) verwacht.push({ soort: 'gast', label: `${rangtelwoord(volgendeGast)} gast`, datum: gastDatum });
         verwacht.push({ soort: 'jubileum', label: `${jubilea.length + 1} jaar Kleine Boodschap`, datum: volgendJubileum, exact: true });
         verwacht.sort((a, b) => a.datum - b.datum);
 
         return {
             eerste, laatste, totaalMinuten: totaal, tempo, CATEGORIEEN, tellers,
             luistertijd, afleveringen, categorieen, jubilea, verwacht, voorspelUur,
+            gasten, aantalGasten, volgendeGast, STAP_GASTEN, voorspelGast,
         };
     }
 
@@ -127,11 +147,15 @@
             soort: 'categorie', categorie: c, datum: m.datum, ep: m.ep,
             titel: m.nummer === 1 ? `Eerste ${NAMEN[c]}-aflevering` : `${rangtelwoord(m.nummer)} ${NAMEN[c]}-aflevering`,
         })));
+        r.gasten.forEach(m => lijst.push({
+            soort: 'gast', datum: m.datum, ep: m.ep,
+            titel: m.nummer === 1 ? `Eerste gast: ${m.naam}` : `${rangtelwoord(m.nummer)} gast: ${m.naam}`,
+        }));
         r.jubilea.forEach(m => lijst.push({ soort: 'jubileum', datum: m.datum, titel: `${m.jaren} jaar Kleine Boodschap`, detail: `${getal(m.aantal)} afleveringen tot dan toe` }));
         return lijst.sort((a, b) => b.datum - a.datum);
     }
 
-    const ICONEN = { luistertijd: 'bi-headphones', aflevering: 'bi-collection-play', categorie: 'bi-tag', jubileum: 'bi-cake2' };
+    const ICONEN = { luistertijd: 'bi-headphones', aflevering: 'bi-collection-play', categorie: 'bi-tag', gast: 'bi-mic', jubileum: 'bi-cake2' };
 
     window.kbMijlpalen = { laad, bereken, alle, datum, getal, rangtelwoord, ICONEN };
 })();

@@ -39,6 +39,9 @@
         if (nu < new Date(nu.getFullYear(), eerste.datum.getMonth(), eerste.datum.getDate())) jaren--;
         // Gemiddelde tijd tussen twee afleveringen, over alle jaren
         const tussen = (laatste.datum - eerste.datum) / 864e5 / (afl.length - 1);
+        // Unieke gasten en het aantal afleveringen waarin minstens één gast zat
+        const gasten = new Set(afl.flatMap(ep => ep.gasten));
+        const metGasten = afl.filter(ep => ep.gasten.length).length;
 
         const cijfers = [
             { waarde: getal(afl.length), label: 'afleveringen', uitleg: `tot en met ${M.datum(laatste.datum)}` },
@@ -46,6 +49,7 @@
             { waarde: getal(Math.round(totaal / afl.length)), label: 'minuten gemiddeld', uitleg: `van ${Math.round(Math.min(...minuten))} tot ${Math.round(Math.max(...minuten))} minuten` },
             { waarde: getal(jaren), label: 'jaar podcast', uitleg: `sinds ${M.datum(eerste.datum)}` },
             { waarde: tussen.toFixed(1).replace('.', ','), label: 'dagen tussen afleveringen', uitleg: 'gemiddeld, over alle jaren' },
+            { waarde: getal(gasten.size), label: 'gasten', uitleg: `in ${getal(metGasten)} afleveringen, <a href="gasten.html">bekijk ze allemaal</a>` },
         ];
         $('kbCijfers').innerHTML = cijfers.map(c => `
             <div class="kb-cijfer">

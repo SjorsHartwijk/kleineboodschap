@@ -38,7 +38,7 @@
                 <div class="row mb-3">
                     <div class="col-12 col-xxl-9">
                         <h1 class="kb-paginakop">Mijlpalen</h1>
-                        <p>Alle mijlpalen van Kleine Boodschap op een rij: uren luistertijd, jubileumafleveringen, mijlpalen per categorie en de verjaardagen van de podcast. Bij elke nieuwe aflevering wordt alles automatisch bijgewerkt, inclusief de voorspellingen voor de volgende mijlpalen.</p>
+                        <p>Alle mijlpalen van Kleine Boodschap op een rij: uren luistertijd, jubileumafleveringen, mijlpalen per categorie, het aantal gasten en de verjaardagen van de podcast. Bij elke nieuwe aflevering wordt alles automatisch bijgewerkt, inclusief de voorspellingen voor de volgende mijlpalen.</p>
                         <p class="small kb-muted" id="mijlpalenSnelheid" hidden></p>
                     </div>
                 </div>
@@ -95,6 +95,15 @@
                                 <h2 class="h4 card-title">Jubilea</h2>
                                 <p class="small kb-muted" id="mijlpalenStart"></p>
                                 <ul class="list-unstyled mb-0" id="mijlpalenJubilea"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h2 class="h4 card-title">Gasten</h2>
+                                <p class="small kb-muted" id="mijlpalenGastenUitleg">De eerste gast en daarna elke 50e nieuwe gast. Wie vaker te gast was, telt één keer.</p>
+                                <ul class="list-unstyled mb-0" id="mijlpalenGasten"></ul>
                             </div>
                         </div>
                     </div>
@@ -156,6 +165,16 @@
                         </ul>
                     </div>`).join(''));
 
+                // Behaalde gastenmijlpalen, plus de volgende twee als voorspelling
+                const komend = [r.volgendeGast, r.volgendeGast + r.STAP_GASTEN]
+                    .map(n => ({ n, d: r.voorspelGast(n) })).filter(v => v.d);
+                vul('mijlpalenGasten', r.gasten.map(m =>
+                    item(m.nummer === 1 ? `Eerste gast` : `${M.rangtelwoord(m.nummer)} gast`, m.datum, `${m.naam}, ${titel(m.ep)}`)).join('') +
+                    komend.map(v => `
+                    <li class="kb-mijlpaal kb-mijlpaal-straks">
+                        <div><strong>${M.rangtelwoord(v.n)} gast</strong> <span class="kb-muted">· verwacht rond ${M.datum(v.d)}</span></div>
+                    </li>`).join(''));
+                vul('mijlpalenGastenUitleg', `De eerste gast en daarna elke 50e nieuwe gast; wie vaker te gast was, telt één keer. Tot nu toe ${M.getal(r.aantalGasten)} gasten. De voorspelling gaat uit van de ${r.tempo.nieuweGasten} nieuwe gasten van het afgelopen jaar.`);
                 vul('mijlpalenStart', `De eerste aflevering verscheen op ${M.datum(r.eerste.datum)}.`);
                 vul('mijlpalenJubilea', r.jubilea.map(m =>
                     item(`${m.jaren} jaar`, m.datum, `${M.getal(m.aantal)} afleveringen tot dan toe`)).join(''));
