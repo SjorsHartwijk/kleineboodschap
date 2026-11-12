@@ -1895,3 +1895,135 @@ footer a:hover, footer a:focus-visible {
   min-height: 360px;
   padding-bottom: 12px;
 }
+
+/* ==========================================================================
+   Toegankelijkheid (instellingenmenu, zie assets/js/theme.js)
+   - Hoog contrast: data-kb-contrast="hoog" op <html>, werkt met licht én donker.
+     Zuiver zwart/wit, donkerdere toelichtingen, randen in de tekstkleur, dikkere randen,
+     onderstreepte links en een duidelijke focusrand. Categoriekleuren uit het
+     kleurenblind-veilige Okabe-Ito-palet.
+   - Patronen: data-kb-patronen="aan" op <html>. Achtergrond effen, nieuws schuine strepen,
+     interview stippen, reportage ruitjes. Dezelfde patronen tekent theme.js in de grafieken.
+   ========================================================================== */
+:root,
+[data-bs-theme=light] {
+  --kb-patroon: rgba(255, 255, 255, .7);
+  --kb-tekstrand: rgba(0, 0, 0, .75);
+}
+
+[data-bs-theme=dark] {
+  --kb-patroon: rgba(14, 28, 39, .65);
+  --kb-tekstrand: rgba(255, 255, 255, .8);
+}
+
+[data-bs-theme=light][data-kb-contrast=hoog] {
+  --kb-bg: #FFFFFF;
+  --kb-surface: #FFFFFF;
+  --kb-border: #000000;
+  --kb-text: #000000;
+  --kb-muted: #2B2B2B;
+  --kb-primary: #003A70;
+  --kb-primary-hover: #000000;
+  --kb-on-primary: #FFFFFF;
+  --kb-primary-subtle: rgba(0, 58, 112, .12);
+  --kb-on-cat: #FFFFFF;
+  --kb-cat-achtergrond: #0067A5;
+  --kb-cat-nieuws: #B35C00;
+  --kb-cat-interview: #A8467F;
+  --kb-cat-reportage: #00775A;
+  --kb-favoriet: #B00020;
+  --kb-patroon: rgba(255, 255, 255, .85);
+  --kb-raster: #767676;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-body-color-rgb: 0, 0, 0;
+  --bs-primary-rgb: 0, 58, 112;
+  --bs-link-color-rgb: 0, 58, 112;
+  --bs-link-hover-color-rgb: 0, 0, 0;
+  --bs-focus-ring-color: rgba(0, 0, 0, .6);
+}
+
+[data-bs-theme=dark][data-kb-contrast=hoog] {
+  --kb-bg: #000000;
+  --kb-surface: #0A0A0A;
+  --kb-border: #FFFFFF;
+  --kb-text: #FFFFFF;
+  --kb-muted: #E0E0E0;
+  --kb-primary: #8CCBFF;
+  --kb-primary-hover: #FFFFFF;
+  --kb-on-primary: #000000;
+  --kb-primary-subtle: rgba(140, 203, 255, .16);
+  --kb-on-cat: #000000;
+  --kb-cat-achtergrond: #56B4E9;
+  --kb-cat-nieuws: #E69F00;
+  --kb-cat-interview: #CC79A7;
+  --kb-cat-reportage: #009E73;
+  --kb-wrapped-bg: #000000;
+  --kb-wrapped-text: #FFFFFF;
+  --kb-favoriet: #FF8A95;
+  --kb-patroon: rgba(0, 0, 0, .75);
+  --kb-raster: #8A8A8A;
+  --bs-body-bg-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 255, 255, 255;
+  --bs-primary-rgb: 140, 203, 255;
+  --bs-link-color-rgb: 140, 203, 255;
+  --bs-link-hover-color-rgb: 255, 255, 255;
+  --bs-focus-ring-color: rgba(255, 255, 255, .7);
+}
+
+[data-kb-contrast=hoog] {
+  --bs-border-width: 2px;
+  /* Randkleur is hier gelijk aan de tekstkleur: vlakken in de randkleur krijgen omgekeerde tekst */
+  --bs-secondary-bg: var(--kb-primary-subtle);
+  /* Links altijd onderstreept (niet de knoppen en menu-items) */
+  /* Duidelijke focusrand voor wie met het toetsenbord werkt */
+}
+[data-kb-contrast=hoog] .text-bg-secondary {
+  background-color: var(--kb-text) !important;
+  color: var(--kb-bg) !important;
+}
+[data-kb-contrast=hoog] a:not(.btn):not(.nav-link):not(.navbar-brand):not(.dropdown-item) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+[data-kb-contrast=hoog] :focus-visible {
+  outline: 3px solid var(--kb-text) !important;
+  outline-offset: 2px;
+}
+[data-kb-contrast=hoog] .kb-record,
+[data-kb-contrast=hoog] .kb-modusknoppen {
+  border-width: 2px;
+}
+
+/* Patronen op alles met een categorieklasse, behalve labels met tekst erin (kb-badge-tekst):
+   die noemen de categorie al, en een patroon achter tekst maakt die onleesbaar */
+[data-kb-patronen=aan] {
+  /* Getallen in het mozaïek blijven leesbaar boven het patroon */
+}
+[data-kb-patronen=aan] .nieuws:not(.kb-badge-tekst) {
+  background-image: repeating-linear-gradient(-45deg, var(--kb-patroon) 0 1.5px, transparent 1.5px 5px);
+}
+[data-kb-patronen=aan] .interview:not(.kb-badge-tekst) {
+  background-image: radial-gradient(circle, var(--kb-patroon) 1.4px, transparent 1.8px);
+  background-size: 6px 6px;
+}
+[data-kb-patronen=aan] .reportage:not(.kb-badge-tekst) {
+  background-image: linear-gradient(var(--kb-patroon) 1.5px, transparent 1.5px), linear-gradient(90deg, var(--kb-patroon) 1.5px, transparent 1.5px);
+  background-size: 6px 6px;
+}
+[data-kb-patronen=aan] .blokje {
+  text-shadow: 0 0 2px var(--kb-tekstrand), 0 0 4px var(--kb-tekstrand);
+}
+
+/* Schakelaars in het instellingenmenu */
+.kb-schakelaar .form-check-label {
+  color: var(--kb-text);
+  font-weight: 500;
+}
+.kb-schakelaar .kb-schakelaar-uitleg {
+  font-size: 0.8rem;
+  color: var(--kb-muted);
+  margin-top: 1px;
+}
+.kb-schakelaar + .kb-schakelaar {
+  margin-top: 10px;
+}

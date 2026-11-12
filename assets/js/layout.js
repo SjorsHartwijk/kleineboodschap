@@ -115,6 +115,17 @@
         ];
         const modusKnoppen = opties.map(o => `
                             <button type="button" class="btn kb-modusknop${o.waarde === keuze ? ' active' : ''}" data-kb-thema="${o.waarde}" aria-pressed="${o.waarde === keuze}"><i class="bi ${o.icoon}" aria-hidden="true"></i><span>${o.titel}</span></button>`).join('');
+        // Hoog contrast en patronen (theme.js houdt de schakelaars daarna zelf bij)
+        const t = window.kbThema;
+        const schakelaars = [
+            { optie: 'contrast', titel: 'Hoog contrast', uitleg: 'Sterkere kleuren, dikkere randen en onderstreepte links.', aan: t && t.contrast ? t.contrast() : false },
+            { optie: 'patronen', titel: 'Patronen in grafieken', uitleg: 'Categorieën ook herkenbaar zonder kleur.', aan: t && t.patronen ? t.patronen() : false },
+        ].map(o => `
+                            <div class="form-check form-switch kb-schakelaar">
+                                <input class="form-check-input" type="checkbox" role="switch" id="kbOptie-${o.optie}" data-kb-optie="${o.optie}" aria-describedby="kbOptie-${o.optie}-uitleg"${o.aan ? ' checked' : ''}>
+                                <label class="form-check-label" for="kbOptie-${o.optie}">${o.titel}</label>
+                                <div class="kb-schakelaar-uitleg" id="kbOptie-${o.optie}-uitleg">${o.uitleg}</div>
+                            </div>`).join('');
         const badge = snelheid !== s.STANDAARD
             ? `<span class="kb-snelheid-badge" aria-hidden="true">${s.formatteer(snelheid)}</span>` : '';
         return `
@@ -136,6 +147,9 @@
                             <div class="kb-instelling-label mb-2" id="kbModusLabel">Weergave</div>
                             <div class="kb-modusknoppen" role="group" aria-labelledby="kbModusLabel">${modusKnoppen}
                             </div>
+                        </div>
+                        <div class="kb-instelling" role="group" aria-labelledby="kbToegankelijkLabel">
+                            <div class="kb-instelling-label mb-2" id="kbToegankelijkLabel">Toegankelijkheid</div>${schakelaars}
                         </div>
                         <div class="kb-instelling">
                             <button type="button" class="btn btn-link btn-sm p-0" data-kb-cookies>Cookie-instellingen</button>

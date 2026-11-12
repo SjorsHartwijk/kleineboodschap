@@ -320,7 +320,7 @@
           document.getElementById('modalTitel').textContent = ep.titel;
           const badge = document.getElementById('modalEpisodeBadge');
             badge.textContent = ep.categorie;
-            badge.className = `badge ${ep.categorie}`; // Voeg categorieclass toe
+            badge.className = `badge ${ep.categorie} kb-badge-tekst`; // Categoriekleur, zonder patroon (de tekst noemt de categorie al)
           document.getElementById('modalTijd').textContent = ep.tijd;
           document.getElementById('modalDatum').textContent = new Date(ep.datum).toLocaleDateString('nl-NL');
           const modal = new bootstrap.Modal(document.getElementById('afleveringModal'));
