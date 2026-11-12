@@ -113,7 +113,7 @@
     </main>
     <div data-layout="footer"></div>
 
-    <script src="assets/js/mijlpalen.js"></script>
+    <script src="assets/js/mijlpalen.js?v=20261112"></script>
     <script>
         (function () {
             const M = window.kbMijlpalen;
@@ -133,7 +133,7 @@
                 if (!v) return '';
                 return `
                     <li class="kb-mijlpaal kb-mijlpaal-straks">
-                        <div><strong>${v.kort}</strong> <span class="kb-muted">· ${v.exact ? 'op' : 'verwacht rond'} ${M.datum(v.datum)}</span></div>
+                        <div><strong>${v.kort || v.label}</strong> <span class="kb-muted">· ${v.exact ? 'op' : 'verwacht rond'} ${M.datum(v.datum)}</span></div>
                     </li>`;
             }
 
