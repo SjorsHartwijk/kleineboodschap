@@ -32,6 +32,7 @@
 <!-- Navigation-->
     <div data-layout="nav"></div>
     <script src="assets/js/layout.js"></script>
+	<main>
 	<div class="container pt-5 mb-4">
   		<div class="row">
     		<div class="col-12">
@@ -41,15 +42,16 @@
   		</div>
 	</div>
 	<div class="container">
-    	<div class="row" id="calendar-grid"></div>
+    	<div class="row" id="calendar-grid" role="group" aria-label="Kalender. Gebruik de pijltjestoetsen om tussen dagen met afleveringen te gaan, Page Up en Page Down voor een andere maand en Enter om een dag te openen."></div>
 	</div>
+	</main>
 	<!-- Tooltip modal -->
-  	<div class="modal fade" id="dayModal" tabindex="-1" aria-hidden="true">
+  	<div class="modal fade" id="dayModal" tabindex="-1" aria-labelledby="dayModalTitel" aria-hidden="true">
   		<div class="modal-dialog modal-sm">
   	    	<div class="modal-content">
   	    		<div class="modal-header">
-					<h5 class="modal-title">Afleveringen</h5>
-					<button class="btn-close" data-bs-dismiss="modal"></button>
+					<h2 class="modal-title h5" id="dayModalTitel">Afleveringen</h2>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
 				</div>
   	      		<div class="modal-body" id="dayModalBody">
 
@@ -92,7 +94,8 @@
           const col = document.createElement("div");
           col.className = "col-12 col-md-6 col-lg-3 mb-4";
 
-          const title = document.createElement("h6");
+          const title = document.createElement("h2");
+          title.className = "h6";
           title.textContent = monthName;
           col.appendChild(title);
 
@@ -104,7 +107,9 @@
             const episodes = dayMap[key] || [];
             const count = episodes.length;
 
-            const div = document.createElement("div");
+            // Dagen met afleveringen zijn knoppen (ook met het toetsenbord te openen), de rest gewone vakjes
+            const div = document.createElement(count > 0 ? "button" : "div");
+            if (count > 0) div.type = "button";
             div.className = "calendar-day";
             div.textContent = d;
             // Vandaag krijgt een dikke rand
@@ -115,7 +120,8 @@
             }
             if (count > 0) {
               div.setAttribute("data-count", count > 6 ? 6 : count);
-              div.addEventListener("click", () => showModal(episodes, d, monthName));
+              div.setAttribute("aria-label", `${d} ${monthName.toLowerCase()}: ${count} ${count === 1 ? "aflevering" : "afleveringen"}`);
+              div.addEventListener("click", () => showModal(episodes, d, monthName, div));
             }
             wrapper.appendChild(div);
           }
@@ -123,9 +129,58 @@
           col.appendChild(wrapper);
           grid.appendChild(col);
         });
+        pijltjes(grid);
       });
 
-    function showModal(episodes, day, month) {
+    // Toetsenbord: de kalender is één tabstop. Daarbinnen gaan de pijltjes naar de vorige/volgende
+    // dag met afleveringen (links/rechts) of ongeveer een week verder (omhoog/omlaag),
+    // Page Up/Page Down naar de vorige/volgende maand en Home/End naar de eerste/laatste dag.
+    function pijltjes(grid) {
+      const dagen = [...grid.querySelectorAll(".calendar-day")];   // alle vakjes, ook lege
+      const knoppen = dagen.filter(d => d.tagName === "BUTTON");
+      if (!knoppen.length) return;
+      // Begin bij vandaag (of de eerstvolgende dag met afleveringen), anders bij de eerste
+      const vandaagIdx = dagen.findIndex(d => d.classList.contains("vandaag"));
+      const start = dagen.slice(Math.max(vandaagIdx, 0)).find(d => d.tagName === "BUTTON") || knoppen[0];
+      knoppen.forEach(k => { k.tabIndex = k === start ? 0 : -1; });
+
+      // Dichtstbijzijnde knop vanaf vakje i, in richting stap (+1 of -1)
+      const zoek = (i, stap) => {
+        for (let j = i; j >= 0 && j < dagen.length; j += stap) if (dagen[j].tagName === "BUTTON") return dagen[j];
+        return null;
+      };
+      const maandVan = el => el.closest(".kb-maand");
+
+      grid.addEventListener("keydown", e => {
+        const huidig = e.target.closest("button.calendar-day");
+        if (!huidig) return;
+        const i = dagen.indexOf(huidig);
+        let naar = null;
+        if (e.key === "ArrowRight") naar = zoek(i + 1, 1);
+        else if (e.key === "ArrowLeft") naar = zoek(i - 1, -1);
+        else if (e.key === "ArrowDown") naar = zoek(i + 7, 1);
+        else if (e.key === "ArrowUp") naar = zoek(i - 7, -1);
+        else if (e.key === "Home") naar = knoppen[0];
+        else if (e.key === "End") naar = knoppen[knoppen.length - 1];
+        else if (e.key === "PageDown" || e.key === "PageUp") {
+          const maanden = [...grid.querySelectorAll(".kb-maand")];
+          const m = maanden.indexOf(maandVan(huidig)) + (e.key === "PageDown" ? 1 : -1);
+          if (maanden[m]) naar = maanden[m].querySelector("button.calendar-day");
+        } else return;
+        e.preventDefault();
+        if (!naar) return;
+        huidig.tabIndex = -1;
+        naar.tabIndex = 0;
+        naar.focus();
+      });
+    }
+
+    // Na sluiten terug naar de dag die de modal opende
+    let opener = null;
+    document.getElementById("dayModal").addEventListener("hidden.bs.modal", () => { if (opener) opener.focus(); });
+
+    function showModal(episodes, day, month, knop) {
+      opener = knop || null;
       const body = document.getElementById("dayModalBody");
       body.innerHTML = `<p><strong>${day} ${month}</strong></p>`;
       episodes.forEach(ep => {
@@ -137,7 +192,7 @@
         `;
       });
 
-      new bootstrap.Modal(document.getElementById("dayModal")).show();
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("dayModal")).show();
     }
 </script>
 <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->

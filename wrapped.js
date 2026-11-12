@@ -175,6 +175,10 @@ function sortTable(n) {
     table.innerHTML = "";
     rows.forEach(row => table.appendChild(row));
     table.setAttribute("data-sort", isAscending ? "desc" : "asc");
+    // Schermlezers horen op welke kolom en in welke richting gesorteerd is
+    document.querySelectorAll(".table thead th").forEach((th, i) => {
+        if (th.hasAttribute("aria-sort")) th.setAttribute("aria-sort", i === n ? (isAscending ? "ascending" : "descending") : "none");
+    });
 }
 
 // 🔹 Formatteer datum naar dd-mm-yyyy

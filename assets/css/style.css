@@ -1431,6 +1431,7 @@ footer a:hover, footer a:focus-visible {
 #kalender {
   /* Een maand: 7 kolommen die de volle breedte van de kolom vullen */
   /* Druktemeter: groen - geel - oranje - rood (kleuren in --kb-drukte-*) */
+  /* Dagen met afleveringen zijn knoppen: standaard knopopmaak weghalen */
   /* Vandaag: dikke rand in tekstkleur, met een smalle ring in de achtergrondkleur ertussen */
 }
 #kalender .kb-maand {
@@ -1476,8 +1477,15 @@ footer a:hover, footer a:focus-visible {
 #kalender .calendar-day[data-count="8"] {
   background-color: var(--kb-drukte-5);
 }
-#kalender .calendar-day[data-count]:hover {
+#kalender .calendar-day[data-count]:hover,
+#kalender .calendar-day[data-count]:focus-visible {
   outline: 2px solid var(--kb-text);
+  outline-offset: 1px;
+}
+#kalender button.calendar-day {
+  padding: 0;
+  font-family: inherit;
+  width: 100%;
 }
 #kalender .calendar-day.vandaag,
 #kalender .calendar-day.vandaag:hover {
@@ -1815,11 +1823,20 @@ footer a:hover, footer a:focus-visible {
   align-items: center;
   cursor: pointer;
   transition: transform 0.1s;
+  /* Het blokje is een knop: standaard knopopmaak weghalen */
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  font-family: inherit;
 }
 
-.blokje:hover {
+.blokje:hover,
+.blokje:focus-visible {
   transform: scale(1.05);
   outline: 2px solid var(--kb-text);
+  outline-offset: 1px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Afleveringkiezer (luisteren.html) */
@@ -2026,4 +2043,35 @@ footer a:hover, footer a:focus-visible {
 }
 .kb-schakelaar + .kb-schakelaar {
   margin-top: 10px;
+}
+
+/* "Naar de inhoud" (layout.js): verschijnt linksboven zodra hij focus krijgt */
+.kb-naarinhoud:focus {
+  position: fixed !important;
+  top: 8px;
+  left: 8px;
+  z-index: 2000;
+  padding: 10px 16px;
+  background-color: var(--kb-surface);
+  color: var(--kb-text);
+  font-weight: 600;
+  outline: 3px solid var(--kb-text);
+}
+
+/* De hoofdinhoud krijgt na "Naar de inhoud" de focus, maar geen focusrand */
+main:focus {
+  outline: none;
+}
+
+/* Sorteerbare kolomkoppen (Wrapped): knop die eruitziet als de kop zelf */
+.kb-sorteerknop {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+.kb-sorteerknop:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }

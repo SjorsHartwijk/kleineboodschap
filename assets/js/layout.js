@@ -71,7 +71,7 @@
                 <ul class="navbar-nav">${links}
                 </ul>
                 <div class="kb-menu-extern">
-                    <ul aria-labelledby="kbMenuExtern">${extern}
+                    <ul aria-label="Buiten kbdata.nl">${extern}
                     </ul>
                 </div>
             </div>
@@ -197,6 +197,21 @@
         return sjabloon.content.firstElementChild;
     }
 
+    // "Naar de inhoud": eerste link op de pagina, alleen zichtbaar als hij focus krijgt.
+    // Zo hoeft wie met het toetsenbord werkt niet elke keer door het hele menu.
+    function naarInhoud() {
+        const link = maak('<a class="visually-hidden-focusable kb-naarinhoud" href="#inhoud">Naar de inhoud</a>');
+        link.addEventListener('click', e => {
+            const main = document.querySelector('main');
+            if (!main) return;
+            e.preventDefault();
+            main.setAttribute('tabindex', '-1');
+            main.focus();
+            main.scrollIntoView();
+        });
+        return link;
+    }
+
     function plaats(placeholder) {
         const soort = placeholder.dataset.layout;
         const container = placeholder.dataset.container || 'container-xxl';
@@ -210,6 +225,7 @@
         if (placeholder.getAttribute('style')) element.setAttribute('style', placeholder.getAttribute('style'));
         placeholder.replaceWith(element);
         if (soort === 'nav') {
+            element.before(naarInhoud());
             const regel = maak(datumregel(container));
             element.after(regel);
             koppelInstellingen(element);

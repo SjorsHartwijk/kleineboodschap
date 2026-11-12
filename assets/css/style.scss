@@ -1395,8 +1395,16 @@ footer {
     .calendar-day[data-count="6"] { background-color: var(--kb-drukte-4); }
     .calendar-day[data-count="7"],
     .calendar-day[data-count="8"] { background-color: var(--kb-drukte-5); }
-    .calendar-day[data-count]:hover {
+    .calendar-day[data-count]:hover,
+    .calendar-day[data-count]:focus-visible {
       outline: 2px solid var(--kb-text);
+      outline-offset: 1px;
+    }
+    /* Dagen met afleveringen zijn knoppen: standaard knopopmaak weghalen */
+    button.calendar-day {
+      padding: 0;
+      font-family: inherit;
+      width: 100%;
     }
     /* Vandaag: dikke rand in tekstkleur, met een smalle ring in de achtergrondkleur ertussen */
     .calendar-day.vandaag,
@@ -1699,10 +1707,19 @@ footer {
   align-items: center;
   cursor: pointer;
   transition: transform 0.1s;
+  /* Het blokje is een knop: standaard knopopmaak weghalen */
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  font-family: inherit;
 }
-.blokje:hover {
+.blokje:hover,
+.blokje:focus-visible {
   transform: scale(1.05);
   outline: 2px solid var(--kb-text);
+  outline-offset: 1px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Afleveringkiezer (luisteren.html) */
@@ -1903,5 +1920,34 @@ footer {
     }
     + .kb-schakelaar {
         margin-top: 10px;
+    }
+}
+
+/* "Naar de inhoud" (layout.js): verschijnt linksboven zodra hij focus krijgt */
+.kb-naarinhoud:focus {
+    position: fixed !important;
+    top: 8px;
+    left: 8px;
+    z-index: 2000;
+    padding: 10px 16px;
+    background-color: var(--kb-surface);
+    color: var(--kb-text);
+    font-weight: 600;
+    outline: 3px solid var(--kb-text);
+}
+/* De hoofdinhoud krijgt na "Naar de inhoud" de focus, maar geen focusrand */
+main:focus {
+    outline: none;
+}
+/* Sorteerbare kolomkoppen (Wrapped): knop die eruitziet als de kop zelf */
+.kb-sorteerknop {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
     }
 }

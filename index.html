@@ -153,7 +153,7 @@
                                 </div>
                                 <div class="tab-pane" id="mozaiekpanel" role="tabpanel" aria-labelledby="mozaiekpanel-tab" tabindex="0">
                                     <small>Klik op een aflevering om alle informatie over de aflevering te zien.</small>
-                                    <div id="mozaiek" class="mozaiek mt-3"></div>
+                                    <div id="mozaiek" class="mozaiek mt-3" role="group" aria-label="Alle afleveringen als blokjes. Gebruik de pijltjestoetsen om te bladeren en Enter om een aflevering te openen."></div>
                                 </div>
                             </div>
                         </div>
@@ -286,11 +286,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title d-flex justify-content-between align-items-center w-100">
-                  <div>
-                      <span id="modalId"></span>: <span id="modalTitel"></span>
-                  </div>
-                </h4>
+                <h3 class="modal-title h4" id="afleveringModalLabel"><span id="modalId"></span>: <span id="modalTitel"></span></h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
             </div>
             <div class="modal-body">
@@ -302,32 +298,61 @@
     </div>
 </div>
     <script>
-        /* mozaiek */
+        /* mozaiek: elk blokje is een knop. Er is één tabstop voor het hele mozaïek;
+           daarbinnen ga je met de pijltjestoetsen (Home/End voor begin en eind) en open je met Enter of spatie. */
         async function laadEpisodes() {
-        const res = await fetch('episodes.json');
-        const episodes = await res.json();
-        const container = document.getElementById('mozaiek');
-        episodes.forEach(ep => {
-            const blok = document.createElement('div');
-            blok.className = `blokje ${ep.categorie}`;
-            blok.textContent = ep.id;
-            blok.dataset.titel = ep.titel;
-            blok.dataset.tijd = ep.tijd;
-            blok.dataset.datum = ep.datum;
-            blok.dataset.id = ep.id;
-        blok.addEventListener('click', () => {
-          document.getElementById('modalId').textContent = ep.id;
-          document.getElementById('modalTitel').textContent = ep.titel;
-          const badge = document.getElementById('modalEpisodeBadge');
-            badge.textContent = ep.categorie;
-            badge.className = `badge ${ep.categorie} kb-badge-tekst`; // Categoriekleur, zonder patroon (de tekst noemt de categorie al)
-          document.getElementById('modalTijd').textContent = ep.tijd;
-          document.getElementById('modalDatum').textContent = new Date(ep.datum).toLocaleDateString('nl-NL');
-          const modal = new bootstrap.Modal(document.getElementById('afleveringModal'));
-          modal.show();
-        });
-        container.appendChild(blok);
-        });
+            const res = await fetch('episodes.json');
+            const episodes = await res.json();
+            const container = document.getElementById('mozaiek');
+            const modalEl = document.getElementById('afleveringModal');
+            let opener = null;
+            episodes.forEach((ep, i) => {
+                const blok = document.createElement('button');
+                blok.type = 'button';
+                blok.className = `blokje ${ep.categorie}`;
+                blok.textContent = ep.id;
+                blok.tabIndex = i === 0 ? 0 : -1;
+                blok.setAttribute('aria-label', `Aflevering ${ep.id}: ${ep.titel}, ${ep.categorie}`);
+                blok.addEventListener('click', () => {
+                    document.getElementById('modalId').textContent = ep.id;
+                    document.getElementById('modalTitel').textContent = ep.titel;
+                    const badge = document.getElementById('modalEpisodeBadge');
+                    badge.textContent = ep.categorie;
+                    badge.className = `badge ${ep.categorie} kb-badge-tekst`; // Categoriekleur, zonder patroon (de tekst noemt de categorie al)
+                    document.getElementById('modalTijd').textContent = ep.tijd;
+                    document.getElementById('modalDatum').textContent = new Date(ep.datum).toLocaleDateString('nl-NL');
+                    opener = blok;
+                    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+                });
+                container.appendChild(blok);
+            });
+            // Na sluiten terug naar het blokje dat de modal opende
+            modalEl.addEventListener('hidden.bs.modal', () => { if (opener) opener.focus(); });
+
+            // Verbergt het categoriefilter het blokje met de tabstop, dan gaat die naar het eerste zichtbare
+            document.getElementById('grafiekLegenda')?.addEventListener('click', () => setTimeout(() => {
+                const stop = container.querySelector('.blokje[tabindex="0"]');
+                if (stop && stop.offsetParent !== null) return;
+                const eerste = [...container.querySelectorAll('.blokje')].find(b => b.offsetParent !== null);
+                if (stop) stop.tabIndex = -1;
+                if (eerste) eerste.tabIndex = 0;
+            }));
+
+            // Pijltjestoetsen: alleen zichtbare blokjes (het categoriefilter kan er verbergen)
+            container.addEventListener('keydown', e => {
+                const huidig = e.target.closest('.blokje');
+                if (!huidig) return;
+                const zichtbaar = [...container.querySelectorAll('.blokje')].filter(b => b.offsetParent !== null);
+                const i = zichtbaar.indexOf(huidig);
+                const perRij = zichtbaar.filter(b => b.offsetTop === zichtbaar[0].offsetTop).length || 1;
+                const doel = { ArrowRight: i + 1, ArrowLeft: i - 1, ArrowDown: i + perRij, ArrowUp: i - perRij, Home: 0, End: zichtbaar.length - 1 }[e.key];
+                if (doel === undefined) return;
+                e.preventDefault();
+                const naar = zichtbaar[Math.max(0, Math.min(zichtbaar.length - 1, doel))];
+                huidig.tabIndex = -1;
+                naar.tabIndex = 0;
+                naar.focus();
+            });
         }
         laadEpisodes();
     </script>

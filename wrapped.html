@@ -81,14 +81,14 @@
         </div>
         <div class="row">
             <div class="col-12 mt-4">
-                <h3>Statistieken</h3>
+                <h2 class="h3">Statistieken</h2>
             </div>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-3 mb-4" id="stats"></div>
         <div class="mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h3>Afleveringen</h3>
+                    <h2 class="h3">Afleveringen</h2>
                     <div class="d-flex flex-wrap gap-3 small mb-2" aria-label="Legenda">
                         <span><span class="badge achtergrond kb-wrapped-blokje">&nbsp;</span> Achtergrond</span>
                         <span><span class="badge nieuws kb-wrapped-blokje">&nbsp;</span> Nieuws</span>
@@ -103,7 +103,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline gap-2">
-                        <h3>Mijn favorieten van <span data-favorieten-jaar></span></h3>
+                        <h2 class="h3">Mijn favorieten van <span data-favorieten-jaar></span></h2>
                         <span class="small kb-muted" id="favorietenAantal"></span>
                     </div>
                     <div class="row g-4">
@@ -125,17 +125,17 @@
         <div class="mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h3>Afleveringen van <span id="episodeYear"></span></h3>
+                    <h2 class="h3">Afleveringen van <span id="episodeYear"></span></h2>
                     <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th><span class="visually-hidden">Favoriet</span></th>
-                                <th onclick="sortTable(1)">ID <i class="bi bi-sort-down"></i></th>
+                                <th aria-sort="none"><button type="button" class="kb-sorteerknop" onclick="sortTable(1)">ID <i class="bi bi-sort-down" aria-hidden="true"></i></button></th>
                                 <th>Titel</th>
                                 <th>Categorie</th>
-                                <th onclick="sortTable(4)">Tijdsduur <i class="bi bi-sort-down"></i></th>
-                                <th onclick="sortTable(5)">Datum <i class="bi bi-sort-down"></i></th>
+                                <th aria-sort="none"><button type="button" class="kb-sorteerknop" onclick="sortTable(4)">Tijdsduur <i class="bi bi-sort-down" aria-hidden="true"></i></button></th>
+                                <th aria-sort="none"><button type="button" class="kb-sorteerknop" onclick="sortTable(5)">Datum <i class="bi bi-sort-down" aria-hidden="true"></i></button></th>
                             </tr>
                         </thead>
                         <tbody id="episodeTable"></tbody>
