@@ -23,7 +23,10 @@
         "titel": "Interview met Efteling-icoon Mari van Heumen",
         "tijd": "81",
         "datum": "2018-01-08",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Mari van Heumen"
+        ]
     },
     {
         "id": "4",
@@ -71,7 +74,10 @@
         "titel": "Fotograferen in de Efteling met Kris van de Sande",
         "tijd": "56",
         "datum": "2018-02-19",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Kris van de Sande"
+        ]
     },
     {
         "id": "10",
@@ -213,7 +219,10 @@
         "titel": "Fotografievragen voor Kris van de Sande",
         "tijd": "54",
         "datum": "2018-05-28",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Kris van de Sande"
+        ]
     },
     {
         "id": "27",
@@ -229,7 +238,10 @@
         "titel": "Storytelling met Philip Corsius",
         "tijd": "53",
         "datum": "2018-06-11",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Philip Corsius"
+        ]
     },
     {
         "id": "29",
@@ -431,7 +443,10 @@
         "titel": "Storytelling hoofdstuk 2 met Philip Corsius",
         "tijd": "60",
         "datum": "2018-10-08",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Philip Corsius"
+        ]
     },
     {
         "id": "53",
@@ -463,7 +478,10 @@
         "titel": "Achtbanen top 6",
         "tijd": "81",
         "datum": "2018-11-05",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Pieter Leebooij"
+        ]
     },
     {
         "id": "57",
@@ -495,7 +513,10 @@
         "titel": "Wessel Wit over Looopings, Efteling en (fan)media",
         "tijd": "83",
         "datum": "2018-12-03",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Wessel Wit"
+        ]
     },
     {
         "id": "61",
@@ -511,7 +532,10 @@
         "titel": "Mario Dieltjes over het groen in de Efteling",
         "tijd": "59",
         "datum": "2018-12-17",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Mario Dieltjes"
+        ]
     },
     {
         "id": "63",
@@ -551,7 +575,10 @@
         "titel": "Marwin van de Hoeve over De Vijf Zintuigen",
         "tijd": "86",
         "datum": "2019-01-14",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Marwin van de Hoeve"
+        ]
     },
     {
         "id": "68",
@@ -559,7 +586,10 @@
         "titel": "Sprookjesboom is door een Heras hekwerk heen gerend",
         "tijd": "93",
         "datum": "2019-01-21",
-        "categorie": "nieuws"
+        "categorie": "nieuws",
+        "gasten": [
+            "Danny van der Weel"
+        ]
     },
     {
         "id": "69",
@@ -599,7 +629,10 @@
         "titel": "Sprookjesboombroccoli",
         "tijd": "99",
         "datum": "2019-02-14",
-        "categorie": "nieuws"
+        "categorie": "nieuws",
+        "gasten": [
+            "Domien Verschuuren"
+        ]
     },
     {
         "id": "74",
@@ -609,7 +642,10 @@
         "datum": "2019-02-18",
         "categorie": "achtergrond",
         "latitude": "51.654689832722795",
-        "longitude": "5.040828605791864"
+        "longitude": "5.040828605791864",
+        "gasten": [
+            "René Merkelbach"
+        ]
     },
     {
         "id": "75",
@@ -641,7 +677,10 @@
         "titel": "Wat kunnen de Efteling en andere parken van elkaar leren",
         "tijd": "84",
         "datum": "2019-03-04",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Danny van der Weel"
+        ]
     },
     {
         "id": "79",
@@ -719,7 +758,10 @@
         "titel": "Efteling bordspellen",
         "tijd": "102",
         "datum": "2019-04-22",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Marwin van de Hoeve"
+        ]
     },
     {
         "id": "88",
@@ -761,7 +803,10 @@
         "datum": "2019-05-23",
         "categorie": "achtergrond",
         "latitude": "51.652337",
-        "longitude": "5.052309"
+        "longitude": "5.052309",
+        "gasten": [
+            "Wessel Wit"
+        ]
     },
     {
         "id": "93",
@@ -777,7 +822,11 @@
         "titel": "Ruud Bos documentaire making-of",
         "tijd": "66",
         "datum": "2019-05-31",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Marwin van de Hoeve",
+            "Sander Roeling"
+        ]
     },
     {
         "id": "95",
@@ -827,7 +876,11 @@
         "datum": "2019-07-08",
         "categorie": "interview",
         "latitude": "51.643455",
-        "longitude": "5.041078"
+        "longitude": "5.041078",
+        "gasten": [
+            "Robert-Jaap Jansen",
+            "René Merkelbach"
+        ]
     },
     {
         "id": "101",
@@ -861,7 +914,10 @@
         "titel": "Meer fotografie in de Efteling met Kris Van de Sande",
         "tijd": "47",
         "datum": "2019-07-22",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Kris van de Sande"
+        ]
     },
     {
         "id": "105",
@@ -885,7 +941,10 @@
         "titel": "Efteling-bieren",
         "tijd": "86",
         "datum": "2019-08-05",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Boukje Koop"
+        ]
     },
     {
         "id": "108",
@@ -943,7 +1002,10 @@
         "titel": "De magie van Verticaal gaan",
         "tijd": "74",
         "datum": "2019-09-09",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Ralf Verhoef"
+        ]
     },
     {
         "id": "115",
@@ -985,7 +1047,10 @@
         "titel": "Animatronics in de Efteling",
         "tijd": "78",
         "datum": "2019-10-14",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Rick van Riel"
+        ]
     },
     {
         "id": "120",
@@ -1017,7 +1082,10 @@
         "titel": "Efteling en duurzaamheid met Wyke Smit",
         "tijd": "65",
         "datum": "2019-11-11",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Wyke Smit"
+        ]
     },
     {
         "id": "124",
@@ -1085,7 +1153,10 @@
         "datum": "2019-12-30",
         "categorie": "achtergrond",
         "latitude": "51.651327",
-        "longitude": "5.049213"
+        "longitude": "5.049213",
+        "gasten": [
+            "Tristan Sekeris"
+        ]
     },
     {
         "id": "132",
@@ -1093,7 +1164,10 @@
         "titel": "Hotel de Bottle",
         "tijd": "45",
         "datum": "2020-01-01",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Boukje Koop"
+        ]
     },
     {
         "id": "133",
@@ -1109,7 +1183,10 @@
         "titel": "De magie van het verzamelen",
         "tijd": "89",
         "datum": "2020-01-13",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Carlo van Schijndel"
+        ]
     },
     {
         "id": "135",
@@ -1135,7 +1212,10 @@
         "titel": "In gesprek met Erik van den Brand",
         "tijd": "141",
         "datum": "2020-02-03",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Erik van den Brand"
+        ]
     },
     {
         "id": "138",
@@ -1169,7 +1249,10 @@
         "titel": "In gesprek met Cees Kikstra",
         "tijd": "100",
         "datum": "2020-03-02",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Cees Kikstra"
+        ]
     },
     {
         "id": "142",
@@ -1195,7 +1278,10 @@
         "titel": "Klassieke muziek in de Efteling",
         "tijd": "69",
         "datum": "2020-03-16",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Rebecca van der Weijde"
+        ]
     },
     {
         "id": "145",
@@ -1213,7 +1299,11 @@
         "datum": "2020-03-30",
         "categorie": "achtergrond",
         "latitude": "51.639022",
-        "longitude": "5.031781"
+        "longitude": "5.031781",
+        "gasten": [
+            "Walter Kessels",
+            "Ans van Zon"
+        ]
     },
     {
         "id": "147",
@@ -1285,7 +1375,10 @@
         "titel": "Efteling boeken",
         "tijd": "153",
         "datum": "2020-05-25",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Erwin Taets"
+        ]
     },
     {
         "id": "156",
@@ -1351,7 +1444,11 @@
         "titel": "Onze masterplannen voor de Efteling",
         "tijd": "108",
         "datum": "2020-07-20",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Danny van der Weel",
+            "Niels Damen"
+        ]
     },
     {
         "id": "164",
@@ -1417,7 +1514,10 @@
         "titel": "Efteling-tatoeages met Bram Elstak",
         "tijd": "50",
         "datum": "2020-09-07",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Bram Elstak"
+        ]
     },
     {
         "id": "172",
@@ -1435,7 +1535,11 @@
         "datum": "2020-09-21",
         "categorie": "interview",
         "latitude": "52.4754540",
-        "longitude": "6.0672388"
+        "longitude": "6.0672388",
+        "gasten": [
+            "Francine Oonk",
+            "Pieter Aurik"
+        ]
     },
     {
         "id": "174",
@@ -1487,7 +1591,10 @@
         "datum": "2020-10-19",
         "categorie": "achtergrond",
         "latitude": "51.644394",
-        "longitude": "5.048800"
+        "longitude": "5.048800",
+        "gasten": [
+            "Ivo Südmeier"
+        ]
     },
     {
         "id": "180",
@@ -1497,7 +1604,10 @@
         "datum": "2020-10-26",
         "categorie": "achtergrond",
         "latitude": "51.653372",
-        "longitude": "5.054870"
+        "longitude": "5.054870",
+        "gasten": [
+            "Sven Olree"
+        ]
     },
     {
         "id": "181",
@@ -1513,7 +1623,10 @@
         "titel": "De financiën van de Efteling (deel 1)",
         "tijd": "146",
         "datum": "2020-11-09",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roel van Tilborg"
+        ]
     },
     {
         "id": "183",
@@ -1531,7 +1644,11 @@
         "datum": "2020-11-18",
         "categorie": "achtergrond",
         "latitude": "51.650575",
-        "longitude": "5.050208"
+        "longitude": "5.050208",
+        "gasten": [
+            "Danny van der Weel",
+            "Nick Stuy"
+        ]
     },
     {
         "id": "185",
@@ -1539,7 +1656,10 @@
         "titel": "In gesprek met Ronald van der Zijl",
         "tijd": "109",
         "datum": "2020-11-23",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Ronald van der Zijl"
+        ]
     },
     {
         "id": "186",
@@ -1565,7 +1685,10 @@
         "titel": "De financiën van de Efteling (deel 2)",
         "tijd": "163",
         "datum": "2020-12-07",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roel van Tilborg"
+        ]
     },
     {
         "id": "189",
@@ -1583,7 +1706,10 @@
         "datum": "2020-12-21",
         "categorie": "interview",
         "latitude": "51.645677",
-        "longitude": "5.053032"
+        "longitude": "5.053032",
+        "gasten": [
+            "Peter Persoon"
+        ]
     },
     {
         "id": "191",
@@ -1631,7 +1757,10 @@
         "titel": "Efteling en media (deel 1)",
         "tijd": "137",
         "datum": "2021-02-01",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Bjorn Bouwens"
+        ]
     },
     {
         "id": "197",
@@ -1647,7 +1776,10 @@
         "titel": "In gesprek met Reinoud van Assendelft de Coningh",
         "tijd": "156",
         "datum": "2021-02-15",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Reinoud van Assendelft de Coningh"
+        ]
     },
     {
         "id": "199",
@@ -1655,7 +1787,10 @@
         "titel": "Achter de schermen bij Kleine Boodschap",
         "tijd": "153",
         "datum": "2021-02-17",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Mark Dekkers"
+        ]
     },
     {
         "id": "200",
@@ -1663,7 +1798,12 @@
         "titel": "Om tafel met Efteling-ontwerpers Sander, Jeroen en Ronald",
         "tijd": "106",
         "datum": "2021-02-22",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Sander de Bruijn",
+            "Jeroen Verheij",
+            "Ronald Donkers"
+        ]
     },
     {
         "id": "201",
@@ -1679,7 +1819,10 @@
         "titel": "Wie is de Mol in de Efteling",
         "tijd": "86",
         "datum": "2021-03-04",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Mark Versteden"
+        ]
     },
     {
         "id": "203",
@@ -1687,7 +1830,10 @@
         "titel": "In gesprek met Pieter Cornelis",
         "tijd": "161",
         "datum": "2021-03-08",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Pieter Cornelis"
+        ]
     },
     {
         "id": "204",
@@ -1705,7 +1851,10 @@
         "datum": "2021-03-18",
         "categorie": "interview",
         "latitude": "51.639022",
-        "longitude": "5.031781"
+        "longitude": "5.031781",
+        "gasten": [
+            "Joris Slooten"
+        ]
     },
     {
         "id": "206",
@@ -1713,7 +1862,11 @@
         "titel": "Efteling en de fanmedia",
         "tijd": "94",
         "datum": "2021-03-22",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Steven van Gils",
+            "Marwin van de Hoeve"
+        ]
     },
     {
         "id": "207",
@@ -1729,7 +1882,12 @@
         "titel": "Licht in de Efteling met Jaap, Stan en Eric",
         "tijd": "136",
         "datum": "2021-04-05",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Jaap den Bleker",
+            "Stan Dingemans",
+            "Eric Brekelmans"
+        ]
     },
     {
         "id": "209",
@@ -1745,7 +1903,10 @@
         "titel": "Efteling en media (deel 2)",
         "tijd": "155",
         "datum": "2021-04-19",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Bjorn Bouwens"
+        ]
     },
     {
         "id": "211",
@@ -1753,7 +1914,10 @@
         "titel": "In gesprek met Jack Rijnen",
         "tijd": "114",
         "datum": "2021-04-26",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Jack Rijnen"
+        ]
     },
     {
         "id": "212",
@@ -1795,7 +1959,10 @@
         "titel": "Het Efteling Hotel na de renovatie",
         "tijd": "49",
         "datum": "2021-05-27",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Sven Olree"
+        ]
     },
     {
         "id": "217",
@@ -1829,7 +1996,10 @@
         "titel": "In gesprek met Lex Lemmens (deel 1)",
         "tijd": "131",
         "datum": "2021-06-14",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Lex Lemmens"
+        ]
     },
     {
         "id": "221",
@@ -1847,7 +2017,11 @@
         "datum": "2021-06-28",
         "categorie": "interview",
         "latitude": "51.649358",
-        "longitude": "5.043747"
+        "longitude": "5.043747",
+        "gasten": [
+            "Arnoud Schellenberg",
+            "Mayoni Oosterhoff"
+        ]
     },
     {
         "id": "223",
@@ -1863,7 +2037,10 @@
         "titel": "In gesprek met Lex Lemmens (deel 2)",
         "tijd": "133",
         "datum": "2021-07-12",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Lex Lemmens"
+        ]
     },
     {
         "id": "225",
@@ -1879,7 +2056,10 @@
         "titel": "In gesprek met burgemeester Hanne van Aart",
         "tijd": "67",
         "datum": "2021-07-26",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Hanne van Aart"
+        ]
     },
     {
         "id": "227",
@@ -1887,7 +2067,10 @@
         "titel": "Sander de Bruijn over De Wereld van Sindbad",
         "tijd": "67",
         "datum": "2021-07-29",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Sander de Bruijn"
+        ]
     },
     {
         "id": "228",
@@ -1903,7 +2086,10 @@
         "titel": "Mijmeren over de Efteling met Rob Janssen",
         "tijd": "97",
         "datum": "2021-08-09",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Rob Janssen"
+        ]
     },
     {
         "id": "230",
@@ -1911,7 +2097,10 @@
         "titel": "De financiën van de Efteling in 2020",
         "tijd": "158",
         "datum": "2021-08-16",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roel van Tilborg"
+        ]
     },
     {
         "id": "231",
@@ -1919,7 +2108,11 @@
         "titel": "Het bestemmingsplan met Wyke Smit en Ivo Südmeier",
         "tijd": "107",
         "datum": "2021-08-23",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Wyke Smit",
+            "Ivo Südmeier"
+        ]
     },
     {
         "id": "232",
@@ -1927,7 +2120,10 @@
         "titel": "In gesprek met Pieter Cornelis (deel 2)",
         "tijd": "145",
         "datum": "2021-08-30",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Pieter Cornelis"
+        ]
     },
     {
         "id": "233",
@@ -1935,7 +2131,10 @@
         "titel": "In gesprek met Michel den Dulk",
         "tijd": "204",
         "datum": "2021-09-06",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Michel den Dulk"
+        ]
     },
     {
         "id": "234",
@@ -1951,7 +2150,10 @@
         "titel": "De muziek van Caro",
         "tijd": "76",
         "datum": "2021-09-20",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "René Merkelbach"
+        ]
     },
     {
         "id": "236",
@@ -1991,7 +2193,11 @@
         "titel": "In gesprek met Dennis Bots",
         "tijd": "136",
         "datum": "2021-10-25",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Dennis Bots",
+            "Bjorn Bouwens"
+        ]
     },
     {
         "id": "241",
@@ -1999,7 +2205,10 @@
         "titel": "Halloween in de Efteling",
         "tijd": "98",
         "datum": "2021-11-01",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Dennis van Breukelen"
+        ]
     },
     {
         "id": "242",
@@ -2059,7 +2268,10 @@
         "titel": "In gesprek met Frans Goenee",
         "tijd": "105",
         "datum": "2021-12-13",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Frans Goenee"
+        ]
     },
     {
         "id": "249",
@@ -2085,7 +2297,11 @@
         "titel": "The making of The Making of Fata Morgana",
         "tijd": "120",
         "datum": "2021-12-29",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Marwin van de Hoeve",
+            "Sander Roeling"
+        ]
     },
     {
         "id": "252",
@@ -2117,7 +2333,11 @@
         "titel": "Alles over Eftepedia",
         "tijd": "100",
         "datum": "2022-01-24",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Friso Geerlings",
+            "Thijs Kinkhorst"
+        ]
     },
     {
         "id": "256",
@@ -2141,7 +2361,10 @@
         "titel": "Aan tafel met Ton Merkx (deel 1)",
         "tijd": "114",
         "datum": "2022-02-07",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Ton Merkx"
+        ]
     },
     {
         "id": "259",
@@ -2157,7 +2380,11 @@
         "titel": "De verweven historie van Kaatsheuvel en de Efteling",
         "tijd": "193",
         "datum": "2022-02-21",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Kees Grootswagers",
+            "Mari van Heumen"
+        ]
     },
     {
         "id": "261",
@@ -2173,7 +2400,12 @@
         "titel": "Taste of Europe",
         "tijd": "109",
         "datum": "2022-03-02",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Nicky de Waal",
+            "Tim Beeren",
+            "Wim Strijbosch"
+        ]
     },
     {
         "id": "263",
@@ -2181,7 +2413,10 @@
         "titel": "In gesprek met Frans Goenee (deel 2)",
         "tijd": "131",
         "datum": "2022-03-07",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Frans Goenee"
+        ]
     },
     {
         "id": "264",
@@ -2197,7 +2432,10 @@
         "titel": "Mijmeren met Jerik van Nuenen",
         "tijd": "81",
         "datum": "2022-03-21",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Jerik van Nuenen"
+        ]
     },
     {
         "id": "266",
@@ -2223,7 +2461,10 @@
         "titel": "Aan tafel met Ton Merkx (deel 2)",
         "tijd": "110",
         "datum": "2022-04-01",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Ton Merkx"
+        ]
     },
     {
         "id": "269",
@@ -2259,7 +2500,10 @@
         "datum": "2022-04-25",
         "categorie": "achtergrond",
         "latitude": "51.650963",
-        "longitude": "5.039565"
+        "longitude": "5.039565",
+        "gasten": [
+            "Gert-Jan van Empel"
+        ]
     },
     {
         "id": "273",
@@ -2299,7 +2543,10 @@
         "titel": "In gesprek met Cees Sprangers",
         "tijd": "131",
         "datum": "2022-05-30",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Cees Sprangers"
+        ]
     },
     {
         "id": "278",
@@ -2341,7 +2588,11 @@
         "datum": "2022-07-04",
         "categorie": "interview",
         "latitude": "51.659722",
-        "longitude": "5.032634"
+        "longitude": "5.032634",
+        "gasten": [
+            "Jonas Rietbergen",
+            "Jeroen Verheij"
+        ]
     },
     {
         "id": "283",
@@ -2357,7 +2608,10 @@
         "titel": "De financiën van de Efteling in 2021",
         "tijd": "192",
         "datum": "2022-07-18",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roel van Tilborg"
+        ]
     },
     {
         "id": "285",
@@ -2365,7 +2619,10 @@
         "titel": "De accomodaties in Bosrijk en ’t Loonsche Land",
         "tijd": "100",
         "datum": "2022-07-25",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Sven Olree"
+        ]
     },
     {
         "id": "286",
@@ -2381,7 +2638,10 @@
         "titel": "In gesprek met Anja Klis",
         "tijd": "84",
         "datum": "2022-08-08",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Anja Klis"
+        ]
     },
     {
         "id": "288",
@@ -2405,7 +2665,10 @@
         "titel": "In gesprek met Koos de Graaf",
         "tijd": "132",
         "datum": "2022-08-29",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Koos de Graaf"
+        ]
     },
     {
         "id": "291",
@@ -2441,7 +2704,11 @@
         "titel": "Thematisering in de Efteling met Martin en Patrick",
         "tijd": "121",
         "datum": "2022-09-19",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Martin Simons",
+            "Patrick van den Nieuwenhuizen"
+        ]
     },
     {
         "id": "295",
@@ -2465,7 +2732,10 @@
         "titel": "Peter Reijnders",
         "tijd": "92",
         "datum": "2022-10-10",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Bjorn Bouwens"
+        ]
     },
     {
         "id": "298",
@@ -2499,7 +2769,10 @@
         "datum": "2022-11-02",
         "categorie": "achtergrond",
         "latitude": "51.570848",
-        "longitude": "5.079455"
+        "longitude": "5.079455",
+        "gasten": [
+            "Hebe Verstappen"
+        ]
     },
     {
         "id": "302",
@@ -2515,7 +2788,10 @@
         "titel": "Mijmeren met Sander Kesseler",
         "tijd": "93",
         "datum": "2022-11-14",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Sander Kesseler"
+        ]
     },
     {
         "id": "304",
@@ -2531,7 +2807,10 @@
         "titel": "De Efteling als verteller van sprookjes met Moniek Hover",
         "tijd": "162",
         "datum": "2022-11-28",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Moniek Hover"
+        ]
     },
     {
         "id": "306",
@@ -2547,7 +2826,10 @@
         "titel": "De boerderij aan de Horst",
         "tijd": "59",
         "datum": "2022-12-12",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Maria Kuijsters"
+        ]
     },
     {
         "id": "308",
@@ -2563,7 +2845,10 @@
         "titel": "In gesprek met Tim Nusselein",
         "tijd": "109",
         "datum": "2022-12-26",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Tim Nusselein"
+        ]
     },
     {
         "id": "310",
@@ -2579,7 +2864,10 @@
         "titel": "In gesprek met Sebastiaan Smits",
         "tijd": "97",
         "datum": "2023-01-09",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Sebastiaan Smits"
+        ]
     },
     {
         "id": "312",
@@ -2595,7 +2883,10 @@
         "titel": "In gesprek met Bertus Kemmeren",
         "tijd": "66",
         "datum": "2023-01-23",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Bertus Kemmeren"
+        ]
     },
     {
         "id": "314",
@@ -2603,7 +2894,10 @@
         "titel": "In gesprek met Jordan Middleton (Cupcakes & Coasters)",
         "tijd": "61",
         "datum": "2023-01-26",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Jordan Middleton"
+        ]
     },
     {
         "id": "315",
@@ -2621,7 +2915,10 @@
         "datum": "2023-02-06",
         "categorie": "interview",
         "latitude": "51.651720",
-        "longitude": "5.045275"
+        "longitude": "5.045275",
+        "gasten": [
+            "Vicky Meeuwsen"
+        ]
     },
     {
         "id": "317",
@@ -2631,7 +2928,11 @@
         "datum": "2023-02-13",
         "categorie": "interview",
         "latitude": "51.652277",
-        "longitude": "5.053445"
+        "longitude": "5.053445",
+        "gasten": [
+            "Ronald Donkers",
+            "Patrick van den Nieuwenhuizen"
+        ]
     },
     {
         "id": "318",
@@ -2647,7 +2948,10 @@
         "titel": "De muziek van de Wereld van Sindbad",
         "tijd": "75",
         "datum": "2023-02-27",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "René Merkelbach"
+        ]
     },
     {
         "id": "320",
@@ -2657,7 +2961,10 @@
         "datum": "2023-03-06",
         "categorie": "achtergrond",
         "latitude": "51.686574",
-        "longitude": "5.304683"
+        "longitude": "5.304683",
+        "gasten": [
+            "Joris Westerink"
+        ]
     },
     {
         "id": "321",
@@ -2675,7 +2982,12 @@
         "datum": "2023-03-20",
         "categorie": "interview",
         "latitude": "52.357230",
-        "longitude": "4.866466"
+        "longitude": "4.866466",
+        "gasten": [
+            "Annerieke Glaser",
+            "Jasper van Rosmalen",
+            "Jerom Fischer"
+        ]
     },
     {
         "id": "323",
@@ -2691,7 +3003,10 @@
         "titel": "Efteling-personeelskleding met Loet Smits",
         "tijd": "113",
         "datum": "2023-04-03",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Loet Smits"
+        ]
     },
     {
         "id": "325",
@@ -2725,7 +3040,10 @@
         "titel": "De Efteling als verteller van sprookjes met Moniek Hover (deel 2)",
         "tijd": "166",
         "datum": "2023-04-24",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Moniek Hover"
+        ]
     },
     {
         "id": "329",
@@ -2735,7 +3053,11 @@
         "datum": "2023-05-01",
         "categorie": "interview",
         "latitude": "51.656474",
-        "longitude": "5.052016"
+        "longitude": "5.052016",
+        "gasten": [
+            "Paul Beck",
+            "Agertha Beck"
+        ]
     },
     {
         "id": "330",
@@ -2761,7 +3083,10 @@
         "datum": "2023-05-22",
         "categorie": "interview",
         "latitude": "51.652412",
-        "longitude": "5.051402"
+        "longitude": "5.051402",
+        "gasten": [
+            "Carla de Kroon"
+        ]
     },
     {
         "id": "333",
@@ -2777,7 +3102,10 @@
         "titel": "In gesprek met Goof Lukken",
         "tijd": "170",
         "datum": "2023-06-05",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Goof Lukken"
+        ]
     },
     {
         "id": "335",
@@ -2793,7 +3121,11 @@
         "titel": "De financiën van de Efteling in 2022",
         "tijd": "155",
         "datum": "2023-06-19",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roel van Tilborg",
+            "Bas van Tilborg"
+        ]
     },
     {
         "id": "337",
@@ -2809,7 +3141,10 @@
         "titel": "Bram van Binnendijk over Theo Hochwald",
         "tijd": "140",
         "datum": "2023-07-03",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Bram van Binnendijk"
+        ]
     },
     {
         "id": "339",
@@ -2843,7 +3178,10 @@
         "titel": "Mijmeren met Domien Verschuuren",
         "tijd": "71",
         "datum": "2023-07-24",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Domien Verschuuren"
+        ]
     },
     {
         "id": "343",
@@ -2851,7 +3189,11 @@
         "titel": "Onze favoriete ritsystemen",
         "tijd": "147",
         "datum": "2023-07-31",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Danny van der Weel",
+            "Nick Stuy"
+        ]
     },
     {
         "id": "344",
@@ -2859,7 +3201,10 @@
         "titel": "Mijmeren met Job van Tol",
         "tijd": "148",
         "datum": "2023-08-07",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Job van Tol"
+        ]
     },
     {
         "id": "345",
@@ -2867,7 +3212,10 @@
         "titel": "Onze favoriete special effects in de Efteling",
         "tijd": "129",
         "datum": "2023-08-14",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Maurice de Zeeuw"
+        ]
     },
     {
         "id": "346",
@@ -2875,7 +3223,10 @@
         "titel": "Adieu Grand Circus Balancé",
         "tijd": "115",
         "datum": "2023-08-21",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Wessel Wit"
+        ]
     },
     {
         "id": "347",
@@ -2891,7 +3242,10 @@
         "titel": "Mark Jansen over technisch ontwerp en duurzaamheid",
         "tijd": "90",
         "datum": "2023-09-04",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Mark Jansen"
+        ]
     },
     {
         "id": "349",
@@ -2907,7 +3261,10 @@
         "titel": "In gesprek met Arijan van Bavel",
         "tijd": "134",
         "datum": "2023-09-17",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Arijan van Bavel"
+        ]
     },
     {
         "id": "351",
@@ -2949,7 +3306,10 @@
         "titel": "Mijmeren met Xander de Rycke",
         "tijd": "101",
         "datum": "2023-10-16",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Xander de Rycke"
+        ]
     },
     {
         "id": "356",
@@ -2965,7 +3325,11 @@
         "titel": "Efteling pins",
         "tijd": "177",
         "datum": "2023-10-30",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Dennis Pestman",
+            "Carlo van Schijndel"
+        ]
     },
     {
         "id": "358",
@@ -2981,7 +3345,10 @@
         "titel": "Mijmeren met Willem Sikkers",
         "tijd": "99",
         "datum": "2023-11-13",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Willem Sikkers"
+        ]
     },
     {
         "id": "360",
@@ -2997,7 +3364,13 @@
         "titel": "Achter de schermen bij de Spookslot-documentaire van De Vijf Zintuigen",
         "tijd": "210",
         "datum": "2023-11-26",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Marwin van de Hoeve",
+            "Melvin Blootshoofd",
+            "Sander Roeling",
+            "Carlo van Schijndel"
+        ]
     },
     {
         "id": "362",
@@ -3031,7 +3404,10 @@
         "titel": "De internationalisering van de Efteling",
         "tijd": "119",
         "datum": "2023-12-22",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Danny Nobel"
+        ]
     },
     {
         "id": "366",
@@ -3047,7 +3423,10 @@
         "titel": "In gesprek met Marjolein Mens",
         "tijd": "149",
         "datum": "2024-01-08",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Marjolein Mens"
+        ]
     },
     {
         "id": "368",
@@ -3071,7 +3450,10 @@
         "titel": "De muziek van Baron 1898",
         "tijd": "83",
         "datum": "2024-01-22",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "René Merkelbach"
+        ]
     },
     {
         "id": "371",
@@ -3097,7 +3479,11 @@
         "titel": "Mijmeren met Bart Baan en Niels Kooyman",
         "tijd": "168",
         "datum": "2024-02-05",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Bart van Iersel",
+            "Niels Kooyman"
+        ]
     },
     {
         "id": "374",
@@ -3107,7 +3493,10 @@
         "datum": "2024-02-07",
         "categorie": "achtergrond",
         "latitude": "51.687166",
-        "longitude": "5.070593"
+        "longitude": "5.070593",
+        "gasten": [
+            "Lucio Messercola"
+        ]
     },
     {
         "id": "375",
@@ -3123,7 +3512,10 @@
         "titel": "In gesprek met Steven Grant",
         "tijd": "56",
         "datum": "2024-02-19",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Steven Grant"
+        ]
     },
     {
         "id": "377",
@@ -3155,7 +3547,11 @@
         "titel": "Wat met de Winter Efteling?",
         "tijd": "138",
         "datum": "2024-03-18",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roel van Tilborg",
+            "Yves Kortleven"
+        ]
     },
     {
         "id": "381",
@@ -3171,7 +3567,10 @@
         "titel": "De Grote Podcastlas: de Efteling",
         "tijd": "108",
         "datum": "2024-04-01",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Leon Boelens"
+        ]
     },
     {
         "id": "383",
@@ -3179,7 +3578,10 @@
         "titel": "Hein Oomen over onderhoud in de Efteling",
         "tijd": "124",
         "datum": "2024-04-08",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Hein Oomen"
+        ]
     },
     {
         "id": "384",
@@ -3205,7 +3607,10 @@
         "titel": "In gesprek met Wieteke van Dort",
         "tijd": "47",
         "datum": "2024-04-22",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Wieteke van Dort"
+        ]
     },
     {
         "id": "387",
@@ -3221,7 +3626,10 @@
         "titel": "In gesprek met Alma Nieto",
         "tijd": "93",
         "datum": "2024-05-06",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Alma Nieto"
+        ]
     },
     {
         "id": "389",
@@ -3229,7 +3637,10 @@
         "titel": "Truth or dare",
         "tijd": "110",
         "datum": "2024-05-13",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Marwin van de Hoeve"
+        ]
     },
     {
         "id": "390",
@@ -3253,7 +3664,10 @@
         "titel": "Mijmeren met dominee Otto Grevink",
         "tijd": "103",
         "datum": "2024-05-25",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Otto Grevink"
+        ]
     },
     {
         "id": "393",
@@ -3269,7 +3683,11 @@
         "titel": "Olaf vertel eens…",
         "tijd": "98",
         "datum": "2024-06-10",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Pascale Vugts",
+            "Olaf Vugts"
+        ]
     },
     {
         "id": "395",
@@ -3303,7 +3721,11 @@
         "titel": "De financiën van de Efteling in 2023",
         "tijd": "118",
         "datum": "2024-07-08",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roel van Tilborg",
+            "Martijn van der Werf"
+        ]
     },
     {
         "id": "399",
@@ -3319,7 +3741,11 @@
         "titel": "Eftelings bouwen met Henk Schellekens en Frank Poels",
         "tijd": "105",
         "datum": "2024-07-22",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Henk Schellekens",
+            "Frank Poels"
+        ]
     },
     {
         "id": "401",
@@ -3329,7 +3755,13 @@
         "datum": "2024-07-29",
         "categorie": "interview",
         "latitude": "51.693441",
-        "longitude": "5.190034"
+        "longitude": "5.190034",
+        "gasten": [
+            "Tristan Sekeris",
+            "Sander de Vaan",
+            "Erwin van Veldhoven",
+            "Jordi van Veldhoven"
+        ]
     },
     {
         "id": "402",
@@ -3337,7 +3769,10 @@
         "titel": "Mijmeren met Adri van Esch",
         "tijd": "144",
         "datum": "2024-08-05",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Adri van Esch"
+        ]
     },
     {
         "id": "403",
@@ -3345,7 +3780,10 @@
         "titel": "Blind genieten van de Efteling met Bart",
         "tijd": "64",
         "datum": "2024-08-12",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Rick van Miert"
+        ]
     },
     {
         "id": "404",
@@ -3361,7 +3799,10 @@
         "titel": "Mijmeren met Tom Rijpert",
         "tijd": "139",
         "datum": "2024-08-26",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Tom Rijpert"
+        ]
     },
     {
         "id": "406",
@@ -3377,7 +3818,11 @@
         "titel": "LEGO en de Efteling",
         "tijd": "120",
         "datum": "2024-09-08",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Mark Versteden",
+            "Roeland Van de Walle"
+        ]
     },
     {
         "id": "408",
@@ -3393,7 +3838,10 @@
         "titel": "In gesprek met Jaap den Bleker",
         "tijd": "104",
         "datum": "2024-09-23",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Jaap den Bleker"
+        ]
     },
     {
         "id": "410",
@@ -3435,7 +3883,10 @@
         "titel": "De wetenschap achter achtbanen",
         "tijd": "149",
         "datum": "2024-10-21",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Jurnan Schilder"
+        ]
     },
     {
         "id": "415",
@@ -3443,7 +3894,11 @@
         "titel": "Het muziekstuk Danse Macabre",
         "tijd": "78",
         "datum": "2024-10-28",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Rebecca van der Weijde",
+            "Ben Mathot"
+        ]
     },
     {
         "id": "416",
@@ -3469,7 +3924,10 @@
         "titel": "Paul van Loon over Danse Macabre Het Begin",
         "tijd": "30",
         "datum": "2024-11-06",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Paul van Loon"
+        ]
     },
     {
         "id": "419",
@@ -3477,7 +3935,10 @@
         "titel": "Coen Janssen over The Ghost in Me",
         "tijd": "125",
         "datum": "2024-11-11",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Coen Janssen"
+        ]
     },
     {
         "id": "420",
@@ -3493,7 +3954,11 @@
         "titel": "In gesprek met Marc en Marjan Taminiau (deel 1)",
         "tijd": "141",
         "datum": "2024-11-25",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Marc Taminiau",
+            "Marjan Taminiau"
+        ]
     },
     {
         "id": "422",
@@ -3511,7 +3976,11 @@
         "datum": "2024-12-09",
         "categorie": "interview",
         "latitude": "52.099132",
-        "longitude": "4.298970"
+        "longitude": "4.298970",
+        "gasten": [
+            "Peter Koppelmans",
+            "Yvette Nieboer"
+        ]
     },
     {
         "id": "424",
@@ -3545,7 +4014,10 @@
         "titel": "De draaiorgels van de Efteling met Martin Conrads",
         "tijd": "145",
         "datum": "2024-12-23",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Martin Conrads"
+        ]
     },
     {
         "id": "428",
@@ -3585,7 +4057,11 @@
         "titel": "In gesprek met Marc en Marjan Taminiau (deel 2)",
         "tijd": "110",
         "datum": "2025-01-27",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Marc Taminiau",
+            "Marjan Taminiau"
+        ]
     },
     {
         "id": "433",
@@ -3603,7 +4079,11 @@
         "datum": "2025-02-10",
         "categorie": "interview",
         "latitude": "51.648746",
-        "longitude": "5.048502"
+        "longitude": "5.048502",
+        "gasten": [
+            "Stan Dingemans",
+            "Michelle Jansen"
+        ]
     },
     {
         "id": "435",
@@ -3619,7 +4099,10 @@
         "titel": "In gesprek met Bernadette van der Velden",
         "tijd": "42",
         "datum": "2025-02-24",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Bernadette van der Velden"
+        ]
     },
     {
         "id": "437",
@@ -3637,7 +4120,10 @@
         "datum": "2025-03-10",
         "categorie": "achtergrond",
         "latitude": "51.652078",
-        "longitude": "5.049704"
+        "longitude": "5.049704",
+        "gasten": [
+            "Patrick van den Nieuwenhuizen"
+        ]
     },
     {
         "id": "439",
@@ -3663,7 +4149,10 @@
         "titel": "In gesprek met Robert-Jaap Jansen",
         "tijd": "125",
         "datum": "2025-03-24",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Robert-Jaap Jansen"
+        ]
     },
     {
         "id": "442",
@@ -3679,7 +4168,10 @@
         "titel": "In gesprek met Coen Schelfhorst",
         "tijd": "149",
         "datum": "2025-04-07",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Coen Schelfhorst"
+        ]
     },
     {
         "id": "444",
@@ -3695,7 +4187,10 @@
         "titel": "In gesprek met Ray Eddy",
         "tijd": "72",
         "datum": "2025-04-21",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Ray Eddy"
+        ]
     },
     {
         "id": "446",
@@ -3713,7 +4208,11 @@
         "datum": "2025-05-05",
         "categorie": "achtergrond",
         "latitude": "51.650227",
-        "longitude": "5.048660"
+        "longitude": "5.048660",
+        "gasten": [
+            "Jorg Verbart",
+            "Dimphy Arons"
+        ]
     },
     {
         "id": "448",
@@ -3767,7 +4266,11 @@
         "titel": "Sleutelmomenten in de geschiedenis van de Efteling",
         "tijd": "118",
         "datum": "2025-06-02",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Thijs Kinkhorst",
+            "Friso Geerlings"
+        ]
     },
     {
         "id": "454",
@@ -3783,7 +4286,10 @@
         "titel": "In gesprek met Stefan van der Putten",
         "tijd": "119",
         "datum": "2025-06-16",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Stefan van der Putten"
+        ]
     },
     {
         "id": "456",
@@ -3799,7 +4305,10 @@
         "titel": "De muziek van De Vliegende Hollander",
         "tijd": "99",
         "datum": "2025-06-30",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "René Merkelbach"
+        ]
     },
     {
         "id": "458",
@@ -3807,7 +4316,10 @@
         "titel": "Eftelings schilderen",
         "tijd": "116",
         "datum": "2025-07-07",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Michiel Reijnders"
+        ]
     },
     {
         "id": "459",
@@ -3823,7 +4335,11 @@
         "titel": "De financiën van de Efteling in 2024",
         "tijd": "187",
         "datum": "2025-07-21",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roel van Tilborg",
+            "Joris Teuwen"
+        ]
     },
     {
         "id": "461",
@@ -3831,7 +4347,11 @@
         "titel": "Mijmeren met Themepark Explorers Lars en Bryan",
         "tijd": "126",
         "datum": "2025-07-28",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Lars Janssen",
+            "Bryan Geraards"
+        ]
     },
     {
         "id": "462",
@@ -3839,7 +4359,10 @@
         "titel": "Robert Eggenkamp over Pretpark in Bedrijf",
         "tijd": "91",
         "datum": "2025-08-04",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Robert Eggenkamp"
+        ]
     },
     {
         "id": "463",
@@ -3847,7 +4370,11 @@
         "titel": "De plantaardige Efteling",
         "tijd": "101",
         "datum": "2025-08-11",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Cynthia Pallandt",
+            "Johanna van Langen"
+        ]
     },
     {
         "id": "464",
@@ -3881,7 +4408,11 @@
         "titel": "In gesprek over Efteling Symphonica",
         "tijd": "157",
         "datum": "2025-09-08",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Jaap den Bleker",
+            "Eric Brekelmans"
+        ]
     },
     {
         "id": "468",
@@ -3897,7 +4428,10 @@
         "titel": "De Efteling en videogames",
         "tijd": "153",
         "datum": "2025-09-22",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Tara Blommaart"
+        ]
     },
     {
         "id": "470",
@@ -3949,7 +4483,10 @@
         "datum": "2025-10-26",
         "categorie": "interview",
         "latitude": "51.6460630",
-        "longitude": "5.0532308"
+        "longitude": "5.0532308",
+        "gasten": [
+            "Yvonne Keasberry"
+        ]
     },
     {
         "id": "476",
@@ -3967,7 +4504,11 @@
         "datum": "2025-11-03",
         "categorie": "interview",
         "latitude": "51.685696",
-        "longitude": "5.126605"
+        "longitude": "5.126605",
+        "gasten": [
+            "Wessel Wit",
+            "Steven van Gils"
+        ]
     },
     {
         "id": "478",
@@ -3985,7 +4526,11 @@
         "datum": "2025-11-17",
         "categorie": "interview",
         "latitude": "51.685696",
-        "longitude": "5.126615"
+        "longitude": "5.126615",
+        "gasten": [
+            "Sander de Bruijn",
+            "Ronald Donkers"
+        ]
     },
     {
         "id": "480",
@@ -4019,7 +4564,10 @@
         "titel": "In gesprek met Leroy Koevoets",
         "tijd": "219",
         "datum": "2025-12-15",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Leroy Koevoets"
+        ]
     },
     {
         "id": "484",
@@ -4044,7 +4592,9 @@
         "tijd": "168",
         "datum": "2026-01-05",
         "categorie": "achtergrond",
-        "latitude": ""
+        "gasten": [
+            "Bas Reuwer"
+        ]
     },
     {
         "id": "487",
@@ -4070,7 +4620,10 @@
         "titel": "In gesprek met Sven Olree",
         "tijd": "129",
         "datum": "2026-01-19",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Sven Olree"
+        ]
     },
     {
         "id": "490",
@@ -4086,7 +4639,10 @@
         "titel": "De Efteling en inclusiviteit",
         "tijd": "117",
         "datum": "2026-02-02",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roos Houtman"
+        ]
     },
     {
         "id": "492",
@@ -4102,7 +4658,11 @@
         "titel": "Dieren in de Efteling",
         "tijd": "190",
         "datum": "2026-02-16",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Manuël Schiesser",
+            "Erwin Kompanje"
+        ]
     },
     {
         "id": "494",
@@ -4110,7 +4670,11 @@
         "titel": "Entertainment in de Efteling met Ellen Jongbloed en Mark van Haasteren",
         "tijd": "98",
         "datum": "2026-02-23",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Ellen Jongbloed",
+            "Mark van Haasteren"
+        ]
     },
     {
         "id": "495",
@@ -4126,7 +4690,11 @@
         "titel": "Veiligheid in pretparken",
         "tijd": "160",
         "datum": "2026-03-09",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Pierre van der Wijst",
+            "Peter van der Schans"
+        ]
     },
     {
         "id": "497",
@@ -4178,7 +4746,11 @@
         "titel": "Autisme en de Efteling",
         "tijd": "99",
         "datum": "2026-04-20",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Richard de Witte",
+            "Stefan Voogt"
+        ]
     },
     {
         "id": "503",
@@ -4186,7 +4758,10 @@
         "titel": "De muziek van Raveleijn",
         "tijd": "84",
         "datum": "2026-04-27",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "René Merkelbach"
+        ]
     },
     {
         "id": "504",
@@ -4194,7 +4769,10 @@
         "titel": "Cultureel erfgoed in de Efteling",
         "tijd": "172",
         "datum": "2026-05-04",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Calogero Dell’Aira"
+        ]
     },
     {
         "id": "505",
@@ -4210,7 +4788,10 @@
         "titel": "Mijmeren met Hylke Steggerda",
         "tijd": "83",
         "datum": "2026-05-18",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Hylke Steggerda"
+        ]
     },
     {
         "id": "507",
@@ -4226,7 +4807,11 @@
         "titel": "Efteling retail met Michael en Roy",
         "tijd": "98",
         "datum": "2026-06-01",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Michael van Dort",
+            "Roy van Gils"
+        ]
     },
     {
         "id": "509",
@@ -4234,7 +4819,10 @@
         "titel": "In gesprek met Carissa Baker",
         "tijd": "106",
         "datum": "2026-06-08",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Carissa Baker"
+        ]
     },
     {
         "id": "510",
@@ -4268,7 +4856,10 @@
         "titel": "In gesprek met Niels Wittkampf",
         "tijd": "158",
         "datum": "2026-07-06",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Niels Wittkampf"
+        ]
     },
     {
         "id": "514",
@@ -4284,7 +4875,11 @@
         "titel": "De financiën van de Efteling in 2025",
         "tijd": "210",
         "datum": "2026-07-20",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Roel van Tilborg",
+            "Joris Teuwen"
+        ]
     },
     {
         "id": "516",
@@ -4292,7 +4887,10 @@
         "titel": "AI in de Efteling",
         "tijd": "131",
         "datum": "2026-07-27",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Bob Snoeren"
+        ]
     },
     {
         "id": "517",
@@ -4308,7 +4906,10 @@
         "titel": "Mijmeren met William van Beek (over LEGO)",
         "tijd": "86",
         "datum": "2026-08-10",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "William van Beek"
+        ]
     },
     {
         "id": "519",
@@ -4332,7 +4933,11 @@
         "titel": "Terugblik op Raveleijn",
         "tijd": "164",
         "datum": "2026-08-31",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Philip Corsius",
+            "Christel Goorden"
+        ]
     },
     {
         "id": "522",
@@ -4340,7 +4945,11 @@
         "titel": "De Efteling bezoeken met een lichamelijke beperking",
         "tijd": "153",
         "datum": "2026-09-07",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "An de Cleyn",
+            "Nicky Tabak"
+        ]
     },
     {
         "id": "523",
@@ -4356,7 +4965,10 @@
         "titel": "De Efteling als natuurpark met Casper Boot",
         "tijd": "227",
         "datum": "2026-09-21",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Casper Boot"
+        ]
     },
     {
         "id": "525",
@@ -4388,7 +5000,19 @@
         "titel": "De Grote Kleine Boodschap Show",
         "tijd": "155",
         "datum": "2026-10-19",
-        "categorie": "achtergrond"
+        "categorie": "achtergrond",
+        "gasten": [
+            "Reinoud van Assendelft de Coningh",
+            "Moniek Hover",
+            "Alma Nieto",
+            "Goof Lukken",
+            "Pieter Cornelis",
+            "Rob Janssen",
+            "Niels Kooyman",
+            "Danny van der Weel",
+            "Luc van Laar",
+            "Jurnan Schilder"
+        ]
     },
     {
         "id": "529",
@@ -4396,7 +5020,11 @@
         "titel": "Erfgoedontwikkeling in de Efteling met Emile Castelain en Ronald Donkers",
         "tijd": "188",
         "datum": "2026-10-26",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Emile Castelain",
+            "Ronald Donkers"
+        ]
     },
     {
         "id": "530",
@@ -4422,6 +5050,9 @@
         "titel": "In gesprek met Patrick van de Sanden",
         "tijd": "159",
         "datum": "2026-11-09",
-        "categorie": "interview"
+        "categorie": "interview",
+        "gasten": [
+            "Patrick van de Sanden"
+        ]
     }
 ]

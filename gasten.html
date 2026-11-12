@@ -39,7 +39,7 @@
                         <div class="col-12">
                             <div>
                                 <h1 class="kb-paginakop">Gasten</h1>
-                                <p>Bekijk op deze pagina een overzicht van de interviews met gasten van de podcast.</p>
+                                <p>Bekijk op deze pagina een overzicht van de interviews met gasten van de podcast. Bij elke gast staan de nummers van de afleveringen waarin hij of zij te gast was; klik op een nummer om te zien welke aflevering het is.</p>
                             </div>
                         </div>
                     </div>
@@ -59,41 +59,87 @@
                 </div>
             </section>
         </main>
+        <!-- Details van een aflevering -->
+        <div class="modal fade" id="afleveringModal" tabindex="-1" aria-labelledby="afleveringModalTitel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title h5" id="afleveringModalTitel">Aflevering</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
+                    </div>
+                    <div class="modal-body" id="afleveringModalBody"></div>
+                </div>
+            </div>
+        </div>
         <div data-layout="footer"></div>
        <!-- bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
 <script src="assets/js/cookies.js"></script>
     <script>
-const BESTAND = "gasten.txt"; // pas dit aan naar de naam/locatie van jouw bronbestand
-let data = []; // [{naam, aantal, eersteIndex}]
+const BESTAND = "episodes.json"; // de gasten staan per aflevering in het veld 'gasten'
+let data = []; // [{naam, aantal, eersteIndex, afleveringen}]
+let afleveringen = new Map(); // id -> aflevering
 let huidigeSortering = "aantal";
 
 fetch(BESTAND)
   .then(res => {
     if (!res.ok) throw new Error("Kon " + BESTAND + " niet laden");
-    return res.text();
+    return res.json();
   })
-  .then(tekst => verwerk(tekst))
+  .then(eps => verwerk(eps))
   .catch(err => {
     document.getElementById("lijst").innerHTML =
       `<div class="col-12"><div class="alert alert-danger">Fout bij het laden van ${BESTAND}: ${err.message}</div></div>`;
   });
 
-function verwerk(tekst) {
-  const namen = tekst.split(",").map(n => n.trim()).filter(n => n.length > 0);
-
+function verwerk(eps) {
   const map = new Map();
-  namen.forEach((naam, index) => {
-    if (!map.has(naam)) {
-      map.set(naam, { naam, aantal: 0, eersteIndex: index });
-    }
-    map.get(naam).aantal++;
+  let index = 0;
+  [...eps].sort((a, b) => Number(a.id) - Number(b.id)).forEach(ep => {
+    afleveringen.set(String(ep.id), ep);
+    (ep.gasten || []).forEach(naam => {
+      if (!map.has(naam)) map.set(naam, { naam, aantal: 0, eersteIndex: index, afleveringen: [] });
+      const gast = map.get(naam);
+      gast.aantal++;
+      gast.afleveringen.push(ep);
+      index++;
+    });
   });
 
   data = Array.from(map.values());
   render();
 }
+
+// Labeltjes met de afleveringen waarin iemand te gast was
+function labels(gast) {
+  return `<ul class="kb-afllabels" aria-label="Afleveringen met ${gast.naam}">${gast.afleveringen.map(ep =>
+    `<li><button type="button" class="kb-afllabel" data-afl="${ep.id}" title="${ep.titel.replace(/"/g, "&quot;")}" aria-label="Aflevering ${ep.id}: ${ep.titel.replace(/"/g, "&quot;")}">${ep.id}</button></li>`).join("")}</ul>`;
+}
+
+// Venster met de details van een aflevering; na sluiten terug naar het labeltje
+const modal = document.getElementById("afleveringModal");
+let opener = null;
+modal.addEventListener("hidden.bs.modal", () => { if (opener && opener.isConnected) opener.focus(); });
+
+function toonAflevering(id, knop) {
+  const ep = afleveringen.get(id);
+  if (!ep) return;
+  opener = knop;
+  const datum = new Date(ep.datum).toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" });
+  const gasten = ep.gasten || [];
+  document.getElementById("afleveringModalTitel").textContent = `Aflevering ${ep.id}`;
+  document.getElementById("afleveringModalBody").innerHTML = `
+    <p class="fw-semibold mb-2">${ep.titel}</p>
+    <p class="mb-2">${datum} · ${ep.tijd} minuten · <span class="badge ${ep.categorie} kb-badge-tekst">${ep.categorie}</span></p>
+    ${gasten.length ? `<p class="mb-0"><span class="kb-muted">${gasten.length === 1 ? "Gast" : "Gasten"}:</span> ${gasten.join(", ")}</p>` : ""}`;
+  bootstrap.Modal.getOrCreateInstance(modal).show();
+}
+
+document.getElementById("lijst").addEventListener("click", e => {
+  const knop = e.target.closest("[data-afl]");
+  if (knop) toonAflevering(knop.dataset.afl, knop);
+});
 
 function render() {
   let gesorteerd = [...data];
@@ -115,7 +161,7 @@ function render() {
       const plek = plekVan(item);
       if (plek > 5) return;
       const groep = groepen.find(g => g.aantal === item.aantal);
-      if (groep) groep.namen.push(item.naam); else groepen.push({ plek, aantal: item.aantal, namen: [item.naam] });
+      if (groep) groep.gasten.push(item); else groepen.push({ plek, aantal: item.aantal, gasten: [item] });
     });
     const hoogste = groepen[0].aantal;
     const opsomming = namen => namen.length < 2 ? namen[0] : namen.slice(0, -1).join(", ") + " en " + namen[namen.length - 1];
@@ -127,8 +173,10 @@ function render() {
             <li class="${i === 0 ? "is-eerste" : ""}">
               <span class="kb-gastentop-plek">${g.plek}</span>
               <span class="kb-gastentop-midden">
-                <span class="kb-gastentop-namen">${opsomming(g.namen)}${g.namen.length > 1 ? ` <span class="kb-muted small">(gedeeld)</span>` : ""}</span>
+                <span class="kb-gastentop-namen">${opsomming(g.gasten.map(x => x.naam))}${g.gasten.length > 1 ? ` <span class="kb-muted small">(gedeeld)</span>` : ""}</span>
                 <span class="kb-gastentop-staaf" style="width: ${(g.aantal / hoogste * 100).toFixed(1)}%" aria-hidden="true"></span>
+                ${g.gasten.length === 1 ? labels(g.gasten[0]) : g.gasten.map(x =>
+                  `<span class="d-block small kb-muted mt-2">${x.naam}</span>${labels(x).replace('class="kb-afllabels"', 'class="kb-afllabels mt-1"')}`).join("")}
               </span>
               <span class="kb-gastentop-aantal">${g.aantal}×</span>
             </li>`).join("")}
@@ -141,9 +189,10 @@ function render() {
     <div class="col-12">
       <div class="list-group list-group-flush">
         ${gesorteerd.map(item => `
-          <div class="list-group-item naam-item d-flex justify-content-between align-items-center">
+          <div class="list-group-item naam-item kb-gast">
             <span>${item.naam}</span>
             <span class="fw-semibold">${item.aantal}×</span>
+            ${labels(item)}
           </div>
         `).join("")}
       </div>

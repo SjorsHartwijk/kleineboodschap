@@ -1,7 +1,8 @@
 // Haalt nieuwe afleveringen op uit de RSS-feed van Kleine Boodschap, voegt ze toe aan
 // afleveringen.csv en zet de csv om naar episodes.json. De lastmod van de homepage in
-// sitemap.xml wordt op het huidige tijdstip gezet. Daarna is er ruimte om gasten
-// toe te voegen aan gasten.txt, en vraagt het script of de commit mag plaatsvinden.
+// sitemap.xml wordt op het huidige tijdstip gezet. Bij interviews en achtergrondafleveringen
+// vraagt het script naar de gasten (kolom 'gasten', gescheiden door ';'). Daarna vraagt het
+// script of de commit mag plaatsvinden.
 //
 //   node update.js               nieuwe afleveringen toevoegen, daarna vragen om te committen
 //   node update.js --no-commit   alleen bestanden bijwerken, niet vragen om te committen
@@ -13,7 +14,6 @@ const { execSync } = require('child_process');
 
 const FEED = 'https://kleineboodschap.fireside.fm/rss';
 const CSV = 'afleveringen.csv';
-const GASTEN = 'gasten.txt';
 const SITEMAP = 'sitemap.xml';
 const HOMEPAGE = 'https://kbdata.nl/';
 const CATEGORIEEN = ['nieuws', 'achtergrond', 'interview', 'reportage'];
@@ -173,7 +173,6 @@ async function main() {
 
   const rl = maakLezer();
   const regels = [];
-  const metGasten = [];
   for (const e of nieuw) {
     console.log(`\n${e.id}: ${e.titel} (${e.datum}, ${e.tijd} min)`);
     const gok = raadCategorie(e);
@@ -186,10 +185,15 @@ async function main() {
     if (categorie === 'reportage' || categorie === 'achtergrond') {
       locatie = await rl.vraag('  Locatie als "lat, long" (Enter = geen): ');
     }
+    let gasten = '';
+    if (categorie === 'achtergrond' || categorie === 'interview') {
+      gasten = (await rl.vraag('  Gasten, gescheiden door ; (Enter = geen): '))
+        .split(';').map(n => n.trim()).filter(Boolean).join('; ');
+    }
     const velden = [e.id, taal, csvVeld(e.titel), e.tijd, e.datum, categorie];
-    if (locatie) velden.push(...locatie.split(',').map(s => s.trim()));
+    if (locatie || gasten) velden.push(...(locatie ? locatie.split(',').map(s => s.trim()) : ['', '']));
+    if (gasten) velden.push(csvVeld(gasten));
     regels.push(velden.join(','));
-    if (categorie === 'achtergrond' || categorie === 'interview') metGasten.push(e);
   }
 
   const huidig = fs.readFileSync(CSV, 'utf8');
@@ -205,12 +209,6 @@ async function main() {
     rl.close();
     console.log('\nGeen commit gemaakt (--no-commit).');
     return;
-  }
-
-  if (metGasten.length) {
-    console.log(`\nLet op: deze aflevering(en) kunnen gasten hebben:`);
-    metGasten.forEach(e => console.log(`  ${e.id}: ${e.titel}`));
-    console.log(`Voeg de gasten nu onderaan ${GASTEN} toe (één per regel, als "Naam,") en sla het bestand op.`);
   }
 
   const laatste = nieuw[nieuw.length - 1];
@@ -229,7 +227,7 @@ async function main() {
     return;
   }
 
-  execSync(`git add ${CSV} episodes.json ${GASTEN} ${SITEMAP}`, { stdio: 'inherit' });
+  execSync(`git add ${CSV} episodes.json ${SITEMAP}`, { stdio: 'inherit' });
   execSync('git commit -F -', { input: bericht, stdio: ['pipe', 'inherit', 'inherit'] });
   console.log(`Commit gemaakt: ${bericht}`);
 }

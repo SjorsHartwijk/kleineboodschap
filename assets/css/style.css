@@ -1556,7 +1556,7 @@ footer a:hover, footer a:focus-visible {
   border-top: 2px solid var(--kb-text);
   /* Nummer 1 iets groter en in inktkleur */
 }
-.kb-gastentop li {
+.kb-gastentop > li {
   display: grid;
   grid-template-columns: 2rem minmax(0, 1fr) 3rem;
   gap: 14px;
@@ -1603,6 +1603,52 @@ footer a:hover, footer a:focus-visible {
 }
 .kb-gastentop .is-eerste .kb-gastentop-aantal {
   font-size: 1.15rem;
+}
+.kb-gastentop .kb-afllabels {
+  margin-top: 8px;
+}
+
+/* Gasten: labeltjes met de afleveringen waarin iemand te gast was */
+.kb-afllabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kb-afllabel {
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  padding: 4px 6px;
+  color: var(--kb-text);
+  background: transparent;
+  border: 1px solid var(--kb-border);
+  border-radius: 0;
+  cursor: pointer;
+}
+.kb-afllabel:hover {
+  border-color: var(--kb-primary);
+  color: var(--kb-primary);
+}
+.kb-afllabel:focus-visible {
+  outline: 2px solid var(--kb-primary);
+  outline-offset: 2px;
+}
+
+.kb-gast {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 16px;
+  row-gap: 6px;
+  align-items: start;
+}
+.kb-gast .kb-afllabels {
+  grid-column: 1/-1;
 }
 
 /* Afleveringen: tabs per pagina van 100, gelabeld met de afleveringsnummers */
