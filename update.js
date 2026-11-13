@@ -7,6 +7,10 @@
 //   node update.js               nieuwe afleveringen toevoegen, daarna vragen om te committen
 //   node update.js --no-commit   alleen bestanden bijwerken, niet vragen om te committen
 //   node update.js --check       bestaande data vergelijken met de feed (wijzigt niets)
+//   node update.js --zonder-bericht
+//                                commit zonder Bluesky-bericht (zet [geen bericht] in de commit).
+//                                Zijn er geen nieuwe afleveringen maar heb je afleveringen.csv of
+//                                episodes.json zelf aangepast, dan worden die wijzigingen gecommit.
 
 const fs = require('fs');
 const readline = require('readline');
@@ -21,6 +25,9 @@ const CATEGORIEEN = ['nieuws', 'achtergrond', 'interview', 'reportage'];
 const args = process.argv.slice(2);
 const CHECK = args.includes('--check');
 const COMMIT = !args.includes('--no-commit');
+const STIL = args.includes('--zonder-bericht');
+// Met dit label in het commitbericht slaat .github/workflows/main.yml het Bluesky-bericht over
+const GEEN_BERICHT = '[geen bericht]';
 
 function decode(s) {
   return s
@@ -168,6 +175,18 @@ async function main() {
   const nieuw = feed.filter(e => e.id > hoogste);
   if (!nieuw.length) {
     console.log(`Geen nieuwe afleveringen (laatste is ${hoogste}).`);
+    // Zelf aangepaste gegevens committen, zonder Bluesky-bericht
+    const gewijzigd = execSync(`git status --porcelain -- ${CSV} episodes.json`).toString().trim();
+    if (!gewijzigd) return;
+    if (!STIL || !COMMIT) {
+      console.log(`Wel gewijzigd:\n${gewijzigd}\nCommit ze zonder Bluesky-bericht met: node update.js --zonder-bericht`);
+      return;
+    }
+    console.log(`Gewijzigd:\n${gewijzigd}`);
+    const rl = maakLezer();
+    const bericht = (await rl.vraag('\nCommitbericht (Enter = "Gegevens bijgewerkt"): ')) || 'Gegevens bijgewerkt';
+    werkSitemapBij();
+    await commit(rl, bericht);
     return;
   }
 
@@ -215,10 +234,18 @@ async function main() {
   const bericht = nieuw.length === 1
     ? `Aflevering ${laatste.id}: ${laatste.titel}`
     : `Afleveringen ${nieuw[0].id} t/m ${laatste.id}`;
+  await commit(rl, bericht);
+}
+
+// Vraagt of de commit mag en commit dan de csv, json en sitemap. Met --zonder-bericht komt
+// [geen bericht] op een eigen regel onder de titel, zodat er niets op Bluesky verschijnt.
+async function commit(rl, titel) {
+  const bericht = STIL ? `${titel}\n\n${GEEN_BERICHT}` : titel;
+  const uitleg = STIL ? ' (zonder Bluesky-bericht)' : ' (met Bluesky-bericht na het pushen)';
 
   let antwoord = '';
   while (!['j', 'n'].includes(antwoord)) {
-    antwoord = (await rl.vraag(`\nMag de commit "${bericht}" plaatsvinden? (j/n): `)).toLowerCase();
+    antwoord = (await rl.vraag(`\nMag de commit "${titel}"${uitleg} plaatsvinden? (j/n): `)).toLowerCase();
   }
   rl.close();
 
@@ -229,7 +256,7 @@ async function main() {
 
   execSync(`git add ${CSV} episodes.json ${SITEMAP}`, { stdio: 'inherit' });
   execSync('git commit -F -', { input: bericht, stdio: ['pipe', 'inherit', 'inherit'] });
-  console.log(`Commit gemaakt: ${bericht}`);
+  console.log(`Commit gemaakt: ${titel}${uitleg}`);
 }
 
 main().catch(err => {

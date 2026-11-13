@@ -43,6 +43,11 @@ Is er geen nieuwe aflevering, dan meldt het script `Geen nieuwe afleveringen` en
 
 **Extra opties**
 - `node update.js --no-commit` werkt de bestanden bij en slaat de vraag om te committen over.
+- `node update.js --zonder-bericht` commit zonder Bluesky-bericht. Het script zet `[geen bericht]` in het commitbericht, en dan slaat de workflow in `.github/workflows/main.yml` het bericht over.
+  - Je kunt deze optie gebruiken bij nieuwe afleveringen.
+  - Je kunt hem ook gebruiken als er geen nieuwe afleveringen zijn, maar je `afleveringen.csv` of `episodes.json` zelf hebt aangepast. Het script vraagt dan om een commitbericht (Enter = "Gegevens bijgewerkt") en commit die wijzigingen.
+  - Het werkt ook als je zelf commit: zet `[geen bericht]` ergens in het commitbericht.
+  - Let op: het label moet in de **laatste** commit van een push staan. Push je meerdere commits tegelijk en heeft de laatste het label niet, dan komt er toch een bericht.
 - `node update.js --check` vergelijkt de bestaande data met de feed en wijzigt niets. Let op: een aantal verschillen is bewust. De datums volgen niet de feed, en bij enkele titels bevat de feed zelf een typefout (zoals 243 "Lavelaar" en 388 "Almo Nieto") of is onze titel uitgebreider (86, 210, 229 en 418).
 
 ### Aflevering toevoegen (handmatig)

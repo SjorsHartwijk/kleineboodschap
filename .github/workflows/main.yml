@@ -7,6 +7,8 @@ on:
 
 jobs:
   post:
+    # Geen bericht als "[geen bericht]" in het commitbericht staat (node update.js --zonder-bericht)
+    if: ${{ !contains(github.event.head_commit.message, '[geen bericht]') }}
     runs-on: ubuntu-24.04
     steps:
       - name: Send Bluesky Post
