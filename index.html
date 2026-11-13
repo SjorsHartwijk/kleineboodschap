@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/instellingen.js"></script>
+    <script src="assets/js/theme.js?v=20261113c"></script>
+    <script src="assets/js/instellingen.js?v=20261113c"></script>
     <meta name="theme-color" content="#154666"/>
     <title>Kleine Boodschap Data: statistieken van de Efteling-podcast</title>
     <meta name="description" content="Alles wat er over Kleine Boodschap te tellen valt: afleveringen, luistertijd, categorieën, trends en mijlpalen van de Efteling-podcast. Altijd actueel.">
@@ -23,15 +23,16 @@
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261113c">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/vendor/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
 </head>
 <body>
     <!-- Navigation-->
     <div data-layout="nav" data-container="container"></div>
-    <script src="assets/js/layout.js"></script>
+    <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
+    <script src="assets/js/cookies.js?v=20261113c"></script>
+    <script src="assets/js/layout.js?v=20261113c"></script>
     <main>
     <div class="container">
         <!-- Opening: kop links, vandaag in het archief rechts (assets/js/homepage.js) -->
@@ -122,7 +123,7 @@
             <div class="kb-sectiekop">
                 <h2 id="voorspelKop">Voorspellingen</h2>
                 <a class="kb-tekstlink" href="mijlpalen.html#voorspellingen">Alle voorspellingen</a>
-                <p class="small kb-muted w-100" id="voorspelUitleg"></p>
+                <p class="small kb-muted w-100" id="voorspelUitleg">Voorspellingen op basis van het afgelopen jaar. Het blijft een schatting.</p>
                 <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
             </div>
             <div class="row g-4 gx-lg-5">
@@ -240,7 +241,7 @@
                                             counts[weekdayIndex - 1]++;
                                         }
                                     });
-                                    new Chart(document.getElementById('weekdayBarChart'), {
+                                    kbGrafiek(document.getElementById('weekdayBarChart'), {
                                         type: 'bar',
                                         data: {
                                             labels: weekdays,
@@ -381,19 +382,15 @@
         }
         laadEpisodes();
     </script>
-    <!-- chart.js -->
-    <script src="assets/vendor/chartjs-4.6.1/chart.umd.min.js"></script>
     <!-- grafieken -->
-    <script src="assets/js/chart_episodes.js"></script>
-    <script src="assets/js/chart_episodes_year.js"></script>
-    <script src="assets/js/chart_languages.js"></script>
-    <script src="assets/js/mijlpalen.js?v=20261113b"></script>
-    <script src="assets/js/homepage.js"></script>
-    <script src="assets/js/trends.js"></script>
-    <script src="assets/js/voorspellingen.js?v=20261113"></script>
+    <script src="assets/js/chart_episodes.js?v=20261113c" defer></script>
+    <script src="assets/js/chart_episodes_year.js?v=20261113c" defer></script>
+    <script src="assets/js/chart_languages.js?v=20261113c" defer></script>
+    <script src="assets/js/mijlpalen.js?v=20261113c" defer></script>
+    <script src="assets/js/homepage.js?v=20261113c" defer></script>
+    <script src="assets/js/trends.js?v=20261113c" defer></script>
+    <script src="assets/js/voorspellingen.js?v=20261113c" defer></script>
     <!-- bootstrap -->
-    <script src="assets/vendor/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
-    <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
-    <script src="assets/js/cookies.js"></script>
+    <script src="assets/vendor/bootstrap-5.3.3/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>

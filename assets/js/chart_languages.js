@@ -35,11 +35,9 @@ fetch('episodes.json')
         const data = Object.values(languageCount);
         const colors = c => kbKleur(languageColors[labels[c.dataIndex]] || languageColors.Overig);
 
-        const languageChartContext = document
-            .getElementById('languageChart')
-            .getContext('2d');
+        const languageChartContext = document.getElementById('languageChart');
 
-        new Chart(languageChartContext, {
+        kbGrafiek(languageChartContext, {
             type: 'doughnut',
             data: {
                 labels: labels,

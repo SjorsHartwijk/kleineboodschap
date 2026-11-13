@@ -46,7 +46,7 @@
             tekst.innerHTML = `Gemiddelde duur per jaar, van <strong>${van} minuten</strong> in ${eerste} naar <strong>${naar} minuten</strong> in ${laatste}.`;
         }
 
-        new Chart(document.getElementById('trendDuurChart'), {
+        kbGrafiek(document.getElementById('trendDuurChart'), {
             type: 'line',
             data: {
                 labels: jaren,
@@ -97,7 +97,7 @@
                 + `het drukste kwartier is <strong>${labels[meest]} minuten</strong>.`;
         }
 
-        new Chart(document.getElementById('trendVerdelingChart'), {
+        kbGrafiek(document.getElementById('trendVerdelingChart'), {
             type: 'bar',
             data: {
                 labels,

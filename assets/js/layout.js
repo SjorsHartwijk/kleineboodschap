@@ -59,7 +59,7 @@
         return `
     <nav class="navbar navbar-top">
         <div class="${container}">
-            <a class="navbar-brand" href="index.html" title="Kleine Boodschap Data, naar de homepage"><img src="assets/images/logo-licht.svg" alt="Logo"> <span
+            <a class="navbar-brand" href="index.html" title="Kleine Boodschap Data, naar de homepage"><img src="assets/images/logo-licht.svg" alt="Logo" width="36" height="36"> <span
                     class="d-none d-md-inline-block">Kleine Boodschap Data</span><span
                     class="d-inline-block d-md-none">KB Data</span></a>
             <div class="kb-navknoppen d-flex align-items-center ms-auto">${instellingen()}
@@ -205,7 +205,6 @@
             const main = document.querySelector('main');
             if (!main) return;
             e.preventDefault();
-            main.setAttribute('tabindex', '-1');
             main.focus();
             main.scrollIntoView();
         });
@@ -233,8 +232,20 @@
         }
     }
 
+    // Het doel van "Naar de inhoud" moet bestaan en focus kunnen krijgen: <main> krijgt een id
+    // (als hij er nog geen heeft) en tabindex -1, en de link wijst daar rechtstreeks naar
+    function koppelInhoud() {
+        const main = document.querySelector('main');
+        const link = document.querySelector('.kb-naarinhoud');
+        if (!main || !link) return;
+        if (!main.id) main.id = 'inhoud';
+        main.setAttribute('tabindex', '-1');
+        link.setAttribute('href', '#' + main.id);
+    }
+
     function render() {
         document.querySelectorAll('[data-layout]').forEach(plaats);
+        koppelInhoud();
     }
 
     // Direct renderen wat er al staat (de navigatie bovenaan, zonder verspringen),

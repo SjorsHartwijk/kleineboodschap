@@ -51,7 +51,8 @@
         if (!canvas) return;
         const label = ep => `${ep.id}: ${ep.titel}`;
         const vastVlak = canvas.parentElement.classList.contains('kb-grafiekvlak');
-        const grafiek = new Chart(canvas, {
+        // Pas maken als de grafiek in beeld komt (zie kbGrafiek in theme.js); data van dat moment
+        kbGrafiek(canvas, () => ({
             type: 'bar',
             data: { labels: zichtbaar.map(label), datasets: datasets() },
             options: {
@@ -65,19 +66,21 @@
                     y: { beginAtZero: true, ticks: { stepSize: 30 } },
                 },
             },
+        })).then(grafiek => {
+            grafiek.$label = label;
+            grafieken.push(grafiek);
         });
-        grafiek.$label = label;
-        grafieken.push(grafiek);
     }
 
     // Verticaal: één rij per aflevering, in een blok dat zelf scrolt
-    let verticaal = null;
+    let verticaal = null, verticaalGestart = false;
     function maakVerticaal() {
         const canvas = document.getElementById('barChartV');
-        if (!canvas || verticaal || !afleveringen.length) return;
+        if (!canvas || verticaalGestart || !afleveringen.length) return;
+        verticaalGestart = true;
         zetHoogte(canvas);
         const label = ep => String(ep.id);
-        verticaal = new Chart(canvas, {
+        kbGrafiek(canvas, () => (zetHoogte(canvas), {
             type: 'bar',
             data: { labels: zichtbaar.map(label), datasets: datasets() },
             options: {
@@ -91,9 +94,11 @@
                 },
                 datasets: { bar: { categoryPercentage: 1, barPercentage: .8 } },
             },
+        })).then(grafiek => {
+            verticaal = grafiek;
+            verticaal.$label = label;
+            grafieken.push(verticaal);
         });
-        verticaal.$label = label;
-        grafieken.push(verticaal);
     }
     // De verticale grafiek is zo hoog als het aantal rijen dat zichtbaar is
     function zetHoogte(canvas) {

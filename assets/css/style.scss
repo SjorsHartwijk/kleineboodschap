@@ -1,3 +1,6 @@
+// Bootstrap Icons: alleen de gebruikte iconen (zie _iconen.scss); scheelt een blokkerend bestand van 87 kB
+@use 'iconen';
+
 /* Lettertypes: Alegreya (koppen) en Geist (tekst), zelf gehost in assets/fonts (SIL Open Font License).
    Alleen de tekensets latin en latin-ext; de browser laadt latin-ext pas als zo'n teken voorkomt. */
 /* Alegreya italic, latin-ext */
@@ -187,6 +190,11 @@
 /* ==========================================================================
    Basis
    ========================================================================== */
+/* Altijd ruimte voor de scrollbalk houden: anders schuift de hele pagina opzij zodra hij
+   (na het laden van de data) langer wordt dan het scherm. Op telefoons zweeft de scrollbalk. */
+html {
+    scrollbar-gutter: stable;
+}
 body {
     scroll-behavior: smooth;
     background-color: var(--kb-bg);
@@ -895,6 +903,8 @@ nav.navbar.navbar-top {
         gap: 2px 24px;
         padding-top: 6px;
         padding-bottom: 6px;
+        /* Al één regel hoog voordat "Bijgewerkt tot en met …" is ingevuld: anders schuift de pagina */
+        min-height: calc(.82rem * 1.5 + 12px);
     }
 }
 /* Jaartal achter "Wrapped" in het menu */
@@ -1190,6 +1200,24 @@ footer {
     position: relative;
     height: 240px;
 }
+/* Ruimte vasthouden voor blokken die pas na het laden van de data gevuld worden, zodat de
+   pagina niet verspringt (gemeten eindhoogtes; bij een andere hoogte schuift er hooguit iets onder) */
+#voorspelVolgende { min-height: 281px; }
+#voorspelJaar { min-height: 260px; }
+@media (min-width: 768px) { #voorspelJaar { min-height: 239px; } }
+#voorspelData { min-height: 180px; }
+#calendar-grid { min-height: 100vh; }
+#lijst { min-height: 100vh; }                                  /* gasten.html */
+.kb-paginanav.kb-wacht { min-height: 85px; margin-bottom: 16px; } /* afleveringen.html, tot de tabs er zijn (incl. hun ondermarge) */
+@media (min-width: 768px) { .kb-paginanav.kb-wacht { min-height: 43px; } }
+.kb-paginanav.kb-wacht + .table-responsive { min-height: 100vh; } /* lege tabel: footer niet in beeld laten springen */
+#todayEpisodes:empty { min-height: 73px; }                    /* index: ruimte voor één aflevering */
+#kbCijfers:empty { min-height: 860px; }                        /* index: 6 kerncijfers onder elkaar */
+@media (min-width: 768px) { #kbCijfers:empty { min-height: 417px; } }
+@media (min-width: 992px) { #kbCijfers:empty { min-height: 301px; } }
+#stats { min-height: 590px; }                                  /* wrapped.html: 5 kaarten onder elkaar */
+@media (min-width: 576px) { #stats { min-height: 379px; } }
+@media (min-width: 992px) { #stats { min-height: 153px; } }
 /* Voorspellingen: kans per categorie altijd in 2 kolommen (2 rijen) */
 .kb-kansen {
     display: grid;

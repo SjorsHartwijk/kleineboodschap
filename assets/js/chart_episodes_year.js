@@ -71,10 +71,10 @@ function loadEpisodesPerYear() {
         });
 
         // Creeër een canvas voor het staafdiagram
-        const ctx = document.getElementById('yearBarChart').getContext('2d');
+        const ctx = document.getElementById('yearBarChart');
 
         // Creeër het staafdiagram
-        const barChart = new Chart(ctx, {
+        kbGrafiek(ctx, {
             type: 'bar',
             data: {
                 labels: labels,

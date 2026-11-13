@@ -1,5 +1,6 @@
 // Cookiemelding en toestemming voor alle pagina's.
-// Gebruik in een pagina (onderaan de body):  <script src="assets/js/cookies.js"></script>
+// Gebruik in een pagina (bovenaan de body, direct vóór layout.js):  <script src="assets/js/cookies.js"></script>
+// Zo staat de melding er al voordat er iets op het scherm komt, en verschijnt hij in het eerste beeld.
 //
 // - Google Analytics wordt ALLEEN geladen nadat de bezoeker daar toestemming voor geeft.
 // - De keuze staat in localStorage onder 'cookieConsent' ('accepted' of 'rejected').
@@ -156,8 +157,10 @@
         else if (keuze !== 'rejected') toon();
     }
 
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
-    else start();
+    // Direct starten zodra er een body is: het script staat bovenaan de body (vóór layout.js), zodat
+    // de melding tegelijk met de rest van de pagina verschijnt en niet pas als alles geladen is
+    if (document.body) start();
+    else document.addEventListener('DOMContentLoaded', start);
 
     window.kbCookies = { toon };
 })();

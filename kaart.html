@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/instellingen.js"></script>
+    <script src="assets/js/theme.js?v=20261113c"></script>
+    <script src="assets/js/instellingen.js?v=20261113c"></script>
     <meta name="theme-color" content="#154666"/>
     <title>Kaart met alle opnameplekken | Kleine Boodschap Data</title>
     <meta name="description" content="Ontdek op de kaart waar afleveringen van Kleine Boodschap zijn opgenomen, in de Efteling en daarbuiten. Per plek zie je de aflevering en de categorie.">
@@ -25,19 +25,21 @@
     <link rel="manifest" href="site.webmanifest">
     
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261113c">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/vendor/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
     
     <link rel="stylesheet" href="assets/vendor/leaflet-1.9.4/leaflet.css">
+    <link rel="preconnect" href="https://tile.openstreetmap.org">
     
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- Navigation-->
     <div data-layout="nav"></div>
-    <script src="assets/js/layout.js"></script>
+    <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
+    <script src="assets/js/cookies.js?v=20261113c"></script>
+    <script src="assets/js/layout.js?v=20261113c"></script>
     <main class="flex-shrink-0">
         <section class="py-5">
             <div class="container">
@@ -78,9 +80,10 @@
     </main>
     <div data-layout="footer"></div>
 
-    <script src="assets/vendor/leaflet-1.9.4/leaflet.js"></script>
+    <script src="assets/vendor/leaflet-1.9.4/leaflet.js" defer></script>
     <script>
-        (function () {
+        // Leaflet wordt met defer geladen (blokkeert de pagina niet); de kaart start na het parsen
+        document.addEventListener('DOMContentLoaded', function () {
             // Leaflet werkt met [latitude, longitude]
             const EFTELING = [51.6497, 5.0502];
             const STRAAL_KM = 1;
@@ -94,9 +97,12 @@
             map.on('click focus', () => { map.scrollWheelZoom.enable(); $('kaartHint').hidden = true; });
             map.on('mouseout', () => map.scrollWheelZoom.disable());
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            // Eén tegelserver (zonder a/b/c-subdomeinen, zoals OpenStreetMap aanraadt; met preconnect in de head)
+            // en detectRetina, zodat de tegels op scherpe schermen niet onscherp zijn
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-                maxZoom: 19
+                maxZoom: 19,
+                detectRetina: true
             }).addTo(map);
 
             // Een laag per categorie, zodat de legenda ze aan en uit kan zetten
@@ -213,13 +219,11 @@
                         : 'Je locatie kon niet bepaald worden.';
                 }, { enableHighAccuracy: true, timeout: 10000 });
             });
-        })();
+        });
     </script>
 
-    <script src="assets/vendor/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/bootstrap-5.3.3/js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
-    <script src="assets/js/cookies.js"></script>
 </body>
 
 </html>

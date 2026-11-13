@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["--yes", "http-server@14.1.1", "-p", "8137", "-c-1", "--silent"],
       "port": 8137
+    },
+    {
+      "name": "kbdata-gzip",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve@14.2.4", "-l", "8138", "--no-clipboard", "-c", "C:/Users/SHARTW~1/AppData/Local/Temp/claude/e274dd031b11e88c/05b36e42-f7fa-4017-9d3b-810ae32c0de2/scratchpad/serve.json"],
+      "port": 8138
     }
   ]
 }

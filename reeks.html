@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/instellingen.js"></script>
+    <script src="assets/js/theme.js?v=20261113c"></script>
+    <script src="assets/js/instellingen.js?v=20261113c"></script>
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261113c">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -27,12 +27,13 @@
     <meta property="og:url" content="https://kbdata.nl/reeks.html">
     <meta property="og:image" content="https://kbdata.nl/assets/images/opengraph.png">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
 </head>
 <body class="d-flex flex-column h-100">
     <!-- Navigation-->
     <div data-layout="nav"></div>
-    <script src="assets/js/layout.js"></script>
+    <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
+    <script src="assets/js/cookies.js?v=20261113c"></script>
+    <script src="assets/js/layout.js?v=20261113c"></script>
     <main class="flex-shrink-0" id="reeks">
         <section class="py-5">
             <div class="container">
@@ -88,7 +89,13 @@
                 </div>
 
                 <!-- Resultaat -->
-                <div class="row row-cols-2 row-cols-lg-4 g-3 mb-4" id="reeksKaarten"></div>
+                <!-- Lege kaarten met dezelfde opbouw als in toon(), zodat de pagina niet verspringt als de cijfers binnenkomen -->
+                <div class="row row-cols-2 row-cols-lg-4 g-3 mb-4" id="reeksKaarten">
+                    <div class="col"><div class="card h-100"><div class="card-body"><div class="small kb-muted">Afleveringen</div><div class="kb-kaartwaarde">–</div><div class="small kb-muted">van de … in totaal</div></div></div></div>
+                    <div class="col"><div class="card h-100"><div class="card-body"><div class="small kb-muted">Luistertijd</div><div class="kb-kaartwaarde">–</div><div class="small kb-muted">… minuten erbij, … minuten in totaal</div></div></div></div>
+                    <div class="col"><div class="card h-100"><div class="card-body"><div class="small kb-muted">Gemiddelde duur</div><div class="kb-kaartwaarde">–</div></div></div></div>
+                    <div class="col"><div class="card h-100"><div class="card-body"><div class="small kb-muted">Periode</div><div class="kb-kaartwaarde">–</div><div class="small kb-muted">…</div></div></div></div>
+                </div>
 
                 <div class="row">
                     <div class="col-12 col-lg-5 mb-4">
@@ -139,8 +146,7 @@
     </main>
     <div data-layout="footer"></div>
 
-    <script src="assets/vendor/chartjs-4.6.1/chart.umd.min.js"></script>
-    <script src="assets/js/mijlpalen.js?v=20261113b"></script>
+    <script src="assets/js/mijlpalen.js?v=20261113c"></script>
     <script>
         (function () {
             const M = window.kbMijlpalen;
@@ -154,7 +160,7 @@
                 return u ? `${M.getal(u)} uur${m ? ` en ${m} min` : ''}` : `${m} min`;
             };
 
-            let afl = [], tempo, grafiek;
+            let afl = [], tempo, grafiek, grafiekConfig;
             let staat = { modus: 'nummer', van: '', tot: '', vanDatum: '', totDatum: '', perDag: '60' };
 
             function lees() {
@@ -279,8 +285,7 @@
                     groepen[index[k]][ep.categorie]++;
                 });
                 $('reeksGrafiekTitel').textContent = `Afleveringen in je reeks, per ${perJaar ? 'jaar' : 'maand'}`;
-                if (grafiek) grafiek.destroy();
-                grafiek = new Chart($('rangeChart'), {
+                const config = {
                     type: 'bar',
                     data: {
                         labels: groepen.map(g => g.label),
@@ -296,7 +301,13 @@
                         plugins: { legend: { display: false } },
                         scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } } },
                     },
-                });
+                };
+                // De grafiek wordt één keer gemaakt zodra hij in beeld komt (kbGrafiek in theme.js);
+                // daarna wordt alleen de data vervangen. Tot hij er is, telt alleen de laatste config.
+                if (grafiek) { grafiek.data = config.data; grafiek.update(); return; }
+                const eerste = !grafiekConfig;
+                grafiekConfig = config;
+                if (eerste) kbGrafiek($('rangeChart'), () => grafiekConfig).then(g => { grafiek = g; });
             }
 
             function snelkeuze(soort) {
@@ -336,9 +347,7 @@
         })();
     </script>
     <!-- bootstrap -->
-    <script src="assets/vendor/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
-    <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
-    <script src="assets/js/cookies.js"></script>
+    <script src="assets/vendor/bootstrap-5.3.3/js/bootstrap.bundle.min.js" defer></script>
 </body>
 
 </html>

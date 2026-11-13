@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/instellingen.js"></script>
+    <script src="assets/js/theme.js?v=20261113c"></script>
+    <script src="assets/js/instellingen.js?v=20261113c"></script>
     <meta name="theme-color" content="#154666"/>
     <title>Alle afleveringen doorzoeken | Kleine Boodschap Data</title>
     <meta name="description" content="Doorzoek het complete archief van Kleine Boodschap. Vind elke aflevering op titel of onderwerp, met categorie, duur en publicatiedatum.">
@@ -23,17 +23,18 @@
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261113c">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/vendor/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
 </head>
 
 <body class="d-flex flex-column h-100" id="afleveringen">
     <main class="flex-shrink-0">
         <!-- Navigation-->
         <div data-layout="nav"></div>
-        <script src="assets/js/layout.js"></script>
+        <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
+        <script src="assets/js/cookies.js?v=20261113c"></script>
+        <script src="assets/js/layout.js?v=20261113c"></script>
         <section class="afleveringen pt-5">
             <div class="container">
                 <div class="row">
@@ -49,8 +50,8 @@
                                 <span class="input-group-text"><i class="bi bi-search"></i></span>
                             </div>
                         </div>
-                        <p class="small kb-muted mb-2" id="paginaStatus" aria-live="polite"></p>
-                        <nav aria-label="Pagina&#39;s met afleveringen">
+                        <p class="small kb-muted mb-2" id="paginaStatus" aria-live="polite">Afleveringen laden…</p>
+                        <nav class="kb-paginanav kb-wacht" aria-label="Pagina&#39;s met afleveringen">
                             <ul class="kb-paginatabs" id="paginaTabs" hidden></ul>
                         </nav>
                         <div class="table-responsive">
@@ -131,6 +132,7 @@
                     // Tabs per pagina
                     const n = aantalPaginas();
                     tabs.hidden = n < 2;
+                    tabs.parentElement.classList.remove('kb-wacht'); // gereserveerde ruimte niet meer nodig
                     tabs.innerHTML = Array.from({ length: n }, (_, i) => i + 1).map(p => `
                         <li><button type="button" class="kb-paginatab${p === pagina ? ' active' : ''}" data-pagina="${p}"${p === pagina ? ' aria-current="page"' : ''} aria-label="Pagina ${p}: afleveringen ${label(p)}">${label(p)}</button></li>`).join('');
 
@@ -185,9 +187,7 @@
                     });
             })();
         </script>
-    <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
-    <script src="assets/js/cookies.js"></script>
     <!-- bootstrap -->
-    <script src="assets/vendor/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/bootstrap-5.3.3/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>

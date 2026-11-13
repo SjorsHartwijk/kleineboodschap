@@ -165,6 +165,39 @@
     window.addEventListener('load', () => { werkGrafiekenBij(); });
 
     window.kbKleur = kleur;
+
+    // Grafieken pas maken als ze (bijna) in beeld komen, en Chart.js pas dan laden.
+    // Dat scheelt veel rekenwerk bij het laden, vooral op telefoons; een grafiek die verborgen is
+    // (display: none, zoals een niet-actieve tab) wordt pas gemaakt zodra hij zichtbaar wordt.
+    //   kbGrafiek(canvas, config) -> Promise met de Chart; config mag ook een functie zijn die de
+    //   config teruggeeft (dan wordt de data pas op het moment van tekenen opgebouwd)
+    const CHART_JS = 'assets/vendor/chartjs-4.6.1/chart.umd.min.js';
+    let chartLader = null;
+    function laadChart() {
+        if (window.Chart) return Promise.resolve(window.Chart);
+        if (!chartLader) {
+            chartLader = new Promise((klaar, fout) => {
+                const script = document.createElement('script');
+                script.src = CHART_JS;
+                script.onload = () => { werkGrafiekenBij(); klaar(window.Chart); };
+                script.onerror = () => fout(new Error('Chart.js kon niet geladen worden'));
+                document.head.appendChild(script);
+            });
+        }
+        return chartLader;
+    }
+    function bijnaInBeeld(el) {
+        if (!('IntersectionObserver' in window)) return Promise.resolve();
+        return new Promise(klaar => {
+            const kijker = new IntersectionObserver(items => {
+                if (items.some(i => i.isIntersecting)) { kijker.disconnect(); klaar(); }
+            }, { rootMargin: '400px 0px' });
+            kijker.observe(el);
+        });
+    }
+    window.kbGrafiek = (canvas, config) => bijnaInBeeld(canvas)
+        .then(laadChart)
+        .then(C => new C(canvas, typeof config === 'function' ? config() : config));
     // Patronen per categorie, zelfde als in de CSS: achtergrond effen, nieuws schuine strepen,
     // interview stippen, reportage ruitjes. Een tegel van 8x8 px met de categoriekleur als ondergrond.
     const patroonCache = new Map();

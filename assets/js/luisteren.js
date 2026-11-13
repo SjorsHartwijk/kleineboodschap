@@ -72,13 +72,6 @@
         const jaarGeleden = new Date();
         jaarGeleden.setFullYear(jaarGeleden.getFullYear() - 1);
 
-        // Knoppen opbouwen
-        $('kiezerTijden').innerHTML = TIJDEN.map(t => `
-            <button type="button" class="btn btn-outline-secondary kb-tijdknop" data-min="${t.min}">${t.label}<span>${t.bij}</span></button>`).join('');
-        $('kiezerSoorten').innerHTML = CATEGORIEEN.map(c => `
-            <button type="button" class="kb-filterknop" data-soort="${c}"><span class="kb-legendablokje ${c}" aria-hidden="true"></span>${hoofdletter(c)}</button>`).join('');
-        $('kiezerPeriode').innerHTML = PERIODES.map(p => `
-            <button type="button" class="btn btn-outline-secondary" data-periode="${p.waarde}">${p.label}</button>`).join('');
         const schuif = $('kiezerMinuten');
 
         // Alle knoppen en velden laten zien wat er gekozen is
@@ -214,6 +207,15 @@
         toonKeuze();
         toon();
     }
+
+    // Knoppen meteen opbouwen (ze hangen niet af van de data), zodat het formulier niet verspringt
+    // als de afleveringen binnenkomen; de gekozen stand wordt zichtbaar zodra start() draait
+    $('kiezerTijden').innerHTML = TIJDEN.map(t => `
+        <button type="button" class="btn btn-outline-secondary kb-tijdknop" data-min="${t.min}">${t.label}<span>${t.bij}</span></button>`).join('');
+    $('kiezerSoorten').innerHTML = CATEGORIEEN.map(c => `
+        <button type="button" class="kb-filterknop" data-soort="${c}"><span class="kb-legendablokje ${c}" aria-hidden="true"></span>${hoofdletter(c)}</button>`).join('');
+    $('kiezerPeriode').innerHTML = PERIODES.map(p => `
+        <button type="button" class="btn btn-outline-secondary" data-periode="${p.waarde}">${p.label}</button>`).join('');
 
     fetch('episodes.json')
         .then(res => res.json())

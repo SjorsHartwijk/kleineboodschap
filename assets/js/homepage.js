@@ -19,6 +19,8 @@
             .filter(ep => ep.datum.getMonth() === nu.getMonth() && ep.datum.getDate() === nu.getDate())
             .sort((a, b) => b.datum - a.datum);
         $('todayLeeg').hidden = eerder.length > 0;
+        // Geen afleveringen: de lijst (met de ruimte die hij vooraf inneemt) verbergen
+        $('todayEpisodes').hidden = !eerder.length;
         $('todayEpisodes').innerHTML = eerder.map(ep => `
             <li>
                 <span class="kb-archief-jaar">${ep.datum.getFullYear()}</span>

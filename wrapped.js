@@ -107,15 +107,23 @@ function statistiekKaarten(afleveringen, categorie) {
     return kaarten.join('');
 }
 
+// De grafiek wordt één keer gemaakt zodra hij in beeld komt (kbGrafiek in theme.js) en daarna
+// alleen nog bijgewerkt; tot hij er is, telt alleen de laatste config
+let barChartConfig;
 function updateChart(filteredEpisodes) {
-    if (barChart) barChart.destroy();
+    const config = chartConfig(filteredEpisodes);
+    if (barChart) { barChart.destroy(); barChart = new Chart(barChart.canvas, config); return; }
+    const eerste = !barChartConfig;
+    barChartConfig = config;
+    if (eerste) kbGrafiek(document.getElementById('barChart'), () => barChartConfig).then(g => { barChart = g; });
+}
 
-    const barCtx = document.getElementById('barChart').getContext('2d');
+function chartConfig(filteredEpisodes) {
     const episodeDurations = filteredEpisodes.map(ep => parseInt(ep.tijd, 10));
     // Functie i.p.v. vaste kleuren, zodat de grafiek meekleurt met licht/donker
     const episodeColors = c => kbCategorieKleur(filteredEpisodes[c.dataIndex]?.categorie);
 
-    barChart = new Chart(barCtx, {
+    return {
         type: 'bar',
         data: {
             // Afleveringsnummers op de as (titels passen er niet leesbaar onder), titel in de tooltip
@@ -147,7 +155,7 @@ function updateChart(filteredEpisodes) {
                 y: { beginAtZero: true, title: { display: true, text: 'minuten' } }
             }
         }
-    });
+    };
 }
 
 // 🔹 Sorteerbare tabel functie (id, tijd, datum)

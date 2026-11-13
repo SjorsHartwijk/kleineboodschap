@@ -125,9 +125,9 @@
 
         // Alleen op mijlpalen.html: afleveringen per jaar, met het verwachte deel van dit jaar gestippeld
         const canvas = $('voorspelGrafiek');
-        if (canvas && window.Chart) {
+        if (canvas && window.kbGrafiek) {
             const lijst = [...eerdere, { j: jaar, aantal: nu.length }];
-            new Chart(canvas, {
+            kbGrafiek(canvas, {
                 type: 'bar',
                 data: {
                     labels: lijst.map(x => String(x.j)),
