@@ -1732,6 +1732,38 @@ footer {
         filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .35));
     }
 }
+/* Aantal afleveringen op één plek: rondje rechtsboven op de pin */
+.kb-marker-aantal {
+    position: absolute;
+    top: -6px;
+    right: -7px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 8px;
+    background: var(--kb-text);
+    color: var(--kb-bg);
+    border: 1.5px solid var(--kb-bg);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 13px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    box-sizing: border-box;
+}
+/* Popup met meerdere afleveringen op één plek */
+.kb-popup-lijst {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 240px;
+    overflow-y: auto;
+    li + li {
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid var(--kb-border);
+    }
+}
 /* Onder de kaart: groot getal met de plekken buiten het park en een knop om uit te zoomen */
 .kb-uitzoomen {
     display: flex;

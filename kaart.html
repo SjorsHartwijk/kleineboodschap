@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/theme.js?v=20261113c"></script>
-    <script src="assets/js/instellingen.js?v=20261113c"></script>
+    <script src="assets/js/theme.js?v=20261113d"></script>
+    <script src="assets/js/instellingen.js?v=20261113d"></script>
     <meta name="theme-color" content="#154666"/>
     <title>Kaart met alle opnameplekken | Kleine Boodschap Data</title>
     <meta name="description" content="Ontdek op de kaart waar afleveringen van Kleine Boodschap zijn opgenomen, in de Efteling en daarbuiten. Per plek zie je de aflevering en de categorie.">
@@ -25,7 +25,7 @@
     <link rel="manifest" href="site.webmanifest">
     
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261113c">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261113d">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     
@@ -38,15 +38,15 @@
     <!-- Navigation-->
     <div data-layout="nav"></div>
     <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
-    <script src="assets/js/cookies.js?v=20261113c"></script>
-    <script src="assets/js/layout.js?v=20261113c"></script>
+    <script src="assets/js/cookies.js?v=20261113d"></script>
+    <script src="assets/js/layout.js?v=20261113d"></script>
     <main class="flex-shrink-0">
         <section class="py-5">
             <div class="container">
                 <div class="row mb-4">
                     <div class="col-12 col-xxl-9">
                         <h1 class="kb-paginakop">Kaart</h1>
-                        <p class="mb-0">Op deze kaart staan de plekken waar afleveringen van Kleine Boodschap zijn opgenomen of over gaan, in de Efteling en daarbuiten. Klik op een markering om te zien welke aflevering erbij hoort.</p>
+                        <p class="mb-0">Op deze kaart staan de plekken waar afleveringen van Kleine Boodschap zijn opgenomen of over gaan, in de Efteling en daarbuiten. Klik op een markering om te zien welke aflevering erbij hoort. Staat er een getal op de markering, dan gaan er meerdere afleveringen over die plek.</p>
                     </div>
                 </div>
                 <div class="row g-4 g-lg-5">
@@ -64,7 +64,8 @@
                             <h2 class="h4">Legenda</h2>
                             <p class="small kb-muted mb-2">Klik op een categorie om die op de kaart aan of uit te zetten.</p>
                             <ul class="kb-legenda" id="kaartLegenda"></ul>
-                            <div class="kb-regel small mt-2"><span>Plekken op de kaart</span><span id="kaartTotaal"></span></div>
+                            <div class="kb-regel small mt-2"><span>Afleveringen op de kaart</span><span id="kaartAfleveringen"></span></div>
+                            <div class="kb-regel small"><span>Plekken op de kaart</span><span id="kaartTotaal"></span></div>
                             <div class="kb-regel small"><span>Buiten de Efteling</span><span id="kaartBuiten"></span></div>
                         </div>
                         <div class="kb-kaartpaneel">
@@ -105,23 +106,50 @@
                 detectRetina: true
             }).addTo(map);
 
-            // Een laag per categorie, zodat de legenda ze aan en uit kan zetten
-            const lagen = Object.fromEntries(CATEGORIEEN.map(c => [c, L.layerGroup().addTo(map)]));
+            // Eén laag met markers, die opnieuw wordt opgebouwd als de legenda een categorie aan of uit zet.
+            // Afleveringen op dezelfde plek krijgen samen één marker (met het aantal erop), zodat
+            // markers niet onzichtbaar op elkaar liggen.
+            const markerLaag = L.layerGroup().addTo(map);
+            const aan = new Set(CATEGORIEEN);
+            const PIN = 'M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z';
+            const kleur = c => `var(--kb-cat-${c}, var(--kb-muted))`;
+            let pinNummer = 0;
 
-            function marker(ep) {
+            // De pin: één kleur bij één categorie, anders verticaal verdeeld in de kleuren van de categorieën
+            function pin(categorieen) {
+                if (categorieen.length === 1) return `<path d="${PIN}" style="fill:${kleur(categorieen[0])}"/>`;
+                const id = 'kbPin' + (++pinNummer);
+                const breedte = 14 / categorieen.length; // de pin loopt van x=5 tot x=19
+                return categorieen.map((c, i) => `
+                    <clipPath id="${id}-${i}"><rect x="${5 + i * breedte}" y="0" width="${breedte}" height="24"/></clipPath>
+                    <path d="${PIN}" clip-path="url(#${id}-${i})" style="fill:${kleur(c)}"/>`).join('');
+            }
+
+            // Eén marker voor alle (zichtbare) afleveringen op één plek, nieuwste bovenaan
+            function marker(groep) {
+                const eps = groep.slice().sort((a, b) => b.datum.localeCompare(a.datum));
+                const categorieen = CATEGORIEEN.filter(c => eps.some(ep => ep.categorie === c));
+                const meer = eps.length > 1;
                 const icoon = L.divIcon({
-                    html: `<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" style="fill:var(--kb-cat-${ep.categorie}, var(--kb-muted))"/></svg>`,
+                    html: `<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">${pin(categorieen)}</svg>`
+                        + (meer ? `<span class="kb-marker-aantal" aria-hidden="true">${eps.length}</span>` : ''),
                     className: 'kb-marker',
                     iconSize: [26, 26],
                     iconAnchor: [13, 26],
                     popupAnchor: [0, -24]
                 });
-                return L.marker([ep.latitude, ep.longitude], { icon: icoon, title: `${ep.id}: ${ep.titel}`, alt: `${ep.id}: ${ep.titel}` })
-                    .bindPopup(`
-                        <div class="kb-popup">
-                            <strong>${veilig(ep.id)}: ${veilig(ep.titel)}</strong>
-                            <div class="d-flex align-items-center gap-2 small mt-1"><span class="kb-legendablokje ${veilig(ep.categorie)}" aria-hidden="true"></span>${veilig(ep.categorie)} · ${datumNL(ep.datum)}</div>
-                        </div>`);
+                const naam = meer
+                    ? `${eps.length} afleveringen: ${eps.map(ep => `${ep.id}: ${ep.titel}`).join('; ')}`
+                    : `${eps[0].id}: ${eps[0].titel}`;
+                const regel = ep => `
+                    <strong>${veilig(ep.id)}: ${veilig(ep.titel)}</strong>
+                    <div class="d-flex align-items-center gap-2 small mt-1"><span class="kb-legendablokje ${veilig(ep.categorie)}" aria-hidden="true"></span>${veilig(ep.categorie)} · ${datumNL(ep.datum)}</div>`;
+                const inhoud = meer
+                    ? `<div class="small kb-muted mb-1">${eps.length} afleveringen op deze plek</div>
+                       <ul class="kb-popup-lijst">${eps.map(ep => `<li>${regel(ep)}</li>`).join('')}</ul>`
+                    : regel(eps[0]);
+                return L.marker(plek(eps[0]), { icon: icoon, title: naam, alt: naam, keyboard: true })
+                    .bindPopup(`<div class="kb-popup">${inhoud}</div>`);
             }
 
             // Plekken buiten de Efteling: verder dan STRAAL_KM van het midden van het park
@@ -129,13 +157,31 @@
             let metPlek = [];
             const plek = ep => [parseFloat(ep.latitude), parseFloat(ep.longitude)];
             const isBuiten = ep => afstandKm(EFTELING, plek(ep)) > STRAAL_KM;
-            const zichtbaar = () => metPlek.filter(ep => map.hasLayer(lagen[ep.categorie]));
+            const zichtbaar = () => metPlek.filter(ep => aan.has(ep.categorie));
+            // Zichtbare afleveringen per plek (coördinaten op 5 decimalen, ongeveer een meter)
+            const sleutel = ep => plek(ep).map(x => x.toFixed(5)).join(',');
+            function plekken() {
+                const groepen = new Map();
+                zichtbaar().forEach(ep => {
+                    const k = sleutel(ep);
+                    if (!groepen.has(k)) groepen.set(k, []);
+                    groepen.get(k).push(ep);
+                });
+                return [...groepen.values()];
+            }
+            function tekenMarkers() {
+                markerLaag.clearLayers();
+                plekken().forEach(groep => marker(groep).addTo(markerLaag));
+            }
 
-            // Tellingen en de uitnodiging om uit te zoomen; volgen de categorieën die aan staan
+            // Tellingen en de uitnodiging om uit te zoomen; volgen de categorieën die aan staan.
+            // "Plekken" telt plekken, niet afleveringen: twee afleveringen op één plek tellen als één.
             function werkTellingBij() {
                 const z = zichtbaar();
-                const buiten = z.filter(isBuiten);
-                $('kaartTotaal').textContent = z.length;
+                const alle = plekken();
+                const buiten = alle.filter(groep => isBuiten(groep[0])).map(groep => groep[0]);
+                $('kaartTotaal').textContent = alle.length;
+                $('kaartAfleveringen').textContent = z.length;
                 $('kaartBuiten').textContent = buiten.length;
                 $('kaartBuitenGetal').textContent = buiten.length || '';
                 if (buiten.length) {
@@ -166,7 +212,7 @@
                 .then(res => res.json())
                 .then(data => {
                     metPlek = data.filter(ep => ep.latitude && ep.longitude && CATEGORIEEN.includes(ep.categorie));
-                    metPlek.forEach(ep => marker(ep).addTo(lagen[ep.categorie]));
+                    tekenMarkers();
 
                     // Legenda met aantallen, als knoppen om een categorie aan of uit te zetten
                     const aantal = c => metPlek.filter(ep => ep.categorie === c).length;
@@ -183,10 +229,13 @@
             $('kaartLegenda').addEventListener('click', e => {
                 const knop = e.target.closest('[data-categorie]');
                 if (!knop) return;
-                const laag = lagen[knop.dataset.categorie];
-                const aan = knop.getAttribute('aria-pressed') !== 'true';
-                knop.setAttribute('aria-pressed', aan);
-                if (aan) laag.addTo(map); else map.removeLayer(laag);
+                const c = knop.dataset.categorie;
+                const nuAan = knop.getAttribute('aria-pressed') !== 'true';
+                knop.setAttribute('aria-pressed', nuAan);
+                if (nuAan) aan.add(c); else aan.delete(c);
+                // Opnieuw groeperen: het aantal op een marker telt alleen de categorieën die aan staan
+                map.closePopup();
+                tekenMarkers();
                 werkTellingBij();
             });
 
