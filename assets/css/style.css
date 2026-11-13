@@ -1210,6 +1210,21 @@ footer a:hover, footer a:focus-visible {
   margin-left: 4px;
 }
 
+/* Record zonder groot getal (bijv. een lijstje): over de volle breedte van het blok */
+.kb-record .kb-record-breed {
+  grid-column: 1/-1;
+}
+
+.kb-record-breed .kb-legendablokje {
+  vertical-align: -1px;
+}
+
+/* Mijlpalen: grafiek met afleveringen per jaar, vaste hoogte (geen meegroeiende verhouding) */
+.kb-voorspelgrafiek {
+  position: relative;
+  height: 240px;
+}
+
 /* Voorspellingen: kans per categorie altijd in 2 kolommen (2 rijen) */
 .kb-kansen {
   display: grid;

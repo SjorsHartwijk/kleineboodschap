@@ -5,6 +5,7 @@
 //
 //   kbMijlpalen.laad()          -> Promise met afleveringen, gesorteerd op datum
 //   kbMijlpalen.bereken(afl)    -> { luistertijd, afleveringen, categorieen, gasten, jubilea, verwacht, tempo, ... }
+//   kbMijlpalen.records(afl)    -> { langste, kortste, perCategorie, stilte, vaakstTeGast, ... }
 //   kbMijlpalen.datum(d)        -> '22 april 2019'
 
 (function () {
@@ -140,6 +141,58 @@
         };
     }
 
+    // Records over alle afleveringen (afl gesorteerd op datum, zoals laad() teruggeeft)
+    function records(afl) {
+        const opDuur = afl.slice().sort((a, b) => a.minuten - b.minuten);
+        const som = (eps, f) => eps.reduce((s, ep) => s + f(ep), 0);
+        const hoogste = (lijst, f) => lijst.reduce((a, b) => f(b) > f(a) ? b : a);
+
+        // Langste aflevering per categorie
+        const perCategorie = CATEGORIEEN
+            .map(c => afl.filter(ep => ep.categorie === c))
+            .filter(eps => eps.length)
+            .map(eps => hoogste(eps, ep => ep.minuten));
+
+        // Per jaar en per maand (jaren met minder dan 5 afleveringen, zoals 2017, tellen niet mee)
+        const perJaar = new Map(), perMaand = new Map();
+        afl.forEach(ep => {
+            const j = ep.datum.getUTCFullYear(), m = ep.datum.toISOString().slice(0, 7);
+            if (!perJaar.has(j)) perJaar.set(j, []);
+            if (!perMaand.has(m)) perMaand.set(m, []);
+            perJaar.get(j).push(ep);
+            perMaand.get(m).push(ep);
+        });
+        const jaren = [...perJaar.entries()].filter(([, eps]) => eps.length >= 5)
+            .map(([jaar, eps]) => ({ jaar, aantal: eps.length, minuten: som(eps, ep => ep.minuten) }));
+        const maanden = [...perMaand.entries()].map(([maand, eps]) => ({ maand, aantal: eps.length, minuten: som(eps, ep => ep.minuten) }));
+
+        // Langste stilte tussen twee afleveringen
+        let stilte = { dagen: 0 };
+        for (let i = 1; i < afl.length; i++) {
+            const dagen = Math.round((afl[i].datum - afl[i - 1].datum) / DAG);
+            if (dagen > stilte.dagen) stilte = { dagen, van: afl[i - 1], tot: afl[i] };
+        }
+
+        // Gasten
+        const tellingGasten = new Map();
+        afl.forEach(ep => ep.gasten.forEach(n => tellingGasten.set(n, (tellingGasten.get(n) || 0) + 1)));
+        const meestGast = Math.max(0, ...tellingGasten.values());
+        const vaakstTeGast = [...tellingGasten.entries()].filter(([, n]) => n === meestGast).map(([naam]) => naam);
+        const meesteGasten = hoogste(afl, ep => ep.gasten.length);
+
+        return {
+            langste: opDuur.slice(-5).reverse(),
+            kortste: opDuur.slice(0, 5),
+            perCategorie,
+            meesteAfleveringen: jaren.length ? hoogste(jaren, j => j.aantal) : null,
+            meesteLuistertijd: jaren.length ? hoogste(jaren, j => j.minuten) : null,
+            druksteMaand: hoogste(maanden, m => m.aantal),
+            langsteMaand: hoogste(maanden, m => m.minuten),
+            stilte,
+            vaakstTeGast, meestGast, meesteGasten,
+        };
+    }
+
     // Alle behaalde mijlpalen in één lijst, nieuwste eerst
     function alle(r) {
         const lijst = [];
@@ -159,5 +212,5 @@
 
     const ICONEN = { luistertijd: 'bi-headphones', aflevering: 'bi-collection-play', categorie: 'bi-tag', gast: 'bi-mic', jubileum: 'bi-cake2' };
 
-    window.kbMijlpalen = { laad, bereken, alle, datum, getal, rangtelwoord, ICONEN };
+    window.kbMijlpalen = { laad, bereken, records, alle, datum, getal, rangtelwoord, ICONEN };
 })();

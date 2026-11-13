@@ -6,52 +6,52 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://kbdata.nl/</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
+  <lastmod>2026-11-13T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://kbdata.nl/afleveringen.html</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://kbdata.nl/kaart.html</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://kbdata.nl/kalender.html</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://kbdata.nl/over.html</loc>
   <lastmod>2026-11-10T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://kbdata.nl/kaart.html</loc>
+  <lastmod>2026-11-10T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kbdata.nl/kalender.html</loc>
+  <lastmod>2026-11-12T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kbdata.nl/over.html</loc>
+  <lastmod>2026-11-13T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://kbdata.nl/gasten.html</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
+  <lastmod>2026-11-12T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://kbdata.nl/grafiek.html</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
+  <lastmod>2026-11-12T00:00:00+00:00</lastmod>
   <priority>0.25</priority>
 </url>
 <url>
   <loc>https://kbdata.nl/reeks.html</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
+  <lastmod>2026-11-12T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://kbdata.nl/wrapped.html</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
+  <lastmod>2026-11-12T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://kbdata.nl/mijlpalen.html</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
+  <lastmod>2026-11-13T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>

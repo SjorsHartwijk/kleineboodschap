@@ -1,4 +1,6 @@
-// Voorspellingen op de homepage: de volgende aflevering en een voorspelling voor het lopende jaar.
+// Voorspellingen op de homepage en mijlpalen.html: de volgende aflevering en een voorspelling
+// voor het lopende jaar. Op mijlpalen.html ook de volgende vier verschijndata (#voorspelData)
+// en een grafiek per jaar (#voorspelGrafiek); die onderdelen verschijnen alleen als de plek bestaat.
 // Alles is gebaseerd op het afgelopen jaar aan afleveringen en wordt bij elke paginaweergave
 // opnieuw berekend. De afleveringen komen via kbMijlpalen.laad() (mijlpalen.js), dus de tijden
 // zijn al omgerekend naar de gekozen afspeelsnelheid (instellingen.js).
@@ -39,6 +41,15 @@
             .sort((a, b) => b.pct - a.pct);
 
         const datumTekst = datum.toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+
+        // Alleen op mijlpalen.html: de volgende vier verwachte verschijndata, elke week op die dag
+        if ($('voorspelData')) {
+            $('voorspelData').innerHTML = [0, 1, 2, 3].map(i => {
+                const d = new Date(datum.getTime() + i * 7 * DAG);
+                return `<li class="kb-mijlpaal kb-mijlpaal-straks"><div><strong>Aflevering ${laatste.id + 1 + i}</strong> <span class="kb-muted">· ${d.toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' })}</span></div></li>`;
+            }).join('');
+        }
+
         $('voorspelVolgende').innerHTML = `
             <div class="kb-record">
                 <div class="kb-record-getal">${datum.getUTCDate()}<small>${datum.toLocaleDateString('nl-NL', { month: 'short', timeZone: 'UTC' }).replace('.', '')}</small></div>
@@ -111,6 +122,68 @@
                 ${regel(`Luistertijd ${vergelijk(totaalUur, 'uur', ' uur')}`, `${getal(Math.round(nuMinuten / 60))} → ${getal(totaalUur)} uur`)}
                 ${regel(`Personen te gast ${vergelijk(totaalGasten, 'gasten', '')}`, `${getal(nuGasten)} → ${getal(totaalGasten)}`)}
             </div>`;
+
+        // Alleen op mijlpalen.html: afleveringen per jaar, met het verwachte deel van dit jaar gestippeld
+        const canvas = $('voorspelGrafiek');
+        if (canvas && window.Chart) {
+            const lijst = [...eerdere, { j: jaar, aantal: nu.length }];
+            new Chart(canvas, {
+                type: 'bar',
+                data: {
+                    labels: lijst.map(x => String(x.j)),
+                    datasets: [
+                        {
+                            label: 'Verschenen',
+                            data: lijst.map(x => x.aantal),
+                            backgroundColor: () => kbKleur('primary'),
+                            borderRadius: 0,
+                        },
+                        {
+                            label: 'Verwacht',
+                            data: lijst.map(x => x.j === jaar ? erbij : 0),
+                            backgroundColor: 'transparent',
+                            borderWidth: 0,
+                            borderRadius: 0,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            filter: c => c.raw > 0,
+                            callbacks: { label: c => `${c.dataset.label}: ${c.raw} afleveringen` },
+                        },
+                    },
+                    scales: {
+                        x: { stacked: true, grid: { display: false } },
+                        y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } },
+                    },
+                },
+                // Chart.js kent geen stippellijn voor staven: die tekenen we zelf om het verwachte deel
+                plugins: [{
+                    id: 'kbStippel',
+                    afterDatasetsDraw(chart) {
+                        const meta = chart.getDatasetMeta(1);
+                        const ctx = chart.ctx;
+                        meta.data.forEach((staaf, i) => {
+                            if (!chart.data.datasets[1].data[i]) return;
+                            const { x, y, base, width } = staaf.getProps(['x', 'y', 'base', 'width'], true);
+                            ctx.save();
+                            ctx.setLineDash([4, 3]);
+                            ctx.lineWidth = 2;
+                            ctx.strokeStyle = kbKleur('primary');
+                            ctx.strokeRect(x - width / 2 + 1, y + 1, width - 2, base - y - 1);
+                            ctx.restore();
+                        });
+                    },
+                }],
+            });
+            canvas.setAttribute('aria-label', `Staafdiagram van het aantal afleveringen per jaar. ${jaar}: ${nu.length} verschenen, rond ${erbij} verwacht, samen ${totaal}.`);
+        }
     }
 
     function start() {
@@ -121,7 +194,7 @@
             const recent = afl.filter(ep => ep.datum > new Date(laatste.datum.getTime() - 365 * DAG));
             volgendeAflevering(afl, recent);
             jaarVoorspelling(afl, recent);
-            $('voorspelUitleg').textContent = `Voorspellingen op basis van het afgelopen jaar: ${recent.length} afleveringen. Het blijft een schatting.`;
+            if ($('voorspelUitleg')) $('voorspelUitleg').textContent =`Voorspellingen op basis van het afgelopen jaar: ${recent.length} afleveringen. Het blijft een schatting.`;
         }).catch(fout => console.error('Voorspellingen konden niet geladen worden:', fout));
     }
 

@@ -14,15 +14,15 @@
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#154666"/>
-    <title>Mijlpalen en jubilea | Kleine Boodschap Data</title>
-    <meta name="description" content="Alle mijlpalen van Kleine Boodschap: uren luistertijd, jubileumafleveringen, mijlpalen per categorie en verjaardagen, plus wanneer de volgende komt.">
+    <title>Mijlpalen, records en voorspellingen | Kleine Boodschap Data</title>
+    <meta name="description" content="Wanneer verschijnt de volgende aflevering van Kleine Boodschap, wat zijn de records en welke mijlpalen zijn al behaald? Luistertijd, jubilea, categorieën en gasten op een rij.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://kbdata.nl/mijlpalen.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="nl_NL">
     <meta property="og:site_name" content="Kleine Boodschap Data">
-    <meta property="og:title" content="Mijlpalen en jubilea | Kleine Boodschap Data">
-    <meta property="og:description" content="Alle mijlpalen van Kleine Boodschap: uren luistertijd, jubileumafleveringen, mijlpalen per categorie en verjaardagen, plus wanneer de volgende komt.">
+    <meta property="og:title" content="Mijlpalen, records en voorspellingen | Kleine Boodschap Data">
+    <meta property="og:description" content="Wanneer verschijnt de volgende aflevering van Kleine Boodschap, wat zijn de records en welke mijlpalen zijn al behaald? Luistertijd, jubilea, categorieën en gasten op een rij.">
     <meta property="og:url" content="https://kbdata.nl/mijlpalen.html">
     <meta property="og:image" content="https://kbdata.nl/assets/images/opengraph.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -33,33 +33,72 @@
     <div data-layout="nav"></div>
     <script src="assets/js/layout.js"></script>
     <main class="flex-shrink-0" id="mijlpalen">
-        <section class="py-5">
-            <div class="container">
-                <div class="row mb-3">
-                    <div class="col-12 col-xxl-9">
-                        <h1 class="kb-paginakop">Mijlpalen</h1>
-                        <p>Alle mijlpalen van Kleine Boodschap op een rij: uren luistertijd, jubileumafleveringen, mijlpalen per categorie, het aantal gasten en de verjaardagen van de podcast. Bij elke nieuwe aflevering wordt alles automatisch bijgewerkt, inclusief de voorspellingen voor de volgende mijlpalen.</p>
-                        <p class="small kb-muted" id="mijlpalenSnelheid" hidden></p>
-                    </div>
+        <div class="container py-5">
+            <div class="row mb-4">
+                <div class="col-12 col-xxl-9">
+                    <h1 class="kb-paginakop">Mijlpalen, records en voorspellingen</h1>
+                    <p>Wanneer verschijnt de volgende aflevering, welke records staan er en welke mijlpalen zijn al behaald? Bij elke nieuwe aflevering wordt alles op deze pagina automatisch bijgewerkt, ook de voorspellingen.</p>
+                    <p class="small kb-muted" id="mijlpalenSnelheid" hidden></p>
+                    <nav class="kb-acties" aria-label="Op deze pagina">
+                        <a class="kb-tekstlink" href="#voorspellingen">Wat komt eraan</a>
+                        <a class="kb-tekstlink" href="#records">Records</a>
+                        <a class="kb-tekstlink" href="#behaald">Behaalde mijlpalen</a>
+                    </nav>
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="h4 card-title">Binnenkort</h2>
-                                <p class="small kb-muted" id="mijlpalenTempo"></p>
-                                <ul class="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 mb-0" id="mijlpalenVerwacht"></ul>
+            <!-- 1. Wat komt eraan (assets/js/voorspellingen.js en mijlpalen.js) -->
+            <section id="voorspellingen" class="pb-5" aria-labelledby="voorspelKop">
+                <div class="kb-sectiekop">
+                    <h2 id="voorspelKop">Wat komt eraan</h2>
+                    <p class="small kb-muted w-100" id="voorspelUitleg"></p>
+                </div>
+                <div class="row g-4 gx-lg-5 mb-5">
+                    <div class="col-12 col-md-6">
+                        <h3 class="kb-tussenkop">De volgende aflevering</h3>
+                        <div id="voorspelVolgende"></div>
+                        <h4 class="h6 mt-4 mb-2">De volgende vier</h4>
+                        <ul class="list-unstyled mb-0" id="voorspelData"></ul>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h3 class="kb-tussenkop">Dit jaar</h3>
+                        <div id="voorspelJaar"></div>
+                        <figure class="kb-figuur mt-4 mb-0">
+                            <figcaption>
+                                <h4 class="h6 mb-1">Afleveringen per jaar</h4>
+                                <p class="small kb-muted mb-2">Het gestippelde deel is wat er dit jaar nog verwacht wordt.</p>
+                            </figcaption>
+                            <div class="kb-voorspelgrafiek">
+                                <canvas id="voorspelGrafiek" role="img" aria-label="Staafdiagram van het aantal afleveringen per jaar"></canvas>
                             </div>
-                        </div>
+                        </figure>
                     </div>
                 </div>
 
+                <h3 class="kb-tussenkop">Binnenkort</h3>
+                <p class="small kb-muted" id="mijlpalenTempo"></p>
+                <ul class="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 mb-0" id="mijlpalenVerwacht"></ul>
+            </section>
+
+            <!-- 2. Records (kbMijlpalen.records in mijlpalen.js) -->
+            <section id="records" class="pb-5" aria-labelledby="recordsKop">
+                <div class="kb-sectiekop">
+                    <h2 id="recordsKop">Records</h2>
+                    <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
+                </div>
+                <div class="row g-4" id="mijlpalenRecords"></div>
+            </section>
+
+            <!-- 3. Behaalde mijlpalen (kbMijlpalen.bereken in mijlpalen.js) -->
+            <section id="behaald" aria-labelledby="behaaldKop">
+                <div class="kb-sectiekop">
+                    <h2 id="behaaldKop">Behaalde mijlpalen</h2>
+                </div>
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h2 class="h4 card-title">Luistertijd</h2>
+                                <h3 class="h4 card-title">Luistertijd</h3>
                                 <p class="small kb-muted">Na 50 uur en daarna elke 100 uur aan afleveringen.</p>
                                 <ul class="list-unstyled mb-0" id="mijlpalenLuistertijd"></ul>
                             </div>
@@ -68,7 +107,7 @@
                     <div class="col-12 col-lg-6 mb-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h2 class="h4 card-title">Afleveringen</h2>
+                                <h3 class="h4 card-title">Afleveringen</h3>
                                 <p class="small kb-muted">De allereerste aflevering en daarna elke 50e.</p>
                                 <ul class="list-unstyled mb-0" id="mijlpalenAfleveringen"></ul>
                             </div>
@@ -80,7 +119,7 @@
                     <div class="col-12 mb-4">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="h4 card-title">Per categorie</h2>
+                                <h3 class="h4 card-title">Per categorie</h3>
                                 <p class="small kb-muted">De eerste aflevering van elke categorie en daarna elke 50e.</p>
                                 <div class="row" id="mijlpalenCategorieen"></div>
                             </div>
@@ -92,7 +131,7 @@
                     <div class="col-12 col-lg-6 mb-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h2 class="h4 card-title">Jubilea</h2>
+                                <h3 class="h4 card-title">Jubilea</h3>
                                 <p class="small kb-muted" id="mijlpalenStart"></p>
                                 <ul class="list-unstyled mb-0" id="mijlpalenJubilea"></ul>
                             </div>
@@ -101,24 +140,31 @@
                     <div class="col-12 col-lg-6 mb-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h2 class="h4 card-title">Gasten</h2>
+                                <h3 class="h4 card-title">Gasten</h3>
                                 <p class="small kb-muted" id="mijlpalenGastenUitleg">De eerste gast en daarna elke 50e nieuwe gast. Wie vaker te gast was, telt één keer.</p>
                                 <ul class="list-unstyled mb-0" id="mijlpalenGasten"></ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
     <div data-layout="footer"></div>
 
-    <script src="assets/js/mijlpalen.js?v=20261112"></script>
+    <!-- chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/mijlpalen.js?v=20261113b"></script>
+    <script src="assets/js/voorspellingen.js?v=20261113"></script>
     <script>
         (function () {
             const M = window.kbMijlpalen;
             const vul = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
-            const titel = ep => `<span class="kb-muted">aflevering ${ep.id}: ${ep.titel}</span>`;
+            const veilig = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            const titel = ep => `<span class="kb-muted">aflevering ${ep.id}: ${veilig(ep.titel)}</span>`;
+            const hoofdletter = s => s.charAt(0).toUpperCase() + s.slice(1);
+            const MAANDEN = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+            const maandNaam = sleutel => `${MAANDEN[Number(sleutel.slice(5, 7)) - 1]} ${sleutel.slice(0, 4)}`;
 
             function item(kop, datum, detail) {
                 return `
@@ -137,9 +183,60 @@
                     </li>`;
             }
 
+            // Een record: groot getal met eenheid, wat het is en een toelichting (en eventueel een top 5)
+            function record(getalHtml, soort, wat, uitleg, extra = '') {
+                return `
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="kb-record">
+                            ${getalHtml ? `<div class="kb-record-getal">${getalHtml}</div>` : ''}
+                            <div${getalHtml ? '' : ' class="kb-record-breed"'}>
+                                <div class="small kb-muted">${soort}</div>
+                                <div class="fw-semibold">${wat}</div>
+                                ${uitleg ? `<div class="small kb-muted">${uitleg}</div>` : ''}
+                            </div>
+                            ${extra}
+                        </div>
+                    </div>`;
+            }
+            const top5 = lijst => `
+                <details class="kb-top5">
+                    <summary>Bekijk de top 5<i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+                    <ol class="kb-top5-lijst">${lijst.map((t, i) => `
+                        <li>
+                            <span class="kb-top5-plek">${i + 1}</span>
+                            <span class="kb-top5-titel">${veilig(t.titel)}
+                                <span class="kb-top5-meta"><span class="kb-legendablokje ${t.categorie}" aria-hidden="true"></span>Aflevering ${t.id} · ${t.categorie} · ${t.datum.getFullYear()}</span>
+                            </span>
+                            <span class="kb-top5-duur">${Math.round(t.minuten)} min</span>
+                        </li>`).join('')}
+                    </ol>
+                </details>`;
+
+            function toonRecords(afl) {
+                const r = M.records(afl);
+                const L = r.langste[0], K = r.kortste[0];
+                const uur = min => M.getal(Math.round(min / 60));
+                const blokken = [
+                    record(`${Math.round(L.minuten)}<small>min</small>`, 'Langste aflevering', veilig(L.titel), `Aflevering ${L.id} · ${L.categorie} · ${M.datum(L.datum)}`, top5(r.langste)),
+                    record(`${Math.round(K.minuten)}<small>min</small>`, 'Kortste aflevering', veilig(K.titel), `Aflevering ${K.id} · ${K.categorie} · ${M.datum(K.datum)}`, top5(r.kortste)),
+                    record('', 'Langste per categorie', '', '',
+                        `<div class="kb-record-breed">${r.perCategorie.map(ep => `<div class="kb-regel" title="${veilig(ep.titel)}"><span><span class="kb-legendablokje ${ep.categorie}" aria-hidden="true"></span> ${hoofdletter(ep.categorie)} <span class="kb-muted small">afl. ${ep.id}</span></span><span>${Math.round(ep.minuten)} min</span></div>`).join('')}</div>`),
+                ];
+                if (r.meesteAfleveringen) blokken.push(record(`${r.meesteAfleveringen.aantal}<small>afl.</small>`, 'Meeste afleveringen in een jaar', String(r.meesteAfleveringen.jaar), 'Startjaar 2017 (één aflevering) telt niet mee'));
+                if (r.meesteLuistertijd) blokken.push(record(`${uur(r.meesteLuistertijd.minuten)}<small>uur</small>`, 'Meeste luistertijd in een jaar', String(r.meesteLuistertijd.jaar), `${r.meesteLuistertijd.aantal} afleveringen`));
+                blokken.push(
+                    record(`${r.druksteMaand.aantal}<small>afl.</small>`, 'Drukste maand', hoofdletter(maandNaam(r.druksteMaand.maand)), `${r.druksteMaand.aantal} afleveringen in één maand`),
+                    record(`${M.getal(Math.round(r.langsteMaand.minuten))}<small>min</small>`, 'Meeste luistertijd in een maand', hoofdletter(maandNaam(r.langsteMaand.maand)), `${Math.floor(r.langsteMaand.minuten / 60)} uur en ${Math.round(r.langsteMaand.minuten % 60)} minuten`),
+                    record(`${r.stilte.dagen}<small>dagen</small>`, 'Langste stilte', `Tussen aflevering ${r.stilte.van.id} en ${r.stilte.tot.id}`, `Van ${M.datum(r.stilte.van.datum)} tot ${M.datum(r.stilte.tot.datum)}`),
+                );
+                if (r.meestGast) blokken.push(record(`${r.meestGast}<small>×</small>`, 'Vaakst te gast', r.vaakstTeGast.map(veilig).join(', '), '<a href="gasten.html">Alle gasten</a>'));
+                if (r.meesteGasten.gasten.length) blokken.push(record(`${r.meesteGasten.gasten.length}<small>gasten</small>`, 'Meeste gasten in één aflevering', veilig(r.meesteGasten.titel), `Aflevering ${r.meesteGasten.id} · ${M.datum(r.meesteGasten.datum)}`));
+                vul('mijlpalenRecords', blokken.join(''));
+            }
+
             if (window.kbSnelheid && kbSnelheid.waarde() !== kbSnelheid.STANDAARD) {
                 const el = document.getElementById('mijlpalenSnelheid');
-                el.textContent = `De luistertijd is omgerekend naar jouw afspeelsnelheid van ${kbSnelheid.formatteer(kbSnelheid.waarde())}.`;
+                el.textContent = `De tijden zijn omgerekend naar jouw afspeelsnelheid van ${kbSnelheid.formatteer(kbSnelheid.waarde())}.`;
                 el.hidden = false;
             }
 
@@ -161,6 +258,8 @@
                         </div>
                     </li>`).join(''));
 
+                toonRecords(afl);
+
                 vul('mijlpalenLuistertijd', r.luistertijd.map(m =>
                     item(`${M.getal(m.uur)} uur`, m.datum, `met ${titel(m.ep)}`)).join('') + straks(volgende('luistertijd')));
 
@@ -169,14 +268,14 @@
 
                 vul('mijlpalenCategorieen', r.CATEGORIEEN.map(c => `
                     <div class="col-12 col-md-6 col-xl-3 mb-3">
-                        <h3 class="h6 d-flex align-items-center gap-2"><span class="badge ${c}">&nbsp;</span> ${c[0].toUpperCase() + c.slice(1)} <span class="kb-muted fw-normal">(${M.getal(r.tellers[c])})</span></h3>
+                        <h4 class="h6 d-flex align-items-center gap-2"><span class="badge ${c}">&nbsp;</span> ${hoofdletter(c)} <span class="kb-muted fw-normal">(${M.getal(r.tellers[c])})</span></h4>
                         <ul class="list-unstyled mb-0">${r.categorieen[c].map(m =>
                             item(m.nummer === 1 ? "Eerste" : `${M.rangtelwoord(m.nummer)}`, m.datum, titel(m.ep))).join('')}${straks(volgende('categorie', c))}
                         </ul>
                     </div>`).join(''));
 
                 vul('mijlpalenGasten', r.gasten.map(m =>
-                    item(m.nummer === 1 ? `Eerste gast` : `${M.rangtelwoord(m.nummer)} gast`, m.datum, `${m.naam}, ${titel(m.ep)}`)).join('') + straks(volgende('gast')));
+                    item(m.nummer === 1 ? `Eerste gast` : `${M.rangtelwoord(m.nummer)} gast`, m.datum, `${veilig(m.naam)}, ${titel(m.ep)}`)).join('') + straks(volgende('gast')));
                 vul('mijlpalenGastenUitleg', `De eerste gast en daarna elke 50e nieuwe gast; wie vaker te gast was, telt één keer. Tot nu toe ${M.getal(r.aantalGasten)} gasten. De voorspelling gaat uit van de ${r.tempo.nieuweGasten} nieuwe gasten van het afgelopen jaar.`);
                 vul('mijlpalenStart', `De eerste aflevering verscheen op ${M.datum(r.eerste.datum)}.`);
                 vul('mijlpalenJubilea', r.jubilea.map(m =>
