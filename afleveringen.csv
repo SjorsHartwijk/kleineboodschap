@@ -46,7 +46,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 45,nl,Ons favoriete entertainment in de Efteling,76,2018-09-03,achtergrond
 46,nl,Seizoenen in de Efteling,75,2018-09-10,achtergrond
 47,nl,Het bestemmingsplandemonium,155,2018-09-17,nieuws
-48,nl,Première CARO,57,2018-09-19,reportage,51.648741,5.043564
+48,nl,Première CARO,57,2018-09-19,reportage,51.648425,5.043599
 49,nl,Onze favoriete parken buiten de Efteling,81,2018-09-24,achtergrond
 50,nl,Een flesje kinderchampagne,86,2018-10-01,nieuws
 51,nl,Fata Morgana tijdens onderhoud,30,2018-10-04,reportage,51.647095,5.045066
@@ -111,7 +111,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 110,nl,Jullie favoriete details,34,2019-08-21,achtergrond
 111,nl,De mooiste gebouwen in de Efteling,67,2019-08-26,achtergrond
 112,nl,Watergate,86,2019-09-02,nieuws
-113,nl,Afscheid van de Bob,68,2019-09-04,reportage,51.647987,5.047330
+113,nl,Afscheid van de Bob,68,2019-09-04,reportage,51.648073,5.047392
 114,nl,De magie van Verticaal gaan,74,2019-09-09,achtergrond,,,Ralf Verhoef
 115,nl,Anton Koekblik,98,2019-09-16,nieuws
 116,nl,Niet-gerealiseerde Efteling-projecten (deel 1),86,2019-09-23,achtergrond
@@ -157,7 +157,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 156,nl,De Grote Heropeningsshow,166,2020-06-01,nieuws
 157,nl,Ouder en wijzer?,60,2020-06-08,achtergrond
 158,nl,Verstopte bestemmingen,138,2020-06-15,nieuws
-159,nl,Max & Moritz,113,2020-06-22,reportage,51.648073, 5.047392
+159,nl,Max & Moritz,113,2020-06-22,reportage,51.648073,5.047392
 160,nl,De vlieg is nog aan het winnen,117,2020-06-29,nieuws
 161,nl,Reacties van luisteraars,70,2020-07-06,achtergrond
 162,nl,IJskoffie klinkt spannender dan Drenthe,105,2020-07-13,nieuws
