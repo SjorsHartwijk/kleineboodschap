@@ -129,7 +129,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 128,nl,Herauten Horror,101,2019-12-16,nieuws
 129,nl,Onze favoriete karakters in de Efteling,58,2019-12-23,achtergrond
 130,nl,Reacties van luisteraars,60,2019-12-25,achtergrond
-131,nl,Een ode aan het Waterorgel,87,2019-12-30,achtergrond,51.651327,5.049213,Tristan Sekeris
+131,nl,Een ode aan het Waterorgel,87,2019-12-30,achtergrond,51.651345,5.049205,Tristan Sekeris
 132,nl,Hotel de Bottle,45,2020-01-01,achtergrond,,,Boukje Koop
 133,nl,Aldimatronics,127,2020-01-06,nieuws
 134,nl,De magie van het verzamelen,89,2020-01-13,achtergrond,,,Carlo van Schijndel
@@ -409,7 +409,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 408,nl,In den Swarte Long,114,2024-09-16,nieuws
 409,nl,In gesprek met Jaap den Bleker,104,2024-09-23,interview,,,Jaap den Bleker
 410,nl,Mâitresse Mystique,132,2024-09-30,nieuws
-411,nl,Het onderhoud aan Hans & Grietje,41,2024-10-02,reportage,51.650297,5.046303
+411,nl,Het onderhoud aan Hans & Grietje,41,2024-10-02,reportage,51.650255,5.046480
 412,nl,De Glazen Bol 2024,72,2024-10-06,achtergrond
 413,nl,Zwavelsmaak,129,2024-10-13,nieuws
 414,nl,De wetenschap achter achtbanen,149,2024-10-21,interview,,,Jurnan Schilder
@@ -436,7 +436,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 435,nl,Erwtensoepspetters,121,2025-02-17,nieuws
 436,nl,In gesprek met Bernadette van der Velden,42,2025-02-24,interview,,,Bernadette van der Velden
 437,nl,Het verdwaalplein,120,2025-03-03,nieuws
-438,nl,Het Efteling Museum met Patrick van den Nieuwenhuizen,92,2025-03-10,achtergrond,51.652078,5.049704,Patrick van den Nieuwenhuizen
+438,nl,Het Efteling Museum met Patrick van den Nieuwenhuizen,92,2025-03-10,achtergrond,51.652104,5.049709,Patrick van den Nieuwenhuizen
 439,nl,Het hoogste punt van het Efteling Grand Hotel,73,2025-03-11,reportage,51.649253,5.045128
 440,nl,Heks over vleermuis,104,2025-03-17,nieuws
 441,nl,In gesprek met Robert-Jaap Jansen,125,2025-03-24,interview,,,Robert-Jaap Jansen

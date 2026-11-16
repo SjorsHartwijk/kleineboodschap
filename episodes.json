@@ -1152,8 +1152,8 @@
         "tijd": "87",
         "datum": "2019-12-30",
         "categorie": "achtergrond",
-        "latitude": "51.651327",
-        "longitude": "5.049213",
+        "latitude": "51.651345",
+        "longitude": "5.049205",
         "gasten": [
             "Tristan Sekeris"
         ]
@@ -3858,8 +3858,8 @@
         "tijd": "41",
         "datum": "2024-10-02",
         "categorie": "reportage",
-        "latitude": "51.650297",
-        "longitude": "5.046303"
+        "latitude": "51.650255",
+        "longitude": "5.046480"
     },
     {
         "id": "412",
@@ -4121,8 +4121,8 @@
         "tijd": "92",
         "datum": "2025-03-10",
         "categorie": "achtergrond",
-        "latitude": "51.652078",
-        "longitude": "5.049704",
+        "latitude": "51.652104",
+        "longitude": "5.049709",
         "gasten": [
             "Patrick van den Nieuwenhuizen"
         ]
