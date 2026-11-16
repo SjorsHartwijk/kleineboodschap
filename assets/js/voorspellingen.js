@@ -51,13 +51,11 @@
         }
 
         $('voorspelVolgende').innerHTML = `
-            <div class="kb-record">
+            <div class="kb-recordblok">
+                <div class="small kb-muted">Aflevering ${laatste.id + 1}</div>
                 <div class="kb-record-getal">${datum.getUTCDate()}<small>${datum.toLocaleDateString('nl-NL', { month: 'short', timeZone: 'UTC' }).replace('.', '')}</small></div>
-                <div>
-                    <div class="small kb-muted">Aflevering ${laatste.id + 1}</div>
-                    <div class="fw-semibold">${hoofdletter(datumTekst)}</div>
-                    <div class="small kb-muted">${perDag[dag]} van de ${recent.length} afleveringen van het afgelopen jaar verschenen op een ${WEEKDAGEN[dag]}</div>
-                </div>
+                <div class="fw-semibold">${hoofdletter(datumTekst)}</div>
+                <div class="small kb-muted">${perDag[dag]} van de ${recent.length} afleveringen van het afgelopen jaar verschenen op een ${WEEKDAGEN[dag]}</div>
             </div>
             <p class="mt-3 mb-0">Waarschijnlijk zal dit een ${kansen[0].c}-aflevering zijn.</p>
             <h4 class="h6 mt-4 mb-2">Kans per categorie</h4>
@@ -109,13 +107,11 @@
             : `Geen recordjaar, maar wel een jaar met rond ${getal(totaal)} afleveringen.`;
 
         $('voorspelJaar').innerHTML = `
-            <div class="kb-record">
+            <div class="kb-recordblok">
+                <div class="small kb-muted">Verwacht voor ${jaar}</div>
                 <div class="kb-record-getal">${getal(totaal)}<small>afl.</small></div>
-                <div>
-                    <div class="small kb-muted">Verwacht voor ${jaar}</div>
-                    <div class="fw-semibold">${conclusie}</div>
-                    <div class="small kb-muted">Nu ${getal(nu.length)} afleveringen, nog rond ${getal(erbij)} tot en met 31 december</div>
-                </div>
+                <div class="fw-semibold">${conclusie}</div>
+                <div class="small kb-muted">Nu ${getal(nu.length)} afleveringen, nog rond ${getal(erbij)} tot en met 31 december</div>
             </div>
             <div class="mt-3">
                 ${regel(`Afleveringen ${vergelijk(totaal, 'aantal', '')}`, `${getal(nu.length)} → ${getal(totaal)}`)}

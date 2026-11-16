@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/theme.js?v=20261113d"></script>
-    <script src="assets/js/instellingen.js?v=20261113d"></script>
+    <script src="assets/js/theme.js?v=20261116e"></script>
+    <script src="assets/js/instellingen.js?v=20261116e"></script>
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261113d">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261116e">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -32,8 +32,8 @@
     <!-- Navigation-->
     <div data-layout="nav"></div>
     <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
-    <script src="assets/js/cookies.js?v=20261113d"></script>
-    <script src="assets/js/layout.js?v=20261113d"></script>
+    <script src="assets/js/cookies.js?v=20261116e"></script>
+    <script src="assets/js/layout.js?v=20261116e"></script>
     <main class="flex-shrink-0" id="mijlpalen">
         <div class="container py-5">
             <div class="row mb-4">
@@ -154,8 +154,8 @@
     </main>
     <div data-layout="footer"></div>
 
-    <script src="assets/js/mijlpalen.js?v=20261113d"></script>
-    <script src="assets/js/voorspellingen.js?v=20261113d"></script>
+    <script src="assets/js/mijlpalen.js?v=20261116e"></script>
+    <script src="assets/js/voorspellingen.js?v=20261116e"></script>
     <script>
         (function () {
             const M = window.kbMijlpalen;
@@ -184,16 +184,16 @@
             }
 
             // Een record: groot getal met eenheid, wat het is en een toelichting (en eventueel een top 5)
+            // Elk record dezelfde opbouw onder elkaar: soort, groot getal, wat en toelichting,
+            // zodat alles links uitlijnt, hoe breed het getal ook is
             function record(getalHtml, soort, wat, uitleg, extra = '') {
                 return `
                     <div class="col-12 col-md-6 col-lg-4">
-                        <div class="kb-record">
+                        <div class="kb-recordblok">
+                            <div class="small kb-muted">${soort}</div>
                             ${getalHtml ? `<div class="kb-record-getal">${getalHtml}</div>` : ''}
-                            <div${getalHtml ? '' : ' class="kb-record-breed"'}>
-                                <div class="small kb-muted">${soort}</div>
-                                <div class="fw-semibold">${wat}</div>
-                                ${uitleg ? `<div class="small kb-muted">${uitleg}</div>` : ''}
-                            </div>
+                            ${wat ? `<div class="fw-semibold">${wat}</div>` : ''}
+                            ${uitleg ? `<div class="small kb-muted">${uitleg}</div>` : ''}
                             ${extra}
                         </div>
                     </div>`;
@@ -220,14 +220,13 @@
                     record(`${Math.round(L.minuten)}<small>min</small>`, 'Langste aflevering', veilig(L.titel), `Aflevering ${L.id} · ${L.categorie} · ${M.datum(L.datum)}`, top5(r.langste)),
                     record(`${Math.round(K.minuten)}<small>min</small>`, 'Kortste aflevering', veilig(K.titel), `Aflevering ${K.id} · ${K.categorie} · ${M.datum(K.datum)}`, top5(r.kortste)),
                     record('', 'Langste per categorie', '', '',
-                        `<div class="kb-record-breed">${r.perCategorie.map(ep => `<div class="kb-regel" title="${veilig(ep.titel)}"><span><span class="kb-legendablokje ${ep.categorie}" aria-hidden="true"></span> ${hoofdletter(ep.categorie)} <span class="kb-muted small">afl. ${ep.id}</span></span><span>${Math.round(ep.minuten)} min</span></div>`).join('')}</div>`),
+                        `<div class="mt-2">${r.perCategorie.map(ep => `<div class="kb-regel" title="${veilig(ep.titel)}"><span><span class="kb-legendablokje ${ep.categorie}" aria-hidden="true"></span> ${hoofdletter(ep.categorie)} <span class="kb-muted small">afl. ${ep.id}</span></span><span>${Math.round(ep.minuten)} min</span></div>`).join('')}</div>`),
                 ];
                 if (r.meesteAfleveringen) blokken.push(record(`${r.meesteAfleveringen.aantal}<small>afl.</small>`, 'Meeste afleveringen in een jaar', String(r.meesteAfleveringen.jaar), 'Startjaar 2017 (één aflevering) telt niet mee'));
                 if (r.meesteLuistertijd) blokken.push(record(`${uur(r.meesteLuistertijd.minuten)}<small>uur</small>`, 'Meeste luistertijd in een jaar', String(r.meesteLuistertijd.jaar), `${r.meesteLuistertijd.aantal} afleveringen`));
                 blokken.push(
                     record(`${r.druksteMaand.aantal}<small>afl.</small>`, 'Drukste maand', hoofdletter(maandNaam(r.druksteMaand.maand)), `${r.druksteMaand.aantal} afleveringen in één maand`),
                     record(`${M.getal(Math.round(r.langsteMaand.minuten))}<small>min</small>`, 'Meeste luistertijd in een maand', hoofdletter(maandNaam(r.langsteMaand.maand)), `${Math.floor(r.langsteMaand.minuten / 60)} uur en ${Math.round(r.langsteMaand.minuten % 60)} minuten`),
-                    record(`${r.stilte.dagen}<small>dagen</small>`, 'Langste stilte', `Tussen aflevering ${r.stilte.van.id} en ${r.stilte.tot.id}`, `Van ${M.datum(r.stilte.van.datum)} tot ${M.datum(r.stilte.tot.datum)}`),
                 );
                 if (r.meestGast) blokken.push(record(`${r.meestGast}<small>×</small>`, 'Vaakst te gast', r.vaakstTeGast.map(veilig).join(', '), '<a href="gasten.html">Alle gasten</a>'));
                 if (r.meesteGasten.gasten.length) blokken.push(record(`${r.meesteGasten.gasten.length}<small>gasten</small>`, 'Meeste gasten in één aflevering', veilig(r.meesteGasten.titel), `Aflevering ${r.meesteGasten.id} · ${M.datum(r.meesteGasten.datum)}`));

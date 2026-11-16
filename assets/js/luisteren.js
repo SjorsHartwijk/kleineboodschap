@@ -126,13 +126,11 @@
         function kaart(ep) {
             return `
             <div class="col-12 col-lg-4">
-                <div class="kb-record kb-tip">
+                <div class="kb-recordblok kb-tip">
+                    <div class="small kb-muted">${reden(ep)}</div>
                     <div class="kb-record-getal">${ep.minuten}<small>min</small></div>
-                    <div>
-                        <div class="small kb-muted">${reden(ep)}</div>
-                        <div class="fw-semibold">${veilig(ep.titel)}</div>
-                        <div class="small kb-muted"><span class="kb-legendablokje ${ep.categorie}" aria-hidden="true"></span> Aflevering ${ep.id} · ${ep.categorie} · ${datum(ep.datum)}</div>
-                    </div>
+                    <div class="fw-semibold">${veilig(ep.titel)}</div>
+                    <div class="small kb-muted"><span class="kb-legendablokje ${ep.categorie}" aria-hidden="true"></span> Aflevering ${ep.id} · ${ep.categorie} · ${datum(ep.datum)}</div>
                 </div>
             </div>`;
         }

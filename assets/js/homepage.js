@@ -88,13 +88,11 @@
         // Record met daaronder een uitklapbare ranglijst van de top 5
         const blok = (soort, ep, top) => `
             <div class="col-12 col-lg-6">
-                <div class="kb-record">
+                <div class="kb-recordblok">
+                    <div class="small kb-muted">${soort}</div>
                     <div class="kb-record-getal">${Math.round(ep.minuten)}<small>min</small></div>
-                    <div>
-                        <div class="small kb-muted">${soort}</div>
-                        <div class="fw-semibold">${veilig(ep.titel)}</div>
-                        <div class="small kb-muted">Aflevering ${ep.id} · ${ep.categorie} · ${M.datum(ep.datum)}</div>
-                    </div>
+                    <div class="fw-semibold">${veilig(ep.titel)}</div>
+                    <div class="small kb-muted">Aflevering ${ep.id} · ${ep.categorie} · ${M.datum(ep.datum)}</div>
                     <details class="kb-top5">
                         <summary>Bekijk de top 5<i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
                         <ol class="kb-top5-lijst">${top.map((t, i) => `
@@ -118,16 +116,14 @@
     const maandNaam = sleutel => `${MAANDEN[Number(sleutel.slice(5, 7)) - 1]} ${sleutel.slice(0, 4)}`;
     const duur = min => `${Math.floor(min / 60)} uur en ${Math.round(min % 60)} minuten`;
 
-    // Record zonder top 5: groot getal met eenheid, wat het is en een toelichting
+    // Record zonder top 5, alles onder elkaar (zoals op mijlpalen.html): soort, groot getal, wat, toelichting
     const periodeBlok = (getalHtml, soort, wat, uitleg) => `
         <div class="col-12 col-lg-4">
-            <div class="kb-record">
+            <div class="kb-recordblok">
+                <div class="small kb-muted">${soort}</div>
                 <div class="kb-record-getal">${getalHtml}</div>
-                <div>
-                    <div class="small kb-muted">${soort}</div>
-                    <div class="fw-semibold">${wat}</div>
-                    <div class="small kb-muted">${uitleg}</div>
-                </div>
+                <div class="fw-semibold">${wat}</div>
+                <div class="small kb-muted">${uitleg}</div>
             </div>
         </div>`;
 

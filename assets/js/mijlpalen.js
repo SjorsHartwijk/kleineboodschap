@@ -5,7 +5,7 @@
 //
 //   kbMijlpalen.laad()          -> Promise met afleveringen, gesorteerd op datum
 //   kbMijlpalen.bereken(afl)    -> { luistertijd, afleveringen, categorieen, gasten, jubilea, verwacht, tempo, ... }
-//   kbMijlpalen.records(afl)    -> { langste, kortste, perCategorie, stilte, vaakstTeGast, ... }
+//   kbMijlpalen.records(afl)    -> { langste, kortste, perCategorie, vaakstTeGast, ... }
 //   kbMijlpalen.datum(d)        -> '22 april 2019'
 
 (function () {
@@ -166,13 +166,6 @@
             .map(([jaar, eps]) => ({ jaar, aantal: eps.length, minuten: som(eps, ep => ep.minuten) }));
         const maanden = [...perMaand.entries()].map(([maand, eps]) => ({ maand, aantal: eps.length, minuten: som(eps, ep => ep.minuten) }));
 
-        // Langste stilte tussen twee afleveringen
-        let stilte = { dagen: 0 };
-        for (let i = 1; i < afl.length; i++) {
-            const dagen = Math.round((afl[i].datum - afl[i - 1].datum) / DAG);
-            if (dagen > stilte.dagen) stilte = { dagen, van: afl[i - 1], tot: afl[i] };
-        }
-
         // Gasten
         const tellingGasten = new Map();
         afl.forEach(ep => ep.gasten.forEach(n => tellingGasten.set(n, (tellingGasten.get(n) || 0) + 1)));
@@ -188,7 +181,6 @@
             meesteLuistertijd: jaren.length ? hoogste(jaren, j => j.minuten) : null,
             druksteMaand: hoogste(maanden, m => m.aantal),
             langsteMaand: hoogste(maanden, m => m.minuten),
-            stilte,
             vaakstTeGast, meestGast, meesteGasten,
         };
     }

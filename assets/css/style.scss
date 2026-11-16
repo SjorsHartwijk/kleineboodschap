@@ -533,6 +533,10 @@ a {
 }
 
 /* Lijst met verwijzingen naar de rest van de site */
+/* Twee kolommen: bij een oneven aantal rekt de laatste link niet uit over de volle breedte */
+@media (min-width: 992px) {
+    .kb-archieflijst a { max-width: calc(50% - 28px); }
+}
 .kb-archieflijst {
     display: flex;
     flex-wrap: wrap;
@@ -1170,31 +1174,6 @@ footer {
         color: var(--kb-muted);
     }
 }
-/* Records: groot getal met de aflevering ernaast */
-.kb-record {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 14px 18px;
-    align-items: baseline;
-    align-content: start;
-    border-top: 1px solid var(--kb-border);
-    padding-top: 14px;
-    height: 100%;
-    .kb-record-getal {
-        font-family: "Alegreya", serif;
-        font-weight: 700;
-        font-size: 3.25rem;
-        line-height: 1;
-        font-variant-numeric: lining-nums tabular-nums;
-        small {
-            font-size: 1.2rem;
-            margin-left: 4px;
-        }
-    }
-}
-/* Record zonder groot getal (bijv. een lijstje): over de volle breedte van het blok */
-.kb-record .kb-record-breed { grid-column: 1 / -1; }
-.kb-record-breed .kb-legendablokje { vertical-align: -1px; }
 /* Mijlpalen: grafiek met afleveringen per jaar, vaste hoogte (geen meegroeiende verhouding) */
 .kb-voorspelgrafiek {
     position: relative;
@@ -1202,9 +1181,10 @@ footer {
 }
 /* Ruimte vasthouden voor blokken die pas na het laden van de data gevuld worden, zodat de
    pagina niet verspringt (gemeten eindhoogtes; bij een andere hoogte schuift er hooguit iets onder) */
-#voorspelVolgende { min-height: 281px; }
-#voorspelJaar { min-height: 260px; }
-@media (min-width: 768px) { #voorspelJaar { min-height: 239px; } }
+#voorspelVolgende { min-height: 319px; }
+#voorspelJaar { min-height: 277px; }
+@media (min-width: 768px) { #voorspelVolgende { min-height: 367px; } #voorspelJaar { min-height: 298px; } }
+@media (min-width: 992px) { #voorspelVolgende { min-height: 298px; } #voorspelJaar { min-height: 253px; } }
 #voorspelData { min-height: 180px; }
 #calendar-grid { min-height: 100vh; }
 #lijst { min-height: 100vh; }                                  /* gasten.html */
@@ -1236,6 +1216,28 @@ footer {
     color: var(--kb-bg);
     background: var(--kb-text);
     vertical-align: 2px;
+}
+/* Records, voorspellingen en luistertips: alles onder elkaar (soort, groot getal, wat, toelichting),
+   zodat de records in een rij gelijk uitlijnen, hoe breed het getal ook is */
+.kb-recordblok {
+    border-top: 1px solid var(--kb-border);
+    padding-top: 14px;
+    height: 100%;
+    .kb-record-getal {
+        font-family: "Alegreya", serif;
+        font-weight: 700;
+        font-size: 3.25rem;
+        line-height: 1;
+        font-variant-numeric: lining-nums tabular-nums;
+        margin: 6px 0 8px;
+        small {
+            font-size: 1.2rem;
+            margin-left: 4px;
+        }
+    }
+    .kb-top5 {
+        margin-top: 12px;
+    }
 }
 /* Top 5 onder een record: uitklapbare ranglijst over de volle breedte van het record */
 .kb-top5 {
@@ -2068,7 +2070,7 @@ footer {
         outline: 3px solid var(--kb-text) !important;
         outline-offset: 2px;
     }
-    .kb-record,
+    .kb-recordblok,
     .kb-modusknoppen {
         border-width: 2px;
     }
