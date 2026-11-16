@@ -51,15 +51,19 @@
         { href: 'https://kleineboodschap.com', titel: 'kleineboodschap.com', icoon: 'bi-mic' },
     ];
 
+    // Naar de homepage altijd via "./" (het canonieke adres https://kbdata.nl/), niet via index.html:
+    // anders vindt Google ook /index.html en meldt die als alternatieve pagina
+    const link = href => href === 'index.html' ? './' : href;
+
     function nav(container) {
         const links = zichtbaar.map(p => `
-                    <li class="nav-item"><a class="${klassen(p, 'nav-link')}" href="${p.href}"${isActief(p) ? ' aria-current="page"' : ''}>${naam(p)}</a></li>`).join('');
+                    <li class="nav-item"><a class="${klassen(p, 'nav-link')}" href="${link(p.href)}"${isActief(p) ? ' aria-current="page"' : ''}>${naam(p)}</a></li>`).join('');
         const extern = externeLinks.map(l => `
                         <li><a href="${l.href}" rel="nofollow noopener" target="_blank"><i class="bi ${l.icoon}" aria-hidden="true"></i>${l.titel}<i class="bi bi-box-arrow-up-right kb-menu-extern-pijl" aria-hidden="true"></i><span class="visually-hidden"> (opent in nieuw venster)</span></a></li>`).join('');
         return `
     <nav class="navbar navbar-top">
         <div class="${container}">
-            <a class="navbar-brand" href="index.html" title="Kleine Boodschap Data, naar de homepage"><img src="assets/images/logo-licht.svg" alt="Logo" width="36" height="36"> <span
+            <a class="navbar-brand" href="./" title="Kleine Boodschap Data, naar de homepage"><img src="assets/images/logo-licht.svg" alt="Logo" width="36" height="36"> <span
                     class="d-none d-md-inline-block">Kleine Boodschap Data</span><span
                     class="d-inline-block d-md-none">KB Data</span></a>
             <div class="kb-navknoppen d-flex align-items-center ms-auto">${instellingen()}
