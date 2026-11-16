@@ -31,7 +31,7 @@ Het script `update.js` haalt nieuwe afleveringen op uit de RSS-feed van Kleine B
    - **Locatie** (alleen bij achtergrond en reportage): typ de coördinaten als `51.6497, 5.0435` of druk op Enter als er geen locatie is.
    - **Gasten** (alleen bij achtergrond en interview): typ de namen gescheiden door een puntkomma, bijvoorbeeld `Voornaam Achternaam; Voornaam Achternaam`, of druk op Enter als er geen gasten zijn. Ze komen in de kolom `gasten` van `afleveringen.csv`.
 3. Het script voegt de aflevering(en) toe aan `afleveringen.csv` en zet die om naar `episodes.json`.
-4. Het script vraagt daarna of de commit mag plaatsvinden, bijvoorbeeld `Aflevering 528: Titel van de aflevering`:
+4. Het script vraagt daarna of de commit mag plaatsvinden, bijvoorbeeld `Aflevering 528: Titel van de aflevering`. Zijn er meerdere nieuwe afleveringen (bijvoorbeeld na een vakantie), dan worden ze samen in één commit gezet als `Afleveringen 535 t/m 538`. Na het pushen verschijnt er dan één Bluesky-bericht: "Afleveringen 535 t/m 538 van @kleineboodschap.com zijn toegevoegd …".
    - Typ `j` om te committen. `afleveringen.csv`, `episodes.json` en `sitemap.xml` worden samen in één commit gezet.
    - Typ `n` om niet te committen. De bestanden blijven wel bijgewerkt, zodat je later zelf kunt committen.
 5. Push de commit naar GitHub zodat de website wordt bijgewerkt:

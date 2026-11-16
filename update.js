@@ -231,6 +231,8 @@ async function main() {
   }
 
   const laatste = nieuw[nieuw.length - 1];
+  // Let op: de Bluesky-workflow (.github/workflows/main.yml) schrijft "zijn toegevoegd" als het
+  // bericht met "Afleveringen " begint en anders "is toegevoegd"; meerdere afleveringen = één bericht
   const bericht = nieuw.length === 1
     ? `Aflevering ${laatste.id}: ${laatste.titel}`
     : `Afleveringen ${nieuw[0].id} t/m ${laatste.id}`;

@@ -14,7 +14,9 @@ jobs:
       - name: Send Bluesky Post
         uses: myConsciousness/bluesky-post@v5
         with:
-            text: "${{ github.event.head_commit.message }} van @kleineboodschap.com is toegevoegd aan Kleine Boodschap Data.\nBekijk alle statistieken op www.kbdata.nl \n\n#kleineboodschap"
+            # Eén aflevering ("Aflevering 535: Titel") → "is toegevoegd"; meerdere tegelijk
+            # ("Afleveringen 535 t/m 538", zo noemt update.js die commit) → "zijn toegevoegd", in één bericht
+            text: "${{ github.event.head_commit.message }} van @kleineboodschap.com ${{ startsWith(github.event.head_commit.message, 'Afleveringen ') && 'zijn' || 'is' }} toegevoegd aan Kleine Boodschap Data.\nBekijk alle statistieken op www.kbdata.nl \n\n#kleineboodschap"
             identifier: ${{ secrets.BLUESKY_IDENTIFIER }}
             password: ${{ secrets.BLUESKY_PASSWORD }}
             retry-count: 5
