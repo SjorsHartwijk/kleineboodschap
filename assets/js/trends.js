@@ -10,7 +10,7 @@
             .then(res => res.json())
             .then(data => {
                 const afleveringen = data
-                    .map(ep => ({ id: parseInt(ep.id, 10), titel: ep.titel, minuten: parseFloat(ep.tijd), datum: new Date(ep.datum) }))
+                    .map(ep => ({ id: parseInt(ep.id, 10), titel: ep.titel, categorie: ep.categorie, minuten: parseFloat(ep.tijd), datum: new Date(ep.datum) }))
                     .filter(ep => isFinite(ep.minuten) && !isNaN(ep.datum))
                     .sort((a, b) => a.datum - b.datum);
                 if (!afleveringen.length) return;
@@ -21,16 +21,27 @@
             .catch(fout => console.error('Trends konden niet geladen worden:', fout));
     }
 
-    // 1. Gemiddelde duur per jaar
+    // 1. Gemiddelde duur per jaar: totaal en per categorie
+    const CATEGORIEEN = ['achtergrond', 'nieuws', 'interview', 'reportage'];
+    const hoofdletter = t => t.charAt(0).toUpperCase() + t.slice(1);
+    const gemiddelde = lijst => Math.round(lijst.reduce((s, m) => s + m, 0) / lijst.length);
+
     function duurPerJaar(afleveringen) {
         const perJaar = {};
+        const perCategorie = Object.fromEntries(CATEGORIEEN.map(c => [c, {}]));
         afleveringen.forEach(ep => {
             const jaar = ep.datum.getFullYear();
             (perJaar[jaar] = perJaar[jaar] || []).push(ep.minuten);
+            const pc = perCategorie[ep.categorie];
+            if (pc) (pc[jaar] = pc[jaar] || []).push(ep.minuten);
         });
         // Jaren met maar een paar afleveringen (zoals 2017, met één) zeggen weinig: die vallen weg
         const jaren = Object.keys(perJaar).sort().filter(j => perJaar[j].length >= 5);
-        const gemiddelden = jaren.map(j => Math.round(perJaar[j].reduce((s, m) => s + m, 0) / perJaar[j].length));
+        const gemiddelden = jaren.map(j => gemiddelde(perJaar[j]));
+        // Per categorie; een jaar zonder afleveringen in die categorie blijft leeg (null)
+        const perCategorieGem = Object.fromEntries(CATEGORIEEN.map(c => [c,
+            jaren.map(j => perCategorie[c][j] ? gemiddelde(perCategorie[c][j]) : null)]));
+        const aantalIn = (c, jaar) => c ? (perCategorie[c][jaar] || []).length : perJaar[jaar].length;
 
         // De kop vertelt de conclusie
         const eerste = jaren[0], laatste = jaren[jaren.length - 1];
@@ -46,31 +57,48 @@
             tekst.innerHTML = `Gemiddelde duur per jaar, van <strong>${van} minuten</strong> in ${eerste} naar <strong>${naar} minuten</strong> in ${laatste}.`;
         }
 
+        // Het totaal als dikke lijn in inktkleur, de categorieën dunner in hun eigen kleur
+        const lijn = (label, data, kleurVan, extra) => ({
+            label,
+            data,
+            borderColor: kleurVan,
+            backgroundColor: kleurVan,
+            pointBackgroundColor: kleurVan,
+            pointBorderColor: () => kbKleur('surface'),
+            pointBorderWidth: 1,
+            borderWidth: 2,
+            pointRadius: 3,
+            pointHoverRadius: 6,
+            tension: .25,
+            spanGaps: true,
+            ...extra,
+        });
+        const datasets = [
+            lijn('Totaal', gemiddelden, () => kbKleur('text'),
+                { borderWidth: 4, pointRadius: 5, pointHoverRadius: 7, pointBorderWidth: 2, order: 0 }),
+            ...CATEGORIEEN.map(c => lijn(hoofdletter(c), perCategorieGem[c], () => kbKleur('cat-' + c),
+                { categorie: c, order: 1 })),
+        ];
+
         kbGrafiek(document.getElementById('trendDuurChart'), {
             type: 'line',
-            data: {
-                labels: jaren,
-                datasets: [{
-                    label: 'Gemiddelde duur',
-                    data: gemiddelden,
-                    borderColor: () => kbKleur('primary'),
-                    backgroundColor: () => kbKleur('primary'),
-                    pointBackgroundColor: () => kbKleur('primary'),
-                    pointBorderColor: () => kbKleur('surface'),
-                    pointBorderWidth: 2,
-                    borderWidth: 3,
-                    pointRadius: 5,
-                    pointHoverRadius: 7,
-                    tension: .25,
-                }],
-            },
+            data: { labels: jaren, datasets },
             options: {
                 responsive: true,
                 // Tooltip zodra je ergens boven een jaar komt (of tikt), niet alleen precies op het bolletje
                 interaction: { mode: 'index', intersect: false },
                 plugins: {
-                    legend: { display: false },
-                    tooltip: { callbacks: { label: c => `${c.raw} minuten gemiddeld (${perJaar[c.label].length} afleveringen)` } },
+                    // Klik op een categorie in de legenda om de lijn te verbergen of te tonen
+                    legend: { display: true, position: 'bottom', labels: { usePointStyle: true, boxWidth: 8, boxHeight: 8 } },
+                    tooltip: {
+                        usePointStyle: true,
+                        callbacks: {
+                            label: c => {
+                                const n = aantalIn(c.dataset.categorie, c.label);
+                                return `${c.dataset.label}: ${c.raw} min (${n} ${n === 1 ? 'aflevering' : 'afleveringen'})`;
+                            },
+                        },
+                    },
                 },
                 scales: { y: { beginAtZero: true, ticks: { callback: v => v + ' min' } } },
             },
