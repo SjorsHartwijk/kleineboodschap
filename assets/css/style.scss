@@ -1186,7 +1186,12 @@ footer {
 @media (min-width: 768px) { #voorspelVolgende { min-height: 367px; } #voorspelJaar { min-height: 298px; } }
 @media (min-width: 992px) { #voorspelVolgende { min-height: 298px; } #voorspelJaar { min-height: 253px; } }
 #voorspelData { min-height: 180px; }
-#calendar-grid { min-height: 100vh; align-content: flex-start; } /* rijen niet uitrekken over de 100vh op hoge schermen */
+/* kalender.html: nooit hoger dan de gemeten eindhoogte, anders blijft er op hoge schermen loze ruimte over */
+#calendar-grid { min-height: 100vh; align-content: flex-start; }
+@media (min-width: 768px) { #calendar-grid { min-height: min(100vh, 1740px); } }
+@media (min-width: 992px) { #calendar-grid { min-height: min(100vh, 1045px); } }
+@media (min-width: 1200px) { #calendar-grid { min-height: min(100vh, 705px); } }
+@media (min-width: 1400px) { #calendar-grid { min-height: min(100vh, 800px); } }
 #lijst { min-height: 100vh; }                                  /* gasten.html */
 .kb-paginanav.kb-wacht { min-height: 85px; margin-bottom: 16px; } /* afleveringen.html, tot de tabs er zijn (incl. hun ondermarge) */
 @media (min-width: 768px) { .kb-paginanav.kb-wacht { min-height: 43px; } }
