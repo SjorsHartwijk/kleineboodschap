@@ -5066,5 +5066,19 @@
         "tijd": "121",
         "datum": "2026-11-16",
         "categorie": "nieuws"
+    },
+    {
+        "id": "534",
+        "taal": "nl",
+        "titel": "Onderhoud aan de Vliegende Fakir",
+        "tijd": "27",
+        "datum": "2026-11-18",
+        "categorie": "reportage",
+        "latitude": "51.65187770981916",
+        "longitude": "5.046654406845527",
+        "gasten": [
+            "Mark Elings",
+            "Koen Hellings"
+        ]
     }
 ]
