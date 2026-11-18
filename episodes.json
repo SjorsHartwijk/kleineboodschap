@@ -3388,7 +3388,11 @@
         "datum": "2023-12-11",
         "categorie": "reportage",
         "latitude": "51.650768",
-        "longitude": "5.047225"
+        "longitude": "5.047225",
+        "gasten": [
+            "Mark Elings",
+            "Koen Hellings"
+        ]
     },
     {
         "id": "364",
@@ -3591,7 +3595,11 @@
         "datum": "2024-04-10",
         "categorie": "reportage",
         "latitude": "51.650255",
-        "longitude": "5.046480"
+        "longitude": "5.046480",
+        "gasten": [
+            "Mark Elings",
+            "Koen Hellings"
+        ]
     },
     {
         "id": "385",
@@ -3859,7 +3867,11 @@
         "datum": "2024-10-02",
         "categorie": "reportage",
         "latitude": "51.650255",
-        "longitude": "5.046480"
+        "longitude": "5.046480",
+        "gasten": [
+            "Mark Elings",
+            "Koen Hellings"
+        ]
     },
     {
         "id": "412",

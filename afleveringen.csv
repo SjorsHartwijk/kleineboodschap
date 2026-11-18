@@ -361,7 +361,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 360,nl,Champignons buiten knikkeren,116,2023-11-20,nieuws
 361,nl,Achter de schermen bij de Spookslot-documentaire van De Vijf Zintuigen,210,2023-11-26,interview,,,Marwin van de Hoeve; Melvin Blootshoofd; Sander Roeling; Carlo van Schijndel
 362,nl,Gas(t)beleving,104,2023-12-04,nieuws
-363,nl,De restauratie van het kasteel van Doornroosje,51,2023-12-11,reportage,51.650768,5.047225
+363,nl,De restauratie van het kasteel van Doornroosje,51,2023-12-11,reportage,51.650768,5.047225,Mark Elings; Koen Hellings
 364,nl,Als Shrek thuiskomen,111,2023-12-18,nieuws
 365,nl,De internationalisering van de Efteling,119,2023-12-22,achtergrond,,,Danny Nobel
 366,nl,Struikelblokken,112,2024-01-01,nieuws
@@ -382,7 +382,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 381,nl,Oranje knoeperts,111,2024-03-25,nieuws
 382,nl,De Grote Podcastlas: de Efteling,108,2024-04-01,achtergrond,,,Leon Boelens
 383,nl,Hein Oomen over onderhoud in de Efteling,124,2024-04-08,interview,,,Hein Oomen
-384,nl,De start van het onderhoud aan Hans & Grietje,35,2024-04-10,reportage,51.650255,5.046480
+384,nl,De start van het onderhoud aan Hans & Grietje,35,2024-04-10,reportage,51.650255,5.046480,Mark Elings; Koen Hellings
 385,nl,Sink Nicolaasplaets,129,2024-04-15,nieuws
 386,nl,In gesprek met Wieteke van Dort,47,2024-04-22,interview,,,Wieteke van Dort
 387,nl,Reacties van luisteraars,85,2024-04-29,achtergrond
@@ -409,7 +409,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 408,nl,In den Swarte Long,114,2024-09-16,nieuws
 409,nl,In gesprek met Jaap den Bleker,104,2024-09-23,interview,,,Jaap den Bleker
 410,nl,Mâitresse Mystique,132,2024-09-30,nieuws
-411,nl,Het onderhoud aan Hans & Grietje,41,2024-10-02,reportage,51.650255,5.046480
+411,nl,Het onderhoud aan Hans & Grietje,41,2024-10-02,reportage,51.650255,5.046480,Mark Elings; Koen Hellings
 412,nl,De Glazen Bol 2024,72,2024-10-06,achtergrond
 413,nl,Zwavelsmaak,129,2024-10-13,nieuws
 414,nl,De wetenschap achter achtbanen,149,2024-10-21,interview,,,Jurnan Schilder
