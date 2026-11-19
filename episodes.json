@@ -3440,7 +3440,9 @@
         "titel": "De Koningssuite en Droomvlucht Suite in het Efteling Hotel",
         "tijd": "17",
         "datum": "2024-01-11",
-        "categorie": "reportage"
+        "categorie": "reportage",
+        "latitude": "51.653306",
+        "longitude": "5.054457"
     },
     {
         "id": "369",
