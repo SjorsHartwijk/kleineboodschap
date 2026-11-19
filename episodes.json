@@ -179,7 +179,7 @@
         "datum": "2018-05-02",
         "categorie": "achtergrond",
         "latitude": "51.645490",
-        "longitude": " 5.047561"
+        "longitude": "5.047561"
     },
     {
         "id": "22",
@@ -641,8 +641,8 @@
         "tijd": "57",
         "datum": "2019-02-18",
         "categorie": "achtergrond",
-        "latitude": "51.654689832722795",
-        "longitude": "5.040828605791864",
+        "latitude": "51.654690",
+        "longitude": "5.040829",
         "gasten": [
             "René Merkelbach"
         ]
@@ -1534,8 +1534,8 @@
         "tijd": "135",
         "datum": "2020-09-21",
         "categorie": "interview",
-        "latitude": "52.4754540",
-        "longitude": "6.0672388",
+        "latitude": "52.475454",
+        "longitude": "6.067239",
         "gasten": [
             "Francine Oonk",
             "Pieter Aurik"
@@ -3281,8 +3281,8 @@
         "tijd": "25",
         "datum": "2023-09-29",
         "categorie": "reportage",
-        "latitude": "51.652933",
-        "longitude": "5.046504"
+        "latitude": "51.652861",
+        "longitude": "5.046311"
     },
     {
         "id": "353",
@@ -3475,7 +3475,7 @@
         "datum": "2024-02-02",
         "categorie": "reportage",
         "latitude": "51.648746",
-        "longitude": " 5.048502"
+        "longitude": "5.048502"
     },
     {
         "id": "373",
@@ -4027,8 +4027,8 @@
         "tijd": "145",
         "datum": "2024-12-23",
         "categorie": "interview",
-        "latitude": "51.81263229139764",
-        "longitude": "5.2490122807620985",
+        "latitude": "51.812632",
+        "longitude": "5.249012",
         "gasten": [
             "Martin Conrads"
         ]
@@ -4462,8 +4462,8 @@
         "tijd": "57",
         "datum": "2025-10-03",
         "categorie": "reportage",
-        "latitude": "51.6482162",
-        "longitude": "5.0505681"
+        "latitude": "51.648216",
+        "longitude": "5.050568"
     },
     {
         "id": "472",
@@ -4496,8 +4496,8 @@
         "tijd": "37",
         "datum": "2025-10-26",
         "categorie": "interview",
-        "latitude": "51.6460630",
-        "longitude": "5.0532308",
+        "latitude": "51.646063",
+        "longitude": "5.053231",
         "gasten": [
             "Yvonne Keasberry"
         ]
@@ -4561,8 +4561,8 @@
         "tijd": "110",
         "datum": "2025-12-01",
         "categorie": "reportage",
-        "latitude": "51.6515800",
-        "longitude": "5.0509523"
+        "latitude": "51.651580",
+        "longitude": "5.050952"
     },
     {
         "id": "482",
@@ -4617,8 +4617,8 @@
         "tijd": "33",
         "datum": "2026-01-06",
         "categorie": "reportage",
-        "latitude": "51.6528997",
-        "longitude": "5.0462262"
+        "latitude": "51.652861",
+        "longitude": "5.046311"
     },
     {
         "id": "488",
@@ -4717,8 +4717,8 @@
         "tijd": "50",
         "datum": "2026-03-16",
         "categorie": "reportage",
-        "latitude": "51.6516008",
-        "longitude": "5.0474346"
+        "latitude": "51.651601",
+        "longitude": "5.047435"
     },
     {
         "id": "498",
@@ -5086,8 +5086,8 @@
         "tijd": "27",
         "datum": "2026-11-18",
         "categorie": "reportage",
-        "latitude": "51.65187770981916",
-        "longitude": "5.046654406845527",
+        "latitude": "51.651878",
+        "longitude": "5.046654",
         "gasten": [
             "Mark Elings",
             "Koen Hellings"
