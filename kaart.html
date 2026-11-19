@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/theme.js?v=20261116f"></script>
-    <script src="assets/js/instellingen.js?v=20261116f"></script>
+    <script src="assets/js/theme.js?v=20261119a"></script>
+    <script src="assets/js/instellingen.js?v=20261119a"></script>
     <meta name="theme-color" content="#154666"/>
     <title>Kaart met alle opnameplekken | Kleine Boodschap Data</title>
     <meta name="description" content="Ontdek op de kaart waar afleveringen van Kleine Boodschap zijn opgenomen, in de Efteling en daarbuiten. Per plek zie je de aflevering en de categorie.">
@@ -25,7 +25,7 @@
     <link rel="manifest" href="site.webmanifest">
     
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261116f">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261119a">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     
@@ -38,8 +38,8 @@
     <!-- Navigation-->
     <div data-layout="nav"></div>
     <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
-    <script src="assets/js/cookies.js?v=20261116f"></script>
-    <script src="assets/js/layout.js?v=20261116f"></script>
+    <script src="assets/js/cookies.js?v=20261119a"></script>
+    <script src="assets/js/layout.js?v=20261119a"></script>
     <main class="flex-shrink-0">
         <section class="py-5">
             <div class="container">
@@ -62,11 +62,15 @@
                     <aside class="col-12 col-lg-4 col-xl-3">
                         <div class="kb-kaartpaneel">
                             <h2 class="h4">Legenda</h2>
-                            <p class="small kb-muted mb-2">Klik op een categorie om die op de kaart aan of uit te zetten.</p>
-                            <ul class="kb-legenda" id="kaartLegenda"></ul>
-                            <div class="kb-regel small mt-2"><span>Afleveringen op de kaart</span><span id="kaartAfleveringen"></span></div>
-                            <div class="kb-regel small"><span>Plekken op de kaart</span><span id="kaartTotaal"></span></div>
-                            <div class="kb-regel small"><span>Buiten de Efteling</span><span id="kaartBuiten"></span></div>
+                            <!-- Op volledig scherm verhuist deze inhoud naar het paneel rechtsonder op de kaart -->
+                            <div id="kaartLegendaInhoud">
+                                <p class="small kb-muted mb-2">Klik op een categorie om die op de kaart aan of uit te zetten.</p>
+                                <ul class="kb-legenda" id="kaartLegenda"></ul>
+                                <div class="kb-regel small mt-2"><span>Afleveringen op de kaart</span><span id="kaartAfleveringen"></span></div>
+                                <div class="kb-regel small"><span>Plekken op de kaart</span><span id="kaartTotaal"></span></div>
+                                <div class="kb-regel small"><span>Buiten de Efteling</span><span id="kaartBuiten"></span></div>
+                            </div>
+                            <p class="small kb-muted mt-2 mb-0" id="kaartLegendaWeg" hidden>De legenda staat nu rechtsonder op de kaart.</p>
                         </div>
                         <div class="kb-kaartpaneel">
                             <h2 class="h4">Ben je in de Efteling?</h2>
@@ -96,7 +100,7 @@
             // Scrollwiel-zoom pas na een klik op de kaart, zodat je de pagina gewoon kunt scrollen
             const map = L.map('map', { scrollWheelZoom: false }).setView(EFTELING, 16);
             map.on('click focus', () => { map.scrollWheelZoom.enable(); $('kaartHint').hidden = true; });
-            map.on('mouseout', () => map.scrollWheelZoom.disable());
+            map.on('mouseout', () => { if (!volledig) map.scrollWheelZoom.disable(); });
 
             // Eén tegelserver (zonder a/b/c-subdomeinen, zoals OpenStreetMap aanraadt; met preconnect in de head)
             // en detectRetina, zodat de tegels op scherpe schermen niet onscherp zijn
@@ -237,6 +241,124 @@
                 map.closePopup();
                 tekenMarkers();
                 werkTellingBij();
+            });
+
+            // Volledig scherm, met twee eigen Leaflet-controls (Leaflet 1.9 heeft zelf geen knop hiervoor):
+            // linksboven een knop onder de zoomknoppen, en rechtsonder een paneel met de legenda.
+            // De legenda wordt niet gekopieerd maar verhuisd: dezelfde knoppen en tellingen (met hun
+            // ids en klikafhandeling) staan dan op de kaart, en gaan bij het sluiten weer terug.
+            // Zonder Fullscreen API (zoals Safari op de iPhone) vult de kaart het venster met css.
+            const kaartEl = $('map');
+            const legendaInhoud = $('kaartLegendaInhoud');
+            const legendaThuis = legendaInhoud.parentElement;
+            const echtVolledig = !!(kaartEl.requestFullscreen && document.fullscreenEnabled);
+            let volledig = false;
+            let volledigKnop;
+
+            const VolledigSchermKnop = L.Control.extend({
+                options: { position: 'topleft' },
+                onAdd() {
+                    const balk = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+                    volledigKnop = L.DomUtil.create('a', 'kb-volledigknop', balk);
+                    volledigKnop.href = '#';
+                    volledigKnop.setAttribute('role', 'button');
+                    volledigKnop.innerHTML = '<i class="bi bi-fullscreen" aria-hidden="true"></i>';
+                    L.DomEvent.disableClickPropagation(balk);
+                    L.DomEvent.on(volledigKnop, 'click', e => {
+                        L.DomEvent.preventDefault(e);
+                        if (volledig) sluitVolledig(); else openVolledig();
+                    });
+                    werkVolledigKnopBij();
+                    return balk;
+                }
+            });
+
+            const LegendaPaneel = L.Control.extend({
+                options: { position: 'bottomright' },
+                onAdd() {
+                    const paneel = L.DomUtil.create('div', 'leaflet-control kb-kaartlegenda');
+                    paneel.setAttribute('role', 'region');
+                    paneel.setAttribute('aria-label', 'Legenda');
+                    paneel.innerHTML = `
+                        <div class="kb-kaartlegenda-kop">
+                            <h2 class="h6 mb-0">Legenda</h2>
+                            <button type="button" class="kb-kaartlegenda-wissel" aria-expanded="true" aria-controls="kaartLegendaInhoud" aria-label="Legenda inklappen">
+                                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                            </button>
+                        </div>`;
+                    // Klikken en scrollen in het paneel mogen de kaart niet verschuiven of zoomen
+                    L.DomEvent.disableClickPropagation(paneel);
+                    L.DomEvent.disableScrollPropagation(paneel);
+                    const wissel = paneel.querySelector('.kb-kaartlegenda-wissel');
+                    const zetOpen = open => {
+                        wissel.setAttribute('aria-expanded', open);
+                        wissel.setAttribute('aria-label', open ? 'Legenda inklappen' : 'Legenda uitklappen');
+                        legendaInhoud.hidden = !open;
+                    };
+                    wissel.addEventListener('click', () => zetOpen(wissel.getAttribute('aria-expanded') !== 'true'));
+                    // Op een telefoon begint het paneel ingeklapt, zodat het de kaart niet bedekt
+                    zetOpen(!window.matchMedia('(max-width: 575.98px)').matches);
+                    return paneel;
+                },
+                onRemove() {
+                    legendaInhoud.hidden = false;
+                }
+            });
+
+            new VolledigSchermKnop().addTo(map);
+            const legendaPaneel = new LegendaPaneel();
+
+            function werkVolledigKnopBij() {
+                const tekst = volledig ? 'Volledig scherm sluiten' : 'Kaart op volledig scherm';
+                volledigKnop.title = tekst;
+                volledigKnop.setAttribute('aria-label', tekst);
+                volledigKnop.querySelector('i').className = volledig ? 'bi bi-fullscreen-exit' : 'bi bi-fullscreen';
+            }
+            function zetVolledig(nu) {
+                if (nu === volledig) return;
+                volledig = nu;
+                if (nu) {
+                    legendaPaneel.addTo(map);
+                    legendaPaneel.getContainer().appendChild(legendaInhoud);
+                    // Op volledig scherm is er geen pagina om te scrollen, dus zoomt het scrollwiel direct
+                    map.scrollWheelZoom.enable();
+                } else {
+                    kaartEl.classList.remove('kb-kaart-volledig');
+                    document.documentElement.classList.remove('kb-kaart-volledig-open');
+                    legendaThuis.insertBefore(legendaInhoud, $('kaartLegendaWeg'));
+                    legendaPaneel.remove();
+                    map.scrollWheelZoom.disable();
+                }
+                $('kaartLegendaWeg').hidden = !nu;
+                werkVolledigKnopBij();
+                map.invalidateSize();
+            }
+            // Sommige ingebouwde browsers (webviews) laten een verzoek om volledig scherm onbeantwoord;
+            // komt er na een seconde geen antwoord, dan vult de kaart toch het venster
+            function openVolledig() {
+                if (!echtVolledig) { openNepVolledig(); return; }
+                const reserve = setTimeout(openNepVolledig, 1000);
+                kaartEl.requestFullscreen().then(
+                    () => clearTimeout(reserve),
+                    () => { clearTimeout(reserve); openNepVolledig(); }
+                );
+            }
+            function openNepVolledig() {
+                kaartEl.classList.add('kb-kaart-volledig');
+                document.documentElement.classList.add('kb-kaart-volledig-open');
+                zetVolledig(true);
+            }
+            function sluitVolledig() {
+                if (document.fullscreenElement) { document.exitFullscreen(); return; }
+                zetVolledig(false);
+            }
+            // Ook Esc en de knoppen van de browser zelf sluiten het volledige scherm
+            document.addEventListener('fullscreenchange', () => {
+                if (document.fullscreenElement === kaartEl) zetVolledig(true);
+                else zetVolledig(false);
+            });
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && volledig && !document.fullscreenElement) sluitVolledig();
             });
 
             // Eigen locatie: alleen na een klik op de knop, en alleen als je in of vlak bij de Efteling bent

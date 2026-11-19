@@ -1847,6 +1847,71 @@ footer {
         }
     }
 }
+/* Kaart op volledig scherm: met de Fullscreen API, of (zonder, zoals Safari op de iPhone)
+   met een vaste laag over het hele venster */
+.kb-kaart:fullscreen {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.kb-kaart.kb-kaart-volledig {
+    position: fixed !important; /* Leaflet zet position: relative in de style van de kaart zelf */
+    inset: 0;
+    z-index: 1090;
+    height: auto;
+    border: 0;
+}
+html.kb-kaart-volledig-open,
+html.kb-kaart-volledig-open body {
+    overflow: hidden;
+}
+.leaflet-bar a.kb-volledigknop {
+    font-size: 14px;
+}
+/* Legenda rechtsonder op de kaart (alleen op volledig scherm) */
+.leaflet-container .kb-kaartlegenda {
+    width: 260px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 10px 14px 12px;
+    background-color: var(--kb-surface);
+    color: var(--kb-text);
+    border: 1px solid var(--kb-border);
+    border-top: 3px solid var(--kb-text);
+    font-size: 1rem;
+    line-height: 1.5;
+    #kaartLegendaInhoud {
+        margin-top: 8px;
+    }
+}
+.kb-kaartlegenda-kop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.kb-kaartlegenda-wissel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin: -4px -6px -4px 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--kb-text);
+    i {
+        transition: transform .2s ease;
+    }
+    &[aria-expanded=false] i {
+        transform: rotate(180deg);
+    }
+    @media (prefers-reduced-motion: reduce) {
+        i { transition: none; }
+    }
+}
 .leaflet-container {
     font-family: "Geist", sans-serif;
     a.leaflet-popup-close-button {
