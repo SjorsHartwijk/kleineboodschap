@@ -137,7 +137,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 136,nl,Bosrijk audio-tour,59,2020-01-27,achtergrond,51.646687,5.039970
 137,nl,In gesprek met Erik van den Brand,141,2020-02-03,interview,,,Erik van den Brand
 138,nl,Teer-aan-m’n-schoen,123,2020-02-10,nieuws
-139,nl,’t Loonsche Land audio-tour,49,2020-02-17,achtergrond,51.645431,5.047134
+139,nl,’t Loonsche Land audio-tour,49,2020-02-17,achtergrond,51.645490,5.047561
 140,nl,Een Halve Maen weg zitten peuzelen,102,2020-02-24,nieuws
 141,nl,In gesprek met Cees Kikstra,100,2020-03-02,interview,,,Cees Kikstra
 142,nl,Hoeveelste was je nu geworden?,123,2020-03-09,nieuws
@@ -317,7 +317,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 316,nl,De Efteling Stoomtrein Maatschappij,126,2023-02-06,interview,51.651720,5.045275,Vicky Meeuwsen
 317,nl,Team Erfgoedbeheer,86,2023-02-13,interview,51.652277,5.053445,Ronald Donkers; Patrick van den Nieuwenhuizen
 318,nl,Anarchie op de Europalaan,131,2023-02-20,nieuws
-319,nl,De muziek van de Wereld van Sindbad,75,2023-02-27,achtergrond,,,René Merkelbach
+319,nl,De muziek van de Wereld van Sindbad,75,2023-02-27,achtergrond,51.654690,5.040829,René Merkelbach
 320,nl,Efteling - De Tentoonstelling,76,2023-03-06,achtergrond,51.686574,5.304683,Joris Westerink
 321,nl,Mijn eerste hoop zal niet de laatste zijn,147,2023-03-13,nieuws
 322,nl,Efteling in Concert,81,2023-03-20,interview,52.357230,4.866466,Annerieke Glaser; Jasper van Rosmalen; Jerom Fischer
@@ -368,7 +368,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 367,nl,In gesprek met Marjolein Mens,149,2024-01-08,interview,,,Marjolein Mens
 368,nl,De Koningssuite en Droomvlucht Suite in het Efteling Hotel,17,2024-01-11,reportage
 369,nl,Suske & Wiske en de Varende Vissen,117,2024-01-14,nieuws
-370,nl,De muziek van Baron 1898,83,2024-01-22,achtergrond,,,René Merkelbach
+370,nl,De muziek van Baron 1898,83,2024-01-22,achtergrond,51.654690,5.040829,René Merkelbach
 371,nl,Pieckvermogen,119,2024-01-29,nieuws
 372,nl,Het hoogste punt van Danse Macabre,35,2024-02-02,reportage,51.648746,5.048502
 373,nl,Mijmeren met Bart Baan en Niels Kooyman,168,2024-02-05,interview,,,Bart van Iersel; Niels Kooyman
@@ -455,7 +455,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 454,nl,Uitgedroogde verschrompelde zombie,125,2025-06-09,nieuws
 455,nl,In gesprek met Stefan van der Putten,119,2025-06-16,interview,,,Stefan van der Putten
 456,nl,One donkey show,138,2025-06-23,nieuws
-457,nl,De muziek van De Vliegende Hollander,99,2025-06-30,achtergrond,,,René Merkelbach
+457,nl,De muziek van De Vliegende Hollander,99,2025-06-30,achtergrond,51.654690,5.040829,René Merkelbach
 458,nl,Eftelings schilderen,116,2025-07-07,achtergrond,,,Michiel Reijnders
 459,nl,Snuiven aan m'n pin,167,2025-07-14,nieuws
 460,nl,De financiën van de Efteling in 2024,187,2025-07-21,achtergrond,,,Roel van Tilborg; Joris Teuwen
@@ -501,7 +501,7 @@ id,taal,titel,tijd,datum,categorie,latitude,longitude,gasten
 500,nl,Werken in de Efteling,69,2026-04-06,achtergrond
 501,nl,Suite Surprise,179,2026-04-13,nieuws
 502,nl,Autisme en de Efteling,99,2026-04-20,achtergrond,,,Richard de Witte; Stefan Voogt
-503,nl,De muziek van Raveleijn,84,2026-04-27,achtergrond,,,René Merkelbach
+503,nl,De muziek van Raveleijn,84,2026-04-27,achtergrond,51.654690,5.040829,René Merkelbach
 504,nl,Cultureel erfgoed in de Efteling,172,2026-05-04,achtergrond,,,Calogero Dell’Aira
 505,nl,Een verhaal van kaal staal,191,2026-05-11,nieuws
 506,nl,Mijmeren met Hylke Steggerda,83,2026-05-18,interview,,,Hylke Steggerda
