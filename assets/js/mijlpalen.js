@@ -153,6 +153,24 @@
             .filter(eps => eps.length)
             .map(eps => hoogste(eps, ep => ep.minuten));
 
+        // Kortste aflevering per categorie
+        const kortstePerCategorie = CATEGORIEEN
+            .map(c => afl.filter(ep => ep.categorie === c))
+            .filter(eps => eps.length)
+            .map(eps => eps.reduce((a, b) => b.minuten < a.minuten ? b : a));
+
+        // Langste pauze per categorie: de meeste dagen tussen twee opeenvolgende afleveringen
+        // van dezelfde categorie (afl is gesorteerd op datum)
+        const langstePauzePerCategorie = CATEGORIEEN.map(c => {
+            const eps = afl.filter(ep => ep.categorie === c);
+            let beste = null;
+            for (let i = 1; i < eps.length; i++) {
+                const dagen = Math.round((eps[i].datum - eps[i - 1].datum) / DAG);
+                if (!beste || dagen > beste.dagen) beste = { categorie: c, dagen, van: eps[i - 1], tot: eps[i] };
+            }
+            return beste;
+        }).filter(Boolean);
+
         // Per jaar en per maand (jaren met minder dan 5 afleveringen, zoals 2017, tellen niet mee)
         const perJaar = new Map(), perMaand = new Map();
         afl.forEach(ep => {
@@ -183,6 +201,8 @@
             langste: opDuur.slice(-5).reverse(),
             kortste: opDuur.slice(0, 5),
             perCategorie,
+            kortstePerCategorie,
+            langstePauzePerCategorie,
             meesteAfleveringen: jaren.length ? hoogste(jaren, j => j.aantal) : null,
             meesteInJaarPerCategorie,
             meesteLuistertijd: jaren.length ? hoogste(jaren, j => j.minuten) : null,

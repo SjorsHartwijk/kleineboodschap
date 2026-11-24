@@ -7,7 +7,7 @@
     <script src="assets/js/theme.js?v=20261119a"></script>
     <script src="assets/js/instellingen.js?v=20261119a"></script>
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261119a">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261124a">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -186,9 +186,10 @@
             // Een record: groot getal met eenheid, wat het is en een toelichting (en eventueel een top 5)
             // Elk record dezelfde opbouw onder elkaar: soort, groot getal, wat en toelichting,
             // zodat alles links uitlijnt, hoe breed het getal ook is
-            function record(getalHtml, soort, wat, uitleg, extra = '') {
+            // kolom: de breedte van het blok; de eerste vier records staan twee aan twee, de rest met drie op een rij
+            function record(getalHtml, soort, wat, uitleg, extra = '', kolom = 'col-12 col-md-6 col-lg-4') {
                 return `
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="${kolom}">
                         <div class="kb-recordblok">
                             <div class="small kb-muted">${soort}</div>
                             ${getalHtml ? `<div class="kb-record-getal">${getalHtml}</div>` : ''}
@@ -216,15 +217,24 @@
                 const r = M.records(afl);
                 const L = r.langste[0], K = r.kortste[0];
                 const uur = min => M.getal(Math.round(min / 60));
+                const HALF = 'col-12 col-md-6';
+                // Een regel per categorie: kleurblokje en naam, een kleine toelichting en rechts de waarde
+                const perCat = (eps, toelichting, waarde) => `<div class="mt-2">${eps.map(ep => `<div class="kb-regel" title="${veilig(ep.titel)}"><span><span class="kb-legendablokje ${ep.categorie}" aria-hidden="true"></span> ${hoofdletter(ep.categorie)} <span class="kb-muted small">${toelichting(ep)}</span></span><span class="text-nowrap">${waarde(ep)}</span></div>`).join('')}</div>`;
+                const maandJaar = d => d.toLocaleDateString('nl-NL', { month: 'short', year: 'numeric' });
                 const blokken = [
-                    record(`${Math.round(L.minuten)}<small>min</small>`, 'Langste aflevering', veilig(L.titel), `Aflevering ${L.id} · ${L.categorie} · ${M.datum(L.datum)}`, top5(r.langste)),
-                    record(`${Math.round(K.minuten)}<small>min</small>`, 'Kortste aflevering', veilig(K.titel), `Aflevering ${K.id} · ${K.categorie} · ${M.datum(K.datum)}`, top5(r.kortste)),
-                    record('', 'Langste per categorie', '', '',
-                        `<div class="mt-2">${r.perCategorie.map(ep => `<div class="kb-regel" title="${veilig(ep.titel)}"><span><span class="kb-legendablokje ${ep.categorie}" aria-hidden="true"></span> ${hoofdletter(ep.categorie)} <span class="kb-muted small">afl. ${ep.id}</span></span><span>${Math.round(ep.minuten)} min</span></div>`).join('')}</div>`),
+                    record(`${Math.round(L.minuten)}<small>min</small>`, 'Langste aflevering', veilig(L.titel), `Aflevering ${L.id} · ${L.categorie} · ${M.datum(L.datum)}`, top5(r.langste), HALF),
+                    record('', 'Langste per categorie', '', '', perCat(r.perCategorie, ep => `afl. ${ep.id}`, ep => `${Math.round(ep.minuten)} min`), HALF),
+                    record(`${Math.round(K.minuten)}<small>min</small>`, 'Kortste aflevering', veilig(K.titel), `Aflevering ${K.id} · ${K.categorie} · ${M.datum(K.datum)}`, top5(r.kortste), HALF),
+                    record('', 'Kortste per categorie', '', '', perCat(r.kortstePerCategorie, ep => `afl. ${ep.id}`, ep => `${Math.round(ep.minuten)} min`), HALF),
                 ];
                 if (r.meesteAfleveringen) blokken.push(record(`${r.meesteAfleveringen.aantal}<small>afl.</small>`, 'Meeste afleveringen in een jaar', String(r.meesteAfleveringen.jaar), 'Startjaar 2017 (één aflevering) telt niet mee'));
                 if (r.meesteInJaarPerCategorie.length) blokken.push(record('', 'Meeste afleveringen in een jaar, per categorie', '', '',
                     `<div class="mt-2">${r.meesteInJaarPerCategorie.map(c => `<div class="kb-regel"><span><span class="kb-legendablokje ${c.categorie}" aria-hidden="true"></span> ${hoofdletter(c.categorie)} <span class="kb-muted small">${c.jaren.join(', ')}</span></span><span>${c.aantal} afl.</span></div>`).join('')}</div>`));
+                // De uitleg van "pauze" staat in een tooltip achter een info-icoon naast de titel
+                const pauzeUitleg = 'Een pauze is de tijd tussen twee opeenvolgende afleveringen van dezelfde categorie. Hier staat per categorie de langste pauze die er ooit viel: het meeste aantal dagen zonder nieuwe aflevering in die categorie.';
+                const pauzeTitel = `Langste pauze per categorie<button type="button" class="kb-infoknop" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${pauzeUitleg}" aria-label="Uitleg: ${pauzeUitleg}"><i class="bi bi-info-circle" aria-hidden="true"></i></button>`;
+                if (r.langstePauzePerCategorie.length) blokken.push(record('', pauzeTitel, '', '',
+                    perCat(r.langstePauzePerCategorie.map(p => ({ ...p, titel: `Tussen aflevering ${p.van.id} en ${p.tot.id}` })), p => `${maandJaar(p.van.datum)}–${maandJaar(p.tot.datum)}`, p => `${M.getal(p.dagen)} dagen`)));
                 if (r.meesteLuistertijd) blokken.push(record(`${uur(r.meesteLuistertijd.minuten)}<small>uur</small>`, 'Meeste luistertijd in een jaar', String(r.meesteLuistertijd.jaar), `${r.meesteLuistertijd.aantal} afleveringen`));
                 blokken.push(
                     record(`${r.druksteMaand.aantal}<small>afl.</small>`, 'Drukste maand', hoofdletter(maandNaam(r.druksteMaand.maand)), `${r.druksteMaand.aantal} afleveringen in één maand`),
@@ -233,6 +243,8 @@
                 if (r.meestGast) blokken.push(record(`${r.meestGast}<small>×</small>`, 'Vaakst te gast', r.vaakstTeGast.map(veilig).join(', '), '<a href="gasten.html">Alle gasten</a>'));
                 if (r.meesteGasten.gasten.length) blokken.push(record(`${r.meesteGasten.gasten.length}<small>gasten</small>`, 'Meeste gasten in één aflevering', veilig(r.meesteGasten.titel), `Aflevering ${r.meesteGasten.id} · ${M.datum(r.meesteGasten.datum)}`));
                 vul('mijlpalenRecords', blokken.join(''));
+                // Tooltips activeren (bootstrap.bundle laadt met defer en is er dus bij het tonen van de records)
+                if (window.bootstrap) document.querySelectorAll('#mijlpalenRecords [data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
             }
 
             if (window.kbSnelheid && kbSnelheid.waarde() !== kbSnelheid.STANDAARD) {

@@ -363,6 +363,22 @@ a {
     color: var(--kb-muted);
 }
 
+.kb-infoknop {
+    background: none;
+    border: 0;
+    padding: 0 0 0 .3rem;
+    color: inherit;
+    font-size: inherit;
+    line-height: 1;
+    vertical-align: baseline;
+    cursor: help;
+    &:focus-visible {
+        outline: 2px solid var(--kb-primary);
+        outline-offset: 2px;
+        border-radius: 50%;
+    }
+}
+
 /* Regel met stippellijn, als in een inhoudsopgave: "Afleveringen ...... 206" */
 .kb-regel {
     display: flex;
