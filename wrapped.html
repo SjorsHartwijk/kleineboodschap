@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/js/theme.js?v=20261119a"></script>
     <script src="assets/js/instellingen.js?v=20261119a"></script>
-    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.9/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261124a">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-6.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261124u">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -32,15 +32,15 @@
     <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
     <script src="assets/js/cookies.js?v=20261119a"></script>
     <script src="assets/js/layout.js?v=20261119a"></script>
-    <main class="wrapped pb-3">
+    <main class="wrapped pb-5">
         <div class="container" id="wrappedContainer">
         <div class="row">
-            <div class="col-12 pt-4 pt-lg-5">
+            <div class="col-12 pt-7 lg:pt-12">
                 <h1 class="kb-paginakop">Kleine Boodschap Wrapped <span id="selectedYear"></span></h1>
-                <p class="lead">Ontdek unieke statistieken en jaaroverzichten van de Kleine Boodschap podcast in Wrapped.</p>
+                <p class="fs-lg fw-light">Ontdek unieke statistieken en jaaroverzichten van de Kleine Boodschap podcast in Wrapped.</p>
                 <!-- Alert: Wrapped blijft beschikbaar tot 1 maart -->
-                <div id="wrappedAlert" class="alert alert-info d-none" role="alert">
-                    <i class="bi bi-info-circle-fill me-2"></i>
+                <div id="wrappedAlert" class="alert theme-info d-none" role="alert">
+                    <i class="bi bi-info-circle-fill me-3"></i>
                     Wrapped blijft beschikbaar tot 1 maart
                 </div>
                 <script>
@@ -60,10 +60,10 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="row mb-3">
-                            <div class="col-12 col-md-9">
+                        <div class="row mb-5">
+                            <div class="col-12 md:col-9">
                                 <label for="categoryFilter" class="form-label">Filter op categorie:</label>
-                                <select id="categoryFilter" class="form-select">
+                                <select id="categoryFilter" class="form-control">
                                     <option value="all">Alle categorieën</option>
                                     <option value="nieuws">Nieuws</option>
                                     <option value="achtergrond">Achtergrond</option>
@@ -71,9 +71,9 @@
                                     <option value="interview">Interview</option>
                                 </select>
                             </div>
-                            <div class="col-12 col-md-3">
+                            <div class="col-12 md:col-3">
                                 <label for="yearSelect" class="form-label">Kies een ander jaar:</label>
-                                <select id="yearSelect" class="form-select"></select>
+                                <select id="yearSelect" class="form-control"></select>
                             </div>
                         </div>
                     </div>
@@ -81,16 +81,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 mt-4">
+            <div class="col-12 mt-7">
                 <h2 class="h3">Statistieken</h2>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-3 mb-4" id="stats"></div>
-        <div class="mb-4">
+        <div class="row row-cols-1 sm:row-cols-2 lg:row-cols-5 g-5 mb-7" id="stats"></div>
+        <div class="mb-7">
             <div class="card">
                 <div class="card-body">
                     <h2 class="h3">Afleveringen</h2>
-                    <div class="d-flex flex-wrap gap-3 small mb-2" aria-label="Legenda">
+                    <div class="d-flex flex-wrap gap-5 small mb-3" aria-label="Legenda">
                         <span><span class="badge achtergrond kb-wrapped-blokje">&nbsp;</span> Achtergrond</span>
                         <span><span class="badge nieuws kb-wrapped-blokje">&nbsp;</span> Nieuws</span>
                         <span><span class="badge interview kb-wrapped-blokje">&nbsp;</span> Interview</span>
@@ -100,30 +100,30 @@
                 </div>
             </div>
         </div>
-        <div class="mb-4">
+        <div class="mb-7">
             <div class="card">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-baseline gap-2">
+                    <div class="d-flex justify-content-between align-items-baseline gap-3">
                         <h2 class="h3">Mijn favorieten van <span data-favorieten-jaar></span></h2>
                         <span class="small kb-muted" id="favorietenAantal"></span>
                     </div>
-                    <div class="row g-4">
-                        <div class="col-12 col-lg-7">
-                            <div id="favorietenMelding" class="alert alert-warning py-2 d-none" role="status"></div>
+                    <div class="row g-7">
+                        <div class="col-12 lg:col-7">
+                            <div id="favorietenMelding" class="alert theme-warning py-5 d-none" role="status"></div>
                             <div id="favorietenLijst"></div>
-                            <div class="mt-3">
+                            <div class="mt-5">
                                 <button type="button" class="btn btn-primary" data-favorieten-actie="deel" disabled>
                                     <i class="bi bi-share me-1" aria-hidden="true"></i> Deel als afbeelding</button>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-5 kb-favorieten-voorbeeld d-none">
+                        <div class="col-12 lg:col-5 kb-favorieten-voorbeeld d-none">
                             <img id="favorietenVoorbeeld" class="img-fluid" alt="Voorbeeld van de afbeelding met je favoriete afleveringen" title="Zo ziet je gedeelde afbeelding eruit">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mb-4">
+        <div class="mb-7">
             <div class="card">
                 <div class="card-body">
                     <h2 class="h3">Afleveringen van <span id="episodeYear"></span></h2>
@@ -166,10 +166,10 @@
         const zichtbaar = lokaal || (vandaag >= beginJan && vandaag < eindMrt);
 
         if (!zichtbaar) {
-          container.innerHTML = "<h1 class=\"display-1 pt-5\">Kleine Boodschap Wrapped</h1><p class=\"fw-bold text-white\">Deze pagina is alleen zichtbaar van 1 januari tot 1 maart.</p>";
+          container.innerHTML = "<h1 class=\"fs-6xl fw-light pt-12\">Kleine Boodschap Wrapped</h1><p class=\"fw-bold fg-white\">Deze pagina is alleen zichtbaar van 1 januari tot 1 maart.</p>";
         }
 </script>
     <!-- bootstrap -->
-    <script src="assets/vendor/bootstrap-5.3.9/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="assets/js/bootstrap-global.js"></script>
 </body>
 </html>

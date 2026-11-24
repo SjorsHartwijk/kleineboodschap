@@ -5,7 +5,7 @@
 //   <div data-layout="nav"></div>          menubalk bovenaan, met daaronder de datumregel
 //   <div data-layout="footer"></div>       footer (colofon)
 // Een class of style op de placeholder wordt overgenomen op het element dat ervoor in de plaats komt.
-// Met data-container="container" kies je een andere container voor de navigatie (standaard container-xxl).
+// Met data-container="container" kies je een andere container voor de navigatie (standaard 2xl:container).
 // Op mobiel en tablet blijft de menubalk bovenaan staan bij het scrollen; de datumregel
 // staat los eronder en schuift wel mee weg (zie .navbar-top in style.scss).
 
@@ -64,8 +64,8 @@
     <nav class="navbar navbar-top">
         <div class="${container}">
             <a class="navbar-brand" href="./" title="Kleine Boodschap Data, naar de homepage"><img src="assets/images/logo-licht.svg" alt="Logo" width="36" height="36"> <span
-                    class="d-none d-md-inline-block">Kleine Boodschap Data</span><span
-                    class="d-inline-block d-md-none">KB Data</span></a>
+                    class="d-none md:d-inline-block">Kleine Boodschap Data</span><span
+                    class="d-inline-block md:d-none">KB Data</span></a>
             <div class="kb-navknoppen d-flex align-items-center ms-auto">${instellingen()}
                 <button class="kb-navknop kb-menuknop" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -88,7 +88,7 @@
         return `
     <div class="kb-datumregel">
         <div class="${container}">
-            <span class="d-none d-lg-inline">${vandaag()}</span>
+            <span class="d-none lg:d-inline">${vandaag()}</span>
             <span id="kbStand"></span>
         </div>
     </div>`;
@@ -125,35 +125,35 @@
             { optie: 'contrast', titel: 'Hoog contrast', uitleg: 'Sterkere kleuren, dikkere randen en onderstreepte links.', aan: t && t.contrast ? t.contrast() : false },
             { optie: 'patronen', titel: 'Patronen in grafieken', uitleg: 'Categorieën ook herkenbaar zonder kleur.', aan: t && t.patronen ? t.patronen() : false },
         ].map(o => `
-                            <div class="form-check form-switch kb-schakelaar">
-                                <input class="form-check-input" type="checkbox" role="switch" id="kbOptie-${o.optie}" data-kb-optie="${o.optie}" aria-describedby="kbOptie-${o.optie}-uitleg"${o.aan ? ' checked' : ''}>
-                                <label class="form-check-label" for="kbOptie-${o.optie}">${o.titel}</label>
+                            <div class="form-field kb-schakelaar">
+                                <div class="switch"><input type="checkbox" role="switch" switch id="kbOptie-${o.optie}" data-kb-optie="${o.optie}" aria-describedby="kbOptie-${o.optie}-uitleg"${o.aan ? ' checked' : ''}></div>
+                                <label for="kbOptie-${o.optie}">${o.titel}</label>
                                 <div class="kb-schakelaar-uitleg" id="kbOptie-${o.optie}-uitleg">${o.uitleg}</div>
                             </div>`).join('');
         const badge = snelheid !== s.STANDAARD
             ? `<span class="kb-snelheid-badge" aria-hidden="true">${s.formatteer(snelheid)}</span>` : '';
         return `
-                <div class="dropdown">
-                    <button class="kb-navknop" type="button" data-bs-toggle="dropdown" data-bs-display="dynamic" data-bs-auto-close="outside" aria-expanded="false" aria-label="Instellingen" title="Instellingen"><i class="bi bi-sliders2" aria-hidden="true"></i>${badge}</button>
-                    <div class="dropdown-menu dropdown-menu-end kb-instellingen">
+                <div class="kb-instellingenwrap">
+                    <button class="kb-navknop" type="button" data-bs-toggle="menu" data-bs-placement="bottom-end" data-bs-auto-close="outside" aria-expanded="false" aria-label="Instellingen" title="Instellingen"><i class="bi bi-sliders2" aria-hidden="true"></i>${badge}</button>
+                    <div class="menu kb-instellingen">
                         <div class="kb-instellingen-titel">Instellingen</div>
                         <div class="kb-instelling">
                             <div class="d-flex justify-content-between align-items-baseline">
                                 <label for="kbSnelheid" class="kb-instelling-label">Afspeelsnelheid</label>
                                 <output for="kbSnelheid" id="kbSnelheidWaarde" class="fw-semibold">${s.formatteer(snelheid)}</output>
                             </div>
-                            <input type="range" class="form-range" id="kbSnelheid" min="${s.MIN}" max="${s.MAX}" step="${s.STAP}" value="${snelheid}" aria-describedby="kbSnelheidUitleg">
+                            <div class="form-range"><input type="range" class="form-range-input" id="kbSnelheid" min="${s.MIN}" max="${s.MAX}" step="${s.STAP}" value="${snelheid}" aria-describedby="kbSnelheidUitleg"></div>
                             <div class="kb-schaal kb-muted small" aria-hidden="true"><span style="left:0">${s.formatteer(s.MIN)}</span><span style="left:${(s.STANDAARD - s.MIN) / (s.MAX - s.MIN) * 100}%">${s.formatteer(s.STANDAARD)}</span><span style="left:100%">${s.formatteer(s.MAX)}</span></div>
-                            <p id="kbSnelheidUitleg" class="kb-muted small mb-0 mt-2">Alle tijden op de site worden omgerekend naar jouw snelheid.</p>
+                            <p id="kbSnelheidUitleg" class="kb-muted small mb-0 mt-3">Alle tijden op de site worden omgerekend naar jouw snelheid.</p>
                             <button type="button" class="btn btn-link btn-sm p-0 mt-1" id="kbSnelheidReset"${snelheid === s.STANDAARD ? ' hidden' : ''}>Terug naar ${s.formatteer(s.STANDAARD)}</button>
                         </div>
                         <div class="kb-instelling">
-                            <div class="kb-instelling-label mb-2" id="kbModusLabel">Weergave</div>
+                            <div class="kb-instelling-label mb-3" id="kbModusLabel">Weergave</div>
                             <div class="kb-modusknoppen" role="group" aria-labelledby="kbModusLabel">${modusKnoppen}
                             </div>
                         </div>
                         <div class="kb-instelling" role="group" aria-labelledby="kbToegankelijkLabel">
-                            <div class="kb-instelling-label mb-2" id="kbToegankelijkLabel">Toegankelijkheid</div>${schakelaars}
+                            <div class="kb-instelling-label mb-3" id="kbToegankelijkLabel">Toegankelijkheid</div>${schakelaars}
                         </div>
                         <div class="kb-instelling">
                             <button type="button" class="btn btn-link btn-sm p-0" data-kb-cookies>Cookie-instellingen</button>
@@ -182,10 +182,10 @@
 
     function footer() {
         return `
-    <footer class="py-4 mt-auto">
-        <div class="container d-flex flex-wrap justify-content-between gap-3">
+    <footer class="py-7 mt-auto">
+        <div class="container d-flex flex-wrap justify-content-between gap-5">
             <p class="m-0" style="max-width: 40em"><strong>Kleine Boodschap Data</strong> is een onafhankelijk hobbyproject van <a href="https://sjorshartwijk.nl/" rel="noopener" target="_blank">Sjors Hartwijk</a>, zonder banden met de podcast of de Efteling. &copy; ${new Date().getFullYear()}</p>
-            <div class="d-flex flex-wrap gap-1 column-gap-4">
+            <div class="d-flex flex-wrap gap-1 column-gap-7">
                 <a href="over.html">Over</a>
                 <a href="https://bsky.app/profile/kbdata.nl" rel="noopener" target="_blank">Bluesky</a>
                 <a href="#" data-kb-cookies>Cookies</a>
@@ -217,7 +217,7 @@
 
     function plaats(placeholder) {
         const soort = placeholder.dataset.layout;
-        const container = placeholder.dataset.container || 'container-xxl';
+        const container = placeholder.dataset.container || '2xl:container';
         const html = soort === 'nav' ? nav(container)
             : soort === 'footer' ? footer()
             : null;

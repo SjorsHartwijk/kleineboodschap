@@ -69,7 +69,7 @@
     function html() {
         return `
     <div id="cookieConsentBanner" class="kb-cookies" role="dialog" aria-modal="false" aria-labelledby="kbCookiesTitel" hidden>
-        <figure class="mb-3">
+        <figure class="mb-5">
             <blockquote class="blockquote mb-1">
                 <p class="mb-0"><small><em>Wie knabbelt een cookie van dit huisje?</em></small></p>
             </blockquote>
@@ -79,9 +79,9 @@
         <p class="small">Deze website bewaart een paar kleine dingen op je apparaat om goed te werken. Daarnaast willen we graag met <strong>Google Analytics</strong> bijhouden hoe de site wordt gebruikt, maar alleen als jij daar toestemming voor geeft. Je kunt je keuze altijd wijzigen via <em>Cookies</em> onderaan de pagina of in het instellingenmenu (tandwiel).</p>
 
         <div class="kb-cookiegroep">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="kbCookiesNodig" checked disabled>
-                <label class="form-check-label fw-semibold" for="kbCookiesNodig">Noodzakelijk</label>
+            <div class="form-field">
+                <div class="switch"><input type="checkbox" role="switch" switch id="kbCookiesNodig" checked disabled></div>
+                <label class="fw-semibold" for="kbCookiesNodig">Noodzakelijk</label>
             </div>
             <p class="small mb-1">Nodig om je voorkeuren te onthouden. Deze gegevens blijven op je apparaat en worden niet gedeeld. Staan altijd aan.</p>
             <details class="small">
@@ -90,9 +90,9 @@
         </div>
 
         <div class="kb-cookiegroep">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="kbCookiesAnalyse">
-                <label class="form-check-label fw-semibold" for="kbCookiesAnalyse">Analytisch (Google Analytics)</label>
+            <div class="form-field">
+                <div class="switch"><input type="checkbox" role="switch" switch id="kbCookiesAnalyse"></div>
+                <label class="fw-semibold" for="kbCookiesAnalyse">Analytisch (Google Analytics)</label>
             </div>
             <p class="small mb-1">Statistieken over het bezoek, zoals welke pagina's bekeken worden, hoe lang en met wat voor apparaat. Hiermee kan ik de site verbeteren. De gegevens worden verwerkt door Google. Staat uit, tenzij je hem aanzet.</p>
             <details class="small">

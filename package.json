@@ -1,5 +1,12 @@
 {
+  "scripts": {
+    "bootstrap:build": "node bootstrap-build/build.mjs"
+  },
   "dependencies": {
     "csv-parser": "^3.0.0"
+  },
+  "devDependencies": {
+    "bootstrap": "6.0.0-alpha.2",
+    "sass": "^1.103.1"
   }
 }

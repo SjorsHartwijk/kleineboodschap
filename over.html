@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/js/theme.js?v=20261119a"></script>
     <script src="assets/js/instellingen.js?v=20261119a"></script>
-    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.9/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261124a">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-6.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261124u">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -35,29 +35,29 @@
     <script src="assets/js/cookies.js?v=20261119a"></script>
     <script src="assets/js/layout.js?v=20261119a"></script>
         <main class="flex-shrink-0">
-            <section id="about" class="py-5">
+            <section id="about" class="py-12">
                 <div class="container">
-                    <div class="row pb-3">
-                        <div class="col-12 col-xxl-9">
+                    <div class="row pb-5">
+                        <div class="col-12 2xl:col-9">
                             <h1 class="kb-paginakop">Over Kleine Boodschap Data</h1>
                             <p>Het project Kleine Boodschap Data is een (uit de hand gelopen?) hobbyproject dat is ontstaan uit mijn interesse voor de Efteling en de vele uren luisterplezier die de afleveringen van Kleine Boodschap mij hebben bezorgd.</p>
                             <p>Ik werk indien mogelijk bij het verschijnen van elke (nieuwe) aflevering alle data over de afleveringen bij en publiceer de statistieken op deze website en via <a href="https://bsky.app/profile/kbdata.nl" title="Bekijk het Bluesky-profiel van Kleine Boodschap Data">Bluesky</a>.</p>
                             <p>Dit project heeft geen commerciële doeleinden en heeft geen enkele affiliatie met de podcast Kleine Boodschap noch de Efteling. De data bestaat uit openbare gegevens zoals titel, publicatiedatum, duur en categorie van een aflevering, aangevuld met wat ik zelf bijhoud, zoals locaties en gasten. De afleveringen zelf zijn via deze website niet te beluisteren en er wordt ook niet naar verwezen.</p>
                         </div>
                     </div>
-                    <div class="row pb-5" id="data-downloaden">
-                        <div class="col-12 col-xxl-9">
+                    <div class="row pb-12" id="data-downloaden">
+                        <div class="col-12 2xl:col-9">
                             <div class="card">
                                 <div class="card-body">
                                     <h2 class="h4 card-title"><i class="bi bi-download" aria-hidden="true"></i> Data downloaden</h2>
                                     <p>Wil je zelf aan de slag met de cijfers? Alle gegevens die deze website gebruikt, kun je downloaden als CSV-bestand. Het bestand wordt bij elke nieuwe aflevering bijgewerkt<span id="downloadStand"></span>.</p>
-                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <div class="d-flex flex-wrap gap-3 mb-5">
                                         <a href="afleveringen.csv" download="kleine-boodschap-afleveringen.csv" class="btn btn-primary"><i class="bi bi-filetype-csv" aria-hidden="true"></i> Download CSV</a>
                                         <a href="episodes.json" download="kleine-boodschap-afleveringen.json" class="btn btn-outline-secondary"><i class="bi bi-filetype-json" aria-hidden="true"></i> Liever JSON</a>
                                     </div>
                                     <details class="small">
                                         <summary>Welke kolommen staan erin?</summary>
-                                        <ul class="mt-2 mb-2">
+                                        <ul class="mt-3 mb-3">
                                             <li><code>id</code>: het nummer van de aflevering</li>
                                             <li><code>taal</code>: <code>nl</code> of <code>en</code></li>
                                             <li><code>titel</code>: de titel van de aflevering</li>
@@ -73,130 +73,94 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row pb-5">
+                    <div class="row pb-12">
                         <div class="col-12">
                             <h2>Veelgestelde vragen</h2>
                             <div class="accordion accordion-flush" id="over-faq">
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-onafhankelijk" aria-expanded="false" aria-controls="faq-onafhankelijk">
-                                            Is deze website gelieerd aan de podcast Kleine Boodschap of de Efteling?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-onafhankelijk" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Nee. Kleine Boodschap Data is een onafhankelijk hobbyproject. Ik werk niet samen met Tim en Paul of de redactie van Kleine Boodschap, en ook niet in opdracht van hen of van de Efteling. De gegevens komen uit openbare bronnen, aangevuld met wat ik zelf bijhoud.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-doelgroep" aria-expanded="false" aria-controls="faq-doelgroep">
-                                            Voor wie is deze website bedoeld?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-doelgroep" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Voor fans en luisteraars van de podcast Kleine Boodschap die nieuwsgierig zijn naar de cijfers achter de afleveringen: hoeveel, hoe lang, wanneer en waarover.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-inhoud" aria-expanded="false" aria-controls="faq-inhoud">
-                                            Wat kan ik allemaal bekijken op deze website?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-inhoud" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Op de <a href="./" title="Statistieken">homepage</a> vind je kerncijfers, records, trends, voorspellingen en grafieken. Verder is er een doorzoekbaar overzicht van <a href="afleveringen.html" title="Afleveringen">alle afleveringen</a>, een <a href="kaart.html" title="Kaart">kaart</a> met de plekken in het park waar afleveringen over gaan, een <a href="kalender.html" title="Kalender">kalender</a>, een overzicht van alle <a href="gasten.html" title="Gasten">gasten</a> en een pagina met <a href="mijlpalen.html" title="Mijlpalen, records en voorspellingen">mijlpalen, records en voorspellingen</a>, bijvoorbeeld wanneer de volgende aflevering waarschijnlijk verschijnt. Met <a href="reeks.html" title="Reeks">Reeks</a> zie je je eigen luisterstatistieken. Weet je niet wat je wilt luisteren? De <a href="luisteren.html" title="Wat zal ik luisteren?">luistertip</a> zoekt afleveringen die passen in de tijd die je hebt. In januari en februari staat Wrapped in het menu: een overzicht van het afgelopen jaar, waarin je ook je favoriete afleveringen kunt kiezen en als afbeelding kunt delen. Alle data kun je <a href="#data-downloaden" title="Data downloaden">downloaden</a>.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-bronnen" aria-expanded="false" aria-controls="faq-bronnen">
-                                            Waar komen de gegevens vandaan?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-bronnen" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">De titel, publicatiedatum en duur van elke aflevering komen uit de openbare RSS-feed van de podcast. De categorie (nieuws, achtergrond, interview of reportage) staat bij elke aflevering op de website van Kleine Boodschap. De taal, de locaties op de kaart en de gasten vul ik zelf in, naar eigen inzicht. Mis je een gast of klopt een locatie niet? Laat het me weten.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-bijwerken" aria-expanded="false" aria-controls="faq-bijwerken">
-                                            Hoe vaak en wanneer wordt de data bijgewerkt?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-bijwerken" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Zodra er een nieuwe aflevering verschijnt, probeer ik die dezelfde ochtend of later op de dag toe te voegen. Ben ik bijvoorbeeld ziek of op vakantie, dan gebeurt dat later. Bij elke nieuwe aflevering wordt de website automatisch bijgewerkt en plaatst het <a href="https://bsky.app/profile/kbdata.nl" target="_blank" rel="noopener" title="Bluesky-profiel">Bluesky</a>-account een bericht. Daarnaast verschijnt daar elke dag een bericht met de afleveringen die op die dag in eerdere jaren uitkwamen, en op de eerste van de maand een overzicht van de maand ervoor.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-voorspellingen" aria-expanded="false" aria-controls="faq-voorspellingen">
-                                            Hoe komen de voorspellingen tot stand?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-voorspellingen" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">De voorspellingen op de homepage en de <a href="mijlpalen.html#voorspellingen" title="Mijlpalen, records en voorspellingen">mijlpalenpagina</a> gaan uit van het tempo van het afgelopen jaar. De volgende aflevering valt op de weekdag waarop de meeste afleveringen verschenen, en de categorie die het vaakst voorkwam is de meest waarschijnlijke. Voor de rest van het jaar en de volgende mijlpalen wordt dat tempo doorgetrokken; alleen een jubileum staat vast. Bij elke nieuwe aflevering wordt alles opnieuw berekend. Het blijft een schatting: een vakantie of een special kan het ritme veranderen.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-snelheid" aria-expanded="false" aria-controls="faq-snelheid">
-                                            Waarom zie ik andere tijden dan in mijn podcastapp?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-snelheid" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Luister je op een hogere of lagere snelheid? Kies dan via het instellingenmenu (het schuifjes-icoon rechtsboven) je afspeelsnelheid. Alle tijden op de site worden daarna omgerekend naar jouw snelheid. In de downloadbare data staat de duur altijd op normale snelheid (1,0×).</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-opslag" aria-expanded="false" aria-controls="faq-opslag">
-                                            Wat bewaart deze website op mijn apparaat?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-opslag" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Alleen wat nodig is om de site voor jou te laten werken: je afspeelsnelheid, licht of donker thema, hoog contrast en patronen, je instellingen bij Reeks en je favorieten in Wrapped. Dat blijft op je eigen apparaat en wordt nergens naartoe gestuurd. Alle bestanden, ook de lettertypes, komen van deze website zelf; alleen de kaart haalt de ondergrond op bij OpenStreetMap. Google Analytics wordt alleen geladen als je daar toestemming voor geeft. Je keuze pas je aan via <em>Cookies</em> onderaan de pagina of in het instellingenmenu.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-waarom" aria-expanded="false" aria-controls="faq-waarom">
-                                            Waarom is deze website gemaakt?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-waarom" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Na met veel plezier talloze afleveringen te hebben beluisterd, vroeg ik me af: hoeveel tijd (goed bestede tijd, wel te verstaan) heb ik inmiddels besteed aan het luisteren naar Kleine Boodschap? Uit nieuwsgierigheid ben ik begonnen alle afleveringen in een Excel-tabel te zetten en de minuten en uren bij elkaar op te tellen.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-hoe" aria-expanded="false" aria-controls="faq-hoe">
-                                            Hoe is deze website gemaakt?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-hoe" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Ik ben webdeveloper van beroep en wist al snel dat ik de data uit mijn Excellijst ook op een website kon publiceren. Daarbij daag ik mezelf uit om nieuwe technieken en methodes toe te passen. Inmiddels is de Excellijst vervangen: een script haalt nieuwe afleveringen op uit de RSS-feed en zet ze in een CSV-bestand, waaruit de website al zijn cijfers berekent. De site zelf is een statische website met onder meer Bootstrap en Chart.js.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-gebruik" aria-expanded="false" aria-controls="faq-gebruik">
-                                            Mag ik de data gebruiken?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-gebruik" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Ja, daarvoor kun je alle gegevens <a href="#data-downloaden" title="Data downloaden">downloaden</a> als CSV of JSON. Vermeld je kbdata.nl als bron? Dat stel ik op prijs.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-contact" aria-expanded="false" aria-controls="faq-contact">
-                                            Heb je een suggestie of zie je een fout?
-                                        </button>
-                                    </h3>
-                                    <div id="faq-contact" class="accordion-collapse collapse" data-bs-parent="#over-faq">
-                                        <div class="accordion-body">Laat het me weten! Ideeën voor nieuwe cijfers, een fout in de data of een gast of locatie die ontbreekt: stuur een bericht via <a href="https://bsky.app/profile/kbdata.nl" target="_blank" rel="noopener" title="Bluesky-profiel">Bluesky</a>.</div>
-                                    </div>
-                                </div>
+                                <details class="accordion-item" id="faq-onafhankelijk" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Is deze website gelieerd aan de podcast Kleine Boodschap of de Efteling?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Nee. Kleine Boodschap Data is een onafhankelijk hobbyproject. Ik werk niet samen met Tim en Paul of de redactie van Kleine Boodschap, en ook niet in opdracht van hen of van de Efteling. De gegevens komen uit openbare bronnen, aangevuld met wat ik zelf bijhoud.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-doelgroep" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Voor wie is deze website bedoeld?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Voor fans en luisteraars van de podcast Kleine Boodschap die nieuwsgierig zijn naar de cijfers achter de afleveringen: hoeveel, hoe lang, wanneer en waarover.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-inhoud" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Wat kan ik allemaal bekijken op deze website?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Op de <a href="./" title="Statistieken">homepage</a> vind je kerncijfers, records, trends, voorspellingen en grafieken. Verder is er een doorzoekbaar overzicht van <a href="afleveringen.html" title="Afleveringen">alle afleveringen</a>, een <a href="kaart.html" title="Kaart">kaart</a> met de plekken in het park waar afleveringen over gaan, een <a href="kalender.html" title="Kalender">kalender</a>, een overzicht van alle <a href="gasten.html" title="Gasten">gasten</a> en een pagina met <a href="mijlpalen.html" title="Mijlpalen, records en voorspellingen">mijlpalen, records en voorspellingen</a>, bijvoorbeeld wanneer de volgende aflevering waarschijnlijk verschijnt. Met <a href="reeks.html" title="Reeks">Reeks</a> zie je je eigen luisterstatistieken. Weet je niet wat je wilt luisteren? De <a href="luisteren.html" title="Wat zal ik luisteren?">luistertip</a> zoekt afleveringen die passen in de tijd die je hebt. In januari en februari staat Wrapped in het menu: een overzicht van het afgelopen jaar, waarin je ook je favoriete afleveringen kunt kiezen en als afbeelding kunt delen. Alle data kun je <a href="#data-downloaden" title="Data downloaden">downloaden</a>.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-bronnen" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Waar komen de gegevens vandaan?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">De titel, publicatiedatum en duur van elke aflevering komen uit de openbare RSS-feed van de podcast. De categorie (nieuws, achtergrond, interview of reportage) staat bij elke aflevering op de website van Kleine Boodschap. De taal, de locaties op de kaart en de gasten vul ik zelf in, naar eigen inzicht. Mis je een gast of klopt een locatie niet? Laat het me weten.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-bijwerken" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Hoe vaak en wanneer wordt de data bijgewerkt?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Zodra er een nieuwe aflevering verschijnt, probeer ik die dezelfde ochtend of later op de dag toe te voegen. Ben ik bijvoorbeeld ziek of op vakantie, dan gebeurt dat later. Bij elke nieuwe aflevering wordt de website automatisch bijgewerkt en plaatst het <a href="https://bsky.app/profile/kbdata.nl" target="_blank" rel="noopener" title="Bluesky-profiel">Bluesky</a>-account een bericht. Daarnaast verschijnt daar elke dag een bericht met de afleveringen die op die dag in eerdere jaren uitkwamen, en op de eerste van de maand een overzicht van de maand ervoor.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-voorspellingen" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Hoe komen de voorspellingen tot stand?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">De voorspellingen op de homepage en de <a href="mijlpalen.html#voorspellingen" title="Mijlpalen, records en voorspellingen">mijlpalenpagina</a> gaan uit van het tempo van het afgelopen jaar. De volgende aflevering valt op de weekdag waarop de meeste afleveringen verschenen, en de categorie die het vaakst voorkwam is de meest waarschijnlijke. Voor de rest van het jaar en de volgende mijlpalen wordt dat tempo doorgetrokken; alleen een jubileum staat vast. Bij elke nieuwe aflevering wordt alles opnieuw berekend. Het blijft een schatting: een vakantie of een special kan het ritme veranderen.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-snelheid" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Waarom zie ik andere tijden dan in mijn podcastapp?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Luister je op een hogere of lagere snelheid? Kies dan via het instellingenmenu (het schuifjes-icoon rechtsboven) je afspeelsnelheid. Alle tijden op de site worden daarna omgerekend naar jouw snelheid. In de downloadbare data staat de duur altijd op normale snelheid (1,0×).</div>
+                                </details>
+                                <details class="accordion-item" id="faq-opslag" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Wat bewaart deze website op mijn apparaat?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Alleen wat nodig is om de site voor jou te laten werken: je afspeelsnelheid, licht of donker thema, hoog contrast en patronen, je instellingen bij Reeks en je favorieten in Wrapped. Dat blijft op je eigen apparaat en wordt nergens naartoe gestuurd. Alle bestanden, ook de lettertypes, komen van deze website zelf; alleen de kaart haalt de ondergrond op bij OpenStreetMap. Google Analytics wordt alleen geladen als je daar toestemming voor geeft. Je keuze pas je aan via <em>Cookies</em> onderaan de pagina of in het instellingenmenu.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-waarom" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Waarom is deze website gemaakt?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Na met veel plezier talloze afleveringen te hebben beluisterd, vroeg ik me af: hoeveel tijd (goed bestede tijd, wel te verstaan) heb ik inmiddels besteed aan het luisteren naar Kleine Boodschap? Uit nieuwsgierigheid ben ik begonnen alle afleveringen in een Excel-tabel te zetten en de minuten en uren bij elkaar op te tellen.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-hoe" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Hoe is deze website gemaakt?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Ik ben webdeveloper van beroep en wist al snel dat ik de data uit mijn Excellijst ook op een website kon publiceren. Daarbij daag ik mezelf uit om nieuwe technieken en methodes toe te passen. Inmiddels is de Excellijst vervangen: een script haalt nieuwe afleveringen op uit de RSS-feed en zet ze in een CSV-bestand, waaruit de website al zijn cijfers berekent. De site zelf is een statische website met onder meer Bootstrap en Chart.js.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-gebruik" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Mag ik de data gebruiken?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Ja, daarvoor kun je alle gegevens <a href="#data-downloaden" title="Data downloaden">downloaden</a> als CSV of JSON. Vermeld je kbdata.nl als bron? Dat stel ik op prijs.</div>
+                                </details>
+                                <details class="accordion-item" id="faq-contact" name="over-faq">
+                                    <summary class="accordion-header">
+                                        Heb je een suggestie of zie je een fout?
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 5 6 6 6-6"/></svg>
+                                    </summary>
+                                    <div class="accordion-body">Laat het me weten! Ideeën voor nieuwe cijfers, een fout in de data of een gast of locatie die ontbreekt: stuur een bericht via <a href="https://bsky.app/profile/kbdata.nl" target="_blank" rel="noopener" title="Bluesky-profiel">Bluesky</a>.</div>
+                                </details>
                             </div>
                             <!-- FAQ structured data: gegenereerd uit dezelfde tekst als de vragen hierboven -->
                             <script type="application/ld+json">
@@ -310,7 +274,7 @@
         </main>
         <div data-layout="footer"></div>
        <!-- bootstrap -->
-        <script src="assets/vendor/bootstrap-5.3.9/js/bootstrap.bundle.min.js" defer></script>
+        <script type="module" src="assets/js/bootstrap-global.js"></script>
     <script>
         // Stand van de download: aantal afleveringen en de nieuwste datum
         fetch('episodes.json').then(r => r.json()).then(data => {

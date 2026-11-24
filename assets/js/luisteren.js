@@ -125,7 +125,7 @@
 
         function kaart(ep) {
             return `
-            <div class="col-12 col-lg-4">
+            <div class="col-12 lg:col-4">
                 <div class="kb-recordblok kb-tip">
                     <div class="small kb-muted">${reden(ep)}</div>
                     <div class="kb-record-getal">${ep.minuten}<small>min</small></div>

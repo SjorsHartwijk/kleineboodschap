@@ -57,8 +57,8 @@
                 <div class="fw-semibold">${hoofdletter(datumTekst)}</div>
                 <div class="small kb-muted">${perDag[dag]} van de ${recent.length} afleveringen van het afgelopen jaar verschenen op een ${WEEKDAGEN[dag]}</div>
             </div>
-            <p class="mt-3 mb-0">Waarschijnlijk zal dit een ${kansen[0].c}-aflevering zijn.</p>
-            <h4 class="h6 mt-4 mb-2">Kans per categorie</h4>
+            <p class="mt-5 mb-0">Waarschijnlijk zal dit een ${kansen[0].c}-aflevering zijn.</p>
+            <h4 class="h6 mt-7 mb-3">Kans per categorie</h4>
             <div class="kb-kansen">${kansen.map(k => regel(`<span class="kb-legendablokje ${k.c}" aria-hidden="true"></span> ${hoofdletter(k.c)}`, `${k.pct}%`)).join('')}</div>`;
     }
 
@@ -113,7 +113,7 @@
                 <div class="fw-semibold">${conclusie}</div>
                 <div class="small kb-muted">Nu ${getal(nu.length)} afleveringen, nog rond ${getal(erbij)} tot en met 31 december</div>
             </div>
-            <div class="mt-3">
+            <div class="mt-5">
                 ${regel(`Afleveringen ${vergelijk(totaal, 'aantal', '')}`, `${getal(nu.length)} → ${getal(totaal)}`)}
                 ${regel(`Luistertijd ${vergelijk(totaalUur, 'uur', ' uur')}`, `${getal(Math.round(nuMinuten / 60))} → ${getal(totaalUur)} uur`)}
                 ${regel(`Personen te gast ${vergelijk(totaalGasten, 'gasten', '')}`, `${getal(nuGasten)} → ${getal(totaalGasten)}`)}
