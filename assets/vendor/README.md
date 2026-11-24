@@ -4,7 +4,7 @@ Deze bestanden worden zelf gehost in plaats van via een CDN. Dat scheelt verbind
 
 | Map | Bibliotheek | Licentie | Bron |
 |---|---|---|---|
-| `bootstrap-5.3.3` | Bootstrap 5.3.3 (css en js-bundle) | MIT | https://getbootstrap.com |
+| `bootstrap-5.3.9` | Bootstrap 5.3.9 (css en js-bundle) | MIT | https://getbootstrap.com |
 | `bootstrap-icons-1.13.1` | Bootstrap Icons 1.13.1 | MIT | https://icons.getbootstrap.com |
 | `chartjs-4.6.1` | Chart.js 4.6.1 (UMD-build) | MIT | https://www.chartjs.org |
 | `leaflet-1.9.4` | Leaflet 1.9.4 (alleen op kaart.html) | BSD-2-Clause | https://leafletjs.com |
