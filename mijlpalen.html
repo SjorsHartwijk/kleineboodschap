@@ -223,6 +223,8 @@
                         `<div class="mt-2">${r.perCategorie.map(ep => `<div class="kb-regel" title="${veilig(ep.titel)}"><span><span class="kb-legendablokje ${ep.categorie}" aria-hidden="true"></span> ${hoofdletter(ep.categorie)} <span class="kb-muted small">afl. ${ep.id}</span></span><span>${Math.round(ep.minuten)} min</span></div>`).join('')}</div>`),
                 ];
                 if (r.meesteAfleveringen) blokken.push(record(`${r.meesteAfleveringen.aantal}<small>afl.</small>`, 'Meeste afleveringen in een jaar', String(r.meesteAfleveringen.jaar), 'Startjaar 2017 (één aflevering) telt niet mee'));
+                if (r.meesteInJaarPerCategorie.length) blokken.push(record('', 'Meeste afleveringen in een jaar, per categorie', '', '',
+                    `<div class="mt-2">${r.meesteInJaarPerCategorie.map(c => `<div class="kb-regel"><span><span class="kb-legendablokje ${c.categorie}" aria-hidden="true"></span> ${hoofdletter(c.categorie)} <span class="kb-muted small">${c.jaren.join(', ')}</span></span><span>${c.aantal} afl.</span></div>`).join('')}</div>`));
                 if (r.meesteLuistertijd) blokken.push(record(`${uur(r.meesteLuistertijd.minuten)}<small>uur</small>`, 'Meeste luistertijd in een jaar', String(r.meesteLuistertijd.jaar), `${r.meesteLuistertijd.aantal} afleveringen`));
                 blokken.push(
                     record(`${r.druksteMaand.aantal}<small>afl.</small>`, 'Drukste maand', hoofdletter(maandNaam(r.druksteMaand.maand)), `${r.druksteMaand.aantal} afleveringen in één maand`),

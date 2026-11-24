@@ -164,6 +164,12 @@
         });
         const jaren = [...perJaar.entries()].filter(([, eps]) => eps.length >= 5)
             .map(([jaar, eps]) => ({ jaar, aantal: eps.length, minuten: som(eps, ep => ep.minuten) }));
+        // Meeste afleveringen in een kalenderjaar, per categorie (bij gelijke stand alle jaren)
+        const meesteInJaarPerCategorie = CATEGORIEEN.map(c => {
+            const tellingen = jaren.map(j => ({ jaar: j.jaar, aantal: perJaar.get(j.jaar).filter(ep => ep.categorie === c).length }));
+            const max = Math.max(0, ...tellingen.map(t => t.aantal));
+            return { categorie: c, aantal: max, jaren: tellingen.filter(t => t.aantal === max).map(t => t.jaar) };
+        }).filter(r => r.aantal > 0);
         const maanden = [...perMaand.entries()].map(([maand, eps]) => ({ maand, aantal: eps.length, minuten: som(eps, ep => ep.minuten) }));
 
         // Gasten
@@ -178,6 +184,7 @@
             kortste: opDuur.slice(0, 5),
             perCategorie,
             meesteAfleveringen: jaren.length ? hoogste(jaren, j => j.aantal) : null,
+            meesteInJaarPerCategorie,
             meesteLuistertijd: jaren.length ? hoogste(jaren, j => j.minuten) : null,
             druksteMaand: hoogste(maanden, m => m.aantal),
             langsteMaand: hoogste(maanden, m => m.minuten),
