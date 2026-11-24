@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/js/theme.js?v=20261119a"></script>
     <script src="assets/js/instellingen.js?v=20261119a"></script>
-    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.9/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261124a">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-6.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261124u">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -35,7 +35,7 @@
     <script src="assets/js/cookies.js?v=20261119a"></script>
     <script src="assets/js/layout.js?v=20261119a"></script>
         <main class="flex-shrink-0">
-            <section class="pt-5">
+            <section class="pt-12">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -46,36 +46,32 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="d-flex flex-wrap column-gap-4 row-gap-1 mb-4" role="group" aria-label="Sorteren">
+                        <div class="d-flex flex-wrap column-gap-7 row-gap-1 mb-7" role="group" aria-label="Sorteren">
                             <button type="button" class="btn btn-outline-secondary active" data-sort="aantal">Aantal (hoog naar laag)</button>
                             <button type="button" class="btn btn-outline-secondary" data-sort="volgorde">Volgorde van afleveringen</button>
                             <button type="button" class="btn btn-outline-secondary" data-sort="alfabet">Alfabetisch</button>
                         </div>
                     </div>
                     <div class="row" id="lijst"></div>
-                    <div class="row my-4">
+                    <div class="row my-7">
                         <div class="col-12">
-                            <p class="small text-muted"><small>* Voor deze lijst worden alleen interviews en achtergrondafleveringen met experts, (Oud-)Eftelingers of ervaringsdeskundigen als bron gebruikt. Wie geïnterviewd is tijdens een (spontane) reportage of een persmoment, wordt niet in de lijst en/of telling meegenomen.</small></p>
+                            <p class="small fg-secondary"><small>* Voor deze lijst worden alleen interviews en achtergrondafleveringen met experts, (Oud-)Eftelingers of ervaringsdeskundigen als bron gebruikt. Wie geïnterviewd is tijdens een (spontane) reportage of een persmoment, wordt niet in de lijst en/of telling meegenomen.</small></p>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
         <!-- Details van een aflevering -->
-        <div class="modal fade" id="afleveringModal" tabindex="-1" aria-labelledby="afleveringModalTitel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title h5" id="afleveringModalTitel">Aflevering</h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
-                    </div>
-                    <div class="modal-body" id="afleveringModalBody"></div>
-                </div>
+        <dialog class="dialog" id="afleveringModal" aria-labelledby="afleveringModalTitel">
+            <div class="dialog-header">
+                <h2 class="dialog-title h5" id="afleveringModalTitel">Aflevering</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Sluiten"></button>
             </div>
-        </div>
+            <div class="dialog-body" id="afleveringModalBody"></div>
+        </dialog>
         <div data-layout="footer"></div>
        <!-- bootstrap -->
-        <script src="assets/vendor/bootstrap-5.3.9/js/bootstrap.bundle.min.js" defer></script>
+        <script type="module" src="assets/js/bootstrap-global.js"></script>
     <script>
 const BESTAND = "episodes.json"; // de gasten staan per aflevering in het veld 'gasten'
 let data = []; // [{naam, aantal, eersteIndex, afleveringen}]
@@ -90,7 +86,7 @@ fetch(BESTAND)
   .then(eps => verwerk(eps))
   .catch(err => {
     document.getElementById("lijst").innerHTML =
-      `<div class="col-12"><div class="alert alert-danger">Fout bij het laden van ${BESTAND}: ${err.message}</div></div>`;
+      `<div class="col-12"><div class="alert theme-danger">Fout bij het laden van ${BESTAND}: ${err.message}</div></div>`;
   });
 
 function verwerk(eps) {
@@ -120,7 +116,7 @@ function labels(gast) {
 // Venster met de details van een aflevering; na sluiten terug naar het labeltje
 const modal = document.getElementById("afleveringModal");
 let opener = null;
-modal.addEventListener("hidden.bs.modal", () => { if (opener && opener.isConnected) opener.focus(); });
+modal.addEventListener("hidden.bs.dialog", () => { if (opener && opener.isConnected) opener.focus(); });
 
 function toonAflevering(id, knop) {
   const ep = afleveringen.get(id);
@@ -130,10 +126,10 @@ function toonAflevering(id, knop) {
   const gasten = ep.gasten || [];
   document.getElementById("afleveringModalTitel").textContent = `Aflevering ${ep.id}`;
   document.getElementById("afleveringModalBody").innerHTML = `
-    <p class="fw-semibold mb-2">${ep.titel}</p>
-    <p class="mb-2">${datum} · ${ep.tijd} minuten · <span class="badge ${ep.categorie} kb-badge-tekst">${ep.categorie}</span></p>
+    <p class="fw-semibold mb-3">${ep.titel}</p>
+    <p class="mb-3">${datum} · ${ep.tijd} minuten · <span class="badge ${ep.categorie} kb-badge-tekst">${ep.categorie}</span></p>
     ${gasten.length ? `<p class="mb-0"><span class="kb-muted">${gasten.length === 1 ? "Gast" : "Gasten"}:</span> ${gasten.join(", ")}</p>` : ""}`;
-  bootstrap.Modal.getOrCreateInstance(modal).show();
+  bootstrap.Dialog.getOrCreateInstance(modal).show();
 }
 
 document.getElementById("lijst").addEventListener("click", e => {
@@ -167,7 +163,7 @@ function render() {
     const opsomming = namen => namen.length < 2 ? namen[0] : namen.slice(0, -1).join(", ") + " en " + namen[namen.length - 1];
     gesorteerd = gesorteerd.filter(item => plekVan(item) > 5);
     top = `
-      <div class="col-12 mb-4">
+      <div class="col-12 mb-7">
         <ol class="kb-gastentop" aria-label="Top 5 vaakst te gast">
           ${groepen.map((g, i) => `
             <li class="${i === 0 ? "is-eerste" : ""}">
@@ -176,7 +172,7 @@ function render() {
                 <span class="kb-gastentop-namen">${opsomming(g.gasten.map(x => x.naam))}${g.gasten.length > 1 ? ` <span class="kb-muted small">(gedeeld)</span>` : ""}</span>
                 <span class="kb-gastentop-staaf" style="width: ${(g.aantal / hoogste * 100).toFixed(1)}%" aria-hidden="true"></span>
                 ${g.gasten.length === 1 ? labels(g.gasten[0]) : g.gasten.map(x =>
-                  `<span class="d-block small kb-muted mt-2">${x.naam}</span>${labels(x).replace('class="kb-afllabels"', 'class="kb-afllabels mt-1"')}`).join("")}
+                  `<span class="d-block small kb-muted mt-3">${x.naam}</span>${labels(x).replace('class="kb-afllabels"', 'class="kb-afllabels mt-1"')}`).join("")}
               </span>
               <span class="kb-gastentop-aantal">${g.aantal}×</span>
             </li>`).join("")}

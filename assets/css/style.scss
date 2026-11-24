@@ -59,6 +59,54 @@
 }
 
 /* ==========================================================================
+   Volgorde van de CSS-lagen (Bootstrap 6)
+   Bootstrap 6 zet alles in lagen: colors, theme, config, root, reboot, layout, content, forms, components,
+   custom, helpers, utilities. Ongelaagde CSS wint van alle lagen, dus ook van de hulpklassen (.mt-7, .d-none).
+   In Bootstrap 5 hadden hulpklassen !important en wonnen ze van onze eigen regels. Om dat zo te houden staat al
+   onze eigen CSS hieronder in de laag "custom": die wint van de componenten en verliest van de hulpklassen.
+   Alleen de basisstijlen voor gewone elementen (a, koppen) staan in de laag "reboot", zodat knoppen en menu-items
+   (laag "components") ze overschrijven, zoals in Bootstrap 5.
+   ========================================================================== */
+/* In de laag "reboot" van Bootstrap 6, net als de linkkleur van Bootstrap zelf: zo winnen knoppen en menu-items
+   (laag "components") het van de gewone linkkleur, zoals in Bootstrap 5. Ongelaagde regels winnen altijd. */
+@layer reboot {
+    a {
+        transition: color 200ms;
+        color: var(--kb-primary);
+        &:hover,&:focus {
+            color: var(--kb-primary-hover);
+        }
+    }
+}
+
+/* Typografie als in Bootstrap 5: Bootstrap 6 maakt koppen kleiner en past de marges aan. In de laag "reboot",
+   zodat de hulpklassen van Bootstrap 6 (.fs-*, .mb-*) ze nog steeds kunnen overschrijven. */
+@layer reboot {
+    h1, .h1 { font-size: calc(1.375rem + 1.5vw); }
+    h2, .h2 { font-size: calc(1.325rem + .9vw); }
+    h3, .h3 { font-size: calc(1.3rem + .6vw); }
+    h4, .h4 { font-size: calc(1.275rem + .3vw); }
+    h5, .h5 { font-size: 1.25rem; }
+    h6, .h6 { font-size: 1rem; }
+    @media (min-width: 1200px) {
+        h1, .h1 { font-size: 2.5rem; }
+        h2, .h2 { font-size: 2rem; }
+        h3, .h3 { font-size: 1.75rem; }
+        h4, .h4 { font-size: 1.5rem; }
+    }
+}
+
+/* seamless transitions */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+/* ==========================================================================
    Huisstijl "de almanak"
    Kleuren en letters zoals vastgesteld (Alegreya + Geist, palet hieronder).
    Vormtaal: geen kaartjes of schaduwen, maar inktlijnen boven secties,
@@ -94,23 +142,17 @@
     --kb-drukte-5: #f38a50;
     --kb-drukte-tekst: #1B2A36;
 
-    --bs-body-bg: var(--kb-bg);
-    --bs-body-bg-rgb: 251, 247, 238;
-    --bs-body-color: var(--kb-text);
-    --bs-body-color-rgb: 27, 42, 54;
-    --bs-emphasis-color: var(--kb-text);
+    --bs-bg-body: var(--kb-bg);
+    --bs-fg-body: var(--kb-text);
     --bs-heading-color: var(--kb-text);
-    --bs-secondary-color: var(--kb-muted);
+    --bs-fg-2: var(--kb-muted);
     --bs-secondary-bg: var(--kb-border);
     --bs-tertiary-bg: var(--kb-bg);
     --bs-border-color: var(--kb-border);
     --bs-border-color-translucent: var(--kb-border);
     --bs-primary: var(--kb-primary);
-    --bs-primary-rgb: 21, 70, 102;
     --bs-link-color: var(--kb-primary);
-    --bs-link-color-rgb: 21, 70, 102;
     --bs-link-hover-color: var(--kb-primary-hover);
-    --bs-link-hover-color-rgb: 27, 42, 54;
     --bs-focus-ring-color: rgba(21, 70, 102, .3);
 }
 
@@ -141,51 +183,74 @@
     --kb-drukte-5: #B03A26;
     --kb-drukte-tekst: #F5EFE3;
 
-    --bs-body-bg: var(--kb-bg);
-    --bs-body-bg-rgb: 14, 28, 39;
-    --bs-body-color: var(--kb-text);
-    --bs-body-color-rgb: 237, 230, 214;
-    --bs-emphasis-color: var(--kb-text);
+    --bs-bg-body: var(--kb-bg);
+    --bs-fg-body: var(--kb-text);
     --bs-heading-color: var(--kb-text);
-    --bs-secondary-color: var(--kb-muted);
+    --bs-fg-2: var(--kb-muted);
     --bs-secondary-bg: var(--kb-border);
     --bs-tertiary-bg: var(--kb-surface);
     --bs-border-color: var(--kb-border);
     --bs-border-color-translucent: var(--kb-border);
     --bs-primary: var(--kb-primary);
-    --bs-primary-rgb: 111, 176, 220;
     --bs-link-color: var(--kb-primary);
-    --bs-link-color-rgb: 111, 176, 220;
     --bs-link-hover-color: var(--kb-primary-hover);
-    --bs-link-hover-color-rgb: 237, 230, 214;
     --bs-focus-ring-color: rgba(111, 176, 220, .35);
 }
 
 /* Rechte hoeken en geen schaduwen in alle Bootstrap-onderdelen */
 :root {
-    --bs-border-radius: 2px;
-    --bs-border-radius-sm: 2px;
-    --bs-border-radius-lg: 2px;
-    --bs-border-radius-xl: 2px;
-    --bs-border-radius-xxl: 2px;
-    --bs-border-radius-pill: 2px;
-    --bs-box-shadow: none;
-    --bs-box-shadow-sm: none;
-    --bs-box-shadow-lg: none;
+    --bs-radius-1: 2px;
+    --bs-radius-2: 2px;
+    --bs-radius-3: 2px;
+    --bs-radius-4: 2px;
+    --bs-radius-5: 2px;
+    --bs-radius-6: 2px;
+    --bs-radius-7: 2px;
+    --bs-radius-8: 2px;
+    --bs-radius-9: 2px;
+    --bs-radius-pill: 2px;
+    --bs-shadow-strength: 0;
 }
+
+/* Typografie-tokens als in Bootstrap 5 (marges van koppen en alinea's, inspringing van lijsten) */
+:root {
+    --bs-heading-margin-bottom: .5rem;
+    --bs-paragraph-margin-bottom: 1rem;
+    --bs-list-padding-x: 2rem;
+}
+
+/* Standaardwaarden van Bootstrap 5 die Bootstrap 6 anders instelt. Knoppen, invoervelden, de tekstvakken in een
+   invoergroep en paginering delen in Bootstrap 6 dezelfde "input"-afmetingen (met een minimale hoogte, en kleiner of
+   ruimer dan in Bootstrap 5). Hier staan ze weer op de waarden van Bootstrap 5. */
+:root {
+    --bs-btn-input-gap: .25rem;
+    --bs-btn-input-min-height: 0;
+    --bs-btn-input-padding-y: .375rem;
+    --bs-btn-input-padding-x: .75rem;
+    --bs-btn-input-font-size: 1rem;
+    --bs-btn-input-line-height: 1.5;
+    --bs-btn-input-sm-min-height: 0;
+    --bs-btn-input-sm-padding-y: .25rem;
+    --bs-btn-input-sm-padding-x: .5rem;
+    --bs-btn-input-sm-font-size: .875rem;
+    --bs-btn-input-sm-line-height: 1.5;
+    --bs-btn-input-lg-min-height: 0;
+    --bs-btn-input-lg-padding-y: .5rem;
+    --bs-btn-input-lg-padding-x: 1rem;
+    --bs-btn-input-lg-font-size: 1.25rem;
+    --bs-btn-input-lg-line-height: 1.5;
+}
+
+/* ==========================================================================
+   Alles hieronder staat in de laag "custom" (zie de uitleg bovenaan).
+   De tokens hierboven staan bewust NIET in een laag: Bootstrap 6 zet zijn :root-tokens zelf buiten
+   een laag, en alleen ongelaagde regels die erna komen winnen daarvan.
+   ========================================================================== */
+@layer custom {
 .shadow, .shadow-sm, .shadow-lg {
     box-shadow: none !important;
 }
 
-/* seamless transitions */
-@view-transition {
-  navigation: auto;
-}
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 220ms;
-  animation-timing-function: cubic-bezier(.4,0,.2,1);
-}
 
 /* ==========================================================================
    Basis
@@ -228,13 +293,6 @@ h1, .h1 {
 }
 code {
     color: var(--kb-primary);
-}
-a {
-    transition: color 200ms;
-    color: var(--kb-primary);
-    &:hover,&:focus {
-        color: var(--kb-primary-hover);
-    }
 }
 /* Tekstlink in de huisstijl: onderstreept, dikker bij aanwijzen */
 .kb-tekstlink {
@@ -332,7 +390,7 @@ a {
     grid-template-columns: minmax(0, 1fr);
     gap: 32px 40px;
     @media (min-width: 768px) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    @media (min-width: 992px) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (min-width: 1024px) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 .kb-cijfer {
     min-width: 0;
@@ -450,7 +508,7 @@ a {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 32px;
     @media (min-width: 768px) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    @media (min-width: 992px) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (min-width: 1024px) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 .kb-halte {
     min-width: 0;
@@ -550,7 +608,7 @@ a {
 
 /* Lijst met verwijzingen naar de rest van de site */
 /* Twee kolommen: bij een oneven aantal rekt de laatste link niet uit over de volle breedte */
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
     .kb-archieflijst a { max-width: calc(50% - 28px); }
 }
 .kb-archieflijst {
@@ -648,13 +706,16 @@ a {
     background-color: var(--kb-surface);
     text-decoration: none;
 }
-.text-bg-secondary {
-    background-color: var(--kb-border) !important;
-    color: var(--kb-text) !important;
+.badge.theme-secondary {
+    --bs-badge-bg: var(--kb-border);
+    --bs-badge-color: var(--kb-text);
+    background-color: var(--kb-border);
+    color: var(--kb-text);
 }
 
 /* Tabs: tekst met een dikke onderstreping onder de gekozen tab */
 .nav-pills {
+    --bs-nav-pills-padding: 0;
     --bs-nav-pills-border-radius: 0;
     --bs-nav-pills-link-active-bg: transparent;
     --bs-nav-pills-link-active-color: var(--kb-text);
@@ -674,39 +735,39 @@ a {
     }
 }
 
-.dropdown-menu {
-    --bs-dropdown-bg: var(--kb-surface);
-    --bs-dropdown-border-color: var(--kb-border);
-    --bs-dropdown-color: var(--kb-text);
-    --bs-dropdown-link-color: var(--kb-text);
-    --bs-dropdown-link-hover-color: var(--kb-text);
-    --bs-dropdown-link-hover-bg: var(--kb-primary-subtle);
-    --bs-dropdown-link-active-color: var(--kb-on-primary);
-    --bs-dropdown-link-active-bg: var(--kb-primary);
+.menu {
+    --bs-menu-bg: var(--kb-surface);
+    --bs-menu-border-color: var(--kb-border);
+    --bs-menu-color: var(--kb-text);
+    --bs-menu-item-color: var(--kb-text);
+    --bs-menu-item-focus-color: var(--kb-text);
+    --bs-menu-item-focus-bg: var(--kb-primary-subtle);
+    --bs-menu-item-active-color: var(--kb-on-primary);
+    --bs-menu-item-active-bg: var(--kb-primary);
+    --bs-menu-box-shadow: none;
+    --bs-menu-font-size: 1rem;
     border-radius: 2px;
 }
-.modal {
-    --bs-modal-bg: var(--kb-surface);
-    --bs-modal-color: var(--kb-text);
-    --bs-modal-border-color: var(--kb-border);
-    --bs-modal-header-border-color: var(--kb-border);
-    --bs-modal-footer-border-color: var(--kb-border);
+.dialog {
+    --bs-dialog-bg: var(--kb-surface);
+    --bs-dialog-color: var(--kb-text);
+    --bs-dialog-border-color: var(--kb-border);
+    --bs-dialog-header-border-color: var(--kb-border);
+    --bs-dialog-footer-border-color: var(--kb-border);
+    --bs-dialog-box-shadow: none;
 }
 .table {
     --bs-table-bg: transparent;
     --bs-table-color: var(--kb-text);
     --bs-table-border-color: var(--kb-border);
-    --bs-table-striped-bg: var(--kb-primary-subtle);
     --bs-table-striped-color: var(--kb-text);
-    --bs-table-hover-bg: var(--kb-primary-subtle);
     --bs-table-hover-color: var(--kb-text);
     font-variant-numeric: tabular-nums;
     thead th {
         border-bottom: 2px solid var(--kb-text);
     }
 }
-.form-control,
-.form-select {
+.form-control {
     background-color: var(--kb-surface);
     border-color: var(--kb-border);
     color: var(--kb-text);
@@ -717,9 +778,20 @@ a {
         box-shadow: 0 0 0 .2rem var(--bs-focus-ring-color);
     }
 }
-.form-check-input:checked {
-    background-color: var(--kb-primary);
-    border-color: var(--kb-primary);
+.check, .radio, .switch {
+    --bs-check-size: 1em;
+    --bs-check-checked-bg: var(--kb-primary);
+    --bs-check-checked-border-color: var(--kb-primary);
+    --bs-switch-checked-bg: var(--kb-primary);
+    --bs-switch-checked-border-color: var(--kb-primary);
+}
+/* Schakelaar zoals in Bootstrap 5: 2em breed en 1em hoog, met een lichte rand en een grijs bolletje */
+.switch {
+    --bs-switch-height: 1em;
+    --bs-switch-width: 2em;
+    --bs-switch-margin-block: .25rem;
+    --bs-switch-bg: var(--kb-bg);
+    --bs-switch-indicator-bg: color-mix(in srgb, var(--kb-text) 35%, transparent);
 }
 .pagination {
     --bs-pagination-bg: var(--kb-surface);
@@ -814,6 +886,9 @@ nav.navbar.navbar-top {
     }
     /* Het uitgeklapte menu: een inhoudsopgave over de volle breedte */
     .navbar-collapse {
+        /* Bootstrap 6 heeft .navbar-collapse niet meer; zonder flex-basis krimpt het menu tot zijn inhoud */
+        flex-basis: 100%;
+        flex-grow: 1;
         border-top: 1px solid var(--kb-nav-lijn);
         margin-top: 0;
     }
@@ -822,14 +897,21 @@ nav.navbar.navbar-top {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
         column-gap: 40px;
+        row-gap: 0;
         padding: 12px 0 20px;
         @media (min-width: 768px) {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             grid-template-columns: repeat(4, minmax(0, 1fr));
         }
+        /* Bootstrap 6 maakt van .nav-item een flexcontainer, waardoor de link krimpt tot zijn tekst en de lijn eronder
+           korter wordt dan de kolom. Als blok vult de link de hele kolom, zoals in Bootstrap 5. */
+        .nav-item {
+            display: block;
+        }
         .nav-link {
+            display: block;
             padding: 10px 0;
             border-bottom: 1px solid var(--kb-nav-lijn);
             font-family: "Alegreya", serif;
@@ -896,7 +978,7 @@ nav.navbar.navbar-top {
     }
 }
 /* Mobiel en tablet: de menubalk blijft bovenaan staan, de datumregel schuift eronder weg */
-@media (max-width: 991.98px) {
+@media (max-width: 1023.98px) {
     nav.navbar.navbar-top {
         position: sticky;
         top: 0;
@@ -916,7 +998,7 @@ nav.navbar.navbar-top {
     border-top: 1px solid rgba(255, 255, 255, .22);
     font-size: .82rem;
     .container,
-    .container-xxl {
+    .\32xl\:container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -953,7 +1035,8 @@ nav.navbar.navbar-top {
     line-height: 1.5;
 }
 /* Sliders in de huisstijl: vierkante duim in de hoofdkleur op een lijn in de randkleur */
-.form-range {
+.form-range-input {
+    height: 1.5rem;
     &::-webkit-slider-thumb { background-color: var(--kb-primary); border-radius: 0; }
     &::-moz-range-thumb { background-color: var(--kb-primary); border-radius: 0; }
     &::-webkit-slider-runnable-track { background-color: var(--kb-border); border-radius: 0; }
@@ -961,7 +1044,7 @@ nav.navbar.navbar-top {
     &:focus::-webkit-slider-thumb { box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 .25rem var(--bs-focus-ring-color); }
     &:focus::-moz-range-thumb { box-shadow: 0 0 0 1px var(--kb-surface), 0 0 0 .25rem var(--bs-focus-ring-color); }
 }
-.dropdown-menu.kb-instellingen {
+.menu.kb-instellingen {
     width: 300px;
     max-width: calc(100vw - 24px);
     padding: 20px;
@@ -1092,10 +1175,10 @@ footer {
         border-top: 1px solid var(--kb-border);
         padding: 12px 0;
     }
-    .form-check-input:disabled {
+    .switch input:disabled {
         opacity: .7;
     }
-    .form-check-input:disabled ~ .form-check-label {
+    .switch:has(input:disabled) ~ label {
         opacity: 1;
     }
     details summary {
@@ -1200,14 +1283,14 @@ footer {
 #voorspelVolgende { min-height: 319px; }
 #voorspelJaar { min-height: 277px; }
 @media (min-width: 768px) { #voorspelVolgende { min-height: 367px; } #voorspelJaar { min-height: 298px; } }
-@media (min-width: 992px) { #voorspelVolgende { min-height: 298px; } #voorspelJaar { min-height: 253px; } }
+@media (min-width: 1024px) { #voorspelVolgende { min-height: 298px; } #voorspelJaar { min-height: 253px; } }
 #voorspelData { min-height: 180px; }
 /* kalender.html: nooit hoger dan de gemeten eindhoogte, anders blijft er op hoge schermen loze ruimte over */
 #calendar-grid { min-height: 100vh; align-content: flex-start; }
 @media (min-width: 768px) { #calendar-grid { min-height: min(100vh, 1740px); } }
-@media (min-width: 992px) { #calendar-grid { min-height: min(100vh, 1045px); } }
-@media (min-width: 1200px) { #calendar-grid { min-height: min(100vh, 705px); } }
-@media (min-width: 1400px) { #calendar-grid { min-height: min(100vh, 800px); } }
+@media (min-width: 1024px) { #calendar-grid { min-height: min(100vh, 1045px); } }
+@media (min-width: 1280px) { #calendar-grid { min-height: min(100vh, 705px); } }
+@media (min-width: 1536px) { #calendar-grid { min-height: min(100vh, 800px); } }
 #lijst { min-height: 100vh; }                                  /* gasten.html */
 .kb-paginanav.kb-wacht { min-height: 85px; margin-bottom: 16px; } /* afleveringen.html, tot de tabs er zijn (incl. hun ondermarge) */
 @media (min-width: 768px) { .kb-paginanav.kb-wacht { min-height: 43px; } }
@@ -1215,10 +1298,10 @@ footer {
 #todayEpisodes:empty { min-height: 73px; }                    /* index: ruimte voor één aflevering */
 #kbCijfers:empty { min-height: 860px; }                        /* index: 6 kerncijfers onder elkaar */
 @media (min-width: 768px) { #kbCijfers:empty { min-height: 417px; } }
-@media (min-width: 992px) { #kbCijfers:empty { min-height: 301px; } }
+@media (min-width: 1024px) { #kbCijfers:empty { min-height: 301px; } }
 #stats { min-height: 590px; }                                  /* wrapped.html: 5 kaarten onder elkaar */
 @media (min-width: 576px) { #stats { min-height: 379px; } }
-@media (min-width: 992px) { #stats { min-height: 153px; } }
+@media (min-width: 1024px) { #stats { min-height: 153px; } }
 /* Voorspellingen: kans per categorie altijd in 2 kolommen (2 rijen) */
 .kb-kansen {
     display: grid;
@@ -1474,28 +1557,24 @@ footer {
         --bs-accordion-btn-color: var(--kb-text);
         --bs-accordion-active-color: var(--kb-text);
         --bs-accordion-active-bg: var(--kb-bg);
-        --bs-accordion-btn-focus-box-shadow: none;
         background-color: var(--kb-bg);
         .accordion-item {
             background-color: var(--kb-bg);
             .accordion-header {
                 font-family: 'Geist', sans-serif;
-                .accordion-button {
-                    padding: 1rem 0;
-                    background-color: var(--kb-bg);
-                    &:not(.collapsed) {
-                        font-weight: 600;
-                    }
-                }
+                padding: 1rem 0;
+                line-height: 1.2;
+                background-color: var(--kb-bg);
+                color: var(--kb-text);
+            }
+            &[open] > .accordion-header {
+                font-weight: 600;
             }
             .accordion-body {
                 padding: 0 0 1rem;
             }
         }
     }
-}
-[data-bs-theme=dark] .accordion-button::after {
-    filter: invert(1) grayscale(1) brightness(1.6);
 }
 /* afleveringen calender */
 #kalender {
@@ -1960,6 +2039,45 @@ html.kb-kaart-volledig-open body {
 .achtergrond { background-color: var(--kb-cat-achtergrond); }
 .reportage { background-color: var(--kb-cat-reportage); }
 .interview { background-color: var(--kb-cat-interview); }
+/* Kaartinhoud zoals in Bootstrap 5: gewoon een blok. Bootstrap 6 maakt er een flexkolom van met vaste tussenruimte en
+   haalt de marges van de kinderen weg; hier komen de normale marges van alinea's, lijsten en koppen terug. */
+.card-body {
+    display: block;
+    > :is(p, ul, ol, dl) {
+        margin-bottom: 1rem;
+    }
+    > :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+        margin-bottom: .5rem;
+    }
+}
+/* Citaat: 1,25rem, zoals in Bootstrap 5 (Bootstrap 6 laat de lettergrootte weg) */
+.blockquote {
+    font-size: 1.25rem;
+}
+/* Nav-links hadden in Bootstrap 5 geen rand; Bootstrap 6 geeft ze een transparante rand van 1px rondom */
+.nav-link {
+    --bs-nav-link-border-width: 0;
+}
+/* Opvulling van lijstitems: 8 i.p.v. 6 px */
+.list-group {
+    --bs-list-group-item-padding-y: .5rem;
+}
+/* Badges zoals in Bootstrap 5: een kleine inline-blok. Bootstrap 6 maakt er een inline-flex van met een minimale hoogte,
+   en verbergt lege badges; de site gebruikt badges ook als vierkante kleurmarkering. */
+.badge {
+    --bs-badge-padding-x: .65em;
+    --bs-badge-padding-y: .35em;
+    --bs-badge-font-size: .75em;
+    --bs-badge-font-weight: 700;
+    --bs-badge-color: #fff;
+    --bs-badge-bg: transparent;
+    display: inline-block;
+    min-height: 0;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
 .badge.nieuws,
 .badge.achtergrond,
 .badge.reportage,
@@ -2014,6 +2132,7 @@ html.kb-kaart-volledig-open body {
     row-gap: .25rem;
 }
 .kb-tijdknop {
+    --bs-btn-gap: 0;
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2102,12 +2221,6 @@ html.kb-kaart-volledig-open body {
     --kb-favoriet: #B00020;
     --kb-patroon: rgba(255, 255, 255, .85);
     --kb-raster: #767676;
-
-    --bs-body-bg-rgb: 255, 255, 255;
-    --bs-body-color-rgb: 0, 0, 0;
-    --bs-primary-rgb: 0, 58, 112;
-    --bs-link-color-rgb: 0, 58, 112;
-    --bs-link-hover-color-rgb: 0, 0, 0;
     --bs-focus-ring-color: rgba(0, 0, 0, .6);
 }
 [data-bs-theme=dark][data-kb-contrast=hoog] {
@@ -2130,24 +2243,20 @@ html.kb-kaart-volledig-open body {
     --kb-favoriet: #FF8A95;
     --kb-patroon: rgba(0, 0, 0, .75);
     --kb-raster: #8A8A8A;
-
-    --bs-body-bg-rgb: 0, 0, 0;
-    --bs-body-color-rgb: 255, 255, 255;
-    --bs-primary-rgb: 140, 203, 255;
-    --bs-link-color-rgb: 140, 203, 255;
-    --bs-link-hover-color-rgb: 255, 255, 255;
     --bs-focus-ring-color: rgba(255, 255, 255, .7);
 }
 [data-kb-contrast=hoog] {
     --bs-border-width: 2px;
     /* Randkleur is hier gelijk aan de tekstkleur: vlakken in de randkleur krijgen omgekeerde tekst */
     --bs-secondary-bg: var(--kb-primary-subtle);
-    .text-bg-secondary {
-        background-color: var(--kb-text) !important;
-        color: var(--kb-bg) !important;
+    .badge.theme-secondary {
+        --bs-badge-bg: var(--kb-text);
+        --bs-badge-color: var(--kb-bg);
+        background-color: var(--kb-text);
+        color: var(--kb-bg);
     }
     /* Links altijd onderstreept (niet de knoppen en menu-items) */
-    a:not(.btn):not(.nav-link):not(.navbar-brand):not(.dropdown-item) {
+    a:not(.btn):not(.nav-link):not(.navbar-brand):not(.menu-item) {
         text-decoration: underline;
         text-underline-offset: 3px;
     }
@@ -2183,7 +2292,8 @@ html.kb-kaart-volledig-open body {
 }
 /* Schakelaars in het instellingenmenu */
 .kb-schakelaar {
-    .form-check-label {
+    row-gap: 0;
+    label {
         color: var(--kb-text);
         font-weight: 500;
     }
@@ -2224,4 +2334,5 @@ main:focus {
         text-decoration: underline;
         text-underline-offset: 4px;
     }
+}
 }

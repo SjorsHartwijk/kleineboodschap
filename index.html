@@ -22,8 +22,8 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.9/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261124a">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-6.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261124u">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 </head>
@@ -36,8 +36,8 @@
     <main>
     <div class="container">
         <!-- Opening: kop links, vandaag in het archief rechts (assets/js/homepage.js) -->
-        <section class="kb-opening row g-4 gx-lg-5 align-items-end">
-            <div class="col-12 col-lg-7 col-xl-8">
+        <section class="kb-opening row g-7 lg:gx-12 align-items-end">
+            <div class="col-12 lg:col-7 xl:col-8">
                 <h1>Alles wat er over Kleine Boodschap te tellen valt</h1>
                 <p class="kb-intro">Elke aflevering, elke minuut en elke categorie, sinds de eerste uitzending op 30 december 2017. Bijgehouden door een luisteraar, voor luisteraars.</p>
                 <div class="kb-acties">
@@ -46,48 +46,48 @@
                     <a class="kb-tekstlink" href="kalender.html">Bekijk de kalender</a>
                 </div>
             </div>
-            <aside class="col-12 col-lg-5 col-xl-4" aria-labelledby="vandaagKop">
+            <aside class="col-12 lg:col-5 xl:col-4" aria-labelledby="vandaagKop">
                 <div class="kb-archiefdag">
-                    <div class="d-flex justify-content-between align-items-baseline gap-3">
+                    <div class="d-flex justify-content-between align-items-baseline gap-5">
                         <h2 id="vandaagKop">Vandaag in het archief</h2>
                         <span class="small kb-muted" id="todayDate"></span>
                     </div>
                     <ul id="todayEpisodes"></ul>
-                    <p class="small kb-muted mt-2 mb-0" id="todayLeeg" hidden>Op deze dag verscheen nog nooit een aflevering. Op de <a href="kalender.html">kalender</a> zie je welke dagen wel raak zijn, bijvoorbeeld je verjaardag.</p>
+                    <p class="small kb-muted mt-3 mb-0" id="todayLeeg" hidden>Op deze dag verscheen nog nooit een aflevering. Op de <a href="kalender.html">kalender</a> zie je welke dagen wel raak zijn, bijvoorbeeld je verjaardag.</p>
                 </div>
             </aside>
         </section>
 
         <!-- Statistieken (assets/js/homepage.js) -->
-        <section id="statistieken" class="pb-5" aria-labelledby="statKop">
+        <section id="statistieken" class="pb-12" aria-labelledby="statKop">
             <div class="kb-sectiekop">
                 <h2 id="statKop">Statistieken</h2>
                 <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
             </div>
-            <div class="kb-cijfers mb-5" id="kbCijfers"></div>
+            <div class="kb-cijfers mb-12" id="kbCijfers"></div>
 
             <h3 class="kb-tussenkop">Verdeling per categorie</h3>
-            <div class="kb-verdeelbalk mb-4" id="kbVerdeelbalk" role="img" aria-label="Verdeling per categorie"></div>
-            <div class="row g-4 mb-5" id="kbCategorieen"></div>
+            <div class="kb-verdeelbalk mb-7" id="kbVerdeelbalk" role="img" aria-label="Verdeling per categorie"></div>
+            <div class="row g-7 mb-12" id="kbCategorieen"></div>
 
-            <div class="d-flex flex-wrap justify-content-between align-items-baseline column-gap-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-baseline column-gap-7">
                 <h3 class="kb-tussenkop">Records</h3>
                 <a class="kb-tekstlink" href="mijlpalen.html#records">Alle records</a>
             </div>
-            <div class="row g-4 mb-5" id="kbRecords"></div>
+            <div class="row g-7 mb-12" id="kbRecords"></div>
 
             <h3 class="kb-tussenkop">Records per periode</h3>
-            <div class="row g-4" id="kbPeriodes"></div>
+            <div class="row g-7" id="kbPeriodes"></div>
         </section>
 
         <!-- Trends (assets/js/trends.js) -->
-        <section id="trends" class="pb-5" aria-labelledby="trendKop">
+        <section id="trends" class="pb-12" aria-labelledby="trendKop">
             <div class="kb-sectiekop">
                 <h2 id="trendKop">Trends</h2>
                 <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
             </div>
-            <div class="row g-4 gx-lg-5 gy-lg-5">
-                <div class="col-12 col-md-6">
+            <div class="row g-7 lg:gx-12 lg:gy-12">
+                <div class="col-12 md:col-6">
                     <figure class="kb-figuur">
                         <figcaption>
                             <h3 id="trendDuurKop">Duur door de jaren heen</h3>
@@ -96,7 +96,7 @@
                         <canvas id="trendDuurChart" aria-label="Lijngrafiek van de gemiddelde duur per jaar, in totaal en per categorie" role="img"></canvas>
                     </figure>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 md:col-6">
                     <figure class="kb-figuur">
                         <figcaption>
                             <h3 id="trendVerdelingKop">Verdeling van de duur</h3>
@@ -109,29 +109,29 @@
         </section>
 
         <!-- Mijlpalen: de laatst behaalde en de eerstvolgende (assets/js/trends.js) -->
-        <section class="pb-5" aria-labelledby="mijlKop">
+        <section class="pb-12" aria-labelledby="mijlKop">
             <div class="kb-sectiekop">
                 <h2 id="mijlKop">Mijlpalen</h2>
                 <a class="kb-tekstlink" href="mijlpalen.html">Alle mijlpalen</a>
             </div>
             <ol class="kb-tijdlijn" id="trendMijlpalen"></ol>
-            <p class="small kb-muted mt-4 mb-0" id="trendMijlpalenTekst"></p>
+            <p class="small kb-muted mt-7 mb-0" id="trendMijlpalenTekst"></p>
         </section>
 
         <!-- Voorspellingen: de volgende aflevering en het lopende jaar (assets/js/voorspellingen.js) -->
-        <section id="voorspellingen" class="pb-5" aria-labelledby="voorspelKop">
+        <section id="voorspellingen" class="pb-12" aria-labelledby="voorspelKop">
             <div class="kb-sectiekop">
                 <h2 id="voorspelKop">Voorspellingen</h2>
                 <a class="kb-tekstlink" href="mijlpalen.html#voorspellingen">Alle voorspellingen</a>
                 <p class="small kb-muted w-100" id="voorspelUitleg">Voorspellingen op basis van het afgelopen jaar. Het blijft een schatting.</p>
                 <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
             </div>
-            <div class="row g-4 gx-lg-5">
-                <div class="col-12 col-md-6">
+            <div class="row g-7 lg:gx-12">
+                <div class="col-12 md:col-6">
                     <h3 class="kb-tussenkop">De volgende aflevering</h3>
                     <div id="voorspelVolgende"></div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 md:col-6">
                     <h3 class="kb-tussenkop">Dit jaar</h3>
                     <div id="voorspelJaar"></div>
                 </div>
@@ -139,7 +139,7 @@
         </section>
     </div>
     <!-- Data section-->
-    <section id="data" class="pb-5">
+    <section id="data" class="pb-12">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -147,39 +147,39 @@
                         <h2>Data</h2>
                         <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
                     </div>
-                    <div class="card mb-3">
+                    <div class="card mb-5">
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between">
-                                <h3 class="card-title h4 flex-md-grow-1">Afleveringen</h3>
-                                <ul class="nav nav-pills rounded" id="myTab" role="tablist">
-                                    <li class="nav-item d-none d-md-block" role="presentation">
-                                        <button class="nav-link active" id="grafiek-tab" data-bs-toggle="tab" data-bs-target="#grafiek" type="button" role="tab" aria-controls="grafiek" aria-selected="true">Grafiek horizontaal</button>
+                                <h3 class="card-title h4 md:flex-grow-1">Afleveringen</h3>
+                                <ul class="nav column-gap-7" id="myTab" role="tablist">
+                                    <li class="nav-item d-none md:d-block" role="presentation">
+                                        <button class="btn btn-outline-secondary active" id="grafiek-tab" data-bs-toggle="tab" data-bs-target="#grafiek" type="button" role="tab" aria-controls="grafiek" aria-selected="true">Grafiek horizontaal</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="grafiekV-tab" data-bs-toggle="tab" data-bs-target="#grafiekV" type="button" role="tab" aria-controls="grafiekV" aria-selected="false">Grafiek<span class="d-none d-md-inline"> verticaal</span></button>
+                                        <button class="btn btn-outline-secondary" id="grafiekV-tab" data-bs-toggle="tab" data-bs-target="#grafiekV" type="button" role="tab" aria-controls="grafiekV" aria-selected="false"><span>Grafiek<span class="d-none md:d-inline"> verticaal</span></span></button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="mozaiekpanel-tab" data-bs-toggle="tab" data-bs-target="#mozaiekpanel" type="button" role="tab" aria-controls="mozaiekpanel" aria-selected="false">Mozaïek</button>
+                                        <button class="btn btn-outline-secondary" id="mozaiekpanel-tab" data-bs-toggle="tab" data-bs-target="#mozaiekpanel" type="button" role="tab" aria-controls="mozaiekpanel" aria-selected="false">Mozaïek</button>
                                     </li>
                                 </ul>
                             </div>
                             <!-- Legenda en filter voor alle drie de weergaven (assets/js/chart_episodes.js) -->
-                            <div class="kb-filterlegenda mt-3" id="grafiekLegenda" role="group" aria-label="Filter op categorie"></div>
-                            <p class="small kb-muted mt-1 mb-2">Klik op een categorie om die te verbergen of weer te tonen.</p>
+                            <div class="kb-filterlegenda mt-5" id="grafiekLegenda" role="group" aria-label="Filter op categorie"></div>
+                            <p class="small kb-muted mt-1 mb-3">Klik op een categorie om die te verbergen of weer te tonen.</p>
                             <div class="tab-content kb-filtergebied">
                                 <div class="tab-pane" id="grafiekV" role="tabpanel" aria-labelledby="grafiekV-tab" tabindex="0">
-                                    <p class="small kb-muted mb-2">Duur per aflevering in minuten, van aflevering 1 bovenaan tot de nieuwste onderaan. Tik of wijs een staaf aan voor de titel.</p>
+                                    <p class="small kb-muted mb-3">Duur per aflevering in minuten, van aflevering 1 bovenaan tot de nieuwste onderaan. Tik of wijs een staaf aan voor de titel.</p>
                                     <div class="kb-grafiek-scroll">
                                         <div class="kb-grafiek-hoogte"><canvas id="barChartV" role="img" aria-label="Staafdiagram met de duur van elke aflevering, de afleveringen onder elkaar"></canvas></div>
                                     </div>
                                 </div>
                                 <div class="tab-pane active" id="grafiek" role="tabpanel" aria-labelledby="grafiek-tab" tabindex="0">
                                     <canvas id="barChart" role="img" aria-label="Staafdiagram met de duur van elke aflevering"></canvas>
-                                    <div class="text-center d-none d-md-block my-2"><a href="grafiek.html" class="btn btn-sm btn-outline-secondary" title="Bekijk de grafiek op een aparte grote pagina"><i class="bi bi-arrows-fullscreen"></i> Grote grafiek</a></div>
+                                    <div class="text-center d-none md:d-block my-3"><a href="grafiek.html" class="btn btn-sm btn-outline-secondary" title="Bekijk de grafiek op een aparte grote pagina"><i class="bi bi-arrows-fullscreen"></i> Grote grafiek</a></div>
                                 </div>
                                 <div class="tab-pane" id="mozaiekpanel" role="tabpanel" aria-labelledby="mozaiekpanel-tab" tabindex="0">
                                     <small>Klik op een aflevering om alle informatie over de aflevering te zien.</small>
-                                    <div id="mozaiek" class="mozaiek mt-3" role="group" aria-label="Alle afleveringen als blokjes. Gebruik de pijltjestoetsen om te bladeren en Enter om een aflevering te openen."></div>
+                                    <div id="mozaiek" class="mozaiek mt-5" role="group" aria-label="Alle afleveringen als blokjes. Gebruik de pijltjestoetsen om te bladeren en Enter om een aflevering te openen."></div>
                                 </div>
                             </div>
                         </div>
@@ -187,8 +187,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-7 mb-3">
-                    <div class="card h-100 mb-3">
+                <div class="col-12 md:col-7 mb-5">
+                    <div class="card h-100 mb-5">
                         <div class="card-body">
                             <h3 class="h4">Publicatiedagen</h3>
                             <p>
@@ -267,8 +267,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-5 mb-3">
-                    <div class="card mb-3 h-100">
+                <div class="col-12 md:col-5 mb-5">
+                    <div class="card mb-5 h-100">
                         <div class="card-body">
                             <h3 class="h4">Gesproken taal</h3>
                             <p>In deze meter zie je een overzicht van alle geïndexeerde afleveringen en in welke talen deze worden gesproken.</p>
@@ -277,7 +277,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card my-3">
+            <div class="card my-5">
                 <div class="card-body">
                     <h3 class="h4 card-title">Door de jaren heen</h3>
                     <p class="card-text">In dit staafdiagram zie je het aantal gepubliceerde afleveringen van Kleine Boodschap per
@@ -290,7 +290,7 @@
         </div>
     </section>
     <!-- Verwijzingen naar de rest van de site -->
-    <section class="pb-5" aria-labelledby="archiefKop">
+    <section class="pb-12" aria-labelledby="archiefKop">
         <div class="container">
             <div class="kb-sectiekop">
                 <h2 id="archiefKop">In het archief</h2>
@@ -310,21 +310,17 @@
     </main>
     <div data-layout="footer"></div>
 <!-- Mozaiek Modal -->
-<div class="modal fade" id="afleveringModal" tabindex="-1" aria-labelledby="afleveringModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title h4" id="afleveringModalLabel"><span id="modalId"></span>: <span id="modalTitel"></span></h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
-            </div>
-            <div class="modal-body">
-                <span id="modalEpisodeBadge" class="badge mb-4"></span>
-                <p><strong>Tijdsduur:</strong> <span id="modalTijd"></span> minuten<br/>
-                <strong>Publicatiedatum:</strong> <span id="modalDatum"></span></p>
-            </div>
-        </div>
+<dialog class="dialog" id="afleveringModal" aria-labelledby="afleveringModalLabel">
+    <div class="dialog-header">
+        <h3 class="dialog-title h4" id="afleveringModalLabel"><span id="modalId"></span>: <span id="modalTitel"></span></h3>
+        <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Sluiten"></button>
     </div>
-</div>
+    <div class="dialog-body">
+        <span id="modalEpisodeBadge" class="badge mb-7"></span>
+        <p><strong>Tijdsduur:</strong> <span id="modalTijd"></span> minuten<br/>
+        <strong>Publicatiedatum:</strong> <span id="modalDatum"></span></p>
+    </div>
+</dialog>
     <script>
         /* mozaiek: elk blokje is een knop. Er is één tabstop voor het hele mozaïek;
            daarbinnen ga je met de pijltjestoetsen (Home/End voor begin en eind) en open je met Enter of spatie. */
@@ -350,12 +346,12 @@
                     document.getElementById('modalTijd').textContent = ep.tijd;
                     document.getElementById('modalDatum').textContent = new Date(ep.datum).toLocaleDateString('nl-NL');
                     opener = blok;
-                    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+                    bootstrap.Dialog.getOrCreateInstance(modalEl).show();
                 });
                 container.appendChild(blok);
             });
             // Na sluiten terug naar het blokje dat de modal opende
-            modalEl.addEventListener('hidden.bs.modal', () => { if (opener) opener.focus(); });
+            modalEl.addEventListener('hidden.bs.dialog', () => { if (opener) opener.focus(); });
 
             // Verbergt het categoriefilter het blokje met de tabstop, dan gaat die naar het eerste zichtbare
             document.getElementById('grafiekLegenda')?.addEventListener('click', () => setTimeout(() => {
@@ -393,6 +389,6 @@
     <script src="assets/js/trends.js?v=20261119a" defer></script>
     <script src="assets/js/voorspellingen.js?v=20261119a" defer></script>
     <!-- bootstrap -->
-    <script src="assets/vendor/bootstrap-5.3.9/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="assets/js/bootstrap-global.js"></script>
 </body>
 </html>

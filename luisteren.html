@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/js/theme.js?v=20261119a"></script>
     <script src="assets/js/instellingen.js?v=20261119a"></script>
-    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.9/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261124a">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-6.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261124u">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -35,24 +35,24 @@
     <script src="assets/js/cookies.js?v=20261119a"></script>
     <script src="assets/js/layout.js?v=20261119a"></script>
     <main class="flex-shrink-0" id="luisteren">
-        <section class="py-5">
+        <section class="py-12">
             <div class="container">
-                <div class="row mb-3">
-                    <div class="col-12 col-xxl-9">
+                <div class="row mb-5">
+                    <div class="col-12 2xl:col-9">
                         <h1 class="kb-paginakop">Wat zal ik luisteren?</h1>
                         <p>Vertel hoeveel tijd je hebt en waar je zin in hebt. Je krijgt drie afleveringen van Kleine Boodschap die in die tijd passen. Niet wat je zoekt? Met <em>Andere voorstellen</em> krijg je nieuwe tips.</p>
                         <p class="small kb-muted" data-kb-snelheid-notitie hidden></p>
                     </div>
                 </div>
 
-                <div class="card mb-4">
+                <div class="card mb-7">
                     <div class="card-body kb-kiezer">
                         <fieldset class="kb-kiezer-groep">
                             <legend class="h5">Hoeveel tijd heb je?</legend>
                             <div class="kb-tijdknoppen" id="kiezerTijden"></div>
                             <div class="kb-tijdschuif">
                                 <label for="kiezerMinuten" class="visually-hidden">Eigen aantal minuten</label>
-                                <input type="range" class="form-range" id="kiezerMinuten" min="5" max="120" step="5" value="45">
+                                <div class="form-range"><input type="range" class="form-range-input" id="kiezerMinuten" min="5" max="120" step="5" value="45"></div>
                                 <output for="kiezerMinuten" id="kiezerMinutenWaarde" class="fw-semibold"></output>
                             </div>
                         </fieldset>
@@ -64,29 +64,29 @@
 
                         <fieldset class="kb-kiezer-groep">
                             <legend class="h5">Extra</legend>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="kiezerPlek">
-                                <label class="form-check-label" for="kiezerPlek">Alleen afleveringen over een plek in de Efteling</label>
+                            <div class="form-field mb-3">
+                                <input class="check" type="checkbox" id="kiezerPlek">
+                                <label for="kiezerPlek">Alleen afleveringen over een plek in de Efteling</label>
                             </div>
                             <div class="kb-periodeknoppen" role="group" aria-label="Periode" id="kiezerPeriode"></div>
                         </fieldset>
                     </div>
                 </div>
 
-                <div class="d-flex flex-wrap align-items-baseline justify-content-between gap-2 mb-3">
+                <div class="d-flex flex-wrap align-items-baseline justify-content-between gap-3 mb-5">
                     <h2 class="h4 mb-0">Voor jou</h2>
                     <button type="button" class="btn btn-primary" id="kiezerOpnieuw"><i class="bi bi-shuffle" aria-hidden="true"></i> Andere voorstellen</button>
                 </div>
                 <div aria-live="polite">
                     <p class="kb-muted" id="kiezerTeller"></p>
-                    <div class="row g-4" id="kiezerVoorstellen"></div>
+                    <div class="row g-7" id="kiezerVoorstellen"></div>
                 </div>
             </div>
         </section>
     </main>
     <div data-layout="footer"></div>
     <!-- bootstrap -->
-    <script src="assets/vendor/bootstrap-5.3.9/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="assets/js/bootstrap-global.js"></script>
     <script src="assets/js/luisteren.js?v=20261119a"></script>
 </body>
 

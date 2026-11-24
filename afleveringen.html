@@ -22,8 +22,8 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.9/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261124a">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-6.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261124u">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 </head>
@@ -35,11 +35,11 @@
         <!-- Cookiemelding en Google Analytics (alleen na toestemming) -->
         <script src="assets/js/cookies.js?v=20261119a"></script>
         <script src="assets/js/layout.js?v=20261119a"></script>
-        <section class="afleveringen pt-5">
+        <section class="afleveringen pt-12">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="mb-4">
+                        <div class="mb-7">
                             <h1 class="kb-paginakop">Afleveringen</h1>
                             <p>Op deze pagina staan alle geïndexeerde afleveringen van Kleine Boodschap, de nieuwste bovenaan en per 100 op een pagina. Zoek op titel, onderwerp, afleveringsnummer of categorie.</p>
                             <p>Bekijk ook de afleveringen op basis van <a href="kalender.html">kalenderweergave</a>.</p>
@@ -50,7 +50,7 @@
                                 <span class="input-group-text"><i class="bi bi-search"></i></span>
                             </div>
                         </div>
-                        <p class="small kb-muted mb-2" id="paginaStatus" aria-live="polite">Afleveringen laden…</p>
+                        <p class="small kb-muted mb-3" id="paginaStatus" aria-live="polite">Afleveringen laden…</p>
                         <nav class="kb-paginanav kb-wacht" aria-label="Pagina&#39;s met afleveringen">
                             <ul class="kb-paginatabs" id="paginaTabs" hidden></ul>
                         </nav>
@@ -69,7 +69,7 @@
                             </tbody>
                         </table>
                         </div>
-                        <div class="kb-paginaknoppen d-flex justify-content-between gap-3 mb-5" hidden>
+                        <div class="kb-paginaknoppen d-flex justify-content-between gap-5 mb-12" hidden>
                             <button type="button" class="btn btn-outline-secondary" id="paginaVorige"><i class="bi bi-arrow-left" aria-hidden="true"></i> Nieuwer</button>
                             <button type="button" class="btn btn-outline-secondary ms-auto" id="paginaVolgende">Ouder <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
                         </div>
@@ -116,11 +116,11 @@
                         <tr>
                             <td>${veilig(ep.id)}</td>
                             <td>${veilig(ep.titel)}</td>
-                            <td><span class="d-inline-flex align-items-center gap-2"><span class="kb-legendablokje ${veilig(ep.categorie)}" aria-hidden="true"></span>${veilig(ep.categorie)}</span></td>
+                            <td><span class="d-inline-flex align-items-center gap-3"><span class="kb-legendablokje ${veilig(ep.categorie)}" aria-hidden="true"></span>${veilig(ep.categorie)}</span></td>
                             <td class="small text-nowrap">${veilig(ep.tijd)} min</td>
                             <td class="small text-nowrap">${datum(ep.datum)}</td>
                         </tr>`).join('')
-                        : `<tr><td colspan="5" class="kb-muted py-4">Geen afleveringen gevonden voor “${veilig(zoekveld.value)}”.</td></tr>`;
+                        : `<tr><td colspan="5" class="kb-muted py-7">Geen afleveringen gevonden voor “${veilig(zoekveld.value)}”.</td></tr>`;
 
                     // Statusregel
                     const zoek = zoekveld.value.trim();
@@ -188,6 +188,6 @@
             })();
         </script>
     <!-- bootstrap -->
-    <script src="assets/vendor/bootstrap-5.3.9/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="assets/js/bootstrap-global.js"></script>
 </body>
 </html>

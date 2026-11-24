@@ -75,8 +75,8 @@
         balk.innerHTML = rijen.map(r => `<span class="${r.c}" style="width:${r.pct.toFixed(2)}%"></span>`).join('');
 
         $('kbCategorieen').innerHTML = rijen.map(r => `
-            <div class="col-12 col-sm-6 col-lg-3">
-                <h4 class="h5 d-flex align-items-center gap-2 mb-2"><span class="kb-legendablokje ${r.c}" aria-hidden="true"></span>${hoofdletter(r.c)}</h4>
+            <div class="col-12 sm:col-6 lg:col-3">
+                <h4 class="h5 d-flex align-items-center gap-3 mb-3"><span class="kb-legendablokje ${r.c}" aria-hidden="true"></span>${hoofdletter(r.c)}</h4>
                 <div class="kb-regel"><span>Afleveringen</span><span>${getal(r.aantal)}</span></div>
                 <div class="kb-regel"><span>Luistertijd</span><span>${getal(r.uren)} uur</span></div>
                 <div class="kb-regel"><span>Aandeel</span><span>${pct(r)}%</span></div>
@@ -87,7 +87,7 @@
         const opDuur = afl.slice().sort((a, b) => a.minuten - b.minuten);
         // Record met daaronder een uitklapbare ranglijst van de top 5
         const blok = (soort, ep, top) => `
-            <div class="col-12 col-lg-6">
+            <div class="col-12 lg:col-6">
                 <div class="kb-recordblok">
                     <div class="small kb-muted">${soort}</div>
                     <div class="kb-record-getal">${Math.round(ep.minuten)}<small>min</small></div>
@@ -118,7 +118,7 @@
 
     // Record zonder top 5, alles onder elkaar (zoals op mijlpalen.html): soort, groot getal, wat, toelichting
     const periodeBlok = (getalHtml, soort, wat, uitleg) => `
-        <div class="col-12 col-lg-4">
+        <div class="col-12 lg:col-4">
             <div class="kb-recordblok">
                 <div class="small kb-muted">${soort}</div>
                 <div class="kb-record-getal">${getalHtml}</div>

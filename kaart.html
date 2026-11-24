@@ -24,8 +24,8 @@
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     
-    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.9/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261124a">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-6.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261124u">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     
@@ -41,42 +41,42 @@
     <script src="assets/js/cookies.js?v=20261119a"></script>
     <script src="assets/js/layout.js?v=20261119a"></script>
     <main class="flex-shrink-0">
-        <section class="py-5">
+        <section class="py-12">
             <div class="container">
-                <div class="row mb-4">
-                    <div class="col-12 col-xxl-9">
+                <div class="row mb-7">
+                    <div class="col-12 2xl:col-9">
                         <h1 class="kb-paginakop">Kaart</h1>
                         <p class="mb-0">Op deze kaart staan de plekken waar afleveringen van Kleine Boodschap zijn opgenomen of over gaan, in de Efteling en daarbuiten. Klik op een markering om te zien welke aflevering erbij hoort. Staat er een getal op de markering, dan gaan er meerdere afleveringen over die plek.</p>
                     </div>
                 </div>
-                <div class="row g-4 g-lg-5">
-                    <div class="col-12 col-lg-8 col-xl-9">
+                <div class="row g-7 lg:g-12">
+                    <div class="col-12 lg:col-8 xl:col-9">
                         <div id="map" class="kb-kaart" role="region" aria-label="Kaart met de plekken van afleveringen"></div>
                         <!-- Uitnodiging om uit te zoomen naar de plekken buiten het park -->
                         <div class="kb-uitzoomen" id="kaartUitzoomen" hidden>
                             <p class="mb-0" aria-live="polite"><span class="kb-uitzoomen-getal" id="kaartBuitenGetal"></span> <span id="kaartBuitenTekst"></span></p>
                             <button type="button" class="btn btn-primary btn-sm" id="kaartZoomKnop"><i class="bi bi-zoom-out" aria-hidden="true"></i> <span>Zoom uit naar alle plekken</span></button>
                         </div>
-                        <p class="small kb-muted mt-2 mb-0" id="kaartHint">Klik op de kaart om met het scrollwiel te kunnen zoomen. Op een telefoon zoom je met twee vingers.</p>
+                        <p class="small kb-muted mt-3 mb-0" id="kaartHint">Klik op de kaart om met het scrollwiel te kunnen zoomen. Op een telefoon zoom je met twee vingers.</p>
                     </div>
-                    <aside class="col-12 col-lg-4 col-xl-3">
+                    <aside class="col-12 lg:col-4 xl:col-3">
                         <div class="kb-kaartpaneel">
                             <h2 class="h4">Legenda</h2>
                             <!-- Op volledig scherm verhuist deze inhoud naar het paneel rechtsonder op de kaart -->
                             <div id="kaartLegendaInhoud">
-                                <p class="small kb-muted mb-2">Klik op een categorie om die op de kaart aan of uit te zetten.</p>
+                                <p class="small kb-muted mb-3">Klik op een categorie om die op de kaart aan of uit te zetten.</p>
                                 <ul class="kb-legenda" id="kaartLegenda"></ul>
-                                <div class="kb-regel small mt-2"><span>Afleveringen op de kaart</span><span id="kaartAfleveringen"></span></div>
+                                <div class="kb-regel small mt-3"><span>Afleveringen op de kaart</span><span id="kaartAfleveringen"></span></div>
                                 <div class="kb-regel small"><span>Plekken op de kaart</span><span id="kaartTotaal"></span></div>
                                 <div class="kb-regel small"><span>Buiten de Efteling</span><span id="kaartBuiten"></span></div>
                             </div>
-                            <p class="small kb-muted mt-2 mb-0" id="kaartLegendaWeg" hidden>De legenda staat nu rechtsonder op de kaart.</p>
+                            <p class="small kb-muted mt-3 mb-0" id="kaartLegendaWeg" hidden>De legenda staat nu rechtsonder op de kaart.</p>
                         </div>
                         <div class="kb-kaartpaneel">
                             <h2 class="h4">Ben je in de Efteling?</h2>
-                            <p class="small mb-3">Ben je in het park, dan kan de kaart je eigen plek laten zien. Zo zie je welke afleveringen over de plek gaan waar je nu staat. Je locatie wordt alleen in je eigen browser gebruikt en niet bewaard of verstuurd.</p>
+                            <p class="small mb-5">Ben je in het park, dan kan de kaart je eigen plek laten zien. Zo zie je welke afleveringen over de plek gaan waar je nu staat. Je locatie wordt alleen in je eigen browser gebruikt en niet bewaard of verstuurd.</p>
                             <button type="button" class="btn btn-primary btn-sm" id="kaartLocatie"><i class="bi bi-crosshair" aria-hidden="true"></i> Toon mijn locatie</button>
-                            <p class="small kb-muted mt-2 mb-0" id="kaartLocatieStatus" aria-live="polite"></p>
+                            <p class="small kb-muted mt-3 mb-0" id="kaartLocatieStatus" aria-live="polite"></p>
                         </div>
                     </aside>
                 </div>
@@ -147,7 +147,7 @@
                     : `${eps[0].id}: ${eps[0].titel}`;
                 const regel = ep => `
                     <strong>${veilig(ep.id)}: ${veilig(ep.titel)}</strong>
-                    <div class="d-flex align-items-center gap-2 small mt-1"><span class="kb-legendablokje ${veilig(ep.categorie)}" aria-hidden="true"></span>${veilig(ep.categorie)} · ${datumNL(ep.datum)}</div>`;
+                    <div class="d-flex align-items-center gap-3 small mt-1"><span class="kb-legendablokje ${veilig(ep.categorie)}" aria-hidden="true"></span>${veilig(ep.categorie)} · ${datumNL(ep.datum)}</div>`;
                 const inhoud = meer
                     ? `<div class="small kb-muted mb-1">${eps.length} afleveringen op deze plek</div>
                        <ul class="kb-popup-lijst">${eps.map(ep => `<li>${regel(ep)}</li>`).join('')}</ul>`
@@ -393,7 +393,7 @@
         });
     </script>
 
-    <script src="assets/vendor/bootstrap-5.3.9/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="assets/js/bootstrap-global.js"></script>
 
 </body>
 

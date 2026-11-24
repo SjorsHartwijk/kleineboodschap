@@ -23,8 +23,8 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-5.3.9/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20261124a">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-6.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261124u">
     <link rel="preload" href="assets/fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/alegreya-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 </head>
@@ -35,7 +35,7 @@
     <script src="assets/js/cookies.js?v=20261119a"></script>
     <script src="assets/js/layout.js?v=20261119a"></script>
 	<main>
-	<div class="container pt-5 mb-4">
+	<div class="container pt-12 mb-7">
   		<div class="row">
     		<div class="col-12">
       			<h1 class="kb-paginakop">Kalender</h1>
@@ -48,23 +48,19 @@
 	</div>
 	</main>
 	<!-- Tooltip modal -->
-  	<div class="modal fade" id="dayModal" tabindex="-1" aria-labelledby="dayModalTitel" aria-hidden="true">
-  		<div class="modal-dialog modal-sm">
-  	    	<div class="modal-content">
-  	    		<div class="modal-header">
-					<h2 class="modal-title h5" id="dayModalTitel">Afleveringen</h2>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
-				</div>
-  	      		<div class="modal-body" id="dayModalBody">
+  	<dialog class="dialog dialog-sm" id="dayModal" aria-labelledby="dayModalTitel">
+		<div class="dialog-header">
+			<h2 class="dialog-title h5" id="dayModalTitel">Afleveringen</h2>
+			<button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Sluiten"></button>
+		</div>
+		<div class="dialog-body" id="dayModalBody">
 
-				</div>
-  	    	</div>
-  	  	</div>
-  	</div>
+		</div>
+  	</dialog>
 </div>
 <div data-layout="footer"></div>
 <!-- bootstrap -->
-<script src="assets/vendor/bootstrap-5.3.9/js/bootstrap.bundle.min.js" defer></script>
+<script type="module" src="assets/js/bootstrap-global.js"></script>
   <script>
     
 
@@ -94,7 +90,7 @@
 
         months.forEach((monthName, mIdx) => {
           const col = document.createElement("div");
-          col.className = "col-12 col-md-6 col-lg-4 col-xl-3 mb-4";
+          col.className = "col-12 md:col-6 lg:col-4 xl:col-3 mb-7";
 
           const title = document.createElement("h2");
           title.className = "h6";
@@ -179,7 +175,7 @@
 
     // Na sluiten terug naar de dag die de modal opende
     let opener = null;
-    document.getElementById("dayModal").addEventListener("hidden.bs.modal", () => { if (opener) opener.focus(); });
+    document.getElementById("dayModal").addEventListener("hidden.bs.dialog", () => { if (opener) opener.focus(); });
 
     function showModal(episodes, day, month, knop) {
       opener = knop || null;
@@ -187,14 +183,14 @@
       body.innerHTML = `<p><strong>${day} ${month}</strong></p>`;
       episodes.forEach(ep => {
         body.innerHTML += `
-          <div class="mb-2">
+          <div class="mb-3">
           Afl.${ep.id}: ${ep.titel}<br>
-            <span class="badge text-bg-secondary">${new Date(ep.datum).getFullYear()}</span>&nbsp;<span class="badge ${ep.categorie} kb-badge-tekst">${ep.categorie}</span>
+            <span class="badge theme-secondary">${new Date(ep.datum).getFullYear()}</span>&nbsp;<span class="badge ${ep.categorie} kb-badge-tekst">${ep.categorie}</span>
           </div>
         `;
       });
 
-      bootstrap.Modal.getOrCreateInstance(document.getElementById("dayModal")).show();
+      bootstrap.Dialog.getOrCreateInstance(document.getElementById("dayModal")).show();
     }
 </script>
 </body>
